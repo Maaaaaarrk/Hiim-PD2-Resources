@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Project Diablo 2 Season 11 Solo Tier list by Hiim</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-	      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet">
+	<script crossorigin="anonymous"
 	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-	        crossorigin="anonymous">-
+	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">-
 	</script>
 </head>
 <body data-bs-theme="dark">
@@ -37,45 +37,51 @@
 	<tr>
 		<td>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxSorceress" checked>
+				<input checked class="form-check-input" id="checkboxStarter" type="checkbox">
+				<label class="form-check-label" for="checkboxStarter">Starter</label>
+			</div>
+		</td>
+		<td>
+			<div class="form-check form-switch">
+				<input checked class="form-check-input" id="checkboxSorceress" type="checkbox">
 				<label class="form-check-label" for="checkboxSorceress">Sorceress</label>
 			</div>
 		</td>
 		<td>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxDruid" checked>
+				<input checked class="form-check-input" id="checkboxDruid" type="checkbox">
 				<label class="form-check-label" for="checkboxDruid">Druid</label>
 			</div>
 		</td>
 		<td>
 
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxAssassin" checked>
+				<input checked class="form-check-input" id="checkboxAssassin" type="checkbox">
 				<label class="form-check-label" for="checkboxAssassin">Assassin</label>
 			</div>
 		</td>
 		<td>
 
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxBarbarian" checked>
+				<input checked class="form-check-input" id="checkboxBarbarian" type="checkbox">
 				<label class="form-check-label" for="checkboxBarbarian">Barbarian</label>
 			</div>
 		</td>
 		<td>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxAmazon" checked>
+				<input checked class="form-check-input" id="checkboxAmazon" type="checkbox">
 				<label class="form-check-label" for="checkboxAmazon">Amazon</label>
 			</div>
 		</td>
 		<td>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxNecromancer" checked>
+				<input checked class="form-check-input" id="checkboxNecromancer" type="checkbox">
 				<label class="form-check-label" for="checkboxNecromancer">Necromancer</label>
 			</div>
 		</td>
 		<td>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" id="checkboxPaladin" checked>
+				<input checked class="form-check-input" id="checkboxPaladin" type="checkbox">
 				<label class="form-check-label" for="checkboxPaladin">Paladin</label>
 			</div>
 		</td>
@@ -83,43 +89,309 @@
 	</tbody>
 </table>
 <table class="table table-striped table-dark">
+
+
+	<thead id="theadStarter">
+	<tr>
+		<td>Advised Starter Builds</td>
+		<td colspan="7"></td>
+	</tr>
+	</thead>
+
+
+	<!--Starter-->
+	<tbody class="table-group-divider table-light" id="tbodyStarter">
+
+	<!--Sorceress Starter-->
+	<tr>
+		<td>Firewall</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Sorceress</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-success">Andariel</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Chain lightning</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Sorceress</span>
+		</td>
+		<td colspan="5">
+			<span class="badge text-bg-warning">Arcane Sanctuary</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Ice Barrage</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Sorceress</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+			<span class="badge rounded-pill text-bg-light">Key Farming</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Meteor</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Sorceress</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+			<span class="badge rounded-pill text-bg-light">Key Farming</span>
+			<span class="badge text-bg-dark">Uber Tristam</span>
+		</td>
+	</tr>
+	<!--Druid Starter-->
+	<tr>
+		<td>Summons</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Druid</span>
+		</td>
+		<td colspan="5">
+			<span class="badge text-bg-info">Travincal</span>
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+			<span class="badge rounded-pill text-bg-light">Key Farming</span>
+			<span class="badge text-bg-dark">Uber Tristam</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Bear - Shockwave</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Druid</span>
+		</td>
+		<td colspan="5">
+			<span class="badge text-bg-info">Travincal</span>
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Wind Elemental</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Druid</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+
+	<!--Assassin Starter-->
+	<tr>
+		<td>Mind Blast</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Assassin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Blade Sentinel / Blade Fury</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Assassin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Chain Lightning Sentry</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Assassin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge text-bg-warning">Arcane Sanctuary</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+
+	<!--Barbarian Starter-->
+	<tr>
+		<td>Leap Attack</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Barbarian</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Big Shouts + Find Item (A2 Offensive Merc)</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Barbarian</span>
+		</td>
+		<td colspan="5">
+			<span class="badge text-bg-info">Travincal</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Bleed Double Throw</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Barbarian</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+
+	<!--Amazon Starter-->
+	<tr>
+		<td>Pure Summon (Decoy & Valk)</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Amazon</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+			<span class="badge rounded-pill text-bg-light">Key Farming</span>
+			<span class="badge text-bg-dark">Uber Tristam</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Lightning Strike</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Amazon</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Magic Arrow</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Amazon</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+
+	<!--Necromancer Starter-->
+	<tr>
+		<td>Clay Golems or Skeletons</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Necromancer</span>
+		</td>
+		<td colspan="5">
+			<span class="badge text-bg-info">Travincal</span>
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+			<span class="badge rounded-pill text-bg-light">Key Farming</span>
+			<span class="badge text-bg-dark">Uber Tristam</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Teeth / Bonespear</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Necromancer</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Dark Pact</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Necromancer</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+
+	<!--Paladin Starter-->
+	<tr>
+		<td>FOH</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Paladin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Smiter</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Paladin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-light">Key Farming</span>
+			<span class="badge text-bg-dark">Uber Tristam</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Hammerdin</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Paladin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Vengeance</td>
+		<td colspan="2">
+			<span class="badge text-bg-secondary">Paladin</span>
+		</td>
+		<td colspan="5">
+			<span class="badge rounded-pill text-bg-danger">Chaos</span>
+			<span class="badge text-bg-primary">Early Map</span>
+		</td>
+	</tr>
+	</tbody>
+
+
 	<thead id="theadSorceress">
 	<tr>
-		<td rowspan="2">Sorceress Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Sorceress Builds</td>
+		<td>Tier</td>
+		<td>Budget?</td>
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 	<!--Sorceress-->
-	<tbody id="tbodySorceress" class="table-group-divider table-primary">
+	<tbody class="table-group-divider table-primary" id="tbodySorceress">
 	<tr>
 		<td>Nova</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2</td>
+
 		<td>❌</td>
-		<td colspan="5" class="align-middle">-</td>
+		<td class="align-middle" colspan="5">-</td>
 	</tr>
 	<tr>
 		<td>Charged Bolt</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 		<td colspan="5">-</td>
 	</tr>
 	<tr>
 		<td>Chain Lightning</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2</td>
+
 		<td>✔✔</td>
 		<td colspan="5">-</td>
 	</tr>
 	<tr>
 		<td>Frost Nova</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -127,7 +399,7 @@
 	<tr>
 		<td>Frozen Orb</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -135,7 +407,7 @@
 	<tr>
 		<td>Ice Barrage</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -143,7 +415,7 @@
 	<tr>
 		<td>Blizzard</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -151,7 +423,7 @@
 	<tr>
 		<td>Combustion</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -159,7 +431,7 @@
 	<tr>
 		<td>Meteor</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3/4</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -167,7 +439,7 @@
 	<tr>
 		<td>Hydra</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -175,7 +447,7 @@
 	<tr>
 		<td>Enchantress</td>
 		<td><span class="badge rounded-pill text-bg-danger">Bad</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -184,21 +456,21 @@
 
 	<thead id="theadDruid">
 	<tr>
-		<td rowspan="2">Druid Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
+		<td>Druid Builds</td>
+		<td>Tier</td>
 
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Budget?</td>
+
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 	<!--Druid-->
-	<tbody id="tbodyDruid" class="table-group-divider table-secondary">
+	<tbody class="table-group-divider table-secondary" id="tbodyDruid">
 	<tr>
 		<td>Cold Elemental (Arctic Blast/Hurricane)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -206,7 +478,7 @@
 	<tr>
 		<td>Wind Elemental</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -214,7 +486,7 @@
 	<tr>
 		<td>Fire Elemental</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -222,7 +494,7 @@
 	<tr>
 		<td>Wolf - Fire Claws</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -230,7 +502,7 @@
 	<tr>
 		<td>Rabies</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -238,7 +510,7 @@
 	<tr>
 		<td>Bear - Shockwave</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -246,7 +518,6 @@
 	<tr>
 		<td>Wolf - Fury</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3 <span style="color:#34a853;">Ⓕ</span></td>
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -254,12 +525,13 @@
 	<tr>
 		<td>Summon Druid</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">
-			<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-html="true"
-			        data-bs-title="Raven - Eaglehorn<br/>Bear - Den Mother<br/>Wolf - Fenris">
+			<button class="btn btn-secondary" data-bs-html="true"
+			        data-bs-title="Raven - Eaglehorn<br/>Bear - Den Mother<br/>Wolf - Fenris" data-bs-toggle="tooltip"
+			        type="button">
 				Notes
 			</button>
 		</td>
@@ -268,22 +540,22 @@
 
 	<thead id="theadAssassin">
 	<tr>
-		<td rowspan="2">Assassin Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
+		<td>Assassin Builds</td>
+		<td>Tier</td>
 
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Budget?</td>
+
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 
 	<!--Assassin-->
-	<tbody id="tbodyAssassin" class="table-group-divider table-warning">
+	<tbody class="table-group-divider table-warning" id="tbodyAssassin">
 	<tr>
 		<td>Chain Lightning Sentry</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -291,7 +563,7 @@
 	<tr>
 		<td>Wake of Fire</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -299,31 +571,31 @@
 	<tr>
 		<td>Summon Sin (Fist of Fire)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
-		<td colspan="5">Requires skillers but they are really cheap</td>
+		<td colspan="5"><span class="badge rounded-pill text-bg-secondary">Requires Skill Charms</span></td>
 	</tr>
 	<tr>
 		<td>Summon Sin (Claws of Thunder)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
-		<td colspan="5">Requires skillers but they are really cheap</td>
+		<td colspan="5"><span class="badge rounded-pill text-bg-secondary">Requires Skill Charms</span></td>
 	</tr>
 	<tr>
 		<td>Summon Sin (Blades of Ice)</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
-		<td colspan="5">Requires skillers but they are really cheap</td>
+		<td colspan="5"><span class="badge rounded-pill text-bg-secondary">Requires Skill Charms</span></td>
 	</tr>
 	<tr>
 		<td>Phoenix Strike</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3/4</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -331,7 +603,6 @@
 	<tr>
 		<td>Dragon Tail (Fire Kick) Stalker's Cull</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3 <span style="color:#34a853;">Ⓕ</span></td>
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -339,7 +610,6 @@
 	<tr>
 		<td>Dragon Tail (Fire Kick) Astreons + Phoenix</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T3 <span style="color:#34a853;">Ⓕ</span></td>
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -347,15 +617,15 @@
 	<tr>
 		<td>Blade Fury</td>
 		<td><span class="badge rounded-pill text-bg-info">OP</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
-		<td colspan="5">Build is too overpowered</td>
+		<td colspan="5"><span class="badge rounded-pill text-bg-info">Build is too overpowered</span></td>
 	</tr>
 	<tr>
 		<td>Blade Sentinel</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -363,7 +633,7 @@
 	<tr>
 		<td>Summon Sin (Mind Blast)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3/4</td>
+
 		<td>✔✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://tinyurl.com/s11mindblast&amp;sa=D&amp;source=editors&amp;ust=1757267248684136&amp;usg=AOvVaw1PC2217VwizNE0QTZQMnft"
@@ -374,7 +644,7 @@
 	<tr>
 		<td>Physical Blade Dance (Chaos - Phys Dmg Focus)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684611&amp;usg=AOvVaw3_iB8yjpdDyxVgPEqWoEHv"
@@ -386,7 +656,7 @@
 	<tr>
 		<td>Poison Blade Dance (Chaos - Venom Dmg Focus)</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684884&amp;usg=AOvVaw361TEiP3HC1zKq2oOD4LHs"
@@ -399,21 +669,21 @@
 
 	<thead id="theadBarbarian">
 	<tr>
-		<td rowspan="2">Barbarian Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
+		<td>Barbarian Builds</td>
+		<td>Tier</td>
 
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Budget?</td>
+
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 	<!--Barbarian-->
-	<tbody id="tbodyBarbarian" class="table-group-divider table-danger">
+	<tbody class="table-group-divider table-danger" id="tbodyBarbarian">
 	<tr>
 		<td>Fire Whirlwind (2x Flamebellow)</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -421,19 +691,20 @@
 	<tr>
 		<td>Whirlwind (2-H)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248685787&amp;usg=AOvVaw3TaX-_ZjjfElauMuEMEOcp"
 			   rel="noreferrer" target="_blank">Click
 				Here</a>
-			Must use 4 range adder, must weapon swap for frenzy
+			<span class="badge rounded-pill text-bg-secondary">4 range adder weapon only</span>
+			<span class="badge rounded-pill text-bg-secondary">must weapon swap for frenzy</span>
 		</td>
 	</tr>
 	<tr>
 		<td>Whirlwind (Dual Wield)</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248686138&amp;usg=AOvVaw3p5jaWKspgdKbaJvQ0Yzy3"
@@ -444,27 +715,35 @@
 	<tr>
 		<td>Leap Attack (Physical)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248686379&amp;usg=AOvVaw1YtzVDFBx7zRYXXLb7fwLe"
 			   rel="noreferrer" target="_blank">Click
 				Here</a>
-			Eth Obedience &amp; stomp
+			<span class="badge rounded-pill text-bg-secondary">Eth Obedience or Reapers toll as starter weapon</span>
 		</td>
 	</tr>
 	<tr>
 		<td>Leap Attack (Ele Proc)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
-		<td colspan="5">Stormspire / Rapture / Desctruction</td>
+		<td colspan="5">
+			<button class="btn btn-secondary" data-bs-html="true"
+			        data-bs-title="Stormspire<br/>Rapture<br/>Desctruction" data-bs-toggle="tooltip"
+			        type="button">
+				Weapons
+			</button>
+			<span class="badge rounded-pill text-bg-secondary">Infinity Merc</span>
+			<span class="badge rounded-pill text-bg-secondary">Ele % LC</span>
+		</td>
 	</tr>
 	<tr>
 		<td>Double Throw (Physical)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://docs.google.com/document/d/1pL10s0YlRA5gLcFFDWh1oKYb-32a4skQkmsikMsT2sc/edit?tab%3Dt.0%23heading%3Dh.7ng7k3wkxynr&amp;sa=D&amp;source=editors&amp;ust=1757267248686857&amp;usg=AOvVaw39MsO3qC51YEI_uUeKs5R8"
@@ -475,7 +754,7 @@
 	<tr>
 		<td>Double Throw (Bleed)</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://docs.google.com/document/d/1NUflpuT51vQdV1oPguJTFWj8QNk2nGJpw6gjdhcgJuo/edit?tab%3Dt.0%23heading%3Dh.q6xui5mlmnz7&amp;sa=D&amp;source=editors&amp;ust=1757267248687227&amp;usg=AOvVaw13_UjRsi-7YJP9BW4Z_RcK"
@@ -487,21 +766,21 @@
 
 	<thead id="theadAmazon">
 	<tr>
-		<td rowspan="2">Amazon Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
+		<td>Amazon Builds</td>
+		<td>Tier</td>
 
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Budget?</td>
+
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 	<!--Amazon-->
-	<tbody id="tbodyAmazon" class="table-group-divider table-info">
+	<tbody class="table-group-divider table-info" id="tbodyAmazon">
 	<tr>
 		<td>Lightning Fury</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -509,7 +788,7 @@
 	<tr>
 		<td>Lightning Strike</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -517,7 +796,7 @@
 	<tr>
 		<td>Power Strike</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -525,7 +804,7 @@
 	<tr>
 		<td>Plague Javelin</td>
 		<td><span class="badge rounded-pill text-bg-danger">Bad</span></td>
-		<td>T1</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -533,7 +812,7 @@
 	<tr>
 		<td>Freezing Arrow</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -541,7 +820,7 @@
 	<tr>
 		<td>Cold Arrow</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -549,7 +828,7 @@
 	<tr>
 		<td>Fire Arrow</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -557,7 +836,7 @@
 	<tr>
 		<td>Explosive Arrow</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -566,7 +845,6 @@
 	<tr>
 		<td>Jab/Fend</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3 <span style="color:#34a853;">Ⓕ</span></td>
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -574,7 +852,7 @@
 	<tr>
 		<td>Multiple Shot</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">
@@ -585,13 +863,13 @@
 			<span style="text-decoration:underline;text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#ff6d01;"><a
 					href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1Mcmwpn5CkyR7BdEOlj1BuQIE-PxYHXtax3WywsBKeL8/edit?gid%3D0%23gid%3D0&amp;sa=D&amp;source=editors&amp;ust=1757267248689399&amp;usg=AOvVaw1keUcA8qF587LN2plcei-K"
 					rel="noreferrer" target="_blank">Spreadsheet</a></span>
-			Requires GG bow to zoom
+			<span class="badge rounded-pill text-bg-secondary">Requires GG Xbow/Bow</span>
 		</td>
 	</tr>
 	<tr>
 		<td>Strafe (Demon Machine)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -599,7 +877,7 @@
 	<tr>
 		<td>Magic Arrow</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -607,35 +885,35 @@
 	<tr>
 		<td>Pure Summon</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 		<td colspan="5">
 			<a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1Mcmwpn5CkyR7BdEOlj1BuQIE-PxYHXtax3WywsBKeL8/edit?gid%3D1318666241%23gid%3D1318666241&amp;sa=D&amp;source=editors&amp;ust=1757267248689986&amp;usg=AOvVaw2YhawQKfIMu0mOzznuuSii"
 			   rel="noreferrer" target="_blank">Click
 				Here (Solo leveling tab)</a>
-			Loyalty RW makes this the cheapest mappers
+			<span class="badge rounded-pill text-bg-secondary">Loyalty RW & Amp merc</span>
 		</td>
 	</tr>
 	</tbody>
 
 	<thead id="theadNecromancer">
 	<tr>
-		<td rowspan="2">Necromancer Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
+		<td>Necromancer Builds</td>
+		<td>Tier</td>
 
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Budget?</td>
+
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 
 	<!--Necromancer-->
-	<tbody id="tbodyNecromancer" class="table-group-divider table-success">
+	<tbody class="table-group-divider table-success" id="tbodyNecromancer">
 	<tr>
 		<td>Poison Nova</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -643,7 +921,6 @@
 	<tr>
 		<td>Desecrate</td>
 		<td><span class="badge rounded-pill text-bg-danger">Bad</span></td>
-		<td>T1/2/3 <span style="color:#34a853;">Ⓕ</span></td>
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -651,7 +928,7 @@
 	<tr>
 		<td>Poison Strike</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -659,7 +936,7 @@
 	<tr>
 		<td>Corpse Explosion</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -667,7 +944,7 @@
 	<tr>
 		<td>Elemental Summoner (Mage Skeles + Ele Revives)</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3/4</td>
+
 		<td>✔✔</td>
 
 		<td colspan="5">-</td>
@@ -675,7 +952,7 @@
 	<tr>
 		<td>Fire Golems</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -683,7 +960,7 @@
 	<tr>
 		<td>Green Goblin (Demon Machine Merc + Skeletons)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -691,7 +968,7 @@
 	<tr>
 		<td>Pure Revive (Eternity + Sacred Totem)</td>
 		<td><span class="badge rounded-pill text-bg-danger">Bad</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -699,7 +976,7 @@
 	<tr>
 		<td>Dark Pact</td>
 		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -707,7 +984,7 @@
 	<tr>
 		<td>Teeth / Bonespear</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -716,22 +993,22 @@
 
 	<thead id="theadPaladin">
 	<tr>
-		<td rowspan="2">Paladin Builds</td>
-		<td rowspan="2">Tier</td>
-		<td rowspan="2">Tags</td>
-		<td rowspan="2">Budget?</td>
+		<td>Paladin Builds</td>
+		<td>Tier</td>
 
-		<td colspan="5" rowspan="2">Notes</td>
+		<td>Budget?</td>
+
+		<td colspan="5">-</td>
 	</tr>
 	</thead>
 
 
 	<!--Paladin-->
-	<tbody id="tbodyPaladin" class="table-group-divider table-light">
+	<tbody class="table-group-divider table-light" id="tbodyPaladin">
 	<tr>
 		<td>FOH</td>
 		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -739,7 +1016,7 @@
 	<tr>
 		<td>Hammerdin</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -747,7 +1024,7 @@
 	<tr>
 		<td>Vengeance 2H Zenith</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3/4</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -755,7 +1032,7 @@
 	<tr>
 		<td>Vengeance 1H</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3/4</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -763,7 +1040,7 @@
 	<tr>
 		<td>Ele - Sacrifice (Native Ele Aura)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
 		<td colspan="5">-</td>
@@ -771,7 +1048,7 @@
 	<tr>
 		<td>Ele - Charge (Native Ele Aura)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔✔✔</td>
 
 		<td colspan="5">-</td>
@@ -779,17 +1056,15 @@
 	<tr>
 		<td>Auradin - Charge or Sacrifice (HOJ + 2x Dragon)</td>
 		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td>T1/2/3</td>
+
 		<td>❌</td>
 
-		<td colspan="5">Only Hoj 2 x dragon because of the 3 item pulse vs other 2 item pulse
-			gearsets
+		<td colspan="5"><span class="badge rounded-pill text-bg-secondary">HOJ & 2 x Dragon</span>
 		</td>
 	</tr>
 	<tr>
 		<td>Physical Zeal</td>
 		<td><span class="badge rounded-pill text-bg-danger">Bad</span></td>
-		<td>T1/2/3 <span style="color:#34a853;">Ⓕ</span></td>
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -797,15 +1072,15 @@
 	<tr>
 		<td>Physical Sacrifice</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
-		<td colspan="5">Phys Sac needs to be careful with mobs you can't leech from</td>
+		<td colspan="5"><span class="badge rounded-pill text-bg-secondary">Requires Leechable Mobs</span></td>
 	</tr>
 	<tr>
 		<td>Physical Charge (2-H)</td>
 		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td>T1/2/3</td>
+
 		<td>✔</td>
 
 		<td colspan="5">-</td>
@@ -814,13 +1089,28 @@
 
 </table>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous">-
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js">-
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous">-
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js">-
+</script>
+<script>
+	const checkboxStarter = document.getElementById('checkboxStarter');
+	  const contentStarter = document.getElementById('tbodyStarter');
+	  const headerStarter = document.getElementById('theadStarter');
+
+	  checkboxStarter.addEventListener('change', function() {
+		  if (this.checked) {
+			  contentStarter.style.display = ''; // Show the element
+			  headerStarter.style.display = ''; // Show the element
+		  } else {
+			  contentStarter.style.display = 'none';  // Hide the element
+			  headerStarter.style.display = 'none';  // Hide the element
+		  }
+	  });
 </script>
 <script>
 	const checkboxSorceress = document.getElementById('checkboxSorceress');
