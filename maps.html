@@ -16,6 +16,9 @@
 		    width: 100%;
 		    height: auto;
 		}
+		.modal-fullwidth {
+        --bs-modal-width: 100%;
+        }
 	</style>
 </head>
 <body data-bs-theme="dark">
@@ -422,102 +425,1158 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 </div>
 
 <div class="container-fluid row" id="arreatbattlefield">
-	<div class="col-md-6" title="mappath"><img src="maps/arreatbattlefield1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/arreatbattlefield2.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button arreatbattlefield1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#arreatbattlefield1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/arreatbattlefield1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button arreatbattlefield2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#arreatbattlefield2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/arreatbattlefield2.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="caldeum">
-	<div class="col-md-6" title="mappath"><img src="maps/caldeum1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/caldeum2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/caldeum3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button caldeum1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#caldeum1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/caldeum1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button caldeum2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#caldeum2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/caldeum2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button caldeum3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#caldeum3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/caldeum3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="royalcrypts">
-	<div class="col-md-6" title="mappath"><img src="maps/Royalcrypts1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/Royalcrypts2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/Royalcrypts3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button royalcrypts1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#royalcrypts1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/royalcrypts1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button royalcrypts2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#royalcrypts2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/royalcrypts2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button royalcrypts3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#royalcrypts3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/royalcrypts3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="sewers">
-	<div class="col-md-6" title="mappath"><img src="maps/sewers1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/sewers2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/sewers3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button sewers1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#sewers1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/sewers1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button sewers2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#sewers2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/sewers2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button sewers3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#sewers3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/sewers3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="westmarch">
-	<div class="col-md-6" title="mappath"><img src="maps/westmarch1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/westmarch2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/westmarch3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button westmarch1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#westmarch1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/westmarch1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button westmarch2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#westmarch2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/westmarch2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button westmarch3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#westmarch3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/westmarch3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="ancestral">
-	<div class="col-md-6" title="mappath"><img src="maps/ancestral1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/ancestral2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/ancestral3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button ancestral1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#ancestral1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/ancestral1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button ancestral2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#ancestral2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/ancestral2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button ancestral3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#ancestral3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/ancestral3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="bastion">
-	<div class="col-md-6" title="mappath"><img src="maps/bastion1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/bastion2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/bastion3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button bastion1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#bastion1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/bastion1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button bastion2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#bastion2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/bastion2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button bastion3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#bastion3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/bastion3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="skovos">
-	<div class="col-md-6" title="mappath"><img src="maps/skovos1.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button skovos1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#skovos1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/skovos1.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="losttemple">
-	<div class="col-md-6" title="mappath"><img src="maps/lostemple1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/lostemple2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/lostemple3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button losttemple1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#losttemple1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/losttemple1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button losttemple2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#losttemple2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/losttemple2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button losttemple3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#losttemple3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/losttemple3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="riverblood">
-	<div class="col-md-6" title="mappath"><img src="maps/riverblood1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/riverblood2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/riverblood3.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/riverblood4.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button riverblood1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#riverblood1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/riverblood1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button riverblood2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#riverblood2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/riverblood2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button riverblood3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#riverblood3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/riverblood3.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button riverblood4 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#riverblood4Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/riverblood4.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="zoltun">
-	<div class="col-md-6" title="mappath"><img src="maps/zoltun1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/zoltun2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/zoltun3.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/zoltun4.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button zoltun1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#zoltun1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/zoltun1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button zoltun2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#zoltun2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/zoltun2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button zoltun3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#zoltun3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/zoltun3.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button zoltun4 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#zoltun4Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/zoltun4.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="ashen">
-	<div class="col-md-6" title="mappath"><img src="maps/ashen1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/ashen2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/ashen3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button ashen1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#ashen1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/ashen1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button ashen2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#ashen2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/ashen2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button ashen3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#ashen3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/ashen3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="canyon">
-	<div class="col-md-6" title="mappath"><img src="maps/canyon1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/canyon2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/canyon3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button canyon1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#canyon1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/canyon1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button canyon2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#canyon2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/canyon2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button canyon3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#canyon3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/canyon3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="marketplace">
-	<div class="col-md-6" title="mappath"><img src="maps/marketplace1.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button marketplace1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#marketplace1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/marketplace1.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="citadel">
-	<div class="col-md-6" title="mappath"><img src="maps/citadel1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/citadel2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/citadel3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button citadel1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#citadel1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/citadel1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button citadel2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#citadel2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/citadel2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button citadel3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#citadel3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/citadel3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="cistern">
-	<div class="col-md-6" title="mappath"><img src="maps/cistern1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/cistern2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/cistern3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button cistern1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#cistern1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/cistern1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button cistern2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#cistern2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/cistern2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button cistern3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#cistern3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/cistern3.png" class="map-img-fluid" alt="">
+	</div>
 </div>
 
 <div class="container-fluid row" id="throne">
-	<div class="col-md-6" title="mappath"><img src="maps/throne1.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/throne2.png" class="map-img-fluid" alt=""></div>
-	<div class="col-md-6" title="mappath"><img src="maps/throne3.png" class="map-img-fluid" alt=""></div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button throne1 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#throne1Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/throne1.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button throne2 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#throne2Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/throne2.png" class="map-img-fluid" alt="">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<!-- Button throne3 -->
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#throne3Modal" style="margin-top: 5px;margin-left: 20px;">
+				🗖
+			</button>
+		</div>
+		<img src="maps/throne3.png" class="map-img-fluid" alt="">
+	</div>
+</div>
+
+<div class="modal fade" id="arreatbattlefield1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/arreatbattlefield1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="arreatbattlefield2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/arreatbattlefield2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="caldeum1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/caldeum1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="caldeum2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/caldeum2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="caldeum3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/caldeum3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="royalcrypts1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/royalcrypts1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="royalcrypts2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/royalcrypts2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="royalcrypts3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/royalcrypts3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="sewers1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/sewers1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="sewers2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/sewers2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="sewers3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/sewers3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="westmarch1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/westmarch1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="westmarch2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/westmarch2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="westmarch3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/westmarch3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ancestral1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/ancestral1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ancestral2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/ancestral2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ancestral3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/ancestral3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="bastion1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/bastion1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="bastion2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/bastion2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="bastion3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/bastion3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="skovos1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/skovos1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="losttemple1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/losttemple1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="losttemple2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/losttemple2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="losttemple3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/losttemple3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="riverblood1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/riverblood1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="riverblood2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/riverblood2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="riverblood3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/riverblood3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="riverblood4Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/riverblood4.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="zoltun1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/zoltun1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="zoltun2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/zoltun2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="zoltun3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/zoltun3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="zoltun4Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/zoltun4.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ashen1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/ashen1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ashen2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/ashen2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ashen3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/ashen3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="canyon1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/canyon1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="canyon2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/canyon2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="canyon3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/canyon3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="marketplace1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/marketplace1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="citadel1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/citadel1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="citadel2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/citadel2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="citadel3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/citadel3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="cistern1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/cistern1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="cistern2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/cistern2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="cistern3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/cistern3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="throne1Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/throne1.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="throne2Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/throne2.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="throne3Modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="maps/throne3.png" class="map-img-fluid" alt="">
+			</div>
+		</div>
+	</div>
 </div>
 
 
