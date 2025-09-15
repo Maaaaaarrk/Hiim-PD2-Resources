@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFHSCHGQ9Y"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-MFHSCHGQ9Y');
+	</script>
 	<meta charset="UTF-8">
 	<title>Hiim - PD2 Resources</title>
 	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -25,6 +34,11 @@
 			font-size: 3.5rem;
 		  }
 		}
+		.button-fluid {
+		    width: 100%;
+		    height: 100%;
+		    text-align: center;
+		}
 	</style>
 
 
@@ -35,9 +49,9 @@
 
 		<div class="row align-items-md-stretch">
 			<div class="col-md-4">
-				<div class="h-100 p-5 text-white rounded-3">
+				<div class="h-100 p-5 text-white rounded-3" style="text-align: center;">
 					<svg xmlns="http://www.w3.org/2000/svg"
-					     width="150.000000pt" height="150.000000pt" viewBox="0 0 300.000000 286.000000"
+					     width="165.000000pt" height="165.000000pt" viewBox="0 0 300.000000 286.000000"
 					     preserveAspectRatio="xMidYMid meet">
 						<g transform="translate(0.000000,286.000000) scale(0.100000,-0.100000)"
 						   fill="#dee2e6" stroke="none">
@@ -89,9 +103,9 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			</div>
 			<div class="col-md-8">
 				<div class="h-100 p-5 text-white rounded-3">
-					<table class="table table-dark table-striped">
+					<table class="table table-dark table-striped border-top">
 						<thead>
-						<td></td>
+						<td>PD2 Reset</td>
 						<td>Time from reset to group 99</td>
 						</thead>
 						<tr>
@@ -103,11 +117,11 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 							<td>4 Days 6.5 Hours</td>
 						</tr>
 						<tr>
-							<td>Season 9 Team A</td>
+							<td>Season 9 — Team A</td>
 							<td>4 Days 10 Hours</td>
 						</tr>
 						<tr>
-							<td>Season 9 Team B</td>
+							<td>Season 9 — Team B</td>
 							<td>9 Days 2 Hours</td>
 						</tr>
 						<tr>
@@ -115,11 +129,11 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 							<td>7 Days 6.5 Hours</td>
 						</tr>
 						<tr>
-							<td>Season 8 Team A</td>
+							<td>Season 8 — Team A</td>
 							<td>4 Days 15 Hours</td>
 						</tr>
 						<tr>
-							<td>Season 8 Team B</td>
+							<td>Season 8 — Team B</td>
 							<td>4 Days 18.5 Hours</td>
 						</tr>
 						<tr>
@@ -148,14 +162,15 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			<div class="col-md-4">
 				<div class="h-100 p-5 text-white bg-secondary rounded-3">
 					<a href="solo.html">
-						<button class="btn btn-primary btn-lg" type="button"><h2>Solo Tier List</h2></button>
+						<button class="btn btn-primary btn-lg button-fluid" type="button"><h2>Solo Tier List</h2>
+						</button>
 					</a>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="h-100 p-5 bg-secondary border rounded-3">
 					<a href="maps.html">
-						<button class="btn btn-primary btn-lg" type="button"><h2>Map Pathing
+						<button class="btn btn-primary btn-lg button-fluid" type="button"><h2>Map Pathing
 							Guide</h2></button>
 					</a>
 				</div>
@@ -163,7 +178,8 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			<div class="col-md-4">
 				<div class="h-100 p-5 bg-secondary border rounded-3">
 					<a href="group.html">
-						<button class="btn btn-primary btn-lg" type="button"><h2>Group Tier List</h2></button>
+						<button class="btn btn-primary btn-lg button-fluid" type="button"><h2>Group Tier List</h2>
+						</button>
 					</a>
 				</div>
 			</div>
@@ -171,35 +187,40 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 
 		<footer class="pt-3 mt-4 text-muted border-top">
 
-			<div class="row align-items-md-stretch">
-				<div class="col-sm-2">
-					<a target="_blank" href="https://finpingvin.github.io/pd2-map-dmg-calculator/">
-						<button class="btn btn-primary btn-lg" type="button">Map Damage Calc</button>
+			<div class="row">
+				<div class="col-sm-4 col-md-2">
+					<a target="_blank" href="https://finpingvin.github.io/pd2-map-dmg-calculator/"
+					   class="btn btn-primary btn-lg button-fluid">
+						Map Damage Calc
 					</a>
 				</div>
-				<div class="col-sm-2">
-					<a target="_blank" href="https://pd2.tools/">
-						<button class="btn btn-primary btn-lg" type="button">Pd2.tools</button>
+				<div class="col-sm-4 col-md-2">
+					<a target="_blank" href="https://pd2.tools/" class="btn btn-primary btn-lg button-fluid">
+						Pd2 tools
 					</a>
 				</div>
-				<div class="col-sm-2">
-					<a target="_blank" href="https://errolgr.github.io/pd2-trade/">
-						<button class="btn btn-primary btn-lg" type="button">PD2 Trade Helper</button>
+				<div class="col-sm-4 col-md-2">
+					<a target="_blank" href="https://errolgr.github.io/pd2-trade/"
+					   class="btn btn-primary btn-lg button-fluid">
+						PD2 Trade Helper
 					</a>
 				</div>
-				<div class="col-sm-2">
-					<a target="_blank" href="https://pd2.tools/tools/corrupted-zone-tracker">
-						<button class="btn btn-primary btn-lg" type="button">Corrupted Zone Tracker</button>
+				<div class="col-sm-4 col-md-2">
+					<a target="_blank" href="https://pd2.tools/tools/corrupted-zone-tracker"
+					   class="btn btn-primary btn-lg button-fluid">
+						Corrupted Zone Tracker
 					</a>
 				</div>
-				<div class="col-sm-2">
-					<a target="_blank" href="https://www.twitch.tv/imtheantinoob">
-						<button class="btn btn-primary btn-lg" type="button">Twitch Stream</button>
+				<div class="col-sm-4 col-md-2">
+					<a target="_blank" href="https://www.twitch.tv/imtheantinoob"
+					   class="btn btn-primary btn-lg button-fluid">
+						Twitch Stream
 					</a>
 				</div>
-				<div class="col-sm-2">
-					<a target="_blank" href="https://github.com/Maaaaaarrk/HiimFilter-PD2-Filter">
-						<button class="btn btn-primary btn-lg" type="button">HiimFilter</button>
+				<div class="col-sm-4 col-md-2">
+					<a target="_blank" href="https://github.com/Maaaaaarrk/HiimFilter-PD2-Filter"
+					   class="btn btn-primary btn-lg button-fluid">
+						Hiim Filter Github
 					</a>
 				</div>
 			</div>
