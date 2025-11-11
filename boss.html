@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' xmlns="http://www.w3.org/1999/html">
 <head>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFHSCHGQ9Y"></script>
@@ -125,10 +125,10 @@
 	<tr>
 		<td>
 			<span class="badge rounded-pill text-bg-secondary">Legend</span><br/>
-			<span class="badge rounded-pill text-bg-info">Top</span><br/>
-			<span class="badge rounded-pill text-bg-primary">Good</span><br/>
-			<span class="badge rounded-pill text-bg-success">Decent</span><br/>
-			<span class="badge rounded-pill text-bg-warning">Mid</span><br/>
+			<!--<span class="badge rounded-pill text-bg-info">Top</span><br/>-->
+			<span class="badge rounded-pill text-bg-primary">Easy</span><br/>
+			<span class="badge rounded-pill text-bg-success">Moderate</span><br/>
+			<span class="badge rounded-pill text-bg-warning">Hard</span><br/>
 			<span class="badge rounded-pill text-bg-danger">Bad</span><br/><br/>
 			<a href="index.html" style="text-decoration:none;">
 				<svg xmlns="http://www.w3.org/2000/svg"
@@ -408,9 +408,59 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	</tbody>
 </table>
 
-<div class="container-fluid dark">
-	<div class="row">
+<table class="table table-striped table-dark">
+	<tbody>
+	<tr>
+		<td colspan="2">
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="groupType" id="groupType1"
+				       value="groupType1" style="margin-top: 15px;">
+				<label class="form-check-label" for="groupType1">
+					<img src="images/Annihilus.png"  height="50px"/>
+					Diablo Clone</label>
+			</div>
+		</td>
+		<td colspan="2">
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="groupType" id="groupType2"
+				       value="groupType2" style="margin-top: 15px;">
+				<label class="form-check-label" for="groupType2">
+					<img src="images/twss.png"  height="50px"/>
+					Rathma</label>
+			</div>
+		</td>
+		<td colspan="2">
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="groupType" id="groupType3"
+				       value="groupType3" style="margin-top: 15px;">
+				<label class="form-check-label" for="groupType3">
+					<img src="images/lucionamu.png"  height="50px"/>
+					Lucion</label>
+			</div>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr id="teamPickerAlert">
+		<td colspan="7">
+			<div class="alert alert-info" role="alert">
+				<h2>Pick a Boss Fight above</h2>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="7">
+			<div class="alert alert-danger" role="alert">
+				<h2>Subject to change pending final patch notes</h2>
+			</div>
+		</td>
+	</tr>
+	</tbody>
+	</tbody>
+</table>
 
+<div id="classPicker" class="container-fluid dark">
+	<div class="row">
 		<div class="col-sm-6 col-md-3 col-xl-auto">
 			<div class="form-check form-switch">
 				<input checked class="form-check-input" id="checkboxSorceress" type="checkbox">
@@ -640,28 +690,38 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 
 	</div>
 </div>
-<div class="pt-3 mt-4 alert alert-danger" role="alert">
-	<h2>Subject to change pending final patch notes</h2>
-</div>
-<div class="pt-3 mt-4 border-top"></div>
-<table class="table table-striped table-dark">
 
-	<thead id="theadSorceress">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M156 296 c-9 -14 -27 -28 -41 -32 -14 -3 -25 -9 -25 -14 0 -13 37
+<div id="generalists" style="display: none;">
+	<div class="alert alert-dark" role="alert">
+		<h2>Vision of Terror - Diablo-Clone boss fight</h2>
+		<h4>Recommended Resistance:<br/>
+			Fire 90% | Fire Absorb any T0 / 12% T2<br/>
+			PDR 25% T0 / 50% T2</h4>
+
+		<h4>Materials:<br/>
+			Pure Demonic Essence - drops from Map bosses<br/>
+			Black Soulstone - drops from Uber Tristram bosses<br/>
+			Prime Evil Soul - drops from Mephisto/Diablo/Baal in Hell difficulty</h4>
+
+		<h5>Reward: Annihilus, T1/T2 Boss only Item Drop chance</h5>
+	</div>
+	<table class="table table-striped table-dark">
+		<thead id="theadSorceress3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M156 296 c-9 -14 -27 -28 -41 -32 -14 -3 -25 -9 -25 -14 0 -13 37
 -40 45 -33 4 5 5 0 2 -10 -4 -12 -3 -16 4 -11 7 4 9 -3 7 -17 -2 -15 2 -23 10
 -21 6 1 11 -1 11 -5 -3 -21 3 -21 27 -1 l25 23 -21 17 c-11 9 -28 14 -35 11
 -22 -8 -18 7 7 34 12 13 16 23 10 23 -14 0 -16 36 -2 45 6 4 7 -1 4 -12 -5
 -16 -3 -15 11 2 15 19 16 19 10 -15 -3 -19 -10 -36 -15 -38 -6 -2 1 -18 15
 -36 14 -18 22 -36 18 -39 -3 -4 -1 -7 6 -7 21 0 23 27 4 91 -22 74 -48 89 -77
 45z"/>
-					<path d="M5 290 c-3 -6 23 -38 59 -71 55 -52 64 -65 61 -90 -4 -35 -14 -51
+						<path d="M5 290 c-3 -6 23 -38 59 -71 55 -52 64 -65 61 -90 -4 -35 -14 -51
 -26 -44 -5 3 -6 -1 -3 -10 6 -15 -29 -57 -58 -68 -7 -3 12 -6 42 -6 35 0 50 2
 41 8 -11 7 -7 18 20 56 32 44 34 46 40 23 11 -39 10 -76 -3 -82 -7 -2 17 -4
 54 -4 74 1 77 8 24 57 -17 16 -24 31 -21 42 4 10 1 27 -5 39 l-11 20 -21 -20
@@ -671,64 +731,58 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 -8 0 -12 4 -9 8 2 4 0 10 -6 14 -17 10 -2 24 20 18 15 -4 18 -9 10 -18z m25
 -64 c25 -27 26 -30 7 -28 -11 0 -18 5 -15 10 3 4 -3 7 -13 5 -13 -2 -20 4 -22
 20 -5 30 9 28 43 -7z"/>
-				</g>
-			</svg>
-			Sorceress Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
+					</g>
+				</svg>
+				Sorceress Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
-	</tr>
-	</thead>
+		<!--Sorceress-->
+		<tbody class="table-group-divider table-sorc" id="tbodySorceress3">
+		<tr>
+			<td>Meteor</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Charge Bolt</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Chain Lightning</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Hydra</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Ice Bolt & Blizzard</td>
+			<td><span class="badge rounded-pill text-bg-secondary">TBD</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
 
-	<!--Sorceress-->
-	<tbody class="table-group-divider table-sorc" id="tbodySorceress">
-	<tr>
-		<td>Meteor</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-	</tr>
-	<tr>
-		<td>Charge Bolt</td>
-		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Chain Lightning</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Hydra</td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Ice Bolt & Blizzard</td>
-		<td><span class="badge rounded-pill text-bg-secondary">TBD</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	</tbody>
-
-	<thead id="theadDruid">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M204 302 c-12 -9 -36 -25 -53 -34 -17 -9 -31 -23 -31 -29 0 -7 3 -9
+		<thead id="theadDruid3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M204 302 c-12 -9 -36 -25 -53 -34 -17 -9 -31 -23 -31 -29 0 -7 3 -9
 7 -6 3 4 12 -1 20 -11 12 -15 12 -15 7 0 -6 18 22 38 53 38 14 0 12 -3 -7 -13
 -14 -7 -26 -22 -28 -33 -2 -12 -16 -34 -32 -49 -30 -29 -55 -28 -85 1 -9 9
 -15 11 -15 4 0 -6 -3 -9 -8 -6 -4 2 -13 -7 -19 -21 -11 -23 -10 -25 8 -20 17
@@ -748,63 +802,58 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 34 6 40 19 11 42 10 56 -4z m-156 -21 c7 -8 18 -12 24 -10 7 2 25 -8 40 -23
 16 -14 22 -22 13 -16 -8 6 -27 9 -42 7 -19 -4 -29 0 -37 15 -6 11 -15 18 -19
 16 -4 -3 -8 1 -8 9 0 19 11 19 29 2z"/>
-				</g>
-			</svg>
-			Druid Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
+					</g>
+				</svg>
+				Druid Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
-	</tr>
-	</thead>
+		<!--Druid-->
+		<tbody class="table-group-divider table-druid" id="tbodyDruid3">
+		<tr>
+			<td>Bears</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Rabies</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Maul</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fury</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fire</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
 
-	<!--Druid-->
-	<tbody class="table-group-divider table-druid" id="tbodyDruid">
-	<tr>
-		<td>Bears</td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Rabies</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Maul</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-	</tr>
-	<tr>
-		<td>Fury</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-	</tr>
-	<tr>
-		<td>Fire</td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	</tbody>
-
-	<thead id="theadAssassin">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M174 306 c-4 -9 -4 -25 -1 -36 3 -14 -1 -20 -17 -22 -11 -2 -21 -10
+		<thead id="theadAssassin3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M174 306 c-4 -9 -4 -25 -1 -36 3 -14 -1 -20 -17 -22 -11 -2 -21 -10
 -22 -18 -2 -32 -5 -38 -34 -75 -30 -37 -34 -63 -11 -58 6 2 11 -3 12 -10 0 -6
 11 12 24 41 13 29 21 60 18 70 -4 11 2 8 17 -8 12 -14 27 -24 32 -22 5 1 7 -2
 3 -8 -5 -8 -11 -8 -20 0 -9 8 -17 0 -32 -35 -11 -25 -19 -59 -18 -75 1 -16 -2
@@ -819,78 +868,72 @@ c4 -7 6 -21 5 -30 -2 -13 3 -18 19 -18 18 0 19 -2 9 -15 -11 -14 -15 -14 -30
 -16 -12 -4 -1 8 -1 18 0 22 0 4 -5 5 -13 2 -8 -3 -17 -1 -21 5 -8 13 24 14 44
 2z m81 -42 c0 -5 -11 -8 -24 -7 -20 2 -22 5 -13 20 8 12 15 14 24 6 7 -6 13
 -14 13 -19z"/>
-				</g>
-			</svg>
-			Assassin Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
-
-	</tr>
-	</thead>
+					</g>
+				</svg>
+				Assassin Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
 
-	<!--Assassin-->
-	<tbody class="table-group-divider table-assassin" id="tbodyAssassin">
+		<!--Assassin-->
+		<tbody class="table-group-divider table-assassin" id="tbodyAssassin3">
 
-	<tr>
-		<td>Fire Trap</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
+		<tr>
+			<td>Fire Trap</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Blade Sentinal</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Light Traps</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cobra Strike</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fists of Fire</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fire kick</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Mind Blast</td>
+			<td><span class="badge rounded-pill text-bg-secondary">TBD</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
 
-	</tr>
-	<tr>
-		<td>Blade Sentinal</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-
-	</tr>
-	<tr>
-		<td>Light Traps</td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Cobra Strike</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Fists of Fire</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-	</tr>
-	<tr>
-		<td>Fire kick</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-	</tr>
-	<tr>
-		<td>Mind Blast</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-	</tr>
-	</tbody>
-
-	<thead id="theadBarbarian">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M132 308 c-7 -7 -12 -22 -12 -34 0 -17 -5 -20 -23 -17 -25 5 -45 -12
+		<thead id="theadBarbarian3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M132 308 c-7 -7 -12 -22 -12 -34 0 -17 -5 -20 -23 -17 -25 5 -45 -12
 -52 -43 -2 -11 -9 -34 -14 -53 -12 -39 -8 -49 23 -61 30 -11 27 -41 -9 -74
 l-28 -26 63 0 63 0 -6 39 c-6 45 7 76 18 42 3 -12 4 -35 0 -51 l-7 -30 54 1
 c29 0 47 3 40 6 -9 3 -7 12 8 30 21 27 27 59 10 48 -6 -4 -19 -1 -28 6 -15 12
@@ -914,60 +957,55 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 -16 0 -29 27 -20 41 11 18 37 10 31 -11z m-74 -67 c10 -10 -13 -33 -34 -33
 -10 0 -20 4 -23 9 -4 5 5 8 19 6 14 -1 28 2 32 8 3 6 1 7 -5 3 -6 -3 -13 -2
 -17 4 -7 11 18 14 28 3z"/>
-					<path d="M24 211 c4 -6 1 -14 -7 -16 -7 -3 -13 -15 -12 -25 2 -33 10 -31 21 6
+						<path d="M24 211 c4 -6 1 -14 -7 -16 -7 -3 -13 -15 -12 -25 2 -33 10 -31 21 6
 8 23 8 37 1 41 -6 3 -7 1 -3 -6z"/>
-				</g>
-			</svg>
-			Barbarian Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
+					</g>
+				</svg>
+				Barbarian Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
-	</tr>
-	</thead>
+		<!--Barbarian-->
+		<tbody class="table-group-divider table-barbarian" id="tbodyBarbarian3">
 
-	<!--Barbarian-->
-	<tbody class="table-group-divider table-barbarian" id="tbodyBarbarian">
+		<tr>
+			<td>Throw</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Berserk</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Frenzy</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Wolf Barb</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
 
-	<tr>
-		<td>Throw</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-
-	</tr>
-	<tr>
-		<td>Berserk</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-
-	</tr>
-	<tr>
-		<td>Frenzy</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-
-	</tr>
-	<tr>
-		<td>Wolf Barb</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-	</tr>
-	</tbody>
-
-	<thead id="theadAmazon">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M213 305 c-3 -9 -3 -24 0 -35 3 -11 0 -20 -5 -20 -6 0 -25 -16 -42
+		<thead id="theadAmazon3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M213 305 c-3 -9 -3 -24 0 -35 3 -11 0 -20 -5 -20 -6 0 -25 -16 -42
 -36 l-31 -36 -42 46 c-23 25 -39 46 -35 46 4 1 -6 8 -21 16 -36 20 -43 13 -23
 -23 8 -15 15 -24 16 -20 0 15 158 -148 165 -171 3 -12 11 -19 17 -16 7 4 8 2
 4 -5 -4 -6 -12 -8 -18 -5 -6 4 -8 -1 -3 -15 4 -13 2 -21 -5 -21 -6 0 -8 5 -5
@@ -984,60 +1022,55 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 -13 13 -16 10 -3 10 2 1 21 -8 18 -19 24 -45 25 -23 1 -37 -4 -41 -13z m-14
 -127 c0 -7 -4 -21 -8 -31 -6 -17 -8 -17 -20 -3 -11 13 -11 19 -1 31 15 18 30
 20 29 3z"/>
-				</g>
-			</svg>
-			Amazon Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
+					</g>
+				</svg>
+				Amazon Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
-	</tr>
-	</thead>
+		<!--Amazon-->
+		<tbody class="table-group-divider table-amazon" id="tbodyAmazon3">
 
-	<!--Amazon-->
-	<tbody class="table-group-divider table-amazon" id="tbodyAmazon">
-	<tr>
-		<td>Plague Jav</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
+		<tr>
+			<td>Plague Jav</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Jab</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Immolation Arrow</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cold Arrow</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
 
-	</tr>
-	<tr>
-		<td>Jab</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-
-	</tr>
-	<tr>
-		<td>Immolation Arrow</td>
-		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	<tr>
-		<td>Cold Arrow</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	</tbody>
-
-	<thead id="theadNecromancer">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M25 295 c-24 -23 -36 -73 -15 -60 5 3 7 0 4 -8 -3 -8 1 -19 9 -25 12
+		<thead id="theadNecromancer3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M25 295 c-24 -23 -36 -73 -15 -60 5 3 7 0 4 -8 -3 -8 1 -19 9 -25 12
 -10 13 -8 10 12 -7 34 14 68 37 61 23 -7 36 11 20 30 -18 21 -37 18 -65 -10z"/>
-					<path d="M200 305 c-7 -8 -10 -24 -7 -35 3 -12 0 -20 -7 -20 -7 0 -17 -5 -24
+						<path d="M200 305 c-7 -8 -10 -24 -7 -35 3 -12 0 -20 -7 -20 -7 0 -17 -5 -24
 -12 -9 -9 -8 -16 5 -32 10 -12 11 -15 3 -9 -9 9 -17 9 -26 2 -13 -11 -14 6 -2
 27 4 6 -3 21 -16 33 -15 15 -26 19 -31 12 -6 -10 0 -15 17 -12 4 0 5 -6 2 -14
 -4 -8 -3 -26 0 -39 5 -19 12 -24 34 -23 20 2 26 -2 22 -13 -4 -14 -3 -73 3
@@ -1052,60 +1085,55 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 -34 7 -46 0 -19 6 -23 31 -23 30 0 31 1 17 22 -8 13 -17 36 -20 51 l-5 28 28
 -27 c16 -15 32 -24 36 -21 9 9 -47 68 -59 61 -14 -9 -9 2 13 27 16 18 19 31
 14 59 -4 19 -11 37 -16 38 -5 2 -9 13 -9 23 0 49 -35 74 -60 44z"/>
-				</g>
-			</svg>
-			Necromancer Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
-
-	</tr>
-	</thead>
+					</g>
+				</svg>
+				Necromancer Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
 
-	<!--Necromancer-->
-	<tbody class="table-group-divider table-necro" id="tbodyNecromancer">
+		<!--Necromancer-->
+		<tbody class="table-group-divider table-necro" id="tbodyNecromancer3">
 
-	<tr>
-		<td>Desecrate</td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
 
-	</tr>
-	<tr>
-		<td>Desecrate & Revive</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
+		<tr>
+			<td>Desecrate</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Desecrate & Revive</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Poison Strike</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Blood Golems</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
 
-	</tr>
-	<tr>
-		<td>Poison Strike</td>
-		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-
-	</tr>
-	<tr>
-		<td>Blood Golems</td>
-		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
-	</tr>
-	</tbody>
-
-	<thead id="theadPaladin">
-	<tr>
-		<td>
-			<svg xmlns="http://www.w3.org/2000/svg"
-			     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
-			     preserveAspectRatio="xMidYMid meet">
-				<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
-				   fill="#fff" stroke="none">
-					<path d="M217 314 c-4 -4 -7 -18 -7 -31 0 -18 -5 -23 -26 -23 -21 0 -24 -3
+		<thead id="theadPaladin3">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M217 314 c-4 -4 -7 -18 -7 -31 0 -18 -5 -23 -26 -23 -21 0 -24 -3
 -15 -14 21 -25 -23 -97 -49 -81 -15 9 -12 -7 6 -33 14 -20 42 -33 30 -14 -8
 13 28 52 53 57 13 2 20 1 17 -3 -4 -4 -13 -7 -19 -7 -14 0 -29 -53 -23 -85 5
 -30 0 -40 -34 -63 -24 -17 -22 -17 65 -17 51 0 84 4 77 9 -20 12 -9 96 20 157
@@ -1117,69 +1145,1083 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 -47 4 -3 13 -10 18 -21 14 -10 -4 -6 3 8 15 22 19 74 33 57 15z m-37 -134 c-8
 -15 -8 -17 5 -13 8 4 15 1 15 -5 0 -14 -27 -14 -35 0 -4 6 -4 27 0 47 7 34 8
 35 16 14 6 -15 5 -31 -1 -43z"/>
-					<path d="M75 90 c-21 -22 -35 -43 -32 -47 4 -4 26 11 48 34 23 22 37 43 32 46
+						<path d="M75 90 c-21 -22 -35 -43 -32 -47 4 -4 26 11 48 34 23 22 37 43 32 46
 -5 4 -27 -12 -48 -33z"/>
-				</g>
-			</svg>
-			Paladin Builds
-		</td>
-		<td>Diablo Clone</td>
-		<td>Rathma</td>
-		<td>Lucion</td>
-
-	</tr>
-	</thead>
+					</g>
+				</svg>
+				Paladin Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
 
 
-	<!--Paladin-->
-	<tbody class="table-group-divider table-light table-paladin" id="tbodyPaladin">
+		<!--Paladin-->
+		<tbody class="table-group-divider table-light table-paladin" id="tbodyPaladin3">
+
+		<tr>
+			<td>Physical Charger</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Elemental Charger</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Holy Bolt</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cold Charger</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Smiter</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Vengeance</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>
+<!--physical focused-->
+<div id="physical" style="display: none;">
+	<div class="alert alert-dark" role="alert">
+		<h2>Voidstone - Rathma boss fight</h2>
+		<h4>Recommended Resistance:<br>
+			All-Res Overcap 25% T0 / 33% T2<br/>
+			Psn 85% T0 / 90% T2<br/>
+			PLR 100% T0 / 150% T2<br/>
+			Cold 85% T0 / 90% T2<br/>
+			Fire 85% T0 / T2
+		</h4>
+		<h4>Materials:<br/>
+			Hellfire Torch<br/>
+			Trang-Oul's Jawbone - drops from any undead enemy<br/>
+			Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event</h4>
+		<h5>Reward: Tainted World Stone Shard (Annihilus Corruption), T1/T2 Boss item drop chance</h5>
+
+	</div>
+	<table class="table table-striped table-dark">
+		<thead id="theadSorceress">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M156 296 c-9 -14 -27 -28 -41 -32 -14 -3 -25 -9 -25 -14 0 -13 37
+-40 45 -33 4 5 5 0 2 -10 -4 -12 -3 -16 4 -11 7 4 9 -3 7 -17 -2 -15 2 -23 10
+-21 6 1 11 -1 11 -5 -3 -21 3 -21 27 -1 l25 23 -21 17 c-11 9 -28 14 -35 11
+-22 -8 -18 7 7 34 12 13 16 23 10 23 -14 0 -16 36 -2 45 6 4 7 -1 4 -12 -5
+-16 -3 -15 11 2 15 19 16 19 10 -15 -3 -19 -10 -36 -15 -38 -6 -2 1 -18 15
+-36 14 -18 22 -36 18 -39 -3 -4 -1 -7 6 -7 21 0 23 27 4 91 -22 74 -48 89 -77
+45z"/>
+						<path d="M5 290 c-3 -6 23 -38 59 -71 55 -52 64 -65 61 -90 -4 -35 -14 -51
+-26 -44 -5 3 -6 -1 -3 -10 6 -15 -29 -57 -58 -68 -7 -3 12 -6 42 -6 35 0 50 2
+41 8 -11 7 -7 18 20 56 32 44 34 46 40 23 11 -39 10 -76 -3 -82 -7 -2 17 -4
+54 -4 74 1 77 8 24 57 -17 16 -24 31 -21 42 4 10 1 27 -5 39 l-11 20 -21 -20
+-22 -20 -23 21 c-12 12 -20 25 -18 29 4 7 -108 130 -119 130 -2 0 -8 -5 -11
+-10z m158 -166 c8 -9 -15 -44 -30 -44 -19 0 -3 30 16 31 12 0 12 2 -4 9 -15 6
+-16 9 -4 9 9 1 18 -2 22 -5z m57 -19 c-5 -6 -8 -14 -5 -17 3 -2 -2 -5 -10 -5
+-8 0 -12 4 -9 8 2 4 0 10 -6 14 -17 10 -2 24 20 18 15 -4 18 -9 10 -18z m25
+-64 c25 -27 26 -30 7 -28 -11 0 -18 5 -15 10 3 4 -3 7 -13 5 -13 -2 -20 4 -22
+20 -5 30 9 28 43 -7z"/>
+					</g>
+				</svg>
+				Sorceress Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Sorceress-->
+		<tbody class="table-group-divider table-sorc" id="tbodySorceress">
+		<tr>
+			<td>Meteor</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Charge Bolt</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Chain Lightning</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Hydra</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Ice Bolt & Blizzard</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadDruid">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M204 302 c-12 -9 -36 -25 -53 -34 -17 -9 -31 -23 -31 -29 0 -7 3 -9
+7 -6 3 4 12 -1 20 -11 12 -15 12 -15 7 0 -6 18 22 38 53 38 14 0 12 -3 -7 -13
+-14 -7 -26 -22 -28 -33 -2 -12 -16 -34 -32 -49 -30 -29 -55 -28 -85 1 -9 9
+-15 11 -15 4 0 -6 -3 -9 -8 -6 -4 2 -13 -7 -19 -21 -11 -23 -10 -25 8 -20 17
+5 18 3 7 -11 -11 -14 -10 -15 6 -9 24 9 36 -7 36 -50 0 -20 -7 -36 -17 -42
+-14 -8 -10 -10 23 -11 38 0 41 2 37 24 -3 13 0 27 6 31 17 10 43 -16 38 -37
+-4 -15 1 -18 34 -18 l39 0 1 43 c1 23 4 53 8 67 6 23 8 23 14 6 4 -11 4 -22
+-1 -25 -5 -3 -9 -25 -9 -48 0 -42 0 -43 34 -43 31 0 33 1 19 16 -16 15 -21 45
+-17 91 1 13 -3 31 -8 41 -6 11 -6 24 -1 32 7 11 11 8 19 -12 6 -15 8 -36 6
+-48 -3 -14 0 -20 8 -17 7 2 12 26 12 62 1 53 -1 60 -26 74 -20 11 -26 22 -25
+45 1 37 -27 46 -60 18z m50 -23 c-2 -17 -7 -36 -11 -42 -4 -7 -8 -18 -9 -25
+-4 -25 -14 -26 -14 -1 0 14 5 30 12 37 9 9 9 12 0 12 -7 0 -12 11 -12 25 0 18
+5 25 19 25 15 0 18 -6 15 -31z m35 -48 c8 -5 15 -22 17 -38 2 -27 2 -27 -8 -5
+-11 22 -38 31 -38 12 0 -5 -5 -10 -12 -10 -9 0 -9 3 -1 11 6 6 9 18 6 25 -6
+16 15 18 36 5z m-102 -75 c-2 -51 -3 -53 -24 -43 -13 6 -23 14 -23 19 0 5 4 7
+9 4 11 -7 24 21 29 62 1 6 4 12 6 12 2 0 4 -24 3 -54z m71 -8 c7 -7 12 -19 12
+-27 -1 -13 -2 -13 -11 2 -15 25 -27 21 -34 -13 -9 -39 -21 -38 -29 2 -4 21 -2
+34 6 40 19 11 42 10 56 -4z m-156 -21 c7 -8 18 -12 24 -10 7 2 25 -8 40 -23
+16 -14 22 -22 13 -16 -8 6 -27 9 -42 7 -19 -4 -29 0 -37 15 -6 11 -15 18 -19
+16 -4 -3 -8 1 -8 9 0 19 11 19 29 2z"/>
+					</g>
+				</svg>
+				Druid Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Druid-->
+		<tbody class="table-group-divider table-druid" id="tbodyDruid">
+		<tr>
+			<td>Bears</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Rabies</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Maul</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fury</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fire</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+
+		<thead id="theadAssassin">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M174 306 c-4 -9 -4 -25 -1 -36 3 -14 -1 -20 -17 -22 -11 -2 -21 -10
+-22 -18 -2 -32 -5 -38 -34 -75 -30 -37 -34 -63 -11 -58 6 2 11 -3 12 -10 0 -6
+11 12 24 41 13 29 21 60 18 70 -4 11 2 8 17 -8 12 -14 27 -24 32 -22 5 1 7 -2
+3 -8 -5 -8 -11 -8 -20 0 -9 8 -17 0 -32 -35 -11 -25 -19 -59 -18 -75 1 -16 -2
+-27 -6 -25 -4 3 -20 -2 -35 -10 -28 -15 -28 -15 36 -15 41 0 60 4 51 9 -17 11
+-7 73 14 95 8 8 15 22 15 30 0 9 5 16 10 16 13 0 13 -27 -1 -36 -6 -4 -8 -20
+-4 -40 3 -19 1 -43 -5 -54 -10 -19 -8 -20 37 -19 26 1 40 3 31 6 -11 3 -20 18
+-23 41 -16 104 -17 99 12 120 23 16 25 22 15 35 -7 8 -11 21 -10 28 2 7 -6 15
+-17 18 -14 4 -20 15 -20 36 0 24 -5 31 -23 33 -13 2 -25 -3 -28 -12z m33 -18
+c4 -7 6 -21 5 -30 -2 -13 3 -18 19 -18 18 0 19 -2 9 -15 -11 -14 -15 -14 -30
+2 -10 10 -16 20 -14 22 2 2 -1 10 -7 18 -9 10 -8 13 2 13 11 0 11 2 -1 10 -9
+6 -10 10 -3 10 6 0 15 -6 20 -12z m-18 -57 c10 -7 11 -13 2 -27 -8 -15 -11
+-16 -12 -4 -1 8 -1 18 0 22 0 4 -5 5 -13 2 -8 -3 -17 -1 -21 5 -8 13 24 14 44
+2z m81 -42 c0 -5 -11 -8 -24 -7 -20 2 -22 5 -13 20 8 12 15 14 24 6 7 -6 13
+-14 13 -19z"/>
+					</g>
+				</svg>
+				Assassin Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+
+		<!--Assassin-->
+		<tbody class="table-group-divider table-assassin" id="tbodyAssassin">
+
+		<tr>
+			<td>Fire Trap</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Blade Sentinal</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Light Traps</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cobra Strike</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fists of Fire</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fire kick</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Mind Blast</td>
+			<td><span class="badge rounded-pill text-bg-secondary">TBD</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadBarbarian">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M132 308 c-7 -7 -12 -22 -12 -34 0 -17 -5 -20 -23 -17 -25 5 -45 -12
+-52 -43 -2 -11 -9 -34 -14 -53 -12 -39 -8 -49 23 -61 30 -11 27 -41 -9 -74
+l-28 -26 63 0 63 0 -6 39 c-6 45 7 76 18 42 3 -12 4 -35 0 -51 l-7 -30 54 1
+c29 0 47 3 40 6 -9 3 -7 12 8 30 21 27 27 59 10 48 -6 -4 -19 -1 -28 6 -15 12
+-14 11 1 -7 17 -20 17 -23 2 -38 -23 -22 -23 -21 -21 24 1 22 -1 40 -6 40 -4
+0 -8 14 -8 31 0 26 3 29 14 20 8 -7 12 -21 9 -31 -7 -25 21 -37 43 -19 8 7 13
+21 11 31 -3 10 -2 16 3 13 10 -6 45 33 37 42 -4 3 -16 -2 -27 -12 -19 -17 -20
+-17 -28 6 -5 13 -7 29 -5 36 6 16 -33 36 -57 28 -10 -3 -22 0 -26 6 -4 8 -3 9
+4 5 8 -5 12 1 12 16 0 17 3 19 9 9 5 -8 16 -11 27 -7 16 6 16 7 -2 21 -23 18
+-76 19 -92 3z m43 -8 c4 -6 1 -17 -5 -25 -10 -12 -10 -18 -1 -29 10 -12 8 -17
+-11 -28 -13 -7 -33 -13 -45 -15 -21 -2 -21 -1 -5 18 17 19 38 27 27 9 -3 -6 1
+-7 9 -4 14 5 13 9 -1 30 -14 22 -14 24 3 25 11 0 14 3 7 6 -7 2 -13 9 -13 14
+0 12 27 11 35 -1z m-78 -65 c0 -14 -26 -30 -35 -21 -2 3 -2 12 1 21 8 19 34
+20 34 0z m118 -2 c-19 -15 -19 -15 10 -9 22 5 26 4 15 -4 -18 -12 -60 -13 -60
+-2 0 13 23 32 40 32 12 -1 11 -4 -5 -17z m34 -46 c-1 -7 1 -20 6 -30 9 -21 -8
+-46 -19 -28 -4 6 -2 11 4 11 6 0 -1 11 -16 25 -21 19 -30 22 -40 14 -8 -6 -21
+-9 -29 -5 -9 3 -15 0 -15 -9 0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 16 0 14 -3
+14 -16 4 -12 -11 -18 -10 -32 5 -9 10 -12 15 -5 11 6 -3 14 0 16 6 4 9 8 9 14
+3 13 -16 28 -16 90 -1 60 14 75 12 72 -7z m-79 -31 c0 -8 -68 -46 -81 -45 -11
+0 -11 2 -1 6 9 3 10 9 3 17 -8 10 -4 11 18 8 16 -2 32 1 35 7 7 11 26 16 26 7z
+m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
+-16 0 -29 27 -20 41 11 18 37 10 31 -11z m-74 -67 c10 -10 -13 -33 -34 -33
+-10 0 -20 4 -23 9 -4 5 5 8 19 6 14 -1 28 2 32 8 3 6 1 7 -5 3 -6 -3 -13 -2
+-17 4 -7 11 18 14 28 3z"/>
+						<path d="M24 211 c4 -6 1 -14 -7 -16 -7 -3 -13 -15 -12 -25 2 -33 10 -31 21 6
+8 23 8 37 1 41 -6 3 -7 1 -3 -6z"/>
+					</g>
+				</svg>
+				Barbarian Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Barbarian-->
+		<tbody class="table-group-divider table-barbarian" id="tbodyBarbarian">
+
+		<tr>
+			<td>Throw</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Berserk</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Frenzy</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Wolf Barb</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadAmazon">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M213 305 c-3 -9 -3 -24 0 -35 3 -11 0 -20 -5 -20 -6 0 -25 -16 -42
+-36 l-31 -36 -42 46 c-23 25 -39 46 -35 46 4 1 -6 8 -21 16 -36 20 -43 13 -23
+-23 8 -15 15 -24 16 -20 0 15 158 -148 165 -171 3 -12 11 -19 17 -16 7 4 8 2
+4 -5 -4 -6 -12 -8 -18 -5 -6 4 -8 -1 -3 -15 4 -13 2 -21 -5 -21 -6 0 -8 5 -5
+10 8 12 -8 13 -21 1 -5 -5 -18 -11 -29 -14 -11 -3 12 -5 50 -6 39 0 65 3 58 7
+-7 4 -10 27 -8 57 1 28 3 61 4 74 1 30 18 17 24 -19 3 -14 8 -38 11 -55 6 -27
+5 -27 -4 -7 -5 13 -15 20 -20 17 -8 -5 -7 -12 2 -22 7 -9 12 -18 11 -20 -2 -1
+-3 -10 -3 -18 0 -10 10 -15 31 -15 31 0 31 0 15 25 -9 13 -18 37 -20 52 -2 16
+-8 41 -15 56 -14 35 -14 60 -1 52 12 -8 13 5 1 24 -8 12 -12 12 -25 2 -12 -11
+-16 -11 -16 -1 0 10 -3 10 -15 0 -10 -9 -15 -9 -15 -1 0 11 13 15 38 12 6 -1
+12 3 12 9 0 5 -5 10 -11 10 -5 0 -8 4 -4 9 3 5 1 12 -5 16 -16 10 -11 23 8 20
+9 -1 16 -9 14 -19 -2 -9 7 -26 18 -38 14 -15 19 -31 15 -45 -3 -12 -1 -25 5
+-28 5 -3 10 -12 10 -18 0 -7 -4 -6 -11 3 -9 12 -10 12 -7 1 8 -29 28 -23 28 7
+0 37 -26 102 -41 102 -7 0 -8 7 -4 18 4 9 8 23 8 30 0 15 12 5 12 -10 0 -6 6
+-13 13 -16 10 -3 10 2 1 21 -8 18 -19 24 -45 25 -23 1 -37 -4 -41 -13z m-14
+-127 c0 -7 -4 -21 -8 -31 -6 -17 -8 -17 -20 -3 -11 13 -11 19 -1 31 15 18 30
+20 29 3z"/>
+					</g>
+				</svg>
+				Amazon Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Amazon-->
+		<tbody class="table-group-divider table-amazon" id="tbodyAmazon">
+
+		<tr>
+			<td>Plague Jav</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Jab</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Immolation Arrow</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cold Arrow</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadNecromancer">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M25 295 c-24 -23 -36 -73 -15 -60 5 3 7 0 4 -8 -3 -8 1 -19 9 -25 12
+-10 13 -8 10 12 -7 34 14 68 37 61 23 -7 36 11 20 30 -18 21 -37 18 -65 -10z"/>
+						<path d="M200 305 c-7 -8 -10 -24 -7 -35 3 -12 0 -20 -7 -20 -7 0 -17 -5 -24
+-12 -9 -9 -8 -16 5 -32 10 -12 11 -15 3 -9 -9 9 -17 9 -26 2 -13 -11 -14 6 -2
+27 4 6 -3 21 -16 33 -15 15 -26 19 -31 12 -6 -10 0 -15 17 -12 4 0 5 -6 2 -14
+-4 -8 -3 -26 0 -39 5 -19 12 -24 34 -23 20 2 26 -2 22 -13 -4 -14 -3 -73 3
+-114 1 -12 -10 -25 -33 -37 l-35 -19 55 0 55 0 -2 53 c-2 75 -2 77 -12 77 -4
+0 -6 -12 -3 -26 3 -17 1 -25 -5 -21 -16 10 -22 66 -7 60 9 -3 12 2 9 16 -3 15
+0 19 8 14 9 -5 9 -3 0 8 -17 20 -16 27 1 54 10 15 12 26 6 30 -15 10 -12 35 6
+42 9 3 20 0 24 -8 13 -20 0 -32 -17 -17 -15 12 -15 11 -3 -9 11 -16 11 -27 3
+-45 -7 -16 -8 -30 -1 -41 6 -11 5 -17 -2 -17 -6 0 -8 -4 -5 -10 10 -17 21 -11
+34 16 10 22 9 28 -5 39 -14 10 -15 13 -3 20 8 5 11 5 7 0 -5 -5 1 -14 12 -22
+11 -8 20 -22 20 -31 0 -15 -2 -15 -10 -2 -8 13 -10 13 -10 -2 0 -9 -9 -23 -19
+-30 -14 -10 -17 -18 -10 -28 13 -21 11 -43 -3 -34 -8 5 -9 0 -5 -17 4 -13 7
+-34 7 -46 0 -19 6 -23 31 -23 30 0 31 1 17 22 -8 13 -17 36 -20 51 l-5 28 28
+-27 c16 -15 32 -24 36 -21 9 9 -47 68 -59 61 -14 -9 -9 2 13 27 16 18 19 31
+14 59 -4 19 -11 37 -16 38 -5 2 -9 13 -9 23 0 49 -35 74 -60 44z"/>
+					</g>
+				</svg>
+				Necromancer Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+
+		<!--Necromancer-->
+		<tbody class="table-group-divider table-necro" id="tbodyNecromancer">
+
+
+		<tr>
+			<td>Desecrate</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Desecrate & Revive</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Poison Strike</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Blood Golems</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadPaladin">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M217 314 c-4 -4 -7 -18 -7 -31 0 -18 -5 -23 -26 -23 -21 0 -24 -3
+-15 -14 21 -25 -23 -97 -49 -81 -15 9 -12 -7 6 -33 14 -20 42 -33 30 -14 -8
+13 28 52 53 57 13 2 20 1 17 -3 -4 -4 -13 -7 -19 -7 -14 0 -29 -53 -23 -85 5
+-30 0 -40 -34 -63 -24 -17 -22 -17 65 -17 51 0 84 4 77 9 -20 12 -9 96 20 157
+7 15 7 28 -1 43 -7 12 -9 26 -6 31 3 6 -5 10 -18 10 -22 0 -25 4 -23 33 1 25
+-3 33 -19 35 -12 2 -24 0 -28 -4z m62 -91 c-6 -7 -15 -10 -20 -7 -5 3 -9 -1
+-9 -9 0 -8 -9 -17 -21 -20 -14 -4 -23 1 -29 16 l-9 22 0 -22 c-1 -13 -5 -23
+-11 -23 -5 0 -6 9 -1 21 5 15 18 23 41 26 18 2 35 5 37 6 2 2 10 4 18 4 11 0
+12 -4 4 -14z m-2 -50 c-4 -3 -2 -12 4 -20 9 -10 8 -17 -1 -28 -17 -21 -41 -19
+-47 4 -3 13 -10 18 -21 14 -10 -4 -6 3 8 15 22 19 74 33 57 15z m-37 -134 c-8
+-15 -8 -17 5 -13 8 4 15 1 15 -5 0 -14 -27 -14 -35 0 -4 6 -4 27 0 47 7 34 8
+35 16 14 6 -15 5 -31 -1 -43z"/>
+						<path d="M75 90 c-21 -22 -35 -43 -32 -47 4 -4 26 11 48 34 23 22 37 43 32 46
+-5 4 -27 -12 -48 -33z"/>
+					</g>
+				</svg>
+				Paladin Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+
+		<!--Paladin-->
+		<tbody class="table-group-divider table-light table-paladin" id="tbodyPaladin">
+
+		<tr>
+			<td>Physical Charger</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Elemental Charger</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Holy Bolt</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cold Charger</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Smiter</td>
+			<td><span class="badge rounded-pill text-bg-warning">Hard</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Vengeance</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div id="elemental" style="display: none;">
+	<div class="alert alert-dark" role="alert">
+		<h2>Shadow of Hatred - Lucion boss fight</h2>
+		<h4>Recommended Resistance:<br/>
+			Light 90%<br/>
+			PDR 50%
+		</h4>
+		<h4>Materials:<br/>
+			Demonic Insignia - drops from any enemy in Act 5 red portal LOD zones<br/>
+			Talisman of Transgression - drops from any enemy in a corrupted zone<br/>
+			Flesh of Malic - drops from any demon enemy</h4>
+		<h5>Reward: Desecrate Item Altar (Amulets only) 60% T2 / 55% T1 / 50% T0</h5>
+	</div>
+
+	<table class="table table-striped table-dark">
+		<thead id="theadSorceress2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M156 296 c-9 -14 -27 -28 -41 -32 -14 -3 -25 -9 -25 -14 0 -13 37
+-40 45 -33 4 5 5 0 2 -10 -4 -12 -3 -16 4 -11 7 4 9 -3 7 -17 -2 -15 2 -23 10
+-21 6 1 11 -1 11 -5 -3 -21 3 -21 27 -1 l25 23 -21 17 c-11 9 -28 14 -35 11
+-22 -8 -18 7 7 34 12 13 16 23 10 23 -14 0 -16 36 -2 45 6 4 7 -1 4 -12 -5
+-16 -3 -15 11 2 15 19 16 19 10 -15 -3 -19 -10 -36 -15 -38 -6 -2 1 -18 15
+-36 14 -18 22 -36 18 -39 -3 -4 -1 -7 6 -7 21 0 23 27 4 91 -22 74 -48 89 -77
+45z"/>
+						<path d="M5 290 c-3 -6 23 -38 59 -71 55 -52 64 -65 61 -90 -4 -35 -14 -51
+-26 -44 -5 3 -6 -1 -3 -10 6 -15 -29 -57 -58 -68 -7 -3 12 -6 42 -6 35 0 50 2
+41 8 -11 7 -7 18 20 56 32 44 34 46 40 23 11 -39 10 -76 -3 -82 -7 -2 17 -4
+54 -4 74 1 77 8 24 57 -17 16 -24 31 -21 42 4 10 1 27 -5 39 l-11 20 -21 -20
+-22 -20 -23 21 c-12 12 -20 25 -18 29 4 7 -108 130 -119 130 -2 0 -8 -5 -11
+-10z m158 -166 c8 -9 -15 -44 -30 -44 -19 0 -3 30 16 31 12 0 12 2 -4 9 -15 6
+-16 9 -4 9 9 1 18 -2 22 -5z m57 -19 c-5 -6 -8 -14 -5 -17 3 -2 -2 -5 -10 -5
+-8 0 -12 4 -9 8 2 4 0 10 -6 14 -17 10 -2 24 20 18 15 -4 18 -9 10 -18z m25
+-64 c25 -27 26 -30 7 -28 -11 0 -18 5 -15 10 3 4 -3 7 -13 5 -13 -2 -20 4 -22
+20 -5 30 9 28 43 -7z"/>
+					</g>
+				</svg>
+				Sorceress Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Sorceress-->
+		<tbody class="table-group-divider table-sorc" id="tbodySorceress2">
+		<tr>
+			<td>Meteor</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Charge Bolt</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Chain Lightning</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Hydra</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Ice Bolt & Blizzard</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadDruid2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M204 302 c-12 -9 -36 -25 -53 -34 -17 -9 -31 -23 -31 -29 0 -7 3 -9
+7 -6 3 4 12 -1 20 -11 12 -15 12 -15 7 0 -6 18 22 38 53 38 14 0 12 -3 -7 -13
+-14 -7 -26 -22 -28 -33 -2 -12 -16 -34 -32 -49 -30 -29 -55 -28 -85 1 -9 9
+-15 11 -15 4 0 -6 -3 -9 -8 -6 -4 2 -13 -7 -19 -21 -11 -23 -10 -25 8 -20 17
+5 18 3 7 -11 -11 -14 -10 -15 6 -9 24 9 36 -7 36 -50 0 -20 -7 -36 -17 -42
+-14 -8 -10 -10 23 -11 38 0 41 2 37 24 -3 13 0 27 6 31 17 10 43 -16 38 -37
+-4 -15 1 -18 34 -18 l39 0 1 43 c1 23 4 53 8 67 6 23 8 23 14 6 4 -11 4 -22
+-1 -25 -5 -3 -9 -25 -9 -48 0 -42 0 -43 34 -43 31 0 33 1 19 16 -16 15 -21 45
+-17 91 1 13 -3 31 -8 41 -6 11 -6 24 -1 32 7 11 11 8 19 -12 6 -15 8 -36 6
+-48 -3 -14 0 -20 8 -17 7 2 12 26 12 62 1 53 -1 60 -26 74 -20 11 -26 22 -25
+45 1 37 -27 46 -60 18z m50 -23 c-2 -17 -7 -36 -11 -42 -4 -7 -8 -18 -9 -25
+-4 -25 -14 -26 -14 -1 0 14 5 30 12 37 9 9 9 12 0 12 -7 0 -12 11 -12 25 0 18
+5 25 19 25 15 0 18 -6 15 -31z m35 -48 c8 -5 15 -22 17 -38 2 -27 2 -27 -8 -5
+-11 22 -38 31 -38 12 0 -5 -5 -10 -12 -10 -9 0 -9 3 -1 11 6 6 9 18 6 25 -6
+16 15 18 36 5z m-102 -75 c-2 -51 -3 -53 -24 -43 -13 6 -23 14 -23 19 0 5 4 7
+9 4 11 -7 24 21 29 62 1 6 4 12 6 12 2 0 4 -24 3 -54z m71 -8 c7 -7 12 -19 12
+-27 -1 -13 -2 -13 -11 2 -15 25 -27 21 -34 -13 -9 -39 -21 -38 -29 2 -4 21 -2
+34 6 40 19 11 42 10 56 -4z m-156 -21 c7 -8 18 -12 24 -10 7 2 25 -8 40 -23
+16 -14 22 -22 13 -16 -8 6 -27 9 -42 7 -19 -4 -29 0 -37 15 -6 11 -15 18 -19
+16 -4 -3 -8 1 -8 9 0 19 11 19 29 2z"/>
+					</g>
+				</svg>
+				Druid Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Druid-->
+		<tbody class="table-group-divider table-druid" id="tbodyDruid2">
+		<tr>
+			<td>Bears</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Rabies</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Maul</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fury</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fire</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+
+		<thead id="theadAssassin2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M174 306 c-4 -9 -4 -25 -1 -36 3 -14 -1 -20 -17 -22 -11 -2 -21 -10
+-22 -18 -2 -32 -5 -38 -34 -75 -30 -37 -34 -63 -11 -58 6 2 11 -3 12 -10 0 -6
+11 12 24 41 13 29 21 60 18 70 -4 11 2 8 17 -8 12 -14 27 -24 32 -22 5 1 7 -2
+3 -8 -5 -8 -11 -8 -20 0 -9 8 -17 0 -32 -35 -11 -25 -19 -59 -18 -75 1 -16 -2
+-27 -6 -25 -4 3 -20 -2 -35 -10 -28 -15 -28 -15 36 -15 41 0 60 4 51 9 -17 11
+-7 73 14 95 8 8 15 22 15 30 0 9 5 16 10 16 13 0 13 -27 -1 -36 -6 -4 -8 -20
+-4 -40 3 -19 1 -43 -5 -54 -10 -19 -8 -20 37 -19 26 1 40 3 31 6 -11 3 -20 18
+-23 41 -16 104 -17 99 12 120 23 16 25 22 15 35 -7 8 -11 21 -10 28 2 7 -6 15
+-17 18 -14 4 -20 15 -20 36 0 24 -5 31 -23 33 -13 2 -25 -3 -28 -12z m33 -18
+c4 -7 6 -21 5 -30 -2 -13 3 -18 19 -18 18 0 19 -2 9 -15 -11 -14 -15 -14 -30
+2 -10 10 -16 20 -14 22 2 2 -1 10 -7 18 -9 10 -8 13 2 13 11 0 11 2 -1 10 -9
+6 -10 10 -3 10 6 0 15 -6 20 -12z m-18 -57 c10 -7 11 -13 2 -27 -8 -15 -11
+-16 -12 -4 -1 8 -1 18 0 22 0 4 -5 5 -13 2 -8 -3 -17 -1 -21 5 -8 13 24 14 44
+2z m81 -42 c0 -5 -11 -8 -24 -7 -20 2 -22 5 -13 20 8 12 15 14 24 6 7 -6 13
+-14 13 -19z"/>
+					</g>
+				</svg>
+				Assassin Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+
+		<!--Assassin-->
+		<tbody class="table-group-divider table-assassin" id="tbodyAssassin2">
+
+		<tr>
+			<td>Fire Trap</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Blade Sentinal</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Light Traps</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cobra Strike</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fists of Fire</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Fire kick</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Mind Blast</td>
+			<td><span class="badge rounded-pill text-bg-secondary">TBD</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadBarbarian2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M132 308 c-7 -7 -12 -22 -12 -34 0 -17 -5 -20 -23 -17 -25 5 -45 -12
+-52 -43 -2 -11 -9 -34 -14 -53 -12 -39 -8 -49 23 -61 30 -11 27 -41 -9 -74
+l-28 -26 63 0 63 0 -6 39 c-6 45 7 76 18 42 3 -12 4 -35 0 -51 l-7 -30 54 1
+c29 0 47 3 40 6 -9 3 -7 12 8 30 21 27 27 59 10 48 -6 -4 -19 -1 -28 6 -15 12
+-14 11 1 -7 17 -20 17 -23 2 -38 -23 -22 -23 -21 -21 24 1 22 -1 40 -6 40 -4
+0 -8 14 -8 31 0 26 3 29 14 20 8 -7 12 -21 9 -31 -7 -25 21 -37 43 -19 8 7 13
+21 11 31 -3 10 -2 16 3 13 10 -6 45 33 37 42 -4 3 -16 -2 -27 -12 -19 -17 -20
+-17 -28 6 -5 13 -7 29 -5 36 6 16 -33 36 -57 28 -10 -3 -22 0 -26 6 -4 8 -3 9
+4 5 8 -5 12 1 12 16 0 17 3 19 9 9 5 -8 16 -11 27 -7 16 6 16 7 -2 21 -23 18
+-76 19 -92 3z m43 -8 c4 -6 1 -17 -5 -25 -10 -12 -10 -18 -1 -29 10 -12 8 -17
+-11 -28 -13 -7 -33 -13 -45 -15 -21 -2 -21 -1 -5 18 17 19 38 27 27 9 -3 -6 1
+-7 9 -4 14 5 13 9 -1 30 -14 22 -14 24 3 25 11 0 14 3 7 6 -7 2 -13 9 -13 14
+0 12 27 11 35 -1z m-78 -65 c0 -14 -26 -30 -35 -21 -2 3 -2 12 1 21 8 19 34
+20 34 0z m118 -2 c-19 -15 -19 -15 10 -9 22 5 26 4 15 -4 -18 -12 -60 -13 -60
+-2 0 13 23 32 40 32 12 -1 11 -4 -5 -17z m34 -46 c-1 -7 1 -20 6 -30 9 -21 -8
+-46 -19 -28 -4 6 -2 11 4 11 6 0 -1 11 -16 25 -21 19 -30 22 -40 14 -8 -6 -21
+-9 -29 -5 -9 3 -15 0 -15 -9 0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 16 0 14 -3
+14 -16 4 -12 -11 -18 -10 -32 5 -9 10 -12 15 -5 11 6 -3 14 0 16 6 4 9 8 9 14
+3 13 -16 28 -16 90 -1 60 14 75 12 72 -7z m-79 -31 c0 -8 -68 -46 -81 -45 -11
+0 -11 2 -1 6 9 3 10 9 3 17 -8 10 -4 11 18 8 16 -2 32 1 35 7 7 11 26 16 26 7z
+m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
+-16 0 -29 27 -20 41 11 18 37 10 31 -11z m-74 -67 c10 -10 -13 -33 -34 -33
+-10 0 -20 4 -23 9 -4 5 5 8 19 6 14 -1 28 2 32 8 3 6 1 7 -5 3 -6 -3 -13 -2
+-17 4 -7 11 18 14 28 3z"/>
+						<path d="M24 211 c4 -6 1 -14 -7 -16 -7 -3 -13 -15 -12 -25 2 -33 10 -31 21 6
+8 23 8 37 1 41 -6 3 -7 1 -3 -6z"/>
+					</g>
+				</svg>
+				Barbarian Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Barbarian-->
+		<tbody class="table-group-divider table-barbarian" id="tbodyBarbarian2">
+
+		<tr>
+			<td>Throw</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Berserk</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Frenzy</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Wolf Barb</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadAmazon2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M213 305 c-3 -9 -3 -24 0 -35 3 -11 0 -20 -5 -20 -6 0 -25 -16 -42
+-36 l-31 -36 -42 46 c-23 25 -39 46 -35 46 4 1 -6 8 -21 16 -36 20 -43 13 -23
+-23 8 -15 15 -24 16 -20 0 15 158 -148 165 -171 3 -12 11 -19 17 -16 7 4 8 2
+4 -5 -4 -6 -12 -8 -18 -5 -6 4 -8 -1 -3 -15 4 -13 2 -21 -5 -21 -6 0 -8 5 -5
+10 8 12 -8 13 -21 1 -5 -5 -18 -11 -29 -14 -11 -3 12 -5 50 -6 39 0 65 3 58 7
+-7 4 -10 27 -8 57 1 28 3 61 4 74 1 30 18 17 24 -19 3 -14 8 -38 11 -55 6 -27
+5 -27 -4 -7 -5 13 -15 20 -20 17 -8 -5 -7 -12 2 -22 7 -9 12 -18 11 -20 -2 -1
+-3 -10 -3 -18 0 -10 10 -15 31 -15 31 0 31 0 15 25 -9 13 -18 37 -20 52 -2 16
+-8 41 -15 56 -14 35 -14 60 -1 52 12 -8 13 5 1 24 -8 12 -12 12 -25 2 -12 -11
+-16 -11 -16 -1 0 10 -3 10 -15 0 -10 -9 -15 -9 -15 -1 0 11 13 15 38 12 6 -1
+12 3 12 9 0 5 -5 10 -11 10 -5 0 -8 4 -4 9 3 5 1 12 -5 16 -16 10 -11 23 8 20
+9 -1 16 -9 14 -19 -2 -9 7 -26 18 -38 14 -15 19 -31 15 -45 -3 -12 -1 -25 5
+-28 5 -3 10 -12 10 -18 0 -7 -4 -6 -11 3 -9 12 -10 12 -7 1 8 -29 28 -23 28 7
+0 37 -26 102 -41 102 -7 0 -8 7 -4 18 4 9 8 23 8 30 0 15 12 5 12 -10 0 -6 6
+-13 13 -16 10 -3 10 2 1 21 -8 18 -19 24 -45 25 -23 1 -37 -4 -41 -13z m-14
+-127 c0 -7 -4 -21 -8 -31 -6 -17 -8 -17 -20 -3 -11 13 -11 19 -1 31 15 18 30
+20 29 3z"/>
+					</g>
+				</svg>
+				Amazon Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+		<!--Amazon-->
+		<tbody class="table-group-divider table-amazon" id="tbodyAmazon2">
+
+		<tr>
+			<td>Plague Jav</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Jab</td>
+			<td><span class="badge rounded-pill text-bg-primary">Easy</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Immolation Arrow</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Cold Arrow</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadNecromancer2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M25 295 c-24 -23 -36 -73 -15 -60 5 3 7 0 4 -8 -3 -8 1 -19 9 -25 12
+-10 13 -8 10 12 -7 34 14 68 37 61 23 -7 36 11 20 30 -18 21 -37 18 -65 -10z"/>
+						<path d="M200 305 c-7 -8 -10 -24 -7 -35 3 -12 0 -20 -7 -20 -7 0 -17 -5 -24
+-12 -9 -9 -8 -16 5 -32 10 -12 11 -15 3 -9 -9 9 -17 9 -26 2 -13 -11 -14 6 -2
+27 4 6 -3 21 -16 33 -15 15 -26 19 -31 12 -6 -10 0 -15 17 -12 4 0 5 -6 2 -14
+-4 -8 -3 -26 0 -39 5 -19 12 -24 34 -23 20 2 26 -2 22 -13 -4 -14 -3 -73 3
+-114 1 -12 -10 -25 -33 -37 l-35 -19 55 0 55 0 -2 53 c-2 75 -2 77 -12 77 -4
+0 -6 -12 -3 -26 3 -17 1 -25 -5 -21 -16 10 -22 66 -7 60 9 -3 12 2 9 16 -3 15
+0 19 8 14 9 -5 9 -3 0 8 -17 20 -16 27 1 54 10 15 12 26 6 30 -15 10 -12 35 6
+42 9 3 20 0 24 -8 13 -20 0 -32 -17 -17 -15 12 -15 11 -3 -9 11 -16 11 -27 3
+-45 -7 -16 -8 -30 -1 -41 6 -11 5 -17 -2 -17 -6 0 -8 -4 -5 -10 10 -17 21 -11
+34 16 10 22 9 28 -5 39 -14 10 -15 13 -3 20 8 5 11 5 7 0 -5 -5 1 -14 12 -22
+11 -8 20 -22 20 -31 0 -15 -2 -15 -10 -2 -8 13 -10 13 -10 -2 0 -9 -9 -23 -19
+-30 -14 -10 -17 -18 -10 -28 13 -21 11 -43 -3 -34 -8 5 -9 0 -5 -17 4 -13 7
+-34 7 -46 0 -19 6 -23 31 -23 30 0 31 1 17 22 -8 13 -17 36 -20 51 l-5 28 28
+-27 c16 -15 32 -24 36 -21 9 9 -47 68 -59 61 -14 -9 -9 2 13 27 16 18 19 31
+14 59 -4 19 -11 37 -16 38 -5 2 -9 13 -9 23 0 49 -35 74 -60 44z"/>
+					</g>
+				</svg>
+				Necromancer Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+
+		<!--Necromancer-->
+		<tbody class="table-group-divider table-necro" id="tbodyNecromancer2">
+
+
+		<tr>
+			<td>Desecrate</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Desecrate & Revive</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Poison Strike</td>
+			<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>Blood Golems</td>
+			<td></td>
+			<td>
+			</td>
+		</tr>
+		</tbody>
+
+		<thead id="theadPaladin2">
+		<tr>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="25.000000pt" height="25.000000pt" viewBox="0 0 32.000000 32.000000"
+				     preserveAspectRatio="xMidYMid meet">
+					<g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+					   fill="#fff" stroke="none">
+						<path d="M217 314 c-4 -4 -7 -18 -7 -31 0 -18 -5 -23 -26 -23 -21 0 -24 -3
+-15 -14 21 -25 -23 -97 -49 -81 -15 9 -12 -7 6 -33 14 -20 42 -33 30 -14 -8
+13 28 52 53 57 13 2 20 1 17 -3 -4 -4 -13 -7 -19 -7 -14 0 -29 -53 -23 -85 5
+-30 0 -40 -34 -63 -24 -17 -22 -17 65 -17 51 0 84 4 77 9 -20 12 -9 96 20 157
+7 15 7 28 -1 43 -7 12 -9 26 -6 31 3 6 -5 10 -18 10 -22 0 -25 4 -23 33 1 25
+-3 33 -19 35 -12 2 -24 0 -28 -4z m62 -91 c-6 -7 -15 -10 -20 -7 -5 3 -9 -1
+-9 -9 0 -8 -9 -17 -21 -20 -14 -4 -23 1 -29 16 l-9 22 0 -22 c-1 -13 -5 -23
+-11 -23 -5 0 -6 9 -1 21 5 15 18 23 41 26 18 2 35 5 37 6 2 2 10 4 18 4 11 0
+12 -4 4 -14z m-2 -50 c-4 -3 -2 -12 4 -20 9 -10 8 -17 -1 -28 -17 -21 -41 -19
+-47 4 -3 13 -10 18 -21 14 -10 -4 -6 3 8 15 22 19 74 33 57 15z m-37 -134 c-8
+-15 -8 -17 5 -13 8 4 15 1 15 -5 0 -14 -27 -14 -35 0 -4 6 -4 27 0 47 7 34 8
+35 16 14 6 -15 5 -31 -1 -43z"/>
+						<path d="M75 90 c-21 -22 -35 -43 -32 -47 4 -4 26 11 48 34 23 22 37 43 32 46
+-5 4 -27 -12 -48 -33z"/>
+					</g>
+				</svg>
+				Paladin Builds
+			</td>
+			<td>Tier 2</td>
+			<td></td>
+		</tr>
+		</thead>
+
+
+		<!--Paladin--><tbody class="table-group-divider table-light table-paladin" id="tbodyPaladin2">
 
 	<tr>
 		<td>Physical Charger</td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-info">Top</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
+		<td></td>
+		<td>
+		</td>
 	</tr>
 	<tr>
 		<td>Elemental Charger</td>
-		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
+		<td></td>
+		<td>
+		</td>
 	</tr>
 	<tr>
 		<td>Holy Bolt</td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
+		<td></td>
+		<td>
+		</td>
 	</tr>
 	<tr>
 		<td>Cold Charger</td>
-		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td><span class="badge rounded-pill text-bg-success">Decent</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-
+		<td></td>
+		<td>
+		</td>
 	</tr>
 	<tr>
 		<td>Smiter</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-warning">Mid</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-
+		<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+		<td>
+		</td>
 	</tr>
 	<tr>
 		<td>Vengeance</td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-secondary">-</span></td>
-		<td><span class="badge rounded-pill text-bg-primary">Good</span></td>
-
+		<td><span class="badge rounded-pill text-bg-success">Moderate</span></td>
+		<td>
+		</td>
 	</tr>
 	</tbody>
 
-</table>
-
+	</table>
+</div>
 <script crossorigin="anonymous"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js">-
@@ -1188,18 +2230,64 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js">-
 </script>
+
+
+<script>
+	const radios = document.querySelectorAll('input[name="groupType"]');
+	const divGeneralist = document.getElementById('generalists');
+	const divPhysical = document.getElementById('physical');
+	const divElemental = document.getElementById('elemental');
+	const classPicker = document.getElementById('classPicker');
+	const teamPickerAlert = document.getElementById('teamPickerAlert');
+
+	radios.forEach(radio => {
+	  radio.addEventListener('change', function() {
+		if (this.value === "groupType1") {
+		  divGeneralist.style.display = '';
+		  divPhysical.style.display = 'none';
+		  divElemental.style.display = 'none';
+		  classPicker.style.display = '';
+		} else if (this.value === "groupType2") {
+		  divGeneralist.style.display = 'none';
+		  divPhysical.style.display = '';
+		  divElemental.style.display = 'none';
+		  classPicker.style.display = '';
+		} else if (this.value === "groupType3") {
+		  divGeneralist.style.display = 'none';
+		  divPhysical.style.display = 'none';
+		  divElemental.style.display = '';
+		  classPicker.style.display = '';
+		}
+		  teamPickerAlert.style.display = 'none';
+	  });
+	});
+		  classPicker.style.display = 'none';
+</script>
+
 <script>
 	const checkboxSorceress = document.getElementById('checkboxSorceress');
 	  const contentSorceress = document.getElementById('tbodySorceress');
 	  const headerSorceress = document.getElementById('theadSorceress');
+	  const contentSorceress2 = document.getElementById('tbodySorceress2');
+	  const headerSorceress2 = document.getElementById('theadSorceress2');
+	  const contentSorceress3 = document.getElementById('tbodySorceress3');
+	  const headerSorceress3 = document.getElementById('theadSorceress3');
 
 	  checkboxSorceress.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentSorceress.style.display = ''; // Show the element
 			  headerSorceress.style.display = ''; // Show the element
+			  contentSorceress2.style.display = ''; // Show the element
+			  headerSorceress2.style.display = ''; // Show the element
+			  contentSorceress3.style.display = ''; // Show the element
+			  headerSorceress3.style.display = ''; // Show the element
 		  } else {
 			  contentSorceress.style.display = 'none';  // Hide the element
 			  headerSorceress.style.display = 'none';  // Hide the element
+			  contentSorceress2.style.display = 'none';  // Hide the element
+			  headerSorceress2.style.display = 'none';  // Hide the element
+			  contentSorceress3.style.display = 'none';  // Hide the element
+			  headerSorceress3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
@@ -1207,14 +2295,26 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	const checkboxDruid = document.getElementById('checkboxDruid');
 	  const contentDruid = document.getElementById('tbodyDruid');
 	  const headerDruid = document.getElementById('theadDruid');
+	  const contentDruid2 = document.getElementById('tbodyDruid2');
+	  const headerDruid2 = document.getElementById('theadDruid2');
+	  const contentDruid3 = document.getElementById('tbodyDruid3');
+	  const headerDruid3 = document.getElementById('theadDruid3');
 
 	  checkboxDruid.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentDruid.style.display = ''; // Show the element
 			  headerDruid.style.display = ''; // Show the element
+			  contentDruid2.style.display = ''; // Show the element
+			  headerDruid2.style.display = ''; // Show the element
+			  contentDruid3.style.display = ''; // Show the element
+			  headerDruid3.style.display = ''; // Show the element
 		  } else {
 			  contentDruid.style.display = 'none';  // Hide the element
 			  headerDruid.style.display = 'none';  // Hide the element
+			  contentDruid2.style.display = 'none';  // Hide the element
+			  headerDruid2.style.display = 'none';  // Hide the element
+			  contentDruid3.style.display = 'none';  // Hide the element
+			  headerDruid3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
@@ -1222,14 +2322,26 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	const checkboxAssassin = document.getElementById('checkboxAssassin');
 	  const contentAssassin = document.getElementById('tbodyAssassin');
 	  const headerAssassin = document.getElementById('theadAssassin');
+	  const contentAssassin2 = document.getElementById('tbodyAssassin2');
+	  const headerAssassin2 = document.getElementById('theadAssassin2');
+	  const contentAssassin3 = document.getElementById('tbodyAssassin3');
+	  const headerAssassin3 = document.getElementById('theadAssassin3');
 
 	  checkboxAssassin.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentAssassin.style.display = ''; // Show the element
 			  headerAssassin.style.display = ''; // Show the element
+			  contentAssassin2.style.display = ''; // Show the element
+			  headerAssassin2.style.display = ''; // Show the element
+			  contentAssassin3.style.display = ''; // Show the element
+			  headerAssassin3.style.display = ''; // Show the element
 		  } else {
 			  contentAssassin.style.display = 'none';  // Hide the element
 			  headerAssassin.style.display = 'none';  // Hide the element
+			  contentAssassin2.style.display = 'none';  // Hide the element
+			  headerAssassin2.style.display = 'none';  // Hide the element
+			  contentAssassin3.style.display = 'none';  // Hide the element
+			  headerAssassin3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
@@ -1237,14 +2349,26 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	const checkboxBarbarian = document.getElementById('checkboxBarbarian');
 	  const contentBarbarian = document.getElementById('tbodyBarbarian');
 	  const headerBarbarian = document.getElementById('theadBarbarian');
+	  const contentBarbarian2 = document.getElementById('tbodyBarbarian2');
+	  const headerBarbarian2 = document.getElementById('theadBarbarian2');
+	  const contentBarbarian3 = document.getElementById('tbodyBarbarian3');
+	  const headerBarbarian3 = document.getElementById('theadBarbarian3');
 
 	  checkboxBarbarian.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentBarbarian.style.display = ''; // Show the element
 			  headerBarbarian.style.display = ''; // Show the element
+			  contentBarbarian2.style.display = ''; // Show the element
+			  headerBarbarian2.style.display = ''; // Show the element
+			  contentBarbarian3.style.display = ''; // Show the element
+			  headerBarbarian3.style.display = ''; // Show the element
 		  } else {
 			  contentBarbarian.style.display = 'none';  // Hide the element
 			  headerBarbarian.style.display = 'none';  // Hide the element
+			  contentBarbarian2.style.display = 'none';  // Hide the element
+			  headerBarbarian2.style.display = 'none';  // Hide the element
+			  contentBarbarian3.style.display = 'none';  // Hide the element
+			  headerBarbarian3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
@@ -1252,14 +2376,26 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	const checkboxAmazon = document.getElementById('checkboxAmazon');
 	  const contentAmazon = document.getElementById('tbodyAmazon');
 	  const headerAmazon = document.getElementById('theadAmazon');
+	  const contentAmazon2 = document.getElementById('tbodyAmazon2');
+	  const headerAmazon2 = document.getElementById('theadAmazon2');
+	  const contentAmazon3 = document.getElementById('tbodyAmazon3');
+	  const headerAmazon3 = document.getElementById('theadAmazon3');
 
 	  checkboxAmazon.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentAmazon.style.display = ''; // Show the element
 			  headerAmazon.style.display = ''; // Show the element
+			  contentAmazon2.style.display = ''; // Show the element
+			  headerAmazon2.style.display = ''; // Show the element
+			  contentAmazon3.style.display = ''; // Show the element
+			  headerAmazon3.style.display = ''; // Show the element
 		  } else {
 			  contentAmazon.style.display = 'none';  // Hide the element
 			  headerAmazon.style.display = 'none';  // Hide the element
+			  contentAmazon2.style.display = 'none';  // Hide the element
+			  headerAmazon2.style.display = 'none';  // Hide the element
+			  contentAmazon3.style.display = 'none';  // Hide the element
+			  headerAmazon3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
@@ -1267,14 +2403,26 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	const checkboxNecromancer = document.getElementById('checkboxNecromancer');
 	  const contentNecromancer = document.getElementById('tbodyNecromancer');
 	  const headerNecromancer = document.getElementById('theadNecromancer');
+	  const contentNecromancer2 = document.getElementById('tbodyNecromancer2');
+	  const headerNecromancer2 = document.getElementById('theadNecromancer2');
+	  const contentNecromancer3 = document.getElementById('tbodyNecromancer3');
+	  const headerNecromancer3 = document.getElementById('theadNecromancer3');
 
 	  checkboxNecromancer.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentNecromancer.style.display = ''; // Show the element
 			  headerNecromancer.style.display = ''; // Show the element
+			  contentNecromancer2.style.display = ''; // Show the element
+			  headerNecromancer2.style.display = ''; // Show the element
+			  contentNecromancer3.style.display = ''; // Show the element
+			  headerNecromancer3.style.display = ''; // Show the element
 		  } else {
 			  contentNecromancer.style.display = 'none';  // Hide the element
 			  headerNecromancer.style.display = 'none';  // Hide the element
+			  contentNecromancer2.style.display = 'none';  // Hide the element
+			  headerNecromancer2.style.display = 'none';  // Hide the element
+			  contentNecromancer3.style.display = 'none';  // Hide the element
+			  headerNecromancer3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
@@ -1282,14 +2430,26 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	const checkboxPaladin = document.getElementById('checkboxPaladin');
 	  const contentPaladin = document.getElementById('tbodyPaladin');
 	  const headerPaladin = document.getElementById('theadPaladin');
+	  const contentPaladin2 = document.getElementById('tbodyPaladin2');
+	  const headerPaladin2 = document.getElementById('theadPaladin2');
+	  const contentPaladin3 = document.getElementById('tbodyPaladin3');
+	  const headerPaladin3 = document.getElementById('theadPaladin3');
 
 	  checkboxPaladin.addEventListener('change', function() {
 		  if (this.checked) {
 			  contentPaladin.style.display = ''; // Show the element
 			  headerPaladin.style.display = ''; // Show the element
+			  contentPaladin2.style.display = ''; // Show the element
+			  headerPaladin2.style.display = ''; // Show the element
+			  contentPaladin3.style.display = ''; // Show the element
+			  headerPaladin3.style.display = ''; // Show the element
 		  } else {
 			  contentPaladin.style.display = 'none';  // Hide the element
 			  headerPaladin.style.display = 'none';  // Hide the element
+			  contentPaladin2.style.display = 'none';  // Hide the element
+			  headerPaladin2.style.display = 'none';  // Hide the element
+			  contentPaladin3.style.display = 'none';  // Hide the element
+			  headerPaladin3.style.display = 'none';  // Hide the element
 		  }
 	  });
 </script>
