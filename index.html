@@ -20,6 +20,8 @@
 	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">-
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 
 	<style>
 		.bd-placeholder-img {
@@ -39,6 +41,20 @@
 		    width: 100%;
 		    height: 100%;
 		    text-align: center;
+		}
+		.ticker-wrap {
+			overflow: hidden;
+			width: 100%;
+		}
+		.ticker-content {
+			display: inline-block;
+			white-space: nowrap;
+			padding-left: 100%;
+			animation: ticker-scroll 40s linear infinite;
+		}
+		@keyframes ticker-scroll {
+			from { transform: translateX(0); }
+			to   { transform: translateX(-100%); }
 		}
 	</style>
 
@@ -106,22 +122,24 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		<div class="alert alert-secondary" role="alert">
 			<div class="ticker fs-3">
 				<div class="news">
-					<div class="title"><h3 style="text-align: center;">Hiim 99 Race Records</h3></div>
-					<marquee class="news-content"><p>
-						<span class="badge text-bg-secondary">Season 12 — 2 Days 10 Hours</span>
-						<span class="badge text-bg-dark">Season 11 — 2 Days 11 Hours</span>
-						<span class="badge text-bg-secondary">Season 10 — 4 Days 6.5 Hours</span>
-						<span class="badge text-bg-dark">Season 9 Team A — 4 Days 10 Hours</span>
-						<span class="badge text-bg-secondary">Season 9 Team B — 9 Days 2 Hours</span>
-						<span class="badge text-bg-dark">Crafter's League 2 — 7 Days 6.5 Hours</span>
-						<span class="badge text-bg-secondary">Season 8 Team A — 4 Days 15 Hours</span>
-						<span class="badge text-bg-dark">Season 8 Team B — 4 Days 18.5 Hours</span>
-						<span class="badge text-bg-secondary">Season 7 — 5 Days 7.5 Hours</span>
-						<span class="badge text-bg-dark">Season 6 — 5 Days 17.5 Hours</span>
-						<span class="badge text-bg-secondary">Season 5 — 8 Days 20.5 Hours</span>
-						<span class="badge text-bg-dark">Crafter's League 1 — 6 Days 11 Hours</span>
-						<span class="badge text-bg-secondary">Season 4 — 9 Days 8.5 Hours</span>
-					</p></marquee>
+					<div class="title"><h3 style="text-align: center;"><a href="#" class="alert-link" data-bs-toggle="modal" data-bs-target="#raceChartModal">Hiim 99 Race Records 📊</a></h3></div>
+					<div class="ticker-wrap">
+						<div class="ticker-content">
+							<span class="badge text-bg-secondary">Season 12 — 2 Days 10 Hours</span>
+							<span class="badge text-bg-dark">Season 11 — 2 Days 11 Hours</span>
+							<span class="badge text-bg-secondary">Season 10 — 4 Days 6.5 Hours</span>
+							<span class="badge text-bg-dark">Season 9 Team A — 4 Days 10 Hours</span>
+							<span class="badge text-bg-secondary">Season 9 Team B — 9 Days 2 Hours</span>
+							<span class="badge text-bg-dark">Crafter's League 2 — 7 Days 6.5 Hours</span>
+							<span class="badge text-bg-secondary">Season 8 Team A — 4 Days 15 Hours</span>
+							<span class="badge text-bg-dark">Season 8 Team B — 4 Days 18.5 Hours</span>
+							<span class="badge text-bg-secondary">Season 7 — 5 Days 7.5 Hours</span>
+							<span class="badge text-bg-dark">Season 6 — 5 Days 17.5 Hours</span>
+							<span class="badge text-bg-secondary">Season 5 — 8 Days 20.5 Hours</span>
+							<span class="badge text-bg-dark">Crafter's League 1 — 6 Days 11 Hours</span>
+							<span class="badge text-bg-secondary">Season 4 — 9 Days 8.5 Hours</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -131,7 +149,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 				<a href="solo.html" class="alert-link"><img src="images/zonsolo.jpg"
 				                                            class="card-img-top" alt=""></a>
 				<div class="card-body">
-					<h5 class="card-title"><a href="solo.html" class="alert-link">Season 12<br/>Solo Mapping Tier List
+					<h5 class="card-title"><a href="solo.html" class="alert-link">Season 13<br/>Solo Mapping Tier List
 						🔗</a>
 					</h5>
 					<p class="card-text">From starter builds to endgame ranked builds for all classes.</p>
@@ -141,7 +159,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 				<a href="boss.html" class="alert-link"><img src="images/group.jpg"
 				                                            class="card-img-top" alt=""></a>
 				<div class="card-body">
-					<h5 class="card-title"><a href="boss.html" class="alert-link">Season 12<br/>Bossing Tier List 🔗</a>
+					<h5 class="card-title"><a href="boss.html" class="alert-link">Season 13<br/>Bossing Tier List 🔗</a>
 					</h5>
 					<p class="card-text">Recommended builds by class to boss with.</p>
 				</div>
@@ -150,7 +168,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 				<a href="group.html" class="alert-link"><img src="images/groupalt.jpg"
 				                                             class="card-img-top" alt=""></a>
 				<div class="card-body">
-					<h5 class="card-title"><a href="group.html" class="alert-link">Season 12<br/>Group Mapping Tier List
+					<h5 class="card-title"><a href="group.html" class="alert-link">Season 13<br/>Group Mapping Tier List
 						🔗</a></h5>
 					<p class="card-text">Crafting a synergized team takes a lot of planning. This has a break-down
 						for Public games, physical, or elemental groups.</p>
@@ -221,11 +239,8 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			</div>
 			<div class="col-md-6 col-lg-4 card">
 				<div class="card-body">
-					<h5 class="card-title"><a target="_blank"
-					                          href="https://docs.google.com/spreadsheets/d/1HAxtlOHB7pY6nyNICU13cEb1hHC7ohuUe-2zIJ6EHG8/"
-					                          class="alert-link">HarryPe's Physical damage calculator
-						🔗</a></h5>
-					<p class="card-text">The best physical damage calculator.</p>
+					<h5 class="card-title"><a href="dmg-calc.html" class="alert-link">Physical Damage Calculator 🔗</a></h5>
+					<p class="card-text">Standalone weapon comparison tool based on HarryPe's calculator. Compare two weapons with full ED%, crit, CB, and phys res calculations.</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-4 card">
@@ -301,6 +316,32 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		<div class="row">
 			<div class="col-md-12 col-lg-4 card p-2">
 				<div class="card-body">
+					<h5 class="card-title"><a href="solos12.html" class="alert-link">Hiim Season 12 Solo Tier List 🔗</a>
+					</h5>
+					<p class="card-text">From starter builds to endgame ranked builds for all classes.</p>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-4 card p-2">
+				<div class="card-body">
+					<h5 class="card-title"><a href="boss12.html" class="alert-link">Hiim Season 12 Bossing Tier List
+						🔗</a>
+					</h5>
+					<p class="card-text">Recommended builds by class to boss with.</p>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-4 card p-2">
+				<div class="card-body">
+					<h5 class="card-title"><a href="groups12.html" class="alert-link">Hiim Season 12 Group Tier List
+						🔗</a>
+					</h5>
+					<p class="card-text">Crafting a synergized team takes a lot of planning. This has a break-down
+						for Public games, physical, or elemental groups.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-lg-4 card p-2">
+				<div class="card-body">
 					<h5 class="card-title"><a href="solos11.html" class="alert-link">Hiim Season 11 Solo Tier List 🔗</a>
 					</h5>
 					<p class="card-text">From starter builds to endgame ranked builds for all classes.</p>
@@ -327,6 +368,104 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			</div>
 		</div>
 	</div>
+<!-- Race Chart Modal -->
+<div class="modal fade" id="raceChartModal" tabindex="-1" aria-labelledby="raceChartModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="raceChartModalLabel">99 Race Time Comparison</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<canvas id="raceChart"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	(function () {
+		const data = [
+			{ label: 'Season 12',          hours: 2*24 + 10   },
+			{ label: 'Season 11',          hours: 2*24 + 11   },
+			{ label: 'Season 10',          hours: 4*24 + 6.5  },
+			{ label: 'Season 9 Team A',    hours: 4*24 + 10   },
+			{ label: 'Season 9 Team B',    hours: 9*24 + 2    },
+			{ label: "Crafter's League 2", hours: 7*24 + 6.5  },
+			{ label: 'Season 8 Team A',    hours: 4*24 + 15   },
+			{ label: 'Season 8 Team B',    hours: 4*24 + 18.5 },
+			{ label: 'Season 7',           hours: 5*24 + 7.5  },
+			{ label: 'Season 6',           hours: 5*24 + 17.5 },
+			{ label: 'Season 5',           hours: 8*24 + 20.5 },
+			{ label: "Crafter's League 1", hours: 6*24 + 11   },
+			{ label: 'Season 4',           hours: 9*24 + 8.5  },
+		];
+
+		const dayNames = ['Fri','Sat','Sun','Mon','Tue','Wed','Thu','Fri','Sat','Sun','Mon'];
+		const maxHours = 240;
+		let chartInstance = null;
+
+		document.getElementById('raceChartModal').addEventListener('shown.bs.modal', function () {
+			if (chartInstance) return;
+			Chart.register(ChartDataLabels);
+			chartInstance = new Chart(document.getElementById('raceChart'), {
+				type: 'bar',
+				data: {
+					labels: data.map(d => d.label),
+					datasets: [{
+						label: 'Hours to Level 99',
+						data: data.map(d => d.hours),
+						backgroundColor: 'rgba(108, 117, 125, 0.6)',
+						borderColor: 'rgba(173, 181, 189, 0.9)',
+						borderWidth: 1,
+					}]
+				},
+				options: {
+					indexAxis: 'y',
+					responsive: true,
+					plugins: {
+						legend: { display: false },
+						tooltip: { enabled: false },
+						datalabels: {
+							anchor: 'end',
+							align: 'start',
+							color: '#dee2e6',
+							font: { size: 12 },
+							formatter: function(h) {
+								const days = Math.floor(h / 24);
+								const hrs = h % 24;
+								return `${days}d ${hrs}h`;
+							}
+						}
+					},
+					scales: {
+						x: {
+							min: 0,
+							max: maxHours,
+							ticks: {
+								stepSize: 24,
+								callback: function(val) {
+									const idx = val / 24;
+									return dayNames[idx] !== undefined ? dayNames[idx] + ' 1pm' : '';
+								},
+								color: '#adb5bd',
+							},
+							grid: { color: 'rgba(255,255,255,0.08)' },
+							title: {
+								display: true,
+								text: 'Time elapsed since Season reset (inclusive of downtime and/or breaks)',
+								color: '#adb5bd',
+							}
+						},
+						y: {
+							ticks: { color: '#adb5bd' },
+							grid: { color: 'rgba(255,255,255,0.08)' },
+						}
+					}
+				}
+			});
+		});
+	})();
+</script>
 </main>
 </body>
 </html>

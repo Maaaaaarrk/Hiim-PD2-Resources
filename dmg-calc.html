@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<title>PD2 Physical Damage Calculator</title>
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet">
+	<script crossorigin="anonymous"
+	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+	<style>
+		.sec-label {
+			color: #6c757d;
+			text-transform: uppercase;
+			font-size: 0.7rem;
+			letter-spacing: 0.08em;
+			border-bottom: 1px solid #2b2f33;
+			padding-bottom: 3px;
+			margin: 1rem 0 0.5rem;
+		}
+		.result-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding: 2px 0;
+			font-size: 0.9rem;
+		}
+		.result-row .lbl { color: #adb5bd; }
+		.result-row .val { font-weight: 600; color: #dee2e6; }
+		.result-row .val.pos { color: #4ade80; }
+		.result-row .val.warn { color: #fbbf24; }
+		.panel { background: #16181b; border: 1px solid #2b2f33; border-radius: 8px; padding: 1rem; }
+		.panel-a { border-top: 3px solid #3b82f6; }
+		.panel-b { border-top: 3px solid #22c55e; }
+		.compare-panel { background: #1a1d21; border: 1px solid #2b2f33; border-radius: 8px; padding: 1rem; }
+		.big-val { font-size: 1.4rem; font-weight: 700; }
+		.big-val.a { color: #3b82f6; }
+		.big-val.b { color: #22c55e; }
+		input[type=number] { text-align: right; }
+		.form-label { font-size: 0.85rem; color: #adb5bd; margin-bottom: 2px; }
+		.input-group-text { font-size: 0.8rem; min-width: 2.5rem; text-align: center; }
+		.form-control-sm, .form-select-sm { font-size: 0.85rem; }
+		.diff-badge { font-size: 0.85rem; }
+		.copy-btn {
+			background: #2a2d31;
+			border: 1px solid #4a5568;
+			border-radius: 4px;
+			color: #94a3b8;
+			font-size: 0.7rem;
+			padding: 1px 7px;
+			line-height: 1.6;
+			cursor: pointer;
+			white-space: nowrap;
+		}
+		.copy-btn:hover { background: #374151; border-color: #94a3b8; color: #e2e8f0; }
+	</style>
+</head>
+<body data-bs-theme="dark">
+<div class="container-fluid py-4" style="max-width:1400px">
+
+	<div class="text-center mb-4">
+		<h3 class="mb-0">Season 13 PD2 Physical Damage Calculator</h3>
+		<small class="text-secondary">Based on HarryPe's Physical Damage Calculator v2.3<br/></small>
+		<small class="text-secondary"><a href="index.html" class="alert-link">← View other resources</a></small>
+	</div>
+
+	<div class="row g-3 mb-3">
+		<!-- ═══════════════ WEAPON A ═══════════════ -->
+		<div class="col-xl-5 col-lg-6">
+			<div class="panel panel-a h-100">
+				<h6 class="mb-3"><span class="badge bg-primary">Weapon A</span></h6>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Weapon</span>
+					<button class="copy-btn" onclick="copySection('b','a','weapon')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-6">
+						<label class="form-label">Category</label>
+						<select id="a_cat" class="form-select form-select-sm" onchange="onCatChange('a')"></select>
+					</div>
+					<div class="col-6">
+						<label class="form-label">Base Weapon</label>
+						<select id="a_wep" class="form-select form-select-sm" onchange="onWepChange('a')"></select>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Base Min</label>
+						<input type="number" id="a_base_min" class="form-control form-control-sm" value="30" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-4">
+						<label class="form-label">Base Max</label>
+						<input type="number" id="a_base_max" class="form-control form-control-sm" value="89" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-4 d-flex align-items-end">
+						<div class="form-check mb-1">
+							<input class="form-check-input" type="checkbox" id="a_eth" onchange="calc()">
+							<label class="form-check-label form-label" for="a_eth">Ethereal (+50%)</label>
+						</div>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Weapon ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_wed" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">+Min Dmg</label>
+						<input type="number" id="a_flat_min" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-4">
+						<label class="form-label">+Max Dmg</label>
+						<input type="number" id="a_flat_max" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Character Stats</span>
+					<button class="copy-btn" onclick="copySection('b','a','stats')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-3">
+						<label class="form-label">Strength</label>
+						<input type="number" id="a_str" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-3">
+						<label class="form-label">STR %/pt</label>
+						<input type="number" id="a_str_per" class="form-control form-control-sm" value="1.0" step="0.1"
+						       min="0" oninput="calc()">
+					</div>
+					<div class="col-3">
+						<label class="form-label">Dexterity</label>
+						<input type="number" id="a_dex" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-3">
+						<label class="form-label">DEX %/pt</label>
+						<input type="number" id="a_dex_per" class="form-control form-control-sm" value="0" step="0.1"
+						       min="0" oninput="calc()">
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-6">
+						<label class="form-label">Off-Weapon ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_off_ed" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-6">
+						<label class="form-label">Skill ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_skill_ed" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Auras / Buffs (enter ED% directly)</span>
+					<button class="copy-btn" onclick="copySection('b','a','auras')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Might ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_might" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Conc ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_conc" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Fanat ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_fanat" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">HoW ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_how" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Battle Cmd ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_bc" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Critical Hit</span>
+					<button class="copy-btn" onclick="copySection('b','a','crit')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Deadly Strike</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_ds" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Mastery Crit</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_mastery" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Skill Crit</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_scrit" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Crushing Blow</span>
+					<button class="copy-btn" onclick="copySection('b','a','cb')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">CB Chance</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_cb" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Monster HP</label>
+						<input type="number" id="a_hp" class="form-control form-control-sm" value="20000" min="1"
+						       oninput="calc()">
+					</div>
+					<div class="col-4">
+						<label class="form-label">CB Type</label>
+						<select id="a_cbtype" class="form-select form-select-sm" onchange="calc()">
+							<option value="0.25">Melee (1/4)</option>
+							<option value="0.125">Ranged (1/8)</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center">
+					<span>Physical Resistance</span>
+					<button class="copy-btn" onclick="copySection('b','a','physres')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-3">
+						<label class="form-label">Monster Base Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_mob_res" class="form-control" value="33" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-3">
+						<label class="form-label">Gear -Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_gear_res" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-3">
+						<label class="form-label">Amp Dmg -Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_amp" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-3">
+						<label class="form-label">Battle Cry -Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_bcry" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>DPS</span>
+					<button class="copy-btn" onclick="copySection('b','a','dps')">← Copy from B</button>
+				</div>
+				<div class="row g-2 mb-2">
+					<div class="col-4 d-flex align-items-end">
+						<div class="form-check mb-1">
+							<input class="form-check-input" type="checkbox" id="a_dps_on" onchange="calc()">
+							<label class="form-check-label form-label" for="a_dps_on">Show DPS</label>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">FPA</label>
+						<input type="number" id="a_fpa" class="form-control form-control-sm" value="8" min="1"
+						       oninput="calc()">
+					</div>
+				</div>
+
+				<!-- RESULTS A -->
+				<div class="sec-label">Results</div>
+				<div id="a_results"></div>
+			</div>
+		</div>
+
+		<!-- ═══════════════ WEAPON B ═══════════════ -->
+		<div class="col-xl-5 col-lg-6">
+			<div class="panel panel-b h-100">
+				<h6 class="mb-3"><span class="badge bg-success">Weapon B</span></h6>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Weapon</span>
+					<button class="copy-btn" onclick="copySection('a','b','weapon')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-6">
+						<label class="form-label">Category</label>
+						<select id="b_cat" class="form-select form-select-sm" onchange="onCatChange('b')"></select>
+					</div>
+					<div class="col-6">
+						<label class="form-label">Base Weapon</label>
+						<select id="b_wep" class="form-select form-select-sm" onchange="onWepChange('b')"></select>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Base Min</label>
+						<input type="number" id="b_base_min" class="form-control form-control-sm" value="31" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-4">
+						<label class="form-label">Base Max</label>
+						<input type="number" id="b_base_max" class="form-control form-control-sm" value="81" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-4 d-flex align-items-end">
+						<div class="form-check mb-1">
+							<input class="form-check-input" type="checkbox" id="b_eth" onchange="calc()">
+							<label class="form-check-label form-label" for="b_eth">Ethereal (+50%)</label>
+						</div>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Weapon ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_wed" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">+Min Dmg</label>
+						<input type="number" id="b_flat_min" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-4">
+						<label class="form-label">+Max Dmg</label>
+						<input type="number" id="b_flat_max" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Character Stats</span>
+					<button class="copy-btn" onclick="copySection('a','b','stats')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-3">
+						<label class="form-label">Strength</label>
+						<input type="number" id="b_str" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-3">
+						<label class="form-label">STR %/pt</label>
+						<input type="number" id="b_str_per" class="form-control form-control-sm" value="1.0" step="0.1"
+						       min="0" oninput="calc()">
+					</div>
+					<div class="col-3">
+						<label class="form-label">Dexterity</label>
+						<input type="number" id="b_dex" class="form-control form-control-sm" value="0" min="0"
+						       oninput="calc()">
+					</div>
+					<div class="col-3">
+						<label class="form-label">DEX %/pt</label>
+						<input type="number" id="b_dex_per" class="form-control form-control-sm" value="0" step="0.1"
+						       min="0" oninput="calc()">
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-6">
+						<label class="form-label">Off-Weapon ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_off_ed" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-6">
+						<label class="form-label">Skill ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_skill_ed" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Auras / Buffs (enter ED% directly)</span>
+					<button class="copy-btn" onclick="copySection('a','b','auras')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Might ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_might" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Conc ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_conc" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Fanat ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_fanat" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">HoW ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_how" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Battle Cmd ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_bc" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Critical Hit</span>
+					<button class="copy-btn" onclick="copySection('a','b','crit')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">Deadly Strike</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_ds" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Mastery Crit</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_mastery" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Skill Crit</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_scrit" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>Crushing Blow</span>
+					<button class="copy-btn" onclick="copySection('a','b','cb')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">CB Chance</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_cb" class="form-control" value="0" min="0" max="100"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Monster HP</label>
+						<input type="number" id="b_hp" class="form-control form-control-sm" value="20000" min="1"
+						       oninput="calc()">
+					</div>
+					<div class="col-4">
+						<label class="form-label">CB Type</label>
+						<select id="b_cbtype" class="form-select form-select-sm" onchange="calc()">
+							<option value="0.25">Melee (1/4)</option>
+							<option value="0.125">Ranged (1/8)</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center">
+					<span>Physical Resistance</span>
+					<button class="copy-btn" onclick="copySection('a','b','physres')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-3">
+						<label class="form-label">Monster Base Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_mob_res" class="form-control" value="33" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-3">
+						<label class="form-label">Gear -Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_gear_res" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-3">
+						<label class="form-label">Amp Dmg -Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_amp" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-3">
+						<label class="form-label">Battle Cry -Res%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_bcry" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sec-label d-flex justify-content-between align-items-center"><span>DPS</span>
+					<button class="copy-btn" onclick="copySection('a','b','dps')">Copy from A →</button>
+				</div>
+				<div class="row g-2 mb-2">
+					<div class="col-4 d-flex align-items-end">
+						<div class="form-check mb-1">
+							<input class="form-check-input" type="checkbox" id="b_dps_on" onchange="calc()">
+							<label class="form-check-label form-label" for="b_dps_on">Show DPS</label>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">FPA</label>
+						<input type="number" id="b_fpa" class="form-control form-control-sm" value="8" min="1"
+						       oninput="calc()">
+					</div>
+				</div>
+
+				<!-- RESULTS B -->
+				<div class="sec-label">Results</div>
+				<div id="b_results"></div>
+			</div>
+		</div>
+
+		<!-- ═══════════════ COMPARISON ═══════════════ -->
+		<div class="col-xl-2 col-lg-12">
+			<div class="compare-panel h-100">
+				<h6 class="mb-3 text-center">Comparison</h6>
+				<div id="compare_results"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel mt-3" style="border-top: 3px solid #6c757d;">
+		<div class="sec-label">Damage Roll Distribution (after phys res)</div>
+		<canvas id="rollChart" height="80"></canvas>
+	</div>
+
+	<p class="text-secondary text-center mt-2" style="font-size:0.75rem">
+		Weapon base damages are approximate PD2 values. Verify in-game for exact numbers.
+		Ethereal = +50% weapon ED. Flat +damage added after weapon ED multiplier.
+		Crit sources (DS / Mastery / Skill) each independently roll for double damage.
+	</p>
+</div>
+
+<script>
+	const WEAPON_DB = {
+		'1H Axe':    { strPer: 1.0, dexPer: 0.0, weapons: [
+			{ name:'Berserker Axe',  min:30,  max:89  },
+			{ name:'Ettin Axe',      min:33,  max:66  },
+			{ name:'War Spike',      min:30,  max:48  },
+			{ name:'Caduceus',       min:18,  max:30  },
+			{ name:'Tomahawk',       min:33,  max:58  },
+			{ name:'Custom',         min:0,   max:0   },
+		]},
+		'2H Axe':    { strPer: 1.0, dexPer: 0.0, weapons: [
+			{ name:'Glorious Axe',   min:60,  max:124 },
+			{ name:'Decapitator',    min:49,  max:137 },
+			{ name:'Custom',         min:0,   max:0   },
+		]},
+		'1H Sword':  { strPer: 1.0, dexPer: 0.0, weapons: [
+			{ name:'Phase Blade',       min:31,  max:35  },
+			{ name:'Dimensional Blade', min:13,  max:35  },
+			{ name:'Crystal Sword',     min:5,   max:15  },
+			{ name:'Legend Sword',      min:22,  max:56  },
+			{ name:'Colossus Sword',    min:26,  max:70  },
+			{ name:'Custom',            min:0,   max:0   },
+		]},
+		'2H Sword':  { strPer: 1.1, dexPer: 0.0, weapons: [
+			{ name:'Colossus Blade',    min:61,  max:121 },
+			{ name:'Colossal Sword',    min:26,  max:70  },
+			{ name:'Custom',            min:0,   max:0   },
+		]},
+		'Polearm':   { strPer: 1.0, dexPer: 0.0, weapons: [
+			{ name:'Cryptic Axe',       min:33,  max:150 },
+			{ name:'Giant Thresher',    min:40,  max:114 },
+			{ name:'Thresher',          min:12,  max:141 },
+			{ name:'Ogre Axe',          min:28,  max:145 },
+			{ name:'Bec-de-Corbin',     min:13,  max:85  },
+			{ name:'Custom',            min:0,   max:0   },
+		]},
+		'Mace/Club': { strPer: 1.0, dexPer: 0.0, weapons: [
+			{ name:'Tyrant Club',       min:32,  max:58  },
+			{ name:'War Club',          min:53,  max:78  },
+			{ name:'Ogre Maul',         min:77,  max:106 },
+			{ name:'Thunder Maul',      min:33,  max:180 },
+			{ name:'Custom',            min:0,   max:0   },
+		]},
+		'Spear':     { strPer: 0.8, dexPer: 0.5, weapons: [
+			{ name:'War Pike',          min:14,  max:63  },
+			{ name:'Hyperion Spear',    min:35,  max:119 },
+			{ name:'Matriarchal Spear', min:65,  max:95  },
+			{ name:'Custom',            min:0,   max:0   },
+		]},
+		'Javelin':   { strPer: 0.8, dexPer: 0.5, weapons: [
+			{ name:'Hyperion Javelin',    min:28, max:55 },
+			{ name:'Matriarchal Javelin', min:30, max:54 },
+			{ name:'Custom',              min:0,  max:0  },
+		]},
+		'Bow':       { strPer: 0.0, dexPer: 1.0, weapons: [
+			{ name:'Grand Matron Bow',   min:14,  max:72  },
+			{ name:'Hydra Bow',          min:10,  max:68  },
+			{ name:'Blade Bow',          min:21,  max:41  },
+			{ name:'Colossus Crossbow',  min:34,  max:151 },
+			{ name:'Custom',             min:0,   max:0   },
+		]},
+		'Custom':    { strPer: 1.0, dexPer: 0.0, weapons: [
+			{ name:'Custom', min:0, max:0 },
+		]},
+	};
+
+	function initDropdowns(p) {
+		const catEl = document.getElementById(p + '_cat');
+		catEl.innerHTML = '';
+		Object.keys(WEAPON_DB).forEach(cat => {
+			const opt = document.createElement('option');
+			opt.value = cat;
+			opt.textContent = cat;
+			catEl.appendChild(opt);
+		});
+		populateWeapons(p);
+	}
+
+	function populateWeapons(p) {
+		const cat  = document.getElementById(p + '_cat').value;
+		const wepEl = document.getElementById(p + '_wep');
+		wepEl.innerHTML = '';
+		WEAPON_DB[cat].weapons.forEach(w => {
+			const opt = document.createElement('option');
+			opt.value = w.name;
+			opt.textContent = w.name;
+			wepEl.appendChild(opt);
+		});
+		applyWeaponStats(p);
+	}
+
+	function onCatChange(p) {
+		populateWeapons(p);
+		calc();
+	}
+
+	function onWepChange(p) {
+		applyWeaponStats(p);
+		calc();
+	}
+
+	function applyWeaponStats(p) {
+		const cat = document.getElementById(p + '_cat').value;
+		const wepName = document.getElementById(p + '_wep').value;
+		const catData = WEAPON_DB[cat];
+		const wep = catData.weapons.find(w => w.name === wepName);
+		if (wep && wep.name !== 'Custom') {
+			document.getElementById(p + '_base_min').value = wep.min;
+			document.getElementById(p + '_base_max').value = wep.max;
+		}
+		document.getElementById(p + '_str_per').value = catData.strPer.toFixed(1);
+		document.getElementById(p + '_dex_per').value = catData.dexPer.toFixed(1);
+	}
+
+	function n(id, def = 0) {
+		return parseFloat(document.getElementById(id).value) || def;
+	}
+	function b(id) {
+		return document.getElementById(id).checked;
+	}
+
+	function calcWeapon(p) {
+		const baseMin  = n(p+'_base_min');
+		const baseMax  = n(p+'_base_max');
+		const eth      = b(p+'_eth');
+		const wed      = n(p+'_wed');
+		const flatMin  = n(p+'_flat_min');
+		const flatMax  = n(p+'_flat_max');
+		const str      = n(p+'_str');
+		const strPer   = n(p+'_str_per', 1);
+		const dex      = n(p+'_dex');
+		const dexPer   = n(p+'_dex_per', 0);
+		const offED    = n(p+'_off_ed');
+		const skillED  = n(p+'_skill_ed');
+		const might    = n(p+'_might');
+		const conc     = n(p+'_conc');
+		const fanat    = n(p+'_fanat');
+		const how      = n(p+'_how');
+		const bc       = n(p+'_bc');
+		const ds       = Math.min(100, n(p+'_ds'));
+		const mastery  = Math.min(100, n(p+'_mastery'));
+		const scrit    = Math.min(100, n(p+'_scrit'));
+		const cbPct    = n(p+'_cb');
+		const monHP    = n(p+'_hp', 20000);
+		const cbRatio  = parseFloat(document.getElementById(p+'_cbtype').value);
+		const mobRes   = n(p+'_mob_res', 33);
+		const gearRes  = n(p+'_gear_res');
+		const amp      = n(p+'_amp');
+		const bcry     = n(p+'_bcry');
+		const fpa      = Math.max(1, n(p+'_fpa', 8));
+		const dpsOn    = b(p+'_dps_on');
+
+		// 1. Weapon damage (eth stacks additively with weapon ED)
+		const ethBonus    = eth ? 50 : 0;
+		const totalWED    = wed + ethBonus;
+		const wepMin      = Math.floor(baseMin * (1 + totalWED / 100)) + flatMin;
+		const wepMax      = Math.floor(baseMax * (1 + totalWED / 100)) + flatMax;
+		const wepAvg      = (wepMin + wepMax) / 2;
+
+		// 2. Off-weapon ED
+		const strED       = str * strPer;
+		const dexED       = dex * dexPer;
+		const totalAuraED = might + conc + fanat + how + bc;
+		const totalOffED  = strED + dexED + offED + skillED + totalAuraED;
+
+		// 3. Sheet damage
+		const sheetMin    = Math.floor(wepMin * (1 + totalOffED / 100));
+		const sheetMax    = Math.floor(wepMax * (1 + totalOffED / 100));
+		const sheetAvg    = (sheetMin + sheetMax) / 2;
+
+		// 4. Crit resolution — roll CS first, then DS only if CS missed
+		// CS sources (mastery + skill crit) are additive → one CS roll
+		// If CS hits  → 2x damage
+		// If CS misses and DS hits → 1.5x damage
+		// If both miss → 1x damage
+		const totalCS     = Math.min(100, mastery + scrit);
+		const pCS         = totalCS / 100;
+		const pDS         = ds / 100;
+		const pCritHit    = pCS;                      // 2x
+		const pDSHit      = (1 - pCS) * pDS;          // 1.5x
+		const pNormalHit  = (1 - pCS) * (1 - pDS);    // 1x
+		const avgMult     = pNormalHit * 1.0 + pDSHit * 1.5 + pCritHit * 2.0;
+
+		// 5. Final damage using correct average multiplier
+		const finalMin    = Math.floor(sheetMin * avgMult);
+		const finalMax    = Math.floor(sheetMax * avgMult);
+		const finalAvg    = (finalMin + finalMax) / 2;
+
+		// 6. Crushing blow (first-hit approximation; real damage diminishes as HP drops)
+		const avgCB       = cbPct / 100 * monHP * cbRatio;
+
+		// 7. Physical resistance
+		const effRes      = mobRes - gearRes - amp - bcry;
+		const resMult     = (100 - effRes) / 100;
+
+		// 8. Effective damage after phys res
+		const effMin      = Math.floor(finalMin * resMult);
+		const effMax      = Math.floor(finalMax * resMult);
+		const effAvg      = finalAvg * resMult;
+		const effCBAvg    = avgCB * resMult;
+		const totalAvg    = effAvg + effCBAvg;
+
+		// 9. DPS
+		const aps         = 25 / fpa;
+		const dps         = totalAvg * aps;
+
+		return {
+			wepMin, wepMax, wepAvg,
+			strED, dexED, totalOffED,
+			sheetMin, sheetMax, sheetAvg,
+			pCritHit, pDSHit, pNormalHit, avgMult,
+			finalMin, finalMax, finalAvg,
+			avgCB, effRes, resMult,
+			effMin, effMax, effAvg, effCBAvg, totalAvg,
+			aps, dps, dpsOn,
+		};
+	}
+
+	function fmt(n, dec = 0) {
+		if (dec > 0 && Number.isInteger(n)) return n.toLocaleString('en-US');
+		return n.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+	}
+
+	function fmtK(n) {
+		const abs = Math.abs(n);
+		if (abs >= 1000) {
+			const k = n / 1000;
+			return (Math.abs(k) >= 10 ? k.toFixed(0) : k.toFixed(1)).replace(/\.0$/, '') + 'k';
+		}
+		return Number.isInteger(n) ? n.toLocaleString('en-US') : n.toFixed(1);
+	}
+
+	function renderResults(p, r) {
+		const el = document.getElementById(p + '_results');
+		const resColor = r.effRes > 0 ? 'warn' : r.effRes < 0 ? 'pos' : '';
+		el.innerHTML = `
+			<div class="result-row"><span class="lbl">Weapon Dmg</span><span class="val">${fmt(r.wepMin)} – ${fmt(r.wepMax)} <small class="text-secondary">(avg ${fmt(r.wepAvg,1)})</small></span></div>
+			<div class="result-row"><span class="lbl">STR ED%</span><span class="val">${fmt(r.strED,1)}%</span></div>
+			<div class="result-row"><span class="lbl">Total Off-Wep ED%</span><span class="val">${fmt(r.totalOffED,1)}%</span></div>
+			<div class="result-row mt-1"><span class="lbl">Sheet Dmg</span><span class="val">${fmt(r.sheetMin)} – ${fmt(r.sheetMax)} <small class="text-secondary">(avg ${fmt(r.sheetAvg,1)})</small></span></div>
+			<div class="result-row"><span class="lbl">Crit (2x)</span><span class="val">${fmt(r.pCritHit*100,1)}%</span></div>
+			<div class="result-row"><span class="lbl">Deadly Strike (1.5x)</span><span class="val">${fmt(r.pDSHit*100,1)}%</span></div>
+			<div class="result-row"><span class="lbl">Normal (1x)</span><span class="val">${fmt(r.pNormalHit*100,1)}%</span></div>
+			<div class="result-row"><span class="lbl">Avg Dmg Multiplier</span><span class="val">${fmt(r.avgMult,2)}x</span></div>
+			<div class="result-row"><span class="lbl">Final Dmg (pre-res)</span><span class="val">${fmt(r.finalMin)} – ${fmt(r.finalMax)} <small class="text-secondary">(avg ${fmt(r.finalAvg,1)})</small></span></div>
+			<div class="result-row"><span class="lbl">Avg CB / hit</span><span class="val">${fmt(r.avgCB,1)}</span></div>
+			<div class="result-row"><span class="lbl">Effective Phys Res%</span><span class="val ${resColor}">${fmt(r.effRes,1)}%</span></div>
+			<hr class="my-1">
+			<div class="result-row"><span class="lbl">Eff Dmg (after res)</span><span class="val pos">${fmt(r.effMin)} – ${fmt(r.effMax)} <small class="text-secondary">(avg ${fmt(r.effAvg,1)})</small></span></div>
+			<div class="result-row"><span class="lbl">Eff CB / hit (after res)</span><span class="val">${fmt(r.effCBAvg,1)}</span></div>
+			<div class="result-row"><span class="lbl"><strong>Total Avg / hit</strong></span><span class="val pos">${fmt(r.totalAvg,1)}</span></div>
+			${r.dpsOn ? `<div class="result-row"><span class="lbl">DPS (${fmt(r.aps,2)} APS)</span><span class="val warn">${fmt(r.dps,1)}</span></div>` : ''}
+		`;
+	}
+
+	function renderCompare(rA, rB) {
+		const el = document.getElementById('compare_results');
+
+		function diff(a, b, label, higherIsBetter = true) {
+			if (a === 0 && b === 0) return '';
+			const delta = b - a;
+			const pct   = a !== 0 ? (delta / a * 100) : 0;
+			const better = higherIsBetter ? delta > 0 : delta < 0;
+			const worse  = higherIsBetter ? delta < 0 : delta > 0;
+			const cls    = better ? 'success' : worse ? 'danger' : 'secondary';
+			const sign   = delta >= 0 ? '+' : '';
+			return `
+				<div class="mb-2">
+					<div class="text-secondary" style="font-size:0.75rem">${label}</div>
+					<div class="d-flex justify-content-between align-items-center">
+						<span class="big-val a">${fmtK(a)}</span>
+						<span class="badge bg-${cls} diff-badge">${sign}${fmt(pct,1)}%</span>
+						<span class="big-val b">${fmtK(b)}</span>
+					</div>
+				</div>`;
+		}
+
+		el.innerHTML = `
+			<div class="text-center mb-2">
+				<span class="badge bg-primary me-2">A</span>
+				<span class="text-secondary small">vs</span>
+				<span class="badge bg-success ms-2">B</span>
+			</div>
+			${diff(rA.wepAvg,    rB.wepAvg,    'Weapon Avg Dmg')}
+			${diff(rA.sheetAvg,  rB.sheetAvg,  'Sheet Avg Dmg')}
+			${diff(rA.finalAvg,  rB.finalAvg,  'Final Avg (pre-res)')}
+			${diff(rA.totalAvg,  rB.totalAvg,  'Total Avg / hit')}
+			${(rA.dpsOn || rB.dpsOn) ? diff(rA.dps, rB.dps, 'DPS') : ''}
+		`;
+	}
+
+	const SECTIONS = {
+		weapon:  { inputs: ['base_min','base_max','wed','flat_min','flat_max'], checks: ['eth'],    selects: ['cat','wep'] },
+		stats:   { inputs: ['str','str_per','dex','dex_per','off_ed','skill_ed'],  checks: [],      selects: [] },
+		auras:   { inputs: ['might','conc','fanat','how','bc'],                    checks: [],      selects: [] },
+		crit:    { inputs: ['ds','mastery','scrit'],                               checks: [],      selects: [] },
+		cb:      { inputs: ['cb','hp'],                                            checks: [],      selects: ['cbtype'] },
+		physres: { inputs: ['mob_res','gear_res','amp','bcry'],                    checks: [],      selects: [] },
+		dps:     { inputs: ['fpa'],                                                checks: ['dps_on'], selects: [] },
+	};
+
+	function copySection(from, to, section) {
+		const s = SECTIONS[section];
+		s.inputs.forEach(f => { document.getElementById(to+'_'+f).value   = document.getElementById(from+'_'+f).value; });
+		s.checks.forEach(f => { document.getElementById(to+'_'+f).checked = document.getElementById(from+'_'+f).checked; });
+		s.selects.forEach(f => { document.getElementById(to+'_'+f).value  = document.getElementById(from+'_'+f).value; });
+		if (section === 'weapon') {
+			// Re-populate weapon list for the new category, then re-apply all values
+			populateWeapons(to);
+			document.getElementById(to+'_wep').value      = document.getElementById(from+'_wep').value;
+			document.getElementById(to+'_base_min').value = document.getElementById(from+'_base_min').value;
+			document.getElementById(to+'_base_max').value = document.getElementById(from+'_base_max').value;
+			document.getElementById(to+'_wed').value      = document.getElementById(from+'_wed').value;
+			document.getElementById(to+'_flat_min').value = document.getElementById(from+'_flat_min').value;
+			document.getElementById(to+'_flat_max').value = document.getElementById(from+'_flat_max').value;
+			document.getElementById(to+'_eth').checked    = document.getElementById(from+'_eth').checked;
+		}
+		calc();
+	}
+
+	let rollChartInstance = null;
+
+	function buildRollPts(r) {
+		// 3-outcome distribution (X = cumulative probability, Y = damage):
+		//   [0,          pN)       → 1x   normal hit
+		//   [pN,         pN+pDS)   → 1.5x deadly strike
+		//   [pN+pDS,     100]      → 2x   crit
+		const pN  = r.pNormalHit;
+		const pDS = r.pDSHit;
+		const pC  = r.pCritHit;
+
+		const lo1 = r.sheetMin *   1 * r.resMult,  hi1 = r.sheetMax *   1 * r.resMult;
+		const lo2 = r.sheetMin * 1.5 * r.resMult,  hi2 = r.sheetMax * 1.5 * r.resMult;
+		const lo3 = r.sheetMin *   2 * r.resMult,  hi3 = r.sheetMax *   2 * r.resMult;
+
+		const x1end = pN * 100;
+		const x2end = (pN + pDS) * 100;
+		const pts   = [];
+
+		if (pN > 0) {
+			pts.push({ x: 0,     y: lo1 });
+			pts.push({ x: x1end, y: hi1 });
+		}
+		pts.push({ x: x1end + 0.001, y: null });
+
+		if (pDS > 0) {
+			pts.push({ x: x1end, y: lo2 });
+			pts.push({ x: x2end, y: hi2 });
+		}
+		pts.push({ x: x2end + 0.001, y: null });
+
+		if (pC > 0) {
+			pts.push({ x: x2end, y: lo3 });
+			pts.push({ x: 100,   y: hi3 });
+		}
+
+		return pts;
+	}
+
+	function renderRollChart(rA, rB) {
+		const ctx = document.getElementById('rollChart');
+		if (rollChartInstance) rollChartInstance.destroy();
+		rollChartInstance = new Chart(ctx, {
+			type: 'line',
+			data: {
+				datasets: [
+					{ label: 'Weapon A', data: buildRollPts(rA), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: false, tension: 0, pointRadius: 3, spanGaps: false },
+					{ label: 'Weapon B', data: buildRollPts(rB), borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.08)',  fill: false, tension: 0, pointRadius: 3, spanGaps: false },
+				]
+			},
+			options: {
+				responsive: true,
+				animation: false,
+				plugins: {
+					legend: { labels: { color: '#adb5bd' } },
+					tooltip: {
+						filter: item => item.parsed.y !== null,
+						callbacks: {
+							title: ctx => `Cumulative probability: ${ctx[0].parsed.x.toFixed(1)}%`,
+							label: ctx => ` ${ctx.dataset.label}: ${fmtK(Math.round(ctx.parsed.y))} dmg`,
+						}
+					}
+				},
+				scales: {
+					x: {
+						type: 'linear', min: 0, max: 100,
+						ticks: { color: '#adb5bd', callback: v => v + '%' },
+						grid:  { color: 'rgba(255,255,255,0.06)' },
+						title: { display: true, text: 'Cumulative Probability — left segment = normal hits, right = crits', color: '#adb5bd' }
+					},
+					y: {
+						ticks: { color: '#adb5bd', callback: v => fmtK(v) },
+						grid:  { color: 'rgba(255,255,255,0.06)' },
+						title: { display: true, text: 'Damage (after phys res)', color: '#adb5bd' }
+					},
+				}
+			}
+		});
+	}
+
+	function calc() {
+		const rA = calcWeapon('a');
+		const rB = calcWeapon('b');
+		renderResults('a', rA);
+		renderResults('b', rB);
+		renderCompare(rA, rB);
+		renderRollChart(rA, rB);
+	}
+
+	// Init
+	initDropdowns('a');
+	initDropdowns('b');
+	// Set B to 2H Sword / Colossus Blade as default
+	document.getElementById('b_cat').value = '2H Sword';
+	populateWeapons('b');
+	calc();
+</script>
+</body>
+</html>
