@@ -217,6 +217,13 @@
 							<span class="input-group-text">%</span>
 						</div>
 					</div>
+					<div class="col-4">
+						<label class="form-label">Grim Ward ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_grim" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
 				</div>
 
 				<div class="sec-label d-flex justify-content-between align-items-center"><span>Critical Hit</span>
@@ -471,6 +478,13 @@
 						<label class="form-label">Battle Cmd ED%</label>
 						<div class="input-group input-group-sm">
 							<input type="number" id="b_bc" class="form-control" value="0" min="0" oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">Grim Ward ED%</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_grim" class="form-control" value="0" min="0" oninput="calc()">
 							<span class="input-group-text">%</span>
 						</div>
 					</div>
@@ -752,6 +766,7 @@
 		const fanat    = n(p+'_fanat');
 		const how      = n(p+'_how');
 		const bc       = n(p+'_bc');
+		const grim     = n(p+'_grim');
 		const ds       = Math.min(100, n(p+'_ds'));
 		const mastery  = Math.min(100, n(p+'_mastery'));
 		const scrit    = Math.min(100, n(p+'_scrit'));
@@ -775,7 +790,7 @@
 		// 2. Off-weapon ED
 		const strED       = str * strPer;
 		const dexED       = dex * dexPer;
-		const totalAuraED = might + conc + fanat + how + bc;
+		const totalAuraED = might + conc + fanat + how + bc + grim;
 		const totalOffED  = strED + dexED + offED + skillED + totalAuraED;
 
 		// 3. Sheet damage
@@ -907,7 +922,7 @@
 	const SECTIONS = {
 		weapon:  { inputs: ['base_min','base_max','wed','flat_min','flat_max'], checks: ['eth'],    selects: ['cat','wep'] },
 		stats:   { inputs: ['str','str_per','dex','dex_per','off_ed','skill_ed'],  checks: [],      selects: [] },
-		auras:   { inputs: ['might','conc','fanat','how','bc'],                    checks: [],      selects: [] },
+		auras:   { inputs: ['might','conc','fanat','how','bc','grim'],             checks: [],      selects: [] },
 		crit:    { inputs: ['ds','mastery','scrit'],                               checks: [],      selects: [] },
 		cb:      { inputs: ['cb','hp'],                                            checks: [],      selects: ['cbtype'] },
 		physres: { inputs: ['mob_res','gear_res','amp','bcry'],                    checks: [],      selects: [] },
@@ -1026,11 +1041,11 @@
 	// URL state — fixed-order array serialized as base64 JSON for compact URLs
 	// Order per panel: cat, wep, cbtype, eth, dps_on, base_min, base_max, wed,
 	//   flat_min, flat_max, str, str_per, dex, dex_per, off_ed, skill_ed,
-	//   might, conc, fanat, how, bc, ds, mastery, scrit, cb, hp,
+	//   might, conc, fanat, how, bc, grim, ds, mastery, scrit, cb, hp,
 	//   mob_res, gear_res, amp, bcry, fpa
 	const URL_ORDER = ['cat','wep','cbtype','eth','dps_on','base_min','base_max','wed',
 	                   'flat_min','flat_max','str','str_per','dex','dex_per','off_ed','skill_ed',
-	                   'might','conc','fanat','how','bc','ds','mastery','scrit','cb','hp',
+	                   'might','conc','fanat','how','bc','grim','ds','mastery','scrit','cb','hp',
 	                   'mob_res','gear_res','amp','bcry','fpa'];
 	const URL_CHECKS = ['eth','dps_on'];
 	const URL_SELECTS = ['cat','wep','cbtype'];
