@@ -351,7 +351,7 @@ l-26 24 14 -25z"/>
 -6 20 -14 20 -8 0 -13 -8 -12 -17z"/>
 						</g>
 					</svg>
-					Season 13 Bossing Tier list by
+					Season 12 Bossing Tier list by
 					<svg xmlns="http://www.w3.org/2000/svg"
 					     width="125.000000pt" height="125.000000pt" viewBox="0 0 300.000000 286.000000"
 					     preserveAspectRatio="xMidYMid meet">
@@ -452,8 +452,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		<td colspan="7">
 			<div class="alert alert-danger" role="alert">
 				<h3>"Easy/Moderate/Hard" are relative terms when it comes to T2 boss fights.<br/>
-					You must be well-versed in the fight to even stand a chance on an Easy build.<br/>
-					Currently, this is just a copy from Season 12 (Updated: March 23rd 2026)</h3>
+					You must be well-versed in the fight to even stand a chance on an Easy build. (Updated: 11/24/25)</h3>
 			</div>
 		</td>
 	</tr>
@@ -463,12 +462,6 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 
 <div id="classPicker" class="container-fluid dark">
 	<div class="row">
-		<div class="col-sm-6 col-md-3 col-xl-auto">
-			<div class="form-check form-switch">
-				<input checked class="form-check-input" id="checkboxToggleAll" type="checkbox" onchange="toggleAll(this.checked)">
-				<label class="form-check-label" for="checkboxToggleAll">All</label>
-			</div>
-		</div>
 		<div class="col-sm-6 col-md-3 col-xl-auto">
 			<div class="form-check form-switch">
 				<input checked class="form-check-input" id="checkboxSorceress" type="checkbox">
@@ -2233,18 +2226,6 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 <script>
 	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-<script>
-	const allClassCheckboxes = ['checkboxSorceress','checkboxDruid','checkboxAssassin','checkboxBarbarian','checkboxAmazon','checkboxNecromancer','checkboxPaladin'];
-	function toggleAll(newState) {
-		allClassCheckboxes.forEach(id => {
-			const cb = document.getElementById(id);
-			if (cb.checked !== newState) {
-				cb.checked = newState;
-				cb.dispatchEvent(new Event('change'));
-			}
-		});
-	}
 </script>
 </body>
 </html>
