@@ -905,6 +905,24 @@
 				</div>`;
 		}
 
+		function diffRange(aMin, aMax, bMin, bMax, label) {
+			const aAvg = (aMin + aMax) / 2;
+			const bAvg = (bMin + bMax) / 2;
+			const delta = bAvg - aAvg;
+			const pct   = aAvg !== 0 ? (delta / aAvg * 100) : 0;
+			const cls   = delta > 0 ? 'success' : delta < 0 ? 'danger' : 'secondary';
+			const sign  = delta >= 0 ? '+' : '';
+			return `
+				<div class="mb-2">
+					<div class="text-secondary" style="font-size:0.75rem">${label}</div>
+					<div class="d-flex justify-content-between align-items-center">
+						<span class="big-val a" style="font-size:1rem">${fmtK(aMin)}–${fmtK(aMax)}</span>
+						<span class="badge bg-${cls} diff-badge">${sign}${fmt(pct,1)}%</span>
+						<span class="big-val b" style="font-size:1rem">${fmtK(bMin)}–${fmtK(bMax)}</span>
+					</div>
+				</div>`;
+		}
+
 		el.innerHTML = `
 			<div class="text-center mb-2">
 				<span class="badge bg-primary me-2">A</span>
@@ -912,6 +930,7 @@
 				<span class="badge bg-success ms-2">B</span>
 			</div>
 			${diff(rA.wepAvg,    rB.wepAvg,    'Weapon Avg Dmg')}
+			${diffRange(rA.sheetMin, rA.sheetMax, rB.sheetMin, rB.sheetMax, 'Sheet Dmg')}
 			${diff(rA.sheetAvg,  rB.sheetAvg,  'Sheet Avg Dmg')}
 			${diff(rA.finalAvg,  rB.finalAvg,  'Final Avg (pre-res)')}
 			${diff(rA.totalAvg,  rB.totalAvg,  'Total Avg / hit')}
