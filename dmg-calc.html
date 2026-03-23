@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFHSCHGQ9Y"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-MFHSCHGQ9Y');
+	</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -607,61 +616,62 @@
 	const WEAPON_DB = {
 		'1H Axe':    { strPer: 1.0, dexPer: 0.0, weapons: [
 			{ name:'Berserker Axe',  min:30,  max:89  },
-			{ name:'Ettin Axe',      min:33,  max:66  },
-			{ name:'War Spike',      min:30,  max:48  },
-			{ name:'Caduceus',       min:18,  max:30  },
-			{ name:'Tomahawk',       min:33,  max:58  },
+			{ name:'Ettin Axe',      min:41,  max:83  },
+			{ name:'War Spike',      min:38,  max:60  },
+			{ name:'Caduceus',       min:46,  max:54  },
+			{ name:'Tomahawk',       min:44,  max:75  },
 			{ name:'Custom',         min:0,   max:0   },
 		]},
 		'2H Axe':    { strPer: 1.0, dexPer: 0.0, weapons: [
-			{ name:'Glorious Axe',   min:60,  max:124 },
-			{ name:'Decapitator',    min:49,  max:137 },
+			{ name:'Glorious Axe',   min:75,  max:155 },
+			{ name:'Decapitator',    min:61,  max:171 },
 			{ name:'Custom',         min:0,   max:0   },
 		]},
 		'1H Sword':  { strPer: 1.0, dexPer: 0.0, weapons: [
-			{ name:'Phase Blade',       min:31,  max:35  },
-			{ name:'Dimensional Blade', min:13,  max:35  },
-			{ name:'Crystal Sword',     min:5,   max:15  },
-			{ name:'Legend Sword',      min:22,  max:56  },
-			{ name:'Colossus Sword',    min:26,  max:70  },
+			{ name:'Phase Blade',       min:39,  max:44  },
+			{ name:'Dimensional Blade', min:18,  max:51  },
+			{ name:'Crystal Sword',     min:18,  max:51  },
+			{ name:'Legend Sword',      min:63,  max:118 },
 			{ name:'Custom',            min:0,   max:0   },
 		]},
 		'2H Sword':  { strPer: 1.1, dexPer: 0.0, weapons: [
-			{ name:'Colossus Blade',    min:61,  max:121 },
-			{ name:'Colossal Sword',    min:26,  max:70  },
-			{ name:'Custom',            min:0,   max:0   },
+			{ name:'Colossus Blade 1h',  min:31,  max:81  },
+			{ name:'Colossus Blade 2h',  min:73,  max:144 },
+			{ name:'Colossal Sword 1h',  min:33,  max:88  },
+			{ name:'Colossal Sword 2h',  min:76,  max:151 },
+			{ name:'Custom',             min:0,   max:0   },
 		]},
 		'Polearm':   { strPer: 1.0, dexPer: 0.0, weapons: [
-			{ name:'Cryptic Axe',       min:33,  max:150 },
-			{ name:'Giant Thresher',    min:40,  max:114 },
-			{ name:'Thresher',          min:12,  max:141 },
-			{ name:'Ogre Axe',          min:28,  max:145 },
-			{ name:'Bec-de-Corbin',     min:13,  max:85  },
+			{ name:'Cryptic Axe',       min:41,  max:188 },
+			{ name:'Giant Thresher',    min:50,  max:142 },
+			{ name:'Thresher',          min:15,  max:176 },
+			{ name:'Ogre Axe',          min:35,  max:181 },
+			{ name:'Bec-de-Corbin',     min:18,  max:122 },
 			{ name:'Custom',            min:0,   max:0   },
 		]},
 		'Mace/Club': { strPer: 1.0, dexPer: 0.0, weapons: [
-			{ name:'Tyrant Club',       min:32,  max:58  },
-			{ name:'War Club',          min:53,  max:78  },
-			{ name:'Ogre Maul',         min:77,  max:106 },
-			{ name:'Thunder Maul',      min:33,  max:180 },
+			{ name:'Tyrant Club',       min:43,  max:75  },
+			{ name:'War Club',          min:69,  max:113 },
+			{ name:'Ogre Maul',         min:96,  max:132 },
+			{ name:'Thunder Maul',      min:41,  max:225 },
 			{ name:'Custom',            min:0,   max:0   },
 		]},
 		'Spear':     { strPer: 0.8, dexPer: 0.5, weapons: [
-			{ name:'War Pike',          min:14,  max:63  },
-			{ name:'Hyperion Spear',    min:35,  max:119 },
-			{ name:'Matriarchal Spear', min:65,  max:95  },
+			{ name:'War Pike',          min:41,  max:223 },
+			{ name:'Hyperion Spear',    min:44,  max:149 },
+			{ name:'Matriarchal Spear', min:79,  max:116 },
 			{ name:'Custom',            min:0,   max:0   },
 		]},
 		'Javelin':   { strPer: 0.8, dexPer: 0.5, weapons: [
-			{ name:'Hyperion Javelin',    min:28, max:55 },
-			{ name:'Matriarchal Javelin', min:30, max:54 },
+			{ name:'Hyperion Javelin',    min:41, max:83 },
+			{ name:'Matriarchal Javelin', min:44, max:83 },
 			{ name:'Custom',              min:0,  max:0  },
 		]},
 		'Bow':       { strPer: 0.0, dexPer: 1.0, weapons: [
-			{ name:'Grand Matron Bow',   min:14,  max:72  },
-			{ name:'Hydra Bow',          min:10,  max:68  },
-			{ name:'Blade Bow',          min:21,  max:41  },
-			{ name:'Colossus Crossbow',  min:34,  max:151 },
+			{ name:'Grand Matron Bow',   min:20,  max:104 },
+			{ name:'Hydra Bow',          min:14,  max:100 },
+			{ name:'Blade Bow',          min:30,  max:60  },
+			{ name:'Colossus Crossbow',  min:47,  max:125 },
 			{ name:'Custom',             min:0,   max:0   },
 		]},
 		'Custom':    { strPer: 1.0, dexPer: 0.0, weapons: [
@@ -1010,6 +1020,60 @@
 		renderResults('b', rB);
 		renderCompare(rA, rB);
 		renderRollChart(rA, rB);
+		updateURL();
+	}
+
+	// URL state — fixed-order array serialized as base64 JSON for compact URLs
+	// Order per panel: cat, wep, cbtype, eth, dps_on, base_min, base_max, wed,
+	//   flat_min, flat_max, str, str_per, dex, dex_per, off_ed, skill_ed,
+	//   might, conc, fanat, how, bc, ds, mastery, scrit, cb, hp,
+	//   mob_res, gear_res, amp, bcry, fpa
+	const URL_ORDER = ['cat','wep','cbtype','eth','dps_on','base_min','base_max','wed',
+	                   'flat_min','flat_max','str','str_per','dex','dex_per','off_ed','skill_ed',
+	                   'might','conc','fanat','how','bc','ds','mastery','scrit','cb','hp',
+	                   'mob_res','gear_res','amp','bcry','fpa'];
+	const URL_CHECKS = ['eth','dps_on'];
+	const URL_SELECTS = ['cat','wep','cbtype'];
+
+	function panelToArray(panel) {
+		return URL_ORDER.map(f => {
+			const el = document.getElementById(panel+'_'+f);
+			if (!el) return null;
+			if (URL_CHECKS.includes(f))  return el.checked ? 1 : 0;
+			if (URL_SELECTS.includes(f)) return el.value;
+			return parseFloat(el.value) || 0;
+		});
+	}
+
+	function updateURL() {
+		const data = [panelToArray('a'), panelToArray('b')];
+		const encoded = btoa(JSON.stringify(data)).replace(/=+$/, '');
+		history.replaceState(null, '', '?v=' + encoded);
+	}
+
+	function loadFromURL() {
+		const raw = new URLSearchParams(location.search).get('v');
+		if (!raw) return;
+		let data;
+		try { data = JSON.parse(atob(raw)); } catch(e) { return; }
+		['a','b'].forEach((panel, pi) => {
+			const vals = data[pi];
+			if (!vals) return;
+			// Set cat first and populate weapons dropdown
+			const catEl = document.getElementById(panel+'_cat');
+			if (catEl) { catEl.value = vals[URL_ORDER.indexOf('cat')]; populateWeapons(panel); }
+			// Set wep (options now populated)
+			const wepEl = document.getElementById(panel+'_wep');
+			if (wepEl) wepEl.value = vals[URL_ORDER.indexOf('wep')];
+			// Restore all remaining fields (override applyWeaponStats defaults)
+			URL_ORDER.forEach((f, i) => {
+				if (f === 'cat' || f === 'wep') return;
+				const el = document.getElementById(panel+'_'+f);
+				if (!el) return;
+				if (URL_CHECKS.includes(f))  el.checked = vals[i] === 1;
+				else el.value = vals[i];
+			});
+		});
 	}
 
 	// Init
@@ -1018,6 +1082,7 @@
 	// Set B to 2H Sword / Colossus Blade as default
 	document.getElementById('b_cat').value = '2H Sword';
 	populateWeapons('b');
+	loadFromURL();
 	calc();
 </script>
 </body>
