@@ -109,7 +109,7 @@
 					<div class="col-4 d-flex align-items-end">
 						<div class="form-check mb-1">
 							<input class="form-check-input" type="checkbox" id="a_eth" onchange="calc()">
-							<label class="form-check-label form-label" for="a_eth">Ethereal (+50%)</label>
+							<label class="form-check-label form-label" for="a_eth">Ethereal (+25%)</label>
 						</div>
 					</div>
 				</div>
@@ -269,8 +269,8 @@
 					<div class="col-4">
 						<label class="form-label">CB Type</label>
 						<select id="a_cbtype" class="form-select form-select-sm" onchange="calc()">
-							<option value="0.25">Melee (1/4)</option>
-							<option value="0.125">Ranged (1/8)</option>
+							<option value="0.125">Normal (1/8)</option>
+							<option value="0.0125">Boss (1/80)</option>
 						</select>
 					</div>
 				</div>
@@ -366,7 +366,7 @@
 					<div class="col-4 d-flex align-items-end">
 						<div class="form-check mb-1">
 							<input class="form-check-input" type="checkbox" id="b_eth" onchange="calc()">
-							<label class="form-check-label form-label" for="b_eth">Ethereal (+50%)</label>
+							<label class="form-check-label form-label" for="b_eth">Ethereal (+25%)</label>
 						</div>
 					</div>
 				</div>
@@ -526,8 +526,8 @@
 					<div class="col-4">
 						<label class="form-label">CB Type</label>
 						<select id="b_cbtype" class="form-select form-select-sm" onchange="calc()">
-							<option value="0.25">Melee (1/4)</option>
-							<option value="0.125">Ranged (1/8)</option>
+							<option value="0.125">Normal (1/8)</option>
+							<option value="0.0125">Boss (1/80)</option>
 						</select>
 					</div>
 				</div>
@@ -607,7 +607,7 @@
 
 	<p class="text-secondary text-center mt-2" style="font-size:0.75rem">
 		Weapon base damages are approximate PD2 values. Verify in-game for exact numbers.
-		Ethereal = +50% weapon ED. Flat +damage added after weapon ED multiplier.
+		Ethereal = +25% weapon ED. Flat +damage added after weapon ED multiplier.
 		Crit sources (DS / Mastery / Skill) each independently roll for double damage.
 	</p>
 </div>
@@ -766,7 +766,7 @@
 		const dpsOn    = b(p+'_dps_on');
 
 		// 1. Weapon damage (eth stacks additively with weapon ED)
-		const ethBonus    = eth ? 50 : 0;
+		const ethBonus    = eth ? 25 : 0;
 		const totalWED    = wed + ethBonus;
 		const wepMin      = Math.floor(baseMin * (1 + totalWED / 100)) + flatMin;
 		const wepMax      = Math.floor(baseMax * (1 + totalWED / 100)) + flatMax;
