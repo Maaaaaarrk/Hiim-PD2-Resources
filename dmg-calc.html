@@ -72,9 +72,28 @@
 
 	<div class="text-center mb-4">
 		<h3 class="mb-0">Season 13 PD2 Physical Damage Calculator</h3>
-		<small class="text-secondary">Based on HarryPe's Physical Damage Calculator v2.3<br/></small>
-		<small class="text-secondary"><a href="index.html" class="alert-link">← View other resources</a></small>
+		<small class="text-secondary">Based on HarryPe's Physical Damage Calculator v2.3</small>
+		<div class="mt-2 d-flex justify-content-center gap-2">
+			<a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a>
+			<a id="report-issue-btn"
+			   href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=dmg-calc%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A"
+			   target="_blank"
+			   rel="noopener"
+			   class="btn btn-sm btn-outline-danger">
+				&#9888; Report an Issue
+			</a>
+		</div>
 	</div>
+	<script>
+		// Append current URL to the issue body so inputs are captured
+		(function () {
+			var btn = document.getElementById('report-issue-btn');
+			if (!btn) return;
+			var base = btn.href.split('body=')[0] + 'body=';
+			var body = decodeURIComponent(btn.href.split('body=')[1]);
+			btn.href = base + encodeURIComponent(body + window.location.href);
+		})();
+	</script>
 
 	<div class="row g-3 mb-3">
 		<!-- ═══════════════ WEAPON A ═══════════════ -->
