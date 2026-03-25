@@ -7,7 +7,6 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'G-MFHSCHGQ9Y');
 	</script>
 	<meta charset="UTF-8">
@@ -17,18 +16,21 @@
 	      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet">
 	<script crossorigin="anonymous"
 	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">-
+	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
 	</script>
-
-
 	<style>
-		.map-img-fluid {
-		    width: 100%;
-		    height: auto;
+		.map-img-fluid { width: 100%; height: auto; }
+		.modal-fullwidth { --bs-modal-width: 100%; }
+		.tier-divider {
+			width: 100%;
+			border-top: 1px solid #495057;
+			padding-top: 4px;
+			margin-top: 4px;
+			font-size: 0.75rem;
+			color: #6c757d;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
 		}
-		.modal-fullwidth {
-        --bs-modal-width: 100%;
-        }
 	</style>
 </head>
 <body data-bs-theme="dark">
@@ -67,11 +69,10 @@ c-4 -14 -4 -45 0 -70 3 -24 3 -44 0 -44 -14 0 -205 173 -201 183 3 10 188 176
 -27 -40 -50 -42 -50 -2 0 -3 17 -2 38 1 20 2 43 1 50 -1 13 -23 17 -34 5z"/>
 					</g>
 				</svg>
-
 			</a>
 		</td>
 		<td class="align-middle">
-			<div class="alert alert-dark " role="alert">
+			<div class="alert alert-dark" role="alert">
 				<h1 style="text-align: center;">
 					<svg xmlns="http://www.w3.org/2000/svg"
 					     width="125.000000pt" height="125.000000pt" viewBox="0 0 136.000000 136.000000"
@@ -316,1422 +317,1156 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	</tbody>
 </table>
 
-<div class="container-fluid">
+<div class="pt-3 mt-4 alert alert-danger" role="alert">
+	<h2>Apologies, update in progress — map images are being updated to use the new wiki images</h2>
+</div>
 
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapSize" id="mapSize1"
-			       value="Small">
+		<div class="col-md-2 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapSize" id="mapSize1" value="Small">
 			<label class="form-check-label" for="mapSize1">Map Size Small</label>
 		</div>
-		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapSize" id="mapSize2"
-			       value="Medium" checked>
+		<div class="col-md-2 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapSize" id="mapSize2" value="Medium" checked>
 			<label class="form-check-label" for="mapSize2">Map Size Medium</label>
 		</div>
-		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapSize" id="mapSize3"
-			       value="Large">
+		<div class="col-md-2 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapSize" id="mapSize3" value="Large">
 			<label class="form-check-label" for="mapSize3">Map Size Large</label>
 		</div>
 		<div class="col-md-2 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rall"
-			       value="all" checked>
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rall" value="all" checked>
 			<label class="form-check-label" for="rall">All</label>
 		</div>
-		<div class="w-100  border-top"></div>
+		<div class="col-md-2">
+			<a href="https://wiki.projectdiablo2.com/wiki/Maps" target="_blank" rel="noopener"
+			   class="btn btn-sm btn-outline-info">&#128506; View Map details on the PD2 Wiki</a>
+		</div>
+
+		<div class="tier-divider">Tier 1 — Zone Level 87</div>
 		<div class="col-md-3 form-check form-check-inline">
 			<input class="form-check-input" type="radio" name="mapDisplay" id="rarreatbattlefield"
 			       value="arreatbattlefield">
 			<label class="form-check-label" for="rarreatbattlefield">Arreat Battlefield [T1]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rcaldeum"
-			       value="caldeum">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rcaldeum" value="caldeum">
 			<label class="form-check-label" for="rcaldeum">Fall of Caldeum [T1]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rroyalcrypts"
-			       value="royalcrypts">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rhallsoftorture" value="hallsoftorture">
+			<label class="form-check-label" for="rhallsoftorture">Halls of Torture [T1]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rhorazonsmemory" value="horazonsmemory">
+			<label class="form-check-label" for="rhorazonsmemory">Horazon's Memory [T1]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rroyalcrypts" value="royalcrypts">
 			<label class="form-check-label" for="rroyalcrypts">Royal Crypts [T1]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rsewers"
-			       value="sewers">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rsewers" value="sewers">
 			<label class="form-check-label" for="rsewers">Sewers of Harrogath [T1]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rwestmarch"
-			       value="westmarch">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rwestmarch" value="westmarch">
 			<label class="form-check-label" for="rwestmarch">Shadows of Westmarch [T1]</label>
 		</div>
-		<div class="w-100  border-top"></div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rancestral"
-			       value="ancestral">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rtorajanjungle" value="torajanjungle">
+			<label class="form-check-label" for="rtorajanjungle">Torajan Jungle [T1]</label>
+		</div>
+
+		<div class="tier-divider">Tier 2 — Zone Level 88</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rancestral" value="ancestral">
 			<label class="form-check-label" for="rancestral">Ancestral Trial [T2]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rbastion"
-			       value="bastion">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rbastion" value="bastion">
 			<label class="form-check-label" for="rbastion">Bastion Keep [T2]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rskovos"
-			       value="skovos">
-			<label class="form-check-label" for="rskovos">Skovos Stronghold [T2]</label>
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rdemonroad" value="demonroad">
+			<label class="form-check-label" for="rdemonroad">Demon Road [T2]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rlosttemple"
-			       value="losttemple">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rlosttemple" value="losttemple">
 			<label class="form-check-label" for="rlosttemple">Lost Temple [T2]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rriverblood"
-			       value="riverblood">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rriverblood" value="riverblood">
 			<label class="form-check-label" for="rriverblood">River of Blood [T2]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rzoltun"
-			       value="zoltun">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rruinsofvizjun" value="ruinsofvizjun">
+			<label class="form-check-label" for="rruinsofvizjun">Ruins of Viz-Jun [T2]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rskovos" value="skovos">
+			<label class="form-check-label" for="rskovos">Skovos Stronghold [T2]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rzoltun" value="zoltun">
 			<label class="form-check-label" for="rzoltun">Tomb of Zoltun Kulle [T2]</label>
 		</div>
 
-		<div class="w-100  border-top"></div>
+		<div class="tier-divider">Tier 3 — Zone Level 89</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rashen"
-			       value="ashen">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rashen" value="ashen">
 			<label class="form-check-label" for="rashen">Ashen Plains [T3]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rcanyon"
-			       value="canyon">
-			<label class="form-check-label" for="rcanyon">Canyon of Secheron [T3]</label>
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rbloodmoon" value="bloodmoon">
+			<label class="form-check-label" for="rbloodmoon">Blood Moon [T3]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rmarketplace"
-			       value="marketplace">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rcanyon" value="canyon">
+			<label class="form-check-label" for="rcanyon">Canyon of Sescheron [T3]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rmarketplace" value="marketplace">
 			<label class="form-check-label" for="rmarketplace">Kehjistan Marketplace [T3]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rcitadel"
-			       value="citadel">
-			<label class="form-check-label" for="rcitadel">Pandemonium Citidel [T3]</label>
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rcitadel" value="citadel">
+			<label class="form-check-label" for="rcitadel">Pandemonium Citadel [T3]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rcistern"
-			       value="cistern">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rphlegethon" value="phlegethon">
+			<label class="form-check-label" for="rphlegethon">Phlegethon [T3]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rcistern" value="cistern">
 			<label class="form-check-label" for="rcistern">Ruined Cistern [T3]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="mapDisplay" id="rthrone"
-			       value="throne">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rsanatorium" value="sanatorium">
+			<label class="form-check-label" for="rsanatorium">Sanatorium [T3]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rthrone" value="throne">
 			<label class="form-check-label" for="rthrone">Throne of Insanity [T3]</label>
 		</div>
 
-		<div class="w-100  border-top"></div>
-	</div>
+		<div class="tier-divider">Tier 4 — Zone Level 90</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rplainsoftorment"
+			       value="plainsoftorment">
+			<label class="form-check-label" for="rplainsoftorment">Plains of Torment [T4]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rsanctuaryofsin" value="sanctuaryofsin">
+			<label class="form-check-label" for="rsanctuaryofsin">Sanctuary of Sin [T4]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rsteppesdakenshar"
+			       value="steppesdakenshar">
+			<label class="form-check-label" for="rsteppesdakenshar">Steppes of Daken-Shar [T4]</label>
+		</div>
 
+		<div class="tier-divider">Unique Maps — Zone Level 89</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rcityofureh" value="cityofureh">
+			<label class="form-check-label" for="rcityofureh">City of Ureh [Socketed]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rfallengardens" value="fallengardens">
+			<label class="form-check-label" for="rfallengardens">Fallen Gardens [Jewel]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rimperialpalace" value="imperialpalace">
+			<label class="form-check-label" for="rimperialpalace">Imperial Palace [P-Box]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="routervoid" value="outervoid">
+			<label class="form-check-label" for="routervoid">Outer Void [Boss Mats]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rstygiancaverns" value="stygiancaverns">
+			<label class="form-check-label" for="rstygiancaverns">Stygian Caverns [Corrupted]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rzharssanctum" value="zharssanctum">
+			<label class="form-check-label" for="rzharssanctum">Zhar's Sanctum [Charms]</label>
+		</div>
+
+		<div class="w-100 border-top mt-2"></div>
+	</div>
 </div>
 
-<div class="container-fluid row" id="arreatbattlefield">
+<!-- ═══ T1: ARREAT BATTLEFIELD ═══ -->
+<div class="container-fluid row map-section" id="arreatbattlefield">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button arreatbattlefield1 -->
 		<div class="position-absolute top-0 start-0">
 			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#arreatbattlefield1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			        data-bs-target="#arreatbattlefield1Modal" style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/arreatbattlefield1.png" class="map-img-fluid" alt="">
+		<img src="maps/arreat-battlefield-1.jpg" class="map-img-fluid" alt="Arreat Battlefield 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button arreatbattlefield2 -->
 		<div class="position-absolute top-0 start-0">
 			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#arreatbattlefield2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			        data-bs-target="#arreatbattlefield2Modal" style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/arreatbattlefield2.png" class="map-img-fluid" alt="">
+		<img src="maps/arreat-battlefield-2.jpg" class="map-img-fluid" alt="Arreat Battlefield 2">
 	</div>
 </div>
 
-<div class="container-fluid row" id="caldeum">
+<!-- ═══ T1: FALL OF CALDEUM ═══ -->
+<div class="container-fluid row map-section" id="caldeum">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button caldeum1 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#caldeum1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#caldeum1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/caldeum1.png" class="map-img-fluid" alt="">
+		<img src="maps/fall-of-caldeum-1.jpg" class="map-img-fluid" alt="Fall of Caldeum 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button caldeum2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#caldeum2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#caldeum2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/caldeum2.png" class="map-img-fluid" alt="">
+		<img src="maps/fall-of-caldeum-2.jpg" class="map-img-fluid" alt="Fall of Caldeum 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button caldeum3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#caldeum3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#caldeum3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/caldeum3.png" class="map-img-fluid" alt="">
+		<img src="maps/fall-of-caldeum-3.jpg" class="map-img-fluid" alt="Fall of Caldeum 3">
 	</div>
 </div>
 
-<div class="container-fluid row" id="royalcrypts">
+<!-- ═══ T1: HALLS OF TORTURE ═══ -->
+<div class="container-fluid row map-section" id="hallsoftorture">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button royalcrypts1 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#royalcrypts1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#hallsoftorture1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/royalcrypts1.png" class="map-img-fluid" alt="">
+		<img src="maps/halls-of-torture-1.jpg" class="map-img-fluid" alt="Halls of Torture 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button royalcrypts2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#royalcrypts2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#hallsoftorture2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/royalcrypts2.png" class="map-img-fluid" alt="">
+		<img src="maps/halls-of-torture-2.jpg" class="map-img-fluid" alt="Halls of Torture 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button royalcrypts3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#royalcrypts3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#hallsoftorture3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/royalcrypts3.png" class="map-img-fluid" alt="">
+		<img src="maps/halls-of-torture-3.jpg" class="map-img-fluid" alt="Halls of Torture 3">
 	</div>
 </div>
 
-<div class="container-fluid row" id="sewers">
+<!-- ═══ T1: HORAZON'S MEMORY ═══ -->
+<div class="container-fluid row map-section" id="horazonsmemory">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button sewers1 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#sewers1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#horazonsmemory1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/sewers1.png" class="map-img-fluid" alt="">
+		<img src="maps/horazons-memory-1.jpg" class="map-img-fluid" alt="Horazon's Memory 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button sewers2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#sewers2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#horazonsmemory2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/sewers2.png" class="map-img-fluid" alt="">
+		<img src="maps/horazons-memory-2.jpg" class="map-img-fluid" alt="Horazon's Memory 2">
+	</div>
+</div>
+
+<!-- ═══ T1: ROYAL CRYPTS ═══ -->
+<div class="container-fluid row map-section" id="royalcrypts">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#royalcrypts1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/royal-crypts-1.jpg" class="map-img-fluid" alt="Royal Crypts 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button sewers3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#sewers3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#royalcrypts2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/sewers3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="westmarch">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button westmarch1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#westmarch1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/westmarch1.png" class="map-img-fluid" alt="">
+		<img src="maps/royal-crypts-2.jpg" class="map-img-fluid" alt="Royal Crypts 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button westmarch2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#westmarch2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#royalcrypts3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/westmarch2.png" class="map-img-fluid" alt="">
+		<img src="maps/royal-crypts-3.jpg" class="map-img-fluid" alt="Royal Crypts 3">
+	</div>
+</div>
+
+<!-- ═══ T1: SEWERS OF HARROGATH ═══ -->
+<div class="container-fluid row map-section" id="sewers">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sewers1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/sewers-of-harrogath-1.jpg" class="map-img-fluid" alt="Sewers of Harrogath 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button westmarch3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#westmarch3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sewers2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/westmarch3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="ancestral">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button ancestral1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#ancestral1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/ancestral1.png" class="map-img-fluid" alt="">
+		<img src="maps/sewers-of-harrogath-2.jpg" class="map-img-fluid" alt="Sewers of Harrogath 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button ancestral2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#ancestral2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sewers3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/ancestral2.png" class="map-img-fluid" alt="">
+		<img src="maps/sewers-of-harrogath-3.jpg" class="map-img-fluid" alt="Sewers of Harrogath 3">
+	</div>
+</div>
+
+<!-- ═══ T1: SHADOWS OF WESTMARCH ═══ -->
+<div class="container-fluid row map-section" id="westmarch">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#westmarch1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/shadows-of-westmarch-1.jpg" class="map-img-fluid" alt="Shadows of Westmarch 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button ancestral3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#ancestral3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#westmarch2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/ancestral3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="bastion">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button bastion1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#bastion1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/bastion1.png" class="map-img-fluid" alt="">
+		<img src="maps/shadows-of-westmarch-2.jpg" class="map-img-fluid" alt="Shadows of Westmarch 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button bastion2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#bastion2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#westmarch3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/bastion2.png" class="map-img-fluid" alt="">
+		<img src="maps/shadows-of-westmarch-3.jpg" class="map-img-fluid" alt="Shadows of Westmarch 3">
+	</div>
+</div>
+
+<!-- ═══ T1: TORAJAN JUNGLE ═══ -->
+<div class="container-fluid row map-section" id="torajanjungle">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#torajanjungle1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/torajan-jungle-1.jpg" class="map-img-fluid" alt="Torajan Jungle 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button bastion3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#bastion3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#torajanjungle2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/bastion3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="skovos">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button skovos1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#skovos1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/skovos1.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="losttemple">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button losttemple1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#losttemple1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/losttemple1.png" class="map-img-fluid" alt="">
+		<img src="maps/torajan-jungle-2.jpg" class="map-img-fluid" alt="Torajan Jungle 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button losttemple2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#losttemple2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#torajanjungle3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/losttemple2.png" class="map-img-fluid" alt="">
+		<img src="maps/torajan-jungle-3.jpg" class="map-img-fluid" alt="Torajan Jungle 3">
+	</div>
+</div>
+
+<!-- ═══ T2: ANCESTRAL TRIAL ═══ -->
+<div class="container-fluid row map-section" id="ancestral">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ancestral1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/ancestral-trial-1.jpg" class="map-img-fluid" alt="Ancestral Trial 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button losttemple3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#losttemple3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ancestral2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/losttemple3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="riverblood">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button riverblood1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#riverblood1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/riverblood1.png" class="map-img-fluid" alt="">
+		<img src="maps/ancestral-trial-2.jpg" class="map-img-fluid" alt="Ancestral Trial 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button riverblood2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#riverblood2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ancestral3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/riverblood2.png" class="map-img-fluid" alt="">
+		<img src="maps/ancestral-trial-3.jpg" class="map-img-fluid" alt="Ancestral Trial 3">
+	</div>
+</div>
+
+<!-- ═══ T2: BASTION KEEP ═══ -->
+<div class="container-fluid row map-section" id="bastion">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bastion1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/bastion-keep-1.jpg" class="map-img-fluid" alt="Bastion Keep 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button riverblood3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#riverblood3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bastion2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/riverblood3.png" class="map-img-fluid" alt="">
+		<img src="maps/bastion-keep-2.jpg" class="map-img-fluid" alt="Bastion Keep 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button riverblood4 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#riverblood4Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bastion3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/riverblood4.png" class="map-img-fluid" alt="">
+		<img src="maps/bastion-keep-3.jpg" class="map-img-fluid" alt="Bastion Keep 3">
 	</div>
 </div>
 
-<div class="container-fluid row" id="zoltun">
+<!-- ═══ T2: DEMON ROAD ═══ -->
+<div class="container-fluid row map-section" id="demonroad">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button zoltun1 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#zoltun1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#demonroad1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/zoltun1.png" class="map-img-fluid" alt="">
+		<img src="maps/demon-road-1.jpg" class="map-img-fluid" alt="Demon Road 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button zoltun2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#zoltun2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#demonroad2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/zoltun2.png" class="map-img-fluid" alt="">
+		<img src="maps/demon-road-2.jpg" class="map-img-fluid" alt="Demon Road 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button zoltun3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#zoltun3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#demonroad3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/zoltun3.png" class="map-img-fluid" alt="">
+		<img src="maps/demon-road-3.jpg" class="map-img-fluid" alt="Demon Road 3">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button zoltun4 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#zoltun4Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#demonroad4Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/zoltun4.png" class="map-img-fluid" alt="">
+		<img src="maps/demon-road-4.jpg" class="map-img-fluid" alt="Demon Road 4">
 	</div>
 </div>
 
-<div class="container-fluid row" id="ashen">
+<!-- ═══ T2: LOST TEMPLE ═══ -->
+<div class="container-fluid row map-section" id="losttemple">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button ashen1 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#ashen1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#losttemple1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/ashen1.png" class="map-img-fluid" alt="">
+		<img src="maps/lost-temple-1.jpg" class="map-img-fluid" alt="Lost Temple 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button ashen2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#ashen2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#losttemple2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/ashen2.png" class="map-img-fluid" alt="">
+		<img src="maps/lost-temple-2.jpg" class="map-img-fluid" alt="Lost Temple 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button ashen3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#ashen3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#losttemple3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/ashen3.png" class="map-img-fluid" alt="">
+		<img src="maps/lost-temple-3.jpg" class="map-img-fluid" alt="Lost Temple 3">
 	</div>
 </div>
 
-<div class="container-fluid row" id="canyon">
+<!-- ═══ T2: RIVER OF BLOOD ═══ -->
+<div class="container-fluid row map-section" id="riverblood">
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button canyon1 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#canyon1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#riverblood1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/canyon1.png" class="map-img-fluid" alt="">
+		<img src="maps/river-of-blood-1.jpg" class="map-img-fluid" alt="River of Blood 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button canyon2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#canyon2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#riverblood2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/canyon2.png" class="map-img-fluid" alt="">
+		<img src="maps/river-of-blood-2.jpg" class="map-img-fluid" alt="River of Blood 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button canyon3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#canyon3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#riverblood3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/canyon3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="marketplace">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button marketplace1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#marketplace1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/marketplace1.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="citadel">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button citadel1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#citadel1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/citadel1.png" class="map-img-fluid" alt="">
+		<img src="maps/river-of-blood-3.jpg" class="map-img-fluid" alt="River of Blood 3">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button citadel2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#citadel2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#riverblood4Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/citadel2.png" class="map-img-fluid" alt="">
+		<img src="maps/river-of-blood-4.jpg" class="map-img-fluid" alt="River of Blood 4">
+	</div>
+</div>
+
+<!-- ═══ T2: RUINS OF VIZ-JUN ═══ -->
+<div class="container-fluid row map-section" id="ruinsofvizjun">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ruinsofvizjun1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/ruins-of-viz-jun-1.jpg" class="map-img-fluid" alt="Ruins of Viz-Jun 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button citadel3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#citadel3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ruinsofvizjun2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/citadel3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="cistern">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button cistern1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#cistern1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/cistern1.png" class="map-img-fluid" alt="">
+		<img src="maps/ruins-of-viz-jun-2.jpg" class="map-img-fluid" alt="Ruins of Viz-Jun 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button cistern2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#cistern2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ruinsofvizjun3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/cistern2.png" class="map-img-fluid" alt="">
+		<img src="maps/ruins-of-viz-jun-3.jpg" class="map-img-fluid" alt="Ruins of Viz-Jun 3">
+	</div>
+</div>
+
+<!-- ═══ T2: SKOVOS STRONGHOLD ═══ -->
+<div class="container-fluid row map-section" id="skovos">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#skovos1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/skovos-stronghold.jpg" class="map-img-fluid" alt="Skovos Stronghold 1">
+	</div>
+</div>
+
+<!-- ═══ T2: TOMB OF ZOLTUN KULLE ═══ -->
+<div class="container-fluid row map-section" id="zoltun">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zoltun1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/tomb-of-zoltun-kulle-1.jpg" class="map-img-fluid" alt="Tomb of Zoltun Kulle 1">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button cistern3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#cistern3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zoltun2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/cistern3.png" class="map-img-fluid" alt="">
-	</div>
-</div>
-
-<div class="container-fluid row" id="throne">
-	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button throne1 -->
-		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#throne1Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
-			</button>
-		</div>
-		<img src="maps/throne1.png" class="map-img-fluid" alt="">
+		<img src="maps/tomb-of-zoltun-kulle-2.jpg" class="map-img-fluid" alt="Tomb of Zoltun Kulle 2">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button throne2 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#throne2Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zoltun3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/throne2.png" class="map-img-fluid" alt="">
+		<img src="maps/tomb-of-zoltun-kulle-3.jpg" class="map-img-fluid" alt="Tomb of Zoltun Kulle 3">
 	</div>
 	<div class="col-md-6 position-relative" title="mappath">
-		<!-- Button throne3 -->
 		<div class="position-absolute top-0 start-0">
-			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
-			        data-bs-target="#throne3Modal" style="margin-top: 5px;margin-left: 20px;">
-				🗖
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zoltun4Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/throne3.png" class="map-img-fluid" alt="">
+		<img src="maps/tomb-of-zoltun-kulle-4.jpg" class="map-img-fluid" alt="Tomb of Zoltun Kulle 4">
 	</div>
 </div>
 
-<div class="modal fade" id="arreatbattlefield1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/arreatbattlefield1.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: ASHEN PLAINS ═══ -->
+<div class="container-fluid row map-section" id="ashen">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ashen1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/ashen-plains-1.jpg" class="map-img-fluid" alt="Ashen Plains 1">
 	</div>
-</div>
-
-<div class="modal fade" id="arreatbattlefield2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/arreatbattlefield2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ashen2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/ashen-plains-2.jpg" class="map-img-fluid" alt="Ashen Plains 2">
 	</div>
-</div>
-
-<div class="modal fade" id="caldeum1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/caldeum1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ashen3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/ashen-plains-3.jpg" class="map-img-fluid" alt="Ashen Plains 3">
 	</div>
 </div>
 
-<div class="modal fade" id="caldeum2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/caldeum2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: BLOOD MOON ═══ -->
+<div class="container-fluid row map-section" id="bloodmoon">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bloodmoon1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/blood-moon-1.jpg" class="map-img-fluid" alt="Blood Moon 1">
 	</div>
-</div>
-
-<div class="modal fade" id="caldeum3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/caldeum3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bloodmoon2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/blood-moon-2.jpg" class="map-img-fluid" alt="Blood Moon 2">
 	</div>
-</div>
-
-<div class="modal fade" id="royalcrypts1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/royalcrypts1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bloodmoon3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/blood-moon-3.jpg" class="map-img-fluid" alt="Blood Moon 3">
 	</div>
 </div>
 
-<div class="modal fade" id="royalcrypts2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/royalcrypts2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: CANYON OF SESCHERON ═══ -->
+<div class="container-fluid row map-section" id="canyon">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#canyon1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/canyon-of-sescheron-1.jpg" class="map-img-fluid" alt="Canyon of Sescheron 1">
 	</div>
-</div>
-
-<div class="modal fade" id="royalcrypts3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/royalcrypts3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#canyon2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/canyon-of-sescheron-2.jpg" class="map-img-fluid" alt="Canyon of Sescheron 2">
 	</div>
-</div>
-
-<div class="modal fade" id="sewers1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/sewers1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#canyon3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/canyon-of-sescheron-3.jpg" class="map-img-fluid" alt="Canyon of Sescheron 3">
 	</div>
 </div>
 
-<div class="modal fade" id="sewers2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/sewers2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: KEHJISTAN MARKETPLACE ═══ -->
+<div class="container-fluid row map-section" id="marketplace">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#marketplace1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/kehjistan-marketplace.jpg" class="map-img-fluid" alt="Kehjistan Marketplace 1">
 	</div>
 </div>
 
-<div class="modal fade" id="sewers3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/sewers3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: PANDEMONIUM CITADEL ═══ -->
+<div class="container-fluid row map-section" id="citadel">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#citadel1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/pandemonium-citadel-1.jpg" class="map-img-fluid" alt="Pandemonium Citadel 1">
 	</div>
-</div>
-
-<div class="modal fade" id="westmarch1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/westmarch1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#citadel2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/pandemonium-citadel-2.jpg" class="map-img-fluid" alt="Pandemonium Citadel 2">
 	</div>
-</div>
-
-<div class="modal fade" id="westmarch2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/westmarch2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#citadel3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/pandemonium-citadel-3.jpg" class="map-img-fluid" alt="Pandemonium Citadel 3">
 	</div>
 </div>
 
-<div class="modal fade" id="westmarch3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/westmarch3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: PHLEGETHON ═══ -->
+<div class="container-fluid row map-section" id="phlegethon">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#phlegethon1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/phlegethon-1.jpg" class="map-img-fluid" alt="Phlegethon 1">
 	</div>
-</div>
-
-<div class="modal fade" id="ancestral1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/ancestral1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#phlegethon2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/phlegethon-2.jpg" class="map-img-fluid" alt="Phlegethon 2">
 	</div>
-</div>
-
-<div class="modal fade" id="ancestral2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/ancestral2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#phlegethon3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/phlegethon-3.jpg" class="map-img-fluid" alt="Phlegethon 3">
 	</div>
 </div>
 
-<div class="modal fade" id="ancestral3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/ancestral3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: RUINED CISTERN ═══ -->
+<div class="container-fluid row map-section" id="cistern">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cistern1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/ruined-cistern-1.jpg" class="map-img-fluid" alt="Ruined Cistern 1">
 	</div>
-</div>
-
-<div class="modal fade" id="bastion1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/bastion1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cistern2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/ruined-cistern-2.jpg" class="map-img-fluid" alt="Ruined Cistern 2">
 	</div>
-</div>
-
-<div class="modal fade" id="bastion2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/bastion2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cistern3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/ruined-cistern-3.jpg" class="map-img-fluid" alt="Ruined Cistern 3">
 	</div>
 </div>
 
-<div class="modal fade" id="bastion3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/bastion3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: SANATORIUM ═══ -->
+<div class="container-fluid row map-section" id="sanatorium">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanatorium1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanatorium-1.jpg" class="map-img-fluid" alt="Sanatorium 1">
 	</div>
-</div>
-
-<div class="modal fade" id="skovos1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/skovos1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanatorium2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanatorium-2.jpg" class="map-img-fluid" alt="Sanatorium 2">
 	</div>
-</div>
-
-<div class="modal fade" id="losttemple1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/losttemple1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanatorium3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanatorium-3.jpg" class="map-img-fluid" alt="Sanatorium 3">
 	</div>
 </div>
 
-<div class="modal fade" id="losttemple2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/losttemple2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T3: THRONE OF INSANITY ═══ -->
+<div class="container-fluid row map-section" id="throne">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#throne1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/throne-of-insanity-1.jpg" class="map-img-fluid" alt="Throne of Insanity 1">
 	</div>
-</div>
-
-<div class="modal fade" id="losttemple3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/losttemple3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#throne2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/throne-of-insanity-2.jpg" class="map-img-fluid" alt="Throne of Insanity 2">
 	</div>
-</div>
-
-<div class="modal fade" id="riverblood1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/riverblood1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#throne3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/throne-of-insanity-3.jpg" class="map-img-fluid" alt="Throne of Insanity 3">
 	</div>
 </div>
 
-<div class="modal fade" id="riverblood2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/riverblood2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T4: PLAINS OF TORMENT ═══ -->
+<div class="container-fluid row map-section" id="plainsoftorment">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#plainsoftorment1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/plains-of-torment-1.jpg" class="map-img-fluid" alt="Plains of Torment 1">
 	</div>
-</div>
-
-<div class="modal fade" id="riverblood3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/riverblood3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#plainsoftorment2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/plains-of-torment-2.jpg" class="map-img-fluid" alt="Plains of Torment 2">
 	</div>
-</div>
-
-<div class="modal fade" id="riverblood4Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/riverblood4.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#plainsoftorment3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/plains-of-torment-3.jpg" class="map-img-fluid" alt="Plains of Torment 3">
 	</div>
-</div>
-
-<div class="modal fade" id="zoltun1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/zoltun1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#plainsoftorment4Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/plains-of-torment-4.jpg" class="map-img-fluid" alt="Plains of Torment 4">
 	</div>
 </div>
 
-<div class="modal fade" id="zoltun2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/zoltun2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T4: SANCTUARY OF SIN ═══ -->
+<div class="container-fluid row map-section" id="sanctuaryofsin">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanctuaryofsin1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanctuary-of-sin-1.jpg" class="map-img-fluid" alt="Sanctuary of Sin 1">
 	</div>
-</div>
-
-<div class="modal fade" id="zoltun3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/zoltun3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanctuaryofsin2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanctuary-of-sin-2.jpg" class="map-img-fluid" alt="Sanctuary of Sin 2">
 	</div>
-</div>
-
-<div class="modal fade" id="zoltun4Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/zoltun4.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanctuaryofsin3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanctuary-of-sin-3.jpg" class="map-img-fluid" alt="Sanctuary of Sin 3">
 	</div>
-</div>
-
-<div class="modal fade" id="ashen1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/ashen1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sanctuaryofsin4Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/sanctuary-of-sin-4.jpg" class="map-img-fluid" alt="Sanctuary of Sin 4">
 	</div>
 </div>
 
-<div class="modal fade" id="ashen2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/ashen2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ T4: STEPPES OF DAKEN-SHAR ═══ -->
+<div class="container-fluid row map-section" id="steppesdakenshar">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#steppesdakenshar1Modal" style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/steppes-of-daken-shar-1.jpg" class="map-img-fluid" alt="Steppes of Daken-Shar 1">
 	</div>
-</div>
-
-<div class="modal fade" id="ashen3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/ashen3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal"
+			        data-bs-target="#steppesdakenshar2Modal" style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/steppes-of-daken-shar-2.jpg" class="map-img-fluid" alt="Steppes of Daken-Shar 2">
 	</div>
 </div>
 
-<div class="modal fade" id="canyon1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/canyon1.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ UNIQUE: CITY OF UREH ═══ -->
+<div class="container-fluid row map-section" id="cityofureh">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cityofureh1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/city-of-ureh-1.jpg" class="map-img-fluid" alt="City of Ureh 1">
 	</div>
-</div>
-
-<div class="modal fade" id="canyon2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/canyon2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cityofureh2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/city-of-ureh-2.jpg" class="map-img-fluid" alt="City of Ureh 2">
 	</div>
 </div>
 
-<div class="modal fade" id="canyon3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/canyon3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ UNIQUE: FALLEN GARDENS ═══ -->
+<div class="container-fluid row map-section" id="fallengardens">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fallengardens1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/fallen-gardens-1.jpg" class="map-img-fluid" alt="Fallen Gardens 1">
 	</div>
-</div>
-
-<div class="modal fade" id="marketplace1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/marketplace1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fallengardens2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/fallen-gardens-2.jpg" class="map-img-fluid" alt="Fallen Gardens 2">
 	</div>
 </div>
 
-<div class="modal fade" id="citadel1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/citadel1.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ UNIQUE: IMPERIAL PALACE ═══ -->
+<div class="container-fluid row map-section" id="imperialpalace">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#imperialpalace1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/imperial-palace-1.jpg" class="map-img-fluid" alt="Imperial Palace 1">
 	</div>
-</div>
-
-<div class="modal fade" id="citadel2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/citadel2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#imperialpalace2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/imperial-palace-2.jpg" class="map-img-fluid" alt="Imperial Palace 2">
 	</div>
 </div>
 
-<div class="modal fade" id="citadel3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/citadel3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ UNIQUE: OUTER VOID ═══ -->
+<div class="container-fluid row map-section" id="outervoid">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#outervoid1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/outer-void-1.jpg" class="map-img-fluid" alt="Outer Void 1">
 	</div>
-</div>
-
-<div class="modal fade" id="cistern1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/cistern1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#outervoid2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/outer-void-2.jpg" class="map-img-fluid" alt="Outer Void 2">
 	</div>
-</div>
-
-<div class="modal fade" id="cistern2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/cistern2.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#outervoid3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/outer-void-3.jpg" class="map-img-fluid" alt="Outer Void 3">
 	</div>
 </div>
 
-<div class="modal fade" id="cistern3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/cistern3.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ UNIQUE: STYGIAN CAVERNS ═══ -->
+<div class="container-fluid row map-section" id="stygiancaverns">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#stygiancaverns1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/stygian-caverns-1.jpg" class="map-img-fluid" alt="Stygian Caverns 1">
 	</div>
-</div>
-
-<div class="modal fade" id="throne1Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/throne1.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#stygiancaverns2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/stygian-caverns-2.jpg" class="map-img-fluid" alt="Stygian Caverns 2">
 	</div>
 </div>
 
-<div class="modal fade" id="throne2Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/throne2.png" class="map-img-fluid" alt="">
-			</div>
+<!-- ═══ UNIQUE: ZHAR'S SANCTUM ═══ -->
+<div class="container-fluid row map-section" id="zharssanctum">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zharssanctum1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/zhars-sanctum-1.jpg" class="map-img-fluid" alt="Zhar's Sanctum 1">
 	</div>
-</div>
-
-<div class="modal fade" id="throne3Modal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-fullwidth modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img src="maps/throne3.png" class="map-img-fluid" alt="">
-			</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zharssanctum2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
 		</div>
+		<img src="maps/zhars-sanctum-2.jpg" class="map-img-fluid" alt="Zhar's Sanctum 2">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zharssanctum3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/zhars-sanctum-3.jpg" class="map-img-fluid" alt="Zhar's Sanctum 3">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#zharssanctum4Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/zhars-sanctum-4.jpg" class="map-img-fluid" alt="Zhar's Sanctum 4">
 	</div>
 </div>
 
-
-<script crossorigin="anonymous"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js">-
-</script>
-<script crossorigin="anonymous"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js">-
-</script>
-
-
+<!-- ════════════════════ MODALS ════════════════════ -->
 <script>
-	const mapDisplay = document.querySelectorAll('input[name="mapDisplay"]');
-	 const arreatbattlefield = document.getElementById('arreatbattlefield');
-	 const caldeum = document.getElementById('caldeum');
-	 const royalcrypts = document.getElementById('royalcrypts');
-	 const sewers = document.getElementById('sewers');
-	 const westmarch = document.getElementById('westmarch');
-	 const ancestral = document.getElementById('ancestral');
-	 const bastion = document.getElementById('bastion');
-	 const skovos = document.getElementById('skovos');
-	 const losttemple = document.getElementById('losttemple');
-	 const riverblood = document.getElementById('riverblood');
-	 const zoltun = document.getElementById('zoltun');
-	 const ashen = document.getElementById('ashen');
-	 const canyon = document.getElementById('canyon');
-	 const marketplace = document.getElementById('marketplace');
-	 const citadel = document.getElementById('citadel');
-	 const cistern = document.getElementById('cistern');
-	 const throne = document.getElementById('throne');
-
-	mapDisplay.forEach(radio => {
-	  radio.addEventListener('change', function() {
-
-		if (this.value === "all") {
-			arreatbattlefield.style.display = '';
-			caldeum.style.display = '';
-			royalcrypts.style.display = '';
-			sewers.style.display = '';
-			westmarch.style.display = '';
-			ancestral.style.display = '';
-			bastion.style.display = '';
-			skovos.style.display = '';
-			losttemple.style.display = '';
-			riverblood.style.display = '';
-			zoltun.style.display = '';
-			ashen.style.display = '';
-			canyon.style.display = '';
-			marketplace.style.display = '';
-			citadel.style.display = '';
-			cistern.style.display = '';
-			throne.style.display = '';
-		} else {
-			arreatbattlefield.style.display = 'none';
-			caldeum.style.display = 'none';
-			royalcrypts.style.display = 'none';
-			sewers.style.display = 'none';
-			westmarch.style.display = 'none';
-			ancestral.style.display = 'none';
-			bastion.style.display = 'none';
-			skovos.style.display = 'none';
-			losttemple.style.display = 'none';
-			riverblood.style.display = 'none';
-			zoltun.style.display = 'none';
-			ashen.style.display = 'none';
-			canyon.style.display = 'none';
-			marketplace.style.display = 'none';
-			citadel.style.display = 'none';
-			cistern.style.display = 'none';
-			throne.style.display = 'none';
-
-		}
-		if (this.value === "arreatbattlefield") {
-			arreatbattlefield.style.display = '';
-		} else if (this.value === "caldeum") {
-			caldeum.style.display = '';
-		}  else if (this.value === "royalcrypts") {
-			royalcrypts.style.display = '';
-		}  else if (this.value === "sewers") {
-			sewers.style.display = '';
-		}  else if (this.value === "westmarch") {
-			westmarch.style.display = '';
-		}  else if (this.value === "ancestral") {
-			ancestral.style.display = '';
-		}  else if (this.value === "bastion") {
-			bastion.style.display = '';
-		}  else if (this.value === "skovos") {
-			skovos.style.display = '';
-		}  else if (this.value === "losttemple") {
-			losttemple.style.display = '';
-		}  else if (this.value === "riverblood") {
-			riverblood.style.display = '';
-		}  else if (this.value === "zoltun") {
-			zoltun.style.display = '';
-		}  else if (this.value === "ashen") {
-			ashen.style.display = '';
-		}  else if (this.value === "canyon") {
-			canyon.style.display = '';
-		}  else if (this.value === "marketplace") {
-			marketplace.style.display = '';
-		}  else if (this.value === "citadel") {
-			citadel.style.display = '';
-		}  else if (this.value === "cistern") {
-			cistern.style.display = '';
-		}  else if (this.value === "throne") {
-			throne.style.display = '';
-		}
-	  });
+	// Build modals dynamically from map sections to avoid repetition
+	document.addEventListener('DOMContentLoaded', function () {
+		const imgs = document.querySelectorAll('div[title="mappath"] img');
+		imgs.forEach(function (img) {
+			const btn = img.previousElementSibling ? img.parentElement.querySelector('button[data-bs-target]') : null;
+			if (!btn) return;
+			const modalId = btn.getAttribute('data-bs-target').replace('#', '');
+			const modal = document.createElement('div');
+			modal.className = 'modal fade';
+			modal.id = modalId;
+			modal.setAttribute('tabindex', '-1');
+			modal.setAttribute('aria-hidden', 'true');
+			modal.innerHTML =
+				'<div class="modal-dialog modal-fullwidth modal-dialog-centered">' +
+				'<div class="modal-content">' +
+				'<div class="modal-header">' +
+				'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+				'</div>' +
+				'<div class="modal-body">' +
+				'<img src="' + img.src + '" class="map-img-fluid" alt="' + img.alt + '">' +
+				'</div></div></div>';
+			document.body.appendChild(modal);
+		});
 	});
 </script>
 
+<!-- Map filter script -->
 <script>
-	const mapSize = document.querySelectorAll('input[name="mapSize"]');
-	const mapDivs = document.querySelectorAll('div[title="mappath"]');
-
-	mapSize.forEach(radio => {
-	  radio.addEventListener('change', function() {
-		if (this.value === "Small") {
-		  mapDivs.forEach(div => {
-			div.classList.remove("col-md-12");
-			div.classList.remove("col-md-6");
-			div.classList.add("col-md-4");
-		  });
-		} else if (this.value === "Medium") {
-		  mapDivs.forEach(div => {
-			div.classList.remove("col-md-12");
-			div.classList.remove("col-md-4");
-			div.classList.add("col-md-6");
-		  });
-		} else if (this.value === "Large") {
-		  mapDivs.forEach(div => {
-			div.classList.remove("col-md-6");
-			div.classList.remove("col-md-4");
-			div.classList.add("col-md-12");
-		  });
-		}
-	  });
+	document.querySelectorAll('input[name="mapDisplay"]').forEach(function (radio) {
+		radio.addEventListener('change', function () {
+			var sections = document.querySelectorAll('.map-section');
+			if (this.value === 'all') {
+				sections.forEach(function (s) { s.style.display = ''; });
+			} else {
+				sections.forEach(function (s) { s.style.display = 'none'; });
+				var target = document.getElementById(this.value);
+				if (target) target.style.display = '';
+			}
+		});
 	});
 </script>
 
+<!-- Map size script -->
 <script>
-	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+	document.querySelectorAll('input[name="mapSize"]').forEach(function (radio) {
+		radio.addEventListener('change', function () {
+			var mapDivs = document.querySelectorAll('div[title="mappath"]');
+			mapDivs.forEach(function (div) {
+				div.classList.remove('col-md-4', 'col-md-6', 'col-md-12');
+				if (this.value === 'Small') div.classList.add('col-md-4');
+				else if (this.value === 'Medium') div.classList.add('col-md-6');
+				else if (this.value === 'Large') div.classList.add('col-md-12');
+			}, this);
+		});
+	});
 </script>
+
 </body>
 </html>
