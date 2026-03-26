@@ -2998,27 +2998,28 @@ function announceWinner() {
 }
 
 function fireConfetti() {
-  var modal = document.querySelector('#wheelModal .modal-body');
-  var rect = modal.getBoundingClientRect();
+  var w = window.innerWidth, h = window.innerHeight;
   var particles = [];
   var colors = ['#ffd700','#ff6b6b','#4ecdc4','#45b7d1','#f9ca24','#6c5ce7','#fd79a8','#00b894','#e17055','#0984e3'];
-  for (var i = 0; i < 150; i++) {
-    particles.push({ x: rect.width/2, y: rect.height/2, vx: (Math.random()-0.5)*16, vy: (Math.random()-1)*14-2,
-      color: colors[Math.floor(Math.random()*colors.length)], size: Math.random()*8+3, rotation: Math.random()*360,
-      rotSpeed: (Math.random()-0.5)*12, gravity: 0.15+Math.random()*0.1, opacity: 1, shape: Math.random()>0.5?'rect':'circle' });
+  for (var i = 0; i < 400; i++) {
+    particles.push({ x: w/2+(Math.random()-0.5)*200, y: h/2,
+      vx: (Math.random()-0.5)*24, vy: (Math.random()-1)*20-4,
+      color: colors[Math.floor(Math.random()*colors.length)], size: Math.random()*8+3,
+      rotation: Math.random()*360, rotSpeed: (Math.random()-0.5)*12,
+      gravity: 0.12+Math.random()*0.08, opacity: 1, shape: Math.random()>0.5?'rect':'circle' });
   }
-  var canvas = document.createElement('canvas'); canvas.width = rect.width; canvas.height = rect.height;
-  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:9999;';
-  modal.style.position = 'relative'; modal.appendChild(canvas);
-  var ctx = canvas.getContext('2d'); var startTime = performance.now(); var duration = 3000;
+  var canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h;
+  canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:99999;';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d'); var startTime = performance.now(); var duration = 6000;
   function animateConfetti(now) {
     var elapsed = now - startTime;
     if (elapsed > duration) { canvas.remove(); return; }
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, w, h);
     particles.forEach(function(p) {
       p.x += p.vx; p.vy += p.gravity; p.y += p.vy; p.vx *= 0.99; p.rotation += p.rotSpeed;
-      if (elapsed > duration * 0.6) p.opacity = Math.max(0, 1 - (elapsed - duration*0.6) / (duration*0.4));
-      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation * Math.PI / 180);
+      if (elapsed > duration*0.7) p.opacity = Math.max(0, 1-(elapsed-duration*0.7)/(duration*0.3));
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation*Math.PI/180);
       ctx.globalAlpha = p.opacity; ctx.fillStyle = p.color;
       if (p.shape === 'rect') ctx.fillRect(-p.size/2, -p.size/4, p.size, p.size/2);
       else { ctx.beginPath(); ctx.arc(0, 0, p.size/2, 0, Math.PI*2); ctx.fill(); }
