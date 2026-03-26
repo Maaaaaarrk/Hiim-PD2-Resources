@@ -1,0 +1,1368 @@
+window.soloData = {
+  "season": 13,
+  "updatedDate": "March 23rd 2026",
+  "bannerText": "Currently, this is just a copy from Season 12",
+  "starterBuilds": [
+    {
+      "className": "Sorceress",
+      "buildName": "Firewall",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=78&difficulty=3&quests=1&strength=93&dexterity=0&vitality=100&energy=207&coupling=1&skills=00000000000000000000000101010001010100200000000120010020000020000100&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2Cnone%2Cnone%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Smoke+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=Volcanic+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Fire_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Andariel",
+          "style": "success",
+          "pill": true
+        }
+      ]
+    },
+    {
+      "className": "Sorceress",
+      "buildName": "Chain lightning",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=75&difficulty=3&quests=1&strength=93&dexterity=0&vitality=207&energy=85&coupling=1&skills=00000000000000000000002001010020200100002000000300000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2Cnone%2Cnone%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Smoke+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=Powered+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Arcane Sanctuary",
+          "style": "warning"
+        }
+      ]
+    },
+    {
+      "className": "Sorceress",
+      "buildName": "Ice Barrage",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=74&difficulty=3&quests=1&strength=27&dexterity=0&vitality=268&energy=85&coupling=1&skills=20000001002000200000200001010000000100000000000100000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2Cnone%2Cnone%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=Glacial+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Cold_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        }
+      ]
+    },
+    {
+      "className": "Sorceress",
+      "buildName": "Meteor",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=76&difficulty=3&quests=1&strength=93&dexterity=0&vitality=212&energy=85&coupling=1&skills=00000000000000000000000001010000000100000000010101202001002020000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2Cnone%2Cnone%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Smoke+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=Volcanic+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Fire_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Druid",
+      "buildName": "Summons",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=80&difficulty=3&quests=1&strength=80&dexterity=62&vitality=268&energy=0&coupling=1&skills=00000501000100000000000000000000000000000020012020010001010020&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+(Vigor)%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Pelt+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Raven%2C1%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Bloodfist%2C1%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Keeper%27s+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Neophyte+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Club+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Raven%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Travincal",
+          "style": "info"
+        },
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Druid",
+      "buildName": "Bear - Shockwave",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Travincal",
+          "style": "info"
+        },
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Druid",
+      "buildName": "Wind Elemental",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Assassin",
+      "buildName": "Mind Blast",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Assassin",
+      "buildName": "Blade Sentinel",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=78&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0100000020000000002001010001010120002000000001000001000000010000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=none%2C0%2Cnone%2C%2C%2C&armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=none%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Assassin",
+      "buildName": "Chain Lightning Sentry",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=80&difficulty=3&quests=1&strength=83&dexterity=60&vitality=267&energy=0&coupling=1&skills=0001000100000100010100050000000000000000200100200000200000002000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CHustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CWitherstring%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Smoke+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=Cunning+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Lightning+Cunning+Greater+Talons+of+Quickness%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Lightning+Cunning+Greater+Talons+of+Quickness%2C2%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Arcane Sanctuary",
+          "style": "warning"
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Barbarian",
+      "buildName": "Leap Attack",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Barbarian",
+      "buildName": "Big Shouts + Find Item (A2 Offensive Merc)",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Travincal",
+          "style": "info"
+        }
+      ]
+    },
+    {
+      "className": "Barbarian",
+      "buildName": "Warcry",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=75&difficulty=3&quests=1&strength=11&dexterity=0&vitality=374&energy=0&coupling=1&skills=1600010100200100202000000000010101010000000101000100000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2Cnone%2Cnone%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Stealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Caster+Craft+Gloves%2C1%2Cnone&boots=none%2C0%2Cnone&belt=Caster+Craft+Belt%2C1%2Cnone%2C&amulet=Echoing+Amulet%2C0%2Cnone%2C&ring1=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&ring2=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Travincal",
+          "style": "info"
+        },
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        }
+      ]
+    },
+    {
+      "className": "Barbarian",
+      "buildName": "Bleed Double Throw",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Amazon",
+      "buildName": "Pure Summon (Decoy & Valk)",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=80&difficulty=3&quests=1&strength=95&dexterity=0&vitality=255&energy=60&coupling=1&skills=000000000000000000000103010100200120200100010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CMemory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Rhyme+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Amazon",
+      "buildName": "Lightning Strike",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Arcane Sanctuary",
+          "style": "warning"
+        },
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Amazon",
+      "buildName": "Magic Arrow",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=75&difficulty=3&quests=1&strength=121&dexterity=53&vitality=211&energy=0&coupling=1&skills=000000000000000000002001200100010100000100200100002000000000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Prayer%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CNeophyte+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Scepter%2CSpirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Rondache%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=Archer%27s+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Harmony+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-weapon%2C1%2C0&effect=Prayer-mercenary%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Necromancer",
+      "buildName": "Clay Golems",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=75&difficulty=3&quests=1&strength=50&dexterity=0&vitality=335&energy=0&coupling=1&skills=000000202000200100000000000000000000000012000001000000010001000010&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Prayer%29%2Cnone%2Cnone%2CSpirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2CAncient%27s+Pledge+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2Cnone%2Cnone%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Peasant+Crown%2C2%2Cnone%2C%2C%2C&armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=Golemlord%27s+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Golemlord%27s+Tomb+Wand+of+the+Archmage%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Prayer-mercenary%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Travincal",
+          "style": "info"
+        },
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Necromancer",
+      "buildName": "Teeth / Bonespear",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=80&difficulty=3&quests=1&strength=91&dexterity=0&vitality=269&energy=50&coupling=1&skills=000000010000010900000000202000002000200000000000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Stealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=Venomous+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=White+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Tomb+Wand+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Spear%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Spear%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Necromancer",
+      "buildName": "Dark Pact",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=70&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000101010001010100000100000000000000000001002010200000010001010020&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Sanctuary%29%2Cnone%2Cnone%2CMemory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=none%2C0%2Cnone%2C%2C%2C&armor=Smoke+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=none%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C",
+      "plannerLabel": "Base Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Paladin",
+      "buildName": "Holy Bolt / FOH",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=84&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=010001000000010001000101010000010001000100012000010001010120002020&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Sanctuary%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Stealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=Rose+Branded+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Rondache%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Build Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        },
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Paladin",
+      "buildName": "Smiter",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Key Farming",
+          "style": "light",
+          "pill": true
+        },
+        {
+          "text": "Uber Tristam",
+          "style": "dark"
+        }
+      ]
+    },
+    {
+      "className": "Paladin",
+      "buildName": "Hammerdin",
+      "plannerUrl": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=78&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=010001000000200001000100002020000000000000010100010020000100000100&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Sanctuary%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Stealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=none%2C0%2Cnone&boots=none%2C0%2Cnone&belt=none%2C0%2Cnone%2C&amulet=Rose+Branded+Amulet%2C0%2Cnone%2C&ring1=none%2C0%2Cnone&ring2=none%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Rondache%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Meditation-mercenary_weapon%2C1%2C0",
+      "plannerLabel": "Build Planner",
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    },
+    {
+      "className": "Paladin",
+      "buildName": "Vengeance",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ]
+    }
+  ],
+  "classBuilds": {
+    "Sorceress": [
+      {
+        "buildName": "Nova",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00010000060000000000002000202001002000002001000100000000000000000000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CDoom+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Phase+Blade%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2COccultist%2CImp+Shank%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Skill%2C%2C%2C&armor=Steel+Carapace%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Siggard%27s+Staunch%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Powered+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=Constricting+Ring%2C0%2C%2B+Faster+Cast+Rate&weapon=Infinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+cl%2Bnova%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Conviction-weapon%2C1%2C0&effect=Holy_Freeze-mercenary_weapon%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+life",
+            "label": "End-game Gear",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=96&difficulty=3&quests=1&strength=106&dexterity=77&vitality=307&energy=0&coupling=1&skills=01010001010000000000002000202001002000002001000100000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2COndal%27s+Almighty%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CDracul%27s+Grasp%2CGoblin+Toe%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&gloves=Dracul%27s+Grasp%2C3%2C%2B+FBR&boots=Waterwalk%2C2%2C%2B+Mana+per+kill&belt=Siggard%27s+Staunch%2C3%2C%2B+ICB%2C&amulet=Mara%27s+Kaleidoscope%2C0%2C%2B+2+All+Skills%2C&ring1=Constricting+Ring%2C0%2C%2B+Mana+per+kill&ring2=Constricting+Ring%2C0%2C%2B+Mana+per+kill&weapon=Eschuta%27s+temper%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&offhand=Spirit+Ward%2C3%2C%2B+ICB+FBR%2C%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Sparking+Grand+Charm+%2B+life",
+            "label": "End-game Gear",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=93&difficulty=3&quests=1&strength=200&dexterity=0&vitality=0&energy=275&coupling=1&skills=00000000000000000000002000202001000100202001000100000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormspire%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Dark+Abyss%2C3%2C%2B+CBF%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2C%2B+Mana+per+kill&boots=Silkweave%2C2%2C%2B+Mana+per+kill&belt=Thundergod%27s+Vigor%2C2%2C%2B+Faster+Cast+Rate%2C&amulet=Powered+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&ring2=The+Stone+of+Jordan%2C0%2C%2B+Mana+per+kill&weapon=Infinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+cl%2Bnova%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Conviction-weapon%2C0%2C0&effect=Defiance-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr",
+            "label": "Aspirational Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Charged Bolt",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00000000000000000000002000200020012000082000000100000000000000000000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Skill%2C%2C%2C&armor=Ormus%27+Robes%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Thundergod%27s+Vigor%2C2%2C%2B+Faster+Cast+Rate%2C&amulet=Powered+Amulet+of+the+Apprentice%2C0%2C%2B+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&weapon=Infinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+cb%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Conviction-weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+life",
+            "label": "End-game Gear",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Chain Lightning",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=81&difficulty=3&quests=1&strength=60&dexterity=0&vitality=335&energy=20&coupling=1&skills=00000000000000000000002000010020201100011800000100000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CDuskdeep%2CRockfleece%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CCredendum&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Powered+Diadem%2C3%2Cnone%2C%2C%2C&armor=Spirit+Shroud%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2Cnone&boots=Silkweave%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Powered+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Memory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+            "label": "Starter Gear",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00000000000000000000002000010020202000082000000100000000000000000000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Skill%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Ormus%27+Robes%2C3%2C%2B+Skill%2C%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&gloves=Occultist%2C3%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Thundergod%27s+Vigor%2C2%2C%2B+Faster+Cast+Rate%2C&amulet=Powered+Amulet+of+the+Apprentice%2C0%2C%2B+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&weapon=Infinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+cl%2Bnova%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Conviction-weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=Annihilus+%2B2",
+            "label": "End-game Gear",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Frost Nova",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Frozen Orb",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Ice Barrage",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Blizzard",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Combustion",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Meteor",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=80&difficulty=3&quests=1&strength=60&dexterity=0&vitality=295&energy=55&coupling=1&skills=00000000000000000000000000010000000100000000010020202001002007000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CDuskdeep%2CHustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CThe+Reaper%27s+Toll%2Cnone%2CLaying+of+Hands%2CImp+Shank%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Volcanic+Diadem%2C3%2Cnone%2C%2C%2C&armor=Skin+of+the+Vipermagi%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=String+of+Ears%2C2%2Cnone%2C&amulet=Volcanic+Amulet+of+the+Apprentice%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Memory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Fire_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0",
+            "label": "Starter Gear",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Hydra",
+        "tier": "Mid",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Multishot Enchantress",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00200000010000002000200000010000000100000000011700000100200001000100&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Prayer%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CTemplar%27s+Might%2CBeast+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Caduceus%2CShattered+Wall+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CMagefist%2CImp+Shank%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Nightwing%27s+Veil%2C3%2C%2B+Skill%2C%2C%2C&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magnus%27+Skin%2C2%2C%2B+Pierce&boots=Imp+Shank%2C2%2Cnone&belt=Razortail%2C2%2C%2B+Pierce%2C&amulet=Mara%27s+Kaleidoscope%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Cast+Rate&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Faster+Cast+Rate&weapon=Widowmaker%2C3%2C%2B+IAS%2C%2C%2C%2C%2C%2C&offhand=Echo+Quiver+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Sharp+Arrows%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Cold_Mastery%2C1%2C0&effect=Fire_Mastery%2C1%2C0&effect=Prayer-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Holy_Freeze-mercenary_offhand%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&effect=Might-mercenary_armor%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life",
+            "label": "End-game Gear",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "Druid": [
+      {
+        "buildName": "Cold Elemental (Arctic Blast/Hurricane)",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Wind Elemental",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=90&difficulty=3&quests=1&strength=185&dexterity=80&vitality=130&energy=0&coupling=1&skills=00000420000120002000200000000000000000000000010100011100010100&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CThe+Reaper%27s+Toll%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Fenris%2C2%2C%2B+Skill%2C%2CRal+Rune%2COrt+Rune&armor=Steel+Carapace%2C3%2C%2B+Skill%2C%2C%2C%2C%2CRal+Rune%2CCham+Rune&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Siggard%27s+Staunch%2C3%2C%2B+FHR%2C&amulet=Gaea%27s+Amulet%2C0%2C%2B+Faster+Cast+Rate%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Faster+Cast+Rate&ring2=Wisp+Projector%2C0%2C%2B+Life+per+kill&weapon=Horizon%27s+Tornado%2C3%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2C%2C&offhand=Twilight%27s+Reflection%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CShael+Rune%2CShael+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Fire Elemental",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=97&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=01200101200101200120010000000000000000000001010101011201010101&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormlash%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CTrang-Oul%27s+Claws%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Ravenlore%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2C%2B+Mana+per+kill&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Siggard%27s+Staunch%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Gaea%27s+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Mana+per+kill&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Life+per+kill&weapon=Mang+Song%27s+Lesson%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life",
+            "label": "End-game Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Wolf - Fire Claws",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Rabies",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=95&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00000000000000000000002020002000200000000100200100010100010100&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CHowltusk%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CPus+Spitter%2CAetherwing%2CDracul%27s+Grasp%2CTancred%27s+Hobnails%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Jalal%27s+Mane%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Bramble+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2C%2B+Mana+per+kill&boots=Waterwalk%2C2%2C%2B+Faster+Run+Walk&belt=Verdungo%27s+Hearty+Cord%2C3%2C%2B+Faster+Run+Walk%2C&amulet=Mara%27s+Kaleidoscope%2C0%2C%2B+2+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Faster+Run%2FWalk&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Faster+Run%2FWalk&weapon=Plague+Bearer%2C2%2C%2B+Sockets+Weapon%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&offhand=Stormshield%2C3%2C%2B+Sockets+Off-hand%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Thorns-armor%2C1%2C0&effect=Vigor-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=%2B3%25+Infectious+Large+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Bear - Shockwave",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00000001000120002000000015200001000000200000010100010100010100&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CVampire+Gaze%2CHustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CWrath+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2Cnone%2CDracul%27s+Grasp%2CWar+Traveler%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Fenris%2C2%2C%2B+Skill%2C%2C%2C&armor=Ormus%27+Robes%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Soul+Drainer%2C3%2C%2B+Faster+Cast+Rate&boots=Merman%27s+Sprocket%2C3%2C%2B+Faster+Run+Walk&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Communal+Amulet+of+the+Apprentice%2C0%2Cnone%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&weapon=Brimstone+Rain%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw&charm=%2B1+Spiritual+Grand+Charm+%2B+frw",
+            "label": "End-game Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Wolf - Fury",
+        "tier": "Mid",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Summon Druid",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=80&difficulty=3&quests=1&strength=80&dexterity=62&vitality=268&energy=0&coupling=1&skills=00000501000100000000000000000000000000000020012020010001010020&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Pelt+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Raven%2C1%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Bloodfist%2C1%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Keeper%27s+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Neophyte+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Club+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Raven%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0",
+            "label": "Starter Build",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=85&difficulty=3&quests=1&strength=80&dexterity=62&vitality=268&energy=0&coupling=1&skills=00001001000100000000000000000000000000000020012020010001010020&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CMemory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2CMagefist%2CRite+of+Passage%2CGloom%27s+Trap&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Pelt+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Grizzly%2C1%2Cnone%2C%2C%2C&armor=Skin+of+the+Vipermagi%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Keeper%27s+Amulet%2C0%2C%2B+All+Skills%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Athena%27s+Wrath%2C2%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm",
+            "label": "Mid Build",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=85&difficulty=3&quests=1&strength=135&dexterity=0&vitality=300&energy=0&coupling=1&skills=00001001000100000000000000000000000000000020012020010001010020&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2CMagefist%2CRite+of+Passage%2CGloom%27s+Trap&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Ravenlore%2C3%2C%2B+Skill%2C%2C%2C&armor=Arkaine%27s+Valor%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Arachnid+Mesh%2C3%2Cnone%2C&amulet=Keeper%27s+Amulet%2C0%2C%2B+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&ring2=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&weapon=Eaglehorn%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Conviction-mercenary_weapon%2C1%2C0&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=Annihilus&charm=Hellfire+Torch&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm",
+            "label": "Endgame - Raven",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=95&difficulty=3&quests=1&strength=140&dexterity=0&vitality=295&energy=0&coupling=1&skills=00001001000100000000000000000000000000000020012020010011010020&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Blessed+Aim%29%2CCrown+of+Ages%2CTemplar%27s+Might%2CThe+Reaper%27s+Toll%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Denmother%2C3%2C%2B+Skill%2C%2C%2C&armor=Arkaine%27s+Valor%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2Cnone&boots=Marrowwalk%2C3%2Cnone&belt=Arachnid+Mesh%2C3%2Cnone%2C&amulet=Keeper%27s+Amulet%2C0%2C%2B+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&ring2=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&weapon=Heart+of+the+Oak+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Flail%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Spirit+Ward%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Blessed_Aim-mercenary%2C1%2C0&effect=Might-mercenary_armor%2C1%2C0&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=Annihilus&charm=Hellfire+Torch&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm",
+            "label": "Endgame - Bears",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=95&difficulty=3&quests=1&strength=140&dexterity=0&vitality=295&energy=0&coupling=1&skills=00001001000100000000000000000000000000000011012020010020010020&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Blessed+Aim%29%2CCrown+of+Ages%2CTemplar%27s+Might%2CThe+Reaper%27s+Toll%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Fenris%2C2%2C%2B+Skill%2C%2C%2C&armor=Arkaine%27s+Valor%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2Cnone&boots=Marrowwalk%2C3%2Cnone&belt=Arachnid+Mesh%2C3%2Cnone%2C&amulet=Keeper%27s+Amulet%2C0%2C%2B+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&ring2=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&weapon=Athena%27s+Wrath%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Blessed_Aim-mercenary%2C1%2C0&effect=Might-mercenary_armor%2C1%2C0&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=Annihilus&charm=Hellfire+Torch&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm&charm=%2B1+Trainer%27s+Grand+Charm",
+            "label": "Endgame - Spirit Wolf",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "Assassin": [
+      {
+        "buildName": "Chain Lightning Sentry",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=80&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0000000000000000000101030004010000000000200100200000200000002000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CDuskdeep%2CRockfleece%2CPus+Spitter%2CRamfodder%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Cunning+Diadem%2C3%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Laying+of+Hands%2C3%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Nightsmoke%2C1%2Cnone%2C&amulet=Cunning+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Lightning+Cunning+Greater+Talons+of+Quickness%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Lightning+Cunning+Greater+Talons+of+Quickness%2C2%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0",
+            "label": "Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Wake of Fire",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=81&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0000000000000000000101030006010000000000202000002000002000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CDuskdeep%2CRockfleece%2CPus+Spitter%2CRamfodder%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Cunning+Diadem%2C3%2Cnone%2C%2C%2C&armor=Skullder%27s+Ire%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Laying+of+Hands%2C3%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Nightsmoke%2C1%2Cnone%2C&amulet=Cunning+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Fire+Cunning+Greater+Talons+of+Quickness%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Fire+Cunning+Greater+Talons+of+Quickness%2C2%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0",
+            "label": "Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=95&difficulty=3&quests=1&strength=40&dexterity=0&vitality=330&energy=0&coupling=1&skills=0001000100000100200101010015010001000000200001002001002000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CVampire+Gaze%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CBloodfist%2CMarrowwalk%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=2%2F20+Circlet+Assassin%2C3%2C%2B+CBF%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2C%2B+Faster+Cast+Rate&boots=War+Traveler%2C2%2C%2B+Faster+Run+Walk&belt=Arachnid+Mesh%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Metalgrid%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Run%2FWalk&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Run%2FWalk&weapon=Fire+Cunning+Greater+Talons+of+Quickness%2C2%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2CScintillating+Jewel+of+Fervor%2CScintillating+Jewel+of+Fervor&offhand=Fire+Cunning+Greater+Talons+of+Quickness%2C2%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Entrapping+Grand+Charm+%2B+fhr&charm=%2B1+Entrapping+Grand+Charm+%2B+fhr&charm=%2B1+Entrapping+Grand+Charm+%2B+fhr&charm=%2B1+Entrapping+Grand+Charm+%2B+fhr&charm=Annihilus+%2B2",
+            "label": "Claw End-game Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=97&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0001000100000100200101010002010001000015200001002001002000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Blessed+Aim%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CHeavenly+Garb%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CLaying+of+Hands%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Cunning+Diadem+of+the+Magus%2C3%2C%2B+Skill%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&armor=Chains+of+Honor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2C%2B+ICB&boots=Marrowwalk%2C3%2C%2B+Faster+Run+Walk&belt=String+of+Ears%2C2%2C%2B+PDR%2C&amulet=Cunning+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Damage+Reduction&ring2=Wisp+Projector%2C0%2C%2B+Damage+Reduction&weapon=Ghostflame%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&offhand=Gerke%27s+Sanctuary%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Blessed_Aim-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Sanctuary-mercenary_armor%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Entrapping+Grand+Charm+%2B+fhr&charm=%2B3%25+Inferno+Large+Charm+of+Balance",
+            "label": "Dagger End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Summon Sin (Martial Arts)",
+        "tier": "Decent",
+        "links": [],
+        "notes": [
+          "Requires Skill Charms"
+        ]
+      },
+      {
+        "buildName": "Cobra Sin",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=88&difficulty=3&quests=1&strength=150&dexterity=68&vitality=232&energy=0&coupling=1&skills=0101000120000100012001030005010120002000000001000001000000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormspire%2Cnone%2CLava+Gout%2CImp+Shank%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Andariel%27s+Visage%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&gloves=Kenshi%27s+Gloves+of+Quickness%2C1%2C%2B+All+Resistances&boots=Imp+Shank%2C2%2C%2B+FBR&belt=Siggard%27s+Staunch%2C3%2C%2B+PDR%2C&amulet=Blood+Craft+-+Assassin%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Attack+Rating&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Attack+Rating&weapon=Jade+Talon%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&offhand=Whispering+Mirage%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+fhr&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=Ruby+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Balance",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Phoenix Strike",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=77&difficulty=3&quests=1&strength=0&dexterity=0&vitality=395&energy=0&coupling=1&skills=0100200001200020000100010001000000000000000001000001000000010020&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2Cnone%2Cnone%2CPus+Spitter%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2Cnone%2C%2C%2C&armor=Stone+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Kenshi%27s+Gloves+of+Giant%2C1%2Cnone&boots=Merman%27s+Sprocket%2C3%2Cnone&belt=Verdungo%27s+Hearty+Cord%2C3%2Cnone%2C&amulet=Blood+Craft+-+Assassin%2C0%2Cnone%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&ring2=Dual+Leech+Ring%2C0%2Cnone&weapon=Bartuc%27s+Cut+Throat%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Bartuc%27s+Cut+Throat%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=%2B1+Shogukusha%27s+Grand+Charm",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Dragon Tail (Fire Kick) Stalker's Cull",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Dragon Tail (Fire Kick) Astreons + Phoenix RW",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=91&difficulty=3&quests=1&strength=140&dexterity=130&vitality=195&energy=0&coupling=1&skills=0020000100002000200101200001010001000002000001000001000000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CCrown+of+Ages%2CTemplar%27s+Might%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CBloodfist%2CMarrowwalk%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Veil+of+Steel%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Fortitude+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Hellmouth%2C2%2C%2B+Deadly+Strike&boots=Gore+Rider%2C2%2C%2B+Faster+Run+Walk&belt=Siggard%27s+Staunch%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Highlord%27s+Wrath%2C0%2C%2B+2+x+Enhanced+Damage%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Run%2FWalk&ring2=Raven+Frost%2C0%2C%2B+Faster+Run%2FWalk&weapon=Astreon%27s+Iron+Ward%2C3%2C%2B+Sockets+Weapon%2C%2C%2CLo+Rune%2CLo+Rune%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&offhand=Phoenix+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Monarch%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Redemption-offhand%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Might-mercenary_armor%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Blade Fury",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Blade Sentinel (Phys)",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Blade Sentinel (Venom)",
+        "tier": "Top",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Summon Sin (Mind Blast)",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.google.com/url?q=https://tinyurl.com/s11mindblast&amp;sa=D&amp;source=editors&amp;ust=1757267248684136&amp;usg=AOvVaw1PC2217VwizNE0QTZQMnft",
+            "label": "Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Physical Blade Dance (Chaos - Phys Dmg Focus)",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684611&amp;usg=AOvVaw3_iB8yjpdDyxVgPEqWoEHv",
+            "label": "Generic WWsin Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Poison Blade Dance (Chaos - Venom Dmg Focus)",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=80&difficulty=3&quests=1&strength=84&dexterity=30&vitality=296&energy=0&coupling=1&skills=0100000020000000002000200006000100002000000001000001000000010000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CVampire+Gaze%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CDemon+Machine%2CDoom%27s+Finger%2CBloodfist%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Natalya%27s+Totem%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Natalya%27s+Shadow%2C3%2C%2B+Skill%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&gloves=Venom+Grip%2C2%2C%2B+ICB&boots=Natalya%27s+Soul%2C2%2C%2B+Faster+Run+Walk&belt=Verdungo%27s+Hearty+Cord%2C3%2C%2B+Faster+Run+Walk%2C&amulet=Blood+Craft+-+Assassin%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Run%2FWalk&ring2=Raven+Frost%2C0%2C%2B+Faster+Run%2FWalk&weapon=Natalya%27s+Mark%2C3%2C%2B+Psn+Pierce%2C%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&offhand=Chaos+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Fist%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=Ruby+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684884&amp;usg=AOvVaw361TEiP3HC1zKq2oOD4LHs",
+            "label": "Generic WWsin Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": [
+          "Must gear swap pre-buff"
+        ]
+      }
+    ],
+    "Barbarian": [
+      {
+        "buildName": "Warcry",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Travbarb",
+        "tier": "Travincal",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=90&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0101010120200900012000000000010120050000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Blessed+Aim%29%2CCrown+of+Thieves%2CHustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CArioc%27s+Needle%2Cnone%2CLaying+of+Hands%2CInfernostride%2CGoldwrap&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Crown+of+Thieves%2C2%2C%2B+Sockets+Helm%2C%2C%2C&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Chance+Guards%2C1%2C%2B+Faster+Cast+Rate&boots=Infernostride%2C2%2C%2B+Faster+Run+Walk&belt=Goldwrap%2C1%2C%2B+Faster+Cast+Rate%2C&amulet=Blood+Craft+-+Barbarian%2C0%2C%2B+Faster+Run+Walk%2C&ring1=Dwarf+Star%2C0%2C%2B+Faster+Cast+Rate&ring2=Dwarf+Star%2C0%2C%2B+Faster+Cast+Rate&weapon=Blade+of+Ali+Baba%2C2%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2C%2C&offhand=Blade+of+Ali+Baba%2C2%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Blessed_Aim-mercenary%2C1%2C0&charm=Gheed%27s+Fortune&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed",
+            "label": "End-game Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Fire Whirlwind (2x Flamebellow)",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0100000100000100002020000100010120051601010000000000002001&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CShaftstop%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CDracul%27s+Grasp%2CImp+Shank%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2C%2C%2C&armor=Dragon+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Hellmouth%2C2%2C%2B+All+Resistances&boots=Gore+Rider%2C2%2C%2B+Faster+Run+Walk&belt=String+of+Ears%2C2%2C%2B+Faster+Run+Walk%2C&amulet=The+Rising+Sun%2C0%2C%2B+Faster+Run+Walk%2C&ring1=Raven+Frost%2C0%2C%2B+Faster+Run%2FWalk&ring2=Carrion+Wind%2C0%2C%2B+Faster+Run%2FWalk&weapon=Flamebellow%2C3%2C%2B+Fire+Pierce%2C%2C%2C%2C%2C%2C&offhand=Flamebellow%2C3%2C%2B+Fire+Pierce%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Holy_Fire-armor%2C0%2C0&effect=Holy_Fire-weapon%2C0%2C0&effect=Holy_Fire-combined%2C1%2C0&effect=Holy_Fire-offhand%2C0%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm",
+            "label": "End-game Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Whirlwind (2-H)",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248685787&amp;usg=AOvVaw3TaX-_ZjjfElauMuEMEOcp",
+            "label": "Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": [
+          "4 range adder weapon only",
+          "must weapon swap for frenzy"
+        ]
+      },
+      {
+        "buildName": "Whirlwind (Dual Wield)",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0100010100000120012001002000010110010801010000000000002001&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Halaberd%27s+Reign%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Tyrael%27s+Might%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Soul+Drainer%2C3%2C%2B+All+Resistances&boots=Gore+Rider%2C2%2C%2B+Faster+Run+Walk&belt=String+of+Ears%2C2%2C%2B+Faster+Run+Walk%2C&amulet=Atma%27s+Scarab%2C0%2C%2B+2+All+Skills%2C&ring1=Carrion+Wind%2C0%2C%2B+Faster+Run%2FWalk&ring2=Wisp+Projector%2C0%2C%2B+Faster+Run%2FWalk&weapon=The+Grandfather%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=Schaefer%27s+Hammer%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Expert%27s+Grand+Charm+%2B+frw",
+            "label": "End-game Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248686138&amp;usg=AOvVaw3p5jaWKspgdKbaJvQ0Yzy3",
+            "label": "Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Leap Attack (Physical)",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248686379&amp;usg=AOvVaw1YtzVDFBx7zRYXXLb7fwLe",
+            "label": "Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": [
+          "Eth Obedience or Reapers toll as starter weapon"
+        ]
+      },
+      {
+        "buildName": "Leap Attack (Ele Proc)",
+        "tier": "Decent",
+        "links": [],
+        "notes": [
+          "Stormspire | Rapture | Destruction",
+          "Infinity Merc",
+          "Ele % LC"
+        ]
+      },
+      {
+        "buildName": "Double Throw",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=91&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0100010100000101010100002020010101010100000000200000000001&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CDuskdeep%2CLeviathan%2CCranebeak%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Demonhorn%27s+Edge%2C3%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2Cnone&boots=Gore+Rider%2C2%2Cnone&belt=Nosferatu%27s+Coil%2C3%2Cnone%2C&amulet=Highlord%27s+Wrath%2C0%2Cnone%2C&ring1=Raven+Frost%2C0%2Cnone&ring2=Bul-Kathos%27+Death+Band%2C0%2Cnone&weapon=Lacerator%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2CRuby+Jewel+of+Fervor&offhand=Lacerator%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Might-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=Lucky+Grand+Charm+of+Greed&charm=Sharp+Grand+Charm+of+Quality&charm=%2B1+Fanatic+Grand+Charm&charm=%2B1+Fanatic+Grand+Charm&charm=%2B1+Fanatic+Grand+Charm&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=91&difficulty=3&quests=1&strength=180&dexterity=170&vitality=115&energy=0&coupling=1&skills=0100010100000101012000000111010101012000000000200000000020&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CAndariel%27s+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CBlacktongue%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Veil+of+Steel%2C3%2C%2B+Sockets+Helm%2Cvs+Demon+Jewel%2Cvs+Demon+Jewel%2Cvs+Demon+Jewel&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Steelrend%2C3%2C%2B+Deadly+Strike&boots=Gore+Rider%2C2%2C%2B+PDR&belt=Arachnid+Mesh%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Highlord%27s+Wrath%2C0%2C%2B+CBF%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Cast+Rate&ring2=Constricting+Ring%2C0%2Cnone&weapon=Wraith+Flight%2C3%2C%2B+ED+Deadly%2C%2C%2C%2C%2Cvs+Demon+Jewel%2Cvs+Demon+Jewel&offhand=Lacerator%2C3%2C%2B+IAS+Enhanced+Damage%2C%2C%2C%2C%2CRuby+Jewel+of+Fervor%2CCham+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Might-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=%2B1+Expert%27s+Grand+Charm+%2B+fhr&charm=%2B1+Expert%27s+Grand+Charm+%2B+fhr&charm=%2B1+Expert%27s+Grand+Charm+%2B+fhr&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://www.google.com/url?q=https://docs.google.com/document/d/1pL10s0YlRA5gLcFFDWh1oKYb-32a4skQkmsikMsT2sc/edit?tab%3Dt.0%23heading%3Dh.7ng7k3wkxynr&amp;sa=D&amp;source=editors&amp;ust=1757267248686857&amp;usg=AOvVaw39MsO3qC51YEI_uUeKs5R8",
+            "label": "Build Guide",
+            "type": "guide"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "Amazon": [
+      {
+        "buildName": "Lightning Fury",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=96&difficulty=3&quests=1&strength=0&dexterity=106&vitality=384&energy=0&coupling=1&skills=012001002000010000200101011000011000002000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+CBF%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Lancer%27s+Gloves+of+Quickness%2C1%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Pierce%2C&amulet=Blood+Craft+-+Amazon%2C0%2C%2B+2+All+Skills%2C&ring1=Constricting+Ring%2C0%2C%2B+Life+per+kill&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Mana+per+kill&weapon=Thunderstroke%2C3%2C%2B+IAS+Crushing+Blow%2C%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&offhand=Lidless+Wall%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2CScintillating+Jewel+of+Fervor%2CScintillating+Jewel+of+Fervor%2CLPK%2FMPK+Jewel&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Harpoonist%27s+Grand+Charm+%2B+fhr&charm=%2B1+Harpoonist%27s+Grand+Charm+%2B+fhr&charm=%2B3%25+Conduit+Large+Charm+of+Balance&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Harpoonist%27s+Grand+Charm+%2B+fhr&charm=Shimmering+Small+Charm+of+Balance&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Balance",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Lightning Strike",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Power Strike",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Plague Javelin",
+        "tier": "Bad",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Freezing Arrow",
+        "tier": "Mid",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Cold Arrow",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=90&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000101010100001700002020200000200000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CCrown+of+Ages%2CFortitude+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CFaith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2CAbyssal+Ward%2CLaying+of+Hands%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Nightwing%27s+Veil%2C3%2Cnone%2C%2C%2C&armor=Silks+of+the+Victor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Archer%27s+of+Quickness%2C1%2Cnone&boots=Merman%27s+Sprocket%2C3%2Cnone&belt=Snowclash%2C2%2Cnone%2C&amulet=Blood+Craft+-+Amazon%2C0%2Cnone%2C&ring1=The+Stone+of+Jordan%2C0%2Cnone&ring2=The+Stone+of+Jordan%2C0%2Cnone&weapon=Pus+Spitter%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Frozen+Sorrow%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Numbing+Large+Charm&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia",
+            "label": "Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Lighting Arrow",
+        "tier": "Bad",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Fire Arrow",
+        "tier": "Top",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Explosive Arrow",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Jab/Fend",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=95&difficulty=3&quests=1&strength=44&dexterity=77&vitality=364&energy=0&coupling=1&skills=200000200000002000000120010100200200000100000000000000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CGiant+Skull%2CBlack+Hades%2CFaith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2CAnvilguard+Strap%2CLava+Gout%2CGore+Rider%2CRazortail&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Andariel%27s+Visage%2C3%2C%2B+Sockets+Helm%2CVex+Rune%2CVex+Rune%2CVex+Rune&armor=Shaftstop%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2CScintillating+Jewel+of+Truth%2CScintillating+Jewel+of+Truth%2CScintillating+Jewel+of+Truth&gloves=Lancer%27s+Gloves+of+Quickness%2C1%2C%2B+Increased+Attack+Speed&boots=Gore+Rider%2C2%2C%2B+PDR&belt=Verdungo%27s+Hearty+Cord%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Metalgrid%2C0%2C%2B+CBF%2C&ring1=Bul-Kathos%27+Death+Band%2C0%2C%2B+Damage+Reduction&ring2=Raven+Frost%2C0%2C%2B+Damage+Reduction&weapon=Stoneraven%2C3%2C%2B+Sockets+Weapon%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Multiple Shot",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=HzPLfKwjhqA",
+            "label": "S12 Video",
+            "type": "video"
+          },
+          {
+            "url": "https://docs.google.com/spreadsheets/d/1Mcmwpn5CkyR7BdEOlj1BuQIE-PxYHXtax3WywsBKeL8/edit?gid=944046235#gid=944046235",
+            "label": "Spreadsheet",
+            "type": "video"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Strafe (Demon Machine)",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=91&difficulty=3&quests=1&strength=55&dexterity=270&vitality=140&energy=0&coupling=1&skills=000000000000000000000120010500202000021000010100000100200000&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CAndariel%27s+Visage%2CFortitude+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CBeast+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Berserker+Axe%2Cnone%2CLaying+of+Hands%2CGore+Rider%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Valkyrie+Wing%2C2%2C%2B+Sockets+Helm%2C%2C%2CRuby+Jewel&armor=Fortitude+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Laying+of+Hands%2C3%2Cnone&boots=Goblin+Toe%2C1%2Cnone&belt=Razortail%2C2%2Cnone%2C&amulet=Atma%27s+Scarab%2C0%2Cnone%2C&ring1=Carrion+Wind%2C0%2Cnone&ring2=Raven+Frost%2C0%2Cnone&weapon=Demon+Machine%2C2%2C%2B+Sockets+Weapon%2C%2C%2CRuby+Jewel%2CRuby+Jewel%2CRuby+Jewel%2CScintillating+Jewel+of+Fervor&offhand=Shatterhead%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Might-mercenary%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=Sharp+Grand+Charm&charm=Sharp+Grand+Charm&charm=Sharp+Grand+Charm&charm=Sharp+Grand+Charm&charm=Sharp+Grand+Charm&charm=Gheed%27s+Fortune&charm=Sharp+Grand+Charm&charm=Sharp+Grand+Charm&charm=Sharp+Grand+Charm&charm=Ruby+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Sapphire+Small+Charm+of+Vita&charm=Sapphire+Small+Charm+of+Vita&charm=Serpent%27s+Small+Charm+of+Vita&charm=Sapphire+Small+Charm+of+Vita&charm=Sapphire+Small+Charm+of+Vita",
+            "label": "Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=96&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000120011100202000001100010100000100200000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CVeil+of+Steel%2CTemplar%27s+Might%2CFaith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2CShatterhead%2CLaying+of+Hands%2CGoblin+Toe%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Veil+of+Steel%2C3%2C%2B+Sockets+Helm%2CScintillating+Jewel+of+Freedom%2CScintillating+Jewel+of+Freedom%2CRuby+Jewel+of+Carnage&armor=Tyrael%27s+Might%2C3%2C%2B+Faster+Run+Walk%2C%2C%2C%2C%2CRuby+Jewel+of+Carnage%2CRuby+Jewel+of+Carnage&gloves=Soul+Drainer%2C3%2C%2B+Enhanced+Damage&boots=Gore+Rider%2C2%2C%2B+Faster+Run+Walk&belt=Razortail%2C2%2C%2B+Faster+Run+Walk%2C&amulet=Atma%27s+Scarab%2C0%2C%2B+Enhanced+Damage%2C&ring1=Carrion+Wind%2C0%2C%2B+Faster+Run%2FWalk&ring2=Wisp+Projector%2C0%2C%2B+Faster+Run%2FWalk&weapon=Demon+Machine%2C2%2C%2B+Sockets+Weapon%2C%2CRuby+Jewel+of+Carnage%2CRuby+Jewel+of+Carnage%2CRuby+Jewel+of+Carnage%2CRuby+Jewel+of+Carnage%2CRuby+Jewel+of+Carnage&offhand=Shatterhead%2C0%2C%2B+Enhanced+Damage%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&effect=Might-mercenary_armor%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=Sharp+Grand+Charm+of+Inertia&charm=Sharp+Grand+Charm+of+Inertia&charm=Sharp+Grand+Charm+of+Inertia&charm=Sharp+Grand+Charm+of+Balance&charm=Sharp+Grand+Charm+of+Balance&charm=Sharp+Grand+Charm+of+Balance&charm=Sharp+Grand+Charm+of+Vita&charm=Sharp+Grand+Charm+of+Vita&charm=Gheed%27s+Fortune&charm=Shimmering+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Balance&charm=Fine+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Magic Arrow",
+        "tier": "Mid",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Summon Zon",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000102010000200120200500010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CCow+King%27s+Horns%2CCow+King%27s+Hide%2CThe+Iron+Jang+Bong%2Cnone%2CMagefist%2CImp+Shank%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Tarnhelm%2C1%2Cnone%2C%2C%2C&armor=Peace+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Goldwrap%2C1%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2Cnone%2C&ring1=Dual+Leech+Ring%2C0%2Cnone&ring2=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&weapon=Loyalty+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Athlete%27s+Quiver%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=80&difficulty=3&quests=1&strength=95&dexterity=0&vitality=255&energy=60&coupling=1&skills=000000000000000000000103010100200120200100010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CMemory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2CMagefist%2CRite+of+Passage%2CGloom%27s+Trap&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Lore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2C1%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2Cnone%2C&ring1=Manald+Heal%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Rhyme+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Shield%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C",
+            "label": "Alt Starter Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=85&difficulty=3&quests=1&strength=95&dexterity=0&vitality=280&energy=60&coupling=1&skills=000000000000000000000105010100200120200400010100000100200000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CRockstopper%2CRockfleece%2CWitchwild+String%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Valkyrie+Wing%2C2%2C%2B+Sockets+Helm%2C%2C%2C&armor=Skin+of+the+Vipermagi%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Marrowwalk%2C3%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Passion+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Crystal+Sword%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Lidless+Wall%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2C%2CUm+Rune%2CUm+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm",
+            "label": "Mid Solo Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000101010100200120201600010100000100200000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2Cnone%2Cnone%2CSkystrike%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Athlete%27s+Diadem+of+the+Magus%2C3%2Cnone%2C%2C%2C&armor=Peace+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Nightsmoke%2C1%2Cnone%2C&amulet=Athlete%27s+Amulet+of+the+Apprentice%2C0%2Cnone%2C&ring1=Raven+Frost%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Loyalty+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Athlete%27s+Quiver%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=Annihilus&charm=Hellfire+Torch&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm",
+            "label": "Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=99&difficulty=3&quests=1&strength=95&dexterity=0&vitality=280&energy=60&coupling=1&skills=011100000000000000000101010100200120201000010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2COndal%27s+Almighty%2CTemplar%27s+Might%2CBeast+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2COccultist%2CMarrowwalk%2CArachnid+Mesh&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Athlete%27s+Diadem%2C3%2C%2B+Skill%2C%2C%2C&armor=Spirit+Shroud%2C2%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Infernostride%2C2%2Cnone&belt=Arachnid+Mesh%2C3%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2Cnone&ring2=The+Stone+of+Jordan%2C0%2Cnone&weapon=Mist+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Colossus+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Athlete%27s+Quiver%2C0%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Might-mercenary_armor%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&effect=Concentration-weapon%2C1%2C0&charm=Hellfire+Torch&charm=Arcane+Large+Charm+of+Vita&charm=Annihilus+%2B2&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw",
+            "label": "End-Game Rich Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Pure Summon",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1Mcmwpn5CkyR7BdEOlj1BuQIE-PxYHXtax3WywsBKeL8/edit?gid%3D1318666241%23gid%3D1318666241&amp;sa=D&amp;source=editors&amp;ust=1757267248689986&amp;usg=AOvVaw2YhawQKfIMu0mOzznuuSii",
+            "label": "Build Guide (Solo leveling tab)",
+            "type": "guide"
+          }
+        ],
+        "notes": [
+          "Loyalty RW & Amp merc"
+        ]
+      }
+    ],
+    "Necromancer": [
+      {
+        "buildName": "Poison Nova",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=99&difficulty=3&quests=1&strength=36&dexterity=0&vitality=0&energy=469&coupling=1&skills=000101011001011500001220010201200000002001000001000000010000010000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CGriffon%27s+Eye%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CDoom+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Phase+Blade%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2COccultist%2CImp+Shank%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=2%2F20+Circlet+Necromancer%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Skullder%27s+Ire%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Trang-Oul%27s+Girth%2C3%2Cnone%2C&amulet=Blood+Craft+-+Necromancer%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Death%27s+Web%2C3%2C%2B+Psn+Pierce%2C%2C%2C%2C%2C%2C&offhand=Trang-Oul%27s+Wing%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Freeze-mercenary_weapon%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B1+Fungal+Grand+Charm+%2B+fhr",
+            "label": "Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Desecrate",
+        "tier": "Bad",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Poison Strike",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=80&difficulty=3&quests=1&strength=81&dexterity=53&vitality=226&energy=50&coupling=1&skills=000000010500100100000020012001200000000000000000000000000000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Wormskull%2C1%2Cnone%2C%2C%2C&armor=Angelic+Mantle%2C1%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Sigon%27s+Gage%2C1%2Cnone&boots=Sigon%27s+Sabot%2C1%2Cnone&belt=String+of+Ears%2C2%2Cnone%2C&amulet=Angelic+Wings%2C0%2Cnone%2C&ring1=Angelic+Halo%2C0%2Cnone&ring2=Angelic+Halo%2C0%2Cnone&weapon=The+Jade+Tan+Do%2C1%2C%2B+Sockets+Weapon%2C%2C%2C%2CShael+Rune%2CShael+Rune%2CShael+Rune&offhand=Rhyme+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Poison+Strike%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=90&difficulty=3&quests=1&strength=83&dexterity=53&vitality=224&energy=100&coupling=1&skills=000000011500150701000020012001200000000000000000000000000000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CRockstopper%2CRockfleece%2CPus+Spitter%2Cnone%2CLava+Gout%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Trang-Oul%27s+Guise%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Trang-Oul%27s+Scales%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Increased+Attack+Speed&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Trang-Oul%27s+Girth%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Angelic+Wings%2C0%2C%2B+All+Skills%2C&ring1=Raven+Frost%2C0%2C%2B+Life+per+kill&ring2=Angelic+Halo%2C0%2C%2B+Life+per+kill&weapon=Blackbog%27s+Sharp%2C2%2C%2B+Sockets+Weapon%2C%2C%2C%2CScintillating+Jewel+of+Fervor%2CShael+Rune%2CScintillating+Jewel+of+Fervor&offhand=Trang-Oul%27s+Wing%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Fire_Mastery%2C1%2C0&effect=Vigor-mercenary%2C1%2C0&charm=%2B1+Fungal+Grand+Charm&charm=%2B1+Fungal+Grand+Charm&charm=%2B1+Fungal+Grand+Charm&charm=%2B1+Fungal+Grand+Charm",
+            "label": "Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=86&difficulty=3&quests=1&strength=20&dexterity=40&vitality=380&energy=0&coupling=1&skills=000000012000011300000020012001200000000000000000000000000000000000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Prayer%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2Cnone%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CBloodfist%2CSandstorm+Trek%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Andariel%27s+Visage%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Innocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Marrowwalk%2C3%2C%2B+Life+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Blood+Craft+-+Necromancer%2C0%2C%2B+All+Resistances%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=Wisp+Projector%2C0%2C%2B+Mana+per+kill&weapon=Plague+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Cinquedeas%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Martyrdom%2C3%2C%2B+Sockets+Off-hand%2C%2C%2C%2CScintillating+Jewel+of+Fervor%2CScintillating+Jewel+of+Fervor%2CScintillating+Jewel+of+Fervor&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Cleansing-weapon%2C1%2C0&effect=Prayer-mercenary%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Corpse Explosion",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=80&difficulty=3&quests=1&strength=91&dexterity=0&vitality=0&energy=0&coupling=1&skills=000101010001010500002001000020200000000020000000000000000000000000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Wormskull%2C1%2Cnone%2C%2C%2C&armor=Spirit+Forge%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Venomous+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=White+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Tomb+Wand+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Corpse+Explosion%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Corpse+Explosion%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Meditation-mercenary_weapon%2C1%2C0",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=94&difficulty=3&quests=1&strength=102&dexterity=0&vitality=0&energy=378&coupling=1&skills=000101010101011501002001010120200000000020000000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CShaftstop%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CLaying+of+Hands%2CMarrowwalk%2CNosferatu%27s+Coil&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&armor=Corpsemourn%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&gloves=Magefist%2C1%2C%2B+Mana+per+kill&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Max+Resist%2C&amulet=Venomous+Amulet%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Life+per+kill&ring2=Wisp+Projector%2C0%2C%2B+Life+per+kill&weapon=Mang+Song%27s+Lesson%2C3%2C%2B+Sockets+Weapon%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Inferno+Large+Charm+of+Vita&charm=Annihilus+%2B2&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=94&difficulty=3&quests=1&strength=102&dexterity=0&vitality=0&energy=378&coupling=1&skills=000101010101011501002001010120200000000020000000000000000000000000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CDream+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2COrmus%27+Robes%2CEschuta%27s+temper%2CDream+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CTrang-Oul%27s+Claws%2CMarrowwalk%2CArachnid+Mesh&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&armor=Ormus%27+Robes%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&gloves=Magefist%2C1%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Venomous+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Mana+per+kill&ring2=Wisp+Projector%2C0%2C%2B+Life+per+kill&weapon=Death%27s+Web%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&offhand=Darkforce+Spawn%2C3%2C%2B+Sockets+Off-hand%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Shock-mercenary_helm%2C0%2C0&effect=Holy_Shock-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Inferno+Large+Charm+of+Vita&charm=Annihilus+%2B2&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm",
+            "label": "Alt End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Elemental Summoner (Mage Skeles + Ele Revives)",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=92&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=200101010120010101002000010100000000000001000001000000010001200010&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CShaftstop%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CBloodfist%2CImp+Shank%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Harlequin+Crest%2C3%2C%2B+Skill%2C%2CUm+Rune%2CUm+Rune&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Gravepalm%2C2%2C%2B+Faster+Cast+Rate&boots=Marrowwalk%2C3%2Cnone&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Blood+Craft+-+Necromancer%2C0%2C%2B+Faster+Cast+Rate%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Grim%27s+Burning+Dead%2C2%2C%2B+All+Skills%2C%2C%2CIst+Rune%2CIst+Rune%2CIst+Rune%2CScintillating+Jewel+of+Freedom&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+frw&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+frw&charm=Amber+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Sapphire+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Fire Golems",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=94&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000202000200120200000000000000000000001000001000000010000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CShaftstop%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CDracul%27s+Grasp%2CGore+Rider%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Golemlord%27s+Diadem+of+the+Magus%2C3%2C%2B+Skill%2C%2C%2C&armor=Trang-Oul%27s+Scales%2C2%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Faster+Run+Walk&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Golemlord%27s+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Golemlord%27s+Tomb+Wand+of+the+Archmage%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&offhand=Golemlord%27s+Minion+Skull+of+the+Archmage%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+frw&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life",
+            "label": "Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Green Goblin (Demon Machine Merc + Skeletons)",
+        "tier": "Good",
+        "links": [],
+        "notes": [
+          "Must gear swap pre-buff",
+          "Must have Innocence on Merc"
+        ]
+      },
+      {
+        "buildName": "Pure Revive (Eternity + Sacred Totem)",
+        "tier": "Bad",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Dark Pact",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=95&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000010100010101000000010100000000000020012001200000010016000020&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CVeil+of+Steel%2CPurgatory%2Cnone%2Cnone%2CSteelrend%2CWar+Traveler%2CNosferatu%27s+Coil&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Accursed+Diadem%2C3%2C%2B+Skill%2C%2CLPK%2FMPK+req+FHR+Jewel%2CLPK%2FMPK+req+FHR+Jewel&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Mana+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Accursed+Amulet%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=Wisp+Projector%2C0%2C%2B+Mana+per+kill&weapon=Blackhand+Key%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2CLPK%2FMPK+Jewel%2CLPK%2FMPK+Jewel&offhand=Darkforce+Spawn%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CUm+Rune%2CUm+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Might-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Hexing+Grand+Charm+%2B+fhr&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=Emerald+Small+Charm+of+Vita",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Teeth / Bonespear",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=80&difficulty=3&quests=1&strength=91&dexterity=0&vitality=269&energy=50&coupling=1&skills=000000010000010900000000202000002000200000000000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Wormskull%2C1%2Cnone%2C%2C%2C&armor=Spirit+Shroud%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Venomous+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=White+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Tomb+Wand+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Spear%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Spear%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "Paladin": [
+      {
+        "buildName": "Holy Bolt / FOH",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=80&difficulty=3&quests=1&strength=40&dexterity=0&vitality=370&energy=0&coupling=1&skills=010001000000010003000000000000000000000000012000010001010120002020&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CDuskdeep%2CRockfleece%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Rose+Branded+Diadem%2C3%2Cnone%2C%2C%2C&armor=Spirit+Shroud%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Lenymo%2C1%2Cnone%2C&amulet=Rose+Branded+Amulet+of+the+Apprentice%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Neophyte+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Scepter%2C1%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Spirit+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Rondache%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
+            "label": "Starter Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=82&difficulty=3&quests=1&strength=66&dexterity=80&vitality=274&energy=0&coupling=1&skills=010001000000010001000000000000000000000001012001010101010120012020&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CVampire+Gaze%2CHeavenly+Garb%2CStormspire%2Cnone%2CLava+Gout%2CRite+of+Passage%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griswold%27s+Valor%2C3%2C%2B+Max+Lightning+Resist%2C%2C%2C&armor=Griswold%27s+Heart%2C3%2C%2B+Max+Cold+Resist%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2Cnone&boots=Waterwalk%2C3%2Cnone&belt=Verdungo%27s+Hearty+Cord%2C3%2Cnone%2C&amulet=Rose+Branded+Amulet%2C0%2Cnone%2C&ring1=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&ring2=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&weapon=Griswold%27s+Redemption%2C3%2Cnone%2C%2CTir+Rune%2CTir+Rune%2CTir+Rune%2CTir+Rune%2CTir+Rune&offhand=Griswold%27s+Honor%2C3%2C%2B+Max+Poison+Resist%2C%2C%2C%2CPerfect+Diamond%2CPerfect+Diamond%2CPerfect+Diamond&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Sanctuary-mercenary_armor%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=Annihilus&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance",
+            "label": "Mid-Game Build Planner",
+            "type": "planner"
+          },
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=99&difficulty=3&quests=1&strength=66&dexterity=0&vitality=439&energy=0&coupling=1&skills=010602040006010001000000000000000000000001012001010101010120012020&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CCrown+of+Ages%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CAzurewrath%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CVenom+Grip%2CTancred%27s+Hobnails%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griswold%27s+Valor%2C3%2C%2B+Skill%2C%2C%2C&armor=Griswold%27s+Heart%2C3%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2C%2B+FBR&boots=Waterwalk%2C3%2C%2B+Max+Poison+Resist&belt=Arachnid+Mesh%2C3%2C%2B+PDR%2C&amulet=Rose+Branded+Amulet%2C0%2C%2B+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Damage+Reduction&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Damage+Reduction&weapon=Griswold%27s+Redemption%2C3%2C%2B+All+Skills%2C%2CTir+Rune%2CTir+Rune%2CTir+Rune%2CTir+Rune%2CTir+Rune&offhand=Griswold%27s+Honor%2C3%2C%2B+All+Skills%2C%2C%2C%2CUm+Rune%2CUm+Rune%2CUm+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Sanctuary-mercenary_weapon%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B1+Lion+Branded+Grand+Charm+%2B+fhr&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=Annihilus+%2B2&charm=%2B3%25+Scintillating+Large+Charm+of+Balance",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Hammerdin",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=010001000000200000000100002020000000000001010101010120000000200100&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CGriffon%27s+Eye%2CDark+Abyss%2CDoom+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Phase+Blade%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2COccultist%2CImp+Shank%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=2%2F20+Circlet+Paladin%2C3%2C%2B+Skill%2C%2C%2C&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Faster+Run+Walk&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Blood+Craft+-+Paladin%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Akarat%27s+Devotion%2C3%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2C%2C&offhand=Herald+of+Zakarum%2C1%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Freeze-mercenary_weapon%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm&charm=%2B3%25+Scintillating+Large+Charm",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Vengeance 2H Zenith",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000120010000032001002001010001012000000000200000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2C%2C%2CRainbow+Facet+%28Fire%29&armor=Griswold%27s+Heart%2C2%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2C%2B+Increased+Attack+Speed&boots=Imp+Shank%2C2%2C%2B+Faster+Run+Walk&belt=Siggard%27s+Staunch%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Highlord%27s+Wrath%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&ring2=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&weapon=Zenith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Colossus+Sword%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Salvation-weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Captain%27s+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Vengeance 1H",
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000120010000032001002001010001012000000000200000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2C%2C%2CRainbow+Facet+%28Fire%29&armor=Griswold%27s+Heart%2C2%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2C%2B+Increased+Attack+Speed&boots=Imp+Shank%2C2%2C%2B+Faster+Run+Walk&belt=Siggard%27s+Staunch%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Highlord%27s+Wrath%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&ring2=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&weapon=Lightsabre%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=Dragonscale%2C3%2C%2B+Sockets+Off-hand%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Resist_Lightning-weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Captain%27s+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm&charm=%2B1+Lion+Branded+Grand+Charm",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Ele - Sacrifice (Native Ele Aura)",
+        "tier": "Mid",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Ele - Charge (Native Ele Aura)",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Shock - Multishot (Native Ele Aura)",
+        "tier": "Good",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Auradin - Charge (HOJ + 2x Dragon)",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=paladin&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=002000000000000000200101012000010001002001010001010100000000200000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2C%2C%2CRainbow+Facet+%28Fire%29&armor=Dragon+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Hellmouth%2C2%2C%2B+Increased+Attack+Speed&boots=Imp+Shank%2C2%2C%2B+Faster+Run+Walk&belt=Siggard%27s+Staunch%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=The+Rising+Sun%2C0%2C%2B+2+All+Skills%2C&ring1=Raven+Frost%2C0%2C%2B+Life+per+kill&ring2=Wisp+Projector%2C0%2C%2B+Life+per+kill&weapon=Hand+of+Justice+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Phase+Blade%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Dragon+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Fire-armor%2C0%2C0&effect=Holy_Fire-weapon%2C0%2C0&effect=Holy_Fire-combined%2C1%2C0&effect=Holy_Fire-offhand%2C0%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm&charm=%2B3%25+Inferno+Large+Charm",
+            "label": "End-game Build Planner",
+            "type": "planner"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "Physical Zeal",
+        "tier": "Bad",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Physical Sacrifice",
+        "tier": "Mid",
+        "links": [],
+        "notes": [
+          "Requires Leech-able Mobs"
+        ]
+      },
+      {
+        "buildName": "Physical Charge (2-H)",
+        "tier": "Decent",
+        "links": [],
+        "notes": []
+      }
+    ]
+  }
+};
