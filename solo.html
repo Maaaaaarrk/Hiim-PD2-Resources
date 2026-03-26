@@ -759,6 +759,7 @@ function renderStarterRow(build) {
   const tableClass = classTableStyles[build.className] || '';
   const tr = document.createElement('tr');
   tr.className = tableClass;
+  tr.setAttribute('data-class', build.className);
 
   const tdName = document.createElement('td');
   if (build.plannerUrl) {
@@ -911,14 +912,32 @@ loadData().then(function(data) {
 
     // Setup checkbox toggle logic
     setupCheckboxToggles();
+    filterStarterRows();
   });
 
+function filterStarterRows() {
+  var starterTbody = document.getElementById('tbodyStarter');
+  if (!starterTbody) return;
+  var rows = starterTbody.querySelectorAll('tr[data-class]');
+  var classOrder = ['Sorceress','Druid','Assassin','Barbarian','Amazon','Necromancer','Paladin'];
+  var anyChecked = classOrder.some(function(cls) {
+    var cb = document.getElementById('checkbox' + cls);
+    return cb && cb.checked;
+  });
+  rows.forEach(function(row) {
+    var cls = row.getAttribute('data-class');
+    if (!anyChecked) { row.style.display = ''; return; }
+    var cb = document.getElementById('checkbox' + cls);
+    row.style.display = (cb && cb.checked) ? '' : 'none';
+  });
+}
+
 function setupCheckboxToggles() {
-  const sections = ['Starter', 'Sorceress', 'Druid', 'Assassin', 'Barbarian', 'Amazon', 'Necromancer', 'Paladin'];
+  var sections = ['Starter', 'Sorceress', 'Druid', 'Assassin', 'Barbarian', 'Amazon', 'Necromancer', 'Paladin'];
   sections.forEach(function(section) {
-    const checkbox = document.getElementById('checkbox' + section);
-    const tbody = document.getElementById('tbody' + section);
-    const thead = document.getElementById('thead' + section);
+    var checkbox = document.getElementById('checkbox' + section);
+    var tbody = document.getElementById('tbody' + section);
+    var thead = document.getElementById('thead' + section);
 
     if (checkbox && tbody && thead) {
       checkbox.addEventListener('change', function() {
@@ -931,6 +950,11 @@ function setupCheckboxToggles() {
         }
       });
     }
+  });
+  // Filter starter rows when any class checkbox changes
+  ['Sorceress','Druid','Assassin','Barbarian','Amazon','Necromancer','Paladin'].forEach(function(cls) {
+    var cb = document.getElementById('checkbox' + cls);
+    if (cb) cb.addEventListener('change', filterStarterRows);
   });
 }
 
@@ -966,10 +990,18 @@ function getVisibleBuilds() {
   if (!window.soloData) return builds;
   var seen = {};
   var classOrder = ['Sorceress','Druid','Assassin','Barbarian','Amazon','Necromancer','Paladin'];
-  // Starter builds
+  // Which classes are visible
+  var checkedClasses = {};
+  var anyClassChecked = false;
+  classOrder.forEach(function(cls) {
+    var cb = document.getElementById('checkbox' + cls);
+    if (cb && cb.checked) { checkedClasses[cls] = true; anyClassChecked = true; }
+  });
+  // Starter builds — filter by class if any class is checked, otherwise show all
   var starterCb = document.getElementById('checkboxStarter');
   if (starterCb && starterCb.checked) {
     (window.soloData.starterBuilds || []).forEach(function(b) {
+      if (anyClassChecked && !checkedClasses[b.className]) return;
       var key = b.className + ' - ' + b.buildName;
       if (!seen[key]) { seen[key] = true; builds.push({ name: key, buildName: b.buildName, className: b.className }); }
     });
