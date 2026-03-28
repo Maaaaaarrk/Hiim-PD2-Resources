@@ -1,7 +1,7 @@
 {
   "season": 13,
-  "updatedDate": "March 23rd 2026",
-  "bannerText": "Currently, this is just a copy from Season 12",
+  "updatedDate": "March 28th 2026",
+  "bannerText": "Updated with S13 Speed Mapping data",
   "starterBuilds": [
     {
       "className": "Sorceress",
@@ -510,6 +510,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=93&difficulty=3&quests=1&strength=200&dexterity=0&vitality=0&energy=275&coupling=1&skills=00000000000000000000002000202001000100202001000100000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormspire%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Dark+Abyss%2C3%2C%2B+CBF%2C%2C%2C%2C%2C%2C&gloves=Occultist%2C3%2C%2B+Mana+per+kill&boots=Silkweave%2C2%2C%2B+Mana+per+kill&belt=Thundergod%27s+Vigor%2C2%2C%2B+Faster+Cast+Rate%2C&amulet=Powered+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&ring2=The+Stone+of+Jordan%2C0%2C%2B+Mana+per+kill&weapon=Infinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+cl%2Bnova%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Conviction-weapon%2C0%2C0&effect=Defiance-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr",
             "label": "Aspirational Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/694f695dfa65772ef2f82165",
+            "label": "Nova ES Armory (3:45)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -528,7 +533,7 @@
       },
       {
         "buildName": "Chain Lightning",
-        "tier": "Decent",
+        "tier": "Top",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=81&difficulty=3&quests=1&strength=60&dexterity=0&vitality=335&energy=20&coupling=1&skills=00000000000000000000002000010020201100011800000100000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CDuskdeep%2CRockfleece%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CLaying+of+Hands%2CRite+of+Passage%2CCredendum&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Powered+Diadem%2C3%2Cnone%2C%2C%2C&armor=Spirit+Shroud%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2Cnone&boots=Silkweave%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Powered+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=Memory+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
@@ -539,6 +544,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00000000000000000000002000010020202000082000000100000000000000000000&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+Skill%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Ormus%27+Robes%2C3%2C%2B+Skill%2C%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&gloves=Occultist%2C3%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Thundergod%27s+Vigor%2C2%2C%2B+Faster+Cast+Rate%2C&amulet=Powered+Amulet+of+the+Apprentice%2C0%2C%2B+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Life+per+kill&weapon=Infinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+cl%2Bnova%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Lightning_Mastery%2C1%2C0&effect=Conviction-weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+fhr&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=%2B1+Sparking+Grand+Charm+%2B+life&charm=Annihilus+%2B2",
             "label": "End-game Gear",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/696a4f67b5b5277167267e8f",
+            "label": "Armory (4:11)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -599,6 +609,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=sorceress&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=00200000010000002000200000010000000100000000011700000100200001000100&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Prayer%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CTemplar%27s+Might%2CBeast+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Caduceus%2CShattered+Wall+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CMagefist%2CImp+Shank%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Nightwing%27s+Veil%2C3%2C%2B+Skill%2C%2C%2C&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magnus%27+Skin%2C2%2C%2B+Pierce&boots=Imp+Shank%2C2%2Cnone&belt=Razortail%2C2%2C%2B+Pierce%2C&amulet=Mara%27s+Kaleidoscope%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Cast+Rate&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Faster+Cast+Rate&weapon=Widowmaker%2C3%2C%2B+IAS%2C%2C%2C%2C%2C%2C&offhand=Echo+Quiver+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Sharp+Arrows%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Cold_Mastery%2C1%2C0&effect=Fire_Mastery%2C1%2C0&effect=Prayer-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Holy_Freeze-mercenary_offhand%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&effect=Might-mercenary_armor%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life&charm=%2B1+Chilling+Grand+Charm+%2B+life",
             "label": "End-game Gear",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/69607bd735b033dae1cfe2b6",
+            "label": "Armory (4:20)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -631,6 +646,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=97&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=01200101200101200120010000000000000000000001010101011201010101&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormlash%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CTrang-Oul%27s+Claws%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Ravenlore%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2C%2B+Mana+per+kill&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Siggard%27s+Staunch%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Gaea%27s+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Mana+per+kill&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Life+per+kill&weapon=Mang+Song%27s+Lesson%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life",
             "label": "End-game Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://live.projectdiablo2.com/armory/builds/69372f04ef5421508eb402f2",
+            "label": "Armory (3:34)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -749,24 +769,34 @@
       },
       {
         "buildName": "Cobra Sin",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=88&difficulty=3&quests=1&strength=150&dexterity=68&vitality=232&energy=0&coupling=1&skills=0101000120000100012001030005010120002000000001000001000000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormspire%2Cnone%2CLava+Gout%2CImp+Shank%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Andariel%27s+Visage%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&gloves=Kenshi%27s+Gloves+of+Quickness%2C1%2C%2B+All+Resistances&boots=Imp+Shank%2C2%2C%2B+FBR&belt=Siggard%27s+Staunch%2C3%2C%2B+PDR%2C&amulet=Blood+Craft+-+Assassin%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Attack+Rating&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Attack+Rating&weapon=Jade+Talon%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&offhand=Whispering+Mirage%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+fhr&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=Ruby+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Balance",
             "label": "End-game Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/695d182a461162a9fe7f0f6f",
+            "label": "Armory (3:16)",
+            "type": "armory"
           }
         ],
         "notes": []
       },
       {
         "buildName": "Phoenix Strike",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=77&difficulty=3&quests=1&strength=0&dexterity=0&vitality=395&energy=0&coupling=1&skills=0100200001200020000100010001000000000000000001000001000000010020&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2Cnone%2Cnone%2CPus+Spitter%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2Cnone%2C%2C%2C&armor=Stone+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Kenshi%27s+Gloves+of+Giant%2C1%2Cnone&boots=Merman%27s+Sprocket%2C3%2Cnone&belt=Verdungo%27s+Hearty+Cord%2C3%2Cnone%2C&amulet=Blood+Craft+-+Assassin%2C0%2Cnone%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2Cnone&ring2=Dual+Leech+Ring%2C0%2Cnone&weapon=Bartuc%27s+Cut+Throat%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Bartuc%27s+Cut+Throat%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=%2B1+Shogukusha%27s+Grand+Charm",
             "label": "Starter Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/693e01801af17b5e870d61ad",
+            "label": "Armory (4:35)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -804,17 +834,28 @@
       {
         "buildName": "Blade Sentinel (Venom)",
         "tier": "Top",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/693ad9a4bec038a42249932a",
+            "label": "Armory (3:27)",
+            "type": "armory"
+          }
+        ],
         "notes": []
       },
       {
         "buildName": "Summon Sin (Mind Blast)",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://www.google.com/url?q=https://tinyurl.com/s11mindblast&amp;sa=D&amp;source=editors&amp;ust=1757267248684136&amp;usg=AOvVaw1PC2217VwizNE0QTZQMnft",
             "label": "Build Guide",
             "type": "guide"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/6971b2daf168959ce9e8bf67",
+            "label": "Armory (4:35)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -844,11 +885,33 @@
             "url": "https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684884&amp;usg=AOvVaw361TEiP3HC1zKq2oOD4LHs",
             "label": "Generic WWsin Build Guide",
             "type": "guide"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/69653eb7dfba6297665851b6",
+            "label": "Blade Dance Armory (4:37)",
+            "type": "armory"
           }
         ],
         "notes": [
           "Must gear swap pre-buff"
         ]
+      },
+      {
+        "buildName": "Whirlwind (WW Sin)",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/697858f9c347fec528b502f8",
+            "label": "WW Hybrid Armory (3:08)",
+            "type": "armory"
+          },
+          {
+            "url": "https://projectdiablo2.com/character/Kano",
+            "label": "Pure WW Armory (4:16)",
+            "type": "armory"
+          }
+        ],
+        "notes": []
       }
     ],
     "Barbarian": [
@@ -910,6 +973,11 @@
             "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248686138&amp;usg=AOvVaw3p5jaWKspgdKbaJvQ0Yzy3",
             "label": "Build Guide",
             "type": "guide"
+          },
+          {
+            "url": "https://live.projectdiablo2.com/armory/builds/6973d66d620c015149987b5a",
+            "label": "WW Bleed Armory (4:24)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -1006,6 +1074,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=90&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000101010100001700002020200000200000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CCrown+of+Ages%2CFortitude+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CFaith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2CAbyssal+Ward%2CLaying+of+Hands%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Nightwing%27s+Veil%2C3%2Cnone%2C%2C%2C&armor=Silks+of+the+Victor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Archer%27s+of+Quickness%2C1%2Cnone&boots=Merman%27s+Sprocket%2C3%2Cnone&belt=Snowclash%2C2%2Cnone%2C&amulet=Blood+Craft+-+Amazon%2C0%2Cnone%2C&ring1=The+Stone+of+Jordan%2C0%2Cnone&ring2=The+Stone+of+Jordan%2C0%2Cnone&weapon=Pus+Spitter%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Frozen+Sorrow%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Numbing+Large+Charm&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia",
             "label": "Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/69547e635ca6ee0d170d76b0",
+            "label": "Cold Bowa Armory (3:53)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -1019,7 +1092,13 @@
       {
         "buildName": "Fire Arrow",
         "tier": "Top",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/695cfbd322107560e46ca216",
+            "label": "Armory (4:18)",
+            "type": "armory"
+          }
+        ],
         "notes": []
       },
       {
@@ -1082,7 +1161,7 @@
       },
       {
         "buildName": "Summon Zon",
-        "tier": "Mid",
+        "tier": "Top",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000102010000200120200500010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CCow+King%27s+Horns%2CCow+King%27s+Hide%2CThe+Iron+Jang+Bong%2Cnone%2CMagefist%2CImp+Shank%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Tarnhelm%2C1%2Cnone%2C%2C%2C&armor=Peace+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Goldwrap%2C1%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2Cnone%2C&ring1=Dual+Leech+Ring%2C0%2Cnone&ring2=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&weapon=Loyalty+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Athlete%27s+Quiver%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm",
@@ -1108,6 +1187,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=99&difficulty=3&quests=1&strength=95&dexterity=0&vitality=280&energy=60&coupling=1&skills=011100000000000000000101010100200120201000010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2COndal%27s+Almighty%2CTemplar%27s+Might%2CBeast+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2COccultist%2CMarrowwalk%2CArachnid+Mesh&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Athlete%27s+Diadem%2C3%2C%2B+Skill%2C%2C%2C&armor=Spirit+Shroud%2C2%2C%2B+Skill%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Infernostride%2C2%2Cnone&belt=Arachnid+Mesh%2C3%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2Cnone&ring2=The+Stone+of+Jordan%2C0%2Cnone&weapon=Mist+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Colossus+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Athlete%27s+Quiver%2C0%2C%2B+All+Skills%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Might-mercenary_armor%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&effect=Concentration-weapon%2C1%2C0&charm=Hellfire+Torch&charm=Arcane+Large+Charm+of+Vita&charm=Annihilus+%2B2&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Acrobat%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw",
             "label": "End-Game Rich Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/693d9f3631602f351812eda5",
+            "label": "Armory (3:48)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -1136,6 +1220,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=99&difficulty=3&quests=1&strength=36&dexterity=0&vitality=0&energy=469&coupling=1&skills=000101011001011500001220010201200000002001000001000000010000010000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CGriffon%27s+Eye%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CDoom+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Phase+Blade%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2COccultist%2CImp+Shank%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=2%2F20+Circlet+Necromancer%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Skullder%27s+Ire%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Trang-Oul%27s+Girth%2C3%2Cnone%2C&amulet=Blood+Craft+-+Necromancer%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Death%27s+Web%2C3%2C%2B+Psn+Pierce%2C%2C%2C%2C%2C%2C&offhand=Trang-Oul%27s+Wing%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Freeze-mercenary_weapon%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B1+Fungal+Grand+Charm+%2B+fhr",
             "label": "Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/698e531d4cd0a3f93fe0ee08",
+            "label": "Armory (4:12)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -1186,6 +1275,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=94&difficulty=3&quests=1&strength=102&dexterity=0&vitality=0&energy=378&coupling=1&skills=000101010101011501002001010120200000000020000000000000000000000000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CDream+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2COrmus%27+Robes%2CEschuta%27s+temper%2CDream+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CTrang-Oul%27s+Claws%2CMarrowwalk%2CArachnid+Mesh&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Kira%27s+Guardian%2C2%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&armor=Ormus%27+Robes%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&gloves=Magefist%2C1%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Venomous+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Mana+per+kill&ring2=Wisp+Projector%2C0%2C%2B+Life+per+kill&weapon=Death%27s+Web%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&offhand=Darkforce+Spawn%2C3%2C%2B+Sockets+Off-hand%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Shock-mercenary_helm%2C0%2C0&effect=Holy_Shock-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Inferno+Large+Charm+of+Vita&charm=Annihilus+%2B2&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+fhr&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=%2B1+Fungal+Grand+Charm+%2B+life&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm&charm=Shimmering+Small+Charm",
             "label": "Alt End-game Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/696f7b2809485d31ea7dd9ea",
+            "label": "Armory (3:04)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -1237,6 +1331,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=95&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000010100010101000000010100000000000020012001200000010016000020&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CVeil+of+Steel%2CPurgatory%2Cnone%2Cnone%2CSteelrend%2CWar+Traveler%2CNosferatu%27s+Coil&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Accursed+Diadem%2C3%2C%2B+Skill%2C%2CLPK%2FMPK+req+FHR+Jewel%2CLPK%2FMPK+req+FHR+Jewel&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Mana+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Accursed+Amulet%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=Wisp+Projector%2C0%2C%2B+Mana+per+kill&weapon=Blackhand+Key%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2CLPK%2FMPK+Jewel%2CLPK%2FMPK+Jewel&offhand=Darkforce+Spawn%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CUm+Rune%2CUm+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Might-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Hexing+Grand+Charm+%2B+fhr&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=Emerald+Small+Charm+of+Vita",
             "label": "End-game Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://projectdiablo2.com/armory/builds/695e8d13e3fd8e1a7d70a4a6",
+            "label": "Armory (3:12)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -1315,8 +1414,19 @@
       },
       {
         "buildName": "Ele - Sacrifice (Native Ele Aura)",
-        "tier": "Mid",
-        "links": [],
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/695b02ffe62b2b2fea529986",
+            "label": "Holy Shock Sac Armory (2:39)",
+            "type": "armory"
+          },
+          {
+            "url": "https://live.projectdiablo2.com/armory/builds/6973d7f6620c015149987bbd",
+            "label": "Light Sac Armory (2:56)",
+            "type": "armory"
+          }
+        ],
         "notes": []
       },
       {
@@ -1351,8 +1461,14 @@
       },
       {
         "buildName": "Physical Sacrifice",
-        "tier": "Mid",
-        "links": [],
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
+            "label": "Sanctuary/Phys Sac Armory (3:27)",
+            "type": "armory"
+          }
+        ],
         "notes": [
           "Requires Leech-able Mobs"
         ]
@@ -1361,6 +1477,18 @@
         "buildName": "Physical Charge (2-H)",
         "tier": "Decent",
         "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Sanctuary Sacrifice",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
+            "label": "Armory (3:27)",
+            "type": "armory"
+          }
+        ],
         "notes": []
       }
     ]
