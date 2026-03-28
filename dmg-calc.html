@@ -274,6 +274,24 @@
 						</div>
 					</div>
 				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4 offset-4">
+						<label class="form-label">+% Crit Dmg</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_crit_bonus" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">+% Deadly Dmg</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_ds_bonus" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
 
 				<div class="sec-label d-flex justify-content-between align-items-center"><span>Crushing Blow</span>
 					<button class="copy-btn" onclick="copySection('b','a','cb')">← Copy from B</button>
@@ -295,8 +313,8 @@
 					<div class="col-4">
 						<label class="form-label">CB Type</label>
 						<select id="a_cbtype" class="form-select form-select-sm" onchange="calc()">
-							<option value="0.125">Normal (1/8)</option>
-							<option value="0.0125">Boss (1/80)</option>
+							<option value="0.142857">Normal (1/7)</option>
+							<option value="0.014286">Boss (1/70)</option>
 						</select>
 					</div>
 				</div>
@@ -538,6 +556,24 @@
 						</div>
 					</div>
 				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4 offset-4">
+						<label class="form-label">+% Crit Dmg</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_crit_bonus" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+					<div class="col-4">
+						<label class="form-label">+% Deadly Dmg</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_ds_bonus" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
 
 				<div class="sec-label d-flex justify-content-between align-items-center"><span>Crushing Blow</span>
 					<button class="copy-btn" onclick="copySection('a','b','cb')">Copy from A →</button>
@@ -559,8 +595,8 @@
 					<div class="col-4">
 						<label class="form-label">CB Type</label>
 						<select id="b_cbtype" class="form-select form-select-sm" onchange="calc()">
-							<option value="0.125">Normal (1/8)</option>
-							<option value="0.0125">Boss (1/80)</option>
+							<option value="0.142857">Normal (1/7)</option>
+							<option value="0.014286">Boss (1/70)</option>
 						</select>
 					</div>
 				</div>
@@ -789,6 +825,8 @@
 		const ds       = Math.min(100, n(p+'_ds'));
 		const mastery  = Math.min(100, n(p+'_mastery'));
 		const scrit    = Math.min(100, n(p+'_scrit'));
+		const critBonus = n(p+'_crit_bonus');
+		const dsBonus   = n(p+'_ds_bonus');
 		const cbPct    = n(p+'_cb');
 		const monHP    = n(p+'_hp', 20000);
 		const cbRatio  = parseFloat(document.getElementById(p+'_cbtype').value);
@@ -819,16 +857,16 @@
 
 		// 4. Crit resolution — roll CS first, then DS only if CS missed
 		// CS sources (mastery + skill crit) are additive → one CS roll
-		// If CS hits  → 2x damage
-		// If CS misses and DS hits → 1.5x damage
-		// If both miss → 1x damage
+		// +% Crit/Deadly Dmg stats raise the base multiplier (e.g. 10% takes 1.5x → 1.6x)
+		const critMult    = 2.0 + critBonus / 100;
+		const dsMult      = 1.5 + dsBonus / 100;
 		const totalCS     = Math.min(100, mastery + scrit);
 		const pCS         = totalCS / 100;
 		const pDS         = ds / 100;
-		const pCritHit    = pCS;                      // 2x
-		const pDSHit      = (1 - pCS) * pDS;          // 1.5x
-		const pNormalHit  = (1 - pCS) * (1 - pDS);    // 1x
-		const avgMult     = pNormalHit * 1.0 + pDSHit * 1.5 + pCritHit * 2.0;
+		const pCritHit    = pCS;
+		const pDSHit      = (1 - pCS) * pDS;
+		const pNormalHit  = (1 - pCS) * (1 - pDS);
+		const avgMult     = pNormalHit * 1.0 + pDSHit * dsMult + pCritHit * critMult;
 
 		// 5. Final damage using correct average multiplier
 		const finalMin    = Math.floor(sheetMin * avgMult);
@@ -859,7 +897,7 @@
 			wepMin, wepMax, wepAvg,
 			strED, dexED, totalOffED,
 			sheetMin, sheetMax, sheetAvg,
-			pCritHit, pDSHit, pNormalHit, avgMult,
+			pCritHit, pDSHit, pNormalHit, avgMult, critMult, dsMult,
 			finalMin, finalMax, finalAvg,
 			avgCB, effRes, resMult,
 			effMin, effMax, effAvg, effCBAvg, totalAvg,
@@ -889,8 +927,8 @@
 			<div class="result-row"><span class="lbl">STR ED%</span><span class="val">${fmt(r.strED,1)}%</span></div>
 			<div class="result-row"><span class="lbl">Total Off-Wep ED%</span><span class="val">${fmt(r.totalOffED,1)}%</span></div>
 			<div class="result-row mt-1"><span class="lbl">Sheet Dmg</span><span class="val">${fmt(r.sheetMin)} – ${fmt(r.sheetMax)} <small class="text-secondary">(avg ${fmt(r.sheetAvg,1)})</small></span></div>
-			<div class="result-row"><span class="lbl">Crit (2x)</span><span class="val">${fmt(r.pCritHit*100,1)}%</span></div>
-			<div class="result-row"><span class="lbl">Deadly Strike (1.5x)</span><span class="val">${fmt(r.pDSHit*100,1)}%</span></div>
+			<div class="result-row"><span class="lbl">Crit (${fmt(r.critMult,2)}x)</span><span class="val">${fmt(r.pCritHit*100,1)}%</span></div>
+			<div class="result-row"><span class="lbl">Deadly Strike (${fmt(r.dsMult,2)}x)</span><span class="val">${fmt(r.pDSHit*100,1)}%</span></div>
 			<div class="result-row"><span class="lbl">Normal (1x)</span><span class="val">${fmt(r.pNormalHit*100,1)}%</span></div>
 			<div class="result-row"><span class="lbl">Avg Dmg Multiplier</span><span class="val">${fmt(r.avgMult,2)}x</span></div>
 			<div class="result-row"><span class="lbl">Final Dmg (pre-res)</span><span class="val">${fmt(r.finalMin)} – ${fmt(r.finalMax)} <small class="text-secondary">(avg ${fmt(r.finalAvg,1)})</small></span></div>
@@ -963,7 +1001,7 @@
 		weapon:  { inputs: ['base_min','base_max','wed','flat_min','flat_max'], checks: ['eth'],    selects: ['cat','wep'] },
 		stats:   { inputs: ['str','str_per','dex','dex_per','off_ed','skill_ed'],  checks: [],      selects: [] },
 		auras:   { inputs: ['might','conc','fanat','how','bc','grim'],             checks: [],      selects: [] },
-		crit:    { inputs: ['ds','mastery','scrit'],                               checks: [],      selects: [] },
+		crit:    { inputs: ['ds','mastery','scrit','crit_bonus','ds_bonus'],         checks: [],      selects: [] },
 		cb:      { inputs: ['cb','hp'],                                            checks: [],      selects: ['cbtype'] },
 		physres: { inputs: ['mob_res','gear_res','amp','bcry'],                    checks: [],      selects: [] },
 		dps:     { inputs: ['fpa'],                                                checks: ['dps_on'], selects: [] },
@@ -999,9 +1037,9 @@
 		const pDS = r.pDSHit;
 		const pC  = r.pCritHit;
 
-		const lo1 = r.sheetMin *   1 * r.resMult,  hi1 = r.sheetMax *   1 * r.resMult;
-		const lo2 = r.sheetMin * 1.5 * r.resMult,  hi2 = r.sheetMax * 1.5 * r.resMult;
-		const lo3 = r.sheetMin *   2 * r.resMult,  hi3 = r.sheetMax *   2 * r.resMult;
+		const lo1 = r.sheetMin *          1 * r.resMult,  hi1 = r.sheetMax *          1 * r.resMult;
+		const lo2 = r.sheetMin * r.dsMult  * r.resMult,  hi2 = r.sheetMax * r.dsMult  * r.resMult;
+		const lo3 = r.sheetMin * r.critMult * r.resMult,  hi3 = r.sheetMax * r.critMult * r.resMult;
 
 		const x1end = pN * 100;
 		const x2end = (pN + pDS) * 100;
@@ -1081,11 +1119,11 @@
 	// URL state — fixed-order array serialized as base64 JSON for compact URLs
 	// Order per panel: cat, wep, cbtype, eth, dps_on, base_min, base_max, wed,
 	//   flat_min, flat_max, str, str_per, dex, dex_per, off_ed, skill_ed,
-	//   might, conc, fanat, how, bc, grim, ds, mastery, scrit, cb, hp,
+	//   might, conc, fanat, how, bc, grim, ds, mastery, scrit, crit_bonus, ds_bonus, cb, hp,
 	//   mob_res, gear_res, amp, bcry, fpa
 	const URL_ORDER = ['cat','wep','cbtype','eth','dps_on','base_min','base_max','wed',
 	                   'flat_min','flat_max','str','str_per','dex','dex_per','off_ed','skill_ed',
-	                   'might','conc','fanat','how','bc','grim','ds','mastery','scrit','cb','hp',
+	                   'might','conc','fanat','how','bc','grim','ds','mastery','scrit','crit_bonus','ds_bonus','cb','hp',
 	                   'mob_res','gear_res','amp','bcry','fpa'];
 	const URL_CHECKS = ['eth','dps_on'];
 	const URL_SELECTS = ['cat','wep','cbtype'];
