@@ -71,7 +71,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -101,7 +101,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -165,7 +165,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -191,7 +191,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -305,7 +305,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -373,7 +373,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -433,7 +433,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -450,7 +450,7 @@ window.soloData = {
           "pill": true
         },
         {
-          "text": "Uber Tristam",
+          "text": "Uber Tristram",
           "style": "dark"
         }
       ]
@@ -925,7 +925,7 @@ window.soloData = {
           }
         ],
         "notes": [
-          "Eth Obedience or Reapers toll as starter weapon"
+          "Eth Obedience or Reaper's Toll as starter weapon"
         ]
       },
       {
@@ -1011,7 +1011,7 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Lighting Arrow",
+        "buildName": "Lightning Arrow",
         "tier": "Bad",
         "links": [],
         "notes": []
