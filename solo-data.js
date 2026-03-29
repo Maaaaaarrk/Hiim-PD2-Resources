@@ -1,7 +1,7 @@
 window.soloData = {
   "season": 13,
   "updatedDate": "March 28th 2026",
-  "bannerText": "Updated with S13 Speed Mapping data",
+  "bannerText": "Updated with S12 Speed Mapping data",
   "starterBuilds": [
     {
       "className": "Sorceress",
