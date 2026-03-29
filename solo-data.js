@@ -773,7 +773,7 @@ window.soloData = {
       },
       {
         "buildName": "Cobra Sin",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=88&difficulty=3&quests=1&strength=150&dexterity=68&vitality=232&energy=0&coupling=1&skills=0101000120000100012001030005010120002000000001000001000000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormspire%2Cnone%2CLava+Gout%2CImp+Shank%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Andariel%27s+Visage%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&gloves=Kenshi%27s+Gloves+of+Quickness%2C1%2C%2B+All+Resistances&boots=Imp+Shank%2C2%2C%2B+FBR&belt=Siggard%27s+Staunch%2C3%2C%2B+PDR%2C&amulet=Blood+Craft+-+Assassin%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Attack+Rating&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Attack+Rating&weapon=Jade+Talon%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&offhand=Whispering+Mirage%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+fhr&charm=%2B1+Shogukusha%27s+Grand+Charm+%2B+life&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=Ruby+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Amber+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Balance",
@@ -870,7 +870,7 @@ window.soloData = {
       },
       {
         "buildName": "Physical Blade Dance (Chaos - Phys Dmg Focus)",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684611&amp;usg=AOvVaw3_iB8yjpdDyxVgPEqWoEHv",
@@ -1168,7 +1168,7 @@ window.soloData = {
       },
       {
         "buildName": "Summon Zon",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=93&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000102010000200120200500010100000100200000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CCow+King%27s+Horns%2CCow+King%27s+Hide%2CThe+Iron+Jang+Bong%2Cnone%2CMagefist%2CImp+Shank%2CLenymo&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Tarnhelm%2C1%2Cnone%2C%2C%2C&armor=Peace+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Athlete%27s+Gloves+of+Quickness%2C1%2Cnone&boots=Imp+Shank%2C2%2Cnone&belt=Goldwrap%2C1%2Cnone%2C&amulet=Athlete%27s+Amulet%2C0%2Cnone%2C&ring1=Dual+Leech+Ring%2C0%2Cnone&ring2=Brilliant+Craft+Ring+%2B+FCR%2C0%2Cnone&weapon=Loyalty+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2C3%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Athlete%27s+Quiver%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm&charm=%2B1+Acrobat%27s+Grand+Charm",
