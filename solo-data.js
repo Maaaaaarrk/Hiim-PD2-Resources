@@ -862,12 +862,22 @@ window.soloData = {
       },
       {
         "buildName": "Physical Blade Dance (Chaos - Phys Dmg Focus)",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684611&amp;usg=AOvVaw3_iB8yjpdDyxVgPEqWoEHv",
             "label": "Generic WWsin Build Guide",
             "type": "guide"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/697858f9c347fec528b502f8",
+            "label": "WW Hybrid Armory (3:08)",
+            "type": "armory"
+          },
+          {
+            "url": "https://projectdiablo2.com/character/Kano",
+            "label": "Pure WW Armory (4:16)",
+            "type": "armory"
           }
         ],
         "notes": []
@@ -895,23 +905,6 @@ window.soloData = {
         "notes": [
           "Must gear swap pre-buff"
         ]
-      },
-      {
-        "buildName": "Blade Dance (Whirlwind)",
-        "tier": "Top",
-        "links": [
-          {
-            "url": "https://www.projectdiablo2.com/armory/builds/697858f9c347fec528b502f8",
-            "label": "WW Hybrid Armory (3:08)",
-            "type": "armory"
-          },
-          {
-            "url": "https://projectdiablo2.com/character/Kano",
-            "label": "Pure WW Armory (4:16)",
-            "type": "armory"
-          }
-        ],
-        "notes": []
       }
     ],
     "Barbarian": [
