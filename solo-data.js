@@ -513,7 +513,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/694f695dfa65772ef2f82165",
-            "label": "Throne of Insanity (3:45)",
+            "label": "Armory - Throne of Insanity (3:45)",
             "type": "armory"
           }
         ],
@@ -547,7 +547,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/696a4f67b5b5277167267e8f",
-            "label": "Demon Road (4:11)",
+            "label": "Armory - Demon Road (4:11)",
             "type": "armory"
           }
         ],
@@ -612,7 +612,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/69607bd735b033dae1cfe2b6",
-            "label": "Phlegethon (4:20)",
+            "label": "Armory - Phlegethon (4:20)",
             "type": "armory"
           }
         ],
@@ -649,7 +649,7 @@ window.soloData = {
           },
           {
             "url": "https://live.projectdiablo2.com/armory/builds/69372f04ef5421508eb402f2",
-            "label": "Sewers of Harrogath (3:34)",
+            "label": "Armory - Sewers of Harrogath (3:34)",
             "type": "armory"
           }
         ],
@@ -778,7 +778,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/695d182a461162a9fe7f0f6f",
-            "label": "Skovos Stronghold (3:16)",
+            "label": "Armory - Skovos Stronghold (3:16)",
             "type": "armory"
           }
         ],
@@ -795,7 +795,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/693e01801af17b5e870d61ad",
-            "label": "Ancestral Trial (4:35)",
+            "label": "Armory - Ancestral Trial (4:35)",
             "type": "armory"
           }
         ],
@@ -837,7 +837,7 @@ window.soloData = {
         "links": [
           {
             "url": "https://www.projectdiablo2.com/armory/builds/693ad9a4bec038a42249932a",
-            "label": "Sewers of Harrogath (3:27)",
+            "label": "Armory - Sewers of Harrogath (3:27)",
             "type": "armory"
           }
         ],
@@ -854,7 +854,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/6971b2daf168959ce9e8bf67",
-            "label": "Demon Road (4:35)",
+            "label": "Armory - Demon Road (4:35)",
             "type": "armory"
           }
         ],
@@ -871,12 +871,12 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/697858f9c347fec528b502f8",
-            "label": "Skovos Stronghold (3:08)",
+            "label": "Armory - Skovos Stronghold (3:08)",
             "type": "armory"
           },
           {
             "url": "https://projectdiablo2.com/character/Kano",
-            "label": "Ruined Cistern (4:16)",
+            "label": "Armory - Ruined Cistern (4:16)",
             "type": "armory"
           }
         ],
@@ -898,7 +898,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/69653eb7dfba6297665851b6",
-            "label": "Throne of Insanity (4:37)",
+            "label": "Armory - Throne of Insanity (4:37)",
             "type": "armory"
           }
         ],
@@ -969,7 +969,7 @@ window.soloData = {
           },
           {
             "url": "https://live.projectdiablo2.com/armory/builds/6973d66d620c015149987b5a",
-            "label": "River of Blood (4:24)",
+            "label": "Armory - River of Blood (4:24)",
             "type": "armory"
           }
         ],
@@ -1070,7 +1070,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/69547e635ca6ee0d170d76b0",
-            "label": "Sewers of Harrogath (3:53)",
+            "label": "Armory - Sewers of Harrogath (3:53)",
             "type": "armory"
           }
         ],
@@ -1088,7 +1088,7 @@ window.soloData = {
         "links": [
           {
             "url": "https://www.projectdiablo2.com/armory/builds/695cfbd322107560e46ca216",
-            "label": "Pandemonium Citadel (4:18)",
+            "label": "Armory - Pandemonium Citadel (4:18)",
             "type": "armory"
           }
         ],
@@ -1183,7 +1183,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/693d9f3631602f351812eda5",
-            "label": "Sewers of Harrogath (3:48)",
+            "label": "Armory - Sewers of Harrogath (3:48)",
             "type": "armory"
           }
         ],
@@ -1216,7 +1216,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/698e531d4cd0a3f93fe0ee08",
-            "label": "Bastion Keep (4:12)",
+            "label": "Armory - Bastion Keep (4:12)",
             "type": "armory"
           }
         ],
@@ -1271,7 +1271,7 @@ window.soloData = {
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/696f7b2809485d31ea7dd9ea",
-            "label": "Sewers of Harrogath (3:04)",
+            "label": "Armory - Sewers of Harrogath (3:04)",
             "type": "armory"
           }
         ],
@@ -1327,7 +1327,7 @@ window.soloData = {
           },
           {
             "url": "https://projectdiablo2.com/armory/builds/695e8d13e3fd8e1a7d70a4a6",
-            "label": "Fall of Caldeum (3:12)",
+            "label": "Armory - Fall of Caldeum (3:12)",
             "type": "armory"
           }
         ],
@@ -1411,12 +1411,12 @@ window.soloData = {
         "links": [
           {
             "url": "https://www.projectdiablo2.com/armory/builds/695b02ffe62b2b2fea529986",
-            "label": "Skovos Stronghold (2:39)",
+            "label": "Armory - Skovos Stronghold (2:39)",
             "type": "armory"
           },
           {
             "url": "https://live.projectdiablo2.com/armory/builds/6973d7f6620c015149987bbd",
-            "label": "Ancestral Trial (2:56)",
+            "label": "Armory - Ancestral Trial (2:56)",
             "type": "armory"
           }
         ],
@@ -1458,7 +1458,7 @@ window.soloData = {
         "links": [
           {
             "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
-            "label": "Fall of Caldeum (3:27)",
+            "label": "Armory - Fall of Caldeum (3:27)",
             "type": "armory"
           }
         ],
@@ -1478,7 +1478,7 @@ window.soloData = {
         "links": [
           {
             "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
-            "label": "Fall of Caldeum (3:27)",
+            "label": "Armory - Fall of Caldeum (3:27)",
             "type": "armory"
           }
         ],
