@@ -1473,8 +1473,8 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Physical Sacrifice",
-        "tier": "Good",
+        "buildName": "Sanctuary Sacrifice",
+        "tier": "Top",
         "links": [
           {
             "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
@@ -1491,19 +1491,6 @@ window.soloData = {
         "buildName": "Physical Charge (2-H)",
         "tier": "Decent",
         "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Sanctuary Sacrifice",
-        "tier": "Top",
-        "links": [
-          {
-            "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
-            "label": "Armory - Fall of Caldeum (3:27)",
-            "type": "armory",
-            "mapLabel": "Fall of Caldeum (3:27)"
-          }
-        ],
         "notes": []
       }
     ]
