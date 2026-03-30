@@ -250,17 +250,9 @@
 				</div>
 				<div class="row g-2 mb-1">
 					<div class="col-4">
-						<label class="form-label">Mastery Crit</label>
+						<label class="form-label">Total Crit</label>
 						<div class="input-group input-group-sm">
-							<input type="number" id="a_mastery" class="form-control" value="0" min="0" max="100"
-							       oninput="calc()">
-							<span class="input-group-text">%</span>
-						</div>
-					</div>
-					<div class="col-4">
-						<label class="form-label">Skill Crit</label>
-						<div class="input-group input-group-sm">
-							<input type="number" id="a_scrit" class="form-control" value="0" min="0" max="100"
+							<input type="number" id="a_crit" class="form-control" value="0" min="0" max="100"
 							       oninput="calc()">
 							<span class="input-group-text">%</span>
 						</div>
@@ -532,17 +524,9 @@
 				</div>
 				<div class="row g-2 mb-1">
 					<div class="col-4">
-						<label class="form-label">Mastery Crit</label>
+						<label class="form-label">Total Crit</label>
 						<div class="input-group input-group-sm">
-							<input type="number" id="b_mastery" class="form-control" value="0" min="0" max="100"
-							       oninput="calc()">
-							<span class="input-group-text">%</span>
-						</div>
-					</div>
-					<div class="col-4">
-						<label class="form-label">Skill Crit</label>
-						<div class="input-group input-group-sm">
-							<input type="number" id="b_scrit" class="form-control" value="0" min="0" max="100"
+							<input type="number" id="b_crit" class="form-control" value="0" min="0" max="100"
 							       oninput="calc()">
 							<span class="input-group-text">%</span>
 						</div>
@@ -677,7 +661,7 @@
 	<p class="text-secondary text-center mt-2" style="font-size:0.75rem">
 		Weapon base damages are approximate PD2 values. Verify in-game for exact numbers.
 		Ethereal = +25% weapon ED. Flat +damage added after weapon ED multiplier.
-		Crit sources (DS / Mastery / Skill) each independently roll for double damage.
+		Crit and DS each independently roll for their respective multiplier.
 	</p>
 </div>
 
@@ -823,8 +807,7 @@
 		const bc       = n(p+'_bc');
 		const grim     = n(p+'_grim');
 		const ds       = Math.min(100, n(p+'_ds'));
-		const mastery  = Math.min(100, n(p+'_mastery'));
-		const scrit    = Math.min(100, n(p+'_scrit'));
+		const crit     = Math.min(100, n(p+'_crit'));
 		const critBonus = n(p+'_crit_bonus');
 		const dsBonus   = n(p+'_ds_bonus');
 		const cbPct    = n(p+'_cb');
@@ -855,13 +838,11 @@
 		const sheetMax    = Math.floor(wepMax * (1 + totalOffED / 100));
 		const sheetAvg    = (sheetMin + sheetMax) / 2;
 
-		// 4. Crit resolution — roll CS first, then DS only if CS missed
-		// CS sources (mastery + skill crit) are additive → one CS roll
+		// 4. Crit resolution — roll crit first, then DS only if crit missed
 		// +% Crit/Deadly Dmg stats raise the base multiplier (e.g. 10% takes 1.5x → 1.6x)
 		const critMult    = 2.0 + critBonus / 100;
 		const dsMult      = 1.5 + dsBonus / 100;
-		const totalCS     = Math.min(100, mastery + scrit);
-		const pCS         = totalCS / 100;
+		const pCS         = crit / 100;
 		const pDS         = ds / 100;
 		const pCritHit    = pCS;
 		const pDSHit      = (1 - pCS) * pDS;
@@ -1001,7 +982,7 @@
 		weapon:  { inputs: ['base_min','base_max','wed','flat_min','flat_max'], checks: ['eth'],    selects: ['cat','wep'] },
 		stats:   { inputs: ['str','str_per','dex','dex_per','off_ed','skill_ed'],  checks: [],      selects: [] },
 		auras:   { inputs: ['might','conc','fanat','how','bc','grim'],             checks: [],      selects: [] },
-		crit:    { inputs: ['ds','mastery','scrit','crit_bonus','ds_bonus'],         checks: [],      selects: [] },
+		crit:    { inputs: ['ds','crit','crit_bonus','ds_bonus'],                    checks: [],      selects: [] },
 		cb:      { inputs: ['cb','hp'],                                            checks: [],      selects: ['cbtype'] },
 		physres: { inputs: ['mob_res','gear_res','amp','bcry'],                    checks: [],      selects: [] },
 		dps:     { inputs: ['fpa'],                                                checks: ['dps_on'], selects: [] },
@@ -1119,11 +1100,11 @@
 	// URL state — fixed-order array serialized as base64 JSON for compact URLs
 	// Order per panel: cat, wep, cbtype, eth, dps_on, base_min, base_max, wed,
 	//   flat_min, flat_max, str, str_per, dex, dex_per, off_ed, skill_ed,
-	//   might, conc, fanat, how, bc, grim, ds, mastery, scrit, crit_bonus, ds_bonus, cb, hp,
+	//   might, conc, fanat, how, bc, grim, ds, crit, crit_bonus, ds_bonus, cb, hp,
 	//   mob_res, gear_res, amp, bcry, fpa
 	const URL_ORDER = ['cat','wep','cbtype','eth','dps_on','base_min','base_max','wed',
 	                   'flat_min','flat_max','str','str_per','dex','dex_per','off_ed','skill_ed',
-	                   'might','conc','fanat','how','bc','grim','ds','mastery','scrit','crit_bonus','ds_bonus','cb','hp',
+	                   'might','conc','fanat','how','bc','grim','ds','crit','crit_bonus','ds_bonus','cb','hp',
 	                   'mob_res','gear_res','amp','bcry','fpa'];
 	const URL_CHECKS = ['eth','dps_on'];
 	const URL_SELECTS = ['cat','wep','cbtype'];
