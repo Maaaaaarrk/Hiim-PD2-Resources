@@ -1,0 +1,31 @@
+name: Bug or Typo Report
+description: Report a bug, typo, or incorrect information on the pages
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page?
+      options:
+        - Solo Tier List
+        - Group Tier List
+        - Damage Calculator
+        - Home / Index
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong?
+      description: Describe the bug, typo, or incorrect info. Include a screenshot if possible.
+      placeholder: "e.g. 'Blade Fury is listed as Mid tier but should be Good' or 'Sorceress is spelled wrong in the header'"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say or do?
+      description: The correct text, value, or expected behavior.
+    validations:
+      required: false

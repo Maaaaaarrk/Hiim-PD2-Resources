@@ -1,0 +1,76 @@
+name: Build Submission
+description: Submit a build to be added or updated on the tier list
+labels: ["build submission"]
+body:
+  - type: dropdown
+    id: tier-list
+    attributes:
+      label: Which tier list?
+      options:
+        - Solo
+        - Group - Generalists
+        - Group - Physical
+        - Group - Elemental
+    validations:
+      required: true
+  - type: dropdown
+    id: class
+    attributes:
+      label: Class
+      options:
+        - Sorceress
+        - Druid
+        - Assassin
+        - Barbarian
+        - Amazon
+        - Necromancer
+        - Paladin
+    validations:
+      required: true
+  - type: input
+    id: build-name
+    attributes:
+      label: Build Name
+      placeholder: "e.g. Dual Enchant Multishot"
+    validations:
+      required: true
+  - type: dropdown
+    id: suggested-tier
+    attributes:
+      label: Suggested Tier
+      options:
+        - Top
+        - Good
+        - Decent
+        - Mid
+        - Bad
+    validations:
+      required: true
+  - type: input
+    id: roles
+    attributes:
+      label: Roles / Tags
+      placeholder: "e.g. DPS, Enchant, Summon Wall, CC"
+    validations:
+      required: false
+  - type: input
+    id: planner-url
+    attributes:
+      label: Build Planner Link
+      description: Link to a PD2 planner or similar.
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any relevant notes, gear requirements, or context for this build.
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / Clear Times
+      description: Screenshots, videos, or clear times that support the suggested tier.
+    validations:
+      required: false

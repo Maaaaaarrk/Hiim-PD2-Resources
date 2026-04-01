@@ -1,0 +1,31 @@
+name: Feature or Addition Request
+description: Suggest a new feature, page improvement, or content addition
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page does this relate to?
+      options:
+        - Solo Tier List
+        - Group Tier List
+        - Damage Calculator
+        - Home / Index
+        - New Page
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What would you like added or changed?
+      description: Describe the feature or improvement you'd like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why would this be useful?
+      description: Any context on why this would help the community.
+    validations:
+      required: false
