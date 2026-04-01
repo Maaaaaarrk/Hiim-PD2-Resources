@@ -162,9 +162,12 @@
     "title": "Physical Focused P8 Mapping",
     "descriptions": [
       "Recommended to have a Buff Barbarian. Recommended to get all Physical auras via Paladin or Mercenary. Recommended all necros to be Curse hybrid. All spare mercs should be A1 Physical Demonmachine.",
-      "Scaling deadly strike is crucial. Only review tooltip damage with all party buffs active!"
+      "Scaling deadly strike and critical strike is crucial. Only review tooltip damage with all party buffs active!"
     ],
-    "note": "NOTE! Must have summons for T4. Necro summons are not advised, low Psn res and die fast.",
+    "notes": [
+      "NOTE! Must have summons for T4. Necro summons are not advised, low Psn res and die fast.",
+      "NOTE! T4 - Very high level Amp + Battle Cry can break all except stone-skin Blood bringer in T4."
+    ],
     "classBuilds": {
       "Sorceress": [
         {
@@ -330,7 +333,10 @@
       "Lower res from mercs is enough Necromancers are not needed. Sorceress is bad in party play because they already have high mastery from skills and do not benefit from party buffing as much.",
       "Having all res auras from Paladins or/and Mercs for the aura's elemental mastery is crucial. Only review tooltip damage with all party buffs active!"
     ],
-    "note": "NOTE! Must be tri-elemental damage across the team and have summons for T4. Necro summons are not advised, low Psn res and die fast.",
+    "notes": [
+      "NOTE! Must be tri-elemental damage across the team and have summons for T4. Necro summons are not advised, low Psn res and die fast.",
+      "NOTE! T4 - Very high Lower Res + Conviction + Inferno/Static/Artic blast can break immunities but the damage is still typically too low, it is better to have 3 elements and not over stack one element."
+    ],
     "classBuilds": {
       "Sorceress": [
         {"buildName": "Nova", "tier": "Bad", "roles": [{"text": "DPS", "style": "danger"}], "notes": [{"text": "Hard to position in P8", "style": "secondary"}], "links": []},
