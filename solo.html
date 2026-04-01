@@ -112,6 +112,14 @@
 		    color: var(--bs-table-color);
 		    border-color: var(--bs-table-border-color);
 		}
+		.tier-clickable {
+			cursor: pointer;
+		}
+		.tier-clickable:hover {
+			filter: brightness(1.25);
+			transform: scale(1.1);
+			transition: all 0.15s ease;
+		}
 	</style>
 	<script crossorigin="anonymous"
 	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -125,12 +133,12 @@
 	<tr>
 		<td>
 			<span class="badge rounded-pill text-bg-secondary">Legend</span><br/>
-			<span class="badge rounded-pill text-bg-info">Top</span><br/>
-			<span class="badge rounded-pill text-bg-primary">Good</span><br/>
-			<span class="badge rounded-pill text-bg-success">Decent</span><br/>
+			<span class="badge rounded-pill text-bg-info tier-clickable" title="Click to explain" data-bs-toggle="modal" data-bs-target="#tierModal">Top</span><br/>
+			<span class="badge rounded-pill text-bg-primary tier-clickable" title="Click to explain" data-bs-toggle="modal" data-bs-target="#tierModal">Good</span><br/>
+			<span class="badge rounded-pill text-bg-success tier-clickable" title="Click to explain" data-bs-toggle="modal" data-bs-target="#tierModal">Decent</span><br/>
 			<span class="badge rounded-pill text-bg-warning">Mid</span><br/>
 			<span class="badge rounded-pill text-bg-danger">Bad</span><br/>
-			<button class="btn btn-outline-light btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#tierModal" style="font-size:0.7em">Tier Criteria</button><br/><br/>
+			<button class="btn btn-warning btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#tierModal" style="font-size:0.85em">&#9733; Tier Criteria</button><br/><br/>
 			<a href="index.html" style="text-decoration:none;">
 				<svg xmlns="http://www.w3.org/2000/svg"
 				     width="33.000000pt" height="33.000000pt" viewBox="0 0 103.000000 85.000000"
@@ -804,7 +812,11 @@ function renderClassBuildRow(build) {
 
   const tdTier = document.createElement('td');
   const tierStyle = tierStyles[build.tier] || 'text-bg-secondary';
-  tdTier.innerHTML = '<span class="badge rounded-pill ' + tierStyle + '">' + escapeHtml(build.tier) + '</span>';
+  const clickableTiers = ['Top', 'Good', 'Decent'];
+  const isClickable = clickableTiers.includes(build.tier);
+  tdTier.innerHTML = '<span class="badge rounded-pill ' + tierStyle + (isClickable ? ' tier-clickable' : '') + '"'
+    + (isClickable ? ' title="Click to explain" data-bs-toggle="modal" data-bs-target="#tierModal"' : '')
+    + '>' + escapeHtml(build.tier) + '</span>';
   tr.appendChild(tdTier);
 
   const tdLinks = document.createElement('td');
