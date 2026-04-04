@@ -1438,34 +1438,99 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	});
 </script>
 
-<!-- Map filter script -->
+<!-- Map filter + size scripts with URL hash persistence -->
 <script>
+	// --- URL hash helpers ---
+	function getHashParams() {
+		var hash = location.hash.replace(/^#/, '');
+		var params = {};
+		hash.split('&').forEach(function (part) {
+			var kv = part.split('=');
+			if (kv[0]) params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || '');
+		});
+		return params;
+	}
+
+	function setHashParams(params) {
+		var parts = [];
+		Object.keys(params).forEach(function (k) {
+			if (params[k]) parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(params[k]));
+		});
+		history.replaceState(null, '', '#' + parts.join('&'));
+	}
+
+	function updateHash(key, value) {
+		var params = getHashParams();
+		if (value && value !== getDefault(key)) {
+			params[key] = value;
+		} else {
+			delete params[key];
+		}
+		setHashParams(params);
+	}
+
+	function getDefault(key) {
+		if (key === 'map') return 'all';
+		if (key === 'size') return 'Medium';
+		return '';
+	}
+
+	// --- Apply map display selection ---
+	function applyMapDisplay(value) {
+		var sections = document.querySelectorAll('.map-section');
+		if (value === 'all') {
+			sections.forEach(function (s) { s.style.display = ''; });
+		} else {
+			sections.forEach(function (s) { s.style.display = 'none'; });
+			var target = document.getElementById(value);
+			if (target) target.style.display = '';
+		}
+		// Check the matching radio
+		var radio = document.querySelector('input[name="mapDisplay"][value="' + value + '"]');
+		if (radio) radio.checked = true;
+	}
+
+	// --- Apply map size selection ---
+	function applyMapSize(value) {
+		var mapDivs = document.querySelectorAll('div[title="mappath"]');
+		mapDivs.forEach(function (div) {
+			div.classList.remove('col-md-4', 'col-md-6', 'col-md-12');
+			if (value === 'Small') div.classList.add('col-md-4');
+			else if (value === 'Medium') div.classList.add('col-md-6');
+			else if (value === 'Large') div.classList.add('col-md-12');
+		});
+		// Check the matching radio
+		var radio = document.querySelector('input[name="mapSize"][value="' + value + '"]');
+		if (radio) radio.checked = true;
+	}
+
+	// --- Wire up change listeners ---
 	document.querySelectorAll('input[name="mapDisplay"]').forEach(function (radio) {
 		radio.addEventListener('change', function () {
-			var sections = document.querySelectorAll('.map-section');
-			if (this.value === 'all') {
-				sections.forEach(function (s) { s.style.display = ''; });
-			} else {
-				sections.forEach(function (s) { s.style.display = 'none'; });
-				var target = document.getElementById(this.value);
-				if (target) target.style.display = '';
-			}
+			applyMapDisplay(this.value);
+			updateHash('map', this.value);
 		});
 	});
-</script>
 
-<!-- Map size script -->
-<script>
 	document.querySelectorAll('input[name="mapSize"]').forEach(function (radio) {
 		radio.addEventListener('change', function () {
-			var mapDivs = document.querySelectorAll('div[title="mappath"]');
-			mapDivs.forEach(function (div) {
-				div.classList.remove('col-md-4', 'col-md-6', 'col-md-12');
-				if (this.value === 'Small') div.classList.add('col-md-4');
-				else if (this.value === 'Medium') div.classList.add('col-md-6');
-				else if (this.value === 'Large') div.classList.add('col-md-12');
-			}, this);
+			applyMapSize(this.value);
+			updateHash('size', this.value);
 		});
+	});
+
+	// --- Restore state from URL hash on load ---
+	(function () {
+		var params = getHashParams();
+		if (params.map) applyMapDisplay(params.map);
+		if (params.size) applyMapSize(params.size);
+	})();
+
+	// --- Handle back/forward navigation ---
+	window.addEventListener('hashchange', function () {
+		var params = getHashParams();
+		applyMapDisplay(params.map || 'all');
+		applyMapSize(params.size || 'Medium');
 	});
 </script>
 

@@ -112,6 +112,18 @@
 		    color: var(--bs-table-color);
 		    border-color: var(--bs-table-border-color);
 		}
+		.btn-purple {
+			background-color: #6f42c1;
+			color: #fff;
+			border-color: #6f42c1;
+		}
+		.btn-purple:hover {
+			background-color: #5a32a3;
+			color: #fff;
+		}
+		.map-times-toggle .btn-check:checked + .btn {
+			font-weight: bold;
+		}
 	</style>
 	<script crossorigin="anonymous"
 	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -129,7 +141,8 @@
 			<span class="badge rounded-pill text-bg-primary">Good</span><br/>
 			<span class="badge rounded-pill text-bg-success">Decent</span><br/>
 			<span class="badge rounded-pill text-bg-warning">Mid</span><br/>
-			<span class="badge rounded-pill text-bg-danger">Bad</span><br/><br/>
+			<span class="badge rounded-pill text-bg-danger">Bad</span><br/>
+			<button class="btn btn-purple btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#mapTimesModal" style="font-size:0.85em">&#9733; Map Times</button><br/><br/>
 			<a href="index.html" style="text-decoration:none;">
 				<svg xmlns="http://www.w3.org/2000/svg"
 				     width="33.000000pt" height="33.000000pt" viewBox="0 0 103.000000 85.000000"
@@ -1415,5 +1428,151 @@ function fireConfetti() {
   requestAnimationFrame(animateConfetti);
 }
 </script>
+<div class="modal fade" id="mapTimesModal" tabindex="-1" aria-labelledby="mapTimesModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-scrollable">
+		<div class="modal-content bg-dark text-white">
+			<div class="modal-header">
+				<h5 class="modal-title" id="mapTimesModalLabel">Map Times — Clear Speed by Map</h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Clear times are purely based on total exp vs clear time. Chart can be useful to understand comparatively what map over another could get you more exp, even if it takes longer to clear that map.</p>
+				<div class="map-times-toggle btn-group btn-group-sm mb-3" role="group">
+					<input type="radio" class="btn-check" name="mapTimesLevel" id="mapTimesLvl98" value="98" checked>
+					<label class="btn btn-outline-light" for="mapTimesLvl98">Level 98</label>
+					<input type="radio" class="btn-check" name="mapTimesLevel" id="mapTimesNoP" value="none">
+					<label class="btn btn-outline-light" for="mapTimesNoP">No Level Penalty</label>
+				</div>
+				<table class="table table-sm table-dark table-striped table-bordered mt-1" style="font-size:0.85em" id="mapTimesTable">
+					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th></tr></thead>
+					<tbody id="mapTimesBody"></tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+(function () {
+	var mapLinks = {
+		'Pandemonium Citadel': 'citadel', 'Ashen Plains': 'ashen', 'Phlegethon': 'phlegethon',
+		'Kehjistan Marketplace': 'marketplace', 'Sanatorium': 'sanatorium', 'Canyon of Sescheron': 'canyon',
+		'Throne of Insanity': 'throne', 'Ruined Cistern': 'cistern', 'Blood Moon': 'bloodmoon',
+		'Ancestral Trial': 'ancestral', 'Demon Road': 'demonroad', 'Ruins of Viz-Jin': 'ruinsofvizjun',
+		'Lost Temple': 'losttemple', 'River of Blood': 'riverblood', 'Skovos Stronghold': 'skovos',
+		'Bastion Keep': 'bastion', 'Tomb of Zoltun Kulle': 'zoltun',
+		'Halls of Torture': 'hallsoftorture', 'Torajan Jungle': 'torajanjungle',
+		'Arreat Battlefield': 'arreatbattlefield', "Horazon's Memory": 'horazonsmemory',
+		'Sewers of Harrogath': 'sewers', 'Royal Crypts': 'royalcrypts',
+		'Fall of Caldeum': 'caldeum', 'Shadows of Westmarch': 'westmarch'
+	};
+
+	var data98 = [
+		{ tier: 3, maps: [
+			['Pandemonium Citadel', 5.42, 8.13, 10.84],
+			['Ashen Plains', 4.68, 7.02, 9.36],
+			['Sanatorium', 4.68, 7.02, 9.36],
+			['Kehjistan Marketplace', 4.39, 6.58, 8.77],
+			['Throne of Insanity', 4.00, 6.00, 8.00],
+			['Phlegethon', 3.98, 5.97, 7.96],
+			['Canyon of Sescheron', 3.70, 5.55, 7.40],
+			['Ruined Cistern', 3.50, 5.25, 7.01],
+			['Blood Moon', 2.89, 4.34, 5.78]
+		]},
+		{ tier: 2, maps: [
+			['Demon Road', 2.56, 3.84, 5.12],
+			['Ancestral Trial', 2.15, 3.23, 4.31],
+			['Lost Temple', 2.09, 3.13, 4.17],
+			['River of Blood', 2.04, 3.06, 4.08],
+			['Ruins of Viz-Jin', 1.91, 2.86, 3.81],
+			['Bastion Keep', 1.88, 2.83, 3.77],
+			['Tomb of Zoltun Kulle', 1.81, 2.71, 3.62],
+			['Skovos Stronghold', 0.94, 1.41, 1.88]
+		]},
+		{ tier: 1, maps: [
+			['Halls of Torture', 2.24, 3.36, 4.48],
+			['Sewers of Harrogath', 1.91, 2.86, 3.81],
+			['Arreat Battlefield', 1.85, 2.78, 3.71],
+			['Fall of Caldeum', 1.62, 2.43, 3.24],
+			['Royal Crypts', 1.62, 2.42, 3.23],
+			['Torajan Jungle', 1.60, 2.40, 3.19],
+			["Horazon's Memory", 1.47, 2.20, 2.94],
+			['Shadows of Westmarch', 1.36, 2.04, 2.72]
+		]}
+	];
+
+	var dataNone = [
+		{ tier: 3, maps: [
+			['Pandemonium Citadel', 4.92, 7.38, 9.84],
+			['Ashen Plains', 4.92, 7.38, 9.84],
+			['Phlegethon', 4.50, 6.76, 9.01],
+			['Kehjistan Marketplace', 4.42, 6.62, 8.83],
+			['Sanatorium', 4.41, 6.62, 8.82],
+			['Canyon of Sescheron', 4.19, 6.29, 8.38],
+			['Throne of Insanity', 4.00, 6.00, 8.00],
+			['Ruined Cistern', 3.61, 5.41, 7.22],
+			['Blood Moon', 3.46, 5.19, 6.92]
+		]},
+		{ tier: 2, maps: [
+			['Ancestral Trial', 4.05, 6.07, 8.10],
+			['Demon Road', 4.03, 6.05, 8.07],
+			['Ruins of Viz-Jin', 4.01, 6.01, 8.01],
+			['Lost Temple', 3.73, 5.59, 7.46],
+			['River of Blood', 3.72, 5.58, 7.43],
+			['Skovos Stronghold', 3.67, 5.50, 7.33],
+			['Bastion Keep', 3.65, 5.47, 7.30],
+			['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57]
+		]},
+		{ tier: 1, maps: [
+			['Halls of Torture', 5.32, 7.98, 10.64],
+			['Torajan Jungle', 4.73, 7.09, 9.46],
+			['Arreat Battlefield', 4.23, 6.34, 8.46],
+			["Horazon's Memory", 4.10, 6.14, 8.19],
+			['Sewers of Harrogath', 3.94, 5.90, 7.87],
+			['Royal Crypts', 3.58, 5.37, 7.16],
+			['Fall of Caldeum', 3.51, 5.26, 7.02],
+			['Shadows of Westmarch', 3.17, 4.75, 6.33]
+		]}
+	];
+
+	function fmt(v) {
+		var totalSec = Math.round(v * 60);
+		totalSec = Math.round(totalSec / 5) * 5;
+		var m = Math.floor(totalSec / 60);
+		var s = totalSec % 60;
+		return m + ':' + (s < 10 ? '0' : '') + s;
+	}
+
+	function render(dataset) {
+		var body = document.getElementById('mapTimesBody');
+		body.innerHTML = '';
+		dataset.forEach(function (group) {
+			var hdr = document.createElement('tr');
+			hdr.innerHTML = '<th colspan="4" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
+			body.appendChild(hdr);
+			group.maps.forEach(function (row) {
+				var tr = document.createElement('tr');
+				var slug = mapLinks[row[0]];
+				var link = slug ? '<a href="maps.html#map=' + slug + '&size=Medium" class="text-white">' + row[0] + ' \u{1F517}</a>' : row[0];
+				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>';
+				body.appendChild(tr);
+			});
+		});
+	}
+
+	// Default to level 98
+	render(data98);
+
+	document.querySelectorAll('input[name="mapTimesLevel"]').forEach(function (radio) {
+		radio.addEventListener('change', function () {
+			render(this.value === '98' ? data98 : dataNone);
+		});
+	});
+})();
+</script>
+
 </body>
 </html>
