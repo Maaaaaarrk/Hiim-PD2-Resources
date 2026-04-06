@@ -1443,8 +1443,30 @@ function fireConfetti() {
 					<input type="radio" class="btn-check" name="mapTimesLevel" id="mapTimesNoP" value="none">
 					<label class="btn btn-outline-light" for="mapTimesNoP">No Level Penalty</label>
 				</div>
+				<div class="card bg-secondary bg-opacity-25 p-3 mb-3">
+					<div class="row g-2 align-items-end">
+						<div class="col-auto">
+							<label class="form-label mb-1" style="font-size:0.85em">Calculate Your Times</label>
+							<select class="form-select form-select-sm" id="groupCalcMapSelect" style="max-width:220px">
+								<option value="">-- Select a map --</option>
+							</select>
+						</div>
+						<div class="col-auto">
+							<label class="form-label mb-1" style="font-size:0.85em">Your time</label>
+							<div class="input-group input-group-sm" style="max-width:150px">
+								<input type="number" class="form-control" id="groupCalcMin" min="0" max="59" placeholder="min" style="max-width:60px">
+								<span class="input-group-text">:</span>
+								<input type="number" class="form-control" id="groupCalcSec" min="0" max="59" placeholder="sec" style="max-width:60px">
+							</div>
+						</div>
+						<div class="col-auto">
+							<button class="btn btn-sm btn-outline-light" id="groupCalcBtn">Calculate</button>
+							<button class="btn btn-sm btn-outline-secondary ms-1" id="groupCalcClear">Clear</button>
+						</div>
+					</div>
+				</div>
 				<table class="table table-sm table-dark table-striped table-bordered mt-1" style="font-size:0.85em" id="mapTimesTable">
-					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th></tr></thead>
+					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th><th class="text-center"><span class="badge text-bg-warning">Your Time</span></th></tr></thead>
 					<tbody id="mapTimesBody"></tbody>
 				</table>
 			</div>
@@ -1546,22 +1568,73 @@ function fireConfetti() {
 		return m + ':' + (s < 10 ? '0' : '') + s;
 	}
 
+	function fmtExact(totalSec) {
+		var m = Math.floor(totalSec / 60);
+		var s = Math.round(totalSec % 60);
+		if (s === 60) { m++; s = 0; }
+		return m + ':' + (s < 10 ? '0' : '') + s;
+	}
+
+	var calcMapName = null;
+	var calcTimeSec = 0;
+
 	function render(dataset) {
 		var body = document.getElementById('mapTimesBody');
 		body.innerHTML = '';
+
+		// Find ratio if calculator is active
+		var ratio = null;
+		if (calcMapName && calcTimeSec > 0) {
+			dataset.forEach(function (group) {
+				group.maps.forEach(function (row) {
+					if (row[0] === calcMapName) {
+						var refSec = row[1] * 60; // Top time in seconds
+						ratio = calcTimeSec / refSec;
+					}
+				});
+			});
+		}
+
 		dataset.forEach(function (group) {
 			var hdr = document.createElement('tr');
-			hdr.innerHTML = '<th colspan="4" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
+			hdr.innerHTML = '<th colspan="5" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
 			body.appendChild(hdr);
 			group.maps.forEach(function (row) {
 				var tr = document.createElement('tr');
 				var slug = mapLinks[row[0]];
 				var link = slug ? '<a href="maps.html#map=' + slug + '&size=Medium" class="text-white">' + row[0] + ' \u{1F517}</a>' : row[0];
-				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>';
+				var yourTimeCell = '';
+				if (ratio !== null) {
+					var yourSec = row[1] * 60 * ratio;
+					var isSelected = (row[0] === calcMapName);
+					yourTimeCell = '<td class="text-center' + (isSelected ? ' table-warning' : '') + '">' + fmtExact(yourSec) + '</td>';
+				} else {
+					yourTimeCell = '<td class="text-center">-</td>';
+				}
+				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>' + yourTimeCell;
 				body.appendChild(tr);
 			});
 		});
 	}
+
+	function currentDataset() {
+		var checked = document.querySelector('input[name="mapTimesLevel"]:checked');
+		return (checked && checked.value === 'none') ? dataNone : data98;
+	}
+
+	// Populate dropdown
+	var select = document.getElementById('groupCalcMapSelect');
+	data98.forEach(function(group) {
+		var optgroup = document.createElement('optgroup');
+		optgroup.label = 'Tier ' + group.tier + ' Maps';
+		group.maps.forEach(function(row) {
+			var opt = document.createElement('option');
+			opt.value = row[0];
+			opt.textContent = row[0] + ' (Top: ' + fmt(row[1]) + ')';
+			optgroup.appendChild(opt);
+		});
+		select.appendChild(optgroup);
+	});
 
 	// Default to level 98
 	render(data98);
@@ -1570,6 +1643,28 @@ function fireConfetti() {
 		radio.addEventListener('change', function () {
 			render(this.value === '98' ? data98 : dataNone);
 		});
+	});
+
+	// Calculate button
+	document.getElementById('groupCalcBtn').addEventListener('click', function() {
+		var map = document.getElementById('groupCalcMapSelect').value;
+		var min = parseInt(document.getElementById('groupCalcMin').value) || 0;
+		var sec = parseInt(document.getElementById('groupCalcSec').value) || 0;
+		var totalSec = min * 60 + sec;
+		if (!map || totalSec <= 0) return;
+		calcMapName = map;
+		calcTimeSec = totalSec;
+		render(currentDataset());
+	});
+
+	// Clear button
+	document.getElementById('groupCalcClear').addEventListener('click', function() {
+		document.getElementById('groupCalcMapSelect').value = '';
+		document.getElementById('groupCalcMin').value = '';
+		document.getElementById('groupCalcSec').value = '';
+		calcMapName = null;
+		calcTimeSec = 0;
+		render(currentDataset());
 	});
 })();
 </script>

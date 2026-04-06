@@ -1268,38 +1268,32 @@ function fireConfetti() {
 			</div>
 			<div class="modal-body">
 				<p>Not every build can clear every map. Tiers are based on how fast a build can clear <em>its best maps</em>. The times below are the clear speed bars for each tier on each map.</p>
-				<p>Times are weighted by map tier and approximate monster count. Map size or layout does not factor into the clear speeds — only the number of monsters in the map matters.</p>
-				<table class="table table-sm table-dark table-striped table-bordered mt-3" style="font-size:0.85em">
-					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th><th class="text-center" style="font-size:0.75em">Phys</th><th class="text-center" style="font-size:0.75em">Magic</th><th class="text-center" style="font-size:0.75em">Fire</th><th class="text-center" style="font-size:0.75em">Light</th><th class="text-center" style="font-size:0.75em">Cold</th><th class="text-center" style="font-size:0.75em">Poison</th></tr></thead>
-					<tbody>
-						<tr><th colspan="10" class="text-center table-secondary">Tier 3 Maps</th></tr>
-						<tr><td><a href="maps.html#map=canyon&size=Medium" class="text-white">Canyon of Sescheron 🔗</a></td><td class="text-center">5:45</td><td class="text-center">8:35</td><td class="text-center">11:25</td><td class="text-center" style="--bs-table-bg-state:rgba(160,160,160,0.3) !important">120</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">130</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">110</td></tr>
-						<tr><td><a href="maps.html#map=phlegethon&size=Medium" class="text-white">Phlegethon 🔗</a></td><td class="text-center">5:20</td><td class="text-center">8:00</td><td class="text-center">10:40</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">140</td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">125</td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=bloodmoon&size=Medium" class="text-white">Blood Moon 🔗</a></td><td class="text-center">5:15</td><td class="text-center">7:55</td><td class="text-center">10:35</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=ashen&size=Medium" class="text-white">Ashen Plains 🔗</a></td><td class="text-center">4:30</td><td class="text-center">6:40</td><td class="text-center">8:55</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(180,80,220,0.3) !important">120</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">130</td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">130</td></tr>
-						<tr><td><a href="maps.html#map=marketplace&size=Medium" class="text-white">Kehjistan Marketplace 🔗</a></td><td class="text-center">4:20</td><td class="text-center">6:30</td><td class="text-center">8:35</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">125</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">130</td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">105</td></tr>
-						<tr><td><a href="maps.html#map=throne&size=Medium" class="text-white">Throne of Insanity 🔗</a></td><td class="text-center">4:00</td><td class="text-center">6:00</td><td class="text-center">8:00</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">130</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">130</td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=sanatorium&size=Medium" class="text-white">Sanatorium 🔗</a></td><td class="text-center">3:30</td><td class="text-center">5:10</td><td class="text-center">6:55</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">125</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">130</td></tr>
-						<tr><td><a href="maps.html#map=cistern&size=Medium" class="text-white">Ruined Cistern 🔗</a></td><td class="text-center">3:10</td><td class="text-center">4:45</td><td class="text-center">6:15</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(180,80,220,0.3) !important">125</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">135</td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">115</td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=citadel&size=Medium" class="text-white">Pandemonium Citadel 🔗</a></td><td class="text-center">3:00</td><td class="text-center">4:25</td><td class="text-center">5:55</td><td class="text-center" style="--bs-table-bg-state:rgba(160,160,160,0.3) !important">100</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">135</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">130</td></tr>
-						<tr><th colspan="10" class="text-center table-secondary">Tier 2 Maps</th></tr>
-						<tr><td><a href="maps.html#map=ruinsofvizjun&size=Medium" class="text-white">Ruins of Viz-Jun 🔗</a></td><td class="text-center">3:30</td><td class="text-center">5:15</td><td class="text-center">7:00</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">130</td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">120</td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=ancestral&size=Medium" class="text-white">Ancestral Trial 🔗</a></td><td class="text-center">3:25</td><td class="text-center">5:05</td><td class="text-center">6:50</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">120</td></tr>
-						<tr><td><a href="maps.html#map=zoltun&size=Medium" class="text-white">Tomb of Zoltun Kulle 🔗</a></td><td class="text-center">3:20</td><td class="text-center">5:00</td><td class="text-center">6:45</td><td class="text-center" style="--bs-table-bg-state:rgba(160,160,160,0.3) !important">105</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">120</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">110</td></tr>
-						<tr><td><a href="maps.html#map=bastion&size=Medium" class="text-white">Bastion Keep 🔗</a></td><td class="text-center">3:00</td><td class="text-center">4:30</td><td class="text-center">6:00</td><td class="text-center" style="--bs-table-bg-state:rgba(160,160,160,0.3) !important">110</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">125</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">130</td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=riverblood&size=Medium" class="text-white">River of Blood 🔗</a></td><td class="text-center">2:55</td><td class="text-center">4:25</td><td class="text-center">5:50</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(180,80,220,0.3) !important">100</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">180</td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">130</td></tr>
-						<tr><td><a href="maps.html#map=demonroad&size=Medium" class="text-white">Demon Road 🔗</a></td><td class="text-center">2:50</td><td class="text-center">4:15</td><td class="text-center">5:40</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">125</td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">135</td></tr>
-						<tr><td><a href="maps.html#map=skovos&size=Medium" class="text-white">Skovos Stronghold 🔗</a></td><td class="text-center">2:25</td><td class="text-center">3:40</td><td class="text-center">4:50</td><td class="text-center" style="--bs-table-bg-state:rgba(160,160,160,0.3) !important">125</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">125</td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">130</td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=losttemple&size=Medium" class="text-white">Lost Temple 🔗</a></td><td class="text-center">2:20</td><td class="text-center">3:30</td><td class="text-center">4:40</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">120</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">110</td><td class="text-center"></td></tr>
-						<tr><th colspan="10" class="text-center table-secondary">Tier 1 Maps</th></tr>
-						<tr><td><a href="maps.html#map=torajanjungle&size=Medium" class="text-white">Torajan Jungle 🔗</a></td><td class="text-center">4:00</td><td class="text-center">6:00</td><td class="text-center">7:55</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">125</td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">105</td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=hallsoftorture&size=Medium" class="text-white">Halls of Torture 🔗</a></td><td class="text-center">3:35</td><td class="text-center">5:25</td><td class="text-center">7:10</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=horazonsmemory&size=Medium" class="text-white">Horazon's Memory 🔗</a></td><td class="text-center">3:25</td><td class="text-center">5:10</td><td class="text-center">6:55</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">135</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">130</td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=arreatbattlefield&size=Medium" class="text-white">Arreat Battlefield 🔗</a></td><td class="text-center">3:00</td><td class="text-center">4:35</td><td class="text-center">6:05</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,60,40,0.3) !important">130</td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">100</td><td class="text-center"></td><td class="text-center"></td></tr>
-						<tr><td><a href="maps.html#map=royalcrypts&size=Medium" class="text-white">Royal Crypts 🔗</a></td><td class="text-center">2:50</td><td class="text-center">4:20</td><td class="text-center">5:45</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(180,80,220,0.3) !important">150</td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">125</td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">105</td></tr>
-						<tr><td><a href="maps.html#map=sewers&size=Medium" class="text-white">Sewers of Harrogath 🔗</a></td><td class="text-center">2:45</td><td class="text-center">4:10</td><td class="text-center">5:30</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">135</td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">125</td></tr>
-						<tr><td><a href="maps.html#map=westmarch&size=Medium" class="text-white">Shadows of Westmarch 🔗</a></td><td class="text-center">2:40</td><td class="text-center">3:55</td><td class="text-center">5:15</td><td class="text-center" style="--bs-table-bg-state:rgba(160,160,160,0.3) !important">100</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(80,200,80,0.3) !important">135</td></tr>
-						<tr><td><a href="maps.html#map=caldeum&size=Medium" class="text-white">Fall of Caldeum 🔗</a></td><td class="text-center">2:10</td><td class="text-center">3:15</td><td class="text-center">4:20</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center" style="--bs-table-bg-state:rgba(220,200,40,0.3) !important">100</td><td class="text-center" style="--bs-table-bg-state:rgba(60,140,220,0.3) !important">130</td><td class="text-center"></td></tr>
+				<p>Times are weighted by map tier and approximate monster count. Map size or layout does not factor into the clear speeds &mdash; only the number of monsters in the map matters.</p>
+				<div class="card bg-secondary bg-opacity-25 p-3 mb-3">
+					<div class="row g-2 align-items-end">
+						<div class="col-auto">
+							<label class="form-label mb-1" style="font-size:0.85em">Calculate Your Times</label>
+							<select class="form-select form-select-sm" id="soloCalcMapSelect" style="max-width:220px">
+								<option value="">-- Select a map --</option>
+							</select>
+						</div>
+						<div class="col-auto">
+							<label class="form-label mb-1" style="font-size:0.85em">Your time</label>
+							<div class="input-group input-group-sm" style="max-width:150px">
+								<input type="number" class="form-control" id="soloCalcMin" min="0" max="59" placeholder="min" style="max-width:60px">
+								<span class="input-group-text">:</span>
+								<input type="number" class="form-control" id="soloCalcSec" min="0" max="59" placeholder="sec" style="max-width:60px">
+							</div>
+						</div>
+						<div class="col-auto">
+							<button class="btn btn-sm btn-outline-light" id="soloCalcBtn">Calculate</button>
+							<button class="btn btn-sm btn-outline-secondary ms-1" id="soloCalcClear">Clear</button>
+						</div>
+					</div>
+				</div>
+				<table class="table table-sm table-dark table-striped table-bordered mt-3" style="font-size:0.85em" id="soloTierTable">
+					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th><th class="text-center"><span class="badge text-bg-warning">Your Time</span></th><th class="text-center" style="font-size:0.75em">Phys</th><th class="text-center" style="font-size:0.75em">Magic</th><th class="text-center" style="font-size:0.75em">Fire</th><th class="text-center" style="font-size:0.75em">Light</th><th class="text-center" style="font-size:0.75em">Cold</th><th class="text-center" style="font-size:0.75em">Poison</th></tr></thead>
+					<tbody id="soloTierBody">
 					</tbody>
 				</table>
 			</div>
@@ -1309,6 +1303,141 @@ function fireConfetti() {
 		</div>
 	</div>
 </div>
+
+<script>
+(function () {
+	var soloMapData = [
+		{ tier: 3, maps: [
+			{ name: 'Canyon of Sescheron', slug: 'canyon', top: '5:45', good: '8:35', decent: '11:25', elems: [{i:0,v:'120',c:'160,160,160'},{i:2,v:'130',c:'220,60,40'},{i:5,v:'110',c:'80,200,80'}] },
+			{ name: 'Phlegethon', slug: 'phlegethon', top: '5:20', good: '8:00', decent: '10:40', elems: [{i:2,v:'140',c:'220,60,40'},{i:3,v:'125',c:'220,200,40'}] },
+			{ name: 'Blood Moon', slug: 'bloodmoon', top: '5:15', good: '7:55', decent: '10:35', elems: [] },
+			{ name: 'Ashen Plains', slug: 'ashen', top: '4:30', good: '6:40', decent: '8:55', elems: [{i:1,v:'120',c:'180,80,220'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
+			{ name: 'Kehjistan Marketplace', slug: 'marketplace', top: '4:20', good: '6:30', decent: '8:35', elems: [{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
+			{ name: 'Throne of Insanity', slug: 'throne', top: '4:00', good: '6:00', decent: '8:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
+			{ name: 'Sanatorium', slug: 'sanatorium', top: '3:30', good: '5:10', decent: '6:55', elems: [{i:3,v:'125',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] },
+			{ name: 'Ruined Cistern', slug: 'cistern', top: '3:10', good: '4:45', decent: '6:15', elems: [{i:1,v:'125',c:'180,80,220'},{i:3,v:'135',c:'220,200,40'},{i:4,v:'115',c:'60,140,220'}] },
+			{ name: 'Pandemonium Citadel', slug: 'citadel', top: '3:00', good: '4:25', decent: '5:55', elems: [{i:0,v:'100',c:'160,160,160'},{i:3,v:'135',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] }
+		]},
+		{ tier: 2, maps: [
+			{ name: 'Ruins of Viz-Jun', slug: 'ruinsofvizjun', top: '3:30', good: '5:15', decent: '7:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}] },
+			{ name: 'Ancestral Trial', slug: 'ancestral', top: '3:25', good: '5:05', decent: '6:50', elems: [{i:5,v:'120',c:'80,200,80'}] },
+			{ name: 'Tomb of Zoltun Kulle', slug: 'zoltun', top: '3:20', good: '5:00', decent: '6:45', elems: [{i:0,v:'105',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'110',c:'80,200,80'}] },
+			{ name: 'Bastion Keep', slug: 'bastion', top: '3:00', good: '4:30', decent: '6:00', elems: [{i:0,v:'110',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
+			{ name: 'River of Blood', slug: 'riverblood', top: '2:55', good: '4:25', decent: '5:50', elems: [{i:1,v:'100',c:'180,80,220'},{i:4,v:'180',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
+			{ name: 'Demon Road', slug: 'demonroad', top: '2:50', good: '4:15', decent: '5:40', elems: [{i:4,v:'125',c:'60,140,220'},{i:5,v:'135',c:'80,200,80'}] },
+			{ name: 'Skovos Stronghold', slug: 'skovos', top: '2:25', good: '3:40', decent: '4:50', elems: [{i:0,v:'125',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:3,v:'130',c:'220,200,40'}] },
+			{ name: 'Lost Temple', slug: 'losttemple', top: '2:20', good: '3:30', decent: '4:40', elems: [{i:2,v:'120',c:'220,60,40'},{i:4,v:'110',c:'60,140,220'}] }
+		]},
+		{ tier: 1, maps: [
+			{ name: 'Torajan Jungle', slug: 'torajanjungle', top: '4:00', good: '6:00', decent: '7:55', elems: [{i:2,v:'125',c:'220,60,40'},{i:3,v:'105',c:'220,200,40'}] },
+			{ name: 'Halls of Torture', slug: 'hallsoftorture', top: '3:35', good: '5:25', decent: '7:10', elems: [] },
+			{ name: "Horazon's Memory", slug: 'horazonsmemory', top: '3:25', good: '5:10', decent: '6:55', elems: [{i:2,v:'135',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
+			{ name: 'Arreat Battlefield', slug: 'arreatbattlefield', top: '3:00', good: '4:35', decent: '6:05', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'100',c:'220,200,40'}] },
+			{ name: 'Royal Crypts', slug: 'royalcrypts', top: '2:50', good: '4:20', decent: '5:45', elems: [{i:1,v:'150',c:'180,80,220'},{i:4,v:'125',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
+			{ name: 'Sewers of Harrogath', slug: 'sewers', top: '2:45', good: '4:10', decent: '5:30', elems: [{i:3,v:'135',c:'220,200,40'},{i:5,v:'125',c:'80,200,80'}] },
+			{ name: 'Shadows of Westmarch', slug: 'westmarch', top: '2:40', good: '3:55', decent: '5:15', elems: [{i:0,v:'100',c:'160,160,160'},{i:5,v:'135',c:'80,200,80'}] },
+			{ name: 'Fall of Caldeum', slug: 'caldeum', top: '2:10', good: '3:15', decent: '4:20', elems: [{i:3,v:'100',c:'220,200,40'},{i:4,v:'130',c:'60,140,220'}] }
+		]}
+	];
+
+	function parseTime(str) {
+		var parts = str.split(':');
+		return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+	}
+
+	function fmtTime(totalSec) {
+		var m = Math.floor(totalSec / 60);
+		var s = Math.round(totalSec % 60);
+		if (s === 60) { m++; s = 0; }
+		return m + ':' + (s < 10 ? '0' : '') + s;
+	}
+
+	function renderSoloTierTable(calcMap, calcSec) {
+		var body = document.getElementById('soloTierBody');
+		body.innerHTML = '';
+		var ratio = null;
+		if (calcMap && calcSec > 0) {
+			soloMapData.forEach(function(group) {
+				group.maps.forEach(function(m) {
+					if (m.name === calcMap) {
+						ratio = calcSec / parseTime(m.top);
+					}
+				});
+			});
+		}
+
+		soloMapData.forEach(function(group) {
+			var hdr = document.createElement('tr');
+			hdr.innerHTML = '<th colspan="11" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
+			body.appendChild(hdr);
+
+			group.maps.forEach(function(m) {
+				var tr = document.createElement('tr');
+				var elemCells = '';
+				for (var e = 0; e < 6; e++) {
+					var found = null;
+					m.elems.forEach(function(el) { if (el.i === e) found = el; });
+					if (found) {
+						elemCells += '<td class="text-center" style="--bs-table-bg-state:rgba(' + found.c + ',0.3) !important">' + found.v + '</td>';
+					} else {
+						elemCells += '<td class="text-center"></td>';
+					}
+				}
+				var yourTimeCell = '';
+				if (ratio !== null) {
+					var yourSec = parseTime(m.top) * ratio;
+					var isSelected = (m.name === calcMap);
+					yourTimeCell = '<td class="text-center' + (isSelected ? ' table-warning' : '') + '">' + fmtTime(yourSec) + '</td>';
+				} else {
+					yourTimeCell = '<td class="text-center">-</td>';
+				}
+				tr.innerHTML = '<td><a href="maps.html#map=' + m.slug + '&size=Medium" class="text-white">' + m.name + ' \u{1F517}</a></td>'
+					+ '<td class="text-center">' + m.top + '</td>'
+					+ '<td class="text-center">' + m.good + '</td>'
+					+ '<td class="text-center">' + m.decent + '</td>'
+					+ yourTimeCell
+					+ elemCells;
+				body.appendChild(tr);
+			});
+		});
+	}
+
+	// Populate dropdown
+	var select = document.getElementById('soloCalcMapSelect');
+	soloMapData.forEach(function(group) {
+		var optgroup = document.createElement('optgroup');
+		optgroup.label = 'Tier ' + group.tier + ' Maps';
+		group.maps.forEach(function(m) {
+			var opt = document.createElement('option');
+			opt.value = m.name;
+			opt.textContent = m.name + ' (Top: ' + m.top + ')';
+			optgroup.appendChild(opt);
+		});
+		select.appendChild(optgroup);
+	});
+
+	// Initial render
+	renderSoloTierTable(null, 0);
+
+	// Calculate button
+	document.getElementById('soloCalcBtn').addEventListener('click', function() {
+		var map = document.getElementById('soloCalcMapSelect').value;
+		var min = parseInt(document.getElementById('soloCalcMin').value) || 0;
+		var sec = parseInt(document.getElementById('soloCalcSec').value) || 0;
+		var totalSec = min * 60 + sec;
+		if (!map || totalSec <= 0) return;
+		renderSoloTierTable(map, totalSec);
+	});
+
+	// Clear button
+	document.getElementById('soloCalcClear').addEventListener('click', function() {
+		document.getElementById('soloCalcMapSelect').value = '';
+		document.getElementById('soloCalcMin').value = '';
+		document.getElementById('soloCalcSec').value = '';
+		renderSoloTierTable(null, 0);
+	});
+})();
+</script>
 
 </body>
 </html>
