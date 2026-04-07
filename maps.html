@@ -1741,14 +1741,14 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 				group.maps.forEach(function(m) {
 					var opt = document.createElement('option');
 					opt.value = m.name;
-					opt.textContent = m.name + ' (Top: ' + m.top + ')';
+					opt.textContent = m.name;
 					optgroup.appendChild(opt);
 				});
 			} else {
 				group.maps.forEach(function(row) {
 					var opt = document.createElement('option');
 					opt.value = row[0];
-					opt.textContent = row[0] + ' (Top: ' + fmtMin(row[1]) + ')';
+					opt.textContent = row[0];
 					optgroup.appendChild(opt);
 				});
 			}
