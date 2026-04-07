@@ -928,6 +928,18 @@
         "notes": [
           "Must gear swap pre-buff"
         ]
+      },
+      {
+        "buildName": "Claws of Thunder",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=mnIubiT5p5g",
+            "label": "Canyon of Sescheron (6:40)",
+            "type": "video"
+          }
+        ],
+        "notes": []
       }
     ],
     "Barbarian": [
