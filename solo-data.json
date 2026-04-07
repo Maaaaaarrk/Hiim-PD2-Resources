@@ -940,6 +940,18 @@
           }
         ],
         "notes": []
+      },
+      {
+        "buildName": "Blades of Ice",
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=y9JqNm-j1SI",
+            "label": "Skovos Stronghold (3:38)",
+            "type": "video"
+          }
+        ],
+        "notes": []
       }
     ],
     "Barbarian": [
