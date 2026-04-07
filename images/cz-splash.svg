@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="50%" style="stop-color:#2d1b4e"/>
+      <stop offset="100%" style="stop-color:#1a0a2e"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4444;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ff4444;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="600" height="338" fill="url(#bg)"/>
+  <circle cx="300" cy="169" r="120" fill="url(#glow)" filter="url(#blur)"/>
+  <circle cx="150" cy="100" r="60" fill="#ff220011" filter="url(#blur)"/>
+  <circle cx="450" cy="230" r="80" fill="#ff220011" filter="url(#blur)"/>
+  <line x1="80" y1="80" x2="80" y2="258" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="180" y1="80" x2="180" y2="258" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="280" y1="80" x2="280" y2="258" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="380" y1="80" x2="380" y2="258" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="480" y1="80" x2="480" y2="258" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="80" y1="110" x2="520" y2="110" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="80" y1="150" x2="520" y2="150" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="80" y1="190" x2="520" y2="190" stroke="#ffffff15" stroke-width="1"/>
+  <line x1="80" y1="230" x2="520" y2="230" stroke="#ffffff15" stroke-width="1"/>
+  <rect x="80" y="110" width="100" height="40" rx="4" fill="#ef444466"/>
+  <rect x="280" y="150" width="100" height="40" rx="4" fill="#22c55e55"/>
+  <rect x="180" y="190" width="100" height="40" rx="4" fill="#3b82f655"/>
+  <rect x="380" y="110" width="100" height="40" rx="4" fill="#f59e0b55"/>
+  <rect x="480" y="230" width="40" height="28" rx="4" fill="#6366f155"/>
+  <rect x="95" y="118" width="36" height="16" rx="3" fill="#6366f1"/>
+  <text x="113" y="130" text-anchor="middle" fill="#fff" font-size="10" font-family="sans-serif" font-weight="600">A1</text>
+  <rect x="295" y="158" width="36" height="16" rx="3" fill="#10b981"/>
+  <text x="313" y="170" text-anchor="middle" fill="#fff" font-size="10" font-family="sans-serif" font-weight="600">A3</text>
+  <rect x="195" y="198" width="36" height="16" rx="3" fill="#3b82f6"/>
+  <text x="213" y="210" text-anchor="middle" fill="#fff" font-size="10" font-family="sans-serif" font-weight="600">A5</text>
+  <rect x="395" y="118" width="36" height="16" rx="3" fill="#f59e0b"/>
+  <text x="413" y="130" text-anchor="middle" fill="#000" font-size="10" font-family="sans-serif" font-weight="600">A2</text>
+  <text x="300" y="295" text-anchor="middle" fill="#dee2e6" font-size="28" font-family="sans-serif" font-weight="700" letter-spacing="2">CORRUPTED ZONES</text>
+  <text x="300" y="320" text-anchor="middle" fill="#9ca3af" font-size="14" font-family="sans-serif">Schedule Tracker</text>
+</svg>
