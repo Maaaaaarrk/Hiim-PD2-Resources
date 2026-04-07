@@ -1473,6 +1473,23 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 			renderSoloTierTable(null, 0);
 		});
 	})();
+
+	// Sync modal with URL hash
+	var tierModalEl = document.getElementById('tierModal');
+	if (location.hash === '#mapTimes') {
+		new bootstrap.Modal(tierModalEl).show();
+	}
+	window.addEventListener('hashchange', function() {
+		if (location.hash === '#mapTimes') {
+			new bootstrap.Modal(tierModalEl).show();
+		}
+	});
+	tierModalEl.addEventListener('show.bs.modal', function() {
+		history.replaceState(null, '', '#mapTimes');
+	});
+	tierModalEl.addEventListener('hidden.bs.modal', function() {
+		history.replaceState(null, '', location.pathname + location.search);
+	});
 </script>
 
 </body>

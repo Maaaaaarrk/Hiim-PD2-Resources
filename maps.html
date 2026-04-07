@@ -1547,6 +1547,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		applyMapDisplay(params.map || 'all');
 		applyMapSize(params.size || 'Medium');
 	});
+
 </script>
 
 <!-- Map Times & Details Modal -->
@@ -1558,92 +1559,41 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-
-				<!-- Solo: Magic Find (monsters/hour) -->
-				<h5>Magic Find (monsters/hour)</h5>
-				<p>Not every build can clear every map. Tiers are based on how fast a build can clear <em>its best
-					maps</em>. The times below are the clear speed bars for each tier on each map.</p>
-				<p>Times are weighted by map tier and approximate monster count. Map size or layout does not factor into
-					the clear speeds &mdash; only the number of monsters in the map matters.</p>
+				<div class="btn-group btn-group-sm mb-3" role="group">
+					<input type="radio" class="btn-check" name="mapTimesMode" id="mapTimesMF" value="mf" checked>
+					<label class="btn btn-outline-light" for="mapTimesMF">Magic Find (monsters/hour)</label>
+					<input type="radio" class="btn-check" name="mapTimesMode" id="mapTimesExp98" value="exp98">
+					<label class="btn btn-outline-light" for="mapTimesExp98">Exp/hour (Lvl 98)</label>
+					<input type="radio" class="btn-check" name="mapTimesMode" id="mapTimesExpNone" value="expNone">
+					<label class="btn btn-outline-light" for="mapTimesExpNone">Exp/hour (No Penalty)</label>
+				</div>
+				<div id="mapTimesDesc"></div>
 				<div class="card bg-secondary bg-opacity-25 p-3 mb-3">
 					<div class="row g-2 align-items-end">
 						<div class="col-auto">
 							<label class="form-label mb-1" style="font-size:0.85em">Calculate Your Times</label>
-							<select class="form-select form-select-sm" id="soloCalcMapSelect" style="max-width:220px">
+							<select class="form-select form-select-sm" id="mtCalcMapSelect" style="max-width:220px">
 								<option value="">-- Select a map --</option>
 							</select>
 						</div>
 						<div class="col-auto">
 							<label class="form-label mb-1" style="font-size:0.85em">Your time</label>
 							<div class="input-group input-group-sm" style="max-width:150px">
-								<input type="number" class="form-control" id="soloCalcMin" min="0" max="59" placeholder="min" style="max-width:60px">
+								<input type="number" class="form-control" id="mtCalcMin" min="0" max="59" placeholder="min" style="max-width:60px">
 								<span class="input-group-text">:</span>
-								<input type="number" class="form-control" id="soloCalcSec" min="0" max="59" placeholder="sec" style="max-width:60px">
+								<input type="number" class="form-control" id="mtCalcSec" min="0" max="59" placeholder="sec" style="max-width:60px">
 							</div>
 						</div>
 						<div class="col-auto">
-							<button class="btn btn-sm btn-outline-light" id="soloCalcBtn">Calculate</button>
-							<button class="btn btn-sm btn-outline-secondary ms-1" id="soloCalcClear">Clear</button>
+							<button class="btn btn-sm btn-outline-light" id="mtCalcBtn">Calculate</button>
+							<button class="btn btn-sm btn-outline-secondary ms-1" id="mtCalcClear">Clear</button>
 						</div>
 					</div>
 				</div>
-				<table class="table table-sm table-dark table-striped table-bordered mt-3" style="font-size:0.85em" id="soloTierTable">
-					<thead>
-					<tr>
-						<th>Map</th>
-						<th class="text-center"><span class="badge text-bg-info">Top</span></th>
-						<th class="text-center"><span class="badge text-bg-primary">Good</span></th>
-						<th class="text-center"><span class="badge text-bg-success">Decent</span></th>
-						<th class="text-center"><span class="badge text-bg-warning">Your Time</span></th>
-						<th class="text-center" style="font-size:0.75em">Phys</th>
-						<th class="text-center" style="font-size:0.75em">Magic</th>
-						<th class="text-center" style="font-size:0.75em">Fire</th>
-						<th class="text-center" style="font-size:0.75em">Light</th>
-						<th class="text-center" style="font-size:0.75em">Cold</th>
-						<th class="text-center" style="font-size:0.75em">Poison</th>
-					</tr>
-					</thead>
-					<tbody id="soloTierBody"></tbody>
+				<table class="table table-sm table-dark table-striped table-bordered mt-3" style="font-size:0.85em" id="mtTable">
+					<thead id="mtThead"></thead>
+					<tbody id="mtBody"></tbody>
 				</table>
-
-				<hr class="border-secondary my-4">
-
-				<!-- Group: Exp/hour -->
-				<h5>Exp/hour</h5>
-				<p>Clear times are purely based on total exp vs clear time. Chart can be useful to understand comparatively what map over another could get you more exp, even if it takes longer to clear that map.</p>
-				<div class="map-times-toggle btn-group btn-group-sm mb-3" role="group">
-					<input type="radio" class="btn-check" name="mapTimesLevel" id="mapTimesLvl98" value="98" checked>
-					<label class="btn btn-outline-light" for="mapTimesLvl98">Level 98</label>
-					<input type="radio" class="btn-check" name="mapTimesLevel" id="mapTimesNoP" value="none">
-					<label class="btn btn-outline-light" for="mapTimesNoP">No Level Penalty</label>
-				</div>
-				<div class="card bg-secondary bg-opacity-25 p-3 mb-3">
-					<div class="row g-2 align-items-end">
-						<div class="col-auto">
-							<label class="form-label mb-1" style="font-size:0.85em">Calculate Your Times</label>
-							<select class="form-select form-select-sm" id="groupCalcMapSelect" style="max-width:220px">
-								<option value="">-- Select a map --</option>
-							</select>
-						</div>
-						<div class="col-auto">
-							<label class="form-label mb-1" style="font-size:0.85em">Your time</label>
-							<div class="input-group input-group-sm" style="max-width:150px">
-								<input type="number" class="form-control" id="groupCalcMin" min="0" max="59" placeholder="min" style="max-width:60px">
-								<span class="input-group-text">:</span>
-								<input type="number" class="form-control" id="groupCalcSec" min="0" max="59" placeholder="sec" style="max-width:60px">
-							</div>
-						</div>
-						<div class="col-auto">
-							<button class="btn btn-sm btn-outline-light" id="groupCalcBtn">Calculate</button>
-							<button class="btn btn-sm btn-outline-secondary ms-1" id="groupCalcClear">Clear</button>
-						</div>
-					</div>
-				</div>
-				<table class="table table-sm table-dark table-striped table-bordered mt-1" style="font-size:0.85em" id="mapTimesTable">
-					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th><th class="text-center"><span class="badge text-bg-warning">Your Time</span></th></tr></thead>
-					<tbody id="mapTimesBody"></tbody>
-				</table>
-
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -1652,332 +1602,289 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	</div>
 </div>
 
-<!-- Solo Map Times (Magic Find) script -->
 <script>
 (function () {
-	var soloMapData = [
+	var mapSlugs = {
+		'Canyon of Sescheron': 'canyon', 'Phlegethon': 'phlegethon', 'Blood Moon': 'bloodmoon',
+		'Ashen Plains': 'ashen', 'Kehjistan Marketplace': 'marketplace', 'Throne of Insanity': 'throne',
+		'Sanatorium': 'sanatorium', 'Ruined Cistern': 'cistern', 'Pandemonium Citadel': 'citadel',
+		'Ruins of Viz-Jun': 'ruinsofvizjun', 'Ruins of Viz-Jin': 'ruinsofvizjun',
+		'Ancestral Trial': 'ancestral', 'Tomb of Zoltun Kulle': 'zoltun', 'Bastion Keep': 'bastion',
+		'River of Blood': 'riverblood', 'Demon Road': 'demonroad', 'Skovos Stronghold': 'skovos',
+		'Lost Temple': 'losttemple', 'Torajan Jungle': 'torajanjungle', 'Halls of Torture': 'hallsoftorture',
+		"Horazon's Memory": 'horazonsmemory', 'Arreat Battlefield': 'arreatbattlefield',
+		'Royal Crypts': 'royalcrypts', 'Sewers of Harrogath': 'sewers',
+		'Shadows of Westmarch': 'westmarch', 'Fall of Caldeum': 'caldeum'
+	};
+
+	// Solo (MF) data
+	var mfData = [
 		{ tier: 3, maps: [
-			{ name: 'Canyon of Sescheron', slug: 'canyon', top: '5:45', good: '8:35', decent: '11:25', elems: [{i:0,v:'120',c:'160,160,160'},{i:2,v:'130',c:'220,60,40'},{i:5,v:'110',c:'80,200,80'}] },
-			{ name: 'Phlegethon', slug: 'phlegethon', top: '5:20', good: '8:00', decent: '10:40', elems: [{i:2,v:'140',c:'220,60,40'},{i:3,v:'125',c:'220,200,40'}] },
-			{ name: 'Blood Moon', slug: 'bloodmoon', top: '5:15', good: '7:55', decent: '10:35', elems: [] },
-			{ name: 'Ashen Plains', slug: 'ashen', top: '4:30', good: '6:40', decent: '8:55', elems: [{i:1,v:'120',c:'180,80,220'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
-			{ name: 'Kehjistan Marketplace', slug: 'marketplace', top: '4:20', good: '6:30', decent: '8:35', elems: [{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
-			{ name: 'Throne of Insanity', slug: 'throne', top: '4:00', good: '6:00', decent: '8:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'Sanatorium', slug: 'sanatorium', top: '3:30', good: '5:10', decent: '6:55', elems: [{i:3,v:'125',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] },
-			{ name: 'Ruined Cistern', slug: 'cistern', top: '3:10', good: '4:45', decent: '6:15', elems: [{i:1,v:'125',c:'180,80,220'},{i:3,v:'135',c:'220,200,40'},{i:4,v:'115',c:'60,140,220'}] },
-			{ name: 'Pandemonium Citadel', slug: 'citadel', top: '3:00', good: '4:25', decent: '5:55', elems: [{i:0,v:'100',c:'160,160,160'},{i:3,v:'135',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] }
+			{ name: 'Canyon of Sescheron', top: '5:45', good: '8:35', decent: '11:25', elems: [{i:0,v:'120',c:'160,160,160'},{i:2,v:'130',c:'220,60,40'},{i:5,v:'110',c:'80,200,80'}] },
+			{ name: 'Phlegethon', top: '5:20', good: '8:00', decent: '10:40', elems: [{i:2,v:'140',c:'220,60,40'},{i:3,v:'125',c:'220,200,40'}] },
+			{ name: 'Blood Moon', top: '5:15', good: '7:55', decent: '10:35', elems: [] },
+			{ name: 'Ashen Plains', top: '4:30', good: '6:40', decent: '8:55', elems: [{i:1,v:'120',c:'180,80,220'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
+			{ name: 'Kehjistan Marketplace', top: '4:20', good: '6:30', decent: '8:35', elems: [{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
+			{ name: 'Throne of Insanity', top: '4:00', good: '6:00', decent: '8:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
+			{ name: 'Sanatorium', top: '3:30', good: '5:10', decent: '6:55', elems: [{i:3,v:'125',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] },
+			{ name: 'Ruined Cistern', top: '3:10', good: '4:45', decent: '6:15', elems: [{i:1,v:'125',c:'180,80,220'},{i:3,v:'135',c:'220,200,40'},{i:4,v:'115',c:'60,140,220'}] },
+			{ name: 'Pandemonium Citadel', top: '3:00', good: '4:25', decent: '5:55', elems: [{i:0,v:'100',c:'160,160,160'},{i:3,v:'135',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] }
 		]},
 		{ tier: 2, maps: [
-			{ name: 'Ruins of Viz-Jun', slug: 'ruinsofvizjun', top: '3:30', good: '5:15', decent: '7:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}] },
-			{ name: 'Ancestral Trial', slug: 'ancestral', top: '3:25', good: '5:05', decent: '6:50', elems: [{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Tomb of Zoltun Kulle', slug: 'zoltun', top: '3:20', good: '5:00', decent: '6:45', elems: [{i:0,v:'105',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'110',c:'80,200,80'}] },
-			{ name: 'Bastion Keep', slug: 'bastion', top: '3:00', good: '4:30', decent: '6:00', elems: [{i:0,v:'110',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'River of Blood', slug: 'riverblood', top: '2:55', good: '4:25', decent: '5:50', elems: [{i:1,v:'100',c:'180,80,220'},{i:4,v:'180',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
-			{ name: 'Demon Road', slug: 'demonroad', top: '2:50', good: '4:15', decent: '5:40', elems: [{i:4,v:'125',c:'60,140,220'},{i:5,v:'135',c:'80,200,80'}] },
-			{ name: 'Skovos Stronghold', slug: 'skovos', top: '2:25', good: '3:40', decent: '4:50', elems: [{i:0,v:'125',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:3,v:'130',c:'220,200,40'}] },
-			{ name: 'Lost Temple', slug: 'losttemple', top: '2:20', good: '3:30', decent: '4:40', elems: [{i:2,v:'120',c:'220,60,40'},{i:4,v:'110',c:'60,140,220'}] }
+			{ name: 'Ruins of Viz-Jun', top: '3:30', good: '5:15', decent: '7:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}] },
+			{ name: 'Ancestral Trial', top: '3:25', good: '5:05', decent: '6:50', elems: [{i:5,v:'120',c:'80,200,80'}] },
+			{ name: 'Tomb of Zoltun Kulle', top: '3:20', good: '5:00', decent: '6:45', elems: [{i:0,v:'105',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'110',c:'80,200,80'}] },
+			{ name: 'Bastion Keep', top: '3:00', good: '4:30', decent: '6:00', elems: [{i:0,v:'110',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
+			{ name: 'River of Blood', top: '2:55', good: '4:25', decent: '5:50', elems: [{i:1,v:'100',c:'180,80,220'},{i:4,v:'180',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
+			{ name: 'Demon Road', top: '2:50', good: '4:15', decent: '5:40', elems: [{i:4,v:'125',c:'60,140,220'},{i:5,v:'135',c:'80,200,80'}] },
+			{ name: 'Skovos Stronghold', top: '2:25', good: '3:40', decent: '4:50', elems: [{i:0,v:'125',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:3,v:'130',c:'220,200,40'}] },
+			{ name: 'Lost Temple', top: '2:20', good: '3:30', decent: '4:40', elems: [{i:2,v:'120',c:'220,60,40'},{i:4,v:'110',c:'60,140,220'}] }
 		]},
 		{ tier: 1, maps: [
-			{ name: 'Torajan Jungle', slug: 'torajanjungle', top: '4:00', good: '6:00', decent: '7:55', elems: [{i:2,v:'125',c:'220,60,40'},{i:3,v:'105',c:'220,200,40'}] },
-			{ name: 'Halls of Torture', slug: 'hallsoftorture', top: '3:35', good: '5:25', decent: '7:10', elems: [] },
-			{ name: "Horazon's Memory", slug: 'horazonsmemory', top: '3:25', good: '5:10', decent: '6:55', elems: [{i:2,v:'135',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'Arreat Battlefield', slug: 'arreatbattlefield', top: '3:00', good: '4:35', decent: '6:05', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'100',c:'220,200,40'}] },
-			{ name: 'Royal Crypts', slug: 'royalcrypts', top: '2:50', good: '4:20', decent: '5:45', elems: [{i:1,v:'150',c:'180,80,220'},{i:4,v:'125',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
-			{ name: 'Sewers of Harrogath', slug: 'sewers', top: '2:45', good: '4:10', decent: '5:30', elems: [{i:3,v:'135',c:'220,200,40'},{i:5,v:'125',c:'80,200,80'}] },
-			{ name: 'Shadows of Westmarch', slug: 'westmarch', top: '2:40', good: '3:55', decent: '5:15', elems: [{i:0,v:'100',c:'160,160,160'},{i:5,v:'135',c:'80,200,80'}] },
-			{ name: 'Fall of Caldeum', slug: 'caldeum', top: '2:10', good: '3:15', decent: '4:20', elems: [{i:3,v:'100',c:'220,200,40'},{i:4,v:'130',c:'60,140,220'}] }
+			{ name: 'Torajan Jungle', top: '4:00', good: '6:00', decent: '7:55', elems: [{i:2,v:'125',c:'220,60,40'},{i:3,v:'105',c:'220,200,40'}] },
+			{ name: 'Halls of Torture', top: '3:35', good: '5:25', decent: '7:10', elems: [] },
+			{ name: "Horazon's Memory", top: '3:25', good: '5:10', decent: '6:55', elems: [{i:2,v:'135',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
+			{ name: 'Arreat Battlefield', top: '3:00', good: '4:35', decent: '6:05', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'100',c:'220,200,40'}] },
+			{ name: 'Royal Crypts', top: '2:50', good: '4:20', decent: '5:45', elems: [{i:1,v:'150',c:'180,80,220'},{i:4,v:'125',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
+			{ name: 'Sewers of Harrogath', top: '2:45', good: '4:10', decent: '5:30', elems: [{i:3,v:'135',c:'220,200,40'},{i:5,v:'125',c:'80,200,80'}] },
+			{ name: 'Shadows of Westmarch', top: '2:40', good: '3:55', decent: '5:15', elems: [{i:0,v:'100',c:'160,160,160'},{i:5,v:'135',c:'80,200,80'}] },
+			{ name: 'Fall of Caldeum', top: '2:10', good: '3:15', decent: '4:20', elems: [{i:3,v:'100',c:'220,200,40'},{i:4,v:'130',c:'60,140,220'}] }
 		]}
 	];
 
-	function parseTime(str) {
-		var parts = str.split(':');
-		return parseInt(parts[0]) * 60 + parseInt(parts[1]);
-	}
-
-	function fmtTime(totalSec) {
-		var m = Math.floor(totalSec / 60);
-		var s = Math.round(totalSec % 60);
-		if (s === 60) { m++; s = 0; }
-		return m + ':' + (s < 10 ? '0' : '') + s;
-	}
-
-	function renderSoloTierTable(calcMap, calcSec) {
-		var body = document.getElementById('soloTierBody');
-		body.innerHTML = '';
-		var ratio = null;
-		if (calcMap && calcSec > 0) {
-			soloMapData.forEach(function(group) {
-				group.maps.forEach(function(m) {
-					if (m.name === calcMap) {
-						ratio = calcSec / parseTime(m.top);
-					}
-				});
-			});
-		}
-
-		soloMapData.forEach(function(group) {
-			var hdr = document.createElement('tr');
-			hdr.innerHTML = '<th colspan="11" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
-			body.appendChild(hdr);
-
-			group.maps.forEach(function(m) {
-				var tr = document.createElement('tr');
-				var elemCells = '';
-				for (var e = 0; e < 6; e++) {
-					var found = null;
-					m.elems.forEach(function(el) { if (el.i === e) found = el; });
-					if (found) {
-						elemCells += '<td class="text-center" style="--bs-table-bg-state:rgba(' + found.c + ',0.3) !important">' + found.v + '</td>';
-					} else {
-						elemCells += '<td class="text-center"></td>';
-					}
-				}
-				var yourTimeCell = '';
-				if (ratio !== null) {
-					var yourSec = parseTime(m.top) * ratio;
-					var isSelected = (m.name === calcMap);
-					yourTimeCell = '<td class="text-center' + (isSelected ? ' table-warning' : '') + '">' + fmtTime(yourSec) + '</td>';
-				} else {
-					yourTimeCell = '<td class="text-center">-</td>';
-				}
-				tr.innerHTML = '<td><a href="#map=' + m.slug + '&size=Medium" class="text-white">' + m.name + ' \u{1F517}</a></td>'
-					+ '<td class="text-center">' + m.top + '</td>'
-					+ '<td class="text-center">' + m.good + '</td>'
-					+ '<td class="text-center">' + m.decent + '</td>'
-					+ yourTimeCell
-					+ elemCells;
-				body.appendChild(tr);
-			});
-		});
-	}
-
-	// Populate dropdown
-	var select = document.getElementById('soloCalcMapSelect');
-	soloMapData.forEach(function(group) {
-		var optgroup = document.createElement('optgroup');
-		optgroup.label = 'Tier ' + group.tier + ' Maps';
-		group.maps.forEach(function(m) {
-			var opt = document.createElement('option');
-			opt.value = m.name;
-			opt.textContent = m.name + ' (Top: ' + m.top + ')';
-			optgroup.appendChild(opt);
-		});
-		select.appendChild(optgroup);
-	});
-
-	// Initial render
-	renderSoloTierTable(null, 0);
-
-	// Calculate button
-	document.getElementById('soloCalcBtn').addEventListener('click', function() {
-		var map = document.getElementById('soloCalcMapSelect').value;
-		var min = parseInt(document.getElementById('soloCalcMin').value) || 0;
-		var sec = parseInt(document.getElementById('soloCalcSec').value) || 0;
-		var totalSec = min * 60 + sec;
-		if (!map || totalSec <= 0) return;
-		renderSoloTierTable(map, totalSec);
-	});
-
-	// Clear button
-	document.getElementById('soloCalcClear').addEventListener('click', function() {
-		document.getElementById('soloCalcMapSelect').value = '';
-		document.getElementById('soloCalcMin').value = '';
-		document.getElementById('soloCalcSec').value = '';
-		renderSoloTierTable(null, 0);
-	});
-})();
-</script>
-
-<!-- Group Map Times (Exp/hour) script -->
-<script>
-(function () {
-	var mapLinks = {
-		'Pandemonium Citadel': 'citadel', 'Ashen Plains': 'ashen', 'Phlegethon': 'phlegethon',
-		'Kehjistan Marketplace': 'marketplace', 'Sanatorium': 'sanatorium', 'Canyon of Sescheron': 'canyon',
-		'Throne of Insanity': 'throne', 'Ruined Cistern': 'cistern', 'Blood Moon': 'bloodmoon',
-		'Ancestral Trial': 'ancestral', 'Demon Road': 'demonroad', 'Ruins of Viz-Jin': 'ruinsofvizjun',
-		'Lost Temple': 'losttemple', 'River of Blood': 'riverblood', 'Skovos Stronghold': 'skovos',
-		'Bastion Keep': 'bastion', 'Tomb of Zoltun Kulle': 'zoltun',
-		'Halls of Torture': 'hallsoftorture', 'Torajan Jungle': 'torajanjungle',
-		'Arreat Battlefield': 'arreatbattlefield', "Horazon's Memory": 'horazonsmemory',
-		'Sewers of Harrogath': 'sewers', 'Royal Crypts': 'royalcrypts',
-		'Fall of Caldeum': 'caldeum', 'Shadows of Westmarch': 'westmarch'
-	};
-
-	var data98 = [
+	// Group (Exp) data
+	var exp98 = [
 		{ tier: 3, maps: [
-			['Pandemonium Citadel', 5.42, 8.13, 10.84],
-			['Ashen Plains', 4.68, 7.02, 9.36],
-			['Sanatorium', 4.68, 7.02, 9.36],
-			['Kehjistan Marketplace', 4.39, 6.58, 8.77],
-			['Throne of Insanity', 4.00, 6.00, 8.00],
-			['Phlegethon', 3.98, 5.97, 7.96],
-			['Canyon of Sescheron', 3.70, 5.55, 7.40],
-			['Ruined Cistern', 3.50, 5.25, 7.01],
+			['Pandemonium Citadel', 5.42, 8.13, 10.84], ['Ashen Plains', 4.68, 7.02, 9.36],
+			['Sanatorium', 4.68, 7.02, 9.36], ['Kehjistan Marketplace', 4.39, 6.58, 8.77],
+			['Throne of Insanity', 4.00, 6.00, 8.00], ['Phlegethon', 3.98, 5.97, 7.96],
+			['Canyon of Sescheron', 3.70, 5.55, 7.40], ['Ruined Cistern', 3.50, 5.25, 7.01],
 			['Blood Moon', 2.89, 4.34, 5.78]
 		]},
 		{ tier: 2, maps: [
-			['Demon Road', 2.56, 3.84, 5.12],
-			['Ancestral Trial', 2.15, 3.23, 4.31],
-			['Lost Temple', 2.09, 3.13, 4.17],
-			['River of Blood', 2.04, 3.06, 4.08],
-			['Ruins of Viz-Jin', 1.91, 2.86, 3.81],
-			['Bastion Keep', 1.88, 2.83, 3.77],
-			['Tomb of Zoltun Kulle', 1.81, 2.71, 3.62],
-			['Skovos Stronghold', 0.94, 1.41, 1.88]
+			['Demon Road', 2.56, 3.84, 5.12], ['Ancestral Trial', 2.15, 3.23, 4.31],
+			['Lost Temple', 2.09, 3.13, 4.17], ['River of Blood', 2.04, 3.06, 4.08],
+			['Ruins of Viz-Jin', 1.91, 2.86, 3.81], ['Bastion Keep', 1.88, 2.83, 3.77],
+			['Tomb of Zoltun Kulle', 1.81, 2.71, 3.62], ['Skovos Stronghold', 0.94, 1.41, 1.88]
 		]},
 		{ tier: 1, maps: [
-			['Halls of Torture', 2.24, 3.36, 4.48],
-			['Sewers of Harrogath', 1.91, 2.86, 3.81],
-			['Arreat Battlefield', 1.85, 2.78, 3.71],
-			['Fall of Caldeum', 1.62, 2.43, 3.24],
-			['Royal Crypts', 1.62, 2.42, 3.23],
-			['Torajan Jungle', 1.60, 2.40, 3.19],
-			["Horazon's Memory", 1.47, 2.20, 2.94],
-			['Shadows of Westmarch', 1.36, 2.04, 2.72]
+			['Halls of Torture', 2.24, 3.36, 4.48], ['Sewers of Harrogath', 1.91, 2.86, 3.81],
+			['Arreat Battlefield', 1.85, 2.78, 3.71], ['Fall of Caldeum', 1.62, 2.43, 3.24],
+			['Royal Crypts', 1.62, 2.42, 3.23], ['Torajan Jungle', 1.60, 2.40, 3.19],
+			["Horazon's Memory", 1.47, 2.20, 2.94], ['Shadows of Westmarch', 1.36, 2.04, 2.72]
 		]}
 	];
 
-	var dataNone = [
+	var expNone = [
 		{ tier: 3, maps: [
-			['Pandemonium Citadel', 4.92, 7.38, 9.84],
-			['Ashen Plains', 4.92, 7.38, 9.84],
-			['Phlegethon', 4.50, 6.76, 9.01],
-			['Kehjistan Marketplace', 4.42, 6.62, 8.83],
-			['Sanatorium', 4.41, 6.62, 8.82],
-			['Canyon of Sescheron', 4.19, 6.29, 8.38],
-			['Throne of Insanity', 4.00, 6.00, 8.00],
-			['Ruined Cistern', 3.61, 5.41, 7.22],
+			['Pandemonium Citadel', 4.92, 7.38, 9.84], ['Ashen Plains', 4.92, 7.38, 9.84],
+			['Phlegethon', 4.50, 6.76, 9.01], ['Kehjistan Marketplace', 4.42, 6.62, 8.83],
+			['Sanatorium', 4.41, 6.62, 8.82], ['Canyon of Sescheron', 4.19, 6.29, 8.38],
+			['Throne of Insanity', 4.00, 6.00, 8.00], ['Ruined Cistern', 3.61, 5.41, 7.22],
 			['Blood Moon', 3.46, 5.19, 6.92]
 		]},
 		{ tier: 2, maps: [
-			['Ancestral Trial', 4.05, 6.07, 8.10],
-			['Demon Road', 4.03, 6.05, 8.07],
-			['Ruins of Viz-Jin', 4.01, 6.01, 8.01],
-			['Lost Temple', 3.73, 5.59, 7.46],
-			['River of Blood', 3.72, 5.58, 7.43],
-			['Skovos Stronghold', 3.67, 5.50, 7.33],
-			['Bastion Keep', 3.65, 5.47, 7.30],
-			['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57]
+			['Ancestral Trial', 4.05, 6.07, 8.10], ['Demon Road', 4.03, 6.05, 8.07],
+			['Ruins of Viz-Jin', 4.01, 6.01, 8.01], ['Lost Temple', 3.73, 5.59, 7.46],
+			['River of Blood', 3.72, 5.58, 7.43], ['Skovos Stronghold', 3.67, 5.50, 7.33],
+			['Bastion Keep', 3.65, 5.47, 7.30], ['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57]
 		]},
 		{ tier: 1, maps: [
-			['Halls of Torture', 5.32, 7.98, 10.64],
-			['Torajan Jungle', 4.73, 7.09, 9.46],
-			['Arreat Battlefield', 4.23, 6.34, 8.46],
-			["Horazon's Memory", 4.10, 6.14, 8.19],
-			['Sewers of Harrogath', 3.94, 5.90, 7.87],
-			['Royal Crypts', 3.58, 5.37, 7.16],
-			['Fall of Caldeum', 3.51, 5.26, 7.02],
-			['Shadows of Westmarch', 3.17, 4.75, 6.33]
+			['Halls of Torture', 5.32, 7.98, 10.64], ['Torajan Jungle', 4.73, 7.09, 9.46],
+			['Arreat Battlefield', 4.23, 6.34, 8.46], ["Horazon's Memory", 4.10, 6.14, 8.19],
+			['Sewers of Harrogath', 3.94, 5.90, 7.87], ['Royal Crypts', 3.58, 5.37, 7.16],
+			['Fall of Caldeum', 3.51, 5.26, 7.02], ['Shadows of Westmarch', 3.17, 4.75, 6.33]
 		]}
 	];
 
-	function fmt(v) {
-		var totalSec = Math.round(v * 60);
-		totalSec = Math.round(totalSec / 5) * 5;
-		var m = Math.floor(totalSec / 60);
-		var s = totalSec % 60;
-		return m + ':' + (s < 10 ? '0' : '') + s;
+	// Build element lookup from mfData
+	var mapElems = {};
+	mfData.forEach(function(g) { g.maps.forEach(function(m) { mapElems[m.name] = m.elems; }); });
+
+	function getElemCells(name) {
+		var elems = mapElems[name] || [];
+		var cells = '';
+		for (var e = 0; e < 6; e++) {
+			var found = null;
+			elems.forEach(function(el) { if (el.i === e) found = el; });
+			cells += found
+				? '<td class="text-center" style="--bs-table-bg-state:rgba(' + found.c + ',0.3) !important">' + found.v + '</td>'
+				: '<td class="text-center"></td>';
+		}
+		return cells;
 	}
 
-	function fmtExact(totalSec) {
-		var m = Math.floor(totalSec / 60);
-		var s = Math.round(totalSec % 60);
-		if (s === 60) { m++; s = 0; }
-		return m + ':' + (s < 10 ? '0' : '') + s;
+	var calcMapName = null, calcTimeSec = 0;
+
+	function parseTime(str) { var p = str.split(':'); return parseInt(p[0]) * 60 + parseInt(p[1]); }
+	function fmtTime(sec) { var m = Math.floor(sec / 60), s = Math.round(sec % 60); if (s === 60) { m++; s = 0; } return m + ':' + (s < 10 ? '0' : '') + s; }
+	function fmtMin(v) { var t = Math.round(Math.round(v * 60) / 5) * 5; return Math.floor(t / 60) + ':' + (t % 60 < 10 ? '0' : '') + (t % 60); }
+
+	function getMode() {
+		var checked = document.querySelector('input[name="mapTimesMode"]:checked');
+		return checked ? checked.value : 'mf';
 	}
 
-	var calcMapName = null;
-	var calcTimeSec = 0;
+	function getDesc(mode) {
+		if (mode === 'mf') return '<p>Not every build can clear every map. Tiers are based on how fast a build can clear <em>its best maps</em>. These times are what the <a href="solo.html" class="text-white fw-bold">Solo Tier List</a> is based on.</p><p>Times are weighted by map tier and approximate monster count. Map size or layout does not factor into the clear speeds &mdash; only the number of monsters in the map matters.</p>';
+		return '<p>Clear times are purely based on total exp vs clear time. These times are what the <a href="group.html" class="text-white fw-bold">Group Tier List</a> is based on. Chart can be useful to understand comparatively what map over another could get you more exp, even if it takes longer to clear that map.</p>';
+	}
 
-	function render(dataset) {
-		var body = document.getElementById('mapTimesBody');
+	function populateDropdown(mode) {
+		var select = document.getElementById('mtCalcMapSelect');
+		select.innerHTML = '<option value="">-- Select a map --</option>';
+		var dataset = mode === 'mf' ? mfData : (mode === 'exp98' ? exp98 : expNone);
+		dataset.forEach(function(group) {
+			var optgroup = document.createElement('optgroup');
+			optgroup.label = 'Tier ' + group.tier + ' Maps';
+			if (mode === 'mf') {
+				group.maps.forEach(function(m) {
+					var opt = document.createElement('option');
+					opt.value = m.name;
+					opt.textContent = m.name + ' (Top: ' + m.top + ')';
+					optgroup.appendChild(opt);
+				});
+			} else {
+				group.maps.forEach(function(row) {
+					var opt = document.createElement('option');
+					opt.value = row[0];
+					opt.textContent = row[0] + ' (Top: ' + fmtMin(row[1]) + ')';
+					optgroup.appendChild(opt);
+				});
+			}
+			select.appendChild(optgroup);
+		});
+	}
+
+	function render() {
+		var mode = getMode();
+		document.getElementById('mapTimesDesc').innerHTML = getDesc(mode);
+
+		var thead = document.getElementById('mtThead');
+		var body = document.getElementById('mtBody');
 		body.innerHTML = '';
 
-		var ratio = null;
-		if (calcMapName && calcTimeSec > 0) {
-			dataset.forEach(function (group) {
-				group.maps.forEach(function (row) {
-					if (row[0] === calcMapName) {
-						var refSec = row[1] * 60;
-						ratio = calcTimeSec / refSec;
+		thead.innerHTML = '<tr><th>Map</th>'
+			+ '<th class="text-center"><span class="badge text-bg-info">Top</span></th>'
+			+ '<th class="text-center"><span class="badge text-bg-primary">Good</span></th>'
+			+ '<th class="text-center"><span class="badge text-bg-success">Decent</span></th>'
+			+ '<th class="text-center"><span class="badge text-bg-warning">Your Time</span></th>'
+			+ '<th class="text-center" style="font-size:0.75em">Phys</th><th class="text-center" style="font-size:0.75em">Magic</th><th class="text-center" style="font-size:0.75em">Fire</th><th class="text-center" style="font-size:0.75em">Light</th><th class="text-center" style="font-size:0.75em">Cold</th><th class="text-center" style="font-size:0.75em">Poison</th>'
+			+ '</tr>';
+
+		if (mode === 'mf') {
+			var ratio = null;
+			if (calcMapName && calcTimeSec > 0) {
+				mfData.forEach(function(g) { g.maps.forEach(function(m) {
+					if (m.name === calcMapName) ratio = calcTimeSec / parseTime(m.top);
+				}); });
+			}
+			mfData.forEach(function(group) {
+				var hdr = document.createElement('tr');
+				hdr.innerHTML = '<th colspan="11" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
+				body.appendChild(hdr);
+				group.maps.forEach(function(m) {
+					var tr = document.createElement('tr');
+					var yourCell = '';
+					if (ratio !== null) {
+						var yourSec = parseTime(m.top) * ratio;
+						yourCell = '<td class="text-center' + (m.name === calcMapName ? ' table-warning' : '') + '">' + fmtTime(yourSec) + '</td>';
+					} else {
+						yourCell = '<td class="text-center">-</td>';
 					}
+					var slug = mapSlugs[m.name];
+					tr.innerHTML = '<td><a href="#map=' + slug + '&size=Medium" class="text-white">' + m.name + ' \u{1F517}</a></td>'
+						+ '<td class="text-center">' + m.top + '</td>'
+						+ '<td class="text-center">' + m.good + '</td>'
+						+ '<td class="text-center">' + m.decent + '</td>'
+						+ yourCell + getElemCells(m.name);
+					body.appendChild(tr);
+				});
+			});
+		} else {
+			var dataset = (mode === 'exp98') ? exp98 : expNone;
+			var ratio = null;
+			if (calcMapName && calcTimeSec > 0) {
+				dataset.forEach(function(g) { g.maps.forEach(function(row) {
+					if (row[0] === calcMapName) ratio = calcTimeSec / (row[1] * 60);
+				}); });
+			}
+			dataset.forEach(function(group) {
+				var hdr = document.createElement('tr');
+				hdr.innerHTML = '<th colspan="11" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
+				body.appendChild(hdr);
+				group.maps.forEach(function(row) {
+					var tr = document.createElement('tr');
+					var slug = mapSlugs[row[0]];
+					var link = slug ? '<a href="#map=' + slug + '&size=Medium" class="text-white">' + row[0] + ' \u{1F517}</a>' : row[0];
+					var yourCell = '';
+					if (ratio !== null) {
+						var yourSec = row[1] * 60 * ratio;
+						yourCell = '<td class="text-center' + (row[0] === calcMapName ? ' table-warning' : '') + '">' + fmtTime(yourSec) + '</td>';
+					} else {
+						yourCell = '<td class="text-center">-</td>';
+					}
+					tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmtMin(row[1]) + '</td><td class="text-center">' + fmtMin(row[2]) + '</td><td class="text-center">' + fmtMin(row[3]) + '</td>' + yourCell + getElemCells(row[0]);
+					body.appendChild(tr);
 				});
 			});
 		}
-
-		dataset.forEach(function (group) {
-			var hdr = document.createElement('tr');
-			hdr.innerHTML = '<th colspan="5" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
-			body.appendChild(hdr);
-			group.maps.forEach(function (row) {
-				var tr = document.createElement('tr');
-				var slug = mapLinks[row[0]];
-				var link = slug ? '<a href="#map=' + slug + '&size=Medium" class="text-white">' + row[0] + ' \u{1F517}</a>' : row[0];
-				var yourTimeCell = '';
-				if (ratio !== null) {
-					var yourSec = row[1] * 60 * ratio;
-					var isSelected = (row[0] === calcMapName);
-					yourTimeCell = '<td class="text-center' + (isSelected ? ' table-warning' : '') + '">' + fmtExact(yourSec) + '</td>';
-				} else {
-					yourTimeCell = '<td class="text-center">-</td>';
-				}
-				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>' + yourTimeCell;
-				body.appendChild(tr);
-			});
-		});
 	}
 
-	function currentDataset() {
-		var checked = document.querySelector('input[name="mapTimesLevel"]:checked');
-		return (checked && checked.value === 'none') ? dataNone : data98;
-	}
-
-	// Populate dropdown
-	var select = document.getElementById('groupCalcMapSelect');
-	data98.forEach(function(group) {
-		var optgroup = document.createElement('optgroup');
-		optgroup.label = 'Tier ' + group.tier + ' Maps';
-		group.maps.forEach(function(row) {
-			var opt = document.createElement('option');
-			opt.value = row[0];
-			opt.textContent = row[0] + ' (Top: ' + fmt(row[1]) + ')';
-			optgroup.appendChild(opt);
-		});
-		select.appendChild(optgroup);
-	});
-
-	// Default render
-	render(data98);
-
-	document.querySelectorAll('input[name="mapTimesLevel"]').forEach(function (radio) {
-		radio.addEventListener('change', function () {
-			render(this.value === '98' ? data98 : dataNone);
+	// Tab changes
+	document.querySelectorAll('input[name="mapTimesMode"]').forEach(function(radio) {
+		radio.addEventListener('change', function() {
+			calcMapName = null; calcTimeSec = 0;
+			document.getElementById('mtCalcMapSelect').value = '';
+			document.getElementById('mtCalcMin').value = '';
+			document.getElementById('mtCalcSec').value = '';
+			populateDropdown(getMode());
+			render();
 		});
 	});
 
-	// Calculate button
-	document.getElementById('groupCalcBtn').addEventListener('click', function() {
-		var map = document.getElementById('groupCalcMapSelect').value;
-		var min = parseInt(document.getElementById('groupCalcMin').value) || 0;
-		var sec = parseInt(document.getElementById('groupCalcSec').value) || 0;
-		var totalSec = min * 60 + sec;
-		if (!map || totalSec <= 0) return;
-		calcMapName = map;
-		calcTimeSec = totalSec;
-		render(currentDataset());
+	// Calculate
+	document.getElementById('mtCalcBtn').addEventListener('click', function() {
+		var map = document.getElementById('mtCalcMapSelect').value;
+		var min = parseInt(document.getElementById('mtCalcMin').value) || 0;
+		var sec = parseInt(document.getElementById('mtCalcSec').value) || 0;
+		var total = min * 60 + sec;
+		if (!map || total <= 0) return;
+		calcMapName = map; calcTimeSec = total;
+		render();
 	});
 
-	// Clear button
-	document.getElementById('groupCalcClear').addEventListener('click', function() {
-		document.getElementById('groupCalcMapSelect').value = '';
-		document.getElementById('groupCalcMin').value = '';
-		document.getElementById('groupCalcSec').value = '';
-		calcMapName = null;
-		calcTimeSec = 0;
-		render(currentDataset());
+	// Clear
+	document.getElementById('mtCalcClear').addEventListener('click', function() {
+		document.getElementById('mtCalcMapSelect').value = '';
+		document.getElementById('mtCalcMin').value = '';
+		document.getElementById('mtCalcSec').value = '';
+		calcMapName = null; calcTimeSec = 0;
+		render();
 	});
+
+	// Initial
+	populateDropdown('mf');
+	render();
 })();
+</script>
+
+<script>
+// Sync modal with URL hash
+var mapTimesModalEl = document.getElementById('mapTimesModal');
+function checkMapTimesHash() {
+	if (location.hash === '#mapTimes') {
+		new bootstrap.Modal(mapTimesModalEl).show();
+	}
+}
+checkMapTimesHash();
+window.addEventListener('hashchange', checkMapTimesHash);
+mapTimesModalEl.addEventListener('show.bs.modal', function() {
+	history.replaceState(null, '', '#mapTimes');
+});
+mapTimesModalEl.addEventListener('hidden.bs.modal', function() {
+	history.replaceState(null, '', location.pathname + location.search);
+});
 </script>
 
 </body>

@@ -1466,7 +1466,7 @@ function fireConfetti() {
 					</div>
 				</div>
 				<table class="table table-sm table-dark table-striped table-bordered mt-1" style="font-size:0.85em" id="mapTimesTable">
-					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th><th class="text-center"><span class="badge text-bg-warning">Your Time</span></th></tr></thead>
+					<thead><tr><th>Map</th><th class="text-center"><span class="badge text-bg-info">Top</span></th><th class="text-center"><span class="badge text-bg-primary">Good</span></th><th class="text-center"><span class="badge text-bg-success">Decent</span></th><th class="text-center"><span class="badge text-bg-warning">Your Time</span></th><th class="text-center" style="font-size:0.75em">Phys</th><th class="text-center" style="font-size:0.75em">Magic</th><th class="text-center" style="font-size:0.75em">Fire</th><th class="text-center" style="font-size:0.75em">Light</th><th class="text-center" style="font-size:0.75em">Cold</th><th class="text-center" style="font-size:0.75em">Poison</th></tr></thead>
 					<tbody id="mapTimesBody"></tbody>
 				</table>
 			</div>
@@ -1575,6 +1575,47 @@ function fireConfetti() {
 		return m + ':' + (s < 10 ? '0' : '') + s;
 	}
 
+	var mapElems = {
+		'Canyon of Sescheron': [{i:0,v:'120',c:'160,160,160'},{i:2,v:'130',c:'220,60,40'},{i:5,v:'110',c:'80,200,80'}],
+		'Phlegethon': [{i:2,v:'140',c:'220,60,40'},{i:3,v:'125',c:'220,200,40'}],
+		'Blood Moon': [],
+		'Ashen Plains': [{i:1,v:'120',c:'180,80,220'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}],
+		'Kehjistan Marketplace': [{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}],
+		'Throne of Insanity': [{i:2,v:'130',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}],
+		'Sanatorium': [{i:3,v:'125',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}],
+		'Ruined Cistern': [{i:1,v:'125',c:'180,80,220'},{i:3,v:'135',c:'220,200,40'},{i:4,v:'115',c:'60,140,220'}],
+		'Pandemonium Citadel': [{i:0,v:'100',c:'160,160,160'},{i:3,v:'135',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}],
+		'Ruins of Viz-Jin': [{i:2,v:'130',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}],
+		'Ancestral Trial': [{i:5,v:'120',c:'80,200,80'}],
+		'Tomb of Zoltun Kulle': [{i:0,v:'105',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'110',c:'80,200,80'}],
+		'Bastion Keep': [{i:0,v:'110',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}],
+		'River of Blood': [{i:1,v:'100',c:'180,80,220'},{i:4,v:'180',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}],
+		'Demon Road': [{i:4,v:'125',c:'60,140,220'},{i:5,v:'135',c:'80,200,80'}],
+		'Skovos Stronghold': [{i:0,v:'125',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:3,v:'130',c:'220,200,40'}],
+		'Lost Temple': [{i:2,v:'120',c:'220,60,40'},{i:4,v:'110',c:'60,140,220'}],
+		'Torajan Jungle': [{i:2,v:'125',c:'220,60,40'},{i:3,v:'105',c:'220,200,40'}],
+		'Halls of Torture': [],
+		"Horazon's Memory": [{i:2,v:'135',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}],
+		'Arreat Battlefield': [{i:2,v:'130',c:'220,60,40'},{i:3,v:'100',c:'220,200,40'}],
+		'Royal Crypts': [{i:1,v:'150',c:'180,80,220'},{i:4,v:'125',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}],
+		'Sewers of Harrogath': [{i:3,v:'135',c:'220,200,40'},{i:5,v:'125',c:'80,200,80'}],
+		'Shadows of Westmarch': [{i:0,v:'100',c:'160,160,160'},{i:5,v:'135',c:'80,200,80'}],
+		'Fall of Caldeum': [{i:3,v:'100',c:'220,200,40'},{i:4,v:'130',c:'60,140,220'}]
+	};
+
+	function elemCells(name) {
+		var elems = mapElems[name] || [];
+		var cells = '';
+		for (var e = 0; e < 6; e++) {
+			var found = null;
+			elems.forEach(function(el) { if (el.i === e) found = el; });
+			cells += found
+				? '<td class="text-center" style="--bs-table-bg-state:rgba(' + found.c + ',0.3) !important">' + found.v + '</td>'
+				: '<td class="text-center"></td>';
+		}
+		return cells;
+	}
+
 	var calcMapName = null;
 	var calcTimeSec = 0;
 
@@ -1588,7 +1629,7 @@ function fireConfetti() {
 			dataset.forEach(function (group) {
 				group.maps.forEach(function (row) {
 					if (row[0] === calcMapName) {
-						var refSec = row[1] * 60; // Top time in seconds
+						var refSec = row[1] * 60;
 						ratio = calcTimeSec / refSec;
 					}
 				});
@@ -1597,7 +1638,7 @@ function fireConfetti() {
 
 		dataset.forEach(function (group) {
 			var hdr = document.createElement('tr');
-			hdr.innerHTML = '<th colspan="5" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
+			hdr.innerHTML = '<th colspan="11" class="text-center table-secondary">Tier ' + group.tier + ' Maps</th>';
 			body.appendChild(hdr);
 			group.maps.forEach(function (row) {
 				var tr = document.createElement('tr');
@@ -1611,7 +1652,7 @@ function fireConfetti() {
 				} else {
 					yourTimeCell = '<td class="text-center">-</td>';
 				}
-				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>' + yourTimeCell;
+				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>' + yourTimeCell + elemCells(row[0]);
 				body.appendChild(tr);
 			});
 		});
@@ -1667,6 +1708,23 @@ function fireConfetti() {
 		render(currentDataset());
 	});
 })();
+
+// Sync modal with URL hash
+var mapTimesModalEl = document.getElementById('mapTimesModal');
+if (location.hash === '#mapTimes') {
+	new bootstrap.Modal(mapTimesModalEl).show();
+}
+window.addEventListener('hashchange', function() {
+	if (location.hash === '#mapTimes') {
+		new bootstrap.Modal(mapTimesModalEl).show();
+	}
+});
+mapTimesModalEl.addEventListener('show.bs.modal', function() {
+	history.replaceState(null, '', '#mapTimes');
+});
+mapTimesModalEl.addEventListener('hidden.bs.modal', function() {
+	history.replaceState(null, '', location.pathname + location.search);
+});
 </script>
 
 </body>
