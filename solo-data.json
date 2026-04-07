@@ -785,6 +785,12 @@
             "label": "Armory - Skovos Stronghold (3:16)",
             "type": "armory",
             "mapLabel": "Skovos Stronghold (3:16)"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/6942e828eb7531fdb9730b63",
+            "label": "Armory - Throne of Insanity (5:19)",
+            "type": "armory",
+            "mapLabel": "Throne of Insanity (5:19)"
           }
         ],
         "notes": []
@@ -1449,7 +1455,7 @@
         "notes": []
       },
       {
-        "buildName": "Ele - Sacrifice (Native Ele Aura)",
+        "buildName": "Light Sacrifice",
         "tier": "Top",
         "links": [
           {
@@ -1517,6 +1523,32 @@
         "notes": [
           "Requires Leech-able Mobs"
         ]
+      },
+      {
+        "buildName": "Holy Freeze Sacrifice",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://projectdiablo2.com/armory/builds/694f5531e06e15671b7c254f",
+            "label": "Armory - Tomb of Zoltun Kulle (8:12)",
+            "type": "armory",
+            "mapLabel": "Tomb of Zoltun Kulle (8:12)"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "2H Physical Sacrifice",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/character/LuoSac",
+            "label": "Armory - Throne of Insanity (9:05)",
+            "type": "armory",
+            "mapLabel": "Throne of Insanity (9:05)"
+          }
+        ],
+        "notes": []
       },
       {
         "buildName": "Physical Charge (2-H)",
