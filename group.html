@@ -142,7 +142,7 @@
 			<span class="badge rounded-pill text-bg-success">Decent</span><br/>
 			<span class="badge rounded-pill text-bg-warning">Mid</span><br/>
 			<span class="badge rounded-pill text-bg-danger">Bad</span><br/>
-			<button class="btn btn-purple btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#mapTimesModal" style="font-size:0.85em">&#9733; Map Times</button><br/><br/>
+			<br/>
 			<a href="index.html" style="text-decoration:none;">
 				<svg xmlns="http://www.w3.org/2000/svg"
 				     width="33.000000pt" height="33.000000pt" viewBox="0 0 103.000000 85.000000"
@@ -648,11 +648,6 @@ l51 -54 -35 -123 c-19 -69 -33 -178 -30 -246 6 -185 3 -203 -43 -261 -35 -44
 			</div>
 		</td>
 	</tr>
-	<tr>
-		<td colspan="7">
-			<div id="bannerContainer"></div>
-		</td>
-	</tr>
 	</tbody>
 	</tbody>
 </table>
@@ -892,10 +887,19 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 			</div>
 		</div>
 
-		<div class="col-sm-6 col-md-3 col-xl-auto d-flex align-items-center">
+	</div>
+</div>
+
+<div class="container-fluid dark">
+	<div class="row mt-2">
+		<div class="col-auto d-flex align-items-center">
 			<button class="btn btn-outline-light btn-sm" onclick="openWheelModal()">&#127905; Spin the Wheel</button>
 		</div>
-
+		<div class="col-auto d-flex align-items-center">
+			<button class="btn btn-purple btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#mapTimesModal"
+			        style="font-size:0.85em">&#9733; Map Times &amp; Details</button>
+		</div>
+		<div class="col-auto d-flex align-items-center" id="bannerContainer"></div>
 	</div>
 </div>
 
@@ -923,9 +927,6 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 
 
 <div id="generalists" style="display: none;">
-	<div class="text-center my-2">
-		<button class="btn btn-outline-light btn-sm" onclick="openWheelModal()">&#127905; Spin the Wheel</button>
-	</div>
 	<div id="generalistsAlert"></div>
 	<table id="generalistsTable" class="table table-striped table-dark"></table>
 </div>
@@ -1144,9 +1145,8 @@ function loadGroupData() {
 
 loadGroupData().then(function(data) {
   // Banner
-  var bannerDiv = document.getElementById('bannerContainer');
-  bannerDiv.innerHTML = '<div class="alert alert-danger" role="alert"><h2>' +
-    escapeHtmlGroup(data.bannerText) + ' (Updated: ' + escapeHtmlGroup(data.updatedDate) + ')</h2></div>';
+  document.getElementById('bannerContainer').innerHTML = '<span class="badge text-bg-danger">' +
+    escapeHtmlGroup(data.bannerText) + ' &mdash; ' + escapeHtmlGroup(data.updatedDate) + '</span>';
 
   // Generalists
   var genAlert = document.getElementById('generalistsAlert');
