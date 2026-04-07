@@ -155,6 +155,16 @@
         "notes": [
           {"text": "Conviction", "style": "secondary"}
         ]
+      },
+      {
+        "buildName": "Dual Enchant Multishot",
+        "className": "Sorceress",
+        "tableClass": "table-sorc",
+        "roles": [
+          {"text": "DPS", "style": "danger"},
+          {"text": "Enchant", "style": "success"}
+        ],
+        "notes": []
       }
     ]
   },
