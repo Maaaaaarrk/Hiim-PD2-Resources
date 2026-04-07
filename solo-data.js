@@ -1,7 +1,7 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "March 28th 2026",
-  "bannerText": "Updated with S12 Speed Mapping data",
+  "updatedDate": "April 6th 2026",
+  "bannerText": "Updated with S13 Speed Mapping data",
   "starterBuilds": [
     {
       "className": "Sorceress",
@@ -785,6 +785,12 @@ window.soloData = {
             "label": "Armory - Skovos Stronghold (3:16)",
             "type": "armory",
             "mapLabel": "Skovos Stronghold (3:16)"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/6942e828eb7531fdb9730b63",
+            "label": "Armory - Throne of Insanity (5:19)",
+            "type": "armory",
+            "mapLabel": "Throne of Insanity (5:19)"
           }
         ],
         "notes": []
@@ -864,6 +870,12 @@ window.soloData = {
             "label": "Armory - Demon Road (4:35)",
             "type": "armory",
             "mapLabel": "Demon Road (4:35)"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/6977001d3d1b43e72a374697",
+            "label": "Armory - Throne of Insanity (4:50)",
+            "type": "armory",
+            "mapLabel": "Throne of Insanity (4:50)"
           }
         ],
         "notes": []
@@ -1139,6 +1151,12 @@ window.soloData = {
             "url": "https://docs.google.com/spreadsheets/d/1Mcmwpn5CkyR7BdEOlj1BuQIE-PxYHXtax3WywsBKeL8/edit?gid=944046235#gid=944046235",
             "label": "Spreadsheet",
             "type": "video"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/69cc9123c7fc6e9d0ceb5cb0",
+            "label": "Armory - Ruined Cistern (6:30)",
+            "type": "armory",
+            "mapLabel": "Ruined Cistern (6:30)"
           }
         ],
         "notes": []
@@ -1228,6 +1246,12 @@ window.soloData = {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=99&difficulty=3&quests=1&strength=36&dexterity=0&vitality=0&energy=469&coupling=1&skills=000101011001011500001220010201200000002001000001000000010000010000&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CGriffon%27s+Eye%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CDoom+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Phase+Blade%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2COccultist%2CImp+Shank%2CSiggard%27s+Staunch&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=2%2F20+Circlet+Necromancer%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Skullder%27s+Ire%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Silkweave%2C2%2C%2B+Life+per+kill&belt=Trang-Oul%27s+Girth%2C3%2Cnone%2C&amulet=Blood+Craft+-+Necromancer%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Death%27s+Web%2C3%2C%2B+Psn+Pierce%2C%2C%2C%2C%2C%2C&offhand=Trang-Oul%27s+Wing%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Holy_Freeze-mercenary_weapon%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B3%25+Infectious+Large+Charm&charm=%2B1+Fungal+Grand+Charm+%2B+fhr",
             "label": "Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/character/DAMTHATSCRAZY",
+            "label": "Armory - Bastion Keep (2:40)",
+            "type": "armory",
+            "mapLabel": "Bastion Keep (2:40)"
           },
           {
             "url": "https://www.projectdiablo2.com/armory/builds/698e531d4cd0a3f93fe0ee08",
@@ -1321,7 +1345,14 @@ window.soloData = {
       {
         "buildName": "Green Goblin (Demon Machine Merc + Skeletons)",
         "tier": "Good",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/6979a8af3a746d81f091713d",
+            "label": "Armory - Demon Road (7:20)",
+            "type": "armory",
+            "mapLabel": "Demon Road (7:20)"
+          }
+        ],
         "notes": [
           "Must gear swap pre-buff",
           "Must have Innocence on Merc"
@@ -1424,7 +1455,7 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Ele - Sacrifice (Native Ele Aura)",
+        "buildName": "Light Sacrifice",
         "tier": "Top",
         "links": [
           {
@@ -1481,11 +1512,43 @@ window.soloData = {
             "label": "Armory - Fall of Caldeum (3:27)",
             "type": "armory",
             "mapLabel": "Fall of Caldeum (3:27)"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
+            "label": "Armory - Pandemonium Citadel (4:15)",
+            "type": "armory",
+            "mapLabel": "Pandemonium Citadel (4:15)"
           }
         ],
         "notes": [
           "Requires Leech-able Mobs"
         ]
+      },
+      {
+        "buildName": "Holy Freeze Sacrifice",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://projectdiablo2.com/armory/builds/694f5531e06e15671b7c254f",
+            "label": "Armory - Tomb of Zoltun Kulle (8:12)",
+            "type": "armory",
+            "mapLabel": "Tomb of Zoltun Kulle (8:12)"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "buildName": "2H Physical Sacrifice",
+        "tier": "Mid",
+        "links": [
+          {
+            "url": "https://www.projectdiablo2.com/character/LuoSac",
+            "label": "Armory - Throne of Insanity (9:05)",
+            "type": "armory",
+            "mapLabel": "Throne of Insanity (9:05)"
+          }
+        ],
+        "notes": []
       },
       {
         "buildName": "Physical Charge (2-H)",
@@ -1495,4 +1558,4 @@ window.soloData = {
       }
     ]
   }
-};
+}
