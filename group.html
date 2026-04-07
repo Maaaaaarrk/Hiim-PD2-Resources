@@ -1676,7 +1676,7 @@ function fireConfetti() {
 		group.maps.forEach(function(row) {
 			var opt = document.createElement('option');
 			opt.value = row[0];
-			opt.textContent = row[0] + ' (Top: ' + fmt(row[1]) + ')';
+			opt.textContent = row[0];
 			optgroup.appendChild(opt);
 		});
 		select.appendChild(optgroup);
