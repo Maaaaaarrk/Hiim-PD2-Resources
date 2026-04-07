@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFHSCHGQ9Y"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-MFHSCHGQ9Y");</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>Hiim - PD2 Corrupted Zone Schedule</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet">
+<script crossorigin="anonymous" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+.act-badge{font-size:.75rem;font-weight:600;border-radius:4px;padding:2px 8px;margin-right:6px;white-space:nowrap}
+.act-1{background-color:#6366f1;color:#fff}.act-2{background-color:#f59e0b;color:#000}.act-3{background-color:#10b981;color:#fff}.act-4{background-color:#ef4444;color:#fff}.act-5{background-color:#3b82f6;color:#fff}
+.zone-card{background:#1a1d21;border:1px solid #2b2f33;border-radius:8px;padding:.75rem 1rem;margin-bottom:.5rem}
+.zone-card.active-now{border-left:4px solid #22c55e;background:#1a2e1a}
+.zone-name{font-weight:600;font-size:1rem;color:#dee2e6}
+.zone-time{font-size:.85rem;color:#9ca3af}.zone-time.now{color:#4ade80;font-weight:600}
+.filter-btn{cursor:pointer;user-select:none}.filter-btn.active{opacity:1}.filter-btn:not(.active){opacity:.4}
+.schedule-times{list-style:none;padding:0;margin:.25rem 0 0}.schedule-times li{font-size:.85rem;color:#9ca3af;padding:1px 0}.schedule-times li:first-child{color:#dee2e6}.schedule-times li.now-label{color:#4ade80;font-weight:600}
+#zoneFilter{}.filter-check label{cursor:pointer}
+.countdown{font-size:.8rem;color:#6b7280}
+.time-controls{background:#16181b;border:1px solid #2b2f33;border-radius:8px;padding:1rem;margin-bottom:1rem}
+.tag-badge{font-size:.65rem;font-weight:700;border-radius:3px;padding:1px 5px;margin-left:4px}.tag-exp{background:#06b6d4;color:#fff}.tag-mf{background:#eab308;color:#000}
+</style></head>
+<body data-bs-theme="dark">
+<div class="container py-4" style="max-width:1000px">
+<div class="text-center mb-4"><h3 class="mb-0">PD2 Corrupted Zone Schedule</h3>
+<small class="text-secondary">See when each corrupted zone goes live. Zones rotate every 15 minutes.</small>
+<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a></div></div>
+<div class="time-controls"><div class="row align-items-end g-2">
+<div class="col-auto"><label class="form-label mb-1">Base time</label><div class="btn-group" role="group">
+<input type="radio" class="btn-check" name="timeMode" id="timeNow" value="now" checked><label class="btn btn-sm btn-outline-secondary" for="timeNow">Current Time</label>
+<input type="radio" class="btn-check" name="timeMode" id="timeCustom" value="custom"><label class="btn btn-sm btn-outline-secondary" for="timeCustom">Custom Time</label>
+</div></div>
+<div class="col-auto" id="customTimeWrapper" style="display:none"><label class="form-label mb-1" for="customDateTime">Select date/time</label><div class="d-flex gap-2"><input type="datetime-local" class="form-control form-control-sm" id="customDateTime"><button class="btn btn-sm btn-outline-light" id="btnBackToNow">&#10005; Back to Now</button></div></div>
+<div class="col-auto ms-auto"><span class="text-secondary" id="clockDisplay" style="font-size:.9rem"></span></div>
+</div></div>
+<div class="mb-3"><div class="d-flex flex-wrap gap-2 align-items-center">
+<span class="text-secondary" style="font-size:.85rem">Filter by Act:</span>
+<span class="act-badge act-1 filter-btn active" data-act="1">Act 1</span>
+<span class="act-badge act-2 filter-btn active" data-act="2">Act 2</span>
+<span class="act-badge act-3 filter-btn active" data-act="3">Act 3</span>
+<span class="act-badge act-4 filter-btn active" data-act="4">Act 4</span>
+<span class="act-badge act-5 filter-btn active" data-act="5">Act 5</span>
+<button class="btn btn-sm btn-outline-secondary ms-2" id="btnSelectAll">All</button>
+<button class="btn btn-sm btn-outline-secondary" id="btnSelectNone">None</button>
+<span class="text-secondary ms-3" style="font-size:.85rem">Filter by:</span>
+<button class="btn btn-sm btn-outline-info" id="btnFilterEXP">EXP</button>
+<button class="btn btn-sm btn-outline-warning" id="btnFilterMF">MF</button>
+</div></div>
+<div class="mb-3"><button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#zoneFilterCollapse">Filter individual zones &#9662;</button>
+<div class="collapse mt-2" id="zoneFilterCollapse"><div class="card card-body bg-dark" id="zoneFilter"></div></div></div>
+<ul class="nav nav-tabs mb-3" role="tablist">
+<li class="nav-item" role="presentation"><button class="nav-link active" id="tab-upcoming" data-bs-toggle="tab" data-bs-target="#pane-upcoming" type="button" role="tab">Upcoming Schedule</button></li>
+<li class="nav-item" role="presentation"><button class="nav-link" id="tab-byzone" data-bs-toggle="tab" data-bs-target="#pane-byzone" type="button" role="tab">By Zone (Next 5)</button></li>
+</ul>
+<div class="tab-content"><div class="tab-pane fade show active" id="pane-upcoming" role="tabpanel"></div><div class="tab-pane fade" id="pane-byzone" role="tabpanel"></div></div>
+</div>
+<script>
+(function(){
+var zones=["Blood Moor and Den of Evil","Cold Plains and the Cave","Stony Field and Tristram","Dark Wood and the Underground Passage","Black Marsh and the Hole","Tamoe Highland and the Pit","Burial Ground and Mausoleum","Forgotten Tower","Outer Cloister and Barracks","Jail, Inner Cloister, and Cathedral","Catacombs","Cow Level","Rocky Waste and the Stony Tomb","Dry Hills and the Halls of the Dead","Far Oasis and the Maggot Lair","Lost City, Ancient Tunnels, and Claw Viper Temple","Canyon of the Magi and Tal Rasha's Tomb","Lut Gholein Sewers and the Palace Cellars","Arcane Sanctuary","Spider Forest, Arachnid Lair, and Spider Cavern","Great Marsh and the Swampy Pit","Flayer Jungle and the Flayer Dungeon","Lower Kurast and the Kurast Sewers","Kurast Bazaar, Ruined Temple, and Disused Fane","Upper Kurast, the Forgotten Reliquary, and Forgotten Temple","Travincal, the Ruined Fane, and Disused Reliquary","Durance of Hate","Outer Steppes and the Plains of Despair","City of the Damned and the River of Flame","Chaos Sanctuary","Bloody Foothills and the Frigid Highlands","Arreat Plateau, Crystalline Passage, and Frozen River","Glacial Trail, Drifter Cavern, and Frozen Tundra","Ancients' Way and the Icy Cellar","Nihlathak's Temple","Abaddon, the Pit of Acheron, and the Infernal Pit","Worldstone Keep and Throne of Destruction"];
+var zoneAct=[1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4,5,5,5,5,5,5,5];
+var expZones=new Set([10,11,16,29,34,36]);
+var mfZones=new Set([7,10,11,18,16,21,25,26,27,29,34,30,35,36]);
+var getNextPrng=function(seed,mul,inc){return Number(((BigInt(seed)*BigInt(mul)+BigInt(inc))>>BigInt(16))&BigInt(32767))};
+var getZone=function(ts,n){n=n||0;ts=~~(ts/900e3)*900e3;ts+=900e3*n;var a=~~(ts/900000);var b=~~(ts/86400000);var seed=a+b;var idx=getNextPrng(seed,214013,2531011)%zones.length;return{zone:zones[idx],act:zoneAct[idx],ts:ts,seed:seed,idx:idx}};
+var NEXT_COUNT=5,UPCOMING_COUNT=20;
+var activeActs=new Set([1,2,3,4,5]);
+var activeZones=new Set(zones.map(function(_,i){return i}));
+var useCustomTime=false,customTs=Date.now();
+var pE=document.getElementById.bind(document);
+var paneUpcoming=pE("pane-upcoming"),paneByZone=pE("pane-byzone"),clockDisplay=pE("clockDisplay"),customTimeWrapper=pE("customTimeWrapper"),customDateTimeInput=pE("customDateTime");
+var formatTime=function(ts){return new Date(ts).toLocaleString()};
+var formatCountdown=function(d){if(d<=0)return"NOW";var m=Math.ceil(d/60000);if(m<60)return"in "+m+"m";var h=Math.floor(m/60);var r=m%60;if(h<24)return"in "+h+"h "+r+"m";var dd=Math.floor(h/24);return"in "+dd+"d "+(h%24)+"h "+r+"m"};
+var getBaseTs=function(){return useCustomTime?customTs:Date.now()};
+var isZoneVisible=function(idx){return activeActs.has(zoneAct[idx])&&activeZones.has(idx)};
+var getUpcomingList=function(baseTs,count){var list=[];for(var i=0;list.length<count;i++){var info=getZone(baseTs,i);if(isZoneVisible(info.idx))list.push(info);if(i>500)break}return list};
+var getNextNPerZone=function(baseTs,n){var result={},counts={},vc=0;for(var vi=0;vi<zones.length;vi++){if(isZoneVisible(vi))vc++}var done=false;for(var i=0;!done&&i<2000;i++){var info=getZone(baseTs,i);if(!isZoneVisible(info.idx))continue;if(!result[info.idx]){result[info.idx]=[];counts[info.idx]=0}if(counts[info.idx]<n){result[info.idx].push({ts:info.ts});counts[info.idx]++}if(Object.keys(counts).length>=vc){done=true;for(var k in counts){if(counts[k]<n){done=false;break}}}}return result};
+var mkEl=function(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e};
+var mkTags=function(idx){var wrap=mkEl("span","d-flex gap-1");if(expZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-exp","EXP"));if(mfZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-mf","MF"));return wrap};
+var renderUpcoming=function(){var baseTs=getBaseTs(),now=Date.now(),list=getUpcomingList(baseTs,UPCOMING_COUNT);paneUpcoming.innerHTML="";if(!list.length){paneUpcoming.textContent="No zones match your current filters.";return}for(var i=0;i<list.length;i++){var info=list[i];var isNow=now>=info.ts&&now<info.ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+info.act,"Act "+info.act));topLeft.appendChild(mkEl("span","zone-name",info.zone));top.appendChild(topLeft);top.appendChild(mkTags(info.idx));card.appendChild(top);var bot=mkEl("div","d-flex justify-content-between align-items-center mt-1");bot.appendChild(mkEl("span","zone-time"+(isNow?" now":""),((isNow?"LIVE NOW -- ":"")+formatTime(info.ts))));bot.appendChild(mkEl("span","countdown",formatCountdown(info.ts-now)));card.appendChild(bot);paneUpcoming.appendChild(card)}};
+var renderByZone=function(){var baseTs=getBaseTs(),now=Date.now(),perZone=getNextNPerZone(baseTs,NEXT_COUNT);var si=Object.keys(perZone).map(Number).sort(function(a,b){return perZone[a][0].ts-perZone[b][0].ts});paneByZone.innerHTML="";if(!si.length){paneByZone.textContent="No zones match your current filters.";return}for(var j=0;j<si.length;j++){var idx=si[j];var times=perZone[idx];var isNow=now>=times[0].ts&&now<times[0].ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+zoneAct[idx],"Act "+zoneAct[idx]));topLeft.appendChild(mkEl("span","zone-name",zones[idx]));top.appendChild(topLeft);top.appendChild(mkTags(idx));card.appendChild(top);var ul=mkEl("ul","schedule-times");for(var ti=0;ti<times.length;ti++){var t=times[ti];var live=now>=t.ts&&now<t.ts+900e3;var li=mkEl("li",live?"now-label":"",((live?"LIVE NOW -- ":"")+formatTime(t.ts)));li.appendChild(mkEl("span","countdown"," "+formatCountdown(t.ts-now)));ul.appendChild(li)}card.appendChild(ul);paneByZone.appendChild(card)}};
+var renderAll=function(){renderUpcoming();renderByZone();clockDisplay.textContent=useCustomTime?("Showing: "+new Date(customTs).toLocaleString()):new Date().toLocaleTimeString()};
+var syncActs=function(){activeActs=new Set();activeZones.forEach(function(idx){activeActs.add(zoneAct[idx])});var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++){var act=parseInt(b[i].dataset.act);if(activeActs.has(act))b[i].classList.add("active");else b[i].classList.remove("active")}};
+var buildZoneFilter=function(){var c=pE("zoneFilter");var row=mkEl("div","row");for(var i=0;i<zones.length;i++){var col=mkEl("div","col-md-6 filter-check");var fc=mkEl("div","form-check");var inp=document.createElement("input");inp.className="form-check-input zone-cb";inp.type="checkbox";inp.id="zcb"+i;inp.dataset.idx=i;inp.checked=activeZones.has(i);var lbl=document.createElement("label");lbl.className="form-check-label";lbl.htmlFor="zcb"+i;lbl.appendChild(mkEl("span","act-badge act-"+zoneAct[i],"A"+zoneAct[i]));lbl.appendChild(document.createTextNode(" "+zones[i]));if(expZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-exp ms-1","EXP"));if(mfZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-mf ms-1","MF"));fc.appendChild(inp);fc.appendChild(lbl);col.appendChild(fc);row.appendChild(col);(function(cb){cb.addEventListener("change",function(){var x=parseInt(cb.dataset.idx);if(cb.checked)activeZones.add(x);else activeZones.delete(x);syncActs();renderAll()})})(inp)}c.innerHTML="";c.appendChild(row)};
+var actBtns=document.querySelectorAll(".filter-btn[data-act]");for(var ai=0;ai<actBtns.length;ai++){(function(btn){btn.addEventListener("click",function(){var act=parseInt(btn.dataset.act);if(activeActs.has(act)){activeActs.delete(act);btn.classList.remove("active")}else{activeActs.add(act);btn.classList.add("active")}for(var i=0;i<zones.length;i++){if(zoneAct[i]===act){if(activeActs.has(act))activeZones.add(i);else activeZones.delete(i);var cb=pE("zcb"+i);if(cb)cb.checked=activeActs.has(act)}}renderAll()})})(actBtns[ai])}
+pE("btnSelectAll").addEventListener("click",function(){activeActs=new Set([1,2,3,4,5]);activeZones=new Set(zones.map(function(_,i){return i}));var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++)b[i].classList.add("active");var c=document.querySelectorAll(".zone-cb");for(var i=0;i<c.length;i++)c[i].checked=true;renderAll()});
+pE("btnSelectNone").addEventListener("click",function(){activeActs=new Set();activeZones=new Set();var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++)b[i].classList.remove("active");var c=document.querySelectorAll(".zone-cb");for(var i=0;i<c.length;i++)c[i].checked=false;renderAll()});
+var applyTagFilter=function(tagSet){activeZones=new Set(tagSet);activeActs=new Set();tagSet.forEach(function(idx){activeActs.add(zoneAct[idx])});var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++){var act=parseInt(b[i].dataset.act);if(activeActs.has(act))b[i].classList.add("active");else b[i].classList.remove("active")}var c=document.querySelectorAll(".zone-cb");for(var i=0;i<c.length;i++){c[i].checked=activeZones.has(parseInt(c[i].dataset.idx))}renderAll()};
+pE("btnFilterEXP").addEventListener("click",function(){applyTagFilter(expZones)});
+pE("btnFilterMF").addEventListener("click",function(){applyTagFilter(mfZones)});
+var radios=document.querySelectorAll("input[name=timeMode]");for(var ri=0;ri<radios.length;ri++){(function(r){r.addEventListener("change",function(){useCustomTime=r.value==="custom";customTimeWrapper.style.display=useCustomTime?"":"none";if(useCustomTime&&customDateTimeInput.value)customTs=new Date(customDateTimeInput.value).getTime();renderAll()})})(radios[ri])}
+customDateTimeInput.addEventListener("change",function(){customTs=new Date(customDateTimeInput.value).getTime();renderAll()});
+pE("btnBackToNow").addEventListener("click",function(){useCustomTime=false;customTimeWrapper.style.display="none";pE("timeNow").checked=true;renderAll()});
+var pad=function(n){return String(n).padStart(2,"0")};var d=new Date();customDateTimeInput.value=d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes());
+buildZoneFilter();renderAll();setInterval(renderAll,5000);
+})();
+</script>
+</body></html>
