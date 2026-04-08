@@ -56,12 +56,13 @@
 </ul>
 <div class="tab-content"><div class="tab-pane fade show active" id="pane-upcoming" role="tabpanel"></div><div class="tab-pane fade" id="pane-byzone" role="tabpanel"></div></div>
 </div>
+<script src="cz-data.js"></script>
 <script>
 (function(){
-var zones=["Blood Moor and Den of Evil","Cold Plains and the Cave","Stony Field and Tristram","Dark Wood and the Underground Passage","Black Marsh and the Hole","Tamoe Highland and the Pit","Burial Ground and Mausoleum","Forgotten Tower","Outer Cloister and Barracks","Jail, Inner Cloister, and Cathedral","Catacombs","Cow Level","Rocky Waste and the Stony Tomb","Dry Hills and the Halls of the Dead","Far Oasis and the Maggot Lair","Lost City, Ancient Tunnels, and Claw Viper Temple","Canyon of the Magi and Tal Rasha's Tomb","Lut Gholein Sewers and the Palace Cellars","Arcane Sanctuary","Spider Forest, Arachnid Lair, and Spider Cavern","Great Marsh and the Swampy Pit","Flayer Jungle and the Flayer Dungeon","Lower Kurast and the Kurast Sewers","Kurast Bazaar, Ruined Temple, and Disused Fane","Upper Kurast, the Forgotten Reliquary, and Forgotten Temple","Travincal, the Ruined Fane, and Disused Reliquary","Durance of Hate","Outer Steppes and the Plains of Despair","City of the Damned and the River of Flame","Chaos Sanctuary","Bloody Foothills and the Frigid Highlands","Arreat Plateau, Crystalline Passage, and Frozen River","Glacial Trail, Drifter Cavern, and Frozen Tundra","Ancients' Way and the Icy Cellar","Nihlathak's Temple","Abaddon, the Pit of Acheron, and the Infernal Pit","Worldstone Keep and Throne of Destruction"];
-var zoneAct=[1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4,5,5,5,5,5,5,5];
-var expZones=new Set([10,11,16,29,34,36]);
-var mfZones=new Set([7,10,11,18,16,21,25,26,27,29,34,30,35,36]);
+var zones=window.czData.zones;
+var zoneAct=window.czData.zoneAct;
+var expZones=new Set(window.czData.expZones);
+var mfZones=new Set(window.czData.mfZones);
 var getNextPrng=function(seed,mul,inc){return Number(((BigInt(seed)*BigInt(mul)+BigInt(inc))>>BigInt(16))&BigInt(32767))};
 var getZone=function(ts,n){n=n||0;ts=~~(ts/900e3)*900e3;ts+=900e3*n;var a=~~(ts/900000);var b=~~(ts/86400000);var seed=a+b;var idx=getNextPrng(seed,214013,2531011)%zones.length;return{zone:zones[idx],act:zoneAct[idx],ts:ts,seed:seed,idx:idx}};
 var NEXT_COUNT=5,UPCOMING_COUNT=20;
