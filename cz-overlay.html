@@ -10,14 +10,16 @@
 /* --- URL Parameters ---
  * count  = number of zones to show (default: 3)
  * acts   = comma-separated act filter, e.g. acts=1,3,5 (default: all)
- * tags   = EXP, MF, or EXP,MF — only show zones with these tags (default: all)
+ * tags   = EXP, MF, RED, or combinations like EXP,MF,RED — only show zones with these tags (default: all)
  * theme  = dark (default) or light
  * align  = left (default), center, or right
  * scale  = font scale multiplier, e.g. 1.2 (default: 1)
  * title  = 0 to hide the header row (default: 1)
  * zones  = comma-separated zone indices to show (default: all)
+ * mini   = 1 to enable minified mode — compact layout, no LIVE/Next labels,
+ *          countdown badges (green=active, yellow=starting soon), zone names truncated at 140px
  *
- * Example: cz-overlay.html?count=5&acts=1,3&tags=EXP&align=right&scale=1.1
+ * Example: cz-overlay.html?count=5&acts=1,3&tags=EXP&align=right&scale=1.1&mini=1
  */
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -103,6 +105,7 @@ body.theme-light .status.next{background:rgba(0,0,0,0.08);color:#666}
 .tag{font-size:.55rem;font-weight:700;border-radius:2px;padding:1px 4px}
 .tag-exp{background:#06b6d4;color:#fff}
 .tag-mf{background:#eab308;color:#000}
+.tag-red{background:#ef4444;color:#fff}
 
 .timer{
   font-size:.75rem;
@@ -113,6 +116,20 @@ body.theme-light .status.next{background:rgba(0,0,0,0.08);color:#666}
   font-variant-numeric:tabular-nums;
 }
 body.theme-light .timer{color:#666}
+
+/* Mini mode */
+body.mini #overlay{padding:6px 8px;gap:2px;min-width:auto}
+body.mini .zone-row{gap:4px;padding:2px 0}
+body.mini .overlay-title{margin-bottom:0}
+body.mini .zone-name-wrap{position:relative;width:180px;flex-shrink:0;overflow:hidden;white-space:nowrap}
+body.mini .zone-name-wrap .zone-name{flex:none;display:inline;max-width:none;overflow:visible}
+body.mini .zone-tags{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;gap:2px}
+body.mini .zone-tags .tag{padding:0px 3px}
+body.mini .timer{
+  border-radius:3px;padding:1px 6px;text-align:center;font-weight:600;color:#9ca3af;background:rgba(255,255,255,0.08);min-width:68px;margin-left:auto;
+}
+body.mini .timer.timer-live{background:#22c55e;color:#fff}
+body.mini .timer.timer-soon{background:#eab308;color:#000}
 </style>
 </head>
 <body>
@@ -124,6 +141,7 @@ var zones=window.czData.zones;
 var zoneAct=window.czData.zoneAct;
 var expZones=new Set(window.czData.expZones);
 var mfZones=new Set(window.czData.mfZones);
+var redZones=new Set(window.czData.redZones);
 
 /* Parse URL params */
 var params=new URLSearchParams(window.location.search);
@@ -138,6 +156,7 @@ if(params.get("tags")){
     for(var j=0;j<t.length;j++){
       if(t[j]==="EXP"&&expZones.has(i))tagFilter.add(i);
       if(t[j]==="MF"&&mfZones.has(i))tagFilter.add(i);
+      if(t[j]==="RED"&&redZones.has(i))tagFilter.add(i);
     }
   }
 }
@@ -147,7 +166,9 @@ var theme=params.get("theme")||"dark";
 var align=params.get("align")||"left";
 var scale=parseFloat(params.get("scale"))||1;
 var showTitle=params.get("title")!=="0";
+var mini=params.get("mini")==="1";
 
+if(mini)document.body.classList.add("mini");
 if(theme==="light")document.body.classList.add("theme-light");
 if(align==="center")document.body.classList.add("align-center");
 if(align==="right")document.body.classList.add("align-right");
@@ -189,13 +210,33 @@ var render=function(){
     var z=list[j];
     var isLive=now>=z.ts&&now<z.ts+900e3;
     var diff=z.ts-now;
+    var countdown=isLive?formatCountdown(z.ts+900e3-now):formatCountdown(diff);
+    var timerClass="timer";
+    if(mini){
+      if(isLive)timerClass+=" timer-live";
+      else if(diff<300e3)timerClass+=" timer-soon";
+    }
     html+='<div class="zone-row">';
-    html+='<span class="status '+(isLive?"live":"next")+'">'+(isLive?"LIVE":"Next")+'</span>';
+    if(!mini)html+='<span class="status '+(isLive?"live":"next")+'">'+(isLive?"LIVE":"Next")+'</span>';
     html+='<span class="act-badge act-'+z.act+'">A'+z.act+'</span>';
-    html+='<span class="zone-name">'+z.zone+'</span>';
-    if(expZones.has(z.idx))html+='<span class="tag tag-exp">EXP</span>';
-    if(mfZones.has(z.idx))html+='<span class="tag tag-mf">MF</span>';
-    html+='<span class="timer">'+(isLive?formatCountdown(z.ts+900e3-now):formatCountdown(diff))+'</span>';
+    if(mini){
+      html+='<span class="zone-name-wrap"><span class="zone-name">'+z.zone+'</span>';
+      var hasTags=expZones.has(z.idx)||mfZones.has(z.idx)||redZones.has(z.idx);
+      if(hasTags){
+        html+='<span class="zone-tags">';
+        if(expZones.has(z.idx))html+='<span class="tag tag-exp">EXP</span>';
+        if(mfZones.has(z.idx))html+='<span class="tag tag-mf">MF</span>';
+        if(redZones.has(z.idx))html+='<span class="tag tag-red">RED</span>';
+        html+='</span>';
+      }
+      html+='</span>';
+    }else{
+      html+='<span class="zone-name">'+z.zone+'</span>';
+      if(expZones.has(z.idx))html+='<span class="tag tag-exp">EXP</span>';
+      if(mfZones.has(z.idx))html+='<span class="tag tag-mf">MF</span>';
+      if(redZones.has(z.idx))html+='<span class="tag tag-red">RED</span>';
+    }
+    html+='<span class="'+timerClass+'">'+countdown+'</span>';
     html+='</div>';
   }
   overlay.innerHTML=html;
