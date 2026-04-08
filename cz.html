@@ -26,7 +26,7 @@
 <div class="container py-4" style="max-width:1000px">
 <div class="text-center mb-4"><h3 class="mb-0">PD2 Corrupted Zone Schedule</h3>
 <small class="text-secondary">See when each corrupted zone goes live. Zones rotate every 15 minutes.</small>
-<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button></div></div>
+<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button></div></div>
 <div class="modal fade" id="notifModal" tabindex="-1" aria-labelledby="notifModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 <div class="modal-content bg-dark text-white">
@@ -70,6 +70,78 @@
 </div>
 <div class="modal-footer border-secondary">
 <a href="https://github.com/Maaaaaarrk/pd2_corrupted_zone_discord" target="_blank" class="btn btn-info">View on GitHub</a>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="overlayModal" tabindex="-1" aria-labelledby="overlayModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-secondary">
+<h5 class="modal-title" id="overlayModalLabel">OBS Overlay Setup</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<p>Add a live Corrupted Zone overlay to your stream using OBS Browser Source. Customize which zones appear, how many to show, and how it looks.</p>
+<hr class="border-secondary">
+<h6>Your Overlay URL</h6>
+<p class="text-secondary" style="font-size:.85rem">Configure your settings below, then copy the generated URL into OBS.</p>
+<div class="input-group mb-3"><input type="text" class="form-control form-control-sm bg-dark text-white border-secondary" id="overlayUrl" readonly>
+<button class="btn btn-sm btn-outline-success" id="btnCopyOverlay" type="button">Copy</button></div>
+<div class="row g-3 mb-3">
+<div class="col-md-4"><label class="form-label mb-1">Zones to show</label><input type="number" class="form-control form-control-sm bg-dark text-white border-secondary" id="ovCount" value="3" min="1" max="20"></div>
+<div class="col-md-4"><label class="form-label mb-1">Theme</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovTheme"><option value="dark">Dark</option><option value="light">Light</option></select></div>
+<div class="col-md-4"><label class="form-label mb-1">Alignment</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovAlign"><option value="left">Left</option><option value="center">Center</option><option value="right">Right</option></select></div>
+<div class="col-md-4"><label class="form-label mb-1">Scale</label><input type="number" class="form-control form-control-sm bg-dark text-white border-secondary" id="ovScale" value="1" min="0.5" max="3" step="0.1"></div>
+<div class="col-md-4"><label class="form-label mb-1">Show title</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovTitle"><option value="1">Yes</option><option value="0">No</option></select></div>
+<div class="col-md-4"><label class="form-label mb-1">Filter by tags</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovTags"><option value="">All</option><option value="EXP">EXP only</option><option value="MF">MF only</option><option value="EXP,MF">EXP + MF</option></select></div>
+</div>
+<h6 class="mb-2">Filter by Act</h6>
+<div class="d-flex flex-wrap gap-2 mb-3">
+<div class="form-check form-check-inline"><input class="form-check-input ov-act-cb" type="checkbox" id="ovAct1" value="1" checked><label class="form-check-label" for="ovAct1"><span class="act-badge act-1">Act 1</span></label></div>
+<div class="form-check form-check-inline"><input class="form-check-input ov-act-cb" type="checkbox" id="ovAct2" value="2" checked><label class="form-check-label" for="ovAct2"><span class="act-badge act-2">Act 2</span></label></div>
+<div class="form-check form-check-inline"><input class="form-check-input ov-act-cb" type="checkbox" id="ovAct3" value="3" checked><label class="form-check-label" for="ovAct3"><span class="act-badge act-3">Act 3</span></label></div>
+<div class="form-check form-check-inline"><input class="form-check-input ov-act-cb" type="checkbox" id="ovAct4" value="4" checked><label class="form-check-label" for="ovAct4"><span class="act-badge act-4">Act 4</span></label></div>
+<div class="form-check form-check-inline"><input class="form-check-input ov-act-cb" type="checkbox" id="ovAct5" value="5" checked><label class="form-check-label" for="ovAct5"><span class="act-badge act-5">Act 5</span></label></div>
+</div>
+<h6 class="mb-2">Filter individual zones</h6>
+<p class="text-secondary" style="font-size:.8rem">If you select specific zones below, only those zones will appear in the overlay (overrides act/tag filters).</p>
+<div class="mb-2"><button class="btn btn-sm btn-outline-secondary" id="ovZoneAll">Select All</button> <button class="btn btn-sm btn-outline-secondary" id="ovZoneNone">Select None</button></div>
+<div id="ovZoneFilter" style="max-height:200px;overflow-y:auto;border:1px solid #2b2f33;border-radius:6px;padding:8px"></div>
+<hr class="border-secondary">
+<h6>OBS Setup Guide</h6>
+<ol>
+<li>In OBS, click <strong>Sources</strong> &rarr; <strong>+</strong> &rarr; <strong>Browser</strong></li>
+<li>Name it (e.g. "CZ Overlay") and click OK</li>
+<li>Paste the URL above into the <strong>URL</strong> field<br><span class="text-secondary" style="font-size:.85rem">If hosting locally, check <strong>"Local file"</strong> and browse to <code>cz-overlay.html</code>, then add query params manually</span></li>
+<li>Set <strong>Width</strong> to <code>500</code> and <strong>Height</strong> to <code>250</code> (adjust to fit)</li>
+<li>Click OK &mdash; the overlay will appear with a transparent background</li>
+</ol>
+<h6>Tips</h6>
+<ul>
+<li>The overlay updates every second with a live countdown</li>
+<li>Drag and resize the source in OBS to position it on your stream</li>
+<li>The overlay is <strong>stream-only</strong> &mdash; viewers see it, but it does not appear on your game screen. To see it yourself, open the URL in a browser on a second monitor</li>
+<li>If you change settings here, copy the new URL and update the Browser Source in OBS</li>
+</ul>
+<hr class="border-secondary">
+<h6>URL Parameters Reference</h6>
+<div class="table-responsive"><table class="table table-sm table-dark table-bordered mb-0" style="font-size:.85rem">
+<thead><tr><th>Param</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><code>count</code></td><td>3</td><td>Number of zones to display</td></tr>
+<tr><td><code>acts</code></td><td>all</td><td>Comma-separated acts, e.g. <code>1,3,5</code></td></tr>
+<tr><td><code>tags</code></td><td>all</td><td><code>EXP</code>, <code>MF</code>, or <code>EXP,MF</code></td></tr>
+<tr><td><code>zones</code></td><td>all</td><td>Comma-separated zone indices (overrides acts/tags)</td></tr>
+<tr><td><code>theme</code></td><td>dark</td><td><code>dark</code> or <code>light</code></td></tr>
+<tr><td><code>align</code></td><td>left</td><td><code>left</code>, <code>center</code>, or <code>right</code></td></tr>
+<tr><td><code>scale</code></td><td>1</td><td>Font scale multiplier (e.g. <code>1.3</code>)</td></tr>
+<tr><td><code>title</code></td><td>1</td><td><code>0</code> to hide the header</td></tr>
+</tbody></table></div>
+</div>
+<div class="modal-footer border-secondary">
+<a id="btnPreviewOverlay" href="cz-overlay.html" target="_blank" class="btn btn-success">Preview Overlay</a>
 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>
 </div>
@@ -143,6 +215,102 @@ customDateTimeInput.addEventListener("change",function(){customTs=new Date(custo
 pE("btnBackToNow").addEventListener("click",function(){useCustomTime=false;customTimeWrapper.style.display="none";pE("timeNow").checked=true;renderAll()});
 var pad=function(n){return String(n).padStart(2,"0")};var d=new Date();customDateTimeInput.value=d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes());
 buildZoneFilter();renderAll();setInterval(renderAll,5000);
+})();
+</script>
+<script>
+(function(){
+var zones=window.czData.zones;
+var zoneAct=window.czData.zoneAct;
+var expZones=new Set(window.czData.expZones);
+var mfZones=new Set(window.czData.mfZones);
+var ovSelectedZones=new Set();
+var baseUrl=window.location.href.replace(/cz\.html.*/,"cz-overlay.html");
+
+var buildZoneCheckboxes=function(){
+  var c=document.getElementById("ovZoneFilter");
+  var html='<div class="row">';
+  for(var i=0;i<zones.length;i++){
+    html+='<div class="col-md-6"><div class="form-check"><input class="form-check-input ov-zone-cb" type="checkbox" id="ovz'+i+'" value="'+i+'">';
+    html+='<label class="form-check-label" for="ovz'+i+'" style="font-size:.85rem"><span class="act-badge act-'+zoneAct[i]+'">A'+zoneAct[i]+'</span> '+zones[i];
+    if(expZones.has(i))html+=' <span class="tag-badge tag-exp" style="font-size:.6rem;border-radius:3px;padding:1px 4px;background:#06b6d4;color:#fff">EXP</span>';
+    if(mfZones.has(i))html+=' <span class="tag-badge tag-mf" style="font-size:.6rem;border-radius:3px;padding:1px 4px;background:#eab308;color:#000">MF</span>';
+    html+='</label></div></div>';
+  }
+  html+='</div>';
+  c.innerHTML=html;
+  var cbs=c.querySelectorAll(".ov-zone-cb");
+  for(var j=0;j<cbs.length;j++){cbs[j].addEventListener("change",function(){
+    var idx=parseInt(this.value);
+    if(this.checked)ovSelectedZones.add(idx);else ovSelectedZones.delete(idx);
+    updateOverlayUrl();
+  })}
+};
+
+var updateOverlayUrl=function(){
+  var p=[];
+  var count=parseInt(document.getElementById("ovCount").value)||3;
+  if(count!==3)p.push("count="+count);
+  var theme=document.getElementById("ovTheme").value;
+  if(theme!=="dark")p.push("theme="+theme);
+  var align=document.getElementById("ovAlign").value;
+  if(align!=="left")p.push("align="+align);
+  var scale=parseFloat(document.getElementById("ovScale").value)||1;
+  if(scale!==1)p.push("scale="+scale);
+  var title=document.getElementById("ovTitle").value;
+  if(title==="0")p.push("title=0");
+  var tags=document.getElementById("ovTags").value;
+
+  if(ovSelectedZones.size>0){
+    var sorted=Array.from(ovSelectedZones).sort(function(a,b){return a-b});
+    p.push("zones="+sorted.join(","));
+  }else{
+    var acts=[];
+    var actCbs=document.querySelectorAll(".ov-act-cb");
+    var allChecked=true;
+    for(var i=0;i<actCbs.length;i++){if(actCbs[i].checked)acts.push(actCbs[i].value);else allChecked=false}
+    if(!allChecked&&acts.length>0)p.push("acts="+acts.join(","));
+    if(tags)p.push("tags="+tags);
+  }
+
+  var url=baseUrl+(p.length?"?"+p.join("&"):"");
+  document.getElementById("overlayUrl").value=url;
+  document.getElementById("btnPreviewOverlay").href=url;
+};
+
+buildZoneCheckboxes();
+
+document.getElementById("ovCount").addEventListener("input",updateOverlayUrl);
+document.getElementById("ovTheme").addEventListener("change",updateOverlayUrl);
+document.getElementById("ovAlign").addEventListener("change",updateOverlayUrl);
+document.getElementById("ovScale").addEventListener("input",updateOverlayUrl);
+document.getElementById("ovTitle").addEventListener("change",updateOverlayUrl);
+document.getElementById("ovTags").addEventListener("change",updateOverlayUrl);
+var actCbs=document.querySelectorAll(".ov-act-cb");
+for(var i=0;i<actCbs.length;i++){actCbs[i].addEventListener("change",updateOverlayUrl)}
+
+document.getElementById("ovZoneAll").addEventListener("click",function(){
+  ovSelectedZones=new Set();
+  var cbs=document.querySelectorAll(".ov-zone-cb");
+  for(var i=0;i<cbs.length;i++){cbs[i].checked=false}
+  updateOverlayUrl();
+});
+document.getElementById("ovZoneNone").addEventListener("click",function(){
+  ovSelectedZones=new Set();
+  var cbs=document.querySelectorAll(".ov-zone-cb");
+  for(var i=0;i<cbs.length;i++){cbs[i].checked=false}
+  updateOverlayUrl();
+});
+
+document.getElementById("btnCopyOverlay").addEventListener("click",function(){
+  var url=document.getElementById("overlayUrl").value;
+  navigator.clipboard.writeText(url).then(function(){
+    var btn=document.getElementById("btnCopyOverlay");
+    btn.textContent="Copied!";btn.classList.replace("btn-outline-success","btn-success");
+    setTimeout(function(){btn.textContent="Copy";btn.classList.replace("btn-success","btn-outline-success")},2000);
+  });
+});
+
+updateOverlayUrl();
 })();
 </script>
 </body></html>
