@@ -26,7 +26,55 @@
 <div class="container py-4" style="max-width:1000px">
 <div class="text-center mb-4"><h3 class="mb-0">PD2 Corrupted Zone Schedule</h3>
 <small class="text-secondary">See when each corrupted zone goes live. Zones rotate every 15 minutes.</small>
-<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a></div></div>
+<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button></div></div>
+<div class="modal fade" id="notifModal" tabindex="-1" aria-labelledby="notifModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-secondary">
+<h5 class="modal-title" id="notifModalLabel">Setup Discord Notifications</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<p>Get automatic Discord alerts when your favorite Corrupted Zones go live &mdash; powered by <strong>GitHub Actions</strong>. Free, no server needed, no login required.</p>
+<hr class="border-secondary">
+<h6>Step 1: Create Your Own Copy</h6>
+<ol>
+<li>Go to <a href="https://github.com/Maaaaaarrk/pd2_corrupted_zone_discord" target="_blank" class="link-info">pd2_corrupted_zone_discord</a></li>
+<li>Click the green <strong>"Use this template"</strong> button &rarr; <strong>"Create a new repository"</strong></li>
+<li>Name it whatever you like and set it to <strong>Private</strong> (recommended)</li>
+</ol>
+<h6>Step 2: Create a Discord Webhook</h6>
+<ol>
+<li>In your Discord server, go to <strong>Server Settings</strong> &rarr; <strong>Integrations</strong> &rarr; <strong>Webhooks</strong></li>
+<li>Click <strong>"New Webhook"</strong>, name it, and choose a channel</li>
+<li>Click <strong>"Copy Webhook URL"</strong></li>
+</ol>
+<h6>Step 3: Add the Webhook to GitHub</h6>
+<ol>
+<li>In your new repo, go to <strong>Settings</strong> &rarr; <strong>Secrets and variables</strong> &rarr; <strong>Actions</strong></li>
+<li>Click <strong>"New repository secret"</strong></li>
+<li>Name: <code>DISCORD_WEBHOOK_URL</code> &mdash; Value: paste the webhook URL</li>
+</ol>
+<h6>Step 4: Done!</h6>
+<p>The workflow runs automatically every 15 minutes in sync with the zone rotation. You can also trigger it manually from the <strong>Actions</strong> tab.</p>
+<hr class="border-secondary">
+<h6>Customizing Alerts</h6>
+<p>Edit <code>config.json</code> in your repo to control which zones send alerts:</p>
+<ul>
+<li><strong>Specific zones:</strong> <code>"FAVORITE_ZONES": "Chaos Sanctuary, Cow Level"</code></li>
+<li><strong>By tag:</strong> <code>"TAG_ZONES": "MF, EXP"</code></li>
+<li><strong>Both:</strong> alerts fire when <em>either</em> condition matches</li>
+<li><strong>All zones:</strong> leave both fields empty (the default)</li>
+</ul>
+<p class="text-secondary mb-0" style="font-size:.85rem">Zone data stays in sync automatically &mdash; no updates needed when a new season starts.</p>
+</div>
+<div class="modal-footer border-secondary">
+<a href="https://github.com/Maaaaaarrk/pd2_corrupted_zone_discord" target="_blank" class="btn btn-info">View on GitHub</a>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
 <div class="time-controls"><div class="row align-items-end g-2">
 <div class="col-auto"><label class="form-label mb-1">Base time</label><div class="btn-group" role="group">
 <input type="radio" class="btn-check" name="timeMode" id="timeNow" value="now" checked><label class="btn btn-sm btn-outline-secondary" for="timeNow">Current Time</label>
