@@ -1,6 +1,6 @@
 {
   "season": 13,
-  "updatedDate": "April 6th 2026",
+  "updatedDate": "April 7th 2026",
   "bannerText": "Updated with S13 Speed Mapping data",
   "starterBuilds": [
     {
@@ -512,10 +512,19 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/694f695dfa65772ef2f82165",
-            "label": "Armory - Throne of Insanity (3:45)",
-            "type": "armory",
-            "mapLabel": "Throne of Insanity (3:45)"
+            "url": "https://youtu.be/eo4wK8eV0eI",
+            "label": "Canyon of Sescheron (4:30)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/fihfLyVz5Ts",
+            "label": "Throne of Insanity (3:45)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=4O__wTyY5Uw&t=102s",
+            "label": "Throne of Insanity (3:49)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -547,10 +556,14 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/696a4f67b5b5277167267e8f",
-            "label": "Armory - Demon Road (4:11)",
-            "type": "armory",
-            "mapLabel": "Demon Road (4:11)"
+            "url": "https://www.youtube.com/watch?v=wn6kupfwOY0",
+            "label": "Throne of Insanity (4:47)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=Rs8i8yL60i4",
+            "label": "Demon Road (4:11)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -613,10 +626,9 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/69607bd735b033dae1cfe2b6",
-            "label": "Armory - Phlegethon (4:20)",
-            "type": "armory",
-            "mapLabel": "Phlegethon (4:20)"
+            "url": "https://www.twitch.tv/videos/2665022585",
+            "label": "Phlegethon (4:20)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -651,10 +663,19 @@
             "type": "planner"
           },
           {
-            "url": "https://live.projectdiablo2.com/armory/builds/69372f04ef5421508eb402f2",
-            "label": "Armory - Sewers of Harrogath (3:34)",
-            "type": "armory",
-            "mapLabel": "Sewers of Harrogath (3:34)"
+            "url": "https://youtu.be/s_v3VnwfVo8",
+            "label": "Torajan Jungle (4:45)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/bL1XfkkTg1c",
+            "label": "Ancestral Trial (4:15)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/8Zw8nnKDkX8?si=mxgbxEfsA9uFQRUI",
+            "label": "Sewers of Harrogath (3:34)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -781,16 +802,19 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/695d182a461162a9fe7f0f6f",
-            "label": "Armory - Skovos Stronghold (3:16)",
-            "type": "armory",
-            "mapLabel": "Skovos Stronghold (3:16)"
+            "url": "https://www.youtube.com/watch?v=E09BMBisdz0",
+            "label": "Throne of Insanity (4:45)",
+            "type": "video"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/6942e828eb7531fdb9730b63",
-            "label": "Armory - Throne of Insanity (5:19)",
-            "type": "armory",
-            "mapLabel": "Throne of Insanity (5:19)"
+            "url": "https://youtu.be/q7fqbwuBrbE",
+            "label": "Throne of Insanity (5:19)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=Df-efbXU18Y",
+            "label": "Skovos Stronghold (3:16)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -805,10 +829,14 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/693e01801af17b5e870d61ad",
-            "label": "Armory - Ancestral Trial (4:35)",
-            "type": "armory",
-            "mapLabel": "Ancestral Trial (4:35)"
+            "url": "https://www.youtube.com/watch?v=xIuN00kjdpk",
+            "label": "Ancestral Trial (4:35)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/LyCu2_9fMrU",
+            "label": "River of Blood (4:49)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -848,10 +876,19 @@
         "tier": "Top",
         "links": [
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/693ad9a4bec038a42249932a",
-            "label": "Armory - Sewers of Harrogath (3:27)",
-            "type": "armory",
-            "mapLabel": "Sewers of Harrogath (3:27)"
+            "url": "https://www.youtube.com/watch?v=YGcpuq95vaU",
+            "label": "Sewers of Harrogath (3:27)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=pqd8B0oXbYY",
+            "label": "Throne of Insanity (5:08)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=-0VLA4Owq10",
+            "label": "Skovos Stronghold (3:31)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -866,16 +903,19 @@
             "type": "guide"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/69d0441a4f8d521cb49886e1",
-            "label": "Armory - Demon Road (4:35)",
-            "type": "armory",
-            "mapLabel": "Demon Road (4:35)"
+            "url": "https://youtu.be/0luDNgHnno8?si=Gc04FJ3ZPWOnu5Hx",
+            "label": "Throne of Insanity (4:50)",
+            "type": "video"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/6977001d3d1b43e72a374697",
-            "label": "Armory - Throne of Insanity (4:50)",
-            "type": "armory",
-            "mapLabel": "Throne of Insanity (4:50)"
+            "url": "https://youtu.be/5OHgpze5dQo",
+            "label": "Horazon's Memory (5:00)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/ayYKf8waXJ8",
+            "label": "Demon Road (4:35)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -890,10 +930,15 @@
             "type": "guide"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/697858f9c347fec528b502f8",
-            "label": "Armory - Skovos Stronghold (3:08)",
+            "url": "https://www.youtube.com/watch?v=Dv8ZX_t05fU",
+            "label": "Skovos Stronghold (3:08)",
+            "type": "video"
+          },
+          {
+            "url": "https://projectdiablo2.com/character/Kano",
+            "label": "Armory - Throne of Insanity (5:18)",
             "type": "armory",
-            "mapLabel": "Skovos Stronghold (3:08)"
+            "mapLabel": "Throne of Insanity (5:18)"
           },
           {
             "url": "https://projectdiablo2.com/character/Kano",
@@ -919,10 +964,9 @@
             "type": "guide"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/69653eb7dfba6297665851b6",
-            "label": "Armory - Throne of Insanity (4:37)",
-            "type": "armory",
-            "mapLabel": "Throne of Insanity (4:37)"
+            "url": "https://youtu.be/paETgLGnK3o",
+            "label": "Throne of Insanity (4:37)",
+            "type": "video"
           }
         ],
         "notes": [
@@ -945,6 +989,11 @@
         "buildName": "Blades of Ice",
         "tier": "Good",
         "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=y9JqNm-j1SI",
+            "label": "Skovos Stronghold (3:38)",
+            "type": "video"
+          },
           {
             "url": "https://www.youtube.com/watch?v=y9JqNm-j1SI",
             "label": "Skovos Stronghold (3:38)",
@@ -1015,10 +1064,19 @@
             "type": "guide"
           },
           {
-            "url": "https://live.projectdiablo2.com/armory/builds/6973d66d620c015149987b5a",
-            "label": "Armory - River of Blood (4:24)",
-            "type": "armory",
-            "mapLabel": "River of Blood (4:24)"
+            "url": "https://www.youtube.com/watch?v=HkXl4buT1SA",
+            "label": "Throne of Insanity (4:35)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=HC9A2xavdcc",
+            "label": "Throne of Insanity (4:46)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=6DvpoxbYMDI",
+            "label": "River of Blood (4:24)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1117,10 +1175,19 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/69547e635ca6ee0d170d76b0",
-            "label": "Armory - Sewers of Harrogath (3:53)",
-            "type": "armory",
-            "mapLabel": "Sewers of Harrogath (3:53)"
+            "url": "https://youtu.be/NR7aEDp14Bw",
+            "label": "Sewers of Harrogath (3:53)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/laWsbiNlE5c",
+            "label": "Pandemonium Citadel (4:43)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/gBZyFrOmjEE",
+            "label": "Pandemonium Citadel (5:17)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1136,10 +1203,14 @@
         "tier": "Top",
         "links": [
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/695cfbd322107560e46ca216",
-            "label": "Armory - Pandemonium Citadel (4:18)",
-            "type": "armory",
-            "mapLabel": "Pandemonium Citadel (4:18)"
+            "url": "https://www.youtube.com/watch?v=TjbogPaK7lY",
+            "label": "Pandemonium Citadel (4:18)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=2QFkwCfCls4",
+            "label": "Pandemonium Citadel (4:37)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1177,10 +1248,9 @@
             "type": "video"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/69cc9123c7fc6e9d0ceb5cb0",
-            "label": "Armory - Ruined Cistern (6:30)",
-            "type": "armory",
-            "mapLabel": "Ruined Cistern (6:30)"
+            "url": "https://www.youtube.com/watch?v=tcRXcZVoEhE",
+            "label": "Ruined Cistern (6:30)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1238,10 +1308,19 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/693d9f3631602f351812eda5",
-            "label": "Armory - Sewers of Harrogath (3:48)",
-            "type": "armory",
-            "mapLabel": "Sewers of Harrogath (3:48)"
+            "url": "https://www.youtube.com/watch?v=vi1XUnH0zEA",
+            "label": "Blood Moon (6:21)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=-j4m5eMnP0s",
+            "label": "Throne of Insanity (5:13)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=ju4ZiyxGYP8",
+            "label": "Sewers of Harrogath (3:48)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1272,16 +1351,14 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/character/DAMTHATSCRAZY",
-            "label": "Armory - Bastion Keep (2:40)",
-            "type": "armory",
-            "mapLabel": "Bastion Keep (2:40)"
+            "url": "https://www.youtube.com/watch?v=Qcx5ki_0cH8",
+            "label": "Bastion Keep (2:40)",
+            "type": "video"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/698e531d4cd0a3f93fe0ee08",
-            "label": "Armory - Bastion Keep (4:12)",
-            "type": "armory",
-            "mapLabel": "Bastion Keep (4:12)"
+            "url": "https://www.youtube.com/watch?v=eYT9rVqPITE",
+            "label": "Bastion Keep (4:12)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1334,10 +1411,19 @@
             "type": "planner"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/696f7b2809485d31ea7dd9ea",
-            "label": "Armory - Sewers of Harrogath (3:04)",
-            "type": "armory",
-            "mapLabel": "Sewers of Harrogath (3:04)"
+            "url": "https://www.youtube.com/watch?v=8pU3HKWCbiw",
+            "label": "Torajan Jungle (4:13)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=39BHq7YiGEI",
+            "label": "Sewers of Harrogath (3:04)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/lYPeSXxovl8?si=JqZYF__g_3XWRpGw",
+            "label": "Tomb of Zoltun Kulle (4:30)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1371,10 +1457,9 @@
         "tier": "Good",
         "links": [
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/6979a8af3a746d81f091713d",
-            "label": "Armory - Demon Road (7:20)",
-            "type": "armory",
-            "mapLabel": "Demon Road (7:20)"
+            "url": "https://www.youtube.com/watch?v=Zux3wQGp0Hw",
+            "label": "Demon Road (7:20)",
+            "type": "video"
           }
         ],
         "notes": [
@@ -1398,10 +1483,14 @@
             "type": "planner"
           },
           {
-            "url": "https://projectdiablo2.com/armory/builds/695e8d13e3fd8e1a7d70a4a6",
-            "label": "Armory - Fall of Caldeum (3:12)",
-            "type": "armory",
-            "mapLabel": "Fall of Caldeum (3:12)"
+            "url": "https://youtu.be/5kvGU-M9cSs?si=PVbrsQ-W2wmniX8s",
+            "label": "Fall of Caldeum (3:12)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/ejVoFdA0N1A?si=VJabK0MmE7yL00tr",
+            "label": "Skovos Stronghold (3:50)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1483,16 +1572,19 @@
         "tier": "Top",
         "links": [
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/695b02ffe62b2b2fea529986",
-            "label": "Armory - Skovos Stronghold (2:39)",
-            "type": "armory",
-            "mapLabel": "Skovos Stronghold (2:39)"
+            "url": "https://www.youtube.com/watch?v=ydJDy8UQSGk",
+            "label": "Throne of Insanity (3:17)",
+            "type": "video"
           },
           {
-            "url": "https://live.projectdiablo2.com/armory/builds/6973d7f6620c015149987bbd",
-            "label": "Armory - Ancestral Trial (2:56)",
-            "type": "armory",
-            "mapLabel": "Ancestral Trial (2:56)"
+            "url": "https://youtu.be/cXZ4DcIeNsk",
+            "label": "Ancestral Trial (2:56)",
+            "type": "video"
+          },
+          {
+            "url": "https://youtu.be/bEdCK4SNh4A",
+            "label": "Tomb of Zoltun Kulle (3:09)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1532,16 +1624,14 @@
         "tier": "Top",
         "links": [
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
-            "label": "Armory - Fall of Caldeum (3:27)",
-            "type": "armory",
-            "mapLabel": "Fall of Caldeum (3:27)"
+            "url": "https://youtu.be/73hRLFfrPAw",
+            "label": "Pandemonium Citadel (4:15)",
+            "type": "video"
           },
           {
-            "url": "https://www.projectdiablo2.com/armory/builds/695cab82a621f961cc3d9022",
-            "label": "Armory - Pandemonium Citadel (4:15)",
-            "type": "armory",
-            "mapLabel": "Pandemonium Citadel (4:15)"
+            "url": "https://www.youtube.com/watch?v=hSCvD8sqr4M",
+            "label": "Fall of Caldeum (3:27)",
+            "type": "video"
           }
         ],
         "notes": [
@@ -1553,10 +1643,14 @@
         "tier": "Mid",
         "links": [
           {
-            "url": "https://projectdiablo2.com/armory/builds/694f5531e06e15671b7c254f",
-            "label": "Armory - Tomb of Zoltun Kulle (8:12)",
-            "type": "armory",
-            "mapLabel": "Tomb of Zoltun Kulle (8:12)"
+            "url": "https://youtu.be/0LZ0yNxLUoA",
+            "label": "Tomb of Zoltun Kulle (8:12)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=9VEq3HqQ-d8",
+            "label": "Halls of Torture (9:38)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1566,10 +1660,9 @@
         "tier": "Mid",
         "links": [
           {
-            "url": "https://www.projectdiablo2.com/character/LuoSac",
-            "label": "Armory - Throne of Insanity (9:05)",
-            "type": "armory",
-            "mapLabel": "Throne of Insanity (9:05)"
+            "url": "https://www.youtube.com/watch?v=d4rHxXCawSA",
+            "label": "Throne of Insanity (9:05)",
+            "type": "video"
           }
         ],
         "notes": []
