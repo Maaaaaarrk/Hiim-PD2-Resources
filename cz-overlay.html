@@ -118,16 +118,19 @@ body.theme-light .status.next{background:rgba(0,0,0,0.08);color:#666}
 body.theme-light .timer{color:#666}
 
 /* Mini mode */
-body.mini #overlay{padding:6px 8px;gap:2px;min-width:auto}
-body.mini .zone-row{gap:4px;padding:2px 0}
+body.mini{padding:0}
+body.mini #overlay{padding:0 8px;gap:0;min-width:auto;border-radius:0}
+body.mini .zone-row{gap:4px;padding:0;line-height:1}
 body.mini .overlay-title{margin-bottom:0}
 body.mini .zone-name-wrap{position:relative;width:180px;flex-shrink:0;overflow:hidden;white-space:nowrap}
 body.mini .zone-name-wrap .zone-name{flex:none;display:inline;max-width:none;overflow:visible}
-body.mini .zone-tags{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;gap:2px}
-body.mini .zone-tags .tag{padding:0px 3px}
+body.mini .zone-tags{position:absolute;right:0;top:0;bottom:0;display:flex;gap:0;align-items:stretch}
+body.mini .zone-tags .tag{padding:0 3px;display:flex;align-items:center}
 body.mini .timer{
-  border-radius:3px;padding:1px 6px;text-align:center;font-weight:600;color:#9ca3af;background:rgba(255,255,255,0.08);min-width:68px;margin-left:auto;
+  border-radius:0;padding:0 6px;text-align:center;font-weight:600;color:#9ca3af;background:rgba(255,255,255,0.08);min-width:68px;margin-left:auto;align-self:stretch;display:flex;align-items:center;justify-content:center;
 }
+body.mini .act-badge{border-radius:0;padding:0 6px;align-self:stretch;display:flex;align-items:center}
+body.mini .tag{border-radius:0}
 body.mini .timer.timer-live{background:#22c55e;color:#fff}
 body.mini .timer.timer-soon{background:#eab308;color:#000}
 </style>
