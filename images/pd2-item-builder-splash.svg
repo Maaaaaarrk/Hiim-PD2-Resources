@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 499" width="800" height="499">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#1a1510"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4b44a;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#c0b377;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+  <rect width="800" height="499" fill="url(#bg)"/>
+  <circle cx="400" cy="220" r="180" fill="url(#gold)" filter="url(#blur)"/>
+
+  <!-- Item card outline -->
+  <rect x="280" y="80" width="240" height="300" rx="6" fill="#111008" stroke="#3a3228" stroke-width="2"/>
+  <rect x="280" y="80" width="240" height="40" rx="6" fill="#1a1510" stroke="#3a3228" stroke-width="1"/>
+
+  <!-- Item name -->
+  <text x="400" y="107" text-anchor="middle" fill="#ffd700" font-size="16" font-family="serif" font-weight="700">Unique Weapon</text>
+
+  <!-- Stat lines -->
+  <rect x="300" y="140" width="120" height="10" rx="2" fill="#c0b37740"/>
+  <rect x="300" y="160" width="160" height="10" rx="2" fill="#c0b37730"/>
+  <rect x="300" y="180" width="140" height="10" rx="2" fill="#c0b37730"/>
+  <rect x="300" y="200" width="100" height="10" rx="2" fill="#c0b37730"/>
+
+  <!-- Affix lines -->
+  <rect x="300" y="230" width="180" height="10" rx="2" fill="#4169e140"/>
+  <rect x="300" y="250" width="150" height="10" rx="2" fill="#4169e130"/>
+  <rect x="300" y="270" width="170" height="10" rx="2" fill="#4169e130"/>
+  <rect x="300" y="290" width="130" height="10" rx="2" fill="#4169e130"/>
+  <rect x="300" y="310" width="160" height="10" rx="2" fill="#4169e130"/>
+  <rect x="300" y="330" width="110" height="10" rx="2" fill="#4169e130"/>
+
+  <!-- Quality indicators on left side -->
+  <rect x="100" y="130" width="130" height="36" rx="5" fill="#1a1510" stroke="#4169e1" stroke-width="1"/>
+  <text x="165" y="153" text-anchor="middle" fill="#6b8cff" font-size="14" font-family="sans-serif" font-weight="600">Magic</text>
+
+  <rect x="100" y="180" width="130" height="36" rx="5" fill="#1a1510" stroke="#ffd700" stroke-width="1"/>
+  <text x="165" y="203" text-anchor="middle" fill="#ffd700" font-size="14" font-family="sans-serif" font-weight="600">Rare</text>
+
+  <rect x="100" y="230" width="130" height="36" rx="5" fill="#1a1510" stroke="#ff8c00" stroke-width="1"/>
+  <text x="165" y="253" text-anchor="middle" fill="#ff8c00" font-size="14" font-family="sans-serif" font-weight="600">Crafted</text>
+
+  <!-- Affix selector on right side -->
+  <rect x="570" y="130" width="130" height="36" rx="5" fill="#1a1510" stroke="#3a3228" stroke-width="1"/>
+  <text x="635" y="153" text-anchor="middle" fill="#c0b377" font-size="12" font-family="sans-serif">Prefix 1</text>
+
+  <rect x="570" y="180" width="130" height="36" rx="5" fill="#1a1510" stroke="#3a3228" stroke-width="1"/>
+  <text x="635" y="203" text-anchor="middle" fill="#c0b377" font-size="12" font-family="sans-serif">Prefix 2</text>
+
+  <rect x="570" y="230" width="130" height="36" rx="5" fill="#1a1510" stroke="#3a3228" stroke-width="1"/>
+  <text x="635" y="253" text-anchor="middle" fill="#c0b377" font-size="12" font-family="sans-serif">Suffix 1</text>
+
+  <!-- Title -->
+  <text x="400" y="430" text-anchor="middle" fill="#dee2e6" font-size="37" font-family="sans-serif" font-weight="700" letter-spacing="2">ITEM BUILDER</text>
+  <text x="400" y="467" text-anchor="middle" fill="#9ca3af" font-size="18" font-family="sans-serif">PD2 Theoretical Item Builder</text>
+</svg>
