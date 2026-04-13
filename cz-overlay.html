@@ -10,7 +10,7 @@
 /* --- URL Parameters ---
  * count  = number of zones to show (default: 3)
  * acts   = comma-separated act filter, e.g. acts=1,3,5 (default: all)
- * tags   = EXP, MF, RED, or combinations like EXP,MF,RED — only show zones with these tags (default: all)
+ * tags   = TOP, GOOD, RED, or combinations like TOP,GOOD,RED — only show zones with these tags (default: all)
  * theme  = dark (default) or light
  * align  = left (default), center, or right
  * scale  = font scale multiplier, e.g. 1.2 (default: 1)
@@ -19,7 +19,7 @@
  * mini   = 1 to enable minified mode — compact layout, no LIVE/Next labels,
  *          countdown badges (green=active, yellow=starting soon), zone names truncated at 140px
  *
- * Example: cz-overlay.html?count=5&acts=1,3&tags=EXP&align=right&scale=1.1&mini=1
+ * Example: cz-overlay.html?count=5&acts=1,3&tags=TOP,RED&align=right&scale=1.1&mini=1
  */
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -103,8 +103,8 @@ body.theme-light .status.next{background:rgba(0,0,0,0.08);color:#666}
 }
 
 .tag{font-size:.55rem;font-weight:700;border-radius:2px;padding:1px 4px}
-.tag-exp{background:#06b6d4;color:#fff}
-.tag-mf{background:#eab308;color:#000}
+.tag-top{background:#22c55e;color:#fff}
+.tag-good{background:#3b82f6;color:#fff}
 .tag-red{background:#ef4444;color:#fff}
 
 .timer{
@@ -142,8 +142,8 @@ body.mini .timer.timer-soon{background:#eab308;color:#000}
 (function(){
 var zones=window.czData.zones;
 var zoneAct=window.czData.zoneAct;
-var expZones=new Set(window.czData.expZones);
-var mfZones=new Set(window.czData.mfZones);
+var topZones=new Set(window.czData.topZones);
+var goodZones=new Set(window.czData.goodZones);
 var redZones=new Set(window.czData.redZones);
 
 /* Parse URL params */
@@ -157,8 +157,8 @@ if(params.get("tags")){
   tagFilter=new Set();
   for(var i=0;i<zones.length;i++){
     for(var j=0;j<t.length;j++){
-      if(t[j]==="EXP"&&expZones.has(i))tagFilter.add(i);
-      if(t[j]==="MF"&&mfZones.has(i))tagFilter.add(i);
+      if(t[j]==="TOP"&&topZones.has(i))tagFilter.add(i);
+      if(t[j]==="GOOD"&&goodZones.has(i))tagFilter.add(i);
       if(t[j]==="RED"&&redZones.has(i))tagFilter.add(i);
     }
   }
@@ -225,19 +225,19 @@ var render=function(){
     html+='<span class="act-badge act-'+z.act+'">A'+z.act+'</span>';
     if(mini){
       html+='<span class="zone-name-wrap"><span class="zone-name">'+z.zone+'</span>';
-      var hasTags=expZones.has(z.idx)||mfZones.has(z.idx)||redZones.has(z.idx);
+      var hasTags=topZones.has(z.idx)||goodZones.has(z.idx)||redZones.has(z.idx);
       if(hasTags){
         html+='<span class="zone-tags">';
-        if(expZones.has(z.idx))html+='<span class="tag tag-exp">EXP</span>';
-        if(mfZones.has(z.idx))html+='<span class="tag tag-mf">MF</span>';
+        if(topZones.has(z.idx))html+='<span class="tag tag-top">TOP</span>';
+        if(goodZones.has(z.idx))html+='<span class="tag tag-good">GOOD</span>';
         if(redZones.has(z.idx))html+='<span class="tag tag-red">RED</span>';
         html+='</span>';
       }
       html+='</span>';
     }else{
       html+='<span class="zone-name">'+z.zone+'</span>';
-      if(expZones.has(z.idx))html+='<span class="tag tag-exp">EXP</span>';
-      if(mfZones.has(z.idx))html+='<span class="tag tag-mf">MF</span>';
+      if(topZones.has(z.idx))html+='<span class="tag tag-top">TOP</span>';
+      if(goodZones.has(z.idx))html+='<span class="tag tag-good">GOOD</span>';
       if(redZones.has(z.idx))html+='<span class="tag tag-red">RED</span>';
     }
     html+='<span class="'+timerClass+'">'+countdown+'</span>';
