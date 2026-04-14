@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225">
+  <rect width="400" height="225" fill="#16181b"/>
+  <rect x="20" y="20" width="360" height="185" rx="12" fill="#1a1d21" stroke="#2b2f33"/>
+  <text x="200" y="75" text-anchor="middle" fill="#dee2e6" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Attack Speed</text>
+  <text x="200" y="105" text-anchor="middle" fill="#6c757d" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Calculator</text>
+  <line x1="80" y1="125" x2="320" y2="125" stroke="#3b82f6" stroke-width="2"/>
+  <text x="200" y="155" text-anchor="middle" fill="#3b82f6" font-family="monospace" font-size="16">IAS Breakpoints</text>
+  <text x="200" y="180" text-anchor="middle" fill="#6c757d" font-family="monospace" font-size="14">Frames | FPA | APS</text>
+</svg>

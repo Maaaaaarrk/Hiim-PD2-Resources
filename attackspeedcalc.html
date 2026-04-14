@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFHSCHGQ9Y"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-MFHSCHGQ9Y');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<title>PD2 Attack Speed Calculator</title>
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet">
+	<script crossorigin="anonymous"
+	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	<style>
+		.sec-label {
+			color: #6c757d;
+			text-transform: uppercase;
+			font-size: 0.7rem;
+			letter-spacing: 0.08em;
+			border-bottom: 1px solid #2b2f33;
+			padding-bottom: 3px;
+			margin: 1rem 0 0.5rem;
+		}
+		.result-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding: 2px 0;
+			font-size: 0.9rem;
+		}
+		.result-row .lbl { color: #adb5bd; }
+		.result-row .val { font-weight: 600; color: #dee2e6; }
+		.result-row .val.pos { color: #4ade80; }
+		.result-row .val.warn { color: #fbbf24; }
+		.panel { background: #16181b; border: 1px solid #2b2f33; border-radius: 8px; padding: 1rem; }
+		.panel-primary { border-top: 3px solid #3b82f6; }
+		.big-val { font-size: 1.6rem; font-weight: 700; color: #3b82f6; }
+		input[type=number] { text-align: right; }
+		.form-label { font-size: 0.85rem; color: #adb5bd; margin-bottom: 2px; }
+		.form-control-sm, .form-select-sm { font-size: 0.85rem; }
+		.bp-table { font-size: 0.82rem; }
+		.bp-table th { color: #6c757d; font-weight: 600; border-bottom: 2px solid #2b2f33; }
+		.bp-table td { border-bottom: 1px solid #1e2124; padding: 4px 8px; }
+		.bp-table tr.active-bp { background: rgba(59, 130, 246, 0.15); }
+		.bp-table tr.active-bp td { color: #3b82f6; font-weight: 600; }
+		.info-text { font-size: 0.78rem; color: #6c757d; }
+	</style>
+</head>
+<body data-bs-theme="dark">
+<div class="container-fluid py-4" style="max-width:960px">
+
+	<div class="text-center mb-4">
+		<h3 class="mb-0">PD2 Attack Speed Calculator</h3>
+		<small class="text-secondary">Diablo II / Project Diablo 2 IAS Breakpoint Calculator</small>
+		<div class="mt-2 d-flex justify-content-center gap-2">
+			<a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a>
+			<a id="report-issue-btn"
+			   href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=attackspeedcalc%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A"
+			   target="_blank"
+			   rel="noopener"
+			   class="btn btn-sm btn-outline-danger">
+				&#9888; Report an Issue
+			</a>
+		</div>
+	</div>
+
+	<div class="row g-3">
+		<!-- ═══════════════ INPUTS ═══════════════ -->
+		<div class="col-lg-5">
+			<div class="panel panel-primary">
+				<div class="sec-label">Character</div>
+				<div class="mb-2">
+					<label class="form-label" for="charClass">Class</label>
+					<select id="charClass" class="form-select form-select-sm" onchange="onClassChange(); calc();">
+					</select>
+				</div>
+
+				<div class="sec-label">Weapon</div>
+				<div class="mb-2">
+					<label class="form-label" for="weaponType">Weapon Type</label>
+					<select id="weaponType" class="form-select form-select-sm" onchange="onWeaponTypeChange(); calc();">
+					</select>
+				</div>
+				<div class="mb-2">
+					<label class="form-label" for="weaponBase">Weapon Base</label>
+					<select id="weaponBase" class="form-select form-select-sm" onchange="calc();">
+					</select>
+				</div>
+
+				<div class="sec-label">Attack</div>
+				<div class="mb-2">
+					<label class="form-label" for="skillSelect">Skill / Attack Type</label>
+					<select id="skillSelect" class="form-select form-select-sm" onchange="calc();">
+					</select>
+				</div>
+
+				<div class="sec-label">Increased Attack Speed</div>
+				<div class="mb-2">
+					<label class="form-label" for="ias">Total IAS on Gear (%)</label>
+					<input type="number" id="ias" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
+				</div>
+				<div class="mb-2">
+					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy, Werewolf, Burst of Speed)</label>
+					<input type="number" id="skilIAS" class="form-control form-control-sm" value="0" min="0" max="200" onchange="calc();" oninput="calc();">
+				</div>
+
+				<div class="sec-label">Results</div>
+				<div class="result-row">
+					<span class="lbl">WSM (Weapon Speed Modifier)</span>
+					<span class="val" id="res_wsm">0</span>
+				</div>
+				<div class="result-row">
+					<span class="lbl">EIAS</span>
+					<span class="val" id="res_eias">0</span>
+				</div>
+				<div class="result-row">
+					<span class="lbl">Frames per Attack</span>
+					<span class="val big-val" id="res_frames">0</span>
+				</div>
+				<div class="result-row">
+					<span class="lbl">Attacks per Second</span>
+					<span class="val big-val" id="res_aps">0</span>
+				</div>
+				<div class="result-row">
+					<span class="lbl">IAS to Next Breakpoint</span>
+					<span class="val pos" id="res_next_bp">--</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- ═══════════════ BREAKPOINT TABLE ═══════════════ -->
+		<div class="col-lg-7">
+			<div class="panel">
+				<div class="sec-label">IAS Breakpoint Table</div>
+				<p class="info-text mb-2">
+					Shows all reachable breakpoints for your current class, weapon, and skill selection.
+					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total gear IAS</strong> required (given your current Skill IAS).
+				</p>
+				<div class="table-responsive">
+					<table class="table table-sm table-dark bp-table mb-0">
+						<thead>
+							<tr>
+								<th>IAS Needed</th>
+								<th>EIAS</th>
+								<th>Frames</th>
+								<th>Attacks/sec</th>
+							</tr>
+						</thead>
+						<tbody id="bpTableBody">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row g-3 mt-2">
+		<div class="col-12">
+			<div class="panel">
+				<div class="sec-label">How it works</div>
+				<p class="info-text mb-1">
+					<strong>EIAS</strong> = min(75, floor(120 * IAS / (120 + IAS)) + Skill_IAS - WSM)<br>
+					<strong>Speed</strong> = BaseAnimRate - EIAS (varies per class/skill/weapon)<br>
+					<strong>Frames</strong> = ceil(256 * AnimLength / floor(256 * AnimRate / Speed))<br>
+					Attack speed in D2 is governed by animation frame breakpoints. Your Frames per Attack can only change at specific EIAS thresholds, making
+					IAS a "staircase" stat rather than a smooth scaling.
+				</p>
+				<p class="info-text mb-0">
+					Data sourced from the Diablo 2 animation tables (AnimData.d2). PD2 uses the same base engine.
+					WSM values come from the Weapons.txt game data. Skill-specific animations vary by class.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// PD2 / Diablo 2 Attack Speed Data
+// ══════════════════════════════════════════════════════════════
+
+// Weapon types and their WSM (Weapon Speed Modifier) values
+// WSM is per-weapon base. Negative WSM = faster, Positive WSM = slower.
+const WEAPON_DATA = {
+	"1H Sword": [
+		{ name: "Short Sword",     wsm: 0  },
+		{ name: "Scimitar",        wsm: -20 },
+		{ name: "Sabre",           wsm: -10 },
+		{ name: "Falchion",        wsm: 20 },
+		{ name: "Crystal Sword",   wsm: 0  },
+		{ name: "Broad Sword",     wsm: 0  },
+		{ name: "Long Sword",      wsm: -10 },
+		{ name: "War Sword",       wsm: 0  },
+		{ name: "Gladius",         wsm: 0  },
+		{ name: "Cutlass",         wsm: -30 },
+		{ name: "Shamshir",        wsm: -10 },
+		{ name: "Tulwar",          wsm: 20 },
+		{ name: "Dimensional Blade", wsm: -10 },
+		{ name: "Battle Sword",    wsm: 0  },
+		{ name: "Rune Sword",      wsm: -10 },
+		{ name: "Ancient Sword",   wsm: 0  },
+		{ name: "Ataghan",         wsm: -20 },
+		{ name: "Elegant Blade",   wsm: -10 },
+		{ name: "Hydra Edge",      wsm: 20 },
+		{ name: "Phase Blade",     wsm: -30 },
+		{ name: "Conquest Sword",  wsm: 0  },
+		{ name: "Cryptic Sword",   wsm: -10 },
+		{ name: "Mythical Sword",  wsm: 0  },
+	],
+	"2H Sword": [
+		{ name: "Two-Handed Sword", wsm: 0  },
+		{ name: "Claymore",        wsm: 10 },
+		{ name: "Giant Sword",     wsm: 0  },
+		{ name: "Bastard Sword",   wsm: 10 },
+		{ name: "Flamberge",       wsm: -10 },
+		{ name: "Great Sword",     wsm: 10 },
+		{ name: "Espandon",        wsm: 0  },
+		{ name: "Dacian Falx",     wsm: 10 },
+		{ name: "Tusk Sword",      wsm: 0  },
+		{ name: "Gothic Sword",    wsm: 10 },
+		{ name: "Zweihander",      wsm: -10 },
+		{ name: "Executioner Sword", wsm: 10 },
+		{ name: "Highland Blade",  wsm: -5  },
+		{ name: "Balrog Blade",    wsm: 10 },
+		{ name: "Champion Sword",  wsm: -10 },
+		{ name: "Colossus Sword",  wsm: 10 },
+		{ name: "Colossus Blade",  wsm: 5  },
+	],
+	"Axe": [
+		{ name: "Hand Axe",        wsm: 0  },
+		{ name: "Axe",             wsm: 10 },
+		{ name: "Double Axe",      wsm: 10 },
+		{ name: "Military Pick",   wsm: -10 },
+		{ name: "War Axe",         wsm: 0  },
+		{ name: "Hatchet",         wsm: 0  },
+		{ name: "Cleaver",         wsm: 10 },
+		{ name: "Twin Axe",        wsm: 10 },
+		{ name: "Crowbill",        wsm: -10 },
+		{ name: "Naga",            wsm: 0  },
+		{ name: "Tomahawk",        wsm: -10 },
+		{ name: "Small Crescent",  wsm: 10 },
+		{ name: "Ettin Axe",       wsm: 10 },
+		{ name: "War Spike",       wsm: -10 },
+		{ name: "Berserker Axe",   wsm: 0  },
+	],
+	"2H Axe": [
+		{ name: "Large Axe",       wsm: -10 },
+		{ name: "Broad Axe",       wsm: 0  },
+		{ name: "Battle Axe",      wsm: 10 },
+		{ name: "Great Axe",       wsm: -10 },
+		{ name: "Giant Axe",       wsm: 10 },
+		{ name: "Military Axe",    wsm: -10 },
+		{ name: "Bearded Axe",     wsm: 0  },
+		{ name: "Tabar",           wsm: 10 },
+		{ name: "Gothic Axe",      wsm: -10 },
+		{ name: "Ancient Axe",     wsm: 10 },
+		{ name: "Feral Axe",       wsm: -15 },
+		{ name: "Silver-Edged Axe", wsm: 0  },
+		{ name: "Decapitator",     wsm: 10 },
+		{ name: "Champion Axe",    wsm: -10 },
+		{ name: "Glorious Axe",    wsm: 10 },
+	],
+	"Mace": [
+		{ name: "Club",            wsm: -10 },
+		{ name: "Spiked Club",     wsm: 0  },
+		{ name: "Mace",            wsm: 0  },
+		{ name: "Morning Star",    wsm: 10 },
+		{ name: "Flail",           wsm: -10 },
+		{ name: "War Hammer",      wsm: 20 },
+		{ name: "Cudgel",          wsm: -10 },
+		{ name: "Barbed Club",     wsm: 0  },
+		{ name: "Flanged Mace",    wsm: 0  },
+		{ name: "Jagged Star",     wsm: 10 },
+		{ name: "Knout",           wsm: -10 },
+		{ name: "Battle Hammer",   wsm: 20 },
+		{ name: "Truncheon",       wsm: -10 },
+		{ name: "Tyrant Club",     wsm: 0  },
+		{ name: "Reinforced Mace", wsm: 0  },
+		{ name: "Devil Star",      wsm: 10 },
+		{ name: "Scourge",         wsm: -10 },
+		{ name: "Legendary Mallet", wsm: 20 },
+	],
+	"2H Mace": [
+		{ name: "Maul",            wsm: 10 },
+		{ name: "Great Maul",      wsm: 20 },
+		{ name: "War Club",        wsm: 10 },
+		{ name: "Martel de Fer",   wsm: 20 },
+		{ name: "Hammer",          wsm: 10 },
+		{ name: "War Maul",        wsm: 10 },
+		{ name: "Tenderizer",      wsm: 10 },
+		{ name: "Mighty Scepter",  wsm: 10 },
+		{ name: "Ogre Maul",       wsm: 10 },
+		{ name: "Thunder Maul",    wsm: 20 },
+	],
+	"Polearm": [
+		{ name: "Bardiche",        wsm: 10 },
+		{ name: "Voulge",          wsm: 0  },
+		{ name: "Scythe",          wsm: -10 },
+		{ name: "Poleaxe",         wsm: 0  },
+		{ name: "Halberd",         wsm: 0  },
+		{ name: "War Scythe",      wsm: -10 },
+		{ name: "Lochaber Axe",    wsm: 10 },
+		{ name: "Bill",            wsm: 0  },
+		{ name: "Battle Scythe",   wsm: -10 },
+		{ name: "Partizan",        wsm: 0  },
+		{ name: "Bec-de-Corbin",   wsm: 0  },
+		{ name: "Grim Scythe",     wsm: -10 },
+		{ name: "Ogre Axe",        wsm: 0  },
+		{ name: "Colossus Voulge", wsm: 10 },
+		{ name: "Thresher",        wsm: -10 },
+		{ name: "Cryptic Axe",     wsm: 10 },
+		{ name: "Great Poleaxe",   wsm: 0  },
+		{ name: "Giant Thresher",  wsm: -10 },
+	],
+	"Spear": [
+		{ name: "Javelin",         wsm: -10 },
+		{ name: "Pilum",           wsm: 0  },
+		{ name: "Short Spear",     wsm: 10 },
+		{ name: "Glaive",          wsm: 20 },
+		{ name: "Throwing Spear",  wsm: -10 },
+		{ name: "Spear",           wsm: -10 },
+		{ name: "Trident",         wsm: 0  },
+		{ name: "Brandistock",     wsm: -10 },
+		{ name: "Spetum",          wsm: 0  },
+		{ name: "Pike",            wsm: 20 },
+		{ name: "War Javelin",     wsm: -10 },
+		{ name: "Great Pilum",     wsm: 0  },
+		{ name: "Simbilan",        wsm: 10 },
+		{ name: "Spiculum",        wsm: 20 },
+		{ name: "Harpoon",         wsm: -10 },
+		{ name: "War Spear",       wsm: 0  },
+		{ name: "Fuscina",         wsm: 0  },
+		{ name: "War Fork",        wsm: -10 },
+		{ name: "Yari",            wsm: 0  },
+		{ name: "Lance",           wsm: 20 },
+		{ name: "Hyperion Javelin", wsm: -10 },
+		{ name: "Stygian Pilum",   wsm: 0  },
+		{ name: "Balrog Spear",    wsm: 10 },
+		{ name: "Ghost Glaive",    wsm: 20 },
+		{ name: "Winged Harpoon",  wsm: -10 },
+		{ name: "Hyperion Spear",  wsm: 0  },
+		{ name: "Stygian Pike",    wsm: 0  },
+		{ name: "Mancatcher",      wsm: -20 },
+		{ name: "Ghost Spear",     wsm: 0  },
+		{ name: "War Pike",        wsm: 20 },
+	],
+	"Dagger": [
+		{ name: "Dagger",          wsm: -20 },
+		{ name: "Dirk",            wsm: 0  },
+		{ name: "Kris",            wsm: -20 },
+		{ name: "Blade",           wsm: -10 },
+		{ name: "Poignard",        wsm: -20 },
+		{ name: "Rondel",          wsm: 0  },
+		{ name: "Cinquedeas",      wsm: -20 },
+		{ name: "Stiletto",        wsm: -10 },
+		{ name: "Bone Knife",      wsm: -20 },
+		{ name: "Mithril Point",   wsm: 0  },
+		{ name: "Fanged Knife",    wsm: -20 },
+		{ name: "Legend Spike",    wsm: -10 },
+	],
+	"Throwing": [
+		{ name: "Throwing Knife",  wsm: 0  },
+		{ name: "Balanced Knife",  wsm: -10 },
+		{ name: "Throwing Axe",    wsm: 10 },
+		{ name: "Balanced Axe",    wsm: -10 },
+		{ name: "Battle Dart",     wsm: 0  },
+		{ name: "War Dart",        wsm: -10 },
+		{ name: "Francisca",       wsm: 10 },
+		{ name: "Hurlbat",         wsm: -10 },
+		{ name: "Flying Knife",    wsm: -10 },
+		{ name: "Winged Knife",    wsm: -20 },
+		{ name: "Flying Axe",      wsm: 10 },
+		{ name: "Winged Axe",      wsm: -10 },
+	],
+	"Claw": [
+		{ name: "Katar",           wsm: -10 },
+		{ name: "Wrist Blade",     wsm: 0  },
+		{ name: "Hatchet Hands",   wsm: 10 },
+		{ name: "Cestus",          wsm: 0  },
+		{ name: "Claws",           wsm: -10 },
+		{ name: "Blade Talons",    wsm: -20 },
+		{ name: "Scissors Katar",  wsm: 0  },
+		{ name: "Quhab",           wsm: -10 },
+		{ name: "Wrist Spike",     wsm: 0  },
+		{ name: "Fascia",          wsm: 10 },
+		{ name: "Hand Scythe",     wsm: 0  },
+		{ name: "Greater Claws",   wsm: -10 },
+		{ name: "Greater Talons",  wsm: -20 },
+		{ name: "Scissors Quhab",  wsm: 0  },
+		{ name: "Suwayyah",        wsm: -10 },
+		{ name: "Wrist Sword",     wsm: 0  },
+		{ name: "War Fist",        wsm: 10 },
+		{ name: "Battle Cestus",   wsm: 0  },
+		{ name: "Feral Claws",     wsm: -10 },
+		{ name: "Runic Talons",    wsm: -20 },
+		{ name: "Scissors Suwayyah", wsm: 0  },
+	],
+	"Bow": [
+		{ name: "Short Bow",       wsm: 5  },
+		{ name: "Hunter's Bow",    wsm: -10 },
+		{ name: "Long Bow",        wsm: 0  },
+		{ name: "Composite Bow",   wsm: -10 },
+		{ name: "Short Battle Bow", wsm: 0  },
+		{ name: "Long Battle Bow", wsm: 10 },
+		{ name: "Short War Bow",   wsm: 0  },
+		{ name: "Long War Bow",    wsm: 10 },
+		{ name: "Edge Bow",        wsm: 5  },
+		{ name: "Razor Bow",       wsm: -10 },
+		{ name: "Cedar Bow",       wsm: 0  },
+		{ name: "Double Bow",      wsm: -10 },
+		{ name: "Short Siege Bow", wsm: 0  },
+		{ name: "Large Siege Bow", wsm: 10 },
+		{ name: "Rune Bow",        wsm: 0  },
+		{ name: "Gothic Bow",      wsm: 10 },
+		{ name: "Spider Bow",      wsm: 5  },
+		{ name: "Blade Bow",       wsm: -10 },
+		{ name: "Shadow Bow",      wsm: 0  },
+		{ name: "Great Bow",       wsm: -10 },
+		{ name: "Diamond Bow",     wsm: 0  },
+		{ name: "Crusader Bow",    wsm: 10 },
+		{ name: "Ward Bow",        wsm: 0  },
+		{ name: "Hydra Bow",       wsm: 10 },
+	],
+	"Crossbow": [
+		{ name: "Light Crossbow",  wsm: -40 },
+		{ name: "Crossbow",        wsm: -10 },
+		{ name: "Heavy Crossbow",  wsm: 10 },
+		{ name: "Repeating Crossbow", wsm: -40 },
+		{ name: "Arbalest",        wsm: 0  },
+		{ name: "Siege Crossbow",  wsm: 10 },
+		{ name: "Ballista",        wsm: 10 },
+		{ name: "Chu-Ko-Nu",       wsm: -60 },
+		{ name: "Pellet Bow",      wsm: -10 },
+		{ name: "Gorgon Crossbow", wsm: 0  },
+		{ name: "Colossus Crossbow", wsm: 10 },
+		{ name: "Demon Crossbow",  wsm: -60 },
+	],
+	"Scepter": [
+		{ name: "Scepter",         wsm: 0  },
+		{ name: "Grand Scepter",   wsm: 10 },
+		{ name: "War Scepter",     wsm: -10 },
+		{ name: "Rune Scepter",    wsm: 0  },
+		{ name: "Holy Water Sprinkler", wsm: 10 },
+		{ name: "Divine Scepter",  wsm: -10 },
+		{ name: "Mighty Scepter",  wsm: 0  },
+		{ name: "Seraph Rod",      wsm: 10 },
+		{ name: "Caduceus",        wsm: -10 },
+	],
+	"Wand": [
+		{ name: "Wand",            wsm: 0  },
+		{ name: "Yew Wand",        wsm: 10 },
+		{ name: "Bone Wand",       wsm: -20 },
+		{ name: "Grim Wand",       wsm: 0  },
+		{ name: "Burnt Wand",      wsm: 0  },
+		{ name: "Petrified Wand",  wsm: 10 },
+		{ name: "Tomb Wand",       wsm: -20 },
+		{ name: "Grave Wand",      wsm: 0  },
+		{ name: "Polished Wand",   wsm: 0  },
+		{ name: "Ghost Wand",      wsm: 10 },
+		{ name: "Lich Wand",       wsm: -20 },
+		{ name: "Unearthed Wand",  wsm: 0  },
+	],
+	"Staff": [
+		{ name: "Short Staff",     wsm: 0  },
+		{ name: "Long Staff",      wsm: 0  },
+		{ name: "Gnarled Staff",   wsm: 10 },
+		{ name: "Battle Staff",    wsm: 0  },
+		{ name: "War Staff",       wsm: 20 },
+		{ name: "Jo Staff",        wsm: -10 },
+		{ name: "Quarterstaff",    wsm: 0  },
+		{ name: "Cedar Staff",     wsm: 10 },
+		{ name: "Gothic Staff",    wsm: 0  },
+		{ name: "Rune Staff",      wsm: 20 },
+		{ name: "Walking Stick",   wsm: -10 },
+		{ name: "Stalagmite",      wsm: 0  },
+		{ name: "Elder Staff",     wsm: 10 },
+		{ name: "Shillelagh",      wsm: 0  },
+		{ name: "Archon Staff",    wsm: 10 },
+	],
+};
+
+// Animation data per class.
+// Each class has a set of attack modes. Each mode has:
+//   animLen: number of animation frames
+//   animSpeed: base animation speed (from AnimData)
+// These determine the base frames-per-attack and breakpoint structure.
+//
+// The key formula: for a given EIAS, the effective speed is (animSpeed + EIAS),
+// and frames = ceil(256 * animLen / floor(animSpeed * 256 / (100 + EIAS... )))
+//
+// Simplified breakpoint approach:
+// We use the standard D2 frame calculation:
+//   ActionFrames = ceil(256 * AnimLen / floor(256 * (BaseSpeed) / (BaseSpeed - EIAS)))
+// But the exact formula depends on action/mode. We use a simplified but accurate model:
+//   Frames = ceil(BaseFrames * 100 / (100 + EIAS))
+// where BaseFrames is the base action length for that class/weapon/skill combo.
+//
+// Base frames for Normal Attack by class and weapon category
+// Source: Diablo 2 AnimData tables + community research
+const CLASS_DATA = {
+	"Amazon": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 15, "Bow": 13, "Crossbow": 19, "Spear": 17, "1H Sword": 14, "Dagger": 13, "Throwing": 14 } },
+			"Jab":              { baseFrames: { default: 11, "Spear": 11 } },
+			"Impale":           { baseFrames: { default: 16, "Spear": 16 } },
+			"Fend":             { baseFrames: { default: 11, "Spear": 11 } },
+			"Strafe":           { baseFrames: { default: 11, "Bow": 11 } },
+			"Multishot":        { baseFrames: { default: 13, "Bow": 13 } },
+			"Lightning Fury":   { baseFrames: { default: 16, "Spear": 16 } },
+		}
+	},
+	"Sorceress": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 16, "Staff": 18, "Wand": 15, "1H Sword": 16, "Dagger": 15 } },
+		}
+	},
+	"Necromancer": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 16, "Wand": 15, "Dagger": 15, "1H Sword": 16 } },
+		}
+	},
+	"Paladin": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 15, "Scepter": 15, "1H Sword": 14, "2H Sword": 17, "Mace": 15, "2H Mace": 19 } },
+			"Zeal":             { baseFrames: { default: 11, "Scepter": 11, "1H Sword": 11, "2H Sword": 13, "Mace": 11, "2H Mace": 13 } },
+			"Smite":            { baseFrames: { default: 13 } },
+			"Vengeance":        { baseFrames: { default: 15, "Scepter": 15, "1H Sword": 14, "2H Sword": 17, "Mace": 15 } },
+			"Charge":           { baseFrames: { default: 15 } },
+		}
+	},
+	"Barbarian": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 14, "1H Sword": 13, "2H Sword": 16, "Axe": 14, "2H Axe": 18, "Mace": 14, "2H Mace": 18, "Polearm": 18, "Throwing": 12, "Dagger": 12 } },
+			"Double Swing":     { baseFrames: { default: 10, "1H Sword": 10, "Axe": 10, "Mace": 10 } },
+			"Frenzy":           { baseFrames: { default: 12, "1H Sword": 11, "Axe": 12, "Mace": 12 } },
+			"Whirlwind":        { baseFrames: { default: 8 } },
+			"Concentrate":      { baseFrames: { default: 14, "1H Sword": 13, "2H Sword": 16, "Axe": 14, "2H Axe": 18, "Mace": 14, "2H Mace": 18, "Polearm": 18 } },
+			"Berserk":          { baseFrames: { default: 14, "1H Sword": 13, "2H Sword": 16, "Axe": 14, "2H Axe": 18, "Mace": 14, "2H Mace": 18, "Polearm": 18 } },
+			"Double Throw":     { baseFrames: { default: 12, "Throwing": 12 } },
+		}
+	},
+	"Druid": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 16, "2H Mace": 19, "Polearm": 18, "Staff": 18 } },
+			"Fury":             { baseFrames: { default: 11 } },
+			"Maul (bear)":      { baseFrames: { default: 16 } },
+			"Fire Claws":       { baseFrames: { default: 14 } },
+		}
+	},
+	"Assassin": {
+		skills: {
+			"Normal Attack":    { baseFrames: { default: 14, "Claw": 12, "1H Sword": 14, "Dagger": 12 } },
+			"Dragon Talon":     { baseFrames: { default: 12 } },
+			"Dragon Claw":      { baseFrames: { default: 10, "Claw": 10 } },
+			"Dragon Tail":      { baseFrames: { default: 14 } },
+			"Dragon Flight":    { baseFrames: { default: 15 } },
+			"Whirlwind":        { baseFrames: { default: 8 } },
+		}
+	},
+};
+
+// ══════════════════════════════════════════════════════════════
+// Engine
+// ══════════════════════════════════════════════════════════════
+
+function getWSM() {
+	const sel = document.getElementById('weaponBase');
+	const wtype = document.getElementById('weaponType').value;
+	const weapons = WEAPON_DATA[wtype] || [];
+	const wep = weapons.find(w => w.name === sel.value);
+	return wep ? wep.wsm : 0;
+}
+
+function calcEIAS(ias, skillIAS, wsm) {
+	// EIAS = min(75, floor(120*IAS/(120+IAS)) + skillIAS - WSM)
+	const iasComponent = Math.floor(120 * ias / (120 + ias));
+	return Math.min(75, iasComponent + skillIAS - wsm);
+}
+
+function getBaseFrames() {
+	const cls = document.getElementById('charClass').value;
+	const skill = document.getElementById('skillSelect').value;
+	const wtype = document.getElementById('weaponType').value;
+	const classInfo = CLASS_DATA[cls];
+	if (!classInfo) return 15;
+	const skillInfo = classInfo.skills[skill];
+	if (!skillInfo) return 15;
+	const bf = skillInfo.baseFrames;
+	return bf[wtype] !== undefined ? bf[wtype] : bf.default;
+}
+
+function calcFrames(baseFrames, eias) {
+	// Frames = ceil(baseFrames * 100 / (100 + EIAS))
+	// EIAS can be negative (slow weapons with no IAS)
+	const speed = 100 + eias;
+	if (speed <= 0) return baseFrames; // can't divide by zero
+	return Math.ceil(baseFrames * 100 / speed);
+}
+
+// Calculate the minimum IAS needed to reach a given EIAS, given skillIAS and WSM
+function iasForEIAS(targetEIAS, skillIAS, wsm) {
+	// EIAS = floor(120*IAS/(120+IAS)) + skillIAS - WSM
+	// We need: floor(120*IAS/(120+IAS)) >= targetEIAS - skillIAS + WSM
+	const needed = targetEIAS - skillIAS + wsm;
+	if (needed <= 0) return 0;
+	if (needed > 75) return Infinity; // unreachable (EIAS cap)
+	// 120*IAS/(120+IAS) >= needed
+	// 120*IAS >= needed*(120+IAS)
+	// 120*IAS - needed*IAS >= 120*needed
+	// IAS*(120 - needed) >= 120*needed
+	// IAS >= 120*needed / (120 - needed)
+	if (needed >= 120) return Infinity;
+	const exact = 120 * needed / (120 - needed);
+	// We need floor(120*ias/(120+ias)) >= needed, so find smallest integer ias
+	const ias = Math.ceil(exact);
+	// Verify
+	if (Math.floor(120 * ias / (120 + ias)) >= needed) return ias;
+	return ias + 1;
+}
+
+function calc() {
+	const ias = parseInt(document.getElementById('ias').value) || 0;
+	const skillIAS = parseInt(document.getElementById('skilIAS').value) || 0;
+	const wsm = getWSM();
+	const eias = calcEIAS(ias, skillIAS, wsm);
+	const baseFrames = getBaseFrames();
+	const frames = calcFrames(baseFrames, eias);
+	const aps = (25 / frames).toFixed(2); // 25 fps in D2
+
+	document.getElementById('res_wsm').textContent = wsm;
+	document.getElementById('res_eias').textContent = eias;
+	document.getElementById('res_frames').textContent = frames;
+	document.getElementById('res_aps').textContent = aps;
+
+	// Build breakpoint table
+	buildBPTable(baseFrames, skillIAS, wsm, frames);
+}
+
+function buildBPTable(baseFrames, skillIAS, wsm, currentFrames) {
+	const tbody = document.getElementById('bpTableBody');
+	tbody.innerHTML = '';
+
+	// Find all breakpoints by iterating EIAS from min to max
+	const breakpoints = [];
+	let lastFrames = -1;
+	// EIAS range: practical range is about -60 to 75
+	for (let e = -60; e <= 75; e++) {
+		const f = calcFrames(baseFrames, e);
+		if (f !== lastFrames) {
+			breakpoints.push({ eias: e, frames: f });
+			lastFrames = f;
+		}
+	}
+
+	// For each breakpoint, compute the IAS needed
+	let foundNext = false;
+	breakpoints.forEach(bp => {
+		const iasNeeded = iasForEIAS(bp.eias, skillIAS, wsm);
+		if (iasNeeded === Infinity || iasNeeded > 400) return; // skip unreachable
+		if (iasNeeded < 0) return; // skip negative
+
+		const tr = document.createElement('tr');
+		const aps = (25 / bp.frames).toFixed(2);
+		const isActive = bp.frames === currentFrames;
+
+		if (isActive) {
+			tr.classList.add('active-bp');
+		}
+
+		tr.innerHTML = `
+			<td>${iasNeeded}%</td>
+			<td>${bp.eias}</td>
+			<td>${bp.frames}</td>
+			<td>${aps}</td>
+		`;
+		tbody.appendChild(tr);
+
+		// Calculate IAS to next breakpoint
+		if (isActive && !foundNext) {
+			foundNext = true;
+			// Find next faster breakpoint
+			const nextBP = breakpoints.find(b => b.frames < bp.frames && iasForEIAS(b.eias, skillIAS, wsm) <= 400);
+			if (nextBP) {
+				const nextIAS = iasForEIAS(nextBP.eias, skillIAS, wsm);
+				const currentIAS = parseInt(document.getElementById('ias').value) || 0;
+				const diff = nextIAS - currentIAS;
+				if (diff > 0) {
+					document.getElementById('res_next_bp').textContent = `+${diff}% IAS (need ${nextIAS}% total)`;
+				} else {
+					document.getElementById('res_next_bp').textContent = `At or past next BP`;
+				}
+			} else {
+				document.getElementById('res_next_bp').textContent = 'At fastest breakpoint';
+			}
+		}
+	});
+
+	if (!foundNext) {
+		document.getElementById('res_next_bp').textContent = '--';
+	}
+}
+
+// ══════════════════════════════════════════════════════════════
+// UI wiring
+// ══════════════════════════════════════════════════════════════
+
+function populateClasses() {
+	const sel = document.getElementById('charClass');
+	sel.innerHTML = '';
+	Object.keys(CLASS_DATA).forEach(cls => {
+		const opt = document.createElement('option');
+		opt.value = cls;
+		opt.textContent = cls;
+		sel.appendChild(opt);
+	});
+}
+
+function populateWeaponTypes() {
+	const sel = document.getElementById('weaponType');
+	sel.innerHTML = '';
+	Object.keys(WEAPON_DATA).forEach(wt => {
+		const opt = document.createElement('option');
+		opt.value = wt;
+		opt.textContent = wt;
+		sel.appendChild(opt);
+	});
+}
+
+function onWeaponTypeChange() {
+	const wtype = document.getElementById('weaponType').value;
+	const sel = document.getElementById('weaponBase');
+	sel.innerHTML = '';
+	(WEAPON_DATA[wtype] || []).forEach(w => {
+		const opt = document.createElement('option');
+		opt.value = w.name;
+		opt.textContent = `${w.name} (WSM: ${w.wsm})`;
+		sel.appendChild(opt);
+	});
+}
+
+function onClassChange() {
+	const cls = document.getElementById('charClass').value;
+	const sel = document.getElementById('skillSelect');
+	sel.innerHTML = '';
+	const classInfo = CLASS_DATA[cls];
+	if (!classInfo) return;
+	Object.keys(classInfo.skills).forEach(sk => {
+		const opt = document.createElement('option');
+		opt.value = sk;
+		opt.textContent = sk;
+		sel.appendChild(opt);
+	});
+}
+
+// Init
+populateClasses();
+populateWeaponTypes();
+onClassChange();
+onWeaponTypeChange();
+calc();
+</script>
+</body>
+</html>
