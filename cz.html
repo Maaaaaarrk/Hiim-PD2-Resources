@@ -214,7 +214,7 @@ var mkEl=function(tag,cls,txt){var e=document.createElement(tag);if(cls)e.classN
 var mkTags=function(idx){var wrap=mkEl("span","d-flex gap-1");if(topZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-top","TOP"));if(goodZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-good","GOOD"));if(redZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-red","RED"));return wrap};
 var renderUpcoming=function(){var baseTs=getBaseTs(),now=Date.now(),list=getUpcomingList(baseTs,UPCOMING_COUNT);paneUpcoming.innerHTML="";if(!list.length){paneUpcoming.textContent="No zones match your current filters.";return}for(var i=0;i<list.length;i++){var info=list[i];var isNow=now>=info.ts&&now<info.ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+info.act,"Act "+info.act));topLeft.appendChild(mkEl("span","zone-name",info.zone));top.appendChild(topLeft);top.appendChild(mkTags(info.idx));card.appendChild(top);var bot=mkEl("div","d-flex justify-content-between align-items-center mt-1");bot.appendChild(mkEl("span","zone-time"+(isNow?" now":""),((isNow?"LIVE NOW -- ":"")+formatTime(info.ts))));bot.appendChild(mkEl("span","countdown",formatCountdown(info.ts-now)));card.appendChild(bot);paneUpcoming.appendChild(card)}};
 var renderByZone=function(){var baseTs=getBaseTs(),now=Date.now(),perZone=getNextNPerZone(baseTs,NEXT_COUNT);var si=Object.keys(perZone).map(Number).sort(function(a,b){return perZone[a][0].ts-perZone[b][0].ts});paneByZone.innerHTML="";if(!si.length){paneByZone.textContent="No zones match your current filters.";return}for(var j=0;j<si.length;j++){var idx=si[j];var times=perZone[idx];var isNow=now>=times[0].ts&&now<times[0].ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+zoneAct[idx],"Act "+zoneAct[idx]));topLeft.appendChild(mkEl("span","zone-name",zones[idx]));top.appendChild(topLeft);top.appendChild(mkTags(idx));card.appendChild(top);var ul=mkEl("ul","schedule-times");for(var ti=0;ti<times.length;ti++){var t=times[ti];var live=now>=t.ts&&now<t.ts+900e3;var li=mkEl("li",live?"now-label":"",((live?"LIVE NOW -- ":"")+formatTime(t.ts)));li.appendChild(mkEl("span","countdown"," "+formatCountdown(t.ts-now)));ul.appendChild(li)}card.appendChild(ul);paneByZone.appendChild(card)}};
-var renderAll=function(){renderUpcoming();renderByZone();clockDisplay.textContent=useCustomTime?("Showing: "+new Date(customTs).toLocaleString()):new Date().toLocaleTimeString()};
+var renderAll=function(skipHash){renderUpcoming();renderByZone();clockDisplay.textContent=useCustomTime?("Showing: "+new Date(customTs).toLocaleString()):new Date().toLocaleTimeString();if(!skipHash&&typeof updateHash==='function')updateHash()};
 var syncActs=function(){activeActs=new Set();activeZones.forEach(function(idx){activeActs.add(zoneAct[idx])});var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++){var act=parseInt(b[i].dataset.act);if(activeActs.has(act))b[i].classList.add("active");else b[i].classList.remove("active")}};
 var buildZoneFilter=function(){var c=pE("zoneFilter");var row=mkEl("div","row");for(var i=0;i<zones.length;i++){var col=mkEl("div","col-md-6 filter-check");var fc=mkEl("div","form-check");var inp=document.createElement("input");inp.className="form-check-input zone-cb";inp.type="checkbox";inp.id="zcb"+i;inp.dataset.idx=i;inp.checked=activeZones.has(i);var lbl=document.createElement("label");lbl.className="form-check-label";lbl.htmlFor="zcb"+i;lbl.appendChild(mkEl("span","act-badge act-"+zoneAct[i],"A"+zoneAct[i]));lbl.appendChild(document.createTextNode(" "+zones[i]));if(topZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-top ms-1","TOP"));if(goodZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-good ms-1","GOOD"));if(redZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-red ms-1","RED"));fc.appendChild(inp);fc.appendChild(lbl);col.appendChild(fc);row.appendChild(col);(function(cb){cb.addEventListener("change",function(){var x=parseInt(cb.dataset.idx);if(cb.checked)activeZones.add(x);else activeZones.delete(x);syncActs();renderAll()})})(inp)}c.innerHTML="";c.appendChild(row)};
 var actBtns=document.querySelectorAll(".filter-btn[data-act]");for(var ai=0;ai<actBtns.length;ai++){(function(btn){btn.addEventListener("click",function(){var act=parseInt(btn.dataset.act);if(activeActs.has(act)){activeActs.delete(act);btn.classList.remove("active")}else{activeActs.add(act);btn.classList.add("active")}for(var i=0;i<zones.length;i++){if(zoneAct[i]===act){if(activeActs.has(act))activeZones.add(i);else activeZones.delete(i);var cb=pE("zcb"+i);if(cb)cb.checked=activeActs.has(act)}}renderAll()})})(actBtns[ai])}
@@ -228,7 +228,54 @@ var radios=document.querySelectorAll("input[name=timeMode]");for(var ri=0;ri<rad
 customDateTimeInput.addEventListener("change",function(){customTs=new Date(customDateTimeInput.value).getTime();renderAll()});
 pE("btnBackToNow").addEventListener("click",function(){useCustomTime=false;customTimeWrapper.style.display="none";pE("timeNow").checked=true;renderAll()});
 var pad=function(n){return String(n).padStart(2,"0")};var d=new Date();customDateTimeInput.value=d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes());
-buildZoneFilter();renderAll();setInterval(renderAll,5000);
+// --- URL hash helpers ---
+var getHashParams=function(){var hash=location.hash.replace(/^#/,'');var params={};hash.split('&').forEach(function(part){var kv=part.split('=');if(kv[0])params[decodeURIComponent(kv[0])]=decodeURIComponent(kv[1]||'')});return params};
+var setHashParams=function(params){var parts=[];Object.keys(params).forEach(function(k){if(params[k]!==undefined&&params[k]!=='')parts.push(encodeURIComponent(k)+'='+encodeURIComponent(params[k]))});history.replaceState(null,'','#'+parts.join('&'))};
+var allZoneIndices=new Set(zones.map(function(_,i){return i}));
+var updateHash=function(){
+	var params={};
+	// Acts: only store if not all 5 selected
+	if(activeActs.size<5){params.acts=Array.from(activeActs).sort().join(',')}
+	// Zones: store individually deselected zones (inverse) if any deselected but acts don't fully explain it
+	var expectedZones=new Set();zones.forEach(function(_,i){if(activeActs.has(zoneAct[i]))expectedZones.add(i)});
+	var zonesMatchActs=expectedZones.size===activeZones.size&&Array.from(activeZones).every(function(z){return expectedZones.has(z)});
+	if(!zonesMatchActs){params.zones=Array.from(activeZones).sort(function(a,b){return a-b}).join(',')}
+	// Tab
+	var byZoneTab=pE('tab-byzone');if(byZoneTab&&byZoneTab.classList.contains('active'))params.tab='byzone';
+	// Custom time
+	if(useCustomTime&&customTs){params.time=String(customTs)}
+	setHashParams(params);
+};
+var restoreFromHash=function(){
+	var params=getHashParams();
+	if(!params.acts&&!params.zones&&!params.tab&&!params.time)return;
+	// Restore acts
+	if(params.acts!==undefined){
+		activeActs=new Set(params.acts?params.acts.split(',').map(Number):[]);
+		// Set zones from acts
+		activeZones=new Set();for(var i=0;i<zones.length;i++){if(activeActs.has(zoneAct[i]))activeZones.add(i)}
+	}
+	// Restore individual zones (overrides act-based zones)
+	if(params.zones!==undefined){
+		activeZones=new Set(params.zones?params.zones.split(',').map(Number):[]);
+		activeActs=new Set();activeZones.forEach(function(idx){activeActs.add(zoneAct[idx])});
+	}
+	// Update act button UI
+	var b=document.querySelectorAll('.filter-btn[data-act]');for(var i=0;i<b.length;i++){var act=parseInt(b[i].dataset.act);if(activeActs.has(act))b[i].classList.add('active');else b[i].classList.remove('active')}
+	// Restore tab
+	if(params.tab==='byzone'){var tabBtn=pE('tab-byzone');if(tabBtn){var bsTab=new bootstrap.Tab(tabBtn);bsTab.show()}}
+	// Restore custom time
+	if(params.time){
+		customTs=parseInt(params.time);useCustomTime=true;
+		customTimeWrapper.style.display='';pE('timeCustom').checked=true;
+		var dt=new Date(customTs);customDateTimeInput.value=dt.getFullYear()+'-'+pad(dt.getMonth()+1)+'-'+pad(dt.getDate())+'T'+pad(dt.getHours())+':'+pad(dt.getMinutes());
+	}
+};
+restoreFromHash();buildZoneFilter();renderAll();setInterval(renderAll,5000);
+// Update hash on tab change
+var tabEls=document.querySelectorAll('button[data-bs-toggle="tab"]');for(var ti=0;ti<tabEls.length;ti++){tabEls[ti].addEventListener('shown.bs.tab',function(){updateHash()})}
+// Listen for hashchange (back/forward)
+window.addEventListener('hashchange',function(){restoreFromHash();buildZoneFilter();renderAll()});
 })();
 </script>
 <script>
