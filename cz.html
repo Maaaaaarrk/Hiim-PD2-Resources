@@ -28,7 +28,7 @@
 <div class="container py-4" style="max-width:1000px">
 <div class="text-center mb-4"><h3 class="mb-0">PD2 Corrupted Zone Schedule</h3>
 <small class="text-secondary">See when each corrupted zone goes live. Zones rotate every 15 minutes.</small>
-<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button> <a id="report-issue-btn" href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=cz%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A" target="_blank" rel="noopener" class="btn btn-sm btn-outline-danger">&#9888; Report an Issue</a></div></div>
+<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button> <button class="btn btn-sm btn-outline-warning" id="btnSoundToggle" title="Play a sound when a new zone rotation starts">&#128264; Sound: OFF</button> <a id="report-issue-btn" href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=cz%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A" target="_blank" rel="noopener" class="btn btn-sm btn-outline-danger">&#9888; Report an Issue</a></div></div>
 <script>
 (function(){
 	var btn=document.getElementById('report-issue-btn');
@@ -108,6 +108,7 @@
 <div class="col-md-4"><label class="form-label mb-1">Show title</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovTitle"><option value="1">Yes</option><option value="0">No</option></select></div>
 <div class="col-md-4"><label class="form-label mb-1">Filter by tags</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovTags"><option value="">All</option><option value="TOP">TOP only</option><option value="GOOD">GOOD only</option><option value="RED">RED only</option><option value="TOP,GOOD">TOP + GOOD</option><option value="TOP,GOOD,RED">TOP + GOOD + RED</option></select></div>
 <div class="col-md-4"><label class="form-label mb-1">Mini mode</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovMini"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Compact layout, countdown badges, no LIVE/Next labels</div></div>
+<div class="col-md-4"><label class="form-label mb-1">Sound notification</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovSound"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Play a sound when a new zone rotation starts</div></div>
 </div>
 <h6 class="mb-2">Filter by Act</h6>
 <div class="d-flex flex-wrap gap-2 mb-3">
@@ -151,6 +152,7 @@
 <tr><td><code>scale</code></td><td>1</td><td>Font scale multiplier (e.g. <code>1.3</code>)</td></tr>
 <tr><td><code>title</code></td><td>1</td><td><code>0</code> to hide the header</td></tr>
 <tr><td><code>mini</code></td><td>0</td><td><code>1</code> for compact mode &mdash; less padding, no LIVE/Next labels, countdown badges (green when active, yellow when next zone starts in &lt;5 min), zone names truncated at 140px</td></tr>
+<tr><td><code>sound</code></td><td>0</td><td><code>1</code> to play a sound notification when a new zone rotation starts</td></tr>
 </tbody></table></div>
 </div>
 <div class="modal-footer border-secondary">
@@ -304,6 +306,63 @@ restoreFromHash();buildZoneFilter();renderAll();setInterval(renderAll,5000);
 var tabEls=document.querySelectorAll('button[data-bs-toggle="tab"]');for(var ti=0;ti<tabEls.length;ti++){tabEls[ti].addEventListener('shown.bs.tab',function(){updateHash()})}
 // Listen for hashchange (back/forward)
 window.addEventListener('hashchange',function(){restoreFromHash();buildZoneFilter();renderAll()});
+
+// --- Sound notification for zone rotations ---
+var soundEnabled = localStorage.getItem('czSoundEnabled') === 'true';
+var lastZoneTs = null;
+var soundBtn = document.getElementById('btnSoundToggle');
+
+var updateSoundBtn = function() {
+  if (soundEnabled) {
+    soundBtn.innerHTML = '&#128266; Sound: ON';
+    soundBtn.classList.remove('btn-outline-warning');
+    soundBtn.classList.add('btn-warning');
+  } else {
+    soundBtn.innerHTML = '&#128264; Sound: OFF';
+    soundBtn.classList.remove('btn-warning');
+    soundBtn.classList.add('btn-outline-warning');
+  }
+};
+updateSoundBtn();
+
+soundBtn.addEventListener('click', function() {
+  soundEnabled = !soundEnabled;
+  localStorage.setItem('czSoundEnabled', String(soundEnabled));
+  updateSoundBtn();
+});
+
+var playNotificationSound = function() {
+  try {
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var playTone = function(freq, start, duration) {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.frequency.value = freq;
+      osc.type = 'sine';
+      gain.gain.setValueAtTime(0.3, ctx.currentTime + start);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + start + duration);
+      osc.start(ctx.currentTime + start);
+      osc.stop(ctx.currentTime + start + duration);
+    };
+    playTone(523.25, 0, 0.15);
+    playTone(659.25, 0.15, 0.15);
+    playTone(783.99, 0.3, 0.3);
+  } catch (e) { /* AudioContext not available */ }
+};
+
+// Check for zone rotation every second
+setInterval(function() {
+  if (!soundEnabled || useCustomTime) return;
+  var now = Date.now();
+  var currentZoneTs = Math.floor(now / 900000) * 900000;
+  if (lastZoneTs === null) { lastZoneTs = currentZoneTs; return; }
+  if (currentZoneTs !== lastZoneTs) {
+    lastZoneTs = currentZoneTs;
+    playNotificationSound();
+  }
+}, 1000);
 })();
 </script>
 <script>
@@ -351,6 +410,8 @@ var updateOverlayUrl=function(){
   if(title==="0")p.push("title=0");
   var mini=document.getElementById("ovMini").value;
   if(mini==="1")p.push("mini=1");
+  var sound=document.getElementById("ovSound").value;
+  if(sound==="1")p.push("sound=1");
   var tags=document.getElementById("ovTags").value;
 
   if(ovSelectedZones.size>0){
@@ -379,6 +440,7 @@ document.getElementById("ovScale").addEventListener("input",updateOverlayUrl);
 document.getElementById("ovTitle").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovTags").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovMini").addEventListener("change",updateOverlayUrl);
+document.getElementById("ovSound").addEventListener("change",updateOverlayUrl);
 var actCbs=document.querySelectorAll(".ov-act-cb");
 for(var i=0;i<actCbs.length;i++){actCbs[i].addEventListener("change",updateOverlayUrl)}
 
