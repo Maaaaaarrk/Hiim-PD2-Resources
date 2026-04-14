@@ -4,7 +4,8 @@
  * https://docs.google.com/document/d/14fVQEQp4AaI24XEV0CDPwfmnbYhOJQAnRqUh3_A1KGY
  *
  * Keys match the zone names in cz-data.js exactly.
- * Each value is an array of {title, text} sections for the sub-zones.
+ * Each value is an array of {title, text, image?} sections for the sub-zones.
+ * image is optional and points to images/pathfinding/<file>.
  */
 window.czPathfinding = {
   "Blood Moor and Den of Evil": [
@@ -32,7 +33,8 @@ window.czPathfinding = {
   "Dark Wood and the Underground Passage": [
     {
       "title": "Underground Passage Level 1",
-      "text": "You generally want to explore in a straight line from your entry tile since the exit will always have an orientation opposite to that. Don't go in the direction of red Fallen if you see them since it will always be a dead end."
+      "text": "You generally want to explore in a straight line from your entry tile since the exit will always have an orientation opposite to that. Don't go in the direction of red Fallen if you see them since it will always be a dead end.",
+      "image": "image31.png"
     },
     {
       "title": "Dark Wood",
@@ -60,7 +62,8 @@ window.czPathfinding = {
   "Forgotten Tower": [
     {
       "title": "Tower Cellar Level 1-4",
-      "text": "All the Tower Cellar Levels have the same consistent pattern: you generally want to explore in a clockwise fashion."
+      "text": "All the Tower Cellar Levels have the same consistent pattern: you generally want to explore in a clockwise fashion.",
+      "image": "image16.png"
     },
     {
       "title": "Tower Cellar Level 5",
@@ -70,17 +73,20 @@ window.czPathfinding = {
   "Outer Cloister and Barracks": [
     {
       "title": "Outer Cloister",
-      "text": "You can choose between three ways to find the Barracks: top left, top right or bottom right.\n\nIf you have bushes in the middle and the waypoint is at the top right: go towards the top right.\nIf there is a statue in the middle and the waypoint to the right of it: go towards the top left.\nIf there is a statue in the middle and the waypoint is left / in front of it: go towards the bottom right."
+      "text": "You can choose between three ways to find the Barracks: top left, top right or bottom right.\n\nIf you have bushes in the middle and the waypoint is at the top right: go towards the top right.\nIf there is a statue in the middle and the waypoint to the right of it: go towards the top left.\nIf there is a statue in the middle and the waypoint is left / in front of it: go towards the bottom right.",
+      "image": "image28.png"
     },
     {
       "title": "Barracks",
-      "text": "The exit tile to Jail Level 1 is either oriented to the left of the tile you entered on OR it has the opposite orientation. You generally want to explore in a clockwise fashion."
+      "text": "The exit tile to Jail Level 1 is either oriented to the left of the tile you entered on OR it has the opposite orientation. You generally want to explore in a clockwise fashion. If you find the Horadric Malus first you can conclude the exact orientation of the exit tile.",
+      "image": "image20.png"
     }
   ],
   "Jail, Inner Cloister, and Cathedral": [
     {
       "title": "Jail Level 1",
-      "text": "Explore in a straight line from your entry tile since the exit will always have an orientation opposite to that. The waypoint can generally be found by exploring clockwise."
+      "text": "Explore in a straight line from your entry tile since the exit will always have an orientation opposite to that. The waypoint can generally be found by exploring clockwise.",
+      "image": "image14.png"
     },
     {
       "title": "Jail Level 2",
@@ -88,7 +94,8 @@ window.czPathfinding = {
     },
     {
       "title": "Jail Level 3",
-      "text": "Explore in a clockwise fashion to find the Inner Cloister faster."
+      "text": "Explore in a clockwise fashion to find the Inner Cloister faster.",
+      "image": "image6.png"
     },
     {
       "title": "Inner Cloister & Cathedral",
@@ -102,7 +109,8 @@ window.czPathfinding = {
     },
     {
       "title": "Catacombs Level 2",
-      "text": "No reliable pattern. If you find the waypoint before the exit to Level 3, explore in a counter-clockwise fashion to find the exit."
+      "text": "No reliable pattern. If you find the waypoint before the exit to Level 3, explore in a counter-clockwise fashion to find the exit.",
+      "image": "image38.png"
     },
     {
       "title": "Catacombs Level 3",
@@ -121,8 +129,13 @@ window.czPathfinding = {
   ],
   "Rocky Waste and the Stony Tomb": [
     {
+      "title": "Act II Outdoor Maps",
+      "text": "Every outdoor map in Act II is shaped like a square or rectangle and the exits are always in corner positions. A full-fledged corner using the full external dimensions means the passage to the next zone is there. If there is no exit, the corner will have some form of indent instead.",
+      "image": "image1.png"
+    },
+    {
       "title": "Rocky Wastes",
-      "text": "Pass through as fast as possible. If leaving Lut Gholein to the top left, check for a close exit to the top right, and vice versa.\n\nOutdoor maps in Act II are shaped like a square or rectangle and the exits are always in corner positions. A full-fledged corner using the full external dimensions means the passage to the next zone is there."
+      "text": "Pass through as fast as possible. If leaving Lut Gholein to the top left, check for a close exit to the top right, and vice versa."
     }
   ],
   "Dry Hills and the Halls of the Dead": [
@@ -132,15 +145,18 @@ window.czPathfinding = {
     },
     {
       "title": "Halls of the Dead Level 1",
-      "text": "Explore in a clockwise fashion. The waypoint can be found going straight from the entry tile."
+      "text": "Explore in a clockwise fashion. The waypoint can be found going straight from the entry tile.",
+      "image": "image34.png"
     },
     {
       "title": "Halls of the Dead Level 2",
-      "text": "Explore clockwise. On Hell difficulty you cannot teleport on Level 2 and 3 (disabled for Hate Key farming)."
+      "text": "Explore clockwise. On Hell difficulty you cannot teleport on Level 2 and 3 (disabled for Hate Key farming).",
+      "image": "image24.png"
     },
     {
       "title": "Halls of the Dead Level 3",
-      "text": "Explore clockwise to find the chest containing the Horadric Cube."
+      "text": "Explore clockwise to find the chest containing the Horadric Cube.",
+      "image": "image10.png"
     }
   ],
   "Far Oasis and the Maggot Lair": [
@@ -150,17 +166,20 @@ window.czPathfinding = {
     },
     {
       "title": "Maggot Lair Level 1 and 2",
-      "text": "Explore in a counter-clockwise fashion."
+      "text": "Explore in a counter-clockwise fashion.",
+      "image": "image29.png"
     },
     {
       "title": "Maggot Lair Level 3",
-      "text": "The entry tile is oriented to the bottom left and the objective tile to the top right. Explore in a straight fashion towards the top right corner for the Staff of Kings."
+      "text": "The entry tile is oriented to the bottom left and the objective tile to the top right. Explore in a straight fashion towards the top right corner for the Staff of Kings.",
+      "image": "image37.png"
     }
   ],
   "Lost City, Ancient Tunnels, and Claw Viper Temple": [
     {
       "title": "Lost City",
-      "text": "The exit to the Valley of Snakes can be in a close position. It cannot be in the lower corner. Look for the exit in the left, top and right corner."
+      "text": "The exit to the Valley of Snakes can be in a close position. It cannot be in the lower corner. Look for the exit in the left, top and right corner.",
+      "image": "image4.png"
     },
     {
       "title": "Valley of Snakes",
@@ -168,7 +187,8 @@ window.czPathfinding = {
     },
     {
       "title": "Claw Viper Temple Level 1",
-      "text": "Explore in a clockwise fashion."
+      "text": "Explore in a clockwise fashion.",
+      "image": "image12.png"
     },
     {
       "title": "Claw Viper Temple Level 2",
@@ -178,11 +198,13 @@ window.czPathfinding = {
   "Canyon of the Magi and Tal Rasha's Tomb": [
     {
       "title": "Canyon of Magi",
-      "text": "Uses the same layout every time. Grab the waypoint right outside the red portal from Arcane Sanctuary."
+      "text": "Uses the same layout every time. Grab the waypoint right outside the red portal from Arcane Sanctuary.",
+      "image": "image22.png"
     },
     {
       "title": "Tal Rasha's Tomb",
-      "text": "Go clockwise to find the objective."
+      "text": "Go clockwise to find the objective. Both this zone and Claw Viper Temple Level 1 share a similar tileset.",
+      "image": "image7.png"
     },
     {
       "title": "Tal Rasha's Chamber",
@@ -196,11 +218,13 @@ window.czPathfinding = {
     },
     {
       "title": "Sewers Level 2 (Act II)",
-      "text": "Explore straight. Waypoint found clockwise."
+      "text": "Explore straight. Waypoint found clockwise.",
+      "image": "image36.png"
     },
     {
       "title": "Sewers Level 3 (Act II)",
-      "text": "Explore clockwise to find Radament."
+      "text": "Explore clockwise to find Radament.",
+      "image": "image25.png"
     },
     {
       "title": "Harem & Palace Cellar",
@@ -210,13 +234,19 @@ window.czPathfinding = {
   "Arcane Sanctuary": [
     {
       "title": "Arcane Sanctuary",
-      "text": "No reliable pattern to find the Summoner other than exploring all four ways. Each has a different theme. Once you find the Summoner, the missing 7th symbol floating behind him is the true Tomb."
+      "text": "No reliable pattern to find the Summoner other than exploring all four ways. Each has a different theme (portals, stairs, etc.) and you can run the ways your class is fastest with first. Once you find the Summoner, the missing 7th symbol floating behind him is the true Tomb.",
+      "image": "image33.png"
     }
   ],
   "Spider Forest, Arachnid Lair, and Spider Cavern": [
     {
+      "title": "Act III Outdoor Maps",
+      "text": "In Act III follow the river. Forks, dead ends, and turns lead to side pocket areas. Three-way or four-way forks indicate a new zone (Great Marsh or Flayer Jungle). Side pocket areas look like small enclosed clearings off the main river path.",
+      "image": "image27.png"
+    },
+    {
       "title": "Spider Forest",
-      "text": "Take every passage to a side pocket area until you find the Spider Cavern. River forks in 3+ directions indicate the Great Marsh/Flayer Jungle."
+      "text": "Take every passage to a side pocket area until you find the Spider Cavern. Pay close attention to when the river forks in three or more directions — that indicates the Great Marsh and/or Flayer Jungle."
     },
     {
       "title": "Spider Cavern",
@@ -224,6 +254,11 @@ window.czPathfinding = {
     }
   ],
   "Great Marsh and the Swampy Pit": [
+    {
+      "title": "Act III River Forks",
+      "text": "Three-way or four-way river forks indicate transitions to new zones. Skip side pocket areas when passing through.",
+      "image": "image9.png"
+    },
     {
       "title": "Great Marsh",
       "text": "Follow the main river until a three-way fork or the Flayer Jungle. Skip side pocket areas."
@@ -236,11 +271,13 @@ window.czPathfinding = {
     },
     {
       "title": "Flayer Dungeon Level 1",
-      "text": "Explore clockwise."
+      "text": "Explore clockwise.",
+      "image": "image35.png"
     },
     {
       "title": "Flayer Dungeon Level 2",
-      "text": "Explore clockwise."
+      "text": "Explore clockwise.",
+      "image": "image19.png"
     },
     {
       "title": "Flayer Dungeon Level 3",
@@ -254,7 +291,8 @@ window.czPathfinding = {
     },
     {
       "title": "Sewers Level 1 (Act III)",
-      "text": "No reliable pattern. From the golden chest tile, explore counter-clockwise. Exit tile mostly on the edge."
+      "text": "No reliable pattern. From the golden chest tile, explore counter-clockwise. Exit tile mostly on the edge.",
+      "image": "image3.png"
     },
     {
       "title": "Sewers Level 2 (Act III)",
@@ -264,7 +302,7 @@ window.czPathfinding = {
   "Kurast Bazaar, Ruined Temple, and Disused Fane": [
     {
       "title": "Kurast Bazaar",
-      "text": "Drop a TP at the Sewers and get the Travincal waypoint before going down for Khalim's Heart. The Ruined Temple always looks the same (three stairs, back facing top right)."
+      "text": "Drop a TP at the Sewers and get the Travincal waypoint before going down for Khalim's Heart. The Ruined Temple always looks the same (three stairs, back facing top right). Consider getting Lam Esen's Tome here."
     }
   ],
   "Upper Kurast, the Forgotten Reliquary, and Forgotten Temple": [
@@ -282,11 +320,13 @@ window.czPathfinding = {
   "Durance of Hate": [
     {
       "title": "Durance of Hate Level 1",
-      "text": "Explore clockwise."
+      "text": "Explore clockwise.",
+      "image": "image32.png"
     },
     {
       "title": "Durance of Hate Level 2",
-      "text": "Explore straight. Clockwise finds the waypoint."
+      "text": "Explore straight. Clockwise finds the waypoint.",
+      "image": "image30.png"
     },
     {
       "title": "Durance of Hate Level 3",
@@ -296,7 +336,8 @@ window.czPathfinding = {
   "Outer Steppes and the Plains of Despair": [
     {
       "title": "Outer Steppes",
-      "text": "Act IV outdoor maps are squares/rectangles. Passages near corners and center. The exit can be close to the Pandemonium Fortress or on the opposite side."
+      "text": "Act IV outdoor maps are squares/rectangles. Passages can be near corners and in the center of sides. The exit can be close to the Pandemonium Fortress or on the opposite side.",
+      "image": "image26.png"
     },
     {
       "title": "Plains of Despair",
@@ -326,7 +367,8 @@ window.czPathfinding = {
     },
     {
       "title": "Frigid Highlands",
-      "text": "Can extend top right or top left. Red portals and stairs indicate direction. Or go straight up until you hit the wall and follow it."
+      "text": "Can extend top right or top left. Red portals and stairs indicate direction. Or go straight up until you hit the wall and follow it.",
+      "image": "image8.png"
     }
   ],
   "Arreat Plateau, Crystalline Passage, and Frozen River": [
@@ -336,17 +378,20 @@ window.czPathfinding = {
     },
     {
       "title": "Crystalline Passage",
-      "text": "Clockwise for Glacial Trail. Counter-clockwise for waypoint. Straight for Frozen River."
+      "text": "Clockwise for Glacial Trail. Counter-clockwise for waypoint. Straight for Frozen River.",
+      "image": "image21.png"
     },
     {
       "title": "Frozen River",
-      "text": "Only four fixed layouts. Use the bridge near the entrance to identify which map. Teleport can skip large parts."
+      "text": "Only four fixed layouts. Use the bridge near the entrance to identify which map. Teleport can skip large parts.",
+      "image": "image5.png"
     }
   ],
   "Glacial Trail, Drifter Cavern, and Frozen Tundra": [
     {
       "title": "Glacial Trail",
-      "text": "Explore clockwise. Waypoint tile has same orientation as entry tile. Golden chest is opposite. Counter-clockwise finds the Drifter Cavern."
+      "text": "Explore clockwise. Waypoint tile has same orientation as entry tile. Golden chest is opposite. Counter-clockwise finds the Drifter Cavern.",
+      "image": "image11.png"
     },
     {
       "title": "Frozen Tundra",
@@ -356,7 +401,8 @@ window.czPathfinding = {
   "Ancients' Way and the Icy Cellar": [
     {
       "title": "Ancients' Way",
-      "text": "Explore clockwise like the other ice cave tilesets in Act 5. Counter-clockwise finds the waypoint."
+      "text": "Explore clockwise like the other ice cave tilesets in Act 5. Counter-clockwise finds the waypoint.",
+      "image": "image2.png"
     }
   ],
   "Nihlathak's Temple": [
@@ -378,7 +424,8 @@ window.czPathfinding = {
     },
     {
       "title": "Worldstone Keep Level 2",
-      "text": "No reliable pattern. If you find the waypoint, explore counter-clockwise for the exit to Level 3."
+      "text": "No reliable pattern. If you find the waypoint, explore counter-clockwise for the exit to Level 3.",
+      "image": "image18.png"
     },
     {
       "title": "Worldstone Keep Level 3",

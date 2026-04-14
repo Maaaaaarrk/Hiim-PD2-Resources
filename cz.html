@@ -22,7 +22,7 @@
 .time-controls{background:#16181b;border:1px solid #2b2f33;border-radius:8px;padding:1rem;margin-bottom:1rem}
 .tag-badge{font-size:.65rem;font-weight:700;border-radius:3px;padding:1px 5px;margin-left:4px}.tag-top{background:#22c55e;color:#fff}.tag-good{background:#3b82f6;color:#fff}.tag-red{background:#ef4444;color:#fff}
 .pathfind-btn{cursor:pointer;font-size:.85rem;margin-left:6px;opacity:.6;transition:opacity .15s;vertical-align:middle;background:none;border:none;padding:0;color:#9ca3af;line-height:1}.pathfind-btn:hover{opacity:1;color:#60a5fa}
-.pathfind-section{margin-bottom:1rem}.pathfind-section:last-child{margin-bottom:0}.pathfind-section h6{color:#93c5fd;margin-bottom:.35rem}.pathfind-section p{color:#d1d5db;font-size:.9rem;margin-bottom:0;white-space:pre-line}
+.pathfind-section{margin-bottom:1rem}.pathfind-section:last-child{margin-bottom:0}.pathfind-section h6{color:#93c5fd;margin-bottom:.35rem}.pathfind-section p{color:#d1d5db;font-size:.9rem;margin-bottom:0;white-space:pre-line}.pathfind-section img{max-width:100%;height:auto;border-radius:.375rem;margin-top:.5rem;margin-bottom:.25rem;border:1px solid #374151}
 </style></head>
 <body data-bs-theme="dark">
 <div class="container py-4" style="max-width:1000px">
@@ -199,7 +199,7 @@
 </div>
 <div class="modal-body" id="pathfindModalBody"></div>
 <div class="modal-footer border-secondary">
-<a href="https://docs.google.com/document/d/14fVQEQp4AaI24XEV0CDPwfmnbYhOJQAnRqUh3_A1KGY" target="_blank" class="btn btn-sm btn-outline-info">Full Guide (Google Doc)</a>
+<a href="pathfinding.html" class="btn btn-sm btn-outline-info">Full Guide</a>
 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>
 </div>
@@ -236,7 +236,7 @@ var openPathfindModal=function(zoneName){
   var guide=pfData[zoneName];
   pfModalLabel.textContent=zoneName+" \u2014 Pathfinding";
   if(!guide||!guide.length){pfModalBody.innerHTML='<p class="text-secondary">No pathfinding guide available for this zone yet.</p>';
-  }else{var html="";for(var i=0;i<guide.length;i++){html+='<div class="pathfind-section"><h6>'+guide[i].title+'</h6><p>'+guide[i].text.replace(/\n/g,"<br>")+'</p></div>';}pfModalBody.innerHTML=html;}
+  }else{var html="";for(var i=0;i<guide.length;i++){html+='<div class="pathfind-section"><h6>'+guide[i].title+'</h6><p>'+guide[i].text.replace(/\n/g,"<br>")+'</p>';if(guide[i].image){html+='<img src="images/pathfinding/'+guide[i].image+'" alt="'+guide[i].title+' pathfinding diagram" loading="lazy">';}html+='</div>';}pfModalBody.innerHTML=html;}
   var bsModal=new bootstrap.Modal(pfModal);bsModal.show();
 };
 var mkPathBtn=function(zoneName){var btn=mkEl("button","pathfind-btn","\uD83E\uDDED");btn.title="Pathfinding guide";btn.addEventListener("click",function(e){e.stopPropagation();openPathfindModal(zoneName)});return btn};
