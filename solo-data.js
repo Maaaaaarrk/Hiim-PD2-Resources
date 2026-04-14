@@ -1006,8 +1006,14 @@ window.soloData = {
     "Barbarian": [
       {
         "buildName": "Warcry",
-        "tier": "Decent",
-        "links": [],
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://streamable.com/cq8k8s",
+            "label": "Sewers of Harrogath (3:00)",
+            "type": "video"
+          }
+        ],
         "notes": []
       },
       {
