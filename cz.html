@@ -21,6 +21,8 @@
 .countdown{font-size:.8rem;color:#6b7280}
 .time-controls{background:#16181b;border:1px solid #2b2f33;border-radius:8px;padding:1rem;margin-bottom:1rem}
 .tag-badge{font-size:.65rem;font-weight:700;border-radius:3px;padding:1px 5px;margin-left:4px}.tag-top{background:#22c55e;color:#fff}.tag-good{background:#3b82f6;color:#fff}.tag-red{background:#ef4444;color:#fff}
+.pathfind-btn{cursor:pointer;font-size:.85rem;margin-left:6px;opacity:.6;transition:opacity .15s;vertical-align:middle;background:none;border:none;padding:0;color:#9ca3af;line-height:1}.pathfind-btn:hover{opacity:1;color:#60a5fa}
+.pathfind-section{margin-bottom:1rem}.pathfind-section:last-child{margin-bottom:0}.pathfind-section h6{color:#93c5fd;margin-bottom:.35rem}.pathfind-section p{color:#d1d5db;font-size:.9rem;margin-bottom:0;white-space:pre-line}.pathfind-section img{max-width:100%;height:auto;border-radius:.375rem;margin-top:.5rem;margin-bottom:.25rem;border:1px solid #374151}
 </style></head>
 <body data-bs-theme="dark">
 <div class="container py-4" style="max-width:1000px">
@@ -188,7 +190,23 @@
 </ul>
 <div class="tab-content"><div class="tab-pane fade show active" id="pane-upcoming" role="tabpanel"></div><div class="tab-pane fade" id="pane-byzone" role="tabpanel"></div></div>
 </div>
+<div class="modal fade" id="pathfindModal" tabindex="-1" aria-labelledby="pathfindModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-secondary">
+<h5 class="modal-title" id="pathfindModalLabel">Pathfinding Guide</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body" id="pathfindModalBody"></div>
+<div class="modal-footer border-secondary">
+<a href="pathfinding.html" class="btn btn-sm btn-outline-info">Full Guide</a>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
 <script src="cz-data.js"></script>
+<script src="cz-pathfinding.js"></script>
 <script>
 (function(){
 var zones=window.czData.zones;
@@ -212,8 +230,18 @@ var getUpcomingList=function(baseTs,count){var list=[];for(var i=0;list.length<c
 var getNextNPerZone=function(baseTs,n){var result={},counts={},vc=0;for(var vi=0;vi<zones.length;vi++){if(isZoneVisible(vi))vc++}var done=false;for(var i=0;!done&&i<2000;i++){var info=getZone(baseTs,i);if(!isZoneVisible(info.idx))continue;if(!result[info.idx]){result[info.idx]=[];counts[info.idx]=0}if(counts[info.idx]<n){result[info.idx].push({ts:info.ts});counts[info.idx]++}if(Object.keys(counts).length>=vc){done=true;for(var k in counts){if(counts[k]<n){done=false;break}}}}return result};
 var mkEl=function(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e};
 var mkTags=function(idx){var wrap=mkEl("span","d-flex gap-1");if(topZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-top","TOP"));if(goodZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-good","GOOD"));if(redZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-red","RED"));return wrap};
-var renderUpcoming=function(){var baseTs=getBaseTs(),now=Date.now(),list=getUpcomingList(baseTs,UPCOMING_COUNT);paneUpcoming.innerHTML="";if(!list.length){paneUpcoming.textContent="No zones match your current filters.";return}for(var i=0;i<list.length;i++){var info=list[i];var isNow=now>=info.ts&&now<info.ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+info.act,"Act "+info.act));topLeft.appendChild(mkEl("span","zone-name",info.zone));top.appendChild(topLeft);top.appendChild(mkTags(info.idx));card.appendChild(top);var bot=mkEl("div","d-flex justify-content-between align-items-center mt-1");bot.appendChild(mkEl("span","zone-time"+(isNow?" now":""),((isNow?"LIVE NOW -- ":"")+formatTime(info.ts))));bot.appendChild(mkEl("span","countdown",formatCountdown(info.ts-now)));card.appendChild(bot);paneUpcoming.appendChild(card)}};
-var renderByZone=function(){var baseTs=getBaseTs(),now=Date.now(),perZone=getNextNPerZone(baseTs,NEXT_COUNT);var si=Object.keys(perZone).map(Number).sort(function(a,b){return perZone[a][0].ts-perZone[b][0].ts});paneByZone.innerHTML="";if(!si.length){paneByZone.textContent="No zones match your current filters.";return}for(var j=0;j<si.length;j++){var idx=si[j];var times=perZone[idx];var isNow=now>=times[0].ts&&now<times[0].ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+zoneAct[idx],"Act "+zoneAct[idx]));topLeft.appendChild(mkEl("span","zone-name",zones[idx]));top.appendChild(topLeft);top.appendChild(mkTags(idx));card.appendChild(top);var ul=mkEl("ul","schedule-times");for(var ti=0;ti<times.length;ti++){var t=times[ti];var live=now>=t.ts&&now<t.ts+900e3;var li=mkEl("li",live?"now-label":"",((live?"LIVE NOW -- ":"")+formatTime(t.ts)));li.appendChild(mkEl("span","countdown"," "+formatCountdown(t.ts-now)));ul.appendChild(li)}card.appendChild(ul);paneByZone.appendChild(card)}};
+var pfData=window.czPathfinding||{};
+var pfModal=document.getElementById("pathfindModal");var pfModalLabel=document.getElementById("pathfindModalLabel");var pfModalBody=document.getElementById("pathfindModalBody");
+var openPathfindModal=function(zoneName){
+  var guide=pfData[zoneName];
+  pfModalLabel.textContent=zoneName+" \u2014 Pathfinding";
+  if(!guide||!guide.length){pfModalBody.innerHTML='<p class="text-secondary">No pathfinding guide available for this zone yet.</p>';
+  }else{var html="";for(var i=0;i<guide.length;i++){html+='<div class="pathfind-section"><h6>'+guide[i].title+'</h6><p>'+guide[i].text.replace(/\n/g,"<br>")+'</p>';if(guide[i].image){html+='<img src="images/pathfinding/'+guide[i].image+'" alt="'+guide[i].title+' pathfinding diagram" loading="lazy">';}html+='</div>';}pfModalBody.innerHTML=html;}
+  var bsModal=new bootstrap.Modal(pfModal);bsModal.show();
+};
+var mkPathBtn=function(zoneName){var btn=mkEl("button","pathfind-btn","\uD83E\uDDED");btn.title="Pathfinding guide";btn.addEventListener("click",function(e){e.stopPropagation();openPathfindModal(zoneName)});return btn};
+var renderUpcoming=function(){var baseTs=getBaseTs(),now=Date.now(),list=getUpcomingList(baseTs,UPCOMING_COUNT);paneUpcoming.innerHTML="";if(!list.length){paneUpcoming.textContent="No zones match your current filters.";return}for(var i=0;i<list.length;i++){var info=list[i];var isNow=now>=info.ts&&now<info.ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+info.act,"Act "+info.act));topLeft.appendChild(mkEl("span","zone-name",info.zone));topLeft.appendChild(mkPathBtn(info.zone));top.appendChild(topLeft);top.appendChild(mkTags(info.idx));card.appendChild(top);var bot=mkEl("div","d-flex justify-content-between align-items-center mt-1");bot.appendChild(mkEl("span","zone-time"+(isNow?" now":""),((isNow?"LIVE NOW -- ":"")+formatTime(info.ts))));bot.appendChild(mkEl("span","countdown",formatCountdown(info.ts-now)));card.appendChild(bot);paneUpcoming.appendChild(card)}};
+var renderByZone=function(){var baseTs=getBaseTs(),now=Date.now(),perZone=getNextNPerZone(baseTs,NEXT_COUNT);var si=Object.keys(perZone).map(Number).sort(function(a,b){return perZone[a][0].ts-perZone[b][0].ts});paneByZone.innerHTML="";if(!si.length){paneByZone.textContent="No zones match your current filters.";return}for(var j=0;j<si.length;j++){var idx=si[j];var times=perZone[idx];var isNow=now>=times[0].ts&&now<times[0].ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+zoneAct[idx],"Act "+zoneAct[idx]));topLeft.appendChild(mkEl("span","zone-name",zones[idx]));topLeft.appendChild(mkPathBtn(zones[idx]));top.appendChild(topLeft);top.appendChild(mkTags(idx));card.appendChild(top);var ul=mkEl("ul","schedule-times");for(var ti=0;ti<times.length;ti++){var t=times[ti];var live=now>=t.ts&&now<t.ts+900e3;var li=mkEl("li",live?"now-label":"",((live?"LIVE NOW -- ":"")+formatTime(t.ts)));li.appendChild(mkEl("span","countdown"," "+formatCountdown(t.ts-now)));ul.appendChild(li)}card.appendChild(ul);paneByZone.appendChild(card)}};
 var renderAll=function(skipHash){renderUpcoming();renderByZone();clockDisplay.textContent=useCustomTime?("Showing: "+new Date(customTs).toLocaleString()):new Date().toLocaleTimeString();if(!skipHash&&typeof updateHash==='function')updateHash()};
 var syncActs=function(){activeActs=new Set();activeZones.forEach(function(idx){activeActs.add(zoneAct[idx])});var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++){var act=parseInt(b[i].dataset.act);if(activeActs.has(act))b[i].classList.add("active");else b[i].classList.remove("active")}};
 var buildZoneFilter=function(){var c=pE("zoneFilter");var row=mkEl("div","row");for(var i=0;i<zones.length;i++){var col=mkEl("div","col-md-6 filter-check");var fc=mkEl("div","form-check");var inp=document.createElement("input");inp.className="form-check-input zone-cb";inp.type="checkbox";inp.id="zcb"+i;inp.dataset.idx=i;inp.checked=activeZones.has(i);var lbl=document.createElement("label");lbl.className="form-check-label";lbl.htmlFor="zcb"+i;lbl.appendChild(mkEl("span","act-badge act-"+zoneAct[i],"A"+zoneAct[i]));lbl.appendChild(document.createTextNode(" "+zones[i]));if(topZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-top ms-1","TOP"));if(goodZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-good ms-1","GOOD"));if(redZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-red ms-1","RED"));fc.appendChild(inp);fc.appendChild(lbl);col.appendChild(fc);row.appendChild(col);(function(cb){cb.addEventListener("change",function(){var x=parseInt(cb.dataset.idx);if(cb.checked)activeZones.add(x);else activeZones.delete(x);syncActs();renderAll()})})(inp)}c.innerHTML="";c.appendChild(row)};
