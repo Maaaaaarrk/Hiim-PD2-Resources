@@ -26,12 +26,14 @@
 .res-filter-btn{cursor:pointer;user-select:none;font-size:.75rem;font-weight:600;border-radius:4px;padding:3px 10px;border:2px solid transparent;opacity:.5;transition:opacity .15s,border-color .15s}
 .res-filter-btn.active{opacity:1;border-color:#fff}
 .res-filter-btn.excluded{opacity:1;border-color:#fff;text-decoration:line-through}
+.pathfind-btn{cursor:pointer;font-size:.85rem;margin-left:6px;opacity:.6;transition:opacity .15s;vertical-align:middle;background:none;border:none;padding:0;color:#9ca3af;line-height:1}.pathfind-btn:hover{opacity:1;color:#60a5fa}
+.pathfind-section{margin-bottom:1rem}.pathfind-section:last-child{margin-bottom:0}.pathfind-section h6{color:#93c5fd;margin-bottom:.35rem}.pathfind-section p{color:#d1d5db;font-size:.9rem;margin-bottom:0;white-space:pre-line}.pathfind-section img{max-width:100%;height:auto;border-radius:.375rem;margin-top:.5rem;margin-bottom:.25rem;border:1px solid #374151}
 </style></head>
 <body data-bs-theme="dark">
 <div class="container py-4" style="max-width:1000px">
 <div class="text-center mb-4"><h3 class="mb-0">PD2 Corrupted Zone Schedule</h3>
 <small class="text-secondary">See when each corrupted zone goes live. Zones rotate every 15 minutes.</small>
-<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button> <a id="report-issue-btn" href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=cz%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A" target="_blank" rel="noopener" class="btn btn-sm btn-outline-danger">&#9888; Report an Issue</a></div></div>
+<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button> <button class="btn btn-sm btn-outline-warning" id="btnSoundToggle" title="Play a sound when a new zone rotation starts">&#128264; Sound: OFF</button> <a id="report-issue-btn" href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=cz%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A" target="_blank" rel="noopener" class="btn btn-sm btn-outline-danger">&#9888; Report an Issue</a></div></div>
 <script>
 (function(){
 	var btn=document.getElementById('report-issue-btn');
@@ -112,6 +114,7 @@
 <div class="col-md-4"><label class="form-label mb-1">Filter by tags</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovTags"><option value="">All</option><option value="TOP">TOP only</option><option value="GOOD">GOOD only</option><option value="RED">RED only</option><option value="TOP,GOOD">TOP + GOOD</option><option value="TOP,GOOD,RED">TOP + GOOD + RED</option></select></div>
 <div class="col-md-4"><label class="form-label mb-1">Hide immunities</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovResist" multiple size="3" style="font-size:.8rem"><option value="fire">Fire</option><option value="cold">Cold</option><option value="lightning">Lightning</option><option value="poison">Poison</option><option value="physical">Physical</option><option value="magic">Magic</option></select><div class="form-text text-secondary" style="font-size:.75rem">Ctrl+click to select multiple. Hides zones with selected immunities.</div></div>
 <div class="col-md-4"><label class="form-label mb-1">Mini mode</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovMini"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Compact layout, countdown badges, no LIVE/Next labels</div></div>
+<div class="col-md-4"><label class="form-label mb-1">Sound notification</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovSound"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Play a sound when a new zone rotation starts</div></div>
 </div>
 <h6 class="mb-2">Filter by Act</h6>
 <div class="d-flex flex-wrap gap-2 mb-3">
@@ -156,6 +159,7 @@
 <tr><td><code>title</code></td><td>1</td><td><code>0</code> to hide the header</td></tr>
 <tr><td><code>resist</code></td><td>none</td><td>Comma-separated damage types to exclude zones with those immunities, e.g. <code>fire,cold</code>. Valid: <code>fire</code>, <code>cold</code>, <code>lightning</code>, <code>poison</code>, <code>physical</code>, <code>magic</code></td></tr>
 <tr><td><code>mini</code></td><td>0</td><td><code>1</code> for compact mode &mdash; less padding, no LIVE/Next labels, countdown badges (green when active, yellow when next zone starts in &lt;5 min), zone names truncated at 140px</td></tr>
+<tr><td><code>sound</code></td><td>0</td><td><code>1</code> to play a sound notification when a new zone rotation starts</td></tr>
 </tbody></table></div>
 </div>
 <div class="modal-footer border-secondary">
@@ -207,7 +211,23 @@
 </ul>
 <div class="tab-content"><div class="tab-pane fade show active" id="pane-upcoming" role="tabpanel"></div><div class="tab-pane fade" id="pane-byzone" role="tabpanel"></div></div>
 </div>
+<div class="modal fade" id="pathfindModal" tabindex="-1" aria-labelledby="pathfindModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-secondary">
+<h5 class="modal-title" id="pathfindModalLabel">Pathfinding Guide</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body" id="pathfindModalBody"></div>
+<div class="modal-footer border-secondary">
+<a href="pathfinding.html" class="btn btn-sm btn-outline-info">Full Guide</a>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
 <script src="cz-data.js"></script>
+<script src="cz-pathfinding.js"></script>
 <script>
 (function(){
 var zones=window.czData.zones;
@@ -233,8 +253,18 @@ var getUpcomingList=function(baseTs,count){var list=[];for(var i=0;list.length<c
 var getNextNPerZone=function(baseTs,n){var result={},counts={},vc=0;for(var vi=0;vi<zones.length;vi++){if(isZoneVisible(vi))vc++}var done=false;for(var i=0;!done&&i<2000;i++){var info=getZone(baseTs,i);if(!isZoneVisible(info.idx))continue;if(!result[info.idx]){result[info.idx]=[];counts[info.idx]=0}if(counts[info.idx]<n){result[info.idx].push({ts:info.ts});counts[info.idx]++}if(Object.keys(counts).length>=vc){done=true;for(var k in counts){if(counts[k]<n){done=false;break}}}}return result};
 var mkEl=function(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e};
 var mkTags=function(idx){var wrap=mkEl("span","d-flex gap-1 flex-wrap align-items-center");if(topZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-top","TOP"));if(goodZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-good","GOOD"));if(redZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-red","RED"));var imm=zoneImmunities[String(idx)]||[];for(var ii=0;ii<imm.length;ii++){wrap.appendChild(mkEl("span","immune-badge immune-"+imm[ii],imm[ii].charAt(0).toUpperCase()+imm[ii].slice(1)+" Immune"))}return wrap};
-var renderUpcoming=function(){var baseTs=getBaseTs(),now=Date.now(),list=getUpcomingList(baseTs,UPCOMING_COUNT);paneUpcoming.innerHTML="";if(!list.length){paneUpcoming.textContent="No zones match your current filters.";return}for(var i=0;i<list.length;i++){var info=list[i];var isNow=now>=info.ts&&now<info.ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+info.act,"Act "+info.act));topLeft.appendChild(mkEl("span","zone-name",info.zone));top.appendChild(topLeft);top.appendChild(mkTags(info.idx));card.appendChild(top);var bot=mkEl("div","d-flex justify-content-between align-items-center mt-1");bot.appendChild(mkEl("span","zone-time"+(isNow?" now":""),((isNow?"LIVE NOW -- ":"")+formatTime(info.ts))));bot.appendChild(mkEl("span","countdown",formatCountdown(info.ts-now)));card.appendChild(bot);paneUpcoming.appendChild(card)}};
-var renderByZone=function(){var baseTs=getBaseTs(),now=Date.now(),perZone=getNextNPerZone(baseTs,NEXT_COUNT);var si=Object.keys(perZone).map(Number).sort(function(a,b){return perZone[a][0].ts-perZone[b][0].ts});paneByZone.innerHTML="";if(!si.length){paneByZone.textContent="No zones match your current filters.";return}for(var j=0;j<si.length;j++){var idx=si[j];var times=perZone[idx];var isNow=now>=times[0].ts&&now<times[0].ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+zoneAct[idx],"Act "+zoneAct[idx]));topLeft.appendChild(mkEl("span","zone-name",zones[idx]));top.appendChild(topLeft);top.appendChild(mkTags(idx));card.appendChild(top);var ul=mkEl("ul","schedule-times");for(var ti=0;ti<times.length;ti++){var t=times[ti];var live=now>=t.ts&&now<t.ts+900e3;var li=mkEl("li",live?"now-label":"",((live?"LIVE NOW -- ":"")+formatTime(t.ts)));li.appendChild(mkEl("span","countdown"," "+formatCountdown(t.ts-now)));ul.appendChild(li)}card.appendChild(ul);paneByZone.appendChild(card)}};
+var pfData=window.czPathfinding||{};
+var pfModal=document.getElementById("pathfindModal");var pfModalLabel=document.getElementById("pathfindModalLabel");var pfModalBody=document.getElementById("pathfindModalBody");
+var openPathfindModal=function(zoneName){
+  var guide=pfData[zoneName];
+  pfModalLabel.textContent=zoneName+" \u2014 Pathfinding";
+  if(!guide||!guide.length){pfModalBody.innerHTML='<p class="text-secondary">No pathfinding guide available for this zone yet.</p>';
+  }else{var html="";for(var i=0;i<guide.length;i++){html+='<div class="pathfind-section"><h6>'+guide[i].title+'</h6><p>'+guide[i].text.replace(/\n/g,"<br>")+'</p>';if(guide[i].image){html+='<img src="images/pathfinding/'+guide[i].image+'" alt="'+guide[i].title+' pathfinding diagram" loading="lazy">';}html+='</div>';}pfModalBody.innerHTML=html;}
+  var bsModal=new bootstrap.Modal(pfModal);bsModal.show();
+};
+var mkPathBtn=function(zoneName){var btn=mkEl("button","pathfind-btn","\uD83E\uDDED");btn.title="Pathfinding guide";btn.addEventListener("click",function(e){e.stopPropagation();openPathfindModal(zoneName)});return btn};
+var renderUpcoming=function(){var baseTs=getBaseTs(),now=Date.now(),list=getUpcomingList(baseTs,UPCOMING_COUNT);paneUpcoming.innerHTML="";if(!list.length){paneUpcoming.textContent="No zones match your current filters.";return}for(var i=0;i<list.length;i++){var info=list[i];var isNow=now>=info.ts&&now<info.ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+info.act,"Act "+info.act));topLeft.appendChild(mkEl("span","zone-name",info.zone));topLeft.appendChild(mkPathBtn(info.zone));top.appendChild(topLeft);top.appendChild(mkTags(info.idx));card.appendChild(top);var bot=mkEl("div","d-flex justify-content-between align-items-center mt-1");bot.appendChild(mkEl("span","zone-time"+(isNow?" now":""),((isNow?"LIVE NOW -- ":"")+formatTime(info.ts))));bot.appendChild(mkEl("span","countdown",formatCountdown(info.ts-now)));card.appendChild(bot);paneUpcoming.appendChild(card)}};
+var renderByZone=function(){var baseTs=getBaseTs(),now=Date.now(),perZone=getNextNPerZone(baseTs,NEXT_COUNT);var si=Object.keys(perZone).map(Number).sort(function(a,b){return perZone[a][0].ts-perZone[b][0].ts});paneByZone.innerHTML="";if(!si.length){paneByZone.textContent="No zones match your current filters.";return}for(var j=0;j<si.length;j++){var idx=si[j];var times=perZone[idx];var isNow=now>=times[0].ts&&now<times[0].ts+900e3;var card=mkEl("div","zone-card"+(isNow?" active-now":""));var top=mkEl("div","d-flex justify-content-between align-items-center flex-wrap gap-1");var topLeft=mkEl("div","d-flex align-items-center flex-wrap gap-1");topLeft.appendChild(mkEl("span","act-badge act-"+zoneAct[idx],"Act "+zoneAct[idx]));topLeft.appendChild(mkEl("span","zone-name",zones[idx]));topLeft.appendChild(mkPathBtn(zones[idx]));top.appendChild(topLeft);top.appendChild(mkTags(idx));card.appendChild(top);var ul=mkEl("ul","schedule-times");for(var ti=0;ti<times.length;ti++){var t=times[ti];var live=now>=t.ts&&now<t.ts+900e3;var li=mkEl("li",live?"now-label":"",((live?"LIVE NOW -- ":"")+formatTime(t.ts)));li.appendChild(mkEl("span","countdown"," "+formatCountdown(t.ts-now)));ul.appendChild(li)}card.appendChild(ul);paneByZone.appendChild(card)}};
 var renderAll=function(skipHash){renderUpcoming();renderByZone();clockDisplay.textContent=useCustomTime?("Showing: "+new Date(customTs).toLocaleString()):new Date().toLocaleTimeString();if(!skipHash&&typeof updateHash==='function')updateHash()};
 var syncActs=function(){activeActs=new Set();activeZones.forEach(function(idx){activeActs.add(zoneAct[idx])});var b=document.querySelectorAll(".filter-btn[data-act]");for(var i=0;i<b.length;i++){var act=parseInt(b[i].dataset.act);if(activeActs.has(act))b[i].classList.add("active");else b[i].classList.remove("active")}};
 var buildZoneFilter=function(){var c=pE("zoneFilter");var row=mkEl("div","row");for(var i=0;i<zones.length;i++){var col=mkEl("div","col-md-6 filter-check");var fc=mkEl("div","form-check");var inp=document.createElement("input");inp.className="form-check-input zone-cb";inp.type="checkbox";inp.id="zcb"+i;inp.dataset.idx=i;inp.checked=activeZones.has(i);var lbl=document.createElement("label");lbl.className="form-check-label";lbl.htmlFor="zcb"+i;lbl.appendChild(mkEl("span","act-badge act-"+zoneAct[i],"A"+zoneAct[i]));lbl.appendChild(document.createTextNode(" "+zones[i]));if(topZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-top ms-1","TOP"));if(goodZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-good ms-1","GOOD"));if(redZones.has(i))lbl.appendChild(mkEl("span","tag-badge tag-red ms-1","RED"));fc.appendChild(inp);fc.appendChild(lbl);col.appendChild(fc);row.appendChild(col);(function(cb){cb.addEventListener("change",function(){var x=parseInt(cb.dataset.idx);if(cb.checked)activeZones.add(x);else activeZones.delete(x);syncActs();renderAll()})})(inp)}c.innerHTML="";c.appendChild(row)};
@@ -307,6 +337,63 @@ restoreFromHash();buildZoneFilter();renderAll();setInterval(renderAll,5000);
 var tabEls=document.querySelectorAll('button[data-bs-toggle="tab"]');for(var ti=0;ti<tabEls.length;ti++){tabEls[ti].addEventListener('shown.bs.tab',function(){updateHash()})}
 // Listen for hashchange (back/forward)
 window.addEventListener('hashchange',function(){restoreFromHash();buildZoneFilter();renderAll()});
+
+// --- Sound notification for zone rotations ---
+var soundEnabled = localStorage.getItem('czSoundEnabled') === 'true';
+var lastZoneTs = null;
+var soundBtn = document.getElementById('btnSoundToggle');
+
+var updateSoundBtn = function() {
+  if (soundEnabled) {
+    soundBtn.innerHTML = '&#128266; Sound: ON';
+    soundBtn.classList.remove('btn-outline-warning');
+    soundBtn.classList.add('btn-warning');
+  } else {
+    soundBtn.innerHTML = '&#128264; Sound: OFF';
+    soundBtn.classList.remove('btn-warning');
+    soundBtn.classList.add('btn-outline-warning');
+  }
+};
+updateSoundBtn();
+
+soundBtn.addEventListener('click', function() {
+  soundEnabled = !soundEnabled;
+  localStorage.setItem('czSoundEnabled', String(soundEnabled));
+  updateSoundBtn();
+});
+
+var playNotificationSound = function() {
+  try {
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var playTone = function(freq, start, duration) {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.frequency.value = freq;
+      osc.type = 'sine';
+      gain.gain.setValueAtTime(0.3, ctx.currentTime + start);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + start + duration);
+      osc.start(ctx.currentTime + start);
+      osc.stop(ctx.currentTime + start + duration);
+    };
+    playTone(523.25, 0, 0.15);
+    playTone(659.25, 0.15, 0.15);
+    playTone(783.99, 0.3, 0.3);
+  } catch (e) { /* AudioContext not available */ }
+};
+
+// Check for zone rotation every second
+setInterval(function() {
+  if (!soundEnabled || useCustomTime) return;
+  var now = Date.now();
+  var currentZoneTs = Math.floor(now / 900000) * 900000;
+  if (lastZoneTs === null) { lastZoneTs = currentZoneTs; return; }
+  if (currentZoneTs !== lastZoneTs) {
+    lastZoneTs = currentZoneTs;
+    playNotificationSound();
+  }
+}, 1000);
 })();
 </script>
 <script>
@@ -354,6 +441,8 @@ var updateOverlayUrl=function(){
   if(title==="0")p.push("title=0");
   var mini=document.getElementById("ovMini").value;
   if(mini==="1")p.push("mini=1");
+  var sound=document.getElementById("ovSound").value;
+  if(sound==="1")p.push("sound=1");
   var tags=document.getElementById("ovTags").value;
   var resistSel=document.getElementById("ovResist");
   var resistVals=[];for(var ri=0;ri<resistSel.options.length;ri++){if(resistSel.options[ri].selected)resistVals.push(resistSel.options[ri].value)}
@@ -386,6 +475,7 @@ document.getElementById("ovTitle").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovTags").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovMini").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovResist").addEventListener("change",updateOverlayUrl);
+document.getElementById("ovSound").addEventListener("change",updateOverlayUrl);
 var actCbs=document.querySelectorAll(".ov-act-cb");
 for(var i=0;i<actCbs.length;i++){actCbs[i].addEventListener("change",updateOverlayUrl)}
 
