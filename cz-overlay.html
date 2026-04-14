@@ -16,6 +16,9 @@
  * scale  = font scale multiplier, e.g. 1.2 (default: 1)
  * title  = 0 to hide the header row (default: 1)
  * zones  = comma-separated zone indices to show (default: all)
+ * resist = comma-separated damage types to exclude, e.g. resist=fire,cold
+ *          hides zones where monsters are immune to any listed type
+ *          valid types: fire, cold, lightning, poison, physical, magic
  * mini   = 1 to enable minified mode — compact layout, no LIVE/Next labels,
  *          countdown badges (green=active, yellow=starting soon), zone names truncated at 140px
  *
@@ -107,6 +110,9 @@ body.theme-light .status.next{background:rgba(0,0,0,0.08);color:#666}
 .tag-good{background:#3b82f6;color:#fff}
 .tag-red{background:#ef4444;color:#fff}
 
+.immune{font-size:.45rem;font-weight:600;border-radius:2px;padding:1px 3px}
+.immune-fire{background:#c03030;color:#fff}.immune-cold{background:#4488dd;color:#fff}.immune-lightning{background:#d4a017;color:#000}.immune-poison{background:#00aa00;color:#fff}.immune-physical{background:#888;color:#fff}.immune-magic{background:#9060c0;color:#fff}
+
 .timer{
   font-size:.75rem;
   color:#9ca3af;
@@ -145,6 +151,7 @@ var zoneAct=window.czData.zoneAct;
 var topZones=new Set(window.czData.topZones);
 var goodZones=new Set(window.czData.goodZones);
 var redZones=new Set(window.czData.redZones);
+var zoneImmunities=window.czData.zoneImmunities||{};
 
 /* Parse URL params */
 var params=new URLSearchParams(window.location.search);
@@ -165,6 +172,8 @@ if(params.get("tags")){
 }
 var zoneFilter=null;
 if(params.get("zones")){zoneFilter=new Set(params.get("zones").split(",").map(Number))}
+var resistFilter=null;
+if(params.get("resist")){resistFilter=new Set(params.get("resist").toLowerCase().split(","))}
 var theme=params.get("theme")||"dark";
 var align=params.get("align")||"left";
 var scale=parseFloat(params.get("scale"))||1;
@@ -185,10 +194,17 @@ var getZone=function(ts,n){
   return{zone:zones[idx],act:zoneAct[idx],ts:ts,idx:idx};
 };
 var isVisible=function(idx){
-  if(zoneFilter)return zoneFilter.has(idx);
+  if(zoneFilter)return zoneFilter.has(idx)&&!isResistBlocked(idx);
   if(actFilter&&!actFilter.has(zoneAct[idx]))return false;
   if(tagFilter&&!tagFilter.has(idx))return false;
+  if(isResistBlocked(idx))return false;
   return true;
+};
+var isResistBlocked=function(idx){
+  if(!resistFilter)return false;
+  var imm=zoneImmunities[String(idx)]||[];
+  for(var i=0;i<imm.length;i++){if(resistFilter.has(imm[i]))return true}
+  return false;
 };
 var formatCountdown=function(d){
   if(d<=0)return"NOW";
@@ -239,6 +255,8 @@ var render=function(){
       if(topZones.has(z.idx))html+='<span class="tag tag-top">TOP</span>';
       if(goodZones.has(z.idx))html+='<span class="tag tag-good">GOOD</span>';
       if(redZones.has(z.idx))html+='<span class="tag tag-red">RED</span>';
+      var imm=zoneImmunities[String(z.idx)]||[];
+      for(var ii=0;ii<imm.length;ii++){html+='<span class="immune immune-'+imm[ii]+'">'+imm[ii].charAt(0).toUpperCase()+'</span>'}
     }
     html+='<span class="'+timerClass+'">'+countdown+'</span>';
     html+='</div>';
