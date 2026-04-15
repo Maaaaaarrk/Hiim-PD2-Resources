@@ -168,7 +168,8 @@
           "text": "Uber Tristram",
           "style": "dark"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=7QNCOt1iQBk"
     },
     {
       "className": "Assassin",
@@ -834,6 +835,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=97&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0001000100000100200101010002010001000015200001002001002000010000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Blessed+Aim%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CHeavenly+Garb%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CLaying+of+Hands%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Cunning+Diadem+of+the+Magus%2C3%2C%2B+Skill%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&armor=Chains+of+Honor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2C%2B+ICB&boots=Marrowwalk%2C3%2C%2B+Faster+Run+Walk&belt=String+of+Ears%2C2%2C%2B+PDR%2C&amulet=Cunning+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Damage+Reduction&ring2=Wisp+Projector%2C0%2C%2B+Damage+Reduction&weapon=Ghostflame%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&offhand=Gerke%27s+Sanctuary%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2CRainbow+Facet+%28Fire%29%2CRainbow+Facet+%28Fire%29&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Blessed_Aim-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Sanctuary-mercenary_armor%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=%2B1+Entrapping+Grand+Charm+%2B+frw&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Entrapping+Grand+Charm+%2B+fhr&charm=%2B3%25+Inferno+Large+Charm+of+Balance",
             "label": "Dagger End-game Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=7QNCOt1iQBk&t=1589s",
+            "label": "Build Guide (26:29)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -868,6 +874,11 @@
           {
             "url": "https://www.youtube.com/watch?v=Df-efbXU18Y",
             "label": "Skovos Stronghold (3:16)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=7QNCOt1iQBk&t=2735s",
+            "label": "Build Guide (45:35)",
             "type": "video"
           }
         ],
@@ -970,6 +981,11 @@
             "url": "https://youtu.be/ayYKf8waXJ8",
             "label": "Demon Road (4:35)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=7QNCOt1iQBk&t=849s",
+            "label": "Build Guide (14:09)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1071,7 +1087,13 @@
       {
         "buildName": "Fists of Fire",
         "tier": "Not Rated",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=7QNCOt1iQBk&t=2187s",
+            "label": "Build Guide (36:27)",
+            "type": "video"
+          }
+        ],
         "notes": []
       },
       {
