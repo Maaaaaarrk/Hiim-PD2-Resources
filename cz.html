@@ -33,7 +33,7 @@
 <div class="container py-4" style="max-width:1000px">
 <div class="text-center mb-4"><h3 class="mb-0">PD2 Corrupted Zone Schedule</h3>
 <small class="text-secondary">See when each corrupted zone goes live. Zones rotate every 15 minutes.</small>
-<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button> <button class="btn btn-sm btn-outline-warning" id="btnSoundToggle" title="Play a sound when a new zone rotation starts">&#128264; Sound: OFF</button> <a id="report-issue-btn" href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=cz%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A" target="_blank" rel="noopener" class="btn btn-sm btn-outline-danger">&#9888; Report an Issue</a></div></div>
+<div class="mt-2"><a href="index.html" class="btn btn-sm btn-outline-secondary">&#8592; View other resources</a> <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#notifModal">&#128276; Setup Notifications</button> <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#overlayModal">&#127909; OBS Overlay</button> <button class="btn btn-sm btn-outline-warning" id="btnSoundToggle" title="Play a sound when a new zone rotation starts">&#128264; Sound: OFF</button> <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#detailedRankingModal">&#9734; Detailed Zone Ranking</button> <a id="report-issue-btn" href="https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=cz%3A+&body=%23%23+Issue+Description%0A%0A**Expected%3A**%0A%0A**Actual%3A**%0A%0A**Steps+to+reproduce%3A**%0A%0A**URL+%28with+your+inputs%29%3A**%0A" target="_blank" rel="noopener" class="btn btn-sm btn-outline-danger">&#9888; Report an Issue</a></div></div>
 <script>
 (function(){
 	var btn=document.getElementById('report-issue-btn');
@@ -210,6 +210,75 @@
 <li class="nav-item" role="presentation"><button class="nav-link" id="tab-byzone" data-bs-toggle="tab" data-bs-target="#pane-byzone" type="button" role="tab">By Zone (Next 5)</button></li>
 </ul>
 <div class="tab-content"><div class="tab-pane fade show active" id="pane-upcoming" role="tabpanel"></div><div class="tab-pane fade" id="pane-byzone" role="tabpanel"></div></div>
+</div>
+<div class="modal fade" id="detailedRankingModal" tabindex="-1" aria-labelledby="detailedRankingModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-secondary">
+<h5 class="modal-title" id="detailedRankingModalLabel">Detailed Zone Ranking</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<p class="text-secondary" style="font-size:.85rem">Zone rankings for S13 BETA Corrupted Zones. Tier descriptions are listed at the bottom.</p>
+<div class="table-responsive"><table class="table table-sm table-dark table-bordered table-striped mb-3" style="font-size:.85rem">
+<thead><tr><th>Area Name</th><th>Tier</th><th>Act</th><th>Notes</th></tr></thead>
+<tbody>
+<tr style="border-left:3px solid #22c55e"><td>Red Portals</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-5">A5</span></td><td>Best Areas by far, great density, Insignia was already one of the better farms in the game</td></tr>
+<tr style="border-left:3px solid #22c55e"><td>River of Flame</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-4">A4</span></td><td>City of the Damned has a waypoint, and the density is insane, River of Flame is fine, but i'd focus on City</td></tr>
+<tr style="border-left:3px solid #22c55e"><td>Flayer Jungle</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-3">A3</span></td><td>Crazy density</td></tr>
+<tr style="border-left:3px solid #22c55e"><td>Spider Forest</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-3">A3</span></td><td>Crazy density</td></tr>
+<tr style="border-left:3px solid #22c55e"><td>Great Marsh</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-3">A3</span></td><td>Crazy density</td></tr>
+<tr style="border-left:3px solid #22c55e"><td>Far Oasis</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-2">A2</span></td><td>Maggot Lair is one of the best Area, but getting there is fine since Far Oasis is pretty good</td></tr>
+<tr style="border-left:3px solid #22c55e"><td>Sewer/Palace</td><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span></td><td><span class="act-badge act-2">A2</span></td><td>Ignore Sewer, Palace has crazy density</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Nihlathak's</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-5">A5</span></td><td>Density is fine, Key drops are good</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Frozen River</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-5">A5</span></td><td>Frozen river has crazy density and great mob type, would be ranked higher if not for Crystalline being mid at best</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Kurast Bazaar</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-3">A3</span></td><td>Ruined Temple and Disused Fane are both great, Bazaar is fine</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Arcane Sanctuary</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-2">A2</span></td><td>Mid density, AMAZING MOB TYPE, keys</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Tombs</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-2">A2</span></td><td>Great Density in both tombs and Canyon</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Dry Hills</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-2">A2</span></td><td>Hall of the dead has good density, and keys</td></tr>
+<tr style="border-left:3px solid #3b82f6"><td>Travincal</td><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span></td><td><span class="act-badge act-3">A3</span></td><td>Ruined Fane and Disused Reliquary have great density, getting there is also good, ignore council</td></tr>
+<tr><td>Ancient's Way</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-5">A5</span></td><td>Icy cellar by itself would be ranked higher, but getting there sucks, and so does Ancient Tunnels</td></tr>
+<tr><td>Throne</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-5">A5</span></td><td>Feels basically the same as previous season, so still good</td></tr>
+<tr><td>Plains of Despair</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-4">A4</span></td><td>Mob type in Outer Steppes are mid, density is fine, keys are good</td></tr>
+<tr><td>Chaos Sanctuary</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-4">A4</span></td><td>Better than regular chaos, but that's about it</td></tr>
+<tr><td>Rocky Waste</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-2">A2</span></td><td>Both Rocky Waste and Stony Tomb are pretty good, nothing crazy</td></tr>
+<tr><td>The Pit</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-1">A1</span></td><td>Pit is good, and the way there is fine</td></tr>
+<tr><td>Cold Plains</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-1">A1</span></td><td>Cave is good, Cold Plains is decent, should kill countess for key drop</td></tr>
+<tr><td>Black Marsh</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-1">A1</span></td><td>Black marsh density changes a lot depending on the spawn, The Hole is pretty good</td></tr>
+<tr><td>Dark Wood</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-1">A1</span></td><td>Dark Wood is decent and so is Underground Pass</td></tr>
+<tr><td>Inner Cloister</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-1">A1</span></td><td>Cathedral is really good, but too small, other areas are pretty bad</td></tr>
+<tr><td>Lost City</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-2">A2</span></td><td>All areas have decent density, mob type suck</td></tr>
+<tr><td>Cow Level</td><td><span class="badge bg-secondary">C</span></td><td><span class="act-badge act-1">A1</span></td><td>Went from the best, to being decent at best</td></tr>
+<tr><td>Frigid Highlands</td><td><span class="badge bg-secondary">D</span></td><td><span class="act-badge act-5">A5</span></td><td>Density is okay, that's pretty much it</td></tr>
+<tr><td>Glacial Trail</td><td><span class="badge bg-secondary">D</span></td><td><span class="act-badge act-5">A5</span></td><td>Similar EXP as Chaos, Drifter Cavern is underwhelming</td></tr>
+<tr><td>Forgotten Tower</td><td><span class="badge bg-secondary">D</span></td><td><span class="act-badge act-1">A1</span></td><td>Getting there sucks, Density is pretty bad, exp is fine... keys and runes keeps it above E tier</td></tr>
+<tr><td>Stony Field</td><td><span class="badge bg-secondary">D</span></td><td><span class="act-badge act-1">A1</span></td><td>Density is okay, that's pretty much it</td></tr>
+<tr><td>Barracks</td><td><span class="badge bg-secondary">D</span></td><td><span class="act-badge act-1">A1</span></td><td>Density is okay, that's pretty much it</td></tr>
+<tr><td>Upper Kurast</td><td><span class="badge bg-secondary">E</span></td><td><span class="act-badge act-3">A3</span></td><td>Density is bad, wasn't impressed by Forgotten Reliquary and Forgotten Temple, might have been RNG, will revisit</td></tr>
+<tr><td>Lower Kurast</td><td><span class="badge bg-secondary">E</span></td><td><span class="act-badge act-3">A3</span></td><td>Both Lower Kurast and Sewer are still horrible, by far the worst area</td></tr>
+<tr><td>Durance of Hate</td><td><span class="badge bg-secondary">E</span></td><td><span class="act-badge act-3">A3</span></td><td>Bad density/mob type/layout</td></tr>
+<tr><td>Catacombs</td><td><span class="badge bg-secondary">E</span></td><td><span class="act-badge act-1">A1</span></td><td>Bad density/Layout</td></tr>
+<tr><td>Burial Ground</td><td><span class="badge bg-secondary">E</span></td><td><span class="act-badge act-1">A1</span></td><td>Mausoleum are super underwhelming, was expecting way more density, if keys are needed, just farm Cold Plains</td></tr>
+<tr><td>Blood Moor</td><td><span class="badge text-bg-danger">E - LOL</span></td><td><span class="act-badge act-1">A1</span></td><td>Area is a Joke, great 15 minutes to get some work done around the house</td></tr>
+</tbody>
+</table></div>
+<h6 class="mt-3">Tier Descriptions</h6>
+<table class="table table-sm table-dark table-bordered" style="font-size:.85rem">
+<tbody>
+<tr><td><span class="tag-badge tag-top" style="margin-left:0">TOP</span> (A Tier)</td><td>Will stop whatever I'm doing for it</td></tr>
+<tr><td><span class="tag-badge tag-good" style="margin-left:0">GOOD</span> (B Tier)</td><td>Better than 8+ minute maps</td></tr>
+<tr><td><span class="badge bg-secondary">C</span></td><td>Better than regular Chaos</td></tr>
+<tr><td><span class="badge bg-secondary">D</span></td><td>Similar to Chaos</td></tr>
+<tr><td><span class="badge bg-secondary">E</span></td><td>Will not farm it</td></tr>
+</tbody>
+</table>
+<p class="text-secondary mb-0" style="font-size:.8rem">Data sourced from <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXUy1R_wrc_XXaQxdq4ruzk3zTV4lUxzwu7KYWuuqh9UhANI9-LAS9U8Mv5ly7_9yimeQy587uFXZN/pubhtml" target="_blank" class="link-info">PD2 S13 BETA CZ spreadsheet</a>.</p>
+</div>
+<div class="modal-footer border-secondary">
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
 </div>
 <div class="modal fade" id="pathfindModal" tabindex="-1" aria-labelledby="pathfindModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
