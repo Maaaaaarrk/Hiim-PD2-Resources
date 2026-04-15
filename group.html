@@ -124,6 +124,31 @@
 		.map-times-toggle .btn-check:checked + .btn {
 			font-weight: bold;
 		}
+		.back-btn-fixed {
+			position: fixed;
+			top: 12px;
+			left: 12px;
+			z-index: 1050;
+			background: #212529;
+			border: 2px solid #6c757d;
+			border-radius: 8px;
+			padding: 6px 14px;
+			color: #fff;
+			text-decoration: none;
+			font-size: 1rem;
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+			transition: background 0.2s, border-color 0.2s;
+		}
+		.back-btn-fixed:hover {
+			background: #343a40;
+			border-color: #adb5bd;
+			color: #fff;
+			text-decoration: none;
+		}
 	</style>
 	<script crossorigin="anonymous"
 	        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -131,6 +156,8 @@
 	</script>
 </head>
 <body data-bs-theme="dark">
+<a href="index.html" class="back-btn-fixed" title="Back to Home">&larr; Back</a>
+
 
 <table class="table table-striped table-dark">
 	<tbody>
