@@ -1687,18 +1687,29 @@ function fireConfetti() {
 
 // Sync modal with URL hash
 var mapTimesModalEl = document.getElementById('mapTimesModal');
+var wheelModalEl = document.getElementById('wheelModal');
 if (location.hash === '#mapTimes') {
 	new bootstrap.Modal(mapTimesModalEl).show();
+} else if (location.hash === '#wheel') {
+	openWheelModal();
 }
 window.addEventListener('hashchange', function() {
 	if (location.hash === '#mapTimes') {
 		new bootstrap.Modal(mapTimesModalEl).show();
+	} else if (location.hash === '#wheel') {
+		openWheelModal();
 	}
 });
 mapTimesModalEl.addEventListener('show.bs.modal', function() {
 	history.replaceState(null, '', '#mapTimes');
 });
 mapTimesModalEl.addEventListener('hidden.bs.modal', function() {
+	history.replaceState(null, '', location.pathname + location.search);
+});
+wheelModalEl.addEventListener('show.bs.modal', function() {
+	history.replaceState(null, '', '#wheel');
+});
+wheelModalEl.addEventListener('hidden.bs.modal', function() {
 	history.replaceState(null, '', location.pathname + location.search);
 });
 </script>
