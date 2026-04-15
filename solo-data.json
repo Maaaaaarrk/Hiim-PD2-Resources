@@ -632,6 +632,36 @@
           }
         ],
         "notes": []
+      },
+      {
+        "buildName": "Inferno",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Fire Bear",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Lightning Bear",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Cold Bow Sorc",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Zeal",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
       }
     ],
     "Druid": [
@@ -746,6 +776,30 @@
             "type": "planner"
           }
         ],
+        "notes": []
+      },
+      {
+        "buildName": "Wind Innocence Procs",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Pure Poison Creeper",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Thorns Pacifist Druid",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Maul",
+        "tier": "Not Rated",
+        "links": [],
         "notes": []
       }
     ],
@@ -1001,6 +1055,48 @@
           }
         ],
         "notes": []
+      },
+      {
+        "buildName": "Death Sentry (A2 Viperfork merc)",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Blade Fury Meme Procs",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Fists of Fire",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Tiger Strike",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Dragon Claw",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Dragon Talon",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Pure Shadow Master Summoner",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
       }
     ],
     "Barbarian": [
@@ -1131,6 +1227,78 @@
             "type": "guide"
           }
         ],
+        "notes": []
+      },
+      {
+        "buildName": "Berserk",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Frenzy",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Concentrate",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Bash",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Split Throw",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Bow Barb",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Dual Wield WW (Bleed)",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Throw (Bleed)",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Wolf Barb",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Eternity Barb",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Zeal",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Fend",
+        "tier": "Not Rated",
+        "links": [],
         "notes": []
       }
     ],
@@ -1344,6 +1512,12 @@
         "notes": [
           "Loyalty RW & Amp merc"
         ]
+      },
+      {
+        "buildName": "Physical Bear",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
       }
     ],
     "Necromancer": [
@@ -1512,6 +1686,48 @@
           }
         ],
         "notes": []
+      },
+      {
+        "buildName": "Innocence Brand Procs",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Pure Clay/Blood",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Physical Summoner",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Bonehew Bear Bone Procs",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Walking Bear Brand Bone Procs",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Tricurse Skelemancer",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Grim's Magemancer",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
       }
     ],
     "Paladin": [
@@ -1676,6 +1892,90 @@
       {
         "buildName": "Physical Charge (2-H)",
         "tier": "Decent",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Fire Charge",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Shock Charge",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Freeze Charge",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Fire Zeal",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Shock Zeal",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Smite",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Blessed Hammer Procs",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Sanctuary Zeal",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Fire Sacrifice",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Fire Beardin",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Freeze Beardin",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Holy Shock Beardin",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Thorns",
+        "tier": "Not Rated",
+        "links": [],
+        "notes": []
+      },
+      {
+        "buildName": "Bow Paladin",
+        "tier": "Not Rated",
         "links": [],
         "notes": []
       }
