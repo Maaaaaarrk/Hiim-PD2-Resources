@@ -1266,18 +1266,6 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Dual Wield WW (Bleed)",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Throw (Bleed)",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
         "buildName": "Wolf Barb",
         "tier": "Not Rated",
         "links": [],
@@ -1700,12 +1688,6 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Physical Summoner",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
         "buildName": "Bonehew Bear Bone Procs",
         "tier": "Not Rated",
         "links": [],
@@ -1713,18 +1695,6 @@ window.soloData = {
       },
       {
         "buildName": "Walking Bear Brand Bone Procs",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Tricurse Skelemancer",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Grim's Magemancer",
         "tier": "Not Rated",
         "links": [],
         "notes": []
