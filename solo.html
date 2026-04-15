@@ -832,7 +832,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	  return tr;
 	}
 
-	function renderClassBuildRow(build) {
+	function renderClassBuildRow(build, className) {
 	  const tr = document.createElement('tr');
 
 	  const tdName = document.createElement('td');
@@ -852,9 +852,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	  tdLinks.className = 'align-middle';
 	  tdLinks.colSpan = 5;
 
-	  if (build.links.length === 0 && build.notes.length === 0) {
-		tdLinks.textContent = '-';
-	  } else {
+	  {
 		let linksHtml = '';
 		build.links.forEach(function(link) {
 		  if (link.type === 'planner') {
@@ -868,6 +866,10 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 		build.notes.forEach(function(note) {
 		  linksHtml += '<span class="badge rounded-pill text-bg-secondary">' + escapeHtml(note) + '</span>\n';
 		});
+		var submitTitle = encodeURIComponent(className + ' - ' + build.buildName + ' Map Clear');
+		var submitBody = encodeURIComponent('Build: ' + className + ' - ' + build.buildName + '\nMap: \nClear Time: \nNotes: ');
+		var submitUrl = 'https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=' + submitTitle + '&body=' + submitBody;
+		linksHtml += '<a target="_blank" href="' + submitUrl + '" class="btn btn-outline-success btn-sm ms-1" style="font-size:0.65em;padding:2px 6px;">Submit Map Clear</a>\n';
 		tdLinks.innerHTML = linksHtml;
 	  }
 	  tr.appendChild(tdLinks);
@@ -947,7 +949,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 
 		  const builds = data.classBuilds[cls] || [];
 		  builds.forEach(function(build) {
-			tbody.appendChild(renderClassBuildRow(build));
+			tbody.appendChild(renderClassBuildRow(build, cls));
 		  });
 		  table.appendChild(tbody);
 		});
