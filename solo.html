@@ -1450,12 +1450,17 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 
 	// Sync modal with URL hash
 	var tierModalEl = document.getElementById('tierModal');
+	var wheelModalEl = document.getElementById('wheelModal');
 	if (location.hash === '#mapTimes') {
 		new bootstrap.Modal(tierModalEl).show();
+	} else if (location.hash === '#wheel') {
+		openWheelModal();
 	}
 	window.addEventListener('hashchange', function() {
 		if (location.hash === '#mapTimes') {
 			new bootstrap.Modal(tierModalEl).show();
+		} else if (location.hash === '#wheel') {
+			openWheelModal();
 		}
 	});
 	tierModalEl.addEventListener('show.bs.modal', function() {
@@ -1464,6 +1469,13 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	tierModalEl.addEventListener('hidden.bs.modal', function() {
 		history.replaceState(null, '', location.pathname + location.search);
 	});
+	wheelModalEl.addEventListener('show.bs.modal', function() {
+		history.replaceState(null, '', '#wheel');
+	});
+	wheelModalEl.addEventListener('hidden.bs.modal', function() {
+		history.replaceState(null, '', location.pathname + location.search);
+	});
+
 </script>
 
 </body>
