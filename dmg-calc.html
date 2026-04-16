@@ -910,7 +910,7 @@
 		const dsBonus   = n(p+'_ds_bonus');
 		const cbPct    = n(p+'_cb');
 		const monHP    = n(p+'_hp', 20000);
-		const cbRatio  = parseFloat(document.getElementById(p+'_cbtype').value);
+		const cbRatio  = parseFloat(document.getElementById(p+'_cbtype').value) || 0.125;
 		const cbEff    = n(p+'_cb_eff');
 		const mobRes   = n(p+'_mob_res', 33);
 		const gearRes  = n(p+'_gear_res');
@@ -1231,7 +1231,7 @@
 		try { data = JSON.parse(atob(raw)); } catch(e) { return; }
 		['a','b'].forEach((panel, pi) => {
 			const vals = data[pi];
-			if (!vals) return;
+			if (!vals || vals.length !== URL_ORDER.length) return;
 			// Set cat first and populate weapons dropdown
 			const catEl = document.getElementById(panel+'_cat');
 			if (catEl) { catEl.value = vals[URL_ORDER.indexOf('cat')]; populateWeapons(panel); }
