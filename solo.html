@@ -930,6 +930,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 
 		// Setup checkbox toggle logic
 		setupCheckboxToggles();
+		applyFilterFromUrl();
 		filterStarterRows();
 	  });
 
@@ -966,6 +967,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 			  tbody.style.display = 'none';
 			  thead.style.display = 'none';
 			}
+			updateFilterUrl();
 		  });
 		}
 	  });
@@ -989,6 +991,44 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 
 	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 	const tooltipList = [...tooltipTriggerList].map(function(el) { return new bootstrap.Tooltip(el); });
+
+	// ── Filter URL persistence ──
+
+	function updateFilterUrl() {
+	  var sections = ['Starter', 'Sorceress', 'Druid', 'Assassin', 'Barbarian', 'Amazon', 'Necromancer', 'Paladin'];
+	  var checked = sections.filter(function(s) {
+		var cb = document.getElementById('checkbox' + s);
+		return cb && cb.checked;
+	  });
+	  var url = new URL(window.location);
+	  if (checked.length === sections.length) {
+		url.searchParams.delete('filter');
+	  } else {
+		url.searchParams.set('filter', checked.join(','));
+	  }
+	  history.replaceState(null, '', url);
+	}
+
+	function applyFilterFromUrl() {
+	  var params = new URLSearchParams(window.location.search);
+	  if (!params.has('filter')) return;
+	  var filterValue = params.get('filter');
+	  var active = filterValue ? filterValue.split(',') : [];
+	  var sections = ['Starter', 'Sorceress', 'Druid', 'Assassin', 'Barbarian', 'Amazon', 'Necromancer', 'Paladin'];
+	  sections.forEach(function(section) {
+		var cb = document.getElementById('checkbox' + section);
+		if (!cb) return;
+		var shouldBeChecked = active.indexOf(section) !== -1;
+		if (cb.checked !== shouldBeChecked) {
+		  cb.checked = shouldBeChecked;
+		  cb.dispatchEvent(new Event('change'));
+		}
+	  });
+	  var allCb = document.getElementById('checkboxToggleAll');
+	  if (allCb) {
+		allCb.checked = active.length === sections.length;
+	  }
+	}
 
 	// ── Wheel of Names ──
 
