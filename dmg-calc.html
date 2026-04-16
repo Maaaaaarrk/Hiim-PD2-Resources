@@ -303,10 +303,20 @@
 					<div class="col-4">
 						<label class="form-label">CB Type</label>
 						<select id="a_cbtype" class="form-select form-select-sm" onchange="calc()">
-							<option value="0.142857">Melee (1/7)</option>
+							<option value="0.125">Melee (1/8)</option>
 							<option value="0.095238">Ranged (1/10.5)</option>
 							<option value="0.014286">Boss (1/70)</option>
 						</select>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">+% CB Efficiency</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="a_cb_eff" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
 					</div>
 				</div>
 
@@ -576,10 +586,20 @@
 					<div class="col-4">
 						<label class="form-label">CB Type</label>
 						<select id="b_cbtype" class="form-select form-select-sm" onchange="calc()">
-							<option value="0.142857">Melee (1/7)</option>
+							<option value="0.125">Melee (1/8)</option>
 							<option value="0.095238">Ranged (1/10.5)</option>
 							<option value="0.014286">Boss (1/70)</option>
 						</select>
+					</div>
+				</div>
+				<div class="row g-2 mb-1">
+					<div class="col-4">
+						<label class="form-label">+% CB Efficiency</label>
+						<div class="input-group input-group-sm">
+							<input type="number" id="b_cb_eff" class="form-control" value="0" min="0"
+							       oninput="calc()">
+							<span class="input-group-text">%</span>
+						</div>
 					</div>
 				</div>
 
@@ -891,6 +911,7 @@
 		const cbPct    = n(p+'_cb');
 		const monHP    = n(p+'_hp', 20000);
 		const cbRatio  = parseFloat(document.getElementById(p+'_cbtype').value);
+		const cbEff    = n(p+'_cb_eff');
 		const mobRes   = n(p+'_mob_res', 33);
 		const gearRes  = n(p+'_gear_res');
 		const amp      = n(p+'_amp');
@@ -933,7 +954,7 @@
 		const finalAvg    = (finalMin + finalMax) / 2;
 
 		// 6. Crushing blow (first-hit approximation; real damage diminishes as HP drops)
-		const avgCB       = cbPct / 100 * monHP * cbRatio;
+		const avgCB       = cbPct / 100 * monHP * cbRatio * (1 + cbEff / 100);
 
 		// 7. Physical resistance
 		const effRes      = mobRes - gearRes - amp - bcry;
@@ -1061,7 +1082,7 @@
 		stats:   { inputs: ['str','str_per','dex','dex_per','off_ed','skill_ed'],  checks: [],      selects: [] },
 		auras:   { inputs: ['might','conc','fanat','how','bc','grim'],             checks: [],      selects: [] },
 		crit:    { inputs: ['ds','crit','crit_bonus','ds_bonus'],                    checks: [],      selects: [] },
-		cb:      { inputs: ['cb','hp'],                                            checks: [],      selects: ['cbtype'] },
+		cb:      { inputs: ['cb','hp','cb_eff'],                                            checks: [],      selects: ['cbtype'] },
 		physres: { inputs: ['mob_res','gear_res','amp','bcry'],                    checks: [],      selects: [] },
 		dps:     { inputs: ['fpa'],                                                checks: ['dps_on'], selects: [] },
 	};
@@ -1178,11 +1199,11 @@
 	// URL state — fixed-order array serialized as base64 JSON for compact URLs
 	// Order per panel: cat, wep, cbtype, eth, dps_on, base_min, base_max, wed,
 	//   flat_min, flat_max, str, str_per, dex, dex_per, off_ed, skill_ed,
-	//   might, conc, fanat, how, bc, grim, ds, crit, crit_bonus, ds_bonus, cb, hp,
+	//   might, conc, fanat, how, bc, grim, ds, crit, crit_bonus, ds_bonus, cb, hp, cb_eff,
 	//   mob_res, gear_res, amp, bcry, fpa
 	const URL_ORDER = ['cat','wep','cbtype','eth','dps_on','base_min','base_max','wed',
 	                   'flat_min','flat_max','str','str_per','dex','dex_per','off_ed','skill_ed',
-	                   'might','conc','fanat','how','bc','grim','ds','crit','crit_bonus','ds_bonus','cb','hp',
+	                   'might','conc','fanat','how','bc','grim','ds','crit','crit_bonus','ds_bonus','cb','hp','cb_eff',
 	                   'mob_res','gear_res','amp','bcry','fpa'];
 	const URL_CHECKS = ['eth','dps_on'];
 	const URL_SELECTS = ['cat','wep','cbtype'];
