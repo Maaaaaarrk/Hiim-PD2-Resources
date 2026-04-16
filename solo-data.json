@@ -1080,7 +1080,7 @@
         "notes": []
       },
       {
-        "buildName": "Blade Fury Meme Procs",
+        "buildName": "Blade Fury Ele Procs",
         "tier": "Not Rated",
         "links": [],
         "notes": []
@@ -1715,12 +1715,6 @@
         "tier": "Not Rated",
         "links": [],
         "notes": []
-      },
-      {
-        "buildName": "Walking Bear Brand Bone Procs",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
       }
     ],
     "Paladin": [
@@ -1841,7 +1835,7 @@
       },
       {
         "buildName": "Sanctuary Sacrifice",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://youtu.be/73hRLFfrPAw",
@@ -1899,31 +1893,7 @@
         "notes": []
       },
       {
-        "buildName": "Holy Fire Charge",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Holy Shock Charge",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Holy Freeze Charge",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Holy Fire Zeal",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Holy Shock Zeal",
+        "buildName": "Ele Zeal",
         "tier": "Not Rated",
         "links": [],
         "notes": []
@@ -1959,19 +1929,7 @@
         "notes": []
       },
       {
-        "buildName": "Holy Fire Beardin",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Holy Freeze Beardin",
-        "tier": "Not Rated",
-        "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Holy Shock Beardin",
+        "buildName": "Ele Beardin",
         "tier": "Not Rated",
         "links": [],
         "notes": []
