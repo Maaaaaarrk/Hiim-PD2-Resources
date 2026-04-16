@@ -437,7 +437,8 @@ window.soloData = {
           "text": "Uber Tristram",
           "style": "dark"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=VwH8rsODV-Q"
     },
     {
       "className": "Paladin",
@@ -1799,6 +1800,11 @@ window.soloData = {
             "url": "https://youtu.be/bEdCK4SNh4A",
             "label": "Tomb of Zoltun Kulle (3:09)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=1648s",
+            "label": "Build Guide (27:28)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1845,6 +1851,11 @@ window.soloData = {
           {
             "url": "https://www.youtube.com/watch?v=hSCvD8sqr4M",
             "label": "Fall of Caldeum (3:27)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=2587s",
+            "label": "Build Guide (43:07)",
             "type": "video"
           }
         ],
@@ -1938,7 +1949,13 @@ window.soloData = {
       {
         "buildName": "Holy Fire Sacrifice",
         "tier": "Not Rated",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=1648s",
+            "label": "Build Guide (27:28)",
+            "type": "video"
+          }
+        ],
         "notes": []
       },
       {
