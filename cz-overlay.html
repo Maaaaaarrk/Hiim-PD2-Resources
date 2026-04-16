@@ -23,7 +23,10 @@
  * mini   = 1 to enable minified mode — compact layout, no LIVE/Next labels,
  *          countdown badges (green=active, yellow=starting soon), zone names truncated at 140px
  *
- * Example: cz-overlay.html?count=5&acts=1,3&tags=TOP,RED&align=right&scale=1.1&mini=1
+ * infinity = 1 to enable Infinity mode — fire/cold/lightning immunities at 117 res or lower
+ *            are treated as broken (shown with strikethrough). Does not affect physical/poison/magic.
+ *
+ * Example: cz-overlay.html?count=5&acts=1,3&tags=TOP,RED&align=right&scale=1.1&mini=1&infinity=1
  */
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -113,6 +116,7 @@ body.theme-light .status.next{background:rgba(0,0,0,0.08);color:#666}
 
 .immune{font-size:.45rem;font-weight:600;border-radius:2px;padding:1px 3px}
 .immune-fire{background:#c03030;color:#fff}.immune-cold{background:#4488dd;color:#fff}.immune-lightning{background:#d4a017;color:#000}.immune-poison{background:#00aa00;color:#fff}.immune-physical{background:#888;color:#fff}.immune-magic{background:#9060c0;color:#fff}
+.immune.broken{opacity:.35;text-decoration:line-through}
 
 .timer{
   font-size:.75rem;
@@ -181,6 +185,9 @@ var scale=parseFloat(params.get("scale"))||1;
 var showTitle=params.get("title")!=="0";
 var mini=params.get("mini")==="1";
 var soundEnabled=params.get("sound")==="1";
+var infinityMode=params.get("infinity")==="1";
+var INFINITY_BREAK_THRESHOLD=117;
+var convictionTypes={"fire":true,"cold":true,"lightning":true};
 var lastZoneTs=null;
 
 if(mini)document.body.classList.add("mini");
@@ -205,8 +212,8 @@ var isVisible=function(idx){
 };
 var isResistBlocked=function(idx){
   if(!resistFilter)return false;
-  var imm=zoneImmunities[String(idx)]||[];
-  for(var i=0;i<imm.length;i++){if(resistFilter.has(imm[i]))return true}
+  var imm=zoneImmunities[String(idx)]||{};
+  for(var res in imm){if(resistFilter.has(res)){var broken=infinityMode&&convictionTypes[res]&&imm[res]<=INFINITY_BREAK_THRESHOLD;if(!broken)return true}}
   return false;
 };
 var formatCountdown=function(d){
@@ -258,8 +265,8 @@ var render=function(){
       if(topZones.has(z.idx))html+='<span class="tag tag-top">TOP</span>';
       if(goodZones.has(z.idx))html+='<span class="tag tag-good">GOOD</span>';
       if(redZones.has(z.idx))html+='<span class="tag tag-red">RED</span>';
-      var imm=zoneImmunities[String(z.idx)]||[];
-      for(var ii=0;ii<imm.length;ii++){html+='<span class="immune immune-'+imm[ii]+'">'+imm[ii].charAt(0).toUpperCase()+'</span>'}
+      var imm=zoneImmunities[String(z.idx)]||{};
+      for(var res in imm){var broken=infinityMode&&convictionTypes[res]&&imm[res]<=INFINITY_BREAK_THRESHOLD;html+='<span class="immune immune-'+res+(broken?" broken":"")+'">'+res.charAt(0).toUpperCase()+'</span>'}
     }
     html+='<span class="'+timerClass+'">'+countdown+'</span>';
     html+='</div>';

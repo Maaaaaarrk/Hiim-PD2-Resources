@@ -23,6 +23,8 @@
 .tag-badge{font-size:.65rem;font-weight:700;border-radius:3px;padding:1px 5px;margin-left:4px}.tag-top{background:#22c55e;color:#fff}.tag-good{background:#3b82f6;color:#fff}.tag-red{background:#ef4444;color:#fff}
 .immune-badge{font-size:.6rem;font-weight:600;border-radius:3px;padding:1px 5px;margin-left:2px;display:inline-block}
 .immune-fire{background:#c03030;color:#fff}.immune-cold{background:#4488dd;color:#fff}.immune-lightning{background:#d4a017;color:#000}.immune-poison{background:#00aa00;color:#fff}.immune-physical{background:#888;color:#fff}.immune-magic{background:#9060c0;color:#fff}
+.immune-badge.broken{opacity:.35;text-decoration:line-through}
+.infinity-toggle{cursor:pointer;user-select:none;font-size:.75rem;font-weight:600;border-radius:4px;padding:3px 10px;border:2px solid transparent;opacity:.5;transition:opacity .15s,border-color .15s;background:#d4a017;color:#000}.infinity-toggle.active{opacity:1;border-color:#fff}
 .res-filter-btn{cursor:pointer;user-select:none;font-size:.75rem;font-weight:600;border-radius:4px;padding:3px 10px;border:2px solid transparent;opacity:.5;transition:opacity .15s,border-color .15s}
 .res-filter-btn.active{opacity:1;border-color:#fff}
 .res-filter-btn.excluded{opacity:1;border-color:#fff;text-decoration:line-through}
@@ -115,6 +117,7 @@
 <div class="col-md-4"><label class="form-label mb-1">Hide immunities</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovResist" multiple size="3" style="font-size:.8rem"><option value="fire">Fire</option><option value="cold">Cold</option><option value="lightning">Lightning</option><option value="poison">Poison</option><option value="physical">Physical</option><option value="magic">Magic</option></select><div class="form-text text-secondary" style="font-size:.75rem">Ctrl+click to select multiple. Hides zones with selected immunities.</div></div>
 <div class="col-md-4"><label class="form-label mb-1">Mini mode</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovMini"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Compact layout, countdown badges, no LIVE/Next labels</div></div>
 <div class="col-md-4"><label class="form-label mb-1">Sound notification</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovSound"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Play a sound when a new zone rotation starts</div></div>
+<div class="col-md-4"><label class="form-label mb-1">Infinity mode</label><select class="form-select form-select-sm bg-dark text-white border-secondary" id="ovInfinity"><option value="0">Off</option><option value="1">On</option></select><div class="form-text text-secondary" style="font-size:.75rem">Show fire/cold/lightning immunities breakable by Infinity as broken</div></div>
 </div>
 <h6 class="mb-2">Filter by Act</h6>
 <div class="d-flex flex-wrap gap-2 mb-3">
@@ -160,6 +163,7 @@
 <tr><td><code>resist</code></td><td>none</td><td>Comma-separated damage types to exclude zones with those immunities, e.g. <code>fire,cold</code>. Valid: <code>fire</code>, <code>cold</code>, <code>lightning</code>, <code>poison</code>, <code>physical</code>, <code>magic</code></td></tr>
 <tr><td><code>mini</code></td><td>0</td><td><code>1</code> for compact mode &mdash; less padding, no LIVE/Next labels, countdown badges (green when active, yellow when next zone starts in &lt;5 min), zone names truncated at 140px</td></tr>
 <tr><td><code>sound</code></td><td>0</td><td><code>1</code> to play a sound notification when a new zone rotation starts</td></tr>
+<tr><td><code>infinity</code></td><td>0</td><td><code>1</code> to enable Infinity mode &mdash; fire/cold/lightning immunities at 117 resistance or lower shown as broken</td></tr>
 </tbody></table></div>
 </div>
 <div class="modal-footer border-secondary">
@@ -200,8 +204,11 @@
 <span class="res-filter-btn immune-physical" data-res="physical">Physical</span>
 <span class="res-filter-btn immune-magic" data-res="magic">Magic</span>
 <button class="btn btn-sm btn-outline-secondary ms-2" id="btnResClear">Clear</button>
+<span class="ms-3" style="border-left:1px solid #2b2f33;padding-left:12px">
+<span class="infinity-toggle" id="btnInfinity" title="Infinity runeword: breaks fire/cold/lightning immunities at 117 resistance or lower">&#8734; Infinity</span>
+</span>
 </div>
-<div class="text-secondary mt-1" style="font-size:.75rem">Click a damage type to hide zones where monsters are immune to it. Zones with <em>any</em> selected immunity are hidden.</div>
+<div class="text-secondary mt-1" style="font-size:.75rem">Click a damage type to hide zones where monsters are immune to it. Toggle Infinity to show which fire/cold/lightning immunities can be broken (resistance &le; 117).</div>
 </div>
 <div class="mb-3"><button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#zoneFilterCollapse">Filter individual zones &#9662;</button>
 <div class="collapse mt-2" id="zoneFilterCollapse"><div class="card card-body bg-dark" id="zoneFilter"></div></div></div>
@@ -306,6 +313,9 @@ var goodZones=new Set(window.czData.goodZones);
 var redZones=new Set(window.czData.redZones);
 var zoneImmunities=window.czData.zoneImmunities||{};
 var excludedRes=new Set();
+var infinityMode=false;
+var INFINITY_BREAK_THRESHOLD=117;
+var convictionTypes={"fire":true,"cold":true,"lightning":true};
 var getNextPrng=function(seed,mul,inc){return Number(((BigInt(seed)*BigInt(mul)+BigInt(inc))>>BigInt(16))&BigInt(32767))};
 var getZone=function(ts,n){n=n||0;ts=~~(ts/900e3)*900e3;ts+=900e3*n;var a=~~(ts/900000);var b=~~(ts/86400000);var seed=a+b;var idx=getNextPrng(seed,214013,2531011)%zones.length;return{zone:zones[idx],act:zoneAct[idx],ts:ts,seed:seed,idx:idx}};
 var NEXT_COUNT=5,UPCOMING_COUNT=20;
@@ -317,11 +327,11 @@ var paneUpcoming=pE("pane-upcoming"),paneByZone=pE("pane-byzone"),clockDisplay=p
 var formatTime=function(ts){return new Date(ts).toLocaleString()};
 var formatCountdown=function(d){if(d<=0)return"NOW";var m=Math.ceil(d/60000);if(m<60)return"in "+m+"m";var h=Math.floor(m/60);var r=m%60;if(h<24)return"in "+h+"h "+r+"m";var dd=Math.floor(h/24);return"in "+dd+"d "+(h%24)+"h "+r+"m"};
 var getBaseTs=function(){return useCustomTime?customTs:Date.now()};
-var isZoneVisible=function(idx){if(!activeActs.has(zoneAct[idx])||!activeZones.has(idx))return false;if(excludedRes.size>0){var imm=zoneImmunities[String(idx)]||[];for(var ri=0;ri<imm.length;ri++){if(excludedRes.has(imm[ri]))return false}}return true};
+var isZoneVisible=function(idx){if(!activeActs.has(zoneAct[idx])||!activeZones.has(idx))return false;if(excludedRes.size>0){var imm=zoneImmunities[String(idx)]||{};for(var res in imm){if(excludedRes.has(res)){var broken=infinityMode&&convictionTypes[res]&&imm[res]<=INFINITY_BREAK_THRESHOLD;if(!broken)return false}}}return true};
 var getUpcomingList=function(baseTs,count){var list=[];for(var i=0;list.length<count;i++){var info=getZone(baseTs,i);if(isZoneVisible(info.idx))list.push(info);if(i>500)break}return list};
 var getNextNPerZone=function(baseTs,n){var result={},counts={},vc=0;for(var vi=0;vi<zones.length;vi++){if(isZoneVisible(vi))vc++}var done=false;for(var i=0;!done&&i<2000;i++){var info=getZone(baseTs,i);if(!isZoneVisible(info.idx))continue;if(!result[info.idx]){result[info.idx]=[];counts[info.idx]=0}if(counts[info.idx]<n){result[info.idx].push({ts:info.ts});counts[info.idx]++}if(Object.keys(counts).length>=vc){done=true;for(var k in counts){if(counts[k]<n){done=false;break}}}}return result};
 var mkEl=function(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e};
-var mkTags=function(idx){var wrap=mkEl("span","d-flex gap-1 flex-wrap align-items-center");if(topZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-top","TOP"));if(goodZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-good","GOOD"));if(redZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-red","RED"));var imm=zoneImmunities[String(idx)]||[];for(var ii=0;ii<imm.length;ii++){wrap.appendChild(mkEl("span","immune-badge immune-"+imm[ii],imm[ii].charAt(0).toUpperCase()+imm[ii].slice(1)+" Immune"))}return wrap};
+var mkTags=function(idx){var wrap=mkEl("span","d-flex gap-1 flex-wrap align-items-center");if(topZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-top","TOP"));if(goodZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-good","GOOD"));if(redZones.has(idx))wrap.appendChild(mkEl("span","tag-badge tag-red","RED"));var imm=zoneImmunities[String(idx)]||{};for(var res in imm){var broken=infinityMode&&convictionTypes[res]&&imm[res]<=INFINITY_BREAK_THRESHOLD;var badge=mkEl("span","immune-badge immune-"+res+(broken?" broken":""),res.charAt(0).toUpperCase()+res.slice(1)+" Immune");if(broken)badge.title="Broken by Infinity (res "+imm[res]+")";wrap.appendChild(badge)}return wrap};
 var pfData=window.czPathfinding||{};
 var pfModal=document.getElementById("pathfindModal");var pfModalLabel=document.getElementById("pathfindModalLabel");var pfModalBody=document.getElementById("pathfindModalBody");
 var openPathfindModal=function(zoneName){
@@ -366,11 +376,13 @@ var updateHash=function(){
 	if(useCustomTime&&customTs){params.time=String(customTs)}
 	// Resistance filter
 	if(excludedRes.size>0){params.resist=Array.from(excludedRes).sort().join(',')}
+	// Infinity toggle
+	if(infinityMode){params.infinity='1'}
 	setHashParams(params);
 };
 var restoreFromHash=function(){
 	var params=getHashParams();
-	if(!params.acts&&!params.zones&&!params.tab&&!params.time&&!params.resist)return;
+	if(!params.acts&&!params.zones&&!params.tab&&!params.time&&!params.resist&&!params.infinity)return;
 	// Restore acts
 	if(params.acts!==undefined){
 		activeActs=new Set(params.acts?params.acts.split(',').map(Number):[]);
@@ -398,9 +410,15 @@ var restoreFromHash=function(){
 		var rb=document.querySelectorAll('.res-filter-btn[data-res]');
 		for(var i=0;i<rb.length;i++){if(excludedRes.has(rb[i].dataset.res))rb[i].classList.add('active');else rb[i].classList.remove('active')}
 	}
+	// Restore infinity toggle
+	if(params.infinity==='1'){
+		infinityMode=true;
+		var ib=pE('btnInfinity');if(ib)ib.classList.add('active');
+	}
 };
 var resBtns=document.querySelectorAll(".res-filter-btn[data-res]");for(var rbi=0;rbi<resBtns.length;rbi++){(function(btn){btn.addEventListener("click",function(){var res=btn.dataset.res;if(excludedRes.has(res)){excludedRes.delete(res);btn.classList.remove("active")}else{excludedRes.add(res);btn.classList.add("active")}renderAll()})})(resBtns[rbi])}
 pE("btnResClear").addEventListener("click",function(){excludedRes=new Set();var rb=document.querySelectorAll(".res-filter-btn[data-res]");for(var i=0;i<rb.length;i++)rb[i].classList.remove("active");renderAll()});
+pE("btnInfinity").addEventListener("click",function(){infinityMode=!infinityMode;this.classList.toggle("active",infinityMode);renderAll()});
 restoreFromHash();buildZoneFilter();renderAll();setInterval(renderAll,5000);
 // Update hash on tab change
 var tabEls=document.querySelectorAll('button[data-bs-toggle="tab"]');for(var ti=0;ti<tabEls.length;ti++){tabEls[ti].addEventListener('shown.bs.tab',function(){updateHash()})}
@@ -512,6 +530,8 @@ var updateOverlayUrl=function(){
   if(mini==="1")p.push("mini=1");
   var sound=document.getElementById("ovSound").value;
   if(sound==="1")p.push("sound=1");
+  var infinity=document.getElementById("ovInfinity").value;
+  if(infinity==="1")p.push("infinity=1");
   var tags=document.getElementById("ovTags").value;
   var resistSel=document.getElementById("ovResist");
   var resistVals=[];for(var ri=0;ri<resistSel.options.length;ri++){if(resistSel.options[ri].selected)resistVals.push(resistSel.options[ri].value)}
@@ -545,6 +565,7 @@ document.getElementById("ovTags").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovMini").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovResist").addEventListener("change",updateOverlayUrl);
 document.getElementById("ovSound").addEventListener("change",updateOverlayUrl);
+document.getElementById("ovInfinity").addEventListener("change",updateOverlayUrl);
 var actCbs=document.querySelectorAll(".ov-act-cb");
 for(var i=0;i<actCbs.length;i++){actCbs[i].addEventListener("change",updateOverlayUrl)}
 
