@@ -359,7 +359,7 @@ window.groupData = {
         {"buildName": "Combustion", "tier": "Bad", "roles": [{"text": "DPS", "style": "danger"}], "notes": [{"text": "Hard to position in P8", "style": "secondary"}], "links": []},
         {"buildName": "Meteor", "tier": "Mid", "roles": [{"text": "DPS", "style": "danger"}], "notes": [{"text": "Meteor delay holds this build back", "style": "secondary"}], "links": []},
         {"buildName": "Hydra", "tier": "Mid", "roles": [{"text": "T4", "style": "dark"}, {"text": "DPS", "style": "danger"}], "notes": [{"text": "Hydras double dip Res auras", "style": "secondary"}], "links": []},
-        {"buildName": "Dual Enchant Multishot", "tier": "Top", "roles": [{"text": "T4", "style": "dark"}, {"text": "Enchant", "style": "success"}, {"text": "Merc DPS", "style": "danger"}], "notes": [{"text": "Requires gear swapping prebuff", "style": "secondary"}], "links": []}
+        {"buildName": "Dual Enchant", "tier": "Decent", "roles": [{"text": "T4", "style": "dark"}, {"text": "Enchant", "style": "success"}, {"text": "Merc DPS", "style": "danger"}], "notes": [{"text": "Pairs well with Fire & Cold arrow Zons", "style": "secondary"}], "links": []}
       ],
       "Druid": [
         {"buildName": "Cold Elemental (Arctic Blast/Hurricane)", "tier": "Mid", "roles": [{"text": "DPS", "style": "danger"}], "notes": [{"text": "Damage is strong but channel skills can't keep pace", "style": "secondary"}], "links": []},

@@ -1,7 +1,7 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 7th 2026",
-  "bannerText": "Updated with S13 Speed Mapping data",
+  "updatedDate": "April 16th 2026",
+  "bannerText": "Updated with S13 Beta Testing round 1",
   "starterBuilds": [
     {
       "className": "Sorceress",
@@ -572,7 +572,7 @@ window.soloData = {
       },
       {
         "buildName": "Frost Nova",
-        "tier": "Good",
+        "tier": "Decent",
         "links": [],
         "notes": []
       },
@@ -614,7 +614,7 @@ window.soloData = {
       },
       {
         "buildName": "Hydra",
-        "tier": "Mid",
+        "tier": "Decent",
         "links": [],
         "notes": []
       },
@@ -637,7 +637,7 @@ window.soloData = {
       },
       {
         "buildName": "Inferno",
-        "tier": "Not Rated",
+        "tier": "Decent",
         "links": [],
         "notes": []
       },
@@ -654,8 +654,8 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Cold Bow Sorc",
-        "tier": "Not Rated",
+        "buildName": "Endless Hail",
+        "tier": "Mid",
         "links": [],
         "notes": []
       },
@@ -714,7 +714,7 @@ window.soloData = {
       },
       {
         "buildName": "Wolf - Fire Claws",
-        "tier": "Decent",
+        "tier": "Good",
         "links": [],
         "notes": []
       },
@@ -781,8 +781,8 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Wind Innocence Procs",
-        "tier": "Not Rated",
+        "buildName": "Wind Innocence autobomber",
+        "tier": "Good",
         "links": [],
         "notes": []
       },
@@ -844,14 +844,6 @@ window.soloData = {
           }
         ],
         "notes": []
-      },
-      {
-        "buildName": "Summon Sin (Martial Arts)",
-        "tier": "Decent",
-        "links": [],
-        "notes": [
-          "Requires Skill Charms"
-        ]
       },
       {
         "buildName": "Cobra Sin",
@@ -993,7 +985,7 @@ window.soloData = {
       },
       {
         "buildName": "Physical Blade Dance (Chaos - Phys Dmg Focus)",
-        "tier": "Good",
+        "tier": "Decent",
         "links": [
           {
             "url": "https://www.google.com/url?q=https://tinyurl.com/s8bladedance&amp;sa=D&amp;source=editors&amp;ust=1757267248684611&amp;usg=AOvVaw3_iB8yjpdDyxVgPEqWoEHv",
@@ -1022,7 +1014,7 @@ window.soloData = {
       },
       {
         "buildName": "Poison Blade Dance (Chaos - Venom Dmg Focus)",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=assassin&level=80&difficulty=3&quests=1&strength=84&dexterity=30&vitality=296&energy=0&coupling=1&skills=0100000020000000002000200006000100002000000001000001000000010000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CVampire+Gaze%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CDemon+Machine%2CDoom%27s+Finger%2CBloodfist%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Natalya%27s+Totem%2C3%2C%2B+Sockets+Helm%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&armor=Natalya%27s+Shadow%2C3%2C%2B+Skill%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&gloves=Venom+Grip%2C2%2C%2B+ICB&boots=Natalya%27s+Soul%2C2%2C%2B+Faster+Run+Walk&belt=Verdungo%27s+Hearty+Cord%2C3%2C%2B+Faster+Run+Walk%2C&amulet=Blood+Craft+-+Assassin%2C0%2C%2B+2+All+Skills%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Run%2FWalk&ring2=Raven+Frost%2C0%2C%2B+Faster+Run%2FWalk&weapon=Natalya%27s+Mark%2C3%2C%2B+Psn+Pierce%2C%2C%2C%2C%2CRainbow+Facet+%28Poison%29%2CRainbow+Facet+%28Poison%29&offhand=Chaos+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Fist%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=%2B1+Mentalist%27s+Grand+Charm+%2B+frw&charm=Ruby+Small+Charm+of+Vita&charm=Ruby+Small+Charm+of+Vita&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia&charm=Fine+Small+Charm+of+Inertia",
@@ -1125,7 +1117,7 @@ window.soloData = {
     "Barbarian": [
       {
         "buildName": "Warcry",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://streamable.com/cq8k8s",
@@ -1161,7 +1153,7 @@ window.soloData = {
       },
       {
         "buildName": "Whirlwind (2-H)",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248685787&amp;usg=AOvVaw3TaX-_ZjjfElauMuEMEOcp",
@@ -1176,7 +1168,7 @@ window.soloData = {
       },
       {
         "buildName": "Whirlwind (Dual Wield)",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=99&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0100010100000120012001002000010110010801010000000000002001&mercenary=none%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Halaberd%27s+Reign%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Tyrael%27s+Might%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Soul+Drainer%2C3%2C%2B+All+Resistances&boots=Gore+Rider%2C2%2C%2B+Faster+Run+Walk&belt=String+of+Ears%2C2%2C%2B+Faster+Run+Walk%2C&amulet=Atma%27s+Scarab%2C0%2C%2B+2+All+Skills%2C&ring1=Carrion+Wind%2C0%2C%2B+Faster+Run%2FWalk&ring2=Wisp+Projector%2C0%2C%2B+Faster+Run%2FWalk&weapon=The+Grandfather%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=Schaefer%27s+Hammer%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Fanatic+Grand+Charm+%2B+frw&charm=%2B1+Expert%27s+Grand+Charm+%2B+frw",
@@ -1208,7 +1200,7 @@ window.soloData = {
       },
       {
         "buildName": "Leap Attack (Physical)",
-        "tier": "Decent",
+        "tier": "Mid",
         "links": [
           {
             "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248686379&amp;usg=AOvVaw1YtzVDFBx7zRYXXLb7fwLe",
@@ -1222,7 +1214,7 @@ window.soloData = {
       },
       {
         "buildName": "Leap Attack (Ele Proc)",
-        "tier": "Decent",
+        "tier": "Mid",
         "links": [],
         "notes": [
           "Stormspire | Rapture | Destruction",
@@ -1232,7 +1224,7 @@ window.soloData = {
       },
       {
         "buildName": "Double Throw",
-        "tier": "Decent",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=91&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0100010100000101010100002020010101010100000000200000000001&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CDuskdeep%2CLeviathan%2CCranebeak%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Demonhorn%27s+Edge%2C3%2Cnone%2C%2C%2C&armor=Hustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2Cnone&boots=Gore+Rider%2C2%2Cnone&belt=Nosferatu%27s+Coil%2C3%2Cnone%2C&amulet=Highlord%27s+Wrath%2C0%2Cnone%2C&ring1=Raven+Frost%2C0%2Cnone&ring2=Bul-Kathos%27+Death+Band%2C0%2Cnone&weapon=Lacerator%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2CRuby+Jewel+of+Fervor&offhand=Lacerator%2C3%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Might-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=%2B1+Fanatic+Grand+Charm+%2B+fhr&charm=Lucky+Grand+Charm+of+Greed&charm=Sharp+Grand+Charm+of+Quality&charm=%2B1+Fanatic+Grand+Charm&charm=%2B1+Fanatic+Grand+Charm&charm=%2B1+Fanatic+Grand+Charm&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck&charm=Shimmering+Small+Charm+of+Good+Luck",
@@ -1278,7 +1270,7 @@ window.soloData = {
       },
       {
         "buildName": "Split Throw",
-        "tier": "Not Rated",
+        "tier": "Bad",
         "links": [],
         "notes": []
       },
@@ -1340,7 +1332,7 @@ window.soloData = {
       },
       {
         "buildName": "Plague Javelin",
-        "tier": "Bad",
+        "tier": "Good",
         "links": [],
         "notes": []
       },
@@ -1352,7 +1344,7 @@ window.soloData = {
       },
       {
         "buildName": "Cold Arrow",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=90&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000000000000000000101010100001700002020200000200000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CCrown+of+Ages%2CFortitude+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CFaith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2CAbyssal+Ward%2CLaying+of+Hands%2CMarrowwalk%2CVerdungo%27s+Hearty+Cord&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Nightwing%27s+Veil%2C3%2Cnone%2C%2C%2C&armor=Silks+of+the+Victor%2C1%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Archer%27s+of+Quickness%2C1%2Cnone&boots=Merman%27s+Sprocket%2C3%2Cnone&belt=Snowclash%2C2%2Cnone%2C&amulet=Blood+Craft+-+Amazon%2C0%2Cnone%2C&ring1=The+Stone+of+Jordan%2C0%2Cnone&ring2=The+Stone+of+Jordan%2C0%2Cnone&weapon=Pus+Spitter%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Frozen+Sorrow%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=%2B3%25+Numbing+Large+Charm&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=%2B1+Fletcher%27s+Grand+Charm+%2B+frw&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia&charm=Shimmering+Small+Charm+of+Inertia",
@@ -1378,14 +1370,14 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Lightning Arrow",
+        "buildName": "Lightning Arrow (Crankleshot)",
         "tier": "Bad",
         "links": [],
         "notes": []
       },
       {
         "buildName": "Fire Arrow",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://www.youtube.com/watch?v=TjbogPaK7lY",
@@ -1408,7 +1400,7 @@ window.soloData = {
       },
       {
         "buildName": "Jab/Fend",
-        "tier": "Mid",
+        "tier": "Decent",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=95&difficulty=3&quests=1&strength=44&dexterity=77&vitality=364&energy=0&coupling=1&skills=200000200000002000000120010100200200000100000000000000000000&mercenary=Rogue+Scout+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Vigor%29%2CGiant+Skull%2CBlack+Hades%2CFaith+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Demon+Crossbow%2CAnvilguard+Strap%2CLava+Gout%2CGore+Rider%2CRazortail&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Andariel%27s+Visage%2C3%2C%2B+Sockets+Helm%2CVex+Rune%2CVex+Rune%2CVex+Rune&armor=Shaftstop%2C2%2C%2B+Sockets+Chest%2C%2C%2C%2CScintillating+Jewel+of+Truth%2CScintillating+Jewel+of+Truth%2CScintillating+Jewel+of+Truth&gloves=Lancer%27s+Gloves+of+Quickness%2C1%2C%2B+Increased+Attack+Speed&boots=Gore+Rider%2C2%2C%2B+PDR&belt=Verdungo%27s+Hearty+Cord%2C3%2C%2B+Increased+Attack+Speed%2C&amulet=Metalgrid%2C0%2C%2B+CBF%2C&ring1=Bul-Kathos%27+Death+Band%2C0%2C%2B+Damage+Reduction&ring2=Raven+Frost%2C0%2C%2B+Damage+Reduction&weapon=Stoneraven%2C3%2C%2B+Sockets+Weapon%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor%2CRuby+Jewel+of+Fervor&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Vigor-mercenary%2C1%2C0&effect=Fanaticism-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=%2B1+Harpoonist%27s+Grand+Charm&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance&charm=Shimmering+Small+Charm+of+Balance",
@@ -1420,7 +1412,7 @@ window.soloData = {
       },
       {
         "buildName": "Multiple Shot",
-        "tier": "Top",
+        "tier": "Decent",
         "links": [
           {
             "url": "https://www.youtube.com/watch?v=HzPLfKwjhqA",
@@ -1511,20 +1503,6 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Pure Summon",
-        "tier": "Decent",
-        "links": [
-          {
-            "url": "https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1Mcmwpn5CkyR7BdEOlj1BuQIE-PxYHXtax3WywsBKeL8/edit?gid%3D1318666241%23gid%3D1318666241&amp;sa=D&amp;source=editors&amp;ust=1757267248689986&amp;usg=AOvVaw2YhawQKfIMu0mOzznuuSii",
-            "label": "Build Guide (Solo leveling tab)",
-            "type": "guide"
-          }
-        ],
-        "notes": [
-          "Loyalty RW & Amp merc"
-        ]
-      },
-      {
         "buildName": "Physical Bear",
         "tier": "Not Rated",
         "links": [],
@@ -1584,7 +1562,7 @@ window.soloData = {
       },
       {
         "buildName": "Corpse Explosion",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=80&difficulty=3&quests=1&strength=91&dexterity=0&vitality=0&energy=0&coupling=1&skills=000101010001010500002001000020200000000020000000000000000000000000&mercenary=Ascendant+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Amplify+Damage%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Staff%2Cnone%2Cnone%2Cnone%2Cnone&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Wormskull%2C1%2Cnone%2C%2C%2C&armor=Spirit+Forge%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Magefist%2C1%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Venomous+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=White+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Tomb+Wand+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Corpse+Explosion%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Corpse+Explosion%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Meditation-mercenary_weapon%2C1%2C0",
@@ -1621,7 +1599,7 @@ window.soloData = {
       },
       {
         "buildName": "Elemental Summoner (Mage Skeles + Ele Revives)",
-        "tier": "Mid",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=92&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=200101010120010101002000010100000000000001000001000000010001200010&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CShaftstop%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CBloodfist%2CImp+Shank%2CSiggard%27s+Staunch&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Harlequin+Crest%2C3%2C%2B+Skill%2C%2CUm+Rune%2CUm+Rune&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Gravepalm%2C2%2C%2B+Faster+Cast+Rate&boots=Marrowwalk%2C3%2Cnone&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Blood+Craft+-+Necromancer%2C0%2C%2B+Faster+Cast+Rate%2C&ring1=Wisp+Projector%2C0%2C%2B+Faster+Cast+Rate&ring2=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&weapon=Grim%27s+Burning+Dead%2C2%2C%2B+All+Skills%2C%2C%2CIst+Rune%2CIst+Rune%2CIst+Rune%2CScintillating+Jewel+of+Freedom&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+life&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+fhr&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+frw&charm=%2B1+Graverobber%27s+Grand+Charm+%2B+frw&charm=Amber+Small+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=Sapphire+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita",
@@ -1645,7 +1623,7 @@ window.soloData = {
       },
       {
         "buildName": "Green Goblin (Demon Machine Merc + Skeletons)",
-        "tier": "Good",
+        "tier": "Decent",
         "links": [
           {
             "url": "https://www.youtube.com/watch?v=Zux3wQGp0Hw",
@@ -1666,7 +1644,7 @@ window.soloData = {
       },
       {
         "buildName": "Dark Pact",
-        "tier": "Top",
+        "tier": "Good",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=95&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=000000010100010101000000010100000000000020012001200000010016000020&mercenary=Barbarian+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Might%29%2CVeil+of+Steel%2CPurgatory%2Cnone%2Cnone%2CSteelrend%2CWar+Traveler%2CNosferatu%27s+Coil&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Accursed+Diadem%2C3%2C%2B+Skill%2C%2CLPK%2FMPK+req+FHR+Jewel%2CLPK%2FMPK+req+FHR+Jewel&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Mana+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Accursed+Amulet%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Faster+Cast+Rate&ring2=Wisp+Projector%2C0%2C%2B+Mana+per+kill&weapon=Blackhand+Key%2C2%2C%2B+All+Skills%2C%2C%2C%2C%2CLPK%2FMPK+Jewel%2CLPK%2FMPK+Jewel&offhand=Darkforce+Spawn%2C3%2C%2B+All+Skills%2C%2C%2C%2C%2CUm+Rune%2CUm+Rune&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Might-mercenary%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Hexing+Grand+Charm+%2B+fhr&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Vita&charm=Emerald+Small+Charm+of+Vita&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=%2B3%25+Scintillating+Large+Charm+of+Balance&charm=Emerald+Small+Charm+of+Vita",
@@ -1706,7 +1684,7 @@ window.soloData = {
       },
       {
         "buildName": "Pure Clay/Blood",
-        "tier": "Not Rated",
+        "tier": "Mid",
         "links": [],
         "notes": []
       },
@@ -1829,7 +1807,7 @@ window.soloData = {
       },
       {
         "buildName": "Physical Zeal",
-        "tier": "Bad",
+        "tier": "Decent",
         "links": [],
         "notes": []
       },
@@ -1900,7 +1878,7 @@ window.soloData = {
       },
       {
         "buildName": "Smite",
-        "tier": "Not Rated",
+        "tier": "Bad",
         "links": [],
         "notes": []
       },
@@ -1936,7 +1914,7 @@ window.soloData = {
       },
       {
         "buildName": "Thorns",
-        "tier": "Not Rated",
+        "tier": "Bad",
         "links": [],
         "notes": []
       },
