@@ -1777,6 +1777,17 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=1648s",
             "label": "Build Guide (27:28)",
             "type": "video"
+          },
+          {
+            "url": "https://youtu.be/g21v-wEsC5Y",
+            "label": "Pandemonium Citadel (4:18)",
+            "type": "video"
+          },
+          {
+            "url": "https://live.projectdiablo2.com/armory/builds/69e1a4659fc33c4bc7fe0911",
+            "label": "Armory - Pandemonium Citadel (4:18)",
+            "type": "armory",
+            "mapLabel": "Pandemonium Citadel (4:18)"
           }
         ],
         "notes": []
@@ -1902,6 +1913,17 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=1648s",
             "label": "Build Guide (27:28)",
             "type": "video"
+          },
+          {
+            "url": "https://youtu.be/g21v-wEsC5Y",
+            "label": "Pandemonium Citadel (4:18)",
+            "type": "video"
+          },
+          {
+            "url": "https://live.projectdiablo2.com/armory/builds/69e1a4659fc33c4bc7fe0911",
+            "label": "Armory - Pandemonium Citadel (4:18)",
+            "type": "armory",
+            "mapLabel": "Pandemonium Citadel (4:18)"
           }
         ],
         "notes": []
