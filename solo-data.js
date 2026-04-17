@@ -781,8 +781,8 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "Wind Innocence autobomber",
-        "tier": "Good",
+        "buildName": "Armageddon autobomber",
+        "tier": "Decent",
         "links": [],
         "notes": []
       },
