@@ -1842,9 +1842,7 @@ window.soloData = {
             "type": "video"
           }
         ],
-        "notes": [
-          "Requires Leech-able Mobs"
-        ]
+        "notes": []
       },
       {
         "buildName": "Holy Freeze Sacrifice",
