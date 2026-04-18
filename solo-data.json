@@ -272,6 +272,24 @@
     },
     {
       "className": "Barbarian",
+      "buildName": "Hybrid Bleed WW",
+      "plannerUrl": null,
+      "plannerLabel": null,
+      "tags": [
+        {
+          "text": "Chaos",
+          "style": "danger",
+          "pill": true
+        },
+        {
+          "text": "Early Map",
+          "style": "primary"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=cNT5BRgBELY&t=405s"
+    },
+    {
+      "className": "Barbarian",
       "buildName": "Bleed Double Throw",
       "plannerUrl": null,
       "plannerLabel": null,
@@ -1153,6 +1171,11 @@
             "url": "https://streamable.com/cq8k8s",
             "label": "Sewers of Harrogath (3:00)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=cNT5BRgBELY&t=4949s",
+            "label": "Build Guide (1:22:29)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1165,6 +1188,11 @@
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=barbarian&level=90&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=0101010120200900012000000000010120050000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Blessed+Aim%29%2CCrown+of+Thieves%2CHustle+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CArioc%27s+Needle%2Cnone%2CLaying+of+Hands%2CInfernostride%2CGoldwrap&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Crown+of+Thieves%2C2%2C%2B+Sockets+Helm%2C%2C%2C&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Chance+Guards%2C1%2C%2B+Faster+Cast+Rate&boots=Infernostride%2C2%2C%2B+Faster+Run+Walk&belt=Goldwrap%2C1%2C%2B+Faster+Cast+Rate%2C&amulet=Blood+Craft+-+Barbarian%2C0%2C%2B+Faster+Run+Walk%2C&ring1=Dwarf+Star%2C0%2C%2B+Faster+Cast+Rate&ring2=Dwarf+Star%2C0%2C%2B+Faster+Cast+Rate&weapon=Blade+of+Ali+Baba%2C2%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2C%2C&offhand=Blade+of+Ali+Baba%2C2%2C%2B+Faster+Cast+Rate%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Iron_Skin%2C1%2C0&effect=Natural_Resistance%2C1%2C0&effect=Blessed_Aim-mercenary%2C1%2C0&charm=Gheed%27s+Fortune&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed&charm=Lucky+Grand+Charm+of+Greed",
             "label": "End-game Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=cNT5BRgBELY&t=4297s",
+            "label": "Build Guide (1:11:37)",
+            "type": "video"
           }
         ],
         "notes": []
@@ -1189,6 +1217,11 @@
             "url": "https://www.google.com/url?q=https://discord.com/channels/701658302085595158/776859497279782922/1237778531690483814&amp;sa=D&amp;source=editors&amp;ust=1757267248685787&amp;usg=AOvVaw3TaX-_ZjjfElauMuEMEOcp",
             "label": "Build Guide",
             "type": "guide"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=cNT5BRgBELY&t=2154s",
+            "label": "Build Guide (35:54)",
+            "type": "video"
           }
         ],
         "notes": [
