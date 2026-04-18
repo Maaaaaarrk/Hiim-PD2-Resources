@@ -834,7 +834,8 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 		  } else if (link.type === 'guide') {
 			linksHtml += '<a class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" href="' + link.url + '" rel="noreferrer" target="_blank">' + escapeHtml(link.label) + '</a>\n';
 		  } else if (link.type === 'video') {
-			linksHtml += '<a target="_blank" href="' + link.url + '"><span class="badge rounded-pill text-bg-success" style="font-size:0.55em;line-height:1.3">Video<br/>' + escapeHtml(link.label) + '</span></a>\n';
+			var videoPrefix = (link.label === 'Starter Guide' || link.label.indexOf('Starter Guide ') === 0 || link.label.indexOf('Build Guide') === 0) ? 'Video' : 'Season 12 Video';
+			linksHtml += '<a target="_blank" href="' + link.url + '"><span class="badge rounded-pill text-bg-success" style="font-size:0.55em;line-height:1.3">' + videoPrefix + '<br/>' + escapeHtml(link.label) + '</span></a>\n';
 		  }
 		});
 		build.notes.forEach(function(note) {
