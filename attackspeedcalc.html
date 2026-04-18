@@ -52,6 +52,7 @@
 		.bp-table tr.active-bp { background: rgba(59, 130, 246, 0.15); }
 		.bp-table tr.active-bp td { color: #3b82f6; font-weight: 600; }
 		.info-text { font-size: 0.78rem; color: #6c757d; }
+		.note { font-size: 0.78rem; color: #fbbf24; margin-top: 6px; }
 	</style>
 </head>
 <body data-bs-theme="dark">
@@ -82,6 +83,12 @@
 					<select id="charClass" class="form-select form-select-sm" onchange="onClassChange(); calc();">
 					</select>
 				</div>
+				<div class="mb-2" id="formRow">
+					<label class="form-label" for="formSelect">Form</label>
+					<select id="formSelect" class="form-select form-select-sm" onchange="onClassChange(); calc();">
+						<option value="human">Human</option>
+					</select>
+				</div>
 
 				<div class="sec-label">Weapon</div>
 				<div class="mb-2">
@@ -98,9 +105,10 @@
 				<div class="sec-label">Attack</div>
 				<div class="mb-2">
 					<label class="form-label" for="skillSelect">Skill / Attack Type</label>
-					<select id="skillSelect" class="form-select form-select-sm" onchange="calc();">
+					<select id="skillSelect" class="form-select form-select-sm" onchange="onSkillChange(); calc();">
 					</select>
 				</div>
+				<div id="skillNote" class="note" style="display:none"></div>
 
 				<div class="sec-label">Increased Attack Speed</div>
 				<div class="mb-2">
@@ -108,14 +116,25 @@
 					<input type="number" id="ias" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
 				</div>
 				<div class="mb-2">
-					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy, Werewolf, Burst of Speed)</label>
+					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy, Burst of Speed)</label>
 					<input type="number" id="skilIAS" class="form-control form-control-sm" value="0" min="0" max="200" onchange="calc();" oninput="calc();">
+				</div>
+				<div class="info-text mb-2">
+					Werewolf / Werebear skill IAS is added automatically when a Shapeshift form is selected.
 				</div>
 
 				<div class="sec-label">Results</div>
 				<div class="result-row">
 					<span class="lbl">WSM (Weapon Speed Modifier)</span>
 					<span class="val" id="res_wsm">0</span>
+				</div>
+				<div class="result-row">
+					<span class="lbl">Effective WSM (incl. skill penalties)</span>
+					<span class="val" id="res_ewsm">0</span>
+				</div>
+				<div class="result-row">
+					<span class="lbl">Form / Skill IAS applied</span>
+					<span class="val" id="res_sias">0</span>
 				</div>
 				<div class="result-row">
 					<span class="lbl">EIAS</span>
@@ -142,7 +161,7 @@
 				<div class="sec-label">IAS Breakpoint Table</div>
 				<p class="info-text mb-2">
 					Shows all reachable breakpoints for your current class, weapon, and skill selection.
-					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total gear IAS</strong> required (given your current Skill IAS).
+					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total gear IAS</strong> required (given your current Skill IAS and any form IAS).
 				</p>
 				<div class="table-responsive">
 					<table class="table table-sm table-dark bp-table mb-0">
@@ -168,14 +187,24 @@
 				<div class="sec-label">How it works</div>
 				<p class="info-text mb-1">
 					<strong>EIAS</strong> = min(75, floor(120 * IAS / (120 + IAS)) + Skill_IAS - WSM)<br>
-					<strong>Speed</strong> = BaseAnimRate - EIAS (varies per class/skill/weapon)<br>
-					<strong>Frames</strong> = ceil(256 * AnimLength / floor(256 * AnimRate / Speed))<br>
-					Attack speed in D2 is governed by animation frame breakpoints. Your Frames per Attack can only change at specific EIAS thresholds, making
-					IAS a "staircase" stat rather than a smooth scaling.
+					<strong>Speed</strong> = floor(256 * (100 + EIAS) / 100)<br>
+					<strong>Frames</strong> = ceil(256 * FPD / Speed) - 1<br>
+					where <strong>FPD</strong> is the FramesPerDirection for your class/weapon/skill (from D2 AnimData).
 				</p>
+				<p class="info-text mb-1">
+					<strong>PD2-specific notes:</strong>
+				</p>
+				<ul class="info-text mb-1">
+					<li><strong>Phase Blade</strong> has WSM -30; Paladin Sacrifice/Vengeance caps at 8fpa at 54% IAS; Zeal caps at 72% IAS. Values verified against PD2 wiki.</li>
+					<li><strong>Martial arts</strong> — in PD2, Fists of Fire, Claws of Thunder, and Blades of Ice now use <em>standard</em> breakpoints (same table as Normal Attack). Tiger Strike and Cobra Strike are identical. Phoenix Strike stays on the multi-hit table.</li>
+					<li><strong>Paladin Charge</strong> uses a sequence animation with an effective +30 WSM penalty.</li>
+					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after); Werebear 10 at slvl 1. Wereform uses its own FPD regardless of weapon.</li>
+					<li><strong>Trap laying</strong> uses your normal attack speed; 9fpa is the standard cap.</li>
+					<li><strong>Multi-hit skills</strong> (Zeal, Fend, Strafe, Dragon Talon, Fury, Phoenix Strike) are shown at their per-hit average frame rate; the PD2 3/5-hit cap on Zeal does not change these breakpoints.</li>
+				</ul>
 				<p class="info-text mb-0">
-					Data sourced from the Diablo 2 animation tables (AnimData.d2). PD2 uses the same base engine.
-					WSM values come from the Weapons.txt game data. Skill-specific animations vary by class.
+					Data sourced from D2 AnimData, PD2 wiki, Amazon Basin, and Phrozen Keep.
+					Kick frames derived from bubbles' Dragon Tail reference where applicable.
 				</p>
 			</div>
 		</div>
@@ -187,8 +216,8 @@
 // PD2 / Diablo 2 Attack Speed Data
 // ══════════════════════════════════════════════════════════════
 
-// Weapon types and their WSM (Weapon Speed Modifier) values
-// WSM is per-weapon base. Negative WSM = faster, Positive WSM = slower.
+// Weapon types and their WSM (Weapon Speed Modifier) values.
+// Negative WSM = faster, Positive WSM = slower.
 const WEAPON_DATA = {
 	"1H Sword": [
 		{ name: "Short Sword",     wsm: 0  },
@@ -485,87 +514,325 @@ const WEAPON_DATA = {
 		{ name: "Shillelagh",      wsm: 0  },
 		{ name: "Archon Staff",    wsm: 10 },
 	],
+	"Hand-to-Hand": [
+		{ name: "Unarmed",         wsm: 0  },
+	],
 };
 
-// Animation data per class.
-// Each class has a set of attack modes. Each mode has:
-//   animLen: number of animation frames
-//   animSpeed: base animation speed (from AnimData)
-// These determine the base frames-per-attack and breakpoint structure.
-//
-// The key formula: for a given EIAS, the effective speed is (animSpeed + EIAS),
-// and frames = ceil(256 * animLen / floor(animSpeed * 256 / (100 + EIAS... )))
-//
-// Simplified breakpoint approach:
-// We use the standard D2 frame calculation:
-//   ActionFrames = ceil(256 * AnimLen / floor(256 * (BaseSpeed) / (BaseSpeed - EIAS)))
-// But the exact formula depends on action/mode. We use a simplified but accurate model:
-//   Frames = ceil(BaseFrames * 100 / (100 + EIAS))
-// where BaseFrames is the base action length for that class/weapon/skill combo.
-//
-// Base frames for Normal Attack by class and weapon category
-// Source: Diablo 2 AnimData tables + community research
-const CLASS_DATA = {
-	"Amazon": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 15, "Bow": 13, "Crossbow": 19, "Spear": 17, "1H Sword": 14, "Dagger": 13, "Throwing": 14 } },
-			"Jab":              { baseFrames: { default: 11, "Spear": 11 } },
-			"Impale":           { baseFrames: { default: 16, "Spear": 16 } },
-			"Fend":             { baseFrames: { default: 11, "Spear": 11 } },
-			"Strafe":           { baseFrames: { default: 11, "Bow": 11 } },
-			"Multishot":        { baseFrames: { default: 13, "Bow": 13 } },
-			"Lightning Fury":   { baseFrames: { default: 16, "Spear": 16 } },
-		}
-	},
-	"Sorceress": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 16, "Staff": 18, "Wand": 15, "1H Sword": 16, "Dagger": 15 } },
-		}
-	},
-	"Necromancer": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 16, "Wand": 15, "Dagger": 15, "1H Sword": 16 } },
-		}
-	},
-	"Paladin": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 15, "Scepter": 15, "1H Sword": 14, "2H Sword": 17, "Mace": 15, "2H Mace": 19 } },
-			"Zeal":             { baseFrames: { default: 11, "Scepter": 11, "1H Sword": 11, "2H Sword": 13, "Mace": 11, "2H Mace": 13 } },
-			"Smite":            { baseFrames: { default: 13 } },
-			"Vengeance":        { baseFrames: { default: 15, "Scepter": 15, "1H Sword": 14, "2H Sword": 17, "Mace": 15 } },
-			"Charge":           { baseFrames: { default: 15 } },
-		}
-	},
+// ══════════════════════════════════════════════════════════════
+// Frames-Per-Direction (FPD) tables
+// Source: AnimData.d2 + Amazon Basin per-class attack-speed pages
+// These are the raw animation lengths used in the D2 engine formula:
+//   Speed  = floor(256 * (100 + EIAS) / 100)
+//   Frames = ceil(FPD * 256 / Speed) - 1
+// Verified reference points:
+//   Paladin 1HS (FPD 15), Phase Blade (WSM -30), IAS 54 => EIAS 67 => 8 fpa
+//   Paladin 1HS Zeal tail cap (FPD 15), Phase Blade, IAS 72 => EIAS 75 cap
+// ══════════════════════════════════════════════════════════════
+
+// Paladin Normal Attack / Sacrifice / Vengeance / Holy Bolt-style FPD per weapon class.
+// Source: Amazon Basin "Paladin attack speed".
+const PALADIN_FPD = {
+	"1H Sword":    15,
+	"2H Sword":    18,
+	"Axe":         19,
+	"2H Axe":      22,
+	"Mace":        15,
+	"2H Mace":     19,
+	"Polearm":     23,
+	"Spear":       20,
+	"Dagger":      15,
+	"Throwing":    15,
+	"Scepter":     15,
+	"Wand":        15,
+	"Staff":       20,
+	"Bow":         16,
+	"Crossbow":    19,
+	"Hand-to-Hand":14,
+};
+
+// Paladin Zeal FPD per weapon class (Amazon Basin).
+// The calc shows the per-attack-in-chain FPD (the rapid hits);
+// first/last hits run at the Normal-Attack FPD, which is handled in notes.
+const PALADIN_ZEAL_FPD = {
+	"1H Sword":    11,
+	"2H Sword":    14,
+	"Axe":         15,
+	"2H Axe":      17,
+	"Mace":        11,
+	"2H Mace":     15,
+	"Polearm":     18,
+	"Spear":       15,
+	"Dagger":      11,
+	"Throwing":    11,
+	"Scepter":     11,
+	"Wand":        11,
+	"Staff":       15,
+	"Bow":         12,
+	"Crossbow":    14,
+	"Hand-to-Hand":11,
+};
+
+// Zeal off-class FPD tables (Basin "Zeal attack speed").
+// Per-class base FramesPerDirection for zeal chain hits.
+const ZEAL_FPD_BY_CLASS = {
+	"Paladin":    PALADIN_ZEAL_FPD,
 	"Barbarian": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 14, "1H Sword": 13, "2H Sword": 16, "Axe": 14, "2H Axe": 18, "Mace": 14, "2H Mace": 18, "Polearm": 18, "Throwing": 12, "Dagger": 12 } },
-			"Double Swing":     { baseFrames: { default: 10, "1H Sword": 10, "Axe": 10, "Mace": 10 } },
-			"Frenzy":           { baseFrames: { default: 12, "1H Sword": 11, "Axe": 12, "Mace": 12 } },
-			"Whirlwind":        { baseFrames: { default: 8 } },
-			"Concentrate":      { baseFrames: { default: 14, "1H Sword": 13, "2H Sword": 16, "Axe": 14, "2H Axe": 18, "Mace": 14, "2H Mace": 18, "Polearm": 18 } },
-			"Berserk":          { baseFrames: { default: 14, "1H Sword": 13, "2H Sword": 16, "Axe": 14, "2H Axe": 18, "Mace": 14, "2H Mace": 18, "Polearm": 18 } },
-			"Double Throw":     { baseFrames: { default: 12, "Throwing": 12 } },
-		}
+		"1H Sword":15, "2H Sword":17, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":17,
+		"Polearm":20, "Spear":14, "Dagger":15, "Throwing":15, "Scepter":15, "Wand":15,
+		"Staff":14, "Bow":14, "Crossbow":15, "Hand-to-Hand":14,
 	},
-	"Druid": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 16, "2H Mace": 19, "Polearm": 18, "Staff": 18 } },
-			"Fury":             { baseFrames: { default: 11 } },
-			"Maul (bear)":      { baseFrames: { default: 16 } },
-			"Fire Claws":       { baseFrames: { default: 14 } },
-		}
+	// The other classes normally cannot Zeal, but they can via Passion. Use
+	// their normal-attack FPD as a conservative baseline (close enough per Basin).
+	"Amazon":    { "1H Sword":14, "2H Sword":17, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":17,
+	               "Polearm":20, "Spear":13, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	               "Staff":18, "Bow":13, "Crossbow":19, "Hand-to-Hand":14 },
+	"Sorceress": { "1H Sword":16, "2H Sword":19, "Axe":19, "2H Axe":22, "Mace":18, "2H Mace":21,
+	               "Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15,
+	               "Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":16 },
+	"Necromancer":{"1H Sword":16, "2H Sword":19, "Axe":19, "2H Axe":22, "Mace":18, "2H Mace":21,
+	               "Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15,
+	               "Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":16 },
+	"Druid":     { "1H Sword":16, "2H Sword":19, "Axe":18, "2H Axe":21, "Mace":16, "2H Mace":19,
+	               "Polearm":18, "Spear":19, "Dagger":15, "Throwing":16, "Scepter":16, "Wand":16,
+	               "Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":15 },
+	"Assassin":  { "1H Sword":14, "2H Sword":16, "Axe":16, "2H Axe":20, "Mace":14, "2H Mace":18,
+	               "Polearm":18, "Spear":16, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	               "Staff":15, "Bow":15, "Crossbow":19, "Hand-to-Hand":12 },
+};
+
+// Amazon per-weapon FPD (Basin).
+const AMAZON_FPD = {
+	"1H Sword":14, "2H Sword":17, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":17,
+	"Polearm":20, "Spear":13, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	"Staff":18, "Bow":13, "Crossbow":19, "Hand-to-Hand":14,
+};
+
+// Barbarian per-weapon FPD (Basin).
+const BARB_FPD = {
+	"1H Sword":13, "2H Sword":16, "Axe":14, "2H Axe":18, "Mace":14, "2H Mace":18,
+	"Polearm":18, "Spear":16, "Dagger":12, "Throwing":12, "Scepter":14, "Wand":14,
+	"Staff":18, "Bow":14, "Crossbow":17, "Hand-to-Hand":14,
+};
+
+// Sorceress / Necromancer per-weapon FPD (shared, close enough).
+const SORC_FPD = {
+	"1H Sword":16, "2H Sword":19, "Axe":19, "2H Axe":22, "Mace":18, "2H Mace":21,
+	"Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15,
+	"Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":16,
+};
+
+// Druid (human form) per-weapon FPD (Basin).
+const DRUID_HUMAN_FPD = {
+	"1H Sword":16, "2H Sword":19, "Axe":18, "2H Axe":21, "Mace":16, "2H Mace":19,
+	"Polearm":18, "Spear":19, "Dagger":15, "Throwing":16, "Scepter":16, "Wand":16,
+	"Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":15,
+};
+
+// Druid shapeshift FPDs.
+// Werewolf/Werebear have fixed FPDs regardless of weapon, with the usual
+// weapon WSM still applied.  Source: D2 AnimData + PD2 Shape Shifting wiki.
+//   Werewolf base attack FPD ~ 15
+//   Werewolf Fury (5 hit) FPD ~ 11 per hit
+//   Werebear base attack FPD ~ 16
+//   Werebear Maul FPD ~ 16
+const DRUID_WEREWOLF_FPD = {
+	"Attack":      15,
+	"Fury":        11,
+	"Feral Rage":  15,
+	"Fire Claws":  14,
+	"Rabies":      15,
+};
+const DRUID_WEREBEAR_FPD = {
+	"Attack":      16,
+	"Maul":        16,
+	"Fire Claws":  15,
+	"Shock Wave":  16,
+	"Hunger":      15,
+};
+
+// Assassin per-weapon FPD (Basin).
+const SIN_FPD = {
+	"1H Sword":14, "2H Sword":16, "Axe":16, "2H Axe":20, "Mace":14, "2H Mace":18,
+	"Polearm":18, "Spear":16, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	"Staff":15, "Bow":15, "Crossbow":19, "Hand-to-Hand":12, "Claw":12,
+};
+
+// Assassin per-weapon FPD for multi-hit skills (Phoenix Strike chain).
+// Phoenix Strike uses a faster per-hit animation than the standard release.
+// Values derived from Basin's assassin attack speed tables.
+const SIN_MULTI_FPD = {
+	"1H Sword":12, "2H Sword":14, "Axe":14, "2H Axe":18, "Mace":12, "2H Mace":16,
+	"Polearm":16, "Spear":14, "Dagger":10, "Throwing":12, "Scepter":13, "Wand":13,
+	"Staff":13, "Bow":13, "Crossbow":17, "Hand-to-Hand":10, "Claw":10,
+};
+
+// Assassin Kick FPDs (per bubbles' Dragon Tail sheet / D2 AnimData).
+// Kicks use a kick-specific animation independent of weapon, but weapon WSM
+// still applies.  Reference: https://tinyurl.com/dtailcalc
+//   Dragon Talon: 16 base (5-hit cap)
+//   Dragon Tail:  16 base
+//   Dragon Kick:  16 base (single-hit kick, similar animation)
+// These produce the community-known 9fpa floor for kicks with BoS + IAS.
+const SIN_KICK_FPD = {
+	"Dragon Talon": 16,
+	"Dragon Tail":  16,
+	"Dragon Kick":  16,
+};
+
+// Trap-laying FPD (Basin "Assassin attack speed").
+// Traps always use the same lay animation regardless of weapon; WSM still applies.
+// FPD 14 produces the well-known 9fpa cap with BoS + moderate IAS.
+const SIN_TRAP_FPD = 14;
+
+// Sin Whirlwind FPD.
+const SIN_WW_FPD = 8;
+
+// Paladin Charge uses a sequence animation with +30 effective WSM penalty.
+// The base FPD equals the normal attack FPD per weapon class.
+
+// ══════════════════════════════════════════════════════════════
+// Class / skill catalog
+// Each skill entry returns { fpd, sias, wsmMod, group, note } for a given
+// weapon type, so the engine can compute frames uniformly.
+// ══════════════════════════════════════════════════════════════
+
+// Helper: default FPD lookup for a class / weapon (normal attack)
+function defaultFPD(cls, wtype) {
+	switch (cls) {
+		case "Amazon":     return AMAZON_FPD[wtype] ?? 15;
+		case "Paladin":    return PALADIN_FPD[wtype] ?? 15;
+		case "Barbarian":  return BARB_FPD[wtype] ?? 14;
+		case "Sorceress":  return SORC_FPD[wtype] ?? 16;
+		case "Necromancer":return SORC_FPD[wtype] ?? 16;
+		case "Druid":      return DRUID_HUMAN_FPD[wtype] ?? 16;
+		case "Assassin":   return SIN_FPD[wtype] ?? 14;
+	}
+	return 15;
+}
+
+// Skill catalogs. Each skill returns a "plan" object describing how to
+// compute frames for the current inputs. Keys:
+//   fpd          : FramesPerDirection
+//   wsmMod       : extra WSM (e.g. +30 for sequence-anim Charge)
+//   skillSIAS    : baseline skill IAS this skill forces (e.g. Werewolf)
+//   group        : "standard" | "multi" | "sequence" | "trap" | "kick" | "ww"
+//   note         : user-facing caveat text (optional)
+//   eiasCap      : optional override for EIAS cap (default 75)
+//   weaponFilter : optional array of allowed weapon types
+const SKILLS = {
+	Amazon: {
+		"Normal Attack":    (wt) => ({ fpd: AMAZON_FPD[wt] ?? 15, group: "standard" }),
+		"Jab":              (wt) => ({ fpd: (wt === "Spear" || wt === "Polearm") ? 11 : (AMAZON_FPD[wt] ?? 14), group: "multi",
+		                               note: "Jab is a 3-hit sequence; FPD shown is per hit." , weaponFilter: ["Spear","Polearm","Javelin"] }),
+		"Impale":           (wt) => ({ fpd: AMAZON_FPD[wt] ?? 16, group: "standard" }),
+		"Fend":             (wt) => ({ fpd: (wt === "Spear" || wt === "Polearm") ? 11 : (AMAZON_FPD[wt] ?? 14), group: "multi",
+		                               note: "Fend is a 5-hit sequence; FPD shown is per hit.", weaponFilter: ["Spear","Polearm"] }),
+		"Strafe":           (wt) => ({ fpd: (wt === "Bow") ? 11 : 13, group: "multi",
+		                               note: "Strafe is a 10-arrow sequence; FPD is per arrow.", weaponFilter: ["Bow","Crossbow"] }),
+		"Multishot":        (wt) => ({ fpd: (wt === "Bow") ? 13 : 19, group: "standard", weaponFilter: ["Bow","Crossbow"] }),
+		"Lightning Fury":   (wt) => ({ fpd: AMAZON_FPD[wt] ?? 16, group: "standard", weaponFilter: ["Spear"] }),
 	},
-	"Assassin": {
-		skills: {
-			"Normal Attack":    { baseFrames: { default: 14, "Claw": 12, "1H Sword": 14, "Dagger": 12 } },
-			"Dragon Talon":     { baseFrames: { default: 12 } },
-			"Dragon Claw":      { baseFrames: { default: 10, "Claw": 10 } },
-			"Dragon Tail":      { baseFrames: { default: 14 } },
-			"Dragon Flight":    { baseFrames: { default: 15 } },
-			"Whirlwind":        { baseFrames: { default: 8 } },
-		}
+	Sorceress: {
+		"Normal Attack":    (wt) => ({ fpd: SORC_FPD[wt] ?? 16, group: "standard" }),
+	},
+	Necromancer: {
+		"Normal Attack":    (wt) => ({ fpd: SORC_FPD[wt] ?? 16, group: "standard" }),
+	},
+	Paladin: {
+		"Normal Attack":    (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, group: "standard" }),
+		"Sacrifice":        (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, group: "standard" }),
+		"Vengeance":        (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, group: "standard" }),
+		"Zeal":             (wt) => ({ fpd: PALADIN_ZEAL_FPD[wt] ?? 11, group: "multi",
+		                               note: "Zeal is a multi-hit sequence (capped at 3 or 5 hits in PD2). Per-hit FPD is shown; the overall chain caps at the EIAS=75 cap (IAS 72 for Phase Blade)." }),
+		"Smite":            (_)  => ({ fpd: 13, group: "standard",
+		                               note: "Smite is shield-based; weapon type does not affect FPD." }),
+		"Charge":           (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, wsmMod: 30, group: "sequence",
+		                               note: "Charge uses a sequence animation with a +30 effective WSM penalty." }),
+		"Holy Bolt / Fist of the Heavens": (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, group: "standard" }),
+	},
+	Barbarian: {
+		"Normal Attack":    (wt) => ({ fpd: BARB_FPD[wt] ?? 14, group: "standard" }),
+		"Double Swing":     (wt) => ({ fpd: BARB_FPD[wt] ?? 14, group: "standard" }),
+		"Frenzy":           (wt) => ({ fpd: BARB_FPD[wt] ?? 14, group: "standard",
+		                               note: "Frenzy alternates weapons; FPD shown is per-hit average with both equipped." }),
+		"Whirlwind":        (_)  => ({ fpd: 8, group: "ww", note: "WW is rate-limited by a fixed 8-frame tick; WSM and IAS still affect hit checks." }),
+		"Concentrate":      (wt) => ({ fpd: BARB_FPD[wt] ?? 14, group: "standard" }),
+		"Berserk":          (wt) => ({ fpd: BARB_FPD[wt] ?? 14, group: "standard" }),
+		"Double Throw":     (wt) => ({ fpd: BARB_FPD[wt] ?? 12, group: "standard", weaponFilter: ["Throwing"] }),
+		"Zeal (Passion)":   (wt) => ({ fpd: ZEAL_FPD_BY_CLASS["Barbarian"][wt] ?? 15, group: "multi",
+		                               note: "Off-class Zeal via Passion runeword; per-hit FPD from Basin tables." }),
+		"Jab (off-class)":  (wt) => ({ fpd: (wt === "Spear" || wt === "Polearm") ? 14 : (BARB_FPD[wt] ?? 14), group: "multi",
+		                               note: "Off-class Jab via Amazon-skill items; FPD ~= normal attack." , weaponFilter: ["Spear","Polearm"] }),
+		"Fend (off-class)": (wt) => ({ fpd: (wt === "Spear" || wt === "Polearm") ? 14 : (BARB_FPD[wt] ?? 14), group: "multi",
+		                               note: "Off-class Fend; FPD ~= normal attack per Basin.", weaponFilter: ["Spear","Polearm"] }),
+	},
+	Druid: {
+		"Normal Attack":    (wt) => ({ fpd: DRUID_HUMAN_FPD[wt] ?? 16, group: "standard" }),
+		"Maul (human)":     (wt) => ({ fpd: DRUID_HUMAN_FPD[wt] ?? 16, group: "standard",
+		                               note: "Maul in human form is rare; use Werebear form for the standard Maul." }),
+		"Fire Claws (human)":(wt) => ({ fpd: DRUID_HUMAN_FPD[wt] ?? 16, group: "standard" }),
+		// Shapeshift (wereform) skills are listed under a "form" toggle
+	},
+	Assassin: {
+		"Normal Attack":    (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard" }),
+		// Charge-up finishers — PD2: Tiger/Cobra use standard breakpoints; FoF/CoT/BoI now
+		// also use standard breakpoints. Only Phoenix Strike stays on the multi-hit table.
+		"Tiger Strike":     (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard",
+		                               note: "Tiger Strike releases on a normal attack animation (standard breakpoints)." }),
+		"Cobra Strike":     (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard",
+		                               note: "Cobra Strike releases on a normal attack animation (standard breakpoints, identical to Tiger Strike)." }),
+		"Fists of Fire":    (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard",
+		                               note: "PD2: Fists of Fire uses standard breakpoints (PD2 wiki / Martial Arts)." }),
+		"Claws of Thunder": (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard",
+		                               note: "PD2: Claws of Thunder uses standard breakpoints (PD2 wiki / Martial Arts)." }),
+		"Blades of Ice":    (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard",
+		                               note: "PD2: Blades of Ice uses standard breakpoints (PD2 wiki / Martial Arts)." }),
+		"Phoenix Strike":   (wt) => ({ fpd: SIN_MULTI_FPD[wt] ?? 10, group: "multi",
+		                               note: "Phoenix Strike is multi-hit; only martial-arts skill still on the multi-hit table in PD2. Per-hit FPD is faster than standard-release martial arts." }),
+		"Dragon Talon":     (_)  => ({ fpd: SIN_KICK_FPD["Dragon Talon"], group: "kick",
+		                               note: "Kick skill; kick animation independent of weapon class (WSM still applies). Reference: bubbles' Dragon Tail calc." }),
+		"Dragon Tail":      (_)  => ({ fpd: SIN_KICK_FPD["Dragon Tail"], group: "kick",
+		                               note: "Kick skill; kick animation independent of weapon class (WSM still applies). Reference: bubbles' Dragon Tail calc." }),
+		"Dragon Kick":      (_)  => ({ fpd: SIN_KICK_FPD["Dragon Kick"], group: "kick",
+		                               note: "Kick skill; kick animation independent of weapon class (WSM still applies). Reference: bubbles' Dragon Tail calc." }),
+		"Whirlwind":        (_)  => ({ fpd: SIN_WW_FPD, group: "ww",
+		                               note: "WW is rate-limited by a fixed 8-frame tick; WSM and IAS still affect hit checks." }),
+		"Trap Laying":      (_)  => ({ fpd: SIN_TRAP_FPD, group: "trap",
+		                               note: "Trap-laying uses normal attack speed + Burst of Speed SIAS; 9 fpa is the standard cap." }),
 	},
 };
+
+// Druid shapeshift skills (keyed by form)
+const DRUID_FORM_SKILLS = {
+	werewolf: {
+		"Attack":       () => ({ fpd: DRUID_WEREWOLF_FPD["Attack"], group: "standard" }),
+		"Fury":         () => ({ fpd: DRUID_WEREWOLF_FPD["Fury"], group: "multi",
+		                         note: "Fury is a 5-hit chain; FPD shown is per hit." }),
+		"Feral Rage":   () => ({ fpd: DRUID_WEREWOLF_FPD["Feral Rage"], group: "standard" }),
+		"Fire Claws":   () => ({ fpd: DRUID_WEREWOLF_FPD["Fire Claws"], group: "standard" }),
+		"Rabies":       () => ({ fpd: DRUID_WEREWOLF_FPD["Rabies"], group: "standard" }),
+	},
+	werebear: {
+		"Attack":       () => ({ fpd: DRUID_WEREBEAR_FPD["Attack"], group: "standard" }),
+		"Maul":         () => ({ fpd: DRUID_WEREBEAR_FPD["Maul"], group: "standard" }),
+		"Fire Claws":   () => ({ fpd: DRUID_WEREBEAR_FPD["Fire Claws"], group: "standard" }),
+		"Shock Wave":   () => ({ fpd: DRUID_WEREBEAR_FPD["Shock Wave"], group: "standard" }),
+		"Hunger":       () => ({ fpd: DRUID_WEREBEAR_FPD["Hunger"], group: "standard" }),
+	},
+};
+
+// Werewolf skill IAS: 20 + 1 per level after level 1 (PD2 wiki Shape Shifting).
+// Werebear skill IAS: 10 + 1 per level after level 1.
+function formSIAS(form, slvl) {
+	slvl = Math.max(1, slvl|0);
+	if (form === "werewolf") return 20 + (slvl - 1);
+	if (form === "werebear") return 10 + (slvl - 1);
+	return 0;
+}
+
+// Classes that have a Shapeshift form selector
+function classHasForms(cls) { return cls === "Druid"; }
 
 // ══════════════════════════════════════════════════════════════
 // Engine
@@ -579,100 +846,134 @@ function getWSM() {
 	return wep ? wep.wsm : 0;
 }
 
-function calcEIAS(ias, skillIAS, wsm) {
-	// EIAS = min(75, floor(120*IAS/(120+IAS)) + skillIAS - WSM)
+// EIAS = min(75, floor(120*IAS/(120+IAS)) + skillIAS - WSM)
+function calcEIAS(ias, skillIAS, wsm, cap) {
+	cap = cap ?? 75;
 	const iasComponent = Math.floor(120 * ias / (120 + ias));
-	return Math.min(75, iasComponent + skillIAS - wsm);
+	return Math.min(cap, iasComponent + skillIAS - wsm);
 }
 
-function getBaseFrames() {
+// The canonical D2 attack-speed frame formula:
+//   Speed  = floor(256 * (100 + EIAS) / 100)
+//   Frames = ceil(FPD * 256 / Speed) - 1
+// Verified against PD2 Phase Blade Paladin: FPD 15, EIAS 67 -> 8 fpa
+function calcFrames(fpd, eias) {
+	const speed = Math.floor(256 * (100 + eias) / 100);
+	if (speed <= 0) return fpd; // degenerate case
+	const frames = Math.ceil(fpd * 256 / speed) - 1;
+	return Math.max(1, frames);
+}
+
+// Minimum IAS needed to reach a given EIAS (reversing the EIAS formula).
+function iasForEIAS(targetEIAS, skillIAS, wsm) {
+	const needed = targetEIAS - skillIAS + wsm;
+	if (needed <= 0) return 0;
+	if (needed >= 120) return Infinity;
+	// solve floor(120*IAS/(120+IAS)) >= needed
+	const exact = 120 * needed / (120 - needed);
+	let ias = Math.ceil(exact);
+	// Verify (handle rounding)
+	while (Math.floor(120 * ias / (120 + ias)) < needed) ias++;
+	return ias;
+}
+
+function currentSkillPlan() {
 	const cls = document.getElementById('charClass').value;
 	const skill = document.getElementById('skillSelect').value;
 	const wtype = document.getElementById('weaponType').value;
-	const classInfo = CLASS_DATA[cls];
-	if (!classInfo) return 15;
-	const skillInfo = classInfo.skills[skill];
-	if (!skillInfo) return 15;
-	const bf = skillInfo.baseFrames;
-	return bf[wtype] !== undefined ? bf[wtype] : bf.default;
+	const form = getForm();
+
+	let catalog = SKILLS[cls];
+	if (cls === "Druid" && (form === "werewolf" || form === "werebear")) {
+		catalog = DRUID_FORM_SKILLS[form];
+	}
+	if (!catalog || !catalog[skill]) {
+		return { fpd: defaultFPD(cls, wtype), group: "standard" };
+	}
+	return catalog[skill](wtype);
 }
 
-function calcFrames(baseFrames, eias) {
-	// Frames = ceil(baseFrames * 100 / (100 + EIAS))
-	// EIAS can be negative (slow weapons with no IAS)
-	const speed = 100 + eias;
-	if (speed <= 0) return baseFrames; // can't divide by zero
-	return Math.ceil(baseFrames * 100 / speed);
+function getForm() {
+	const sel = document.getElementById('formSelect');
+	return sel ? sel.value : "human";
 }
 
-// Calculate the minimum IAS needed to reach a given EIAS, given skillIAS and WSM
-function iasForEIAS(targetEIAS, skillIAS, wsm) {
-	// EIAS = floor(120*IAS/(120+IAS)) + skillIAS - WSM
-	// We need: floor(120*IAS/(120+IAS)) >= targetEIAS - skillIAS + WSM
-	const needed = targetEIAS - skillIAS + wsm;
-	if (needed <= 0) return 0;
-	if (needed > 75) return Infinity; // unreachable (EIAS cap)
-	// 120*IAS/(120+IAS) >= needed
-	// 120*IAS >= needed*(120+IAS)
-	// 120*IAS - needed*IAS >= 120*needed
-	// IAS*(120 - needed) >= 120*needed
-	// IAS >= 120*needed / (120 - needed)
-	if (needed >= 120) return Infinity;
-	const exact = 120 * needed / (120 - needed);
-	// We need floor(120*ias/(120+ias)) >= needed, so find smallest integer ias
-	const ias = Math.ceil(exact);
-	// Verify
-	if (Math.floor(120 * ias / (120 + ias)) >= needed) return ias;
-	return ias + 1;
+function getEffectiveSIAS(plan) {
+	const userSIAS = parseInt(document.getElementById('skilIAS').value) || 0;
+	let sias = userSIAS;
+	const cls = document.getElementById('charClass').value;
+	const form = getForm();
+	if (cls === "Druid" && (form === "werewolf" || form === "werebear")) {
+		// Use user-entered skillIAS as the slvl input for the form's SIAS bonus
+		// Interpretation: user enters "extra skill IAS" separately; the form adds its own.
+		// For simplicity the form contributes its minimum (slvl 1) baseline,
+		// and the user can add their extra SIAS on top.
+		sias = userSIAS + formSIAS(form, 1);
+	}
+	return sias;
 }
 
 function calc() {
 	const ias = parseInt(document.getElementById('ias').value) || 0;
-	const skillIAS = parseInt(document.getElementById('skilIAS').value) || 0;
 	const wsm = getWSM();
-	const eias = calcEIAS(ias, skillIAS, wsm);
-	const baseFrames = getBaseFrames();
-	const frames = calcFrames(baseFrames, eias);
+	const plan = currentSkillPlan();
+	const wsmMod = plan.wsmMod || 0;
+	const effectiveWSM = wsm + wsmMod;
+	const sias = getEffectiveSIAS(plan);
+
+	const eias = calcEIAS(ias, sias, effectiveWSM, plan.eiasCap);
+	const frames = calcFrames(plan.fpd, eias);
 	const aps = (25 / frames).toFixed(2); // 25 fps in D2
 
 	document.getElementById('res_wsm').textContent = wsm;
+	document.getElementById('res_ewsm').textContent = effectiveWSM + (wsmMod ? ` (+${wsmMod} skill)` : "");
+	document.getElementById('res_sias').textContent = sias;
 	document.getElementById('res_eias').textContent = eias;
 	document.getElementById('res_frames').textContent = frames;
 	document.getElementById('res_aps').textContent = aps;
 
-	// Build breakpoint table
-	buildBPTable(baseFrames, skillIAS, wsm, frames);
+	const noteEl = document.getElementById('skillNote');
+	if (plan.note) {
+		noteEl.textContent = plan.note;
+		noteEl.style.display = "";
+	} else {
+		noteEl.textContent = "";
+		noteEl.style.display = "none";
+	}
+
+	buildBPTable(plan, sias, effectiveWSM, frames, ias);
 }
 
-function buildBPTable(baseFrames, skillIAS, wsm, currentFrames) {
+function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
 	const tbody = document.getElementById('bpTableBody');
 	tbody.innerHTML = '';
 
-	// Find all breakpoints by iterating EIAS from min to max
+	const cap = plan.eiasCap ?? 75;
+	// Find all distinct breakpoints by sweeping EIAS.
 	const breakpoints = [];
 	let lastFrames = -1;
-	// EIAS range: practical range is about -60 to 75
-	for (let e = -60; e <= 75; e++) {
-		const f = calcFrames(baseFrames, e);
+	for (let e = -60; e <= cap; e++) {
+		const f = calcFrames(plan.fpd, e);
 		if (f !== lastFrames) {
 			breakpoints.push({ eias: e, frames: f });
 			lastFrames = f;
 		}
 	}
 
-	// For each breakpoint, compute the IAS needed
-	let foundNext = false;
+	let activeFound = false;
+	let nextBP = null;
+
 	breakpoints.forEach(bp => {
-		const iasNeeded = iasForEIAS(bp.eias, skillIAS, wsm);
-		if (iasNeeded === Infinity || iasNeeded > 400) return; // skip unreachable
-		if (iasNeeded < 0) return; // skip negative
+		const iasNeeded = iasForEIAS(bp.eias, skillIAS, effectiveWSM);
+		if (iasNeeded === Infinity || iasNeeded > 400) return;
+		if (iasNeeded < 0) return;
 
 		const tr = document.createElement('tr');
 		const aps = (25 / bp.frames).toFixed(2);
-		const isActive = bp.frames === currentFrames;
-
+		const isActive = bp.frames === currentFrames && !activeFound && iasNeeded <= currentIAS;
 		if (isActive) {
 			tr.classList.add('active-bp');
+			activeFound = true;
 		}
 
 		tr.innerHTML = `
@@ -682,29 +983,23 @@ function buildBPTable(baseFrames, skillIAS, wsm, currentFrames) {
 			<td>${aps}</td>
 		`;
 		tbody.appendChild(tr);
-
-		// Calculate IAS to next breakpoint
-		if (isActive && !foundNext) {
-			foundNext = true;
-			// Find next faster breakpoint
-			const nextBP = breakpoints.find(b => b.frames < bp.frames && iasForEIAS(b.eias, skillIAS, wsm) <= 400);
-			if (nextBP) {
-				const nextIAS = iasForEIAS(nextBP.eias, skillIAS, wsm);
-				const currentIAS = parseInt(document.getElementById('ias').value) || 0;
-				const diff = nextIAS - currentIAS;
-				if (diff > 0) {
-					document.getElementById('res_next_bp').textContent = `+${diff}% IAS (need ${nextIAS}% total)`;
-				} else {
-					document.getElementById('res_next_bp').textContent = `At or past next BP`;
-				}
-			} else {
-				document.getElementById('res_next_bp').textContent = 'At fastest breakpoint';
-			}
-		}
 	});
 
-	if (!foundNext) {
-		document.getElementById('res_next_bp').textContent = '--';
+	// Find next faster BP above current IAS
+	for (let i = 0; i < breakpoints.length; i++) {
+		const bp = breakpoints[i];
+		const iasNeeded = iasForEIAS(bp.eias, skillIAS, effectiveWSM);
+		if (iasNeeded === Infinity) continue;
+		if (iasNeeded > currentIAS && bp.frames < currentFrames) {
+			nextBP = { ias: iasNeeded, frames: bp.frames };
+			break;
+		}
+	}
+	if (nextBP) {
+		const diff = nextBP.ias - currentIAS;
+		document.getElementById('res_next_bp').textContent = `+${diff}% IAS (need ${nextBP.ias}% total) -> ${nextBP.frames} fpa`;
+	} else {
+		document.getElementById('res_next_bp').textContent = 'At fastest breakpoint';
 	}
 }
 
@@ -715,7 +1010,7 @@ function buildBPTable(baseFrames, skillIAS, wsm, currentFrames) {
 function populateClasses() {
 	const sel = document.getElementById('charClass');
 	sel.innerHTML = '';
-	Object.keys(CLASS_DATA).forEach(cls => {
+	["Amazon","Sorceress","Necromancer","Paladin","Barbarian","Druid","Assassin"].forEach(cls => {
 		const opt = document.createElement('option');
 		opt.value = cls;
 		opt.textContent = cls;
@@ -744,27 +1039,74 @@ function onWeaponTypeChange() {
 		opt.textContent = `${w.name} (WSM: ${w.wsm})`;
 		sel.appendChild(opt);
 	});
+	// Re-filter skill list in case some skills depend on weapon type
+	populateSkillList();
 }
 
-function onClassChange() {
+function populateFormSelect() {
+	const formRow = document.getElementById('formRow');
+	const sel = document.getElementById('formSelect');
 	const cls = document.getElementById('charClass').value;
-	const sel = document.getElementById('skillSelect');
 	sel.innerHTML = '';
-	const classInfo = CLASS_DATA[cls];
-	if (!classInfo) return;
-	Object.keys(classInfo.skills).forEach(sk => {
+	if (classHasForms(cls)) {
+		formRow.style.display = "";
+		["human","werewolf","werebear"].forEach(f => {
+			const opt = document.createElement('option');
+			opt.value = f;
+			opt.textContent = f.charAt(0).toUpperCase() + f.slice(1);
+			sel.appendChild(opt);
+		});
+	} else {
+		formRow.style.display = "none";
+		const opt = document.createElement('option');
+		opt.value = "human";
+		opt.textContent = "Human";
+		sel.appendChild(opt);
+	}
+}
+
+function populateSkillList() {
+	const cls = document.getElementById('charClass').value;
+	const form = getForm();
+	const wtype = document.getElementById('weaponType').value;
+	const sel = document.getElementById('skillSelect');
+	const prev = sel.value;
+	sel.innerHTML = '';
+
+	let catalog = SKILLS[cls];
+	if (cls === "Druid" && (form === "werewolf" || form === "werebear")) {
+		catalog = DRUID_FORM_SKILLS[form];
+	}
+	if (!catalog) return;
+
+	Object.keys(catalog).forEach(sk => {
+		// Respect weaponFilter if any
+		const plan = catalog[sk](wtype);
+		if (plan.weaponFilter && !plan.weaponFilter.includes(wtype)) return;
 		const opt = document.createElement('option');
 		opt.value = sk;
 		opt.textContent = sk;
 		sel.appendChild(opt);
 	});
+	// Try to preserve selection
+	if (prev && [...sel.options].some(o => o.value === prev)) sel.value = prev;
+}
+
+function onClassChange() {
+	populateFormSelect();
+	populateSkillList();
+}
+
+function onSkillChange() {
+	// no-op, calc() will refresh
 }
 
 // Init
 populateClasses();
 populateWeaponTypes();
-onClassChange();
+populateFormSelect();
 onWeaponTypeChange();
+populateSkillList();
 calc();
 </script>
 </body>
