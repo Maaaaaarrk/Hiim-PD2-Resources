@@ -1559,6 +1559,11 @@ window.soloData = {
             "type": "video"
           },
           {
+            "url": "https://www.youtube.com/watch?v=SaFlbj3Ouko",
+            "label": "Throne of Insanity (4:50)",
+            "type": "video"
+          },
+          {
             "url": "https://www.youtube.com/watch?v=ju4ZiyxGYP8",
             "label": "Sewers of Harrogath (3:48)",
             "type": "video"
