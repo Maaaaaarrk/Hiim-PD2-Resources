@@ -268,7 +268,8 @@ window.soloData = {
           "style": "light",
           "pill": true
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=cNT5BRgBELY"
     },
     {
       "className": "Barbarian",
