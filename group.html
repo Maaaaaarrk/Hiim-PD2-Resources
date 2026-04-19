@@ -1413,6 +1413,13 @@ function fireConfetti() {
 			</div>
 			<div class="modal-body">
 				<p>Clear times are purely based on total exp vs clear time. Chart can be useful to understand comparatively what map over another could get you more exp, even if it takes longer to clear that map.</p>
+				<div class="btn-group btn-group-sm mb-2" role="group" aria-label="Season">
+					<input type="radio" class="btn-check" name="groupSeason" id="groupSeasonS13" value="S13" checked>
+					<label class="btn btn-outline-info" for="groupSeasonS13">Season 13</label>
+					<input type="radio" class="btn-check" name="groupSeason" id="groupSeasonS12" value="S12">
+					<label class="btn btn-outline-info" for="groupSeasonS12">Season 12</label>
+				</div>
+				<br>
 				<div class="map-times-toggle btn-group btn-group-sm mb-3" role="group">
 					<input type="radio" class="btn-check" name="mapTimesLevel" id="mapTimesLvl98" value="98" checked>
 					<label class="btn btn-outline-light" for="mapTimesLvl98">Level 98</label>
@@ -1468,7 +1475,8 @@ function fireConfetti() {
 		'Fall of Caldeum': 'caldeum', 'Shadows of Westmarch': 'westmarch'
 	};
 
-	var data98 = [
+	// ===== Season 12 archive =====
+	var data98S12 = [
 		{ tier: 3, maps: [
 			['Pandemonium Citadel', 5.42, 8.13, 10.84],
 			['Ashen Plains', 4.68, 7.02, 9.36],
@@ -1502,7 +1510,7 @@ function fireConfetti() {
 		]}
 	];
 
-	var dataNone = [
+	var dataNoneS12 = [
 		{ tier: 3, maps: [
 			['Pandemonium Citadel', 4.92, 7.38, 9.84],
 			['Ashen Plains', 4.92, 7.38, 9.84],
@@ -1535,6 +1543,77 @@ function fireConfetti() {
 			['Shadows of Westmarch', 3.17, 4.75, 6.33]
 		]}
 	];
+
+	// ===== Season 13 (current) =====
+	var data98S13 = [
+		{ tier: 3, maps: [
+			['Kehjistan Marketplace', 4.39, 6.58, 8.77],
+			['Arreat Battlefield', 4.13, 6.19, 8.25],
+			['Demon Road', 4.01, 6.01, 8.01],
+			['Royal Crypts', 3.56, 5.33, 7.11],
+			['River of Blood', 3.37, 5.06, 6.75],
+			['Bastion Keep', 3.20, 4.79, 6.39],
+			['Blood Moon', 2.89, 4.34, 5.78],
+			['Skovos Stronghold', 1.89, 2.83, 3.78]
+		]},
+		{ tier: 2, maps: [
+			['Pandemonium Citadel', 3.65, 5.48, 7.30],
+			['Halls of Torture', 3.16, 4.74, 6.32],
+			['Sanatorium', 3.09, 4.64, 6.18],
+			['Ashen Plains', 2.91, 4.37, 5.82],
+			['Sewers of Harrogath', 2.70, 4.04, 5.39],
+			['Throne of Insanity', 2.56, 3.84, 5.13],
+			['Ruined Cistern', 2.27, 3.41, 4.54],
+			['Canyon of Sescheron', 2.20, 3.29, 4.39],
+			["Horazon's Memory", 2.04, 3.05, 4.07]
+		]},
+		{ tier: 1, maps: [
+			['Phlegethon', 1.71, 2.56, 3.42],
+			['Fall of Caldeum', 1.62, 2.43, 3.24],
+			['Torajan Jungle', 1.60, 2.40, 3.19],
+			['Ancestral Trial', 1.54, 2.31, 3.08],
+			['Lost Temple', 1.49, 2.24, 2.98],
+			['Ruins of Viz-Jun', 1.37, 2.06, 2.74],
+			['Shadows of Westmarch', 1.36, 2.04, 2.72],
+			['Tomb of Zoltun Kulle', 1.29, 1.94, 2.59]
+		]}
+	];
+
+	var dataNoneS13 = [
+		{ tier: 3, maps: [
+			['Kehjistan Marketplace', 4.42, 6.62, 8.83],
+			['Arreat Battlefield', 4.23, 6.34, 8.46],
+			['Demon Road', 4.03, 6.05, 8.07],
+			['Royal Crypts', 3.58, 5.37, 7.16],
+			['River of Blood', 3.72, 5.58, 7.43],
+			['Bastion Keep', 3.65, 5.47, 7.30],
+			['Blood Moon', 3.46, 5.19, 6.92],
+			['Skovos Stronghold', 3.67, 5.50, 7.33]
+		]},
+		{ tier: 2, maps: [
+			['Pandemonium Citadel', 4.92, 7.38, 9.84],
+			['Halls of Torture', 5.32, 7.98, 10.64],
+			['Sanatorium', 4.41, 6.62, 8.82],
+			['Ashen Plains', 4.92, 7.38, 9.84],
+			['Sewers of Harrogath', 3.94, 5.90, 7.87],
+			['Throne of Insanity', 4.00, 6.00, 8.00],
+			['Ruined Cistern', 3.61, 5.41, 7.22],
+			['Canyon of Sescheron', 4.19, 6.29, 8.38],
+			["Horazon's Memory", 4.10, 6.14, 8.19]
+		]},
+		{ tier: 1, maps: [
+			['Phlegethon', 4.50, 6.76, 9.01],
+			['Fall of Caldeum', 3.51, 5.26, 7.02],
+			['Torajan Jungle', 4.73, 7.09, 9.46],
+			['Ancestral Trial', 4.05, 6.07, 8.10],
+			['Lost Temple', 3.73, 5.59, 7.46],
+			['Ruins of Viz-Jun', 4.01, 6.01, 8.01],
+			['Shadows of Westmarch', 3.17, 4.75, 6.33],
+			['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57]
+		]}
+	];
+
+	var data98 = data98S13, dataNone = dataNoneS13;
 
 	function fmt(v) {
 		var totalSec = Math.round(v * 60);
@@ -1639,19 +1718,23 @@ function fireConfetti() {
 		return (checked && checked.value === 'none') ? dataNone : data98;
 	}
 
-	// Populate dropdown
+	// Populate dropdown (rebuilt on season change)
 	var select = document.getElementById('groupCalcMapSelect');
-	data98.forEach(function(group) {
-		var optgroup = document.createElement('optgroup');
-		optgroup.label = 'Tier ' + group.tier + ' Maps';
-		group.maps.forEach(function(row) {
-			var opt = document.createElement('option');
-			opt.value = row[0];
-			opt.textContent = row[0];
-			optgroup.appendChild(opt);
+	function populateGroupDropdown() {
+		select.innerHTML = '<option value="">-- Select a map --</option>';
+		data98.forEach(function(group) {
+			var optgroup = document.createElement('optgroup');
+			optgroup.label = 'Tier ' + group.tier + ' Maps';
+			group.maps.forEach(function(row) {
+				var opt = document.createElement('option');
+				opt.value = row[0];
+				opt.textContent = row[0];
+				optgroup.appendChild(opt);
+			});
+			select.appendChild(optgroup);
 		});
-		select.appendChild(optgroup);
-	});
+	}
+	populateGroupDropdown();
 
 	// Default to level 98
 	render(data98);
@@ -1659,6 +1742,23 @@ function fireConfetti() {
 	document.querySelectorAll('input[name="mapTimesLevel"]').forEach(function (radio) {
 		radio.addEventListener('change', function () {
 			render(this.value === '98' ? data98 : dataNone);
+		});
+	});
+
+	// Season toggle
+	document.querySelectorAll('input[name="groupSeason"]').forEach(function(radio) {
+		radio.addEventListener('change', function() {
+			if (this.value === 'S12') {
+				data98 = data98S12; dataNone = dataNoneS12;
+			} else {
+				data98 = data98S13; dataNone = dataNoneS13;
+			}
+			calcMapName = null; calcTimeSec = 0;
+			document.getElementById('groupCalcMapSelect').value = '';
+			document.getElementById('groupCalcMin').value = '';
+			document.getElementById('groupCalcSec').value = '';
+			populateGroupDropdown();
+			render(currentDataset());
 		});
 	});
 
