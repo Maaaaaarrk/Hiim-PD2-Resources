@@ -200,7 +200,7 @@
 					<li><strong>Paladin Charge</strong> uses a sequence animation with an effective +30 WSM penalty.</li>
 					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after); Werebear 10 at slvl 1. Wereform uses its own FPD regardless of weapon.</li>
 					<li><strong>Trap laying</strong> uses your normal attack speed; 9fpa is the standard cap.</li>
-					<li><strong>Multi-hit skills</strong> (Zeal, Fend, Strafe, Dragon Talon, Fury, Phoenix Strike) are shown at their per-hit average frame rate; the PD2 3/5-hit cap on Zeal does not change these breakpoints.</li>
+					<li><strong>Multi-hit skills</strong> (Zeal, Fend, Strafe, Dragon Talon, Fury, Phoenix Strike) are shown at their per-hit average frame rate. PD2 hit-count tweaks (Zeal 3/5, Strafe 5, Fend 5, Dragon Talon 3, Fury 3) change total damage output but not the per-hit breakpoints.</li>
 				</ul>
 				<p class="info-text mb-0">
 					Data sourced from D2 AnimData, PD2 wiki, Amazon Basin, and Phrozen Keep.
@@ -733,7 +733,7 @@ const SKILLS = {
 		"Fend":             (wt) => ({ fpd: (wt === "Spear" || wt === "Polearm") ? 11 : (AMAZON_FPD[wt] ?? 14), group: "multi",
 		                               note: "Fend is a 5-hit sequence; FPD shown is per hit.", weaponFilter: ["Spear","Polearm"] }),
 		"Strafe":           (wt) => ({ fpd: (wt === "Bow") ? 11 : 13, group: "multi",
-		                               note: "Strafe is a 10-arrow sequence; FPD is per arrow.", weaponFilter: ["Bow","Crossbow"] }),
+		                               note: "Strafe is a 5-arrow sequence in PD2 (reduced from 10) with no next-hit delay; FPD shown is per arrow.", weaponFilter: ["Bow","Crossbow"] }),
 		"Multishot":        (wt) => ({ fpd: (wt === "Bow") ? 13 : 19, group: "standard", weaponFilter: ["Bow","Crossbow"] }),
 		"Lightning Fury":   (wt) => ({ fpd: AMAZON_FPD[wt] ?? 16, group: "standard", weaponFilter: ["Spear"] }),
 	},
@@ -795,7 +795,7 @@ const SKILLS = {
 		"Phoenix Strike":   (wt) => ({ fpd: SIN_MULTI_FPD[wt] ?? 10, group: "multi",
 		                               note: "Phoenix Strike is multi-hit; only martial-arts skill still on the multi-hit table in PD2. Per-hit FPD is faster than standard-release martial arts." }),
 		"Dragon Talon":     (_)  => ({ fpd: SIN_KICK_FPD["Dragon Talon"], group: "kick",
-		                               note: "Kick skill; kick animation independent of weapon class (WSM still applies). Reference: bubbles' Dragon Tail calc." }),
+		                               note: "Kick skill; kick animation independent of weapon class (WSM still applies). PD2: fixed 3-kick cap (base D2 was 1 + 1/6 levels). Reference: bubbles' Dragon Tail calc." }),
 		"Dragon Tail":      (_)  => ({ fpd: SIN_KICK_FPD["Dragon Tail"], group: "kick",
 		                               note: "Kick skill; kick animation independent of weapon class (WSM still applies). Reference: bubbles' Dragon Tail calc." }),
 		"Dragon Kick":      (_)  => ({ fpd: SIN_KICK_FPD["Dragon Kick"], group: "kick",
@@ -812,7 +812,7 @@ const DRUID_FORM_SKILLS = {
 	werewolf: {
 		"Attack":       () => ({ fpd: DRUID_WEREWOLF_FPD["Attack"], group: "standard" }),
 		"Fury":         () => ({ fpd: DRUID_WEREWOLF_FPD["Fury"], group: "multi",
-		                         note: "Fury is a 5-hit chain; FPD shown is per hit." }),
+		                         note: "Fury in PD2 is a fixed 3-hit chain (base D2 scaled 2-5 with levels); FPD shown is per hit." }),
 		"Feral Rage":   () => ({ fpd: DRUID_WEREWOLF_FPD["Feral Rage"], group: "standard" }),
 		"Fire Claws":   () => ({ fpd: DRUID_WEREWOLF_FPD["Fire Claws"], group: "standard" }),
 		"Rabies":       () => ({ fpd: DRUID_WEREWOLF_FPD["Rabies"], group: "standard" }),
