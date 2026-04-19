@@ -688,8 +688,12 @@ const SIN_TRAP_FPD = 14;
 // Sin Whirlwind FPD.
 const SIN_WW_FPD = 8;
 
-// Paladin Charge uses a sequence animation with +30 effective WSM penalty.
-// The base FPD equals the normal attack FPD per weapon class.
+// Paladin Charge uses the D2 sequence-animation formula with a +30 effective
+// WSM penalty (see issue #118):
+//   AnimDuration = (AnimLength * 256) / (256 + SIAS + EIAS - WSM)
+// where AnimRate = 256 (D2 AnimData base), AnimLength = normal-attack FPD for
+// the weapon class, WSM = weaponWSM + 30, SIAS is raw skill IAS, and EIAS is
+// the pre-256-scaling term floor(120*IAS / (120+IAS)). Frames are ceil(...) - 1.
 
 // ══════════════════════════════════════════════════════════════
 // Class / skill catalog
@@ -716,7 +720,7 @@ function defaultFPD(cls, wtype) {
 //   fpd          : FramesPerDirection
 //   wsmMod       : extra WSM (e.g. +30 for sequence-anim Charge)
 //   skillSIAS    : baseline skill IAS this skill forces (e.g. Werewolf)
-//   group        : "standard" | "multi" | "sequence" | "trap" | "kick" | "ww"
+//   group        : "standard" | "multi" | "sequence" | "charge" | "trap" | "kick" | "ww"
 //   note         : user-facing caveat text (optional)
 //   eiasCap      : optional override for EIAS cap (default 75)
 //   weaponFilter : optional array of allowed weapon types
@@ -747,8 +751,8 @@ const SKILLS = {
 		                               note: "Zeal is a multi-hit sequence (capped at 3 or 5 hits in PD2). Per-hit FPD is shown; the overall chain caps at the EIAS=75 cap (IAS 72 for Phase Blade)." }),
 		"Smite":            (_)  => ({ fpd: 13, group: "standard",
 		                               note: "Smite is shield-based; weapon type does not affect FPD." }),
-		"Charge":           (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, wsmMod: 30, group: "sequence",
-		                               note: "Charge uses a sequence animation with a +30 effective WSM penalty." }),
+		"Charge":           (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, wsmMod: 30, group: "charge",
+		                               note: "Charge uses the D2 sequence-animation formula: AnimDuration = (AnimLength * 256) / (256 + SIAS + EIAS - WSM), with a +30 effective WSM penalty. SIAS and EIAS here are the raw unscaled values." }),
 		"Holy Bolt / Fist of the Heavens": (wt) => ({ fpd: PALADIN_FPD[wt] ?? 15, group: "standard" }),
 	},
 	Barbarian: {
@@ -864,6 +868,24 @@ function calcFrames(fpd, eias) {
 	return Math.max(1, frames);
 }
 
+// Paladin Charge uses the D2 sequence-animation formula, not the standard
+// attack-rate formula. See issue #118.
+//   AnimDuration = (AnimLength * 256) / (AnimRate + SIAS + EIAS - WSM)
+// with AnimRate = 256 (D2 AnimData base), AnimLength = base attack FPD,
+// WSM = weaponWSM + 30 (the long-standing Charge penalty),
+// SIAS = raw skill IAS, and EIAS here is the pre-256-scaling term
+// floor(120*IAS / (120+IAS)) — NOT the capped attack-rate EIAS used elsewhere.
+// Frames uses the same ceil(...) - 1 convention as calcFrames.
+function chargeEIASRaw(ias) {
+	return Math.floor(120 * ias / (120 + ias));
+}
+function calcChargeFrames(fpd, sias, eiasRaw, effectiveWSM) {
+	const denom = 256 + sias + eiasRaw - effectiveWSM;
+	if (denom <= 0) return fpd; // degenerate case
+	const frames = Math.ceil(fpd * 256 / denom) - 1;
+	return Math.max(1, frames);
+}
+
 // Minimum IAS needed to reach a given EIAS (reversing the EIAS formula).
 function iasForEIAS(targetEIAS, skillIAS, wsm) {
 	const needed = targetEIAS - skillIAS + wsm;
@@ -921,8 +943,15 @@ function calc() {
 	const effectiveWSM = wsm + wsmMod;
 	const sias = getEffectiveSIAS(plan);
 
-	const eias = calcEIAS(ias, sias, effectiveWSM, plan.eiasCap);
-	const frames = calcFrames(plan.fpd, eias);
+	let eias, frames;
+	if (plan.group === "charge") {
+		// Charge uses the D2 sequence-animation formula (raw EIAS, no 75 cap).
+		eias = chargeEIASRaw(ias);
+		frames = calcChargeFrames(plan.fpd, sias, eias, effectiveWSM);
+	} else {
+		eias = calcEIAS(ias, sias, effectiveWSM, plan.eiasCap);
+		frames = calcFrames(plan.fpd, eias);
+	}
 	const aps = (25 / frames).toFixed(2); // 25 fps in D2
 
 	document.getElementById('res_wsm').textContent = wsm;
@@ -947,6 +976,12 @@ function calc() {
 function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
 	const tbody = document.getElementById('bpTableBody');
 	tbody.innerHTML = '';
+
+	// Charge uses a different formula, so its breakpoint sweep is over raw IAS
+	// (rather than over EIAS with an inverse map). Delegate to a dedicated path.
+	if (plan.group === "charge") {
+		return buildChargeBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS);
+	}
 
 	const cap = plan.eiasCap ?? 75;
 	// Find all distinct breakpoints by sweeping EIAS.
@@ -992,6 +1027,56 @@ function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
 		if (iasNeeded === Infinity) continue;
 		if (iasNeeded > currentIAS && bp.frames < currentFrames) {
 			nextBP = { ias: iasNeeded, frames: bp.frames };
+			break;
+		}
+	}
+	if (nextBP) {
+		const diff = nextBP.ias - currentIAS;
+		document.getElementById('res_next_bp').textContent = `+${diff}% IAS (need ${nextBP.ias}% total) -> ${nextBP.frames} fpa`;
+	} else {
+		document.getElementById('res_next_bp').textContent = 'At fastest breakpoint';
+	}
+}
+
+// Charge-specific breakpoint table. Sweeps IAS 0..400 and reports each frame
+// transition as a breakpoint, using the sequence-animation formula.
+function buildChargeBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
+	const tbody = document.getElementById('bpTableBody');
+	const breakpoints = [];
+	let lastFrames = -1;
+	for (let ias = 0; ias <= 400; ias++) {
+		const eiasRaw = chargeEIASRaw(ias);
+		const f = calcChargeFrames(plan.fpd, skillIAS, eiasRaw, effectiveWSM);
+		if (f !== lastFrames) {
+			breakpoints.push({ ias: ias, eias: eiasRaw, frames: f });
+			lastFrames = f;
+		}
+	}
+
+	let activeFound = false;
+	let nextBP = null;
+
+	breakpoints.forEach(bp => {
+		const tr = document.createElement('tr');
+		const aps = (25 / bp.frames).toFixed(2);
+		const isActive = bp.frames === currentFrames && !activeFound && bp.ias <= currentIAS;
+		if (isActive) {
+			tr.classList.add('active-bp');
+			activeFound = true;
+		}
+		tr.innerHTML = `
+			<td>${bp.ias}%</td>
+			<td>${bp.eias}</td>
+			<td>${bp.frames}</td>
+			<td>${aps}</td>
+		`;
+		tbody.appendChild(tr);
+	});
+
+	for (let i = 0; i < breakpoints.length; i++) {
+		const bp = breakpoints[i];
+		if (bp.ias > currentIAS && bp.frames < currentFrames) {
+			nextBP = { ias: bp.ias, frames: bp.frames };
 			break;
 		}
 	}
