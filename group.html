@@ -1468,6 +1468,7 @@ function fireConfetti() {
 		'Throne of Insanity': 'throne', 'Ruined Cistern': 'cistern', 'Blood Moon': 'bloodmoon',
 		'Ancestral Trial': 'ancestral', 'Demon Road': 'demonroad', 'Ruins of Viz-Jun': 'ruinsofvizjun',
 		'Lost Temple': 'losttemple', 'River of Blood': 'riverblood', 'Skovos Stronghold': 'skovos',
+		'Kyovoshad': 'kyovoshad',
 		'Bastion Keep': 'bastion', 'Tomb of Zoltun Kulle': 'zoltun',
 		'Halls of Torture': 'hallsoftorture', 'Torajan Jungle': 'torajanjungle',
 		'Arreat Battlefield': 'arreatbattlefield', "Horazon's Memory": 'horazonsmemory',
@@ -1554,7 +1555,8 @@ function fireConfetti() {
 			['River of Blood', 3.37, 5.06, 6.75],
 			['Bastion Keep', 3.20, 4.79, 6.39],
 			['Blood Moon', 2.89, 4.34, 5.78],
-			['Skovos Stronghold', 1.89, 2.83, 3.78]
+			['Skovos Stronghold', 'TBD', 'TBD', 'TBD'],
+			['Kyovoshad', 'TBD', 'TBD', 'TBD']
 		]},
 		{ tier: 2, maps: [
 			['Pandemonium Citadel', 3.65, 5.48, 7.30],
@@ -1588,7 +1590,8 @@ function fireConfetti() {
 			['River of Blood', 3.72, 5.58, 7.43],
 			['Bastion Keep', 3.65, 5.47, 7.30],
 			['Blood Moon', 3.46, 5.19, 6.92],
-			['Skovos Stronghold', 3.67, 5.50, 7.33]
+			['Skovos Stronghold', 'TBD', 'TBD', 'TBD'],
+			['Kyovoshad', 'TBD', 'TBD', 'TBD']
 		]},
 		{ tier: 2, maps: [
 			['Pandemonium Citadel', 4.92, 7.38, 9.84],
@@ -1647,6 +1650,7 @@ function fireConfetti() {
 		'River of Blood': [{i:1,v:'100',c:'180,80,220'},{i:4,v:'180',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}],
 		'Demon Road': [{i:4,v:'125',c:'60,140,220'},{i:5,v:'135',c:'80,200,80'}],
 		'Skovos Stronghold': [{i:0,v:'125',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:3,v:'130',c:'220,200,40'}],
+		'Kyovoshad': [],
 		'Lost Temple': [{i:2,v:'120',c:'220,60,40'},{i:4,v:'110',c:'60,140,220'}],
 		'Torajan Jungle': [{i:2,v:'125',c:'220,60,40'},{i:3,v:'105',c:'220,200,40'}],
 		'Halls of Torture': [],
@@ -1683,13 +1687,16 @@ function fireConfetti() {
 		if (calcMapName && calcTimeSec > 0) {
 			dataset.forEach(function (group) {
 				group.maps.forEach(function (row) {
-					if (row[0] === calcMapName) {
+					if (row[0] === calcMapName && row[1] !== 'TBD') {
 						var refSec = row[1] * 60;
 						ratio = calcTimeSec / refSec;
 					}
 				});
 			});
 		}
+
+		// S13 map resistances are in flux, so overlay them with a TBD cover.
+		var overlayRes = (dataset === data98S13 || dataset === dataNoneS13);
 
 		dataset.forEach(function (group) {
 			var hdr = document.createElement('tr');
@@ -1699,15 +1706,22 @@ function fireConfetti() {
 				var tr = document.createElement('tr');
 				var slug = mapLinks[row[0]];
 				var link = slug ? '<a href="maps.html#map=' + slug + '&size=Medium" class="text-white">' + row[0] + ' \u{1F517}</a>' : row[0];
+				var isTBD = (row[1] === 'TBD');
 				var yourTimeCell = '';
-				if (ratio !== null) {
+				if (ratio !== null && !isTBD) {
 					var yourSec = row[1] * 60 * ratio;
 					var isSelected = (row[0] === calcMapName);
 					yourTimeCell = '<td class="text-center' + (isSelected ? ' table-warning' : '') + '">' + fmtExact(yourSec) + '</td>';
 				} else {
 					yourTimeCell = '<td class="text-center">-</td>';
 				}
-				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + fmt(row[1]) + '</td><td class="text-center">' + fmt(row[2]) + '</td><td class="text-center">' + fmt(row[3]) + '</td>' + yourTimeCell + elemCells(row[0]);
+				var resCells = overlayRes
+					? '<td class="text-center fw-bold" colspan="6" style="background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
+					: elemCells(row[0]);
+				var topCell = isTBD ? 'TBD' : fmt(row[1]);
+				var goodCell = isTBD ? 'TBD' : fmt(row[2]);
+				var decentCell = isTBD ? 'TBD' : fmt(row[3]);
+				tr.innerHTML = '<td>' + link + '</td><td class="text-center">' + topCell + '</td><td class="text-center">' + goodCell + '</td><td class="text-center">' + decentCell + '</td>' + yourTimeCell + resCells;
 				body.appendChild(tr);
 			});
 		});
@@ -1726,12 +1740,13 @@ function fireConfetti() {
 			var optgroup = document.createElement('optgroup');
 			optgroup.label = 'Tier ' + group.tier + ' Maps';
 			group.maps.forEach(function(row) {
+				if (row[1] === 'TBD') return;
 				var opt = document.createElement('option');
 				opt.value = row[0];
 				opt.textContent = row[0];
 				optgroup.appendChild(opt);
 			});
-			select.appendChild(optgroup);
+			if (optgroup.children.length > 0) select.appendChild(optgroup);
 		});
 	}
 	populateGroupDropdown();
