@@ -1716,7 +1716,7 @@ function fireConfetti() {
 					yourTimeCell = '<td class="text-center">-</td>';
 				}
 				var resCells = overlayRes
-					? '<td class="text-center fw-bold" colspan="6" style="background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
+					? '<td class="text-center fw-bold" colspan="6" style="--bs-table-bg-state:rgba(20,20,20,0.92) !important;background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
 					: elemCells(row[0]);
 				var topCell = isTBD ? 'TBD' : fmt(row[1]);
 				var goodCell = isTBD ? 'TBD' : fmt(row[2]);

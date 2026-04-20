@@ -1892,7 +1892,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 					}
 					var slug = mapSlugs[m.name];
 					var resCells = overlayResMf
-						? '<td class="text-center fw-bold" colspan="6" style="background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
+						? '<td class="text-center fw-bold" colspan="6" style="--bs-table-bg-state:rgba(20,20,20,0.92) !important;background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
 						: getElemCells(m.name);
 					tr.innerHTML = '<td><a href="#map=' + slug + '&size=Medium" class="text-white">' + m.name + ' \u{1F517}</a></td>'
 						+ '<td class="text-center">' + m.top + '</td>'
@@ -1928,7 +1928,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 						yourCell = '<td class="text-center">-</td>';
 					}
 					var resCells = overlayResCur
-						? '<td class="text-center fw-bold" colspan="6" style="background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
+						? '<td class="text-center fw-bold" colspan="6" style="--bs-table-bg-state:rgba(20,20,20,0.92) !important;background-color:rgba(20,20,20,0.92);color:#ffc107;letter-spacing:0.1em">TBD</td>'
 						: getElemCells(row[0]);
 					var topCell = isTBD ? 'TBD' : fmtMin(row[1]);
 					var goodCell = isTBD ? 'TBD' : fmtMin(row[2]);
