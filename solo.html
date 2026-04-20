@@ -691,6 +691,8 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 				<label class="btn btn-outline-info" for="buildTierFilterGood">Good and up</label>
 				<input type="radio" class="btn-check" name="buildTierFilter" id="buildTierFilterDecent" value="Decent" checked>
 				<label class="btn btn-outline-info" for="buildTierFilterDecent">Decent and up</label>
+				<input type="radio" class="btn-check" name="buildTierFilter" id="buildTierFilterAll" value="All">
+				<label class="btn btn-outline-info" for="buildTierFilterAll">All</label>
 			</div>
 		</div>
 		<div class="col-auto d-flex align-items-center" id="bannerContainer"></div>
@@ -909,6 +911,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	function getBuildTierFilterThreshold() {
 	  var checked = document.querySelector('input[name="buildTierFilter"]:checked');
 	  var val = checked ? checked.value : 'Decent';
+	  if (val === 'All') return Infinity;
 	  return tierOrd(val);
 	}
 
@@ -978,9 +981,12 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 		applyFilterFromUrl();
 		filterStarterRows();
 
-		// Tier filter change -> re-render per-class builds
+		// Tier filter change -> re-render per-class builds (and wheel, if open)
 		document.querySelectorAll('input[name="buildTierFilter"]').forEach(function(radio) {
-		  radio.addEventListener('change', rerenderAllClassBuilds);
+		  radio.addEventListener('change', function() {
+			rerenderAllClassBuilds();
+			refreshWheelIfOpen();
+		  });
 		});
 	  });
 
@@ -1114,11 +1120,13 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 		  if (!seen[key]) { seen[key] = true; builds.push({ name: key, buildName: b.buildName, className: b.className }); }
 		});
 	  }
-	  // Class builds
+	  // Class builds — honor the tier filter so the wheel matches the table
+	  var threshold = getBuildTierFilterThreshold();
 	  classOrder.forEach(function(cls) {
 		var cb = document.getElementById('checkbox' + cls);
 		if (cb && cb.checked) {
 		  (window.soloData.classBuilds[cls] || []).forEach(function(b) {
+			if (tierOrd(b.tier) > threshold) return;
 			var key = cls + ' - ' + b.buildName;
 			if (!seen[key]) { seen[key] = true; builds.push({ name: key, buildName: b.buildName, className: cls }); }
 		  });
@@ -1203,6 +1211,19 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	  drawWheel();
 	  var modal = new bootstrap.Modal(document.getElementById('wheelModal'));
 	  modal.show();
+	}
+
+	// Recompute wheel entries if the modal is currently open (e.g. tier filter changed).
+	function refreshWheelIfOpen() {
+	  var wm = document.getElementById('wheelModal');
+	  if (!wm || !wm.classList.contains('show')) return;
+	  wheelEntries = getVisibleBuilds();
+	  wheelAngle = 0;
+	  if (wheelAnimId) { cancelAnimationFrame(wheelAnimId); wheelAnimId = null; }
+	  wheelSpinning = false;
+	  document.getElementById('wheelResult').textContent = '';
+	  document.getElementById('spinBtn').disabled = false;
+	  drawWheel();
 	}
 
 	function spinWheel() {
