@@ -594,7 +594,7 @@ window.soloData = {
       },
       {
         "buildName": "Frost Nova",
-        "tier": "Decent",
+        "tier": "Good",
         "links": [],
         "notes": []
       },
