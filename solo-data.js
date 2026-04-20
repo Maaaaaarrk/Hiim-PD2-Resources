@@ -1447,6 +1447,11 @@ window.soloData = {
             "url": "https://youtu.be/gBZyFrOmjEE",
             "label": "Pandemonium Citadel (5:17)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=1wfkE2PEGR0",
+            "label": "Build Guide",
+            "type": "video"
           }
         ],
         "notes": []
