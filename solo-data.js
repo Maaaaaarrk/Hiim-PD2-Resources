@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 16th 2026",
+  "updatedDate": "April 20th 2026",
   "bannerText": "Updated with S13 Beta Testing round 1",
   "starterBuilds": [
     {
@@ -1960,8 +1960,8 @@ window.soloData = {
         "notes": []
       },
       {
-        "buildName": "2H Physical Sacrifice",
-        "tier": "Mid",
+        "buildName": "Physical Sacrifice",
+        "tier": "Top",
         "links": [
           {
             "url": "https://www.youtube.com/watch?v=d4rHxXCawSA",
