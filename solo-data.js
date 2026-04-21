@@ -1354,8 +1354,14 @@ window.soloData = {
       },
       {
         "buildName": "Split Throw",
-        "tier": "Bad",
-        "links": [],
+        "tier": "Decent",
+        "links": [
+          {
+            "url": "https://youtu.be/ZV-RYzBWgFA?si=rqb1JExc54Cncxko&t=1298",
+            "label": "Sewers of Harrogath (4:20)",
+            "type": "video"
+          }
+        ],
         "notes": []
       },
       {
