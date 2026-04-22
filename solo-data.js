@@ -1130,6 +1130,11 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=y9JqNm-j1SI",
             "label": "Skovos Stronghold (3:38)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=E1IAw6nqTRU",
+            "label": "Skovos Stronghold (3:20)",
+            "type": "video"
           }
         ],
         "notes": []
