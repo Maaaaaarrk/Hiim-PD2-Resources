@@ -1135,6 +1135,11 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=E1IAw6nqTRU",
             "label": "Skovos Stronghold (3:20)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=aV1Sa5iuWNY",
+            "label": "Ancestral Trial (4:00)",
+            "type": "video"
           }
         ],
         "notes": []
