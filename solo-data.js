@@ -2036,7 +2036,7 @@ window.soloData = {
       },
       {
         "buildName": "Holy Fire Sacrifice",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=1648s",
@@ -2053,6 +2053,11 @@ window.soloData = {
             "label": "Armory - Pandemonium Citadel (4:18)",
             "type": "armory",
             "mapLabel": "Pandemonium Citadel (4:18)"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=8lF16MzGYtU",
+            "label": "River of Blood (3:57)",
+            "type": "video"
           }
         ],
         "notes": []
