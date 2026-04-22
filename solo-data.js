@@ -217,23 +217,6 @@ window.soloData = {
     },
     {
       "className": "Barbarian",
-      "buildName": "Leap Attack",
-      "plannerUrl": null,
-      "plannerLabel": null,
-      "tags": [
-        {
-          "text": "Chaos",
-          "style": "danger",
-          "pill": true
-        },
-        {
-          "text": "Early Map",
-          "style": "primary"
-        }
-      ]
-    },
-    {
-      "className": "Barbarian",
       "buildName": "Big Shouts + Find Item (A2 Offensive Merc)",
       "plannerUrl": null,
       "plannerLabel": null,
