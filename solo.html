@@ -782,26 +782,34 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	  tr.className = tableClass;
 	  tr.setAttribute('data-class', build.className);
 
+	  // Name column — always show class badge next to build name.
 	  const tdName = document.createElement('td');
-	  if (build.plannerUrl) {
-		tdName.innerHTML = '<span class="badge text-bg-secondary">' + escapeHtml(build.className) + '</span> ' + escapeHtml(build.buildName);
-	  } else {
-		tdName.textContent = build.buildName;
-	  }
+	  tdName.innerHTML = '<span class="badge text-bg-secondary">' + escapeHtml(build.className) + '</span> ' + escapeHtml(build.buildName);
 	  tr.appendChild(tdName);
 
+	  // Planner column — consolidated build-reference slot:
+	  //   - If plannerUrl: show the planner pill (and the video guide pill too, if present).
+	  //   - Else if videoUrl: show the video build guide pill in the planner slot.
+	  //   - Else: show a Submit button so users can contribute a planner/guide.
 	  const tdPlanner = document.createElement('td');
+	  let plannerHtml = '';
 	  if (build.plannerUrl) {
-		const a = document.createElement('a');
-		a.target = '_blank';
-		a.href = build.plannerUrl;
-		a.innerHTML = '<span class="badge rounded-pill text-bg-primary">' + escapeHtml(build.plannerLabel) + '</span>';
-		tdPlanner.appendChild(a);
+		plannerHtml += '<a target="_blank" href="' + build.plannerUrl + '"><span class="badge rounded-pill text-bg-primary">' + escapeHtml(build.plannerLabel) + '</span></a>';
+		if (build.videoUrl) {
+		  plannerHtml += ' <a target="_blank" href="' + build.videoUrl + '"><span class="badge rounded-pill text-bg-success" style="font-size:0.55em;line-height:1.3">Video<br/>Build Guide</span></a>';
+		}
+	  } else if (build.videoUrl) {
+		plannerHtml += '<a target="_blank" href="' + build.videoUrl + '"><span class="badge rounded-pill text-bg-success" style="font-size:0.55em;line-height:1.3">Video<br/>Build Guide</span></a>';
 	  } else {
-		tdPlanner.innerHTML = '<span class="badge text-bg-secondary">' + escapeHtml(build.className) + '</span>';
+		var submitTitle = encodeURIComponent('Starter build submission: ' + build.className + ' - ' + build.buildName);
+		var submitBody = encodeURIComponent('Build: ' + build.className + ' - ' + build.buildName + '\nPlanner URL: \nVideo Guide URL: \nNotes: ');
+		var submitUrl = 'https://github.com/Maaaaaarrk/Hiim-PD2-Resources/issues/new?title=' + submitTitle + '&body=' + submitBody;
+		plannerHtml += '<a target="_blank" href="' + submitUrl + '" class="btn btn-outline-success btn-sm" style="font-size:0.65em;padding:2px 6px;">Submit</a>';
 	  }
+	  tdPlanner.innerHTML = plannerHtml;
 	  tr.appendChild(tdPlanner);
 
+	  // Tags column — no longer carries the video build guide link (moved to planner slot).
 	  const tdTags = document.createElement('td');
 	  tdTags.colSpan = 5;
 	  let tagsHtml = '';
@@ -809,9 +817,6 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 		const pill = tag.pill ? 'rounded-pill ' : '';
 		tagsHtml += '<span class="badge ' + pill + 'text-bg-' + tag.style + '">' + escapeHtml(tag.text) + '</span>\n';
 	  });
-	  if (build.videoUrl) {
-		tagsHtml += '<a target="_blank" href="' + build.videoUrl + '"><span class="badge rounded-pill text-bg-success" style="font-size:0.55em;line-height:1.3">Video<br/>Build Guide</span></a>';
-	  }
 	  tdTags.innerHTML = tagsHtml;
 	  tr.appendChild(tdTags);
 
