@@ -1,7 +1,7 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 20th 2026",
-  "bannerText": "Updated with S13 Beta Testing round 1",
+  "updatedDate": "April 22nd 2026",
+  "bannerText": "Updated",
   "starterBuilds": [
     {
       "className": "Sorceress",
