@@ -1,0 +1,49 @@
+name: Boss Kill Submission
+description: Submit a boss-kill video to be added to the boss fight tier list
+labels: ["boss kill submission"]
+body:
+  - type: dropdown
+    id: boss
+    attributes:
+      label: Boss
+      options:
+        - Vision of Terror - Diablo-Clone
+        - Voidstone - Rathma
+        - Shadow of Hatred - Lucion
+    validations:
+      required: true
+  - type: dropdown
+    id: class
+    attributes:
+      label: Class
+      options:
+        - Sorceress
+        - Druid
+        - Assassin
+        - Barbarian
+        - Amazon
+        - Necromancer
+        - Paladin
+    validations:
+      required: true
+  - type: input
+    id: build-name
+    attributes:
+      label: Build Name
+      placeholder: "e.g. Jab/Fend"
+    validations:
+      required: true
+  - type: input
+    id: video-url
+    attributes:
+      label: Video URL
+      description: Link to the boss-kill video. Include a `&t=SECONDSs` timestamp in the URL so it jumps to the fight.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any relevant notes, gear requirements, or context for this kill.
+    validations:
+      required: false
