@@ -537,7 +537,7 @@ window.soloData = {
             "type": "video"
           },
           {
-            "url": "https://www.youtube.com/watch?v=7AAuplKljvg&t=5002s",
+            "url": "https://www.youtube.com/watch?v=7AAuplKljvg&t=2838s",
             "label": "Build Guide (47:18)",
             "type": "video",
             "season": 13
