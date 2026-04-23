@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 22nd 2026",
+  "updatedDate": "April 23rd 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1122,6 +1122,11 @@ window.soloData = {
           {
             "url": "https://www.youtube.com/watch?v=aV1Sa5iuWNY",
             "label": "Ancestral Trial (4:00)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=aIcjPSvKcsM",
+            "label": "Throne of Insanity (3:45)",
             "type": "video"
           }
         ],
