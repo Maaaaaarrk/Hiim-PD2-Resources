@@ -1,6 +1,6 @@
 {
   "season": 13,
-  "updatedDate": "April 22nd 2026",
+  "updatedDate": "April 23rd 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1561,7 +1561,18 @@
       {
         "buildName": "Magic Arrow",
         "tier": "Mid",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=Hh7OFwFSSUA&t",
+            "label": "Pande T3 173% +1 - 5min clear (V2)",
+            "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=1AHfb-NHghY",
+            "label": "Pande T3 173% +1 - 5min clear",
+            "type": "video"
+          }
+        ],
         "notes": []
       },
       {
