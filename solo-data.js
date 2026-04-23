@@ -106,7 +106,8 @@ window.soloData = {
           "text": "Uber Tristram",
           "style": "dark"
         }
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=5gbZvjuPjqA&t=1"
     },
     {
       "className": "Druid",
@@ -728,6 +729,12 @@ window.soloData = {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=druid&level=97&difficulty=3&quests=1&strength=0&dexterity=0&vitality=0&energy=0&coupling=1&skills=01200101200101200120010000000000000000000001010101011201010101&mercenary=Iron+Wolf+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Static+Field%29%2CFlickering+Flame+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CStormlash%2CExile+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Vortex+Shield%2CTrang-Oul%27s+Claws%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Ravenlore%2C3%2C%2B+Sockets+Helm%2C%2C%2C&armor=Steel+Carapace%2C3%2C%2B+Sockets+Chest%2C%2C%2C%2C%2C%2C&gloves=Dracul%27s+Grasp%2C3%2C%2B+Mana+per+kill&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Siggard%27s+Staunch%2C3%2C%2B+Faster+Cast+Rate%2C&amulet=Gaea%27s+Amulet+of+the+Apprentice%2C0%2C%2B+2+All+Skills%2C&ring1=The+Stone+of+Jordan%2C0%2C%2B+Mana+per+kill&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Life+per+kill&weapon=Mang+Song%27s+Lesson%2C3%2C%2B+Sockets+Weapon%2C%2C%2C%2C%2C%2C&offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Resist_Fire-mercenary_helm%2C1%2C0&effect=Defiance-mercenary_offhand%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life&charm=%2B1+Nature%27s+Grand+Charm+%2B+life",
             "label": "End-game Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=5gbZvjuPjqA&t=1405s",
+            "label": "Build Guide (23:25)",
+            "type": "video",
+            "season": 13
           },
           {
             "url": "https://youtu.be/s_v3VnwfVo8",
