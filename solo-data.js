@@ -535,6 +535,12 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=4O__wTyY5Uw&t=102s",
             "label": "Throne of Insanity (3:49)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=7AAuplKljvg&t=2838s",
+            "label": "Build Guide (47:18)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
