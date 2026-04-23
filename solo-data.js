@@ -1566,7 +1566,20 @@ window.soloData = {
       {
         "buildName": "Magic Arrow",
         "tier": "Mid",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=Hh7OFwFSSUA&t",
+            "label": "Pande T3 173% +1 - 5min clear (V2)",
+            "type": "video",
+            "season": 13
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=1AHfb-NHghY",
+            "label": "Pande T3 173% +1 - 5min clear",
+            "type": "video",
+            "season": 13
+          }
+        ],
         "notes": []
       },
       {
