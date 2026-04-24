@@ -1,6 +1,6 @@
 window.groupData = {
   "season": 13,
-  "updatedDate": "April 24th 2026",
+  "updatedDate": "April 23rd 2026",
   "bannerText": "Updated",
   "generalists": {
     "title": "Public Map Focused P8 Mapping",
