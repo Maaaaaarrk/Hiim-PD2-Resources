@@ -928,6 +928,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="group-data.js"></script>
+<script src="maps-data.js"></script>
 <script>
 
 const classSvgs = {
@@ -1562,147 +1563,21 @@ function fallbackDownloadWheelImage(blob, statusEl) {
 		'Fall of Caldeum': 'caldeum', 'Shadows of Westmarch': 'westmarch'
 	};
 
-	// ===== Season 12 archive =====
-	var data98S12 = [
-		{ tier: 3, maps: [
-			['Pandemonium Citadel', 5.42, 8.13, 10.84],
-			['Ashen Plains', 4.68, 7.02, 9.36],
-			['Sanatorium', 4.68, 7.02, 9.36],
-			['Kehjistan Marketplace', 4.39, 6.58, 8.77],
-			['Throne of Insanity', 4.00, 6.00, 8.00],
-			['Phlegethon', 3.98, 5.97, 7.96],
-			['Canyon of Sescheron', 3.70, 5.55, 7.40],
-			['Ruined Cistern', 3.50, 5.25, 7.01],
-			['Blood Moon', 2.89, 4.34, 5.78]
-		]},
-		{ tier: 2, maps: [
-			['Demon Road', 2.56, 3.84, 5.12],
-			['Ancestral Trial', 2.15, 3.23, 4.31],
-			['Lost Temple', 2.09, 3.13, 4.17],
-			['River of Blood', 2.04, 3.06, 4.08],
-			['Ruins of Viz-Jun', 1.91, 2.86, 3.81],
-			['Bastion Keep', 1.88, 2.83, 3.77],
-			['Tomb of Zoltun Kulle', 1.81, 2.71, 3.62],
-			['Skovos Stronghold', 0.94, 1.41, 1.88]
-		]},
-		{ tier: 1, maps: [
-			['Halls of Torture', 2.24, 3.36, 4.48],
-			['Sewers of Harrogath', 1.91, 2.86, 3.81],
-			['Arreat Battlefield', 1.85, 2.78, 3.71],
-			['Fall of Caldeum', 1.62, 2.43, 3.24],
-			['Royal Crypts', 1.62, 2.42, 3.23],
-			['Torajan Jungle', 1.60, 2.40, 3.19],
-			["Horazon's Memory", 1.47, 2.20, 2.94],
-			['Shadows of Westmarch', 1.36, 2.04, 2.72]
-		]}
-	];
+	var helpers = window.mapsDataHelpers;
+	var currentSeason = 'S13';
 
-	var dataNoneS12 = [
-		{ tier: 3, maps: [
-			['Pandemonium Citadel', 4.92, 7.38, 9.84],
-			['Ashen Plains', 4.92, 7.38, 9.84],
-			['Phlegethon', 4.50, 6.76, 9.01],
-			['Kehjistan Marketplace', 4.42, 6.62, 8.83],
-			['Sanatorium', 4.41, 6.62, 8.82],
-			['Canyon of Sescheron', 4.19, 6.29, 8.38],
-			['Throne of Insanity', 4.00, 6.00, 8.00],
-			['Ruined Cistern', 3.61, 5.41, 7.22],
-			['Blood Moon', 3.46, 5.19, 6.92]
-		]},
-		{ tier: 2, maps: [
-			['Ancestral Trial', 4.05, 6.07, 8.10],
-			['Demon Road', 4.03, 6.05, 8.07],
-			['Ruins of Viz-Jun', 4.01, 6.01, 8.01],
-			['Lost Temple', 3.73, 5.59, 7.46],
-			['River of Blood', 3.72, 5.58, 7.43],
-			['Skovos Stronghold', 3.67, 5.50, 7.33],
-			['Bastion Keep', 3.65, 5.47, 7.30],
-			['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57]
-		]},
-		{ tier: 1, maps: [
-			['Halls of Torture', 5.32, 7.98, 10.64],
-			['Torajan Jungle', 4.73, 7.09, 9.46],
-			['Arreat Battlefield', 4.23, 6.34, 8.46],
-			["Horazon's Memory", 4.10, 6.14, 8.19],
-			['Sewers of Harrogath', 3.94, 5.90, 7.87],
-			['Royal Crypts', 3.58, 5.37, 7.16],
-			['Fall of Caldeum', 3.51, 5.26, 7.02],
-			['Shadows of Westmarch', 3.17, 4.75, 6.33]
-		]}
-	];
+	function loadData98() {
+		return currentSeason === 'S12'
+			? window.mapsData.s12.exp98
+			: helpers.buildS13Exp('exp98');
+	}
+	function loadDataNone() {
+		return currentSeason === 'S12'
+			? window.mapsData.s12.expNone
+			: helpers.buildS13Exp('expNone');
+	}
 
-	// ===== Season 13 (current) =====
-	var data98S13 = [
-		{ tier: 3, maps: [
-			['Kehjistan Marketplace', 4.39, 6.58, 8.77],
-			['Arreat Battlefield', 4.13, 6.19, 8.25],
-			['Demon Road', 4.01, 6.01, 8.01],
-			['Royal Crypts', 3.56, 5.33, 7.11],
-			['River of Blood', 3.37, 5.06, 6.75],
-			['Bastion Keep', 3.20, 4.79, 6.39],
-			['Blood Moon', 2.89, 4.34, 5.78],
-			['Skovos Stronghold', 'TBD', 'TBD', 'TBD'],
-			['Kyovoshad', 'TBD', 'TBD', 'TBD']
-		]},
-		{ tier: 2, maps: [
-			['Pandemonium Citadel', 3.65, 5.48, 7.30],
-			['Halls of Torture', 3.16, 4.74, 6.32],
-			['Sanatorium', 3.09, 4.64, 6.18],
-			['Ashen Plains', 2.91, 4.37, 5.82],
-			['Sewers of Harrogath', 2.70, 4.04, 5.39],
-			['Throne of Insanity', 2.56, 3.84, 5.13],
-			['Ruined Cistern', 2.27, 3.41, 4.54],
-			['Canyon of Sescheron', 2.20, 3.29, 4.39],
-			["Horazon's Memory", 2.04, 3.05, 4.07]
-		]},
-		{ tier: 1, maps: [
-			['Phlegethon', 1.71, 2.56, 3.42],
-			['Fall of Caldeum', 1.62, 2.43, 3.24],
-			['Torajan Jungle', 1.60, 2.40, 3.19],
-			['Ancestral Trial', 1.54, 2.31, 3.08],
-			['Lost Temple', 1.49, 2.24, 2.98],
-			['Ruins of Viz-Jun', 1.37, 2.06, 2.74],
-			['Shadows of Westmarch', 1.36, 2.04, 2.72],
-			['Tomb of Zoltun Kulle', 1.29, 1.94, 2.59]
-		]}
-	];
-
-	var dataNoneS13 = [
-		{ tier: 3, maps: [
-			['Kehjistan Marketplace', 4.42, 6.62, 8.83],
-			['Arreat Battlefield', 4.23, 6.34, 8.46],
-			['Demon Road', 4.03, 6.05, 8.07],
-			['River of Blood', 3.72, 5.58, 7.43],
-			['Bastion Keep', 3.65, 5.47, 7.30],
-			['Royal Crypts', 3.58, 5.37, 7.16],
-			['Blood Moon', 3.46, 5.19, 6.92],
-			['Skovos Stronghold', 'TBD', 'TBD', 'TBD'],
-			['Kyovoshad', 'TBD', 'TBD', 'TBD']
-		]},
-		{ tier: 2, maps: [
-			['Halls of Torture', 5.32, 7.98, 10.64],
-			['Pandemonium Citadel', 4.92, 7.38, 9.84],
-			['Ashen Plains', 4.92, 7.38, 9.84],
-			['Sanatorium', 4.41, 6.62, 8.82],
-			['Canyon of Sescheron', 4.19, 6.29, 8.38],
-			["Horazon's Memory", 4.10, 6.14, 8.19],
-			['Throne of Insanity', 4.00, 6.00, 8.00],
-			['Sewers of Harrogath', 3.94, 5.90, 7.87],
-			['Ruined Cistern', 3.61, 5.41, 7.22]
-		]},
-		{ tier: 1, maps: [
-			['Torajan Jungle', 4.73, 7.09, 9.46],
-			['Phlegethon', 4.50, 6.76, 9.01],
-			['Ancestral Trial', 4.05, 6.07, 8.10],
-			['Ruins of Viz-Jun', 4.01, 6.01, 8.01],
-			['Lost Temple', 3.73, 5.59, 7.46],
-			['Fall of Caldeum', 3.51, 5.26, 7.02],
-			['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57],
-			['Shadows of Westmarch', 3.17, 4.75, 6.33]
-		]}
-	];
-
-	var data98 = data98S13, dataNone = dataNoneS13;
+	var data98 = loadData98(), dataNone = loadDataNone();
 
 	function fmt(v) {
 		var totalSec = Math.round(v * 60);
@@ -1719,34 +1594,7 @@ function fallbackDownloadWheelImage(blob, statusEl) {
 		return m + ':' + (s < 10 ? '0' : '') + s;
 	}
 
-	var mapElems = {
-		'Canyon of Sescheron': [{i:0,v:'115',c:'160,160,160'},{i:2,v:'120',c:'220,60,40'}],
-		'Phlegethon': [{i:2,v:'120',c:'220,60,40'},{i:5,v:'120',c:'80,200,80'}],
-		'Blood Moon': [],
-		'Ashen Plains': [{i:2,v:'120',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}],
-		'Kehjistan Marketplace': [{i:0,v:'115',c:'160,160,160'},{i:2,v:'120',c:'220,60,40'}],
-		'Throne of Insanity': [{i:0,v:'115',c:'160,160,160'},{i:5,v:'120',c:'80,200,80'}],
-		'Sanatorium': [{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'120',c:'80,200,80'}],
-		'Ruined Cistern': [{i:1,v:'105',c:'180,80,220'},{i:5,v:'120',c:'80,200,80'}],
-		'Pandemonium Citadel': [{i:1,v:'105',c:'180,80,220'},{i:4,v:'120',c:'60,140,220'}],
-		'Ruins of Viz-Jun': [{i:0,v:'115',c:'160,160,160'},{i:4,v:'120',c:'60,140,220'}],
-		'Ancestral Trial': [{i:2,v:'120',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}],
-		'Tomb of Zoltun Kulle': [{i:0,v:'115',c:'160,160,160'},{i:5,v:'120',c:'80,200,80'}],
-		'Bastion Keep': [{i:0,v:'115',c:'160,160,160'},{i:1,v:'105',c:'180,80,220'},{i:4,v:'120',c:'60,140,220'}],
-		'River of Blood': [{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'120',c:'80,200,80'}],
-		'Demon Road': [{i:0,v:'115',c:'160,160,160'},{i:2,v:'120',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}],
-		'Skovos Stronghold': [{i:4,v:'120',c:'60,140,220'},{i:5,v:'120',c:'80,200,80'}],
-		'Kyovoshad': [],
-		'Lost Temple': [{i:1,v:'105',c:'180,80,220'},{i:4,v:'120',c:'60,140,220'}],
-		'Torajan Jungle': [{i:4,v:'120',c:'60,140,220'},{i:5,v:'120',c:'80,200,80'}],
-		'Halls of Torture': [{i:3,v:'120',c:'220,200,40'},{i:4,v:'120',c:'60,140,220'}],
-		"Horazon's Memory": [{i:0,v:'115',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'}],
-		'Arreat Battlefield': [{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'120',c:'80,200,80'}],
-		'Royal Crypts': [{i:2,v:'120',c:'220,60,40'},{i:4,v:'120',c:'60,140,220'}],
-		'Sewers of Harrogath': [{i:2,v:'120',c:'220,60,40'},{i:5,v:'120',c:'80,200,80'}],
-		'Shadows of Westmarch': [{i:1,v:'105',c:'180,80,220'},{i:2,v:'120',c:'220,60,40'},{i:5,v:'120',c:'80,200,80'}],
-		'Fall of Caldeum': [{i:0,v:'115',c:'160,160,160'},{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'}]
-	};
+	var mapElems = helpers.getS13Elems();
 
 	function elemCells(name) {
 		var elems = mapElems[name] || [];
@@ -1844,11 +1692,9 @@ function fallbackDownloadWheelImage(blob, statusEl) {
 	// Season toggle
 	document.querySelectorAll('input[name="groupSeason"]').forEach(function(radio) {
 		radio.addEventListener('change', function() {
-			if (this.value === 'S12') {
-				data98 = data98S12; dataNone = dataNoneS12;
-			} else {
-				data98 = data98S13; dataNone = dataNoneS13;
-			}
+			currentSeason = this.value;
+			data98 = loadData98();
+			dataNone = loadDataNone();
 			calcMapName = null; calcTimeSec = 0;
 			document.getElementById('groupCalcMapSelect').value = '';
 			document.getElementById('groupCalcMin').value = '';

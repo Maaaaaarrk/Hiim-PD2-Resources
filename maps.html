@@ -1566,13 +1566,20 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 					<label class="btn btn-outline-info" for="mapTimesS12">Season 12</label>
 				</div>
 				<br>
-				<div class="btn-group btn-group-sm mb-3" role="group">
+				<div class="btn-group btn-group-sm mb-2" role="group">
 					<input type="radio" class="btn-check" name="mapTimesMode" id="mapTimesMF" value="mf" checked>
 					<label class="btn btn-outline-light" for="mapTimesMF">Magic Find (monsters/hour)</label>
 					<input type="radio" class="btn-check" name="mapTimesMode" id="mapTimesExp98" value="exp98">
 					<label class="btn btn-outline-light" for="mapTimesExp98">Exp/hour (Lvl 98)</label>
 					<input type="radio" class="btn-check" name="mapTimesMode" id="mapTimesExpNone" value="expNone">
 					<label class="btn btn-outline-light" for="mapTimesExpNone">Exp/hour (No Penalty)</label>
+				</div>
+				<br>
+				<div class="btn-group btn-group-sm mb-3" id="mapTimesSoloTypeGroup" role="group" aria-label="Solo Type">
+					<input type="radio" class="btn-check" name="mapTimesSoloType" id="mapTimesSoloTypeFull" value="fullClear" checked>
+					<label class="btn btn-outline-light" for="mapTimesSoloTypeFull">MF Full Clear</label>
+					<input type="radio" class="btn-check" name="mapTimesSoloType" id="mapTimesSoloTypeElite" value="eliteSkip">
+					<label class="btn btn-outline-light" for="mapTimesSoloTypeElite">MF Elite Skip</label>
 				</div>
 				<div id="mapTimesDesc"></div>
 				<div class="card bg-secondary bg-opacity-25 p-3 mb-3">
@@ -1609,6 +1616,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	</div>
 </div>
 
+<script src="maps-data.js"></script>
 <script>
 (function () {
 	var mapSlugs = {
@@ -1625,173 +1633,30 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		'Shadows of Westmarch': 'westmarch', 'Fall of Caldeum': 'caldeum'
 	};
 
-	// ===== Season 12 archive (clear speed + resistances) =====
-	var mfDataS12 = [
-		{ tier: 3, maps: [
-			{ name: 'Canyon of Sescheron', top: '5:45', good: '8:35', decent: '11:25', elems: [{i:0,v:'120',c:'160,160,160'},{i:2,v:'130',c:'220,60,40'},{i:5,v:'110',c:'80,200,80'}] },
-			{ name: 'Phlegethon', top: '5:20', good: '8:00', decent: '10:40', elems: [{i:2,v:'140',c:'220,60,40'},{i:3,v:'125',c:'220,200,40'}] },
-			{ name: 'Blood Moon', top: '5:15', good: '7:55', decent: '10:35', elems: [] },
-			{ name: 'Ashen Plains', top: '4:30', good: '6:40', decent: '8:55', elems: [{i:1,v:'120',c:'180,80,220'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
-			{ name: 'Kehjistan Marketplace', top: '4:20', good: '6:30', decent: '8:35', elems: [{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
-			{ name: 'Throne of Insanity', top: '4:00', good: '6:00', decent: '8:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'Sanatorium', top: '3:30', good: '5:10', decent: '6:55', elems: [{i:3,v:'125',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] },
-			{ name: 'Ruined Cistern', top: '3:10', good: '4:45', decent: '6:15', elems: [{i:1,v:'125',c:'180,80,220'},{i:3,v:'135',c:'220,200,40'},{i:4,v:'115',c:'60,140,220'}] },
-			{ name: 'Pandemonium Citadel', top: '3:00', good: '4:25', decent: '5:55', elems: [{i:0,v:'100',c:'160,160,160'},{i:3,v:'135',c:'220,200,40'},{i:5,v:'130',c:'80,200,80'}] }
-		]},
-		{ tier: 2, maps: [
-			{ name: 'Ruins of Viz-Jun', top: '3:30', good: '5:15', decent: '7:00', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}] },
-			{ name: 'Ancestral Trial', top: '3:25', good: '5:05', decent: '6:50', elems: [{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Tomb of Zoltun Kulle', top: '3:20', good: '5:00', decent: '6:45', elems: [{i:0,v:'105',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'110',c:'80,200,80'}] },
-			{ name: 'Bastion Keep', top: '3:00', good: '4:30', decent: '6:00', elems: [{i:0,v:'110',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'River of Blood', top: '2:55', good: '4:25', decent: '5:50', elems: [{i:1,v:'100',c:'180,80,220'},{i:4,v:'180',c:'60,140,220'},{i:5,v:'130',c:'80,200,80'}] },
-			{ name: 'Demon Road', top: '2:50', good: '4:15', decent: '5:40', elems: [{i:4,v:'125',c:'60,140,220'},{i:5,v:'135',c:'80,200,80'}] },
-			{ name: 'Skovos Stronghold', top: '2:25', good: '3:40', decent: '4:50', elems: [{i:0,v:'125',c:'160,160,160'},{i:2,v:'125',c:'220,60,40'},{i:3,v:'130',c:'220,200,40'}] },
-			{ name: 'Lost Temple', top: '2:20', good: '3:30', decent: '4:40', elems: [{i:2,v:'120',c:'220,60,40'},{i:4,v:'110',c:'60,140,220'}] }
-		]},
-		{ tier: 1, maps: [
-			{ name: 'Torajan Jungle', top: '4:00', good: '6:00', decent: '7:55', elems: [{i:2,v:'125',c:'220,60,40'},{i:3,v:'105',c:'220,200,40'}] },
-			{ name: 'Halls of Torture', top: '3:35', good: '5:25', decent: '7:10', elems: [] },
-			{ name: "Horazon's Memory", top: '3:25', good: '5:10', decent: '6:55', elems: [{i:2,v:'135',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'Arreat Battlefield', top: '3:00', good: '4:35', decent: '6:05', elems: [{i:2,v:'130',c:'220,60,40'},{i:3,v:'100',c:'220,200,40'}] },
-			{ name: 'Royal Crypts', top: '2:50', good: '4:20', decent: '5:45', elems: [{i:1,v:'150',c:'180,80,220'},{i:4,v:'125',c:'60,140,220'},{i:5,v:'105',c:'80,200,80'}] },
-			{ name: 'Sewers of Harrogath', top: '2:45', good: '4:10', decent: '5:30', elems: [{i:3,v:'135',c:'220,200,40'},{i:5,v:'125',c:'80,200,80'}] },
-			{ name: 'Shadows of Westmarch', top: '2:40', good: '3:55', decent: '5:15', elems: [{i:0,v:'100',c:'160,160,160'},{i:5,v:'135',c:'80,200,80'}] },
-			{ name: 'Fall of Caldeum', top: '2:10', good: '3:15', decent: '4:20', elems: [{i:3,v:'100',c:'220,200,40'},{i:4,v:'130',c:'60,140,220'}] }
-		]}
-	];
+	var helpers = window.mapsDataHelpers;
+	var currentSeason = 'S13';
+	var currentSoloType = 'fullClear';
 
-	var exp98S12 = [
-		{ tier: 3, maps: [
-			['Pandemonium Citadel', 5.42, 8.13, 10.84], ['Ashen Plains', 4.68, 7.02, 9.36],
-			['Sanatorium', 4.68, 7.02, 9.36], ['Kehjistan Marketplace', 4.39, 6.58, 8.77],
-			['Throne of Insanity', 4.00, 6.00, 8.00], ['Phlegethon', 3.98, 5.97, 7.96],
-			['Canyon of Sescheron', 3.70, 5.55, 7.40], ['Ruined Cistern', 3.50, 5.25, 7.01],
-			['Blood Moon', 2.89, 4.34, 5.78]
-		]},
-		{ tier: 2, maps: [
-			['Demon Road', 2.56, 3.84, 5.12], ['Ancestral Trial', 2.15, 3.23, 4.31],
-			['Lost Temple', 2.09, 3.13, 4.17], ['River of Blood', 2.04, 3.06, 4.08],
-			['Ruins of Viz-Jun', 1.91, 2.86, 3.81], ['Bastion Keep', 1.88, 2.83, 3.77],
-			['Tomb of Zoltun Kulle', 1.81, 2.71, 3.62], ['Skovos Stronghold', 0.94, 1.41, 1.88]
-		]},
-		{ tier: 1, maps: [
-			['Halls of Torture', 2.24, 3.36, 4.48], ['Sewers of Harrogath', 1.91, 2.86, 3.81],
-			['Arreat Battlefield', 1.85, 2.78, 3.71], ['Fall of Caldeum', 1.62, 2.43, 3.24],
-			['Royal Crypts', 1.62, 2.42, 3.23], ['Torajan Jungle', 1.60, 2.40, 3.19],
-			["Horazon's Memory", 1.47, 2.20, 2.94], ['Shadows of Westmarch', 1.36, 2.04, 2.72]
-		]}
-	];
+	function loadMfData() {
+		return currentSeason === 'S12'
+			? window.mapsData.s12.mfData
+			: helpers.buildS13MfData(currentSoloType);
+	}
+	function loadExp98() {
+		return currentSeason === 'S12'
+			? window.mapsData.s12.exp98
+			: helpers.buildS13Exp('exp98');
+	}
+	function loadExpNone() {
+		return currentSeason === 'S12'
+			? window.mapsData.s12.expNone
+			: helpers.buildS13Exp('expNone');
+	}
 
-	var expNoneS12 = [
-		{ tier: 3, maps: [
-			['Pandemonium Citadel', 4.92, 7.38, 9.84], ['Ashen Plains', 4.92, 7.38, 9.84],
-			['Phlegethon', 4.50, 6.76, 9.01], ['Kehjistan Marketplace', 4.42, 6.62, 8.83],
-			['Sanatorium', 4.41, 6.62, 8.82], ['Canyon of Sescheron', 4.19, 6.29, 8.38],
-			['Throne of Insanity', 4.00, 6.00, 8.00], ['Ruined Cistern', 3.61, 5.41, 7.22],
-			['Blood Moon', 3.46, 5.19, 6.92]
-		]},
-		{ tier: 2, maps: [
-			['Ancestral Trial', 4.05, 6.07, 8.10], ['Demon Road', 4.03, 6.05, 8.07],
-			['Ruins of Viz-Jun', 4.01, 6.01, 8.01], ['Lost Temple', 3.73, 5.59, 7.46],
-			['River of Blood', 3.72, 5.58, 7.43], ['Skovos Stronghold', 3.67, 5.50, 7.33],
-			['Bastion Keep', 3.65, 5.47, 7.30], ['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57]
-		]},
-		{ tier: 1, maps: [
-			['Halls of Torture', 5.32, 7.98, 10.64], ['Torajan Jungle', 4.73, 7.09, 9.46],
-			['Arreat Battlefield', 4.23, 6.34, 8.46], ["Horazon's Memory", 4.10, 6.14, 8.19],
-			['Sewers of Harrogath', 3.94, 5.90, 7.87], ['Royal Crypts', 3.58, 5.37, 7.16],
-			['Fall of Caldeum', 3.51, 5.26, 7.02], ['Shadows of Westmarch', 3.17, 4.75, 6.33]
-		]}
-	];
-
-	// ===== Season 13 (current) =====
-	var mfDataS13 = [
-		{ tier: 3, maps: [
-			{ name: 'Blood Moon', top: '5:15', good: '7:55', decent: '10:35', elems: [] },
-			{ name: 'Kehjistan Marketplace', top: '4:20', good: '6:30', decent: '8:35', elems: [{i:0,v:'115',c:'160,160,160'},{i:2,v:'120',c:'220,60,40'}] },
-			{ name: 'Bastion Keep', top: '4:05', good: '6:05', decent: '8:05', elems: [{i:0,v:'115',c:'160,160,160'},{i:1,v:'105',c:'180,80,220'},{i:4,v:'120',c:'60,140,220'}] },
-			{ name: 'Arreat Battlefield', top: '4:00', good: '6:05', decent: '8:05', elems: [{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'River of Blood', top: '4:00', good: '5:55', decent: '7:55', elems: [{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Demon Road', top: '3:50', good: '5:45', decent: '7:35', elems: [{i:0,v:'115',c:'160,160,160'},{i:2,v:'120',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}] },
-			{ name: 'Royal Crypts', top: '3:50', good: '5:45', decent: '7:35', elems: [{i:2,v:'120',c:'220,60,40'},{i:4,v:'120',c:'60,140,220'}] },
-			{ name: 'Skovos Stronghold', top: 'TBD', good: 'TBD', decent: 'TBD', elems: [{i:4,v:'120',c:'60,140,220'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Kyovoshad', top: 'TBD', good: 'TBD', decent: 'TBD', elems: [] }
-		]},
-		{ tier: 2, maps: [
-			{ name: 'Canyon of Sescheron', top: '4:50', good: '7:20', decent: '9:45', elems: [{i:0,v:'115',c:'160,160,160'},{i:2,v:'120',c:'220,60,40'}] },
-			{ name: 'Halls of Torture', top: '4:05', good: '6:05', decent: '8:05', elems: [{i:3,v:'120',c:'220,200,40'},{i:4,v:'120',c:'60,140,220'}] },
-			{ name: "Horazon's Memory", top: '3:50', good: '5:50', decent: '7:45', elems: [{i:0,v:'115',c:'160,160,160'},{i:3,v:'120',c:'220,200,40'}] },
-			{ name: 'Ashen Plains', top: '3:50', good: '5:40', decent: '7:35', elems: [{i:2,v:'120',c:'220,60,40'},{i:4,v:'130',c:'60,140,220'}] },
-			{ name: 'Throne of Insanity', top: '3:25', good: '5:05', decent: '6:50', elems: [{i:0,v:'115',c:'160,160,160'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Sewers of Harrogath', top: '3:05', good: '4:40', decent: '6:10', elems: [{i:2,v:'120',c:'220,60,40'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Sanatorium', top: '2:55', good: '4:25', decent: '5:55', elems: [{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Ruined Cistern', top: '2:40', good: '4:00', decent: '5:20', elems: [{i:1,v:'105',c:'180,80,220'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Pandemonium Citadel', top: '2:30', good: '3:45', decent: '5:00', elems: [{i:1,v:'105',c:'180,80,220'},{i:4,v:'120',c:'60,140,220'}] }
-		]},
-		{ tier: 1, maps: [
-			{ name: 'Phlegethon', top: '3:55', good: '5:55', decent: '7:55', elems: [{i:2,v:'120',c:'220,60,40'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Torajan Jungle', top: '3:55', good: '5:50', decent: '7:45', elems: [{i:4,v:'120',c:'60,140,220'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Ruins of Viz-Jun', top: '3:30', good: '5:15', decent: '7:00', elems: [{i:0,v:'115',c:'160,160,160'},{i:4,v:'120',c:'60,140,220'}] },
-			{ name: 'Ancestral Trial', top: '3:25', good: '5:05', decent: '6:45', elems: [{i:2,v:'120',c:'220,60,40'},{i:3,v:'120',c:'220,200,40'}] },
-			{ name: 'Tomb of Zoltun Kulle', top: '3:20', good: '5:00', decent: '6:40', elems: [{i:0,v:'115',c:'160,160,160'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Shadows of Westmarch', top: '2:35', good: '3:50', decent: '5:10', elems: [{i:1,v:'105',c:'180,80,220'},{i:2,v:'120',c:'220,60,40'},{i:5,v:'120',c:'80,200,80'}] },
-			{ name: 'Lost Temple', top: '2:20', good: '3:30', decent: '4:40', elems: [{i:1,v:'105',c:'180,80,220'},{i:4,v:'120',c:'60,140,220'}] },
-			{ name: 'Fall of Caldeum', top: '2:05', good: '3:10', decent: '4:15', elems: [{i:0,v:'115',c:'160,160,160'},{i:1,v:'105',c:'180,80,220'},{i:3,v:'120',c:'220,200,40'}] }
-		]}
-	];
-
-	var exp98S13 = [
-		{ tier: 3, maps: [
-			['Kehjistan Marketplace', 4.39, 6.58, 8.77], ['Arreat Battlefield', 4.13, 6.19, 8.25],
-			['Demon Road', 4.01, 6.01, 8.01], ['Royal Crypts', 3.56, 5.33, 7.11],
-			['River of Blood', 3.37, 5.06, 6.75], ['Bastion Keep', 3.20, 4.79, 6.39],
-			['Blood Moon', 2.89, 4.34, 5.78], ['Skovos Stronghold', 'TBD', 'TBD', 'TBD'],
-			['Kyovoshad', 'TBD', 'TBD', 'TBD']
-		]},
-		{ tier: 2, maps: [
-			['Pandemonium Citadel', 3.65, 5.48, 7.30], ['Halls of Torture', 3.16, 4.74, 6.32],
-			['Sanatorium', 3.09, 4.64, 6.18], ['Ashen Plains', 2.91, 4.37, 5.82],
-			['Sewers of Harrogath', 2.70, 4.04, 5.39], ['Throne of Insanity', 2.56, 3.84, 5.13],
-			['Ruined Cistern', 2.27, 3.41, 4.54], ['Canyon of Sescheron', 2.20, 3.29, 4.39],
-			["Horazon's Memory", 2.04, 3.05, 4.07]
-		]},
-		{ tier: 1, maps: [
-			['Phlegethon', 1.71, 2.56, 3.42], ['Fall of Caldeum', 1.62, 2.43, 3.24],
-			['Torajan Jungle', 1.60, 2.40, 3.19], ['Ancestral Trial', 1.54, 2.31, 3.08],
-			['Lost Temple', 1.49, 2.24, 2.98], ['Ruins of Viz-Jun', 1.37, 2.06, 2.74],
-			['Shadows of Westmarch', 1.36, 2.04, 2.72], ['Tomb of Zoltun Kulle', 1.29, 1.94, 2.59]
-		]}
-	];
-
-	var expNoneS13 = [
-		{ tier: 3, maps: [
-			['Kehjistan Marketplace', 4.42, 6.62, 8.83], ['Arreat Battlefield', 4.23, 6.34, 8.46],
-			['Demon Road', 4.03, 6.05, 8.07], ['River of Blood', 3.72, 5.58, 7.43],
-			['Bastion Keep', 3.65, 5.47, 7.30], ['Royal Crypts', 3.58, 5.37, 7.16],
-			['Blood Moon', 3.46, 5.19, 6.92], ['Skovos Stronghold', 'TBD', 'TBD', 'TBD'],
-			['Kyovoshad', 'TBD', 'TBD', 'TBD']
-		]},
-		{ tier: 2, maps: [
-			['Halls of Torture', 5.32, 7.98, 10.64], ['Pandemonium Citadel', 4.92, 7.38, 9.84],
-			['Ashen Plains', 4.92, 7.38, 9.84], ['Sanatorium', 4.41, 6.62, 8.82],
-			['Canyon of Sescheron', 4.19, 6.29, 8.38], ["Horazon's Memory", 4.10, 6.14, 8.19],
-			['Throne of Insanity', 4.00, 6.00, 8.00], ['Sewers of Harrogath', 3.94, 5.90, 7.87],
-			['Ruined Cistern', 3.61, 5.41, 7.22]
-		]},
-		{ tier: 1, maps: [
-			['Torajan Jungle', 4.73, 7.09, 9.46], ['Phlegethon', 4.50, 6.76, 9.01],
-			['Ancestral Trial', 4.05, 6.07, 8.10], ['Ruins of Viz-Jun', 4.01, 6.01, 8.01],
-			['Lost Temple', 3.73, 5.59, 7.46], ['Fall of Caldeum', 3.51, 5.26, 7.02],
-			['Tomb of Zoltun Kulle', 3.29, 4.93, 6.57], ['Shadows of Westmarch', 3.17, 4.75, 6.33]
-		]}
-	];
-
-	// Active dataset references — reassigned when season toggles
-	var mfData = mfDataS13, exp98 = exp98S13, expNone = expNoneS13;
+	var mfData = loadMfData(), exp98 = loadExp98(), expNone = loadExpNone();
 
 	// Element lookup shared across seasons (derived from current S13 data)
-	var mapElems = {};
-	mfDataS13.forEach(function(g) { g.maps.forEach(function(m) { mapElems[m.name] = m.elems; }); });
+	var mapElems = helpers.getS13Elems();
 
 	function getElemCells(name) {
 		var elems = mapElems[name] || [];
@@ -1932,14 +1797,24 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		}
 	}
 
+	function reloadDatasets() {
+		mfData = loadMfData();
+		exp98 = loadExp98();
+		expNone = loadExpNone();
+	}
+
+	function updateSoloTypeToggleVisibility() {
+		var show = (currentSeason !== 'S12') && (getMode() === 'mf');
+		document.getElementById('mapTimesSoloTypeGroup').style.display = show ? '' : 'none';
+	}
+	updateSoloTypeToggleVisibility();
+
 	// Season toggle
 	document.querySelectorAll('input[name="mapTimesSeason"]').forEach(function(radio) {
 		radio.addEventListener('change', function() {
-			if (this.value === 'S12') {
-				mfData = mfDataS12; exp98 = exp98S12; expNone = expNoneS12;
-			} else {
-				mfData = mfDataS13; exp98 = exp98S13; expNone = expNoneS13;
-			}
+			currentSeason = this.value;
+			reloadDatasets();
+			updateSoloTypeToggleVisibility();
 			calcMapName = null; calcTimeSec = 0;
 			document.getElementById('mtCalcMapSelect').value = '';
 			document.getElementById('mtCalcMin').value = '';
@@ -1949,9 +1824,24 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		});
 	});
 
-	// Tab changes
+	// Mode tab changes
 	document.querySelectorAll('input[name="mapTimesMode"]').forEach(function(radio) {
 		radio.addEventListener('change', function() {
+			updateSoloTypeToggleVisibility();
+			calcMapName = null; calcTimeSec = 0;
+			document.getElementById('mtCalcMapSelect').value = '';
+			document.getElementById('mtCalcMin').value = '';
+			document.getElementById('mtCalcSec').value = '';
+			populateDropdown(getMode());
+			render();
+		});
+	});
+
+	// Solo Type toggle (only relevant in MF mode on S13)
+	document.querySelectorAll('input[name="mapTimesSoloType"]').forEach(function(radio) {
+		radio.addEventListener('change', function() {
+			currentSoloType = this.value;
+			reloadDatasets();
 			calcMapName = null; calcTimeSec = 0;
 			document.getElementById('mtCalcMapSelect').value = '';
 			document.getElementById('mtCalcMin').value = '';
