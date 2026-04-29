@@ -478,7 +478,7 @@ setInterval(function() {
   if (lastZoneTs === null) { lastZoneTs = currentZoneTs; return; }
   if (currentZoneTs !== lastZoneTs) {
     lastZoneTs = currentZoneTs;
-    playNotificationSound();
+    if (isZoneVisible(getZone(now).idx)) playNotificationSound();
   }
 }, 1000);
 })();
