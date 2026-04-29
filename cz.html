@@ -362,6 +362,31 @@ var pad=function(n){return String(n).padStart(2,"0")};var d=new Date();customDat
 var getHashParams=function(){var hash=location.hash.replace(/^#/,'');var params={};hash.split('&').forEach(function(part){var kv=part.split('=');if(kv[0])params[decodeURIComponent(kv[0])]=decodeURIComponent(kv[1]||'')});return params};
 var setHashParams=function(params){var parts=[];Object.keys(params).forEach(function(k){if(params[k]!==undefined&&params[k]!=='')parts.push(encodeURIComponent(k)+'='+encodeURIComponent(params[k]))});history.replaceState(null,'','#'+parts.join('&'))};
 var allZoneIndices=new Set(zones.map(function(_,i){return i}));
+// Settings persistence (localStorage) — last-used settings load on return
+// when the URL hash has no params. Hash-encoded shares still take precedence.
+var SETTINGS_KEY='cz.settings';
+var saveSettings=function(){
+	try{
+		var data={
+			acts:Array.from(activeActs),
+			zones:Array.from(activeZones),
+			useCustomTime:useCustomTime,
+			customTs:customTs,
+			resist:Array.from(excludedRes),
+			infinity:!!infinityMode,
+			tab:(function(){var t=pE('tab-byzone');return t&&t.classList.contains('active')?'byzone':'upcoming'})()
+		};
+		localStorage.setItem(SETTINGS_KEY,JSON.stringify(data));
+	}catch(e){/* private mode / quota — ignore */}
+};
+var loadSavedSettings=function(){
+	try{
+		var raw=localStorage.getItem(SETTINGS_KEY);
+		if(!raw)return null;
+		var data=JSON.parse(raw);
+		return data&&typeof data==='object'?data:null;
+	}catch(e){return null}
+};
 var updateHash=function(){
 	var params={};
 	// Acts: only store if not all 5 selected
@@ -379,10 +404,57 @@ var updateHash=function(){
 	// Infinity toggle
 	if(infinityMode){params.infinity='1'}
 	setHashParams(params);
+	saveSettings();
+};
+var applySavedSettings=function(saved){
+	if(!saved)return false;
+	var applied=false;
+	if(Array.isArray(saved.acts)){
+		activeActs=new Set(saved.acts.filter(function(a){return a>=1&&a<=5}));
+		// Default zones to match acts; individual zones may override below
+		activeZones=new Set();for(var i=0;i<zones.length;i++){if(activeActs.has(zoneAct[i]))activeZones.add(i)}
+		applied=true;
+	}
+	if(Array.isArray(saved.zones)){
+		activeZones=new Set(saved.zones.filter(function(z){return z>=0&&z<zones.length}));
+		// Recompute acts from zones to keep UI consistent
+		activeActs=new Set();activeZones.forEach(function(idx){activeActs.add(zoneAct[idx])});
+		applied=true;
+	}
+	// Update act button UI
+	var b=document.querySelectorAll('.filter-btn[data-act]');for(var bi=0;bi<b.length;bi++){var act=parseInt(b[bi].dataset.act);if(activeActs.has(act))b[bi].classList.add('active');else b[bi].classList.remove('active')}
+	if(saved.useCustomTime&&typeof saved.customTs==='number'&&isFinite(saved.customTs)){
+		customTs=saved.customTs;useCustomTime=true;
+		customTimeWrapper.style.display='';
+		var tcRadio=pE('timeCustom');if(tcRadio)tcRadio.checked=true;
+		var dt=new Date(customTs);customDateTimeInput.value=dt.getFullYear()+'-'+pad(dt.getMonth()+1)+'-'+pad(dt.getDate())+'T'+pad(dt.getHours())+':'+pad(dt.getMinutes());
+		applied=true;
+	}
+	if(Array.isArray(saved.resist)&&saved.resist.length){
+		excludedRes=new Set(saved.resist);
+		var rb=document.querySelectorAll('.res-filter-btn[data-res]');
+		for(var ri=0;ri<rb.length;ri++){if(excludedRes.has(rb[ri].dataset.res))rb[ri].classList.add('active');else rb[ri].classList.remove('active')}
+		applied=true;
+	}
+	if(saved.infinity){
+		infinityMode=true;
+		var ib=pE('btnInfinity');if(ib)ib.classList.add('active');
+		applied=true;
+	}
+	if(saved.tab==='byzone'){
+		var tabBtn=pE('tab-byzone');
+		if(tabBtn&&typeof bootstrap!=='undefined'){var bsTab=new bootstrap.Tab(tabBtn);bsTab.show()}
+		applied=true;
+	}
+	return applied;
 };
 var restoreFromHash=function(){
 	var params=getHashParams();
-	if(!params.acts&&!params.zones&&!params.tab&&!params.time&&!params.resist&&!params.infinity)return;
+	if(!params.acts&&!params.zones&&!params.tab&&!params.time&&!params.resist&&!params.infinity){
+		// No hash params — fall back to last-saved settings (localStorage)
+		applySavedSettings(loadSavedSettings());
+		return;
+	}
 	// Restore acts
 	if(params.acts!==undefined){
 		activeActs=new Set(params.acts?params.acts.split(',').map(Number):[]);
