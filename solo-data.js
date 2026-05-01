@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 29th 2026",
+  "updatedDate": "April 30th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1148,7 +1148,14 @@ window.soloData = {
       {
         "buildName": "Death Sentry (A2 Viperfork merc)",
         "tier": "Not Rated",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=AT_67zJZZpE",
+            "label": "Tombs (4:30)",
+            "type": "video",
+            "season": 13
+          }
+        ],
         "notes": []
       },
       {
