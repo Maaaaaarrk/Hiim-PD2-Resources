@@ -128,7 +128,7 @@
 					<div class="col-4 d-flex align-items-end">
 						<div class="form-check mb-1">
 							<input class="form-check-input" type="checkbox" id="a_eth" onchange="calc()">
-							<label class="form-check-label form-label" for="a_eth">Ethereal (+25%)</label>
+							<label class="form-check-label form-label" for="a_eth">Ethereal (1.25x base)</label>
 						</div>
 					</div>
 				</div>
@@ -411,7 +411,7 @@
 					<div class="col-4 d-flex align-items-end">
 						<div class="form-check mb-1">
 							<input class="form-check-input" type="checkbox" id="b_eth" onchange="calc()">
-							<label class="form-check-label form-label" for="b_eth">Ethereal (+25%)</label>
+							<label class="form-check-label form-label" for="b_eth">Ethereal (1.25x base)</label>
 						</div>
 					</div>
 				</div>
@@ -678,7 +678,7 @@
 
 	<p class="text-secondary text-center mt-2" style="font-size:0.75rem">
 		Weapon base damages are approximate PD2 values. Verify in-game for exact numbers.
-		Ethereal = +25% weapon ED. Flat +damage added after weapon ED multiplier.
+		Ethereal = 1.25x base damage (multiplicative, applied before weapon ED). Flat +damage added after weapon ED multiplier.
 		Crit and DS each independently roll for their respective multiplier.
 	</p>
 </div>
@@ -919,11 +919,12 @@
 		const fpa      = Math.max(1, n(p+'_fpa', 8));
 		const dpsOn    = b(p+'_dps_on');
 
-		// 1. Weapon damage (eth stacks additively with weapon ED)
-		const ethBonus    = eth ? 25 : 0;
-		const totalWED    = wed + ethBonus;
-		const wepMin      = Math.floor(baseMin * (1 + totalWED / 100)) + flatMin;
-		const wepMax      = Math.floor(baseMax * (1 + totalWED / 100)) + flatMax;
+		// 1. Weapon damage (eth multiplies base damage by 1.25x BEFORE weapon ED)
+		const ethMult     = eth ? 1.25 : 1.0;
+		const ethBaseMin  = Math.floor(baseMin * ethMult);
+		const ethBaseMax  = Math.floor(baseMax * ethMult);
+		const wepMin      = Math.floor(ethBaseMin * (1 + wed / 100)) + flatMin;
+		const wepMax      = Math.floor(ethBaseMax * (1 + wed / 100)) + flatMax;
 		const wepAvg      = (wepMin + wepMax) / 2;
 
 		// 2. Off-weapon ED
