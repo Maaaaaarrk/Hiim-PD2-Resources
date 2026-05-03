@@ -1147,8 +1147,15 @@ window.soloData = {
       },
       {
         "buildName": "Death Sentry (A2 Viperfork merc)",
-        "tier": "Not Rated",
-        "links": [],
+        "tier": "Good",
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=AT_67zJZZpE",
+            "label": "Tombs (4:30)",
+            "type": "video",
+            "season": 13
+          }
+        ],
         "notes": []
       },
       {
