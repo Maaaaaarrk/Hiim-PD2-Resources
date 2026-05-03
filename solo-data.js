@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 29th 2026",
+  "updatedDate": "May 3rd 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1426,6 +1426,12 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=ndPULNORgXM&t=2914s",
             "label": "Build Guide (48:34)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=NoYaBlRbryU",
+            "label": "Phlegeton (4:00)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
