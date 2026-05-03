@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "April 29th 2026",
+  "updatedDate": "May 3rd 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1415,7 +1415,7 @@ window.soloData = {
     "Amazon": [
       {
         "buildName": "Lightning Fury",
-        "tier": "Good",
+        "tier": "Top",
         "links": [
           {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=amazon&level=96&difficulty=3&quests=1&strength=0&dexterity=106&vitality=384&energy=0&coupling=1&skills=012001002000010000200101011000011000002000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CFerocity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Visage%2CInnocence+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2CInfinity+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2CDracul%27s+Grasp%2CMarrowwalk%2CString+of+Ears&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Griffon%27s+Eye%2C3%2C%2B+CBF%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&armor=Enigma+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Archon+Plate%2C3%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Lancer%27s+Gloves+of+Quickness%2C1%2C%2B+Faster+Cast+Rate&boots=Imp+Shank%2C2%2C%2B+Life+per+kill&belt=Arachnid+Mesh%2C3%2C%2B+Pierce%2C&amulet=Blood+Craft+-+Amazon%2C0%2C%2B+2+All+Skills%2C&ring1=Constricting+Ring%2C0%2C%2B+Life+per+kill&ring2=Bul+Katho%27s+Wedding+Band%2C0%2C%2B+Mana+per+kill&weapon=Thunderstroke%2C3%2C%2B+IAS+Crushing+Blow%2C%2C%2C%2C%2CRainbow+Facet+%28Lightning%29%2CRainbow+Facet+%28Lightning%29&offhand=Lidless+Wall%2C2%2C%2B+Sockets+Off-hand%2C%2C%2C%2CScintillating+Jewel+of+Fervor%2CScintillating+Jewel+of+Fervor%2CLPK%2FMPK+Jewel&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Conviction-mercenary_weapon%2C1%2C0&charm=Hellfire+Torch&charm=Annihilus+%2B2&charm=%2B1+Harpoonist%27s+Grand+Charm+%2B+fhr&charm=%2B1+Harpoonist%27s+Grand+Charm+%2B+fhr&charm=%2B3%25+Conduit+Large+Charm+of+Balance&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=Shimmering+Small+Charm+of+Vita&charm=%2B1+Harpoonist%27s+Grand+Charm+%2B+fhr&charm=Shimmering+Small+Charm+of+Balance&charm=%2B3%25+Conduit+Large+Charm+of+Vita&charm=%2B3%25+Conduit+Large+Charm+of+Balance",
@@ -1426,6 +1426,12 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=ndPULNORgXM&t=2914s",
             "label": "Build Guide (48:34)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=NoYaBlRbryU",
+            "label": "Phlegethon (4:00)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
