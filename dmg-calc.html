@@ -676,6 +676,24 @@
 		<canvas id="rollChart" height="80"></canvas>
 	</div>
 
+	<!-- ═══════════════ DAMAGE-INCREASE PARITY ═══════════════ -->
+	<div class="panel mt-3" style="border-top: 3px solid #6c757d;">
+		<div class="sec-label">Damage-Increase Parity (vs +40% off-weapon ED)</div>
+		<small class="text-secondary d-block mb-2">
+			Each row shows how much of the listed stat would yield the same total-damage % increase as adding 40% off-weapon ED to your current setup.
+		</small>
+		<div class="row g-3">
+			<div class="col-md-6">
+				<h6><span class="badge bg-primary">Weapon A</span></h6>
+				<div id="a_parity"></div>
+			</div>
+			<div class="col-md-6">
+				<h6><span class="badge bg-success">Weapon B</span></h6>
+				<div id="b_parity"></div>
+			</div>
+		</div>
+	</div>
+
 	<p class="text-secondary text-center mt-2" style="font-size:0.75rem">
 		Weapon base damages are approximate PD2 values. Verify in-game for exact numbers.
 		Ethereal = 1.25x base damage (multiplicative, applied before weapon ED). Flat +damage added after weapon ED multiplier.
@@ -1187,6 +1205,136 @@
 		});
 	}
 
+	// Parity: for a given weapon panel + its computed result `r`, find how much of each stat
+	// would produce the same total-damage % gain as adding +40% off-weapon ED on top of the
+	// current setup. Math mirrors calcWeapon's behaviour (additive ED bucket, multiplicative
+	// avgMult). See PR description for derivations.
+	function calcParity(p, r) {
+		const offED   = n(p+'_off_ed');
+		const wed     = n(p+'_wed');
+		const flatMin = n(p+'_flat_min');
+		const flatMax = n(p+'_flat_max');
+		const ds      = Math.min(100, n(p+'_ds'));
+		const crit    = Math.min(100, n(p+'_crit'));
+		const eth     = b(p+'_eth');
+		const baseMin = n(p+'_base_min');
+		const baseMax = n(p+'_base_max');
+		const ethMult = eth ? 1.25 : 1.0;
+		const ethBaseAvg = (Math.floor(baseMin * ethMult) + Math.floor(baseMax * ethMult)) / 2;
+		const flatAvg = (flatMin + flatMax) / 2;
+
+		// Baseline X = damage-increase fraction that +40% off-weapon ED would yield.
+		// Off-weapon ED enters totalOffED additively, applied as (1 + totalOffED/100) on wepAvg.
+		// avgMult and weapon dmg are unaffected, so the gain is the ratio of sheet multipliers.
+		const oldOffMult = 1 + r.totalOffED / 100;
+		const newOffMult = 1 + (r.totalOffED + 40) / 100;
+		const X = (newOffMult / oldOffMult) - 1;  // e.g. 0.10 = +10%
+
+		// If baseline is 0 (no weapon, no setup), show N/A across the board.
+		const sheetAvg = r.sheetAvg;
+		const wepAvg   = r.wepAvg;
+		if (!isFinite(X) || X <= 0 || sheetAvg <= 0 || wepAvg <= 0 || r.avgMult <= 0) {
+			return { X: 0, valid: false };
+		}
+
+		// On-weapon ED parity:
+		//   wepAvg(wed+Δ) / wepAvg(wed) = 1 + X
+		//   Δ = X * (ethBaseAvg*(1+wed/100) + flatAvg) * 100 / ethBaseAvg
+		// Capped weapon: if ethBaseAvg == 0 (e.g. flat-only setup), on-weapon ED can't reach parity.
+		const onWedParity = ethBaseAvg > 0
+			? (X * (ethBaseAvg * (1 + wed / 100) + flatAvg) * 100 / ethBaseAvg)
+			: null;
+
+		// Flat damage parity (added to BOTH min and max → wepAvg += Δ):
+		//   (wepAvg + Δ) / wepAvg = 1 + X  →  Δ = X * wepAvg
+		const flatParity = X * wepAvg;
+
+		// DS parity. avgMult = 1 + (1-pCS)*pDS*(dsMult-1) + pCS*(critMult-1).
+		// Increasing DS by Δ percentage points adds (1-pCS)*(Δ/100)*(dsMult-1) to avgMult.
+		// Total dmg ratio = newAvgMult/oldAvgMult, so we need that ratio = 1 + X.
+		//   Δ = X * oldAvgMult * 100 / ((1-pCS)*(dsMult-1))
+		const pCS  = r.pCritHit;
+		const pDS  = r.pDSHit / Math.max(1e-9, 1 - pCS);  // recover raw DS chance from joint prob
+		const dsContribPerPct = (1 - pCS) * (r.dsMult - 1) / 100;
+		const dsParity = dsContribPerPct > 0
+			? (X * r.avgMult / dsContribPerPct)
+			: null;
+		const dsCapHeadroom = 100 - ds;  // DS is capped at 100% in the calc
+
+		// CS parity. d(avgMult)/d(pCS) = -pDS*(dsMult-1) + (critMult-1).
+		// Each +1% CS replaces a (1-pCS-pDS+pCS*pDS) chunk... but linearised:
+		//   Δ adds Δ/100 * (critMult - 1 - pDS*(dsMult-1)) to avgMult (first-order).
+		// Closed-form (exact): solve for new pCS = pCS + Δ/100 such that
+		//   [1 + (1-newPCS)*pDS*(dsMult-1) + newPCS*(critMult-1)] = (1+X) * oldAvgMult
+		// → linear in newPCS, so analytical:
+		const csCoef = (r.critMult - 1) - pDS * (r.dsMult - 1);
+		const csParity = csCoef > 0
+			? (X * r.avgMult * 100 / csCoef)
+			: null;
+		const csCapHeadroom = 100 - crit;
+
+		return {
+			X, valid: true,
+			onWedParity,
+			flatParity,
+			dsParity,
+			dsCapHeadroom,
+			csParity,
+			csCapHeadroom,
+		};
+	}
+
+	function fmtParityPct(v, capHeadroom) {
+		if (v == null || !isFinite(v)) return '<span class="text-secondary">N/A</span>';
+		if (capHeadroom != null && v > capHeadroom) {
+			return `<span class="warn" style="color:#fbbf24">${v.toFixed(1)}% <small>(exceeds cap)</small></span>`;
+		}
+		return `${v.toFixed(1)}%`;
+	}
+
+	function renderParity(p, par) {
+		const el = document.getElementById(p + '_parity');
+		if (!par.valid) {
+			el.innerHTML = `<div class="text-secondary"><em>N/A — configure a weapon to see parity values.</em></div>`;
+			return;
+		}
+		const Xpct = par.X * 100;
+		el.innerHTML = `
+			<table class="table table-sm table-borderless mb-1" style="font-size:0.85rem">
+				<thead>
+					<tr style="border-bottom:1px solid #2b2f33">
+						<th class="text-secondary fw-normal">Stat</th>
+						<th class="text-secondary fw-normal text-end">Amount for parity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="background:#1a1d21">
+						<td><strong>+40% off-weapon ED</strong> <small class="text-secondary">(baseline)</small></td>
+						<td class="text-end"><strong>40.0%</strong></td>
+					</tr>
+					<tr>
+						<td>+ on-weapon ED%</td>
+						<td class="text-end">${fmtParityPct(par.onWedParity, null)}</td>
+					</tr>
+					<tr>
+						<td>+ flat damage <small class="text-secondary">(to both min &amp; max)</small></td>
+						<td class="text-end">${par.flatParity != null && isFinite(par.flatParity) ? `+${Math.round(par.flatParity)} min/max` : '<span class="text-secondary">N/A</span>'}</td>
+					</tr>
+					<tr>
+						<td>+ Deadly Strike%</td>
+						<td class="text-end">${fmtParityPct(par.dsParity, par.dsCapHeadroom)}</td>
+					</tr>
+					<tr>
+						<td>+ Critical Strike%</td>
+						<td class="text-end">${fmtParityPct(par.csParity, par.csCapHeadroom)}</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr class="my-2">
+			<div class="result-row"><span class="lbl"><strong>Final Damage Increase</strong></span><span class="val pos"><strong>${Xpct.toFixed(1)}%</strong></span></div>
+		`;
+	}
+
 	function calc() {
 		const rA = calcWeapon('a');
 		const rB = calcWeapon('b');
@@ -1194,6 +1342,8 @@
 		renderResults('b', rB);
 		renderCompare(rA, rB);
 		renderRollChart(rA, rB);
+		renderParity('a', calcParity('a', rA));
+		renderParity('b', calcParity('b', rB));
 		updateURL();
 	}
 
