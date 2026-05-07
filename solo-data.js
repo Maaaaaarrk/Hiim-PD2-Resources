@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "May 4th 2026",
+  "updatedDate": "May 7th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -628,6 +628,12 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=7AAuplKljvg&t=4274s",
             "label": "Starter Guide (1:11:14)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=7LodwzmIBDE&t=270s",
+            "label": "Tombs of Zoltun (4:30)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
