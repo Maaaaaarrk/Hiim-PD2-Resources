@@ -1273,8 +1273,13 @@
 			: null;
 		const csCapHeadroom = 100 - crit;
 
+		// Raw avg-damage delta from +40% off-weapon ED. Off-wep ED scales effAvg by (1+X);
+		// CB doesn't scale, so the absolute increase in Total Avg / hit is effAvg * X.
+		const rawDelta = r.effAvg * X;
+
 		return {
 			X, valid: true,
+			rawDelta,
 			onWedParity,
 			flatParity,
 			dsParity,
@@ -1331,7 +1336,7 @@
 				</tbody>
 			</table>
 			<hr class="my-2">
-			<div class="result-row"><span class="lbl"><strong>Final Damage Increase</strong></span><span class="val pos"><strong>${Xpct.toFixed(1)}%</strong></span></div>
+			<div class="result-row"><span class="lbl"><strong>Final Damage Increase</strong></span><span class="val pos"><strong>${Xpct.toFixed(1)}%</strong> <small>(+${fmt(par.rawDelta, 1)} avg dmg)</small></span></div>
 		`;
 	}
 
