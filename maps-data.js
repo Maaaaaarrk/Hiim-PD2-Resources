@@ -1,6 +1,7 @@
 // Shared maps data — used by solo.html, maps.html, group.html
 // Time values are decimal minutes (e.g. 4.39 = 4 min 23.4s). Consumers round to nearest 5s.
 // `mfFullClear` = default Solo MF (full clear). `mfEliteSkip` = alternative Solo MF (elite skip).
+// `ear` variant is derived: `mfFullClear * 1.5` (Ear runs take 50% longer per mob since mobs drop 50% more loot).
 window.mapsData = {
 	season: 13,
 
@@ -236,13 +237,18 @@ window.mapsDataHelpers = {
 	},
 
 	// Build tier-grouped Solo/MF dataset for S13 in `{tier, maps:[{name,slug,top,good,decent,elems}]}` shape.
-	// `variant` is 'fullClear' (default) or 'eliteSkip'.
+	// `variant` is 'fullClear' (default), 'eliteSkip', or 'ear'.
+	// 'ear' is derived from mfFullClear * 1.5 (Ear runs spend 50% longer per mob since mobs drop 50% more loot).
 	buildS13MfData: function (variant) {
 		var fmt = this.fmtMin;
 		var field = variant === 'eliteSkip' ? 'mfEliteSkip' : 'mfFullClear';
+		var earMultiplier = (variant === 'ear') ? 1.5 : 1;
 		var byTier = { 3: [], 2: [], 1: [] };
 		window.mapsData.s13.forEach(function (m) {
-			var arr = m[field];
+			var raw = m[field];
+			var arr = (raw && earMultiplier !== 1)
+				? [raw[0] * earMultiplier, raw[1] * earMultiplier, raw[2] * earMultiplier]
+				: raw;
 			byTier[m.tier].push({
 				name: m.name, slug: m.slug, elems: m.elems,
 				top: fmt(arr ? arr[0] : null),
