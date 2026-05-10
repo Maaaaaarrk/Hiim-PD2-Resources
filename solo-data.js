@@ -2049,6 +2049,12 @@ window.soloData = {
             "url": "https://www.youtube.com/watch?v=VwH8rsODV-Q&t=2587s",
             "label": "Build Guide (43:07)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=LqkZNiK8wAY",
+            "label": "Ancestral Trial (4:33)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
