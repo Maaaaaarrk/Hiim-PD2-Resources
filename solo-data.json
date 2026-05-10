@@ -1,6 +1,6 @@
 {
   "season": 13,
-  "updatedDate": "May 7th 2026",
+  "updatedDate": "May 10th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1542,6 +1542,12 @@
             "url": "https://www.youtube.com/watch?v=2QFkwCfCls4",
             "label": "Pandemonium Citadel (4:37)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=h3VNKM7ZEOo",
+            "label": "Kyovashan Map (4:44)",
+            "type": "video",
+            "season": 13
           },
           {
             "url": "https://www.youtube.com/watch?v=ndPULNORgXM&t=1966s",
