@@ -1,6 +1,6 @@
 {
   "season": 13,
-  "updatedDate": "May 10th 2026",
+  "updatedDate": "May 11th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1233,6 +1233,12 @@
             "url": "https://www.youtube.com/watch?v=cNT5BRgBELY&t=4297s",
             "label": "Build Guide (1:11:37)",
             "type": "video"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=2J_s9QTFl10",
+            "label": "Play Guide",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
