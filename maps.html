@@ -463,6 +463,10 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			<label class="form-check-label" for="rroyalcrypts">Royal Crypts [T3]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rkyovoshad" value="kyovoshad">
+			<label class="form-check-label" for="rkyovoshad">Kyovoshad [T3]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
 			<input class="form-check-input" type="radio" name="mapDisplay" id="rskovos" value="skovos">
 			<label class="form-check-label" for="rskovos">Skovos Stronghold [T3]</label>
 		</div>
@@ -483,10 +487,14 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			<label class="form-check-label" for="rsteppesdakenshar">Steppes of Daken-Shar [T4]</label>
 		</div>
 
-		<div class="tier-divider">Unique Maps — Zone Level 89</div>
+		<div class="tier-divider">Unique Maps</div>
 		<div class="col-md-3 form-check form-check-inline">
 			<input class="form-check-input" type="radio" name="mapDisplay" id="rcityofureh" value="cityofureh">
 			<label class="form-check-label" for="rcityofureh">City of Ureh [Socketed]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rdjinnsdomain" value="djinnsdomain">
+			<label class="form-check-label" for="rdjinnsdomain">Djinn's Domain [Loot]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
 			<input class="form-check-input" type="radio" name="mapDisplay" id="rfallengardens" value="fallengardens">
@@ -495,6 +503,10 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		<div class="col-md-3 form-check form-check-inline">
 			<input class="form-check-input" type="radio" name="mapDisplay" id="rimperialpalace" value="imperialpalace">
 			<label class="form-check-label" for="rimperialpalace">Imperial Palace [P-Box]</label>
+		</div>
+		<div class="col-md-3 form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="mapDisplay" id="rnakrulabyss" value="nakrulabyss">
+			<label class="form-check-label" for="rnakrulabyss">Na-Krul Abyss [Eth Items]</label>
 		</div>
 		<div class="col-md-3 form-check form-check-inline">
 			<input class="form-check-input" type="radio" name="mapDisplay" id="routervoid" value="outervoid">
@@ -1149,6 +1161,26 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	</div>
 </div>
 
+<!-- ═══ T3: KYOVOSHAD ═══ -->
+<div class="container-fluid row map-section" id="kyovoshad">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#kyovoshad1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/kyovoshad-1.jpg" class="map-img-fluid" alt="Kyovoshad 1">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#kyovoshad2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/kyovoshad-2.jpg" class="map-img-fluid" alt="Kyovoshad 2">
+	</div>
+</div>
+
 <!-- ═══ T3: SKOVOS STRONGHOLD ═══ -->
 <div class="container-fluid row map-section" id="skovos">
 	<div class="col-md-6 position-relative" title="mappath">
@@ -1157,7 +1189,15 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			        style="margin-top:5px;margin-left:20px;">🗖
 			</button>
 		</div>
-		<img src="maps/skovos-stronghold.jpg" class="map-img-fluid" alt="Skovos Stronghold 1">
+		<img src="maps/skovos-stronghold-1.jpg" class="map-img-fluid" alt="Skovos Stronghold 1">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#skovos2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/skovos-stronghold-2.jpg" class="map-img-fluid" alt="Skovos Stronghold 2">
 	</div>
 </div>
 
@@ -1301,6 +1341,34 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	</div>
 </div>
 
+<!-- ═══ UNIQUE: DJINN'S DOMAIN ═══ -->
+<div class="container-fluid row map-section" id="djinnsdomain">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#djinnsdomain1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/djinns-domain-1.jpg" class="map-img-fluid" alt="Djinn's Domain 1">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#djinnsdomain2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/djinns-domain-2.jpg" class="map-img-fluid" alt="Djinn's Domain 2">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#djinnsdomain3Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/djinns-domain-3.jpg" class="map-img-fluid" alt="Djinn's Domain 3">
+	</div>
+</div>
+
 <!-- ═══ UNIQUE: FALLEN GARDENS ═══ -->
 <div class="container-fluid row map-section" id="fallengardens">
 	<div class="col-md-6 position-relative" title="mappath">
@@ -1338,6 +1406,26 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			</button>
 		</div>
 		<img src="maps/imperial-palace-2.jpg" class="map-img-fluid" alt="Imperial Palace 2">
+	</div>
+</div>
+
+<!-- ═══ UNIQUE: NA-KRUL ABYSS ═══ -->
+<div class="container-fluid row map-section" id="nakrulabyss">
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#nakrulabyss1Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/na-krul-abyss-1.jpg" class="map-img-fluid" alt="Na-Krul Abyss 1">
+	</div>
+	<div class="col-md-6 position-relative" title="mappath">
+		<div class="position-absolute top-0 start-0">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#nakrulabyss2Modal"
+			        style="margin-top:5px;margin-left:20px;">🗖
+			</button>
+		</div>
+		<img src="maps/na-krul-abyss-2.jpg" class="map-img-fluid" alt="Na-Krul Abyss 2">
 	</div>
 </div>
 
