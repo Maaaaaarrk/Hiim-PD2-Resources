@@ -112,9 +112,24 @@
 
 				<div class="sec-label">Increased Attack Speed</div>
 				<div class="mb-2">
-					<label class="form-label" for="ias">Total IAS on Gear (%)</label>
-					<input type="number" id="ias" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
+					<label class="form-label" for="weaponIAS">Weapon IAS (%)</label>
+					<input type="number" id="weaponIAS" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
 				</div>
+				<div class="mb-2">
+					<label class="form-label" for="gearIAS">Off-weapon (gear) IAS (%)</label>
+					<input type="number" id="gearIAS" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
+				</div>
+				<div class="mb-2">
+					<label class="form-label" for="werebearOffWeaponPct">Werebear Off-weapon IAS Effectiveness (%)</label>
+					<input type="number" id="werebearOffWeaponPct" class="form-control form-control-sm" value="50" min="0" max="100" step="1" onchange="calc();" oninput="calc();">
+					<div class="info-text mt-1">
+						<strong>Werebear only.</strong> The PD2 wiki Breakpoints page claims off-weapon IAS contributes 0% in
+						wereforms, but in-game testing suggests Werebear actually applies gear IAS at reduced effectiveness
+						(not zero, not full). Tune this slider to whatever you measure in practice. Has no effect in Human
+						or Werewolf form (Werewolf still ignores gear IAS entirely).
+					</div>
+				</div>
+				<div id="iasSplitNote" class="info-text mb-2" style="display:none"></div>
 				<div class="mb-2">
 					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy)</label>
 					<input type="number" id="skilIAS" class="form-control form-control-sm" value="0" min="0" max="200" onchange="calc();" oninput="calc();">
@@ -177,7 +192,7 @@
 				<div class="sec-label">IAS Breakpoint Table</div>
 				<p class="info-text mb-2">
 					Shows all reachable breakpoints for your current class, weapon, and skill selection.
-					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total gear IAS</strong> required (given your current Skill IAS and any form IAS).
+					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total item IAS</strong> (weapon + gear) required (given your current Skill IAS and any form IAS). In <strong>Werewolf</strong> form off-weapon gear IAS is fully ignored (PD2 wereform mechanic per the wiki). In <strong>Werebear</strong> form gear IAS is scaled by the Werebear Off-weapon Effectiveness slider (default 50%; tune to whatever you observe in-game — the wiki claims 0% but testing suggests &gt;0).
 				</p>
 				<div class="table-responsive">
 					<table class="table table-sm table-dark bp-table mb-0">
@@ -202,10 +217,11 @@
 			<div class="panel">
 				<div class="sec-label">How it works</div>
 				<p class="info-text mb-1">
-					<strong>EIAS</strong> = min(75, floor(120 * IAS / (120 + IAS)) + Skill_IAS - WSM)<br>
+					<strong>EIAS</strong> = min(cap, floor(120 * IAS / (120 + IAS)) + Skill_IAS - WSM)<br>
 					<strong>Speed</strong> = floor(256 * (100 + EIAS) / 100)<br>
 					<strong>Frames</strong> = ceil(256 * FPD / Speed) - 1<br>
 					where <strong>FPD</strong> is the FramesPerDirection for your class/weapon/skill (from D2 AnimData).
+					The EIAS cap is 75 for human-form attacks and 150 for wereform attacks (PD2 raises it specifically for wolf/bear).
 				</p>
 				<p class="info-text mb-1">
 					<strong>PD2-specific notes:</strong>
@@ -214,7 +230,7 @@
 					<li><strong>Phase Blade</strong> has WSM -30; Paladin Sacrifice/Vengeance caps at 8fpa at 54% IAS; Zeal caps at 72% IAS. Values verified against PD2 wiki.</li>
 					<li><strong>Martial arts</strong> — in PD2, Fists of Fire, Claws of Thunder, and Blades of Ice now use <em>standard</em> breakpoints (same table as Normal Attack). Tiger Strike and Cobra Strike are identical. Phoenix Strike stays on the multi-hit table.</li>
 					<li><strong>Paladin Charge</strong> uses a sequence animation with an effective +30 WSM penalty.</li>
-					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after); Werebear 10 at slvl 1. Wereform uses its own FPD regardless of weapon. Werebear Maul caps at 6fpa at EIAS 75.</li>
+					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after, ~80 cap). Werebear no longer grants Skill IAS in PD2. Wereform uses its own FPD regardless of weapon, and PD2 raises the wereform EIAS cap to 150. With enough item IAS plus Werewolf SIAS and/or Burst of Speed, wolf and bear attack skills can reach 3 fpa (Werewolf base Attack / Feral Rage / Fire Claws cap one frame slower at 4 fpa because they share the slower S1 animation per the PD2 wiki). <strong>Wereform off-weapon IAS</strong> — the PD2 wiki Breakpoints page says wereforms consume only Weapon IAS (<em>"Weapon IAS excludes any IAS gained from non-weapon items"</em>). This holds for Werewolf, but in-game testing suggests Werebear actually scales gear IAS at reduced effectiveness rather than zero. The calculator exposes this as a user-tunable slider (Werebear Off-weapon IAS Effectiveness, default 50%) so you can calibrate to whatever you measure.</li>
 					<li><strong>Burst of Speed</strong> — usable by any class (oskill / charges / chance-to-cast on items). Lvl 1 = 21 SIAS, scales asymptotically to a 60 SIAS cap.</li>
 					<li><strong>Trap laying</strong> uses your normal attack speed; 9fpa is the standard cap.</li>
 					<li><strong>Multi-hit skills</strong> (Zeal, Fend, Strafe, Dragon Talon, Fury, Phoenix Strike) are shown at their per-hit average frame rate. PD2 hit-count tweaks (Zeal 3/5, Strafe 5, Fend 5, Dragon Talon 3, Fury 3) change total damage output but not the per-hit breakpoints.</li>
@@ -646,36 +662,57 @@ const DRUID_HUMAN_FPD = {
 	"Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":15,
 };
 
-// Druid shapeshift FPDs.
-// Werewolf/Werebear have fixed FPDs regardless of weapon, with the usual
-// weapon WSM still applied.  Source: D2 AnimData + PD2 Shape Shifting wiki.
-//   Werewolf base attack FPD ~ 15
-//   Werewolf Fury (5 hit) FPD ~ 11 per hit
-//   Werebear base attack FPD ~ 16
-//   Werebear Maul FPD ~ 12.  Maul uses the S3 wereform animation (10 fpd
-//     at animspeed 208 in AnimData -> ~12 effective fpd at animspeed 256),
-//     yielding the widely-cited 6 fpa cap at EIAS 75.  Previously this was
-//     listed as 16, which produced an incorrect 9-10 fpa floor.  Sources:
-//     - chthonvii/d2r_24ptr2_wereform_calculator datatables (Werebear S3:
-//       framesperdirection 10, animationspeed 208)
-//     - diablo2.io forum "Something for Maul Werebear players": multiple
-//       posts citing "6 frames is the fastest possible as a bear"
-//     - warren1001/IAS_Calculator constants confirming Maul-specific
-//       wereform skill IAS bonus pushes EIAS past the standard 75 cap.
+// Druid shapeshift FPDs (PD2-tuned).
+// PD2 wereform attacks use:
+//   - Their own per-skill FPD (independent of weapon)
+//   - A raised EIAS cap of 150 (vs. the standard 75 in human form)
+// Both changes together let wolf/bear attack skills reach 3 fpa at the cap.
+//
+// Sources for the PD2-specific numbers:
+//   - PD2 wiki "Breakpoints" page Wereform tables.  Each per-skill table
+//     reaches its terminal frame in the last row, which gives the cap:
+//       Werebear Attack (covers Attack/Maul/Fire Claws/Shock Wave):  3 fpa
+//       Werebear Hunger:                                              3 fpa
+//       Werewolf Attack / Fury (Hit 3) (shared animation):            4 fpa
+//       Werewolf Fury (Hits 1-2):                                     3 fpa
+//       Werewolf Rabies:                                              3 fpa
+//     https://wiki.projectdiablo2.com/wiki/Breakpoints
+//   - Jascen/pd2-attack-calc (a PD2-targeted calc): bear FPD 12 / Maul
+//     animation 6 FPD 10 / wolf FPD 13 / Fury FPD 7 / wolf animation 6
+//     FPD 10.  Those were derived against an unmodified accel=175 cap;
+//     pairing them with the PD2 wereform cap of EIAS=150 (acc=250) would
+//     overshoot, so we re-derive each FPD so the calc's simple
+//     ceil(FPD*256/Speed)-1 formula reproduces the PD2-wiki cap exactly:
+//       Speed at EIAS 150 = floor(256 * 250 / 100) = 640
+//       3-fpa cap requires FPD <= 10  (ceil(10*256/640)-1 = 3)
+//       4-fpa cap requires FPD = 11   (ceil(11*256/640)-1 = 4)
+//   - User report: "in pd2 you can get down to 3 fpa on the wolf/bear
+//     attack skills" (confirmed by community footage e.g. "PD2 S8 - 3FPA
+//     Fury Druid Showcase" on YouTube).
+// Previously this file used vanilla / D2R values (Maul FPD 12, cap 75)
+// which produced a 6-fpa Maul floor.  That was vanilla-correct but
+// PD2-wrong.
 const DRUID_WEREWOLF_FPD = {
-	"Attack":      15,
-	"Fury":        11,
-	"Feral Rage":  15,
-	"Fire Claws":  14,
-	"Rabies":      15,
+	"Attack":      11,
+	"Fury":        10,
+	"Feral Rage":  11,
+	"Fire Claws":  11,
+	"Rabies":      10,
 };
 const DRUID_WEREBEAR_FPD = {
-	"Attack":      16,
-	"Maul":        12,
-	"Fire Claws":  15,
-	"Shock Wave":  16,
-	"Hunger":      15,
+	"Attack":      10,
+	"Maul":        10,
+	"Fire Claws":  10,
+	"Shock Wave":  10,
+	"Hunger":      10,
 };
+
+// PD2 raises the EIAS cap for wereform attacks from 75 to 150.
+// Wereform attacks rely heavily on weapon IAS, and the cap rises so that
+// sufficiently stacked IAS + Werewolf Skill IAS + BoS can push attacks
+// to their animation cap (3 fpa for most skills, 4 fpa for Werewolf
+// Attack/Feral Rage/Fire Claws).
+const WEREFORM_EIAS_CAP = 150;
 
 // Assassin per-weapon FPD (Basin).
 const SIN_FPD = {
@@ -833,31 +870,48 @@ const SKILLS = {
 	},
 };
 
-// Druid shapeshift skills (keyed by form)
+// Druid shapeshift skills (keyed by form).  Every wereform attack uses
+// the PD2 wereform EIAS cap of 150 (see WEREFORM_EIAS_CAP above).
 const DRUID_FORM_SKILLS = {
 	werewolf: {
-		"Attack":       () => ({ fpd: DRUID_WEREWOLF_FPD["Attack"], group: "standard" }),
+		"Attack":       () => ({ fpd: DRUID_WEREWOLF_FPD["Attack"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
 		"Fury":         () => ({ fpd: DRUID_WEREWOLF_FPD["Fury"], group: "multi",
-		                         note: "Fury in PD2 is a fixed 3-hit chain (base D2 scaled 2-5 with levels); FPD shown is per hit." }),
-		"Feral Rage":   () => ({ fpd: DRUID_WEREWOLF_FPD["Feral Rage"], group: "standard" }),
-		"Fire Claws":   () => ({ fpd: DRUID_WEREWOLF_FPD["Fire Claws"], group: "standard" }),
-		"Rabies":       () => ({ fpd: DRUID_WEREWOLF_FPD["Rabies"], group: "standard" }),
+		                         eiasCap: WEREFORM_EIAS_CAP,
+		                         note: "Fury in PD2 is a fixed 3-hit chain (base D2 scaled 2-5 with levels); FPD shown is per hit (matches the PD2 wiki Fury Hits 1-2 row). The final hit uses the slower Werewolf Attack animation and caps at 4 fpa." }),
+		"Feral Rage":   () => ({ fpd: DRUID_WEREWOLF_FPD["Feral Rage"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
+		"Fire Claws":   () => ({ fpd: DRUID_WEREWOLF_FPD["Fire Claws"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
+		"Rabies":       () => ({ fpd: DRUID_WEREWOLF_FPD["Rabies"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
 	},
 	werebear: {
-		"Attack":       () => ({ fpd: DRUID_WEREBEAR_FPD["Attack"], group: "standard" }),
-		"Maul":         () => ({ fpd: DRUID_WEREBEAR_FPD["Maul"], group: "standard" }),
-		"Fire Claws":   () => ({ fpd: DRUID_WEREBEAR_FPD["Fire Claws"], group: "standard" }),
-		"Shock Wave":   () => ({ fpd: DRUID_WEREBEAR_FPD["Shock Wave"], group: "standard" }),
-		"Hunger":       () => ({ fpd: DRUID_WEREBEAR_FPD["Hunger"], group: "standard" }),
+		"Attack":       () => ({ fpd: DRUID_WEREBEAR_FPD["Attack"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
+		"Maul":         () => ({ fpd: DRUID_WEREBEAR_FPD["Maul"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
+		"Fire Claws":   () => ({ fpd: DRUID_WEREBEAR_FPD["Fire Claws"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
+		"Shock Wave":   () => ({ fpd: DRUID_WEREBEAR_FPD["Shock Wave"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
+		"Hunger":       () => ({ fpd: DRUID_WEREBEAR_FPD["Hunger"], group: "standard",
+		                         eiasCap: WEREFORM_EIAS_CAP }),
 	},
 };
 
-// Werewolf skill IAS: 20 + 1 per level after level 1 (PD2 wiki Shape Shifting).
-// Werebear skill IAS: 10 + 1 per level after level 1.
+// Werewolf skill IAS: 20 at slvl 1, scaling non-linearly up to 80 by slvl 60
+// (PD2 wiki Shape Shifting Skills table).  We use the simple 20 + (slvl-1)
+// approximation which matches the wiki within a few points across the 1-60
+// range and underestimates slightly at very high levels.
+// Werebear skill IAS: 0.  PD2 removed Werebear's per-level Attack Speed
+// bonus -- the Shape Shifting wiki page lists only Damage%, Defense%, and
+// Uninterrupted Attack% for Werebear, with no Attack Speed column.  Bears
+// reach their 3-fpa cap entirely via item IAS, weapon WSM, and BoS.
 function formSIAS(form, slvl) {
 	slvl = Math.max(1, slvl|0);
 	if (form === "werewolf") return 20 + (slvl - 1);
-	if (form === "werebear") return 10 + (slvl - 1);
+	if (form === "werebear") return 0;
 	return 0;
 }
 
@@ -898,7 +952,10 @@ function getWSM() {
 	return wep ? wep.wsm : 0;
 }
 
-// EIAS = min(75, floor(120*IAS/(120+IAS)) + skillIAS - WSM)
+// EIAS = min(cap, floor(120*IAS/(120+IAS)) + skillIAS - WSM)
+// cap defaults to 75 (standard human-form attacks); wereform skills pass
+// 150 (PD2 raised the wereform-only cap to let bear/wolf attacks reach
+// 3 fpa).  Per-skill caps are also used by Trap Laying and a few others.
 function calcEIAS(ias, skillIAS, wsm, cap) {
 	cap = cap ?? 75;
 	const iasComponent = Math.floor(120 * ias / (120 + ias));
@@ -968,6 +1025,34 @@ function getForm() {
 	return sel ? sel.value : "human";
 }
 
+// Off-weapon IAS effectiveness for the current form.
+// PD2 wiki Breakpoints page claims wereforms use only "Weapon IAS - WSM" and
+// exclude any IAS from non-weapon items.  In-game testing reports the wiki is
+// wrong for Werebear: gear IAS DOES contribute, just at reduced effectiveness.
+// The exact multiplier is unknown, so for Werebear we expose it as a user
+// input ('werebearOffWeaponPct', default 50%) the user can calibrate.
+// Werewolf still ignores gear IAS entirely (wiki and testing agree).
+// All other forms / classes use the standard EIAS pipeline at full effectiveness.
+function offWeaponIASMultiplier(form) {
+	if (form === "werewolf") return 0;
+	if (form === "werebear") {
+		const el = document.getElementById('werebearOffWeaponPct');
+		const pct = el ? parseFloat(el.value) : NaN;
+		if (isNaN(pct)) return 0.5;
+		return Math.max(0, Math.min(100, pct)) / 100;
+	}
+	return 1;
+}
+
+// Combine the split weapon-IAS / gear-IAS inputs into the single "item IAS"
+// value the existing EIAS pipeline expects, applying form-specific rules.
+function getCombinedItemIAS(form) {
+	const wIAS = parseInt(document.getElementById('weaponIAS').value) || 0;
+	const gIAS = parseInt(document.getElementById('gearIAS').value) || 0;
+	const mult = offWeaponIASMultiplier(form);
+	return wIAS + Math.floor(gIAS * mult);
+}
+
 function getEffectiveSIAS(plan) {
 	const userSIAS = parseInt(document.getElementById('skilIAS').value) || 0;
 	const bosOn = document.getElementById('bosActive').value === 'on';
@@ -990,12 +1075,35 @@ function getEffectiveSIAS(plan) {
 }
 
 function calc() {
-	const ias = parseInt(document.getElementById('ias').value) || 0;
+	const form = getForm();
+	const ias = getCombinedItemIAS(form);
 	const wsm = getWSM();
 	const plan = currentSkillPlan();
 	const wsmMod = plan.wsmMod || 0;
 	const effectiveWSM = wsm + wsmMod;
 	const sias = getEffectiveSIAS(plan);
+
+	// Show a small note when off-weapon IAS is being scaled/discarded so users
+	// understand why their gear IAS value isn't fully moving the result.
+	const splitNote = document.getElementById('iasSplitNote');
+	const gIASRaw = parseInt(document.getElementById('gearIAS').value) || 0;
+	if (form === "werewolf" && gIASRaw > 0) {
+		splitNote.textContent =
+			`In Werewolf form only Weapon IAS counts toward attack speed — your ` +
+			`${gIASRaw}% off-weapon IAS is ignored (PD2 wereform rule).`;
+		splitNote.style.display = "";
+	} else if (form === "werebear" && gIASRaw > 0) {
+		const mult = offWeaponIASMultiplier("werebear");
+		const pctShown = Math.round(mult * 100);
+		const scaled = Math.floor(gIASRaw * mult);
+		splitNote.textContent =
+			`In Werebear form your ${gIASRaw}% off-weapon IAS is scaled to ` +
+			`${pctShown}% effectiveness per the Werebear slider above (${scaled}% effective gear IAS).`;
+		splitNote.style.display = "";
+	} else {
+		splitNote.textContent = "";
+		splitNote.style.display = "none";
+	}
 
 	let eias, frames;
 	if (plan.group === "charge") {
@@ -1086,7 +1194,9 @@ function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
 	}
 	if (nextBP) {
 		const diff = nextBP.ias - currentIAS;
-		document.getElementById('res_next_bp').textContent = `+${diff}% IAS (need ${nextBP.ias}% total) -> ${nextBP.frames} fpa`;
+		const form = getForm();
+		const iasLabel = (form === "werewolf" || form === "werebear") ? "Weapon IAS" : "IAS";
+		document.getElementById('res_next_bp').textContent = `+${diff}% ${iasLabel} (need ${nextBP.ias}% total) -> ${nextBP.frames} fpa`;
 	} else {
 		document.getElementById('res_next_bp').textContent = 'At fastest breakpoint';
 	}
