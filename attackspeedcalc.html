@@ -116,11 +116,17 @@
 					<input type="number" id="ias" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
 				</div>
 				<div class="mb-2">
-					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy, Burst of Speed)</label>
+					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy)</label>
 					<input type="number" id="skilIAS" class="form-control form-control-sm" value="0" min="0" max="200" onchange="calc();" oninput="calc();">
+				</div>
+				<div class="mb-2">
+					<label class="form-label" for="bosLevel">Burst of Speed Level</label>
+					<input type="number" id="bosLevel" class="form-control form-control-sm" value="0" min="0" max="60" onchange="calc();" oninput="calc();">
 				</div>
 				<div class="info-text mb-2">
 					Werewolf / Werebear skill IAS is added automatically when a Shapeshift form is selected.
+					Burst of Speed is available to every class — non-Assassins can get it via items
+					(charges, on-equip oskill, chance-to-cast).
 				</div>
 
 				<div class="sec-label">Results</div>
@@ -198,7 +204,8 @@
 					<li><strong>Phase Blade</strong> has WSM -30; Paladin Sacrifice/Vengeance caps at 8fpa at 54% IAS; Zeal caps at 72% IAS. Values verified against PD2 wiki.</li>
 					<li><strong>Martial arts</strong> — in PD2, Fists of Fire, Claws of Thunder, and Blades of Ice now use <em>standard</em> breakpoints (same table as Normal Attack). Tiger Strike and Cobra Strike are identical. Phoenix Strike stays on the multi-hit table.</li>
 					<li><strong>Paladin Charge</strong> uses a sequence animation with an effective +30 WSM penalty.</li>
-					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after); Werebear 10 at slvl 1. Wereform uses its own FPD regardless of weapon.</li>
+					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after); Werebear 10 at slvl 1. Wereform uses its own FPD regardless of weapon. Werebear Maul caps at 6fpa at EIAS 75.</li>
+					<li><strong>Burst of Speed</strong> — usable by any class (oskill / charges / chance-to-cast on items). Lvl 1 = 21 SIAS, scales asymptotically to a 60 SIAS cap.</li>
 					<li><strong>Trap laying</strong> uses your normal attack speed; 9fpa is the standard cap.</li>
 					<li><strong>Multi-hit skills</strong> (Zeal, Fend, Strafe, Dragon Talon, Fury, Phoenix Strike) are shown at their per-hit average frame rate. PD2 hit-count tweaks (Zeal 3/5, Strafe 5, Fend 5, Dragon Talon 3, Fury 3) change total damage output but not the per-hit breakpoints.</li>
 				</ul>
@@ -635,7 +642,16 @@ const DRUID_HUMAN_FPD = {
 //   Werewolf base attack FPD ~ 15
 //   Werewolf Fury (5 hit) FPD ~ 11 per hit
 //   Werebear base attack FPD ~ 16
-//   Werebear Maul FPD ~ 16
+//   Werebear Maul FPD ~ 12.  Maul uses the S3 wereform animation (10 fpd
+//     at animspeed 208 in AnimData -> ~12 effective fpd at animspeed 256),
+//     yielding the widely-cited 6 fpa cap at EIAS 75.  Previously this was
+//     listed as 16, which produced an incorrect 9-10 fpa floor.  Sources:
+//     - chthonvii/d2r_24ptr2_wereform_calculator datatables (Werebear S3:
+//       framesperdirection 10, animationspeed 208)
+//     - diablo2.io forum "Something for Maul Werebear players": multiple
+//       posts citing "6 frames is the fastest possible as a bear"
+//     - warren1001/IAS_Calculator constants confirming Maul-specific
+//       wereform skill IAS bonus pushes EIAS past the standard 75 cap.
 const DRUID_WEREWOLF_FPD = {
 	"Attack":      15,
 	"Fury":        11,
@@ -645,7 +661,7 @@ const DRUID_WEREWOLF_FPD = {
 };
 const DRUID_WEREBEAR_FPD = {
 	"Attack":      16,
-	"Maul":        16,
+	"Maul":        12,
 	"Fire Claws":  15,
 	"Shock Wave":  16,
 	"Hunger":      15,
@@ -835,6 +851,19 @@ function formSIAS(form, slvl) {
 	return 0;
 }
 
+// Burst of Speed skill IAS by skill level. Available to ANY class, since
+// non-Assassins can get BoS via items (charges, oskill, chance-to-cast).
+// PD2 BoS curve approximated as min + factor * (110*lvl / (lvl+6)) / 100,
+// capped at 60. Lvl 1 = 21, lvl 10 = ~46, asymptotically -> 60 cap.
+// Reference: warren1001/IAS_Calculator constants.js (BURST_OF_SPEED skill
+// definition, with the Assassin-only predicate commented out upstream).
+function bosSIAS(slvl) {
+	slvl = Math.max(0, slvl|0);
+	if (slvl === 0) return 0;
+	const min = 15, factor = 45, cap = 60;
+	return Math.min(min + Math.floor(factor * Math.floor(110 * slvl / (slvl + 6)) / 100), cap);
+}
+
 // Classes that have a Shapeshift form selector
 function classHasForms(cls) { return cls === "Druid"; }
 
@@ -922,7 +951,8 @@ function getForm() {
 
 function getEffectiveSIAS(plan) {
 	const userSIAS = parseInt(document.getElementById('skilIAS').value) || 0;
-	let sias = userSIAS;
+	const bosLvl = parseInt(document.getElementById('bosLevel').value) || 0;
+	let sias = userSIAS + bosSIAS(bosLvl);
 	const cls = document.getElementById('charClass').value;
 	const form = getForm();
 	if (cls === "Druid" && (form === "werewolf" || form === "werebear")) {
@@ -930,7 +960,7 @@ function getEffectiveSIAS(plan) {
 		// Interpretation: user enters "extra skill IAS" separately; the form adds its own.
 		// For simplicity the form contributes its minimum (slvl 1) baseline,
 		// and the user can add their extra SIAS on top.
-		sias = userSIAS + formSIAS(form, 1);
+		sias += formSIAS(form, 1);
 	}
 	return sias;
 }
