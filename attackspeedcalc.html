@@ -119,6 +119,16 @@
 					<label class="form-label" for="gearIAS">Off-weapon (gear) IAS (%)</label>
 					<input type="number" id="gearIAS" class="form-control form-control-sm" value="0" min="0" max="400" onchange="calc();" oninput="calc();">
 				</div>
+				<div class="mb-2">
+					<label class="form-label" for="werebearOffWeaponPct">Werebear Off-weapon IAS Effectiveness (%)</label>
+					<input type="number" id="werebearOffWeaponPct" class="form-control form-control-sm" value="50" min="0" max="100" step="1" onchange="calc();" oninput="calc();">
+					<div class="info-text mt-1">
+						<strong>Werebear only.</strong> The PD2 wiki Breakpoints page claims off-weapon IAS contributes 0% in
+						wereforms, but in-game testing suggests Werebear actually applies gear IAS at reduced effectiveness
+						(not zero, not full). Tune this slider to whatever you measure in practice. Has no effect in Human
+						or Werewolf form (Werewolf still ignores gear IAS entirely).
+					</div>
+				</div>
 				<div id="iasSplitNote" class="info-text mb-2" style="display:none"></div>
 				<div class="mb-2">
 					<label class="form-label" for="skilIAS">Skill IAS (e.g. Fanaticism, Frenzy)</label>
@@ -182,7 +192,7 @@
 				<div class="sec-label">IAS Breakpoint Table</div>
 				<p class="info-text mb-2">
 					Shows all reachable breakpoints for your current class, weapon, and skill selection.
-					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total item IAS</strong> (weapon + gear) required (given your current Skill IAS and any form IAS). In <strong>Werewolf / Werebear</strong> form only <em>Weapon IAS</em> counts toward this total &mdash; off-weapon gear IAS is ignored (PD2 wereform mechanic).
+					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total item IAS</strong> (weapon + gear) required (given your current Skill IAS and any form IAS). In <strong>Werewolf</strong> form off-weapon gear IAS is fully ignored (PD2 wereform mechanic per the wiki). In <strong>Werebear</strong> form gear IAS is scaled by the Werebear Off-weapon Effectiveness slider (default 50%; tune to whatever you observe in-game — the wiki claims 0% but testing suggests &gt;0).
 				</p>
 				<div class="table-responsive">
 					<table class="table table-sm table-dark bp-table mb-0">
@@ -220,7 +230,7 @@
 					<li><strong>Phase Blade</strong> has WSM -30; Paladin Sacrifice/Vengeance caps at 8fpa at 54% IAS; Zeal caps at 72% IAS. Values verified against PD2 wiki.</li>
 					<li><strong>Martial arts</strong> — in PD2, Fists of Fire, Claws of Thunder, and Blades of Ice now use <em>standard</em> breakpoints (same table as Normal Attack). Tiger Strike and Cobra Strike are identical. Phoenix Strike stays on the multi-hit table.</li>
 					<li><strong>Paladin Charge</strong> uses a sequence animation with an effective +30 WSM penalty.</li>
-					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after, ~80 cap). Werebear no longer grants Skill IAS in PD2. Wereform uses its own FPD regardless of weapon, and PD2 raises the wereform EIAS cap to 150. With enough item IAS plus Werewolf SIAS and/or Burst of Speed, wolf and bear attack skills can reach 3 fpa (Werewolf base Attack / Feral Rage / Fire Claws cap one frame slower at 4 fpa because they share the slower S1 animation per the PD2 wiki). <strong>Both wereforms only consume Weapon IAS</strong> — off-weapon (gear) IAS does not contribute to the wereform threshold per the PD2 wiki Breakpoints page (<em>"Weapon IAS excludes any IAS gained from non-weapon items"</em>).</li>
+					<li><strong>Shapeshift</strong> — Werewolf provides 20 base Skill IAS at slvl 1 (+1%/level after, ~80 cap). Werebear no longer grants Skill IAS in PD2. Wereform uses its own FPD regardless of weapon, and PD2 raises the wereform EIAS cap to 150. With enough item IAS plus Werewolf SIAS and/or Burst of Speed, wolf and bear attack skills can reach 3 fpa (Werewolf base Attack / Feral Rage / Fire Claws cap one frame slower at 4 fpa because they share the slower S1 animation per the PD2 wiki). <strong>Wereform off-weapon IAS</strong> — the PD2 wiki Breakpoints page says wereforms consume only Weapon IAS (<em>"Weapon IAS excludes any IAS gained from non-weapon items"</em>). This holds for Werewolf, but in-game testing suggests Werebear actually scales gear IAS at reduced effectiveness rather than zero. The calculator exposes this as a user-tunable slider (Werebear Off-weapon IAS Effectiveness, default 50%) so you can calibrate to whatever you measure.</li>
 					<li><strong>Burst of Speed</strong> — usable by any class (oskill / charges / chance-to-cast on items). Lvl 1 = 21 SIAS, scales asymptotically to a 60 SIAS cap.</li>
 					<li><strong>Trap laying</strong> uses your normal attack speed; 9fpa is the standard cap.</li>
 					<li><strong>Multi-hit skills</strong> (Zeal, Fend, Strafe, Dragon Talon, Fury, Phoenix Strike) are shown at their per-hit average frame rate. PD2 hit-count tweaks (Zeal 3/5, Strafe 5, Fend 5, Dragon Talon 3, Fury 3) change total damage output but not the per-hit breakpoints.</li>
@@ -1016,14 +1026,21 @@ function getForm() {
 }
 
 // Off-weapon IAS effectiveness for the current form.
-// Per the PD2 wiki Breakpoints page, the Wereform Weapon Threshold uses only
-// raw "Weapon IAS - WSM" — gear IAS does not contribute to wereform attack
-// speed.  Quote: "Weapon IAS excludes any IAS gained from non-weapon items".
-// (https://wiki.projectdiablo2.com/wiki/Breakpoints#Wereform)
-// All other forms / classes use the standard EIAS pipeline, where weapon IAS
-// and gear IAS are summed before the diminishing-returns conversion.
+// PD2 wiki Breakpoints page claims wereforms use only "Weapon IAS - WSM" and
+// exclude any IAS from non-weapon items.  In-game testing reports the wiki is
+// wrong for Werebear: gear IAS DOES contribute, just at reduced effectiveness.
+// The exact multiplier is unknown, so for Werebear we expose it as a user
+// input ('werebearOffWeaponPct', default 50%) the user can calibrate.
+// Werewolf still ignores gear IAS entirely (wiki and testing agree).
+// All other forms / classes use the standard EIAS pipeline at full effectiveness.
 function offWeaponIASMultiplier(form) {
-	if (form === "werewolf" || form === "werebear") return 0;
+	if (form === "werewolf") return 0;
+	if (form === "werebear") {
+		const el = document.getElementById('werebearOffWeaponPct');
+		const pct = el ? parseFloat(el.value) : NaN;
+		if (isNaN(pct)) return 0.5;
+		return Math.max(0, Math.min(100, pct)) / 100;
+	}
 	return 1;
 }
 
@@ -1066,14 +1083,22 @@ function calc() {
 	const effectiveWSM = wsm + wsmMod;
 	const sias = getEffectiveSIAS(plan);
 
-	// Show a small note when off-weapon IAS is being discarded so users
-	// understand why their gear IAS value isn't moving the result.
+	// Show a small note when off-weapon IAS is being scaled/discarded so users
+	// understand why their gear IAS value isn't fully moving the result.
 	const splitNote = document.getElementById('iasSplitNote');
 	const gIASRaw = parseInt(document.getElementById('gearIAS').value) || 0;
-	if ((form === "werewolf" || form === "werebear") && gIASRaw > 0) {
+	if (form === "werewolf" && gIASRaw > 0) {
 		splitNote.textContent =
-			`In ${form === "werewolf" ? "Werewolf" : "Werebear"} form only Weapon IAS counts ` +
-			`toward attack speed — your ${gIASRaw}% off-weapon IAS is ignored (PD2 wereform rule).`;
+			`In Werewolf form only Weapon IAS counts toward attack speed — your ` +
+			`${gIASRaw}% off-weapon IAS is ignored (PD2 wereform rule).`;
+		splitNote.style.display = "";
+	} else if (form === "werebear" && gIASRaw > 0) {
+		const mult = offWeaponIASMultiplier("werebear");
+		const pctShown = Math.round(mult * 100);
+		const scaled = Math.floor(gIASRaw * mult);
+		splitNote.textContent =
+			`In Werebear form your ${gIASRaw}% off-weapon IAS is scaled to ` +
+			`${pctShown}% effectiveness per the Werebear slider above (${scaled}% effective gear IAS).`;
 		splitNote.style.display = "";
 	} else {
 		splitNote.textContent = "";
