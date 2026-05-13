@@ -1245,9 +1245,10 @@
 			? (X * (ethBaseAvg * (1 + wed / 100) + flatAvg) * 100 / ethBaseAvg)
 			: null;
 
-		// Flat damage parity (added to BOTH min and max → wepAvg += Δ):
-		//   (wepAvg + Δ) / wepAvg = 1 + X  →  Δ = X * wepAvg
-		const flatParity = X * wepAvg;
+		// Flat damage parity, split by side. Adding Δ to only one side moves wepAvg by Δ/2,
+		// so each one-sided parity is twice the both-sides parity (2 * X * wepAvg).
+		const flatMinParity = 2 * X * wepAvg;
+		const flatMaxParity = 2 * X * wepAvg;
 
 		// DS parity. avgMult = 1 + (1-pCS)*pDS*(dsMult-1) + pCS*(critMult-1).
 		// Increasing DS by Δ percentage points adds (1-pCS)*(Δ/100)*(dsMult-1) to avgMult.
@@ -1281,7 +1282,8 @@
 			X, valid: true,
 			rawDelta,
 			onWedParity,
-			flatParity,
+			flatMinParity,
+			flatMaxParity,
 			dsParity,
 			dsCapHeadroom,
 			csParity,
@@ -1322,8 +1324,12 @@
 						<td class="text-end">${fmtParityPct(par.onWedParity, null)}</td>
 					</tr>
 					<tr>
-						<td>+ flat damage <small class="text-secondary">(to both min &amp; max)</small></td>
-						<td class="text-end">${par.flatParity != null && isFinite(par.flatParity) ? `+${Math.round(par.flatParity)} min/max` : '<span class="text-secondary">N/A</span>'}</td>
+						<td>+ min damage <small class="text-secondary">(to min only)</small></td>
+						<td class="text-end">${par.flatMinParity != null && isFinite(par.flatMinParity) ? `+${Math.round(par.flatMinParity)} min` : '<span class="text-secondary">N/A</span>'}</td>
+					</tr>
+					<tr>
+						<td>+ max damage <small class="text-secondary">(to max only)</small></td>
+						<td class="text-end">${par.flatMaxParity != null && isFinite(par.flatMaxParity) ? `+${Math.round(par.flatMaxParity)} max` : '<span class="text-secondary">N/A</span>'}</td>
 					</tr>
 					<tr>
 						<td>+ Deadly Strike%</td>
