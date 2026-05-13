@@ -85,7 +85,7 @@
 				</div>
 				<div class="mb-2" id="formRow">
 					<label class="form-label" for="formSelect">Form</label>
-					<select id="formSelect" class="form-select form-select-sm" onchange="onClassChange(); calc();">
+					<select id="formSelect" class="form-select form-select-sm" onchange="onFormChange(); calc();">
 						<option value="human">Human</option>
 					</select>
 				</div>
@@ -120,13 +120,23 @@
 					<input type="number" id="skilIAS" class="form-control form-control-sm" value="0" min="0" max="200" onchange="calc();" oninput="calc();">
 				</div>
 				<div class="mb-2">
-					<label class="form-label" for="bosLevel">Burst of Speed Level</label>
+					<label class="form-label" for="bosActive">Burst of Speed</label>
+					<select id="bosActive" class="form-select form-select-sm" onchange="calc();">
+						<option value="off" selected>Off</option>
+						<option value="on">On</option>
+					</select>
+				</div>
+				<div class="mb-2">
+					<label class="form-label" for="bosLevel">Burst of Speed Level (base + +skills)</label>
 					<input type="number" id="bosLevel" class="form-control form-control-sm" value="0" min="0" max="60" onchange="calc();" oninput="calc();">
 				</div>
 				<div class="info-text mb-2">
 					Werewolf / Werebear skill IAS is added automatically when a Shapeshift form is selected.
 					Burst of Speed is available to every class — non-Assassins can get it via items
-					(charges, on-equip oskill, chance-to-cast).
+					(charges, on-equip oskill, chance-to-cast). Toggle Off for no BoS;
+					On with level 0 represents a granted BoS at base 0 hard points (treated as
+					slvl 1, 21 SIAS). Enter the effective level here (base hard points +
+					soft points from +skills gear).
 				</div>
 
 				<div class="sec-label">Results</div>
@@ -789,10 +799,10 @@ const SKILLS = {
 	},
 	Druid: {
 		"Normal Attack":    (wt) => ({ fpd: DRUID_HUMAN_FPD[wt] ?? 16, group: "standard" }),
-		"Maul (human)":     (wt) => ({ fpd: DRUID_HUMAN_FPD[wt] ?? 16, group: "standard",
-		                               note: "Maul in human form is rare; use Werebear form for the standard Maul." }),
-		"Fire Claws (human)":(wt) => ({ fpd: DRUID_HUMAN_FPD[wt] ?? 16, group: "standard" }),
-		// Shapeshift (wereform) skills are listed under a "form" toggle
+		// Maul is Werebear-exclusive and Fury is Werewolf-exclusive (per PD2
+		// AnimData / Shape Shifting skill tree); they are intentionally NOT
+		// listed here for Human form. Switch the Form selector to Werebear /
+		// Werewolf to access them via DRUID_FORM_SKILLS below.
 	},
 	Assassin: {
 		"Normal Attack":    (wt) => ({ fpd: SIN_FPD[wt] ?? 14, group: "standard" }),
@@ -855,10 +865,19 @@ function formSIAS(form, slvl) {
 // non-Assassins can get BoS via items (charges, oskill, chance-to-cast).
 // PD2 BoS curve approximated as min + factor * (110*lvl / (lvl+6)) / 100,
 // capped at 60. Lvl 1 = 21, lvl 10 = ~46, asymptotically -> 60 cap.
-// Reference: warren1001/IAS_Calculator constants.js (BURST_OF_SPEED skill
-// definition, with the Assassin-only predicate commented out upstream).
+// Reference: warren1001/IAS_Calculator constants.js — BURST_OF_SPEED
+// constructed as `new AttackSpeedSkill(input, 15, 45, 60, ...)`.
+//
+// slvl=0 semantics: in warren's calc, level==0 returns 0 (i.e. "skill off").
+// We replicate that via the separate Off/On toggle in the UI: the *toggle*
+// expresses "skill not active." When the toggle is On we treat input level 0
+// as slvl 1 (granted-at-base-0 sources like Treachery's BoS charges, on-equip
+// oskill, or CtC BoS function at the item's grant level; with no +skills the
+// effective level is 1, yielding the 21 SIAS baseline). Soft points from
+// +skills push the level above 0, scaling per the curve.
 function bosSIAS(slvl) {
 	slvl = Math.max(0, slvl|0);
+	// slvl 0 is normalized by the caller to "treat as 1" when toggle is on.
 	if (slvl === 0) return 0;
 	const min = 15, factor = 45, cap = 60;
 	return Math.min(min + Math.floor(factor * Math.floor(110 * slvl / (slvl + 6)) / 100), cap);
@@ -951,8 +970,13 @@ function getForm() {
 
 function getEffectiveSIAS(plan) {
 	const userSIAS = parseInt(document.getElementById('skilIAS').value) || 0;
-	const bosLvl = parseInt(document.getElementById('bosLevel').value) || 0;
-	let sias = userSIAS + bosSIAS(bosLvl);
+	const bosOn = document.getElementById('bosActive').value === 'on';
+	// When toggle Off, BoS contributes 0 regardless of level input.
+	// When toggle On, level 0 -> level 1 (granted-at-base-0 baseline of 21 SIAS).
+	let bosLvl = parseInt(document.getElementById('bosLevel').value) || 0;
+	if (bosOn && bosLvl <= 0) bosLvl = 1;
+	const bos = bosOn ? bosSIAS(bosLvl) : 0;
+	let sias = userSIAS + bos;
 	const cls = document.getElementById('charClass').value;
 	const form = getForm();
 	if (cls === "Druid" && (form === "werewolf" || form === "werebear")) {
@@ -1162,6 +1186,7 @@ function populateFormSelect() {
 	const formRow = document.getElementById('formRow');
 	const sel = document.getElementById('formSelect');
 	const cls = document.getElementById('charClass').value;
+	const prev = sel.value;
 	sel.innerHTML = '';
 	if (classHasForms(cls)) {
 		formRow.style.display = "";
@@ -1171,6 +1196,8 @@ function populateFormSelect() {
 			opt.textContent = f.charAt(0).toUpperCase() + f.slice(1);
 			sel.appendChild(opt);
 		});
+		// Preserve prior selection if still valid (Druid->Druid no-op rebuild).
+		if (prev && [...sel.options].some(o => o.value === prev)) sel.value = prev;
 	} else {
 		formRow.style.display = "none";
 		const opt = document.createElement('option');
@@ -1209,6 +1236,14 @@ function populateSkillList() {
 
 function onClassChange() {
 	populateFormSelect();
+	populateSkillList();
+}
+
+// Form changes only need to refresh the skill list (different skills per form).
+// Do NOT call populateFormSelect() here — that would wipe and rebuild the form
+// <select>, which resets the user's selection back to the first option ("Human")
+// and made Werebear/Werewolf un-selectable.
+function onFormChange() {
 	populateSkillList();
 }
 
