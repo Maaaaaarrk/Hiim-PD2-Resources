@@ -51,6 +51,8 @@
 		.bp-table td { border-bottom: 1px solid #1e2124; padding: 4px 8px; }
 		.bp-table tr.active-bp { background: rgba(59, 130, 246, 0.15); }
 		.bp-table tr.active-bp td { color: #3b82f6; font-weight: 600; }
+		.bp-table tr.beyond-cap td { color: #5a6066; font-style: italic; }
+		.bp-table tr.beyond-cap td .bp-tag { font-style: normal; color: #6c757d; font-size: 0.72rem; margin-left: 4px; }
 		.info-text { font-size: 0.78rem; color: #6c757d; }
 		.note { font-size: 0.78rem; color: #fbbf24; margin-top: 6px; }
 	</style>
@@ -191,8 +193,8 @@
 			<div class="panel">
 				<div class="sec-label">IAS Breakpoint Table</div>
 				<p class="info-text mb-2">
-					Shows all reachable breakpoints for your current class, weapon, and skill selection.
-					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total item IAS</strong> (weapon + gear) required (given your current Skill IAS and any form IAS). In <strong>Werewolf</strong> form off-weapon gear IAS is fully ignored (PD2 wereform mechanic per the wiki). In <strong>Werebear</strong> form gear IAS is scaled by the Werebear Off-weapon Effectiveness slider (default 50%; tune to whatever you observe in-game — the wiki claims 0% but testing suggests &gt;0).
+					Shows all breakpoints from the slowest frame down to 1 fpa for your current class, weapon, and skill selection.
+					The highlighted row is your current breakpoint. "IAS Needed" is the <strong>total item IAS</strong> (weapon + gear) required (given your current Skill IAS and any form IAS). Rows shown in grey italics are <em>beyond the EIAS cap</em> for your form/skill (75 for human, 150 for wereform) and are not reachable in-game; they are listed for reference down to the theoretical 1-fpa floor. In <strong>Werewolf</strong> form off-weapon gear IAS is fully ignored (PD2 wereform mechanic per the wiki). In <strong>Werebear</strong> form gear IAS is scaled by the Werebear Off-weapon Effectiveness slider (default 50%; tune to whatever you observe in-game — the wiki claims 0% but testing suggests &gt;0).
 				</p>
 				<div class="table-responsive">
 					<table class="table table-sm table-dark bp-table mb-0">
@@ -1146,35 +1148,69 @@ function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
 	}
 
 	const cap = plan.eiasCap ?? 75;
-	// Find all distinct breakpoints by sweeping EIAS.
+	// The slowest meaningful row is the frame count produced at IAS=0, i.e.
+	// EIAS = skillIAS - wsm (clamped to the cap). Anything slower than that
+	// would correspond to negative IAS and isn't reachable in-game, so we
+	// don't render those rows.
+	const slowestFrames = calcFrames(plan.fpd, calcEIAS(0, skillIAS, effectiveWSM, cap));
+
+	// Find all distinct breakpoints by sweeping EIAS. We sweep well past the
+	// EIAS cap so the table always renders down to the formula's 1-fpa floor —
+	// rows beyond the cap are kept and marked as unreachable (informative but
+	// not actionable). Sweep stops once the 1-fpa row is recorded.
+	// Upper bound is generous: speed >= FPD*128 is needed for fpa=1, i.e.
+	// EIAS roughly FPD*50 - 100. A 5000 ceiling covers any FPD this calc
+	// supports with plenty of headroom.
 	const breakpoints = [];
 	let lastFrames = -1;
-	for (let e = -60; e <= cap; e++) {
+	for (let e = -60; e <= 5000; e++) {
 		const f = calcFrames(plan.fpd, e);
 		if (f !== lastFrames) {
 			breakpoints.push({ eias: e, frames: f });
 			lastFrames = f;
 		}
+		if (f === 1) break; // floor reached; nothing faster
 	}
 
 	let activeFound = false;
 	let nextBP = null;
 
 	breakpoints.forEach(bp => {
+		// Skip rows slower than the IAS=0 baseline (unreachable in the slow
+		// direction — would require negative IAS).
+		if (bp.frames > slowestFrames) return;
+
+		// A breakpoint is reachable when its required EIAS sits at or below
+		// the in-game cap for this form/skill. Rows beyond the cap still
+		// render but are visually marked.
+		const beyondCap = bp.eias > cap;
 		const iasNeeded = iasForEIAS(bp.eias, skillIAS, effectiveWSM);
-		if (iasNeeded === Infinity || iasNeeded > 400) return;
-		if (iasNeeded < 0) return;
 
 		const tr = document.createElement('tr');
 		const aps = (25 / bp.frames).toFixed(2);
-		const isActive = bp.frames === currentFrames && !activeFound && iasNeeded <= currentIAS;
+		const isActive = !beyondCap && bp.frames === currentFrames && !activeFound && iasNeeded !== Infinity && iasNeeded <= currentIAS;
 		if (isActive) {
 			tr.classList.add('active-bp');
 			activeFound = true;
 		}
+		if (beyondCap || iasNeeded === Infinity) tr.classList.add('beyond-cap');
+
+		// IAS column: show the computed minimum, or "—" when the EIAS curve
+		// asymptotes (needed >= 120 raw IAS contribution can never be reached
+		// via item IAS — happens at very high EIAS, but can also occur at-cap
+		// when skill IAS / WSM leaves a large gap).
+		const iasStr = (iasNeeded === Infinity) ? '—' : `${iasNeeded}%`;
+		let iasCell;
+		if (beyondCap) {
+			iasCell = `${iasStr}<span class="bp-tag">(beyond cap)</span>`;
+		} else if (iasNeeded === Infinity) {
+			iasCell = `${iasStr}<span class="bp-tag">(unreachable)</span>`;
+		} else {
+			iasCell = iasStr;
+		}
 
 		tr.innerHTML = `
-			<td>${iasNeeded}%</td>
+			<td>${iasCell}</td>
 			<td>${bp.eias}</td>
 			<td>${bp.frames}</td>
 			<td>${aps}</td>
@@ -1182,9 +1218,11 @@ function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
 		tbody.appendChild(tr);
 	});
 
-	// Find next faster BP above current IAS
+	// Find next faster BP above current IAS — only consider reachable rows
+	// (beyond-cap rows cannot be hit in-game so they aren't a real "next").
 	for (let i = 0; i < breakpoints.length; i++) {
 		const bp = breakpoints[i];
+		if (bp.eias > cap) continue;
 		const iasNeeded = iasForEIAS(bp.eias, skillIAS, effectiveWSM);
 		if (iasNeeded === Infinity) continue;
 		if (iasNeeded > currentIAS && bp.frames < currentFrames) {
