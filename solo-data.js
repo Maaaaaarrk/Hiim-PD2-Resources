@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "May 11th 2026",
+  "updatedDate": "May 15th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -1887,6 +1887,12 @@ window.soloData = {
             "url": "https://maaaaaarrk.github.io/pd2_planner/?v=3&url=1&class=necromancer&level=80&difficulty=3&quests=1&strength=91&dexterity=0&vitality=269&energy=50&coupling=1&skills=000000010000010900000000202000002000200000000000000000000000000000&mercenary=Desert+Guard+%C2%AD+%C2%AD+%C2%AD+%C2%AD+%28Defiance%29%2CLore+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Helm%2CStealth+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Armor%2CInsight+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+War+Pike%2Cnone%2Cnone%2Cnone%2Cnone&readonly=1&selected=+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+1%2C+%C2%AD+%C2%AD+%C2%AD+%C2%AD+Skill+2&helm=Wormskull%2C1%2Cnone%2C%2C%2C&armor=Spirit+Shroud%2C2%2Cnone%2C%2C%2C%2C%2C%2C&gloves=Trang-Oul%27s+Claws%2C2%2Cnone&boots=Rite+of+Passage%2C2%2Cnone&belt=Gloom%27s+Trap%2C2%2Cnone%2C&amulet=Venomous+Amulet%2C0%2Cnone%2C&ring1=Nagelring%2C0%2Cnone&ring2=Nagelring%2C0%2Cnone&weapon=White+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Tomb+Wand+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Spear%2C2%2Cnone%2C%2C%2C%2C%2C%2C&offhand=Splendor+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Gargoyle+Head+%C2%AD+%C2%AD+-+%C2%AD+%C2%AD+Bone+Spear%2C1%2Cnone%2C%2C%2C%2C%2C%2C&merc_helm=none%2C0%2Cnone%2C%2C%2C&merc_armor=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_gloves=none%2C0%2Cnone&merc_boots=none%2C0%2Cnone&merc_belt=none%2C0%2Cnone%2C&merc_weapon=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&merc_offhand=none%2C0%2Cnone%2C%2C%2C%2C%2C%2C&effect=Defiance-mercenary%2C1%2C0&effect=Meditation-mercenary_weapon%2C1%2C0",
             "label": "Starter Build Planner",
             "type": "planner"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=dra_SKo6xJc",
+            "label": "Ancestral Trial (4:23)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
