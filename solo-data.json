@@ -1,6 +1,6 @@
 {
   "season": 13,
-  "updatedDate": "May 19th 2026",
+  "updatedDate": "May 22nd 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -503,6 +503,18 @@
   "classBuilds": {
     "Sorceress": [
       {
+        "buildName": "Frozen Orb",
+        "tier": "Top",
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=7AAuplKljvg&t=3568s",
+            "label": "Starter Guide (59:28)",
+            "type": "video"
+          }
+        ],
+        "notes": []
+      },
+      {
         "buildName": "Nova",
         "tier": "Top",
         "links": [
@@ -588,18 +600,6 @@
         "buildName": "Frost Nova",
         "tier": "Good",
         "links": [],
-        "notes": []
-      },
-      {
-        "buildName": "Frozen Orb",
-        "tier": "Good",
-        "links": [
-          {
-            "url": "https://www.youtube.com/watch?v=7AAuplKljvg&t=3568s",
-            "label": "Starter Guide (59:28)",
-            "type": "video"
-          }
-        ],
         "notes": []
       },
       {
@@ -1588,6 +1588,18 @@
             "url": "https://www.youtube.com/watch?v=ndPULNORgXM&t=3613s",
             "label": "Build Guide (1:00:13)",
             "type": "video"
+          },
+          {
+            "url": "https://www.projectdiablo2.com/character/Deep_Thrust",
+            "label": "Armory - T3 Cows (12:30)",
+            "type": "armory",
+            "mapLabel": "T3 Cows (12:30)"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=dbZMUXl88lU",
+            "label": "T3 Cows (12:30)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
