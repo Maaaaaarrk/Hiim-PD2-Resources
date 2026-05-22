@@ -1600,6 +1600,12 @@ window.soloData = {
             "label": "T3 Cows (12:30)",
             "type": "video",
             "season": 13
+          },
+          {
+            "url": "https://youtu.be/TYzfVXLloOw",
+            "label": "T3 Cows fortified+ear (18:00)",
+            "type": "video",
+            "season": 13
           }
         ],
         "notes": []
