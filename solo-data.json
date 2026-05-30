@@ -1,6 +1,6 @@
 {
   "season": 13,
-  "updatedDate": "May 22nd 2026",
+  "updatedDate": "May 30th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -718,7 +718,14 @@
       {
         "buildName": "Cold Elemental (Arctic Blast/Hurricane)",
         "tier": "Good",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=JpF1nL4ke08",
+            "label": "Sewers of Harrogath (3:30)",
+            "type": "video",
+            "season": 13
+          }
+        ],
         "notes": []
       },
       {
