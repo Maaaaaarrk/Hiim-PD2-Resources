@@ -1259,6 +1259,10 @@ function calc() {
 	} else {
 		buildBPTable(plan, sias, effectiveWSM, frames, displayIAS);
 	}
+
+	// Keep the URL hash in sync so the current configuration is shareable /
+	// deep-linkable (see the state block near Init below).
+	serializeState();
 }
 
 function buildBPTable(plan, skillIAS, effectiveWSM, currentFrames, currentIAS) {
@@ -1610,13 +1614,126 @@ function onSkillChange() {
 	// no-op, calc() will refresh
 }
 
+// ══════════════════════════════════════════════════════════════
+// URL hash state — shareable / deep-linkable configurations
+// ══════════════════════════════════════════════════════════════
+// Every input is mirrored into the URL hash so a configured calculator can be
+// bookmarked, shared, or linked to. The pd2_planner "Attack Speed Calculator"
+// button deep-links here with the current build's class / weapon / IAS
+// pre-filled.
+const STATE_FIELDS = [
+	{ id: 'charClass',            key: 'cls'    },
+	{ id: 'formSelect',           key: 'form'   },
+	{ id: 'weaponType',           key: 'wt'     },
+	{ id: 'weaponBase',           key: 'wb'     },
+	{ id: 'skillSelect',          key: 'sk'     },
+	{ id: 'weaponIAS',            key: 'wias'   },
+	{ id: 'gearIAS',              key: 'gias'   },
+	{ id: 'werebearOffWeaponPct', key: 'wbpct'  },
+	{ id: 'skilIAS',              key: 'sias'   },
+	{ id: 'bosActive',            key: 'bos'    },
+	{ id: 'bosLevel',             key: 'boslvl' },
+];
+
+// Write the current control values into the URL hash. Uses replaceState so we
+// don't spam browser history on every keystroke (and so it never fires our own
+// hashchange listener — replaceState doesn't dispatch hashchange).
+function serializeState() {
+	const params = new URLSearchParams();
+	STATE_FIELDS.forEach(f => {
+		const el = document.getElementById(f.id);
+		if (el) params.set(f.key, el.value);
+	});
+	const newHash = params.toString();
+	if (location.hash.replace(/^#/, '') !== newHash) {
+		history.replaceState(null, '', location.pathname + location.search + '#' + newHash);
+	}
+}
+
+// Find the weapon base in `wtype` whose WSM equals `wsm`. Deep links from the
+// planner pass an explicit WSM rather than a base name, because a build's
+// weapon is often a runeword / unique / set item whose underlying base isn't
+// identifiable — but its WSM is. Any base sharing that WSM yields identical
+// breakpoints, so the first match is sufficient. Returns the base name or null.
+function weaponBaseForWSM(wtype, wsm) {
+	const list = WEAPON_DATA[wtype] || [];
+	const match = list.find(w => w.wsm === wsm);
+	return match ? match.name : null;
+}
+
+// Set a control's value, but only assign <select> values that actually exist
+// as an option (otherwise the browser silently keeps the first option).
+function setControlValue(id, val) {
+	const el = document.getElementById(id);
+	if (!el || val === null || val === undefined) return;
+	if (el.tagName === 'SELECT') {
+		if ([...el.options].some(o => o.value === val)) el.value = val;
+	} else {
+		el.value = val;
+	}
+}
+
+// Restore all controls from the URL hash, respecting the dependent-dropdown
+// build order: class -> form list -> weapon type -> weapon-base list ->
+// skill list. Returns true if any state was applied.
+function applyStateFromHash() {
+	const raw = location.hash.replace(/^#/, '');
+	if (!raw) return false;
+	const params = new URLSearchParams(raw);
+	if (![...params.keys()].length) return false;
+
+	// 1) Class drives which forms are available.
+	setControlValue('charClass', params.get('cls'));
+	populateFormSelect();
+	setControlValue('formSelect', params.get('form'));
+
+	// 2) Weapon type drives the weapon-base list (onWeaponTypeChange also
+	//    rebuilds the skill list for the current form).
+	setControlValue('weaponType', params.get('wt'));
+	onWeaponTypeChange();
+
+	// 3) Weapon base: a base name that's a real option for this type wins
+	//    (white/magic/rare weapons). Otherwise — e.g. a runeword/unique whose
+	//    base name isn't a selectable base — resolve from the explicit WSM.
+	let wb = params.get('wb');
+	const baseOptions = document.getElementById('weaponBase').options;
+	const wbValid = wb && [...baseOptions].some(o => o.value === wb);
+	if (!wbValid && params.has('wsm')) {
+		const wsm = parseInt(params.get('wsm'), 10);
+		wb = isNaN(wsm) ? wb : weaponBaseForWSM(document.getElementById('weaponType').value, wsm);
+	}
+	setControlValue('weaponBase', wb);
+
+	// 4) Skills depend on class + form + weapon type.
+	populateSkillList();
+	setControlValue('skillSelect', params.get('sk'));
+
+	// 5) Plain numeric / toggle inputs.
+	setControlValue('weaponIAS', params.get('wias'));
+	setControlValue('gearIAS', params.get('gias'));
+	setControlValue('werebearOffWeaponPct', params.get('wbpct'));
+	setControlValue('skilIAS', params.get('sias'));
+	setControlValue('bosActive', params.get('bos'));
+	setControlValue('bosLevel', params.get('boslvl'));
+
+	return true;
+}
+
 // Init
 populateClasses();
 populateWeaponTypes();
-populateFormSelect();
-onWeaponTypeChange();
-populateSkillList();
+if (!applyStateFromHash()) {
+	// No (or empty) hash — fall back to the default first-option population.
+	populateFormSelect();
+	onWeaponTypeChange();
+	populateSkillList();
+}
 calc();
+
+// Re-apply when the hash is changed externally (manual edit, back/forward, or a
+// fresh deep link). Our own serializeState() uses replaceState, which does not
+// dispatch this event, so there's no feedback loop.
+window.addEventListener('hashchange', () => { applyStateFromHash(); calc(); });
 </script>
 </body>
 </html>
