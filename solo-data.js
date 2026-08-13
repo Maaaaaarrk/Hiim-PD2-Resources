@@ -1,6 +1,6 @@
 window.soloData = {
   "season": 13,
-  "updatedDate": "May 30th 2026",
+  "updatedDate": "August 13th 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
@@ -2192,7 +2192,20 @@ window.soloData = {
       {
         "buildName": "Thorns",
         "tier": "Bad",
-        "links": [],
+        "links": [
+          {
+            "url": "https://www.youtube.com/watch?v=ExJLh6viwpY",
+            "label": "Sewers of Harrogath (9:00)",
+            "type": "video",
+            "season": 13
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=u4B7FPX_HsM",
+            "label": "Sewers of Harrogath 169% souls (~10:15)",
+            "type": "video",
+            "season": 13
+          }
+        ],
         "notes": []
       },
       {
