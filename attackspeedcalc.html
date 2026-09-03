@@ -430,6 +430,15 @@ const WEAPON_DATA = {
 		{ name: "Mancatcher",      wsm: -20 },
 		{ name: "Ghost Spear",     wsm: 0  },
 		{ name: "War Pike",        wsm: 20 },
+		{ name: "Maiden Javelin",  wsm: -10 },
+		{ name: "Maiden Spear",    wsm: -10 },
+		{ name: "Maiden Pike",     wsm: 0  },
+		{ name: "Ceremonial Javelin", wsm: -10 },
+		{ name: "Ceremonial Spear", wsm: -10 },
+		{ name: "Ceremonial Pike", wsm: 10 },
+		{ name: "Matriarchal Javelin", wsm: -10 },
+		{ name: "Matriarchal Spear", wsm: -10 },
+		{ name: "Matriarchal Pike", wsm: 10 },
 	],
 	"Dagger": [
 		{ name: "Dagger",          wsm: -20 },
@@ -507,6 +516,12 @@ const WEAPON_DATA = {
 		{ name: "Crusader Bow",    wsm: 10 },
 		{ name: "Ward Bow",        wsm: 0  },
 		{ name: "Hydra Bow",       wsm: 10 },
+		{ name: "Stag Bow",        wsm: 0  },
+		{ name: "Reflex Bow",      wsm: 10 },
+		{ name: "Ashwood Bow",     wsm: 0  },
+		{ name: "Ceremonial Bow",  wsm: 10 },
+		{ name: "Matriarchal Bow", wsm: -10 },
+		{ name: "Grand Matron Bow", wsm: 10 },
 	],
 	"Crossbow": [
 		{ name: "Light Crossbow",  wsm: -40 },
@@ -564,6 +579,27 @@ const WEAPON_DATA = {
 		{ name: "Shillelagh",      wsm: 0  },
 		{ name: "Archon Staff",    wsm: 10 },
 	],
+	// Sorceress orbs.  PD2 leaves orb base speeds unchanged from vanilla
+	// (the wiki's Speed table lists them as "not attacked with", so no
+	// PD2 override applies).  Orbs use the one-handed-swing animation class,
+	// so their per-class FPD is mirrored from "Wand" in the tables below.
+	"Orb": [
+		{ name: "Eagle Orb",       wsm: -10 },
+		{ name: "Sacred Globe",    wsm: -10 },
+		{ name: "Smoked Sphere",   wsm: 0  },
+		{ name: "Clasped Orb",     wsm: 0  },
+		{ name: "Jared's Stone",   wsm: 10 },
+		{ name: "Glowing Orb",     wsm: -10 },
+		{ name: "Crystalline Globe", wsm: -10 },
+		{ name: "Cloudy Sphere",   wsm: 0  },
+		{ name: "Sparkling Ball",  wsm: 0  },
+		{ name: "Swirling Crystal", wsm: 10 },
+		{ name: "Heavenly Stone",  wsm: -10 },
+		{ name: "Eldritch Orb",    wsm: -10 },
+		{ name: "Demon Heart",     wsm: 0  },
+		{ name: "Vortex Orb",      wsm: 0  },
+		{ name: "Dimensional Shard", wsm: 10 },
+	],
 	"Hand-to-Hand": [
 		{ name: "Unarmed",         wsm: 0  },
 	],
@@ -595,6 +631,7 @@ const PALADIN_FPD = {
 	"Throwing":    15,
 	"Scepter":     15,
 	"Wand":        15,
+	"Orb":         15,
 	"Staff":       20,
 	"Bow":         16,
 	"Crossbow":    19,
@@ -617,6 +654,7 @@ const PALADIN_ZEAL_FPD = {
 	"Throwing":    11,
 	"Scepter":     11,
 	"Wand":        11,
+	"Orb":         11,
 	"Staff":       15,
 	"Bow":         12,
 	"Crossbow":    14,
@@ -629,53 +667,53 @@ const ZEAL_FPD_BY_CLASS = {
 	"Paladin":    PALADIN_ZEAL_FPD,
 	"Barbarian": {
 		"1H Sword":15, "2H Sword":17, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":17,
-		"Polearm":20, "Spear":14, "Dagger":15, "Throwing":15, "Scepter":15, "Wand":15,
+		"Polearm":20, "Spear":14, "Dagger":15, "Throwing":15, "Scepter":15, "Wand":15, "Orb":15,
 		"Staff":14, "Bow":14, "Crossbow":15, "Hand-to-Hand":14,
 	},
 	// The other classes normally cannot Zeal, but they can via Passion. Use
 	// their normal-attack FPD as a conservative baseline (close enough per Basin).
 	"Amazon":    { "1H Sword":14, "2H Sword":17, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":17,
-	               "Polearm":20, "Spear":13, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	               "Polearm":20, "Spear":13, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15, "Orb":15,
 	               "Staff":18, "Bow":13, "Crossbow":19, "Hand-to-Hand":14 },
 	"Sorceress": { "1H Sword":16, "2H Sword":19, "Axe":19, "2H Axe":22, "Mace":18, "2H Mace":21,
-	               "Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15,
+	               "Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15, "Orb":15,
 	               "Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":16 },
 	"Necromancer":{"1H Sword":16, "2H Sword":19, "Axe":19, "2H Axe":22, "Mace":18, "2H Mace":21,
-	               "Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15,
+	               "Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15, "Orb":15,
 	               "Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":16 },
 	"Druid":     { "1H Sword":16, "2H Sword":19, "Axe":18, "2H Axe":21, "Mace":16, "2H Mace":19,
-	               "Polearm":18, "Spear":19, "Dagger":15, "Throwing":16, "Scepter":16, "Wand":16,
+	               "Polearm":18, "Spear":19, "Dagger":15, "Throwing":16, "Scepter":16, "Wand":16, "Orb":16,
 	               "Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":15 },
 	"Assassin":  { "1H Sword":14, "2H Sword":16, "Axe":16, "2H Axe":20, "Mace":14, "2H Mace":18,
-	               "Polearm":18, "Spear":16, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	               "Polearm":18, "Spear":16, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15, "Orb":15,
 	               "Staff":15, "Bow":15, "Crossbow":19, "Hand-to-Hand":12 },
 };
 
 // Amazon per-weapon FPD (Basin).
 const AMAZON_FPD = {
 	"1H Sword":14, "2H Sword":17, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":17,
-	"Polearm":20, "Spear":13, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	"Polearm":20, "Spear":13, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15, "Orb":15,
 	"Staff":18, "Bow":13, "Crossbow":19, "Hand-to-Hand":14,
 };
 
 // Barbarian per-weapon FPD (Basin).
 const BARB_FPD = {
 	"1H Sword":13, "2H Sword":16, "Axe":14, "2H Axe":18, "Mace":14, "2H Mace":18,
-	"Polearm":18, "Spear":16, "Dagger":12, "Throwing":12, "Scepter":14, "Wand":14,
+	"Polearm":18, "Spear":16, "Dagger":12, "Throwing":12, "Scepter":14, "Wand":14, "Orb":14,
 	"Staff":18, "Bow":14, "Crossbow":17, "Hand-to-Hand":14,
 };
 
 // Sorceress / Necromancer per-weapon FPD (shared, close enough).
 const SORC_FPD = {
 	"1H Sword":16, "2H Sword":19, "Axe":19, "2H Axe":22, "Mace":18, "2H Mace":21,
-	"Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15,
+	"Polearm":22, "Spear":20, "Dagger":15, "Throwing":16, "Scepter":18, "Wand":15, "Orb":15,
 	"Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":16,
 };
 
 // Druid (human form) per-weapon FPD (Basin).
 const DRUID_HUMAN_FPD = {
 	"1H Sword":16, "2H Sword":19, "Axe":18, "2H Axe":21, "Mace":16, "2H Mace":19,
-	"Polearm":18, "Spear":19, "Dagger":15, "Throwing":16, "Scepter":16, "Wand":16,
+	"Polearm":18, "Spear":19, "Dagger":15, "Throwing":16, "Scepter":16, "Wand":16, "Orb":16,
 	"Staff":18, "Bow":18, "Crossbow":21, "Hand-to-Hand":15,
 };
 
@@ -740,19 +778,19 @@ const WEREFORM_EIAS_CAP = 75;
 // Paladin, Sorceress (we re-key by name).  Class-restricted types omitted
 // where 0.
 const WEAPON_ANIM_FRAMES = {
-	"Amazon":      { "1H Sword":16, "2H Sword":20, "Axe":16, "2H Axe":20, "Mace":16, "2H Mace":20, "Polearm":20, "Spear":18, "Dagger":15, "Throwing":15, "Scepter":16, "Wand":16, "Staff":20, "Bow":14, "Crossbow":20, "Hand-to-Hand":13 },
-	"Assassin":    { "1H Sword":15, "2H Sword":23, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":19, "Polearm":19, "Spear":23, "Dagger":15, "Throwing":15, "Scepter":15, "Wand":15, "Staff":19, "Bow":16, "Crossbow":21, "Claw":11, "Hand-to-Hand":11 },
-	"Barbarian":   { "1H Sword":16, "2H Sword":18, "Axe":16, "2H Axe":19, "Mace":16, "2H Mace":19, "Polearm":19, "Spear":19, "Dagger":16, "Throwing":16, "Scepter":16, "Wand":16, "Staff":19, "Bow":15, "Crossbow":20, "Hand-to-Hand":12 },
-	"Druid":       { "1H Sword":19, "2H Sword":21, "Axe":19, "2H Axe":17, "Mace":19, "2H Mace":17, "Polearm":17, "Spear":23, "Dagger":19, "Throwing":19, "Scepter":19, "Wand":19, "Staff":17, "Bow":16, "Crossbow":20, "Hand-to-Hand":16 },
-	"Necromancer": { "1H Sword":19, "2H Sword":23, "Axe":19, "2H Axe":20, "Mace":19, "2H Mace":20, "Polearm":20, "Spear":24, "Dagger":19, "Throwing":19, "Scepter":19, "Wand":19, "Staff":20, "Bow":18, "Crossbow":20, "Hand-to-Hand":15 },
-	"Paladin":     { "1H Sword":15, "2H Sword":18, "Axe":15, "2H Axe":18, "Mace":15, "2H Mace":18, "Polearm":18, "Spear":20, "Dagger":17, "Throwing":15, "Scepter":15, "Wand":15, "Staff":18, "Bow":16, "Crossbow":20, "Hand-to-Hand":14 },
-	"Sorceress":   { "1H Sword":20, "2H Sword":24, "Axe":20, "2H Axe":18, "Mace":20, "2H Mace":18, "Polearm":18, "Spear":23, "Dagger":19, "Throwing":20, "Scepter":20, "Wand":20, "Staff":18, "Bow":17, "Crossbow":20, "Hand-to-Hand":16 },
+	"Amazon":      { "1H Sword":16, "2H Sword":20, "Axe":16, "2H Axe":20, "Mace":16, "2H Mace":20, "Polearm":20, "Spear":18, "Dagger":15, "Throwing":15, "Scepter":16, "Wand":16, "Orb":16, "Staff":20, "Bow":14, "Crossbow":20, "Hand-to-Hand":13 },
+	"Assassin":    { "1H Sword":15, "2H Sword":23, "Axe":15, "2H Axe":19, "Mace":15, "2H Mace":19, "Polearm":19, "Spear":23, "Dagger":15, "Throwing":15, "Scepter":15, "Wand":15, "Orb":15, "Staff":19, "Bow":16, "Crossbow":21, "Claw":11, "Hand-to-Hand":11 },
+	"Barbarian":   { "1H Sword":16, "2H Sword":18, "Axe":16, "2H Axe":19, "Mace":16, "2H Mace":19, "Polearm":19, "Spear":19, "Dagger":16, "Throwing":16, "Scepter":16, "Wand":16, "Orb":16, "Staff":19, "Bow":15, "Crossbow":20, "Hand-to-Hand":12 },
+	"Druid":       { "1H Sword":19, "2H Sword":21, "Axe":19, "2H Axe":17, "Mace":19, "2H Mace":17, "Polearm":17, "Spear":23, "Dagger":19, "Throwing":19, "Scepter":19, "Wand":19, "Orb":19, "Staff":17, "Bow":16, "Crossbow":20, "Hand-to-Hand":16 },
+	"Necromancer": { "1H Sword":19, "2H Sword":23, "Axe":19, "2H Axe":20, "Mace":19, "2H Mace":20, "Polearm":20, "Spear":24, "Dagger":19, "Throwing":19, "Scepter":19, "Wand":19, "Orb":19, "Staff":20, "Bow":18, "Crossbow":20, "Hand-to-Hand":15 },
+	"Paladin":     { "1H Sword":15, "2H Sword":18, "Axe":15, "2H Axe":18, "Mace":15, "2H Mace":18, "Polearm":18, "Spear":20, "Dagger":17, "Throwing":15, "Scepter":15, "Wand":15, "Orb":15, "Staff":18, "Bow":16, "Crossbow":20, "Hand-to-Hand":14 },
+	"Sorceress":   { "1H Sword":20, "2H Sword":24, "Axe":20, "2H Axe":18, "Mace":20, "2H Mace":18, "Polearm":18, "Spear":23, "Dagger":19, "Throwing":20, "Scepter":20, "Wand":20, "Orb":20, "Staff":18, "Bow":17, "Crossbow":20, "Hand-to-Hand":16 },
 };
 
 // Assassin per-weapon FPD (Basin).
 const SIN_FPD = {
 	"1H Sword":14, "2H Sword":16, "Axe":16, "2H Axe":20, "Mace":14, "2H Mace":18,
-	"Polearm":18, "Spear":16, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15,
+	"Polearm":18, "Spear":16, "Dagger":12, "Throwing":14, "Scepter":15, "Wand":15, "Orb":15,
 	"Staff":15, "Bow":15, "Crossbow":19, "Hand-to-Hand":12, "Claw":12,
 };
 
@@ -761,7 +799,7 @@ const SIN_FPD = {
 // Values derived from Basin's assassin attack speed tables.
 const SIN_MULTI_FPD = {
 	"1H Sword":12, "2H Sword":14, "Axe":14, "2H Axe":18, "Mace":12, "2H Mace":16,
-	"Polearm":16, "Spear":14, "Dagger":10, "Throwing":12, "Scepter":13, "Wand":13,
+	"Polearm":16, "Spear":14, "Dagger":10, "Throwing":12, "Scepter":13, "Wand":13, "Orb":13,
 	"Staff":13, "Bow":13, "Crossbow":17, "Hand-to-Hand":10, "Claw":10,
 };
 
