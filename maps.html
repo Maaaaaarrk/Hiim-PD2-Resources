@@ -1648,10 +1648,10 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 			</div>
 			<div class="modal-body">
 				<div class="btn-group btn-group-sm mb-2" role="group" aria-label="Season">
-					<input type="radio" class="btn-check" name="mapTimesSeason" id="mapTimesS13" value="S13" checked>
+					<input type="radio" class="btn-check" name="mapTimesSeason" id="mapTimesS14" value="S14" checked>
+					<label class="btn btn-outline-info" for="mapTimesS14">Season 14</label>
+					<input type="radio" class="btn-check" name="mapTimesSeason" id="mapTimesS13" value="S13">
 					<label class="btn btn-outline-info" for="mapTimesS13">Season 13</label>
-					<input type="radio" class="btn-check" name="mapTimesSeason" id="mapTimesS12" value="S12">
-					<label class="btn btn-outline-info" for="mapTimesS12">Season 12</label>
 				</div>
 				<br>
 				<div class="btn-group btn-group-sm mb-2" role="group">
@@ -1724,29 +1724,29 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	};
 
 	var helpers = window.mapsDataHelpers;
-	var currentSeason = 'S13';
+	var currentSeason = 'S14';
 	var currentSoloType = 'fullClear';
 
 	function loadMfData() {
-		return currentSeason === 'S12'
-			? window.mapsData.s12.mfData
-			: helpers.buildS13MfData(currentSoloType);
+		return currentSeason === 'S13'
+			? helpers.buildS13MfData(currentSoloType)
+			: helpers.buildS14MfData(currentSoloType);
 	}
 	function loadExp98() {
-		return currentSeason === 'S12'
-			? window.mapsData.s12.exp98
-			: helpers.buildS13Exp('exp98');
+		return currentSeason === 'S13'
+			? helpers.buildS13Exp('exp98')
+			: helpers.buildS14Exp('exp98');
 	}
 	function loadExpNone() {
-		return currentSeason === 'S12'
-			? window.mapsData.s12.expNone
-			: helpers.buildS13Exp('expNone');
+		return currentSeason === 'S13'
+			? helpers.buildS13Exp('expNone')
+			: helpers.buildS14Exp('expNone');
 	}
 
 	var mfData = loadMfData(), exp98 = loadExp98(), expNone = loadExpNone();
 
-	// Element lookup shared across seasons (derived from current S13 data)
-	var mapElems = helpers.getS13Elems();
+	// Element lookup shared across seasons (derived from current Season 14 data)
+	var mapElems = helpers.getS14Elems();
 
 	function getElemCells(name) {
 		var elems = mapElems[name] || [];
@@ -1894,7 +1894,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 	}
 
 	function updateSoloTypeToggleVisibility() {
-		var show = (currentSeason !== 'S12') && (getMode() === 'mf');
+		var show = (getMode() === 'mf');
 		document.getElementById('mapTimesSoloTypeGroup').style.display = show ? '' : 'none';
 	}
 	updateSoloTypeToggleVisibility();
@@ -1927,7 +1927,7 @@ l-22 -19 6 -473 5 -472 -24 -87 c-13 -48 -28 -91 -33 -96 -5 -5 -18 26 -31 75
 		});
 	});
 
-	// Solo Type toggle (only relevant in MF mode on S13)
+	// Solo Type toggle (MF mode; Season 14 and Season 13 both have these variants)
 	document.querySelectorAll('input[name="mapTimesSoloType"]').forEach(function(radio) {
 		radio.addEventListener('change', function() {
 			currentSoloType = this.value;
