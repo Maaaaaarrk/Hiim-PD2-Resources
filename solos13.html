@@ -341,7 +341,7 @@ l-26 24 14 -25z"/>
 -6 20 -14 20 -8 0 -13 -8 -12 -17z"/>
 						</g>
 					</svg>
-					Season 14 Solo Map Tier list by
+					Season 13 Solo Map Tier list by
 					<svg xmlns="http://www.w3.org/2000/svg"
 					     width="125.000000pt" height="125.000000pt" viewBox="0 0 300.000000 286.000000"
 					     preserveAspectRatio="xMidYMid meet">
@@ -742,7 +742,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js">-
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="solo-data.js"></script>
+<script src="solo13-data.js"></script>
 <script src="maps-data.js"></script>
 <script>
 
@@ -921,7 +921,7 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 	  if (window.soloData) {
 		return Promise.resolve(window.soloData);
 	  }
-	  return fetch('solo-data.json').then(function(r) { return r.json(); });
+	  return fetch('solo13-data.json').then(function(r) { return r.json(); });
 	}
 
 	// Tier ordering for per-class build sort + filter
@@ -1480,10 +1480,10 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 				<p>Times are weighted by map tier and approximate monster count. Map size or layout does not factor into
 					the clear speeds &mdash; only the number of monsters in the map matters.</p>
 				<div class="btn-group btn-group-sm mb-2" role="group" aria-label="Season">
-					<input type="radio" class="btn-check" name="soloSeason" id="soloSeasonS14" value="S14" checked>
-					<label class="btn btn-outline-info" for="soloSeasonS14">Season 14</label>
-					<input type="radio" class="btn-check" name="soloSeason" id="soloSeasonS13" value="S13">
+					<input type="radio" class="btn-check" name="soloSeason" id="soloSeasonS13" value="S13" checked>
 					<label class="btn btn-outline-info" for="soloSeasonS13">Season 13</label>
+					<input type="radio" class="btn-check" name="soloSeason" id="soloSeasonS12" value="S12">
+					<label class="btn btn-outline-info" for="soloSeasonS12">Season 12</label>
 				</div>
 				<br>
 				<div class="btn-group btn-group-sm mb-3" id="soloTypeGroup" role="group" aria-label="Solo Type">
@@ -1549,13 +1549,13 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 <script>
 	(function () {
 		var helpers = window.mapsDataHelpers;
-		var currentSeason = 'S14';
+		var currentSeason = 'S13';
 		var currentType = 'fullClear';
 
 		function loadSoloMapData() {
-			return currentSeason === 'S13'
-				? helpers.buildS13MfData(currentType)
-				: helpers.buildS14MfData(currentType);
+			return currentSeason === 'S12'
+				? window.mapsData.s12.mfData
+				: helpers.buildS13MfData(currentType);
 		}
 
 		var soloMapData = loadSoloMapData();
@@ -1650,9 +1650,9 @@ m17 -46 c-3 -10 -2 -18 2 -17 3 1 7 -1 9 -5 1 -5 0 -8 -3 -8 -3 0 -11 0 -19 0
 			renderSoloTierTable(null, 0);
 		}
 
-		// Full Clear / Elite Skip / Ear apply to both Season 14 and Season 13.
+		// Solo Type toggle is only meaningful for S13
 		function updateTypeToggleVisibility() {
-			document.getElementById('soloTypeGroup').style.display = '';
+			document.getElementById('soloTypeGroup').style.display = (currentSeason === 'S12') ? 'none' : '';
 		}
 		updateTypeToggleVisibility();
 

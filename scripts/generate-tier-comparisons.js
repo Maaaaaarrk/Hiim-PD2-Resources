@@ -1,19 +1,19 @@
 /*
- * Generates two comparison txt files against Season 12:
- *   - solo-tier-comparison.txt   (from solo-data.json + solos12.html)
- *   - group-tier-comparison.txt  (from group-data.json + groups12.html, bucketed by team type)
+ * Generates two comparison txt files against Season 13:
+ *   - solo-tier-comparison.txt   (from solo-data.json + solo13-data.json)
+ *   - group-tier-comparison.txt  (from group-data.json + group13-data.json, bucketed by team type)
  *
  * Also syncs the web-app data files from their JSON sources:
  *   - solo-data.js  <- solo-data.json   (prefix: `window.soloData = `)
  *   - group-data.js <- group-data.json  (prefix: `window.groupData = `, trailing `;`)
  *
  * Row format (both txt files):
- *   `<Bucket> - <Build Name> - <Current Tier>`                      (tier unchanged from S12)
- *   `<Bucket> - <Build Name> - <S12 Tier> -> <Current Tier>`        (tier changed)
- *   `<Bucket> - <Build Name> - <Current Tier>  [New]`               (build not in S12 list)
+ *   `<Bucket> - <Build Name> - <Current Tier>`                      (tier unchanged from S13)
+ *   `<Bucket> - <Build Name> - <S13 Tier> -> <Current Tier>`        (tier changed)
+ *   `<Bucket> - <Build Name> - <Current Tier>  [New]`               (build not in S13 list)
  * Builds inside each bucket are sorted by current tier: Top, Good, Decent, Mid, Bad, then others.
  *
- * By default, rows with no change (same tier in S12, not [New]) are hidden.
+ * By default, rows with no change (same tier in S13, not [New]) are hidden.
  * Pass `--all` (or `-a`) to include unchanged rows too.
  */
 const fs = require('fs');
@@ -23,13 +23,6 @@ const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
 const SHOW_ALL = args.includes('--all') || args.includes('-a');
 
-const TIER_BADGE = {
-  'text-bg-info': 'Top',
-  'text-bg-primary': 'Good',
-  'text-bg-success': 'Decent',
-  'text-bg-warning': 'Mid',
-  'text-bg-danger': 'Bad',
-};
 const TIER_RANK = { Top: 0, Good: 1, Decent: 2, Mid: 3, Bad: 4 };
 const rankOf = (t) => (t in TIER_RANK ? TIER_RANK[t] : 99);
 const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '');
@@ -58,12 +51,12 @@ function lookup(map, buildName) {
 
 // Returns { line, kind } where kind is 'same' | 'changed' | 'new'.
 // Caller decides whether to include 'same' rows based on SHOW_ALL.
-function makeRow(bucket, buildName, currTier, s12Tier) {
-  if (s12Tier == null) {
+function makeRow(bucket, buildName, currTier, prevTier) {
+  if (prevTier == null) {
     return { line: `${bucket} - ${buildName} - ${currTier}  [New]`, kind: 'new' };
   }
-  if (s12Tier !== currTier) {
-    return { line: `${bucket} - ${buildName} - ${s12Tier} -> ${currTier}`, kind: 'changed' };
+  if (prevTier !== currTier) {
+    return { line: `${bucket} - ${buildName} - ${prevTier} -> ${currTier}`, kind: 'changed' };
   }
   return { line: `${bucket} - ${buildName} - ${currTier}`, kind: 'same' };
 }
@@ -75,26 +68,12 @@ function emit(out, row) {
 }
 
 // ---------- SOLO ----------
-function parseSolos12Tiers() {
-  const html = fs.readFileSync(path.join(ROOT, 'solos12.html'), 'utf8');
-  const result = {}; // className -> Map(buildName -> tier)
-  const tbodyRegex = /<tbody[^>]*id="tbody([A-Za-z]+)"[^>]*>([\s\S]*?)<\/tbody>/g;
-  let m;
-  while ((m = tbodyRegex.exec(html)) !== null) {
-    const className = m[1];
-    const block = m[2];
+function parsePreviousSoloTiers() {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'solo13-data.json'), 'utf8'));
+  const result = {};
+  for (const [className, builds] of Object.entries(data.classBuilds || {})) {
     const map = new Map();
-    const trRegex = /<tr>([\s\S]*?)<\/tr>/g;
-    let tr;
-    while ((tr = trRegex.exec(block)) !== null) {
-      const row = tr[1];
-      const tdMatch = row.match(/<td>\s*([^<]+?)\s*<\/td>\s*<td>\s*<span[^>]*class="[^"]*\b(text-bg-[a-z]+)\b[^"]*"[^>]*>\s*([^<]+?)\s*<\/span>/);
-      if (tdMatch) {
-        const buildName = tdMatch[1].replace(/&amp;/g, '&').trim();
-        const tier = TIER_BADGE[tdMatch[2]] || tdMatch[3].trim();
-        map.set(buildName, tier);
-      }
-    }
+    for (const b of builds || []) map.set(b.buildName, b.tier);
     result[className] = map;
   }
   return result;
@@ -102,7 +81,7 @@ function parseSolos12Tiers() {
 
 function buildSoloFile() {
   const solo = JSON.parse(fs.readFileSync(path.join(ROOT, 'solo-data.json'), 'utf8'));
-  const s12 = parseSolos12Tiers();
+  const prev = parsePreviousSoloTiers();
   const classOrder = ['Sorceress', 'Druid', 'Assassin', 'Barbarian', 'Amazon', 'Necromancer', 'Paladin'];
   const classes = Object.keys(solo.classBuilds);
   const ordered = [
@@ -111,8 +90,8 @@ function buildSoloFile() {
   ];
 
   const header = [
-    `Solo Tier Comparison — Season ${solo.season} vs Season 12`,
-    `Format: Class - Build - Current Tier  (or "S12 -> Current" if changed, "[New]" if not in S12)`,
+    `Solo Tier Comparison — Season ${solo.season} vs Season 13`,
+    `Format: Class - Build - Current Tier  (or "S13 -> Current" if changed, "[New]" if not in S13)`,
     SHOW_ALL ? 'Mode: showing all rows (--all)' : 'Mode: hiding unchanged rows (pass --all to include them)',
     '='.repeat(80),
     '',
@@ -122,8 +101,8 @@ function buildSoloFile() {
   for (const cls of ordered) {
     const classLines = [];
     for (const b of sortBuilds(solo.classBuilds[cls] || [])) {
-      const s12Tier = lookup(s12[cls], b.buildName);
-      const row = makeRow(cls, b.buildName, b.tier, s12Tier);
+      const prevTier = lookup(prev[cls], b.buildName);
+      const row = makeRow(cls, b.buildName, b.tier, prevTier);
       if (row.kind === 'same' && !SHOW_ALL) continue;
       classLines.push(row.line);
     }
@@ -139,61 +118,38 @@ function buildSoloFile() {
 }
 
 // ---------- GROUP ----------
-function parseGroups12() {
-  const html = fs.readFileSync(path.join(ROOT, 'groups12.html'), 'utf8');
-  const physIdx = html.indexOf('Physical Focused P8 Mapping');
-  const eleIdx = html.indexOf('Elemental Focused P8 Mapping');
-  const generalistsChunk = physIdx >= 0 ? html.slice(0, physIdx) : html;
-  const physicalChunk = physIdx >= 0 && eleIdx >= 0 ? html.slice(physIdx, eleIdx) : '';
-  const elementalChunk = eleIdx >= 0 ? html.slice(eleIdx) : '';
-
+function parsePreviousGroup() {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'group13-data.json'), 'utf8'));
   const generalists = new Set();
-  const genRegex = /<tr class="table-[a-z]+">\s*<td>\s*([^<]+?)\s*<\/td>/g;
-  let g;
-  while ((g = genRegex.exec(generalistsChunk)) !== null) {
-    generalists.add(normalize(g[1].replace(/&amp;/g, '&').trim()));
+  for (const b of (data.generalists && data.generalists.builds) || []) {
+    generalists.add(normalize(b.buildName));
   }
-
-  function parseClassTbodies(chunk) {
+  function sectionMaps(section) {
     const out = {};
-    const tbodyRegex = /<tbody[^>]*id="tbody([A-Za-z]+?)(?:\d*)"[^>]*>([\s\S]*?)<\/tbody>/g;
-    let m;
-    while ((m = tbodyRegex.exec(chunk)) !== null) {
-      const className = m[1];
-      const block = m[2];
-      const map = out[className] || new Map();
-      const trRegex = /<tr>([\s\S]*?)<\/tr>/g;
-      let tr;
-      while ((tr = trRegex.exec(block)) !== null) {
-        const row = tr[1];
-        const tdMatch = row.match(/<td>\s*([^<]+?)\s*<\/td>\s*<td>\s*<span[^>]*class="[^"]*\b(text-bg-[a-z]+)\b[^"]*"[^>]*>\s*([^<]+?)\s*<\/span>/);
-        if (tdMatch) {
-          const buildName = tdMatch[1].replace(/&amp;/g, '&').trim();
-          const tier = TIER_BADGE[tdMatch[2]] || tdMatch[3].trim();
-          map.set(buildName, tier);
-        }
-      }
+    if (!section || !section.classBuilds) return out;
+    for (const [className, builds] of Object.entries(section.classBuilds)) {
+      const map = new Map();
+      for (const b of builds || []) map.set(b.buildName, b.tier);
       out[className] = map;
     }
     return out;
   }
-
   return {
     generalists,
-    physical: parseClassTbodies(physicalChunk),
-    elemental: parseClassTbodies(elementalChunk),
+    physical: sectionMaps(data.physical),
+    elemental: sectionMaps(data.elemental),
   };
 }
 
 function buildGroupFile() {
   const group = JSON.parse(fs.readFileSync(path.join(ROOT, 'group-data.json'), 'utf8'));
-  const s12 = parseGroups12();
+  const prev = parsePreviousGroup();
   const classOrder = ['Sorceress', 'Druid', 'Assassin', 'Barbarian', 'Amazon', 'Necromancer', 'Paladin'];
 
   const header = [
-    `Group Tier Comparison — Season ${group.season} vs Season 12`,
+    `Group Tier Comparison — Season ${group.season} vs Season 13`,
     `Bucketed by team type: Generalist, Physical, Elemental`,
-    `Format: Bucket - Build - Current Tier  (or "S12 -> Current" if changed, "[New]" if not in S12)`,
+    `Format: Bucket - Build - Current Tier  (or "S13 -> Current" if changed, "[New]" if not in S13)`,
     SHOW_ALL ? 'Mode: showing all rows (--all)' : 'Mode: hiding unchanged rows (pass --all to include them)',
     '='.repeat(80),
     '',
@@ -201,11 +157,11 @@ function buildGroupFile() {
   const out = [...header];
 
   // Generalists: no current tier — only reportable state is [New] vs existed.
-  // "Unchanged" in this bucket means "existed in S12"; hidden by default.
+  // "Unchanged" in this bucket means "existed in S13"; hidden by default.
   const genSectionLines = [];
   const genBuilds = (group.generalists && group.generalists.builds) || [];
   for (const b of genBuilds) {
-    const existed = s12.generalists.has(normalize(b.buildName));
+    const existed = prev.generalists.has(normalize(b.buildName));
     if (existed && !SHOW_ALL) continue;
     const suffix = existed ? '' : '  [New]';
     genSectionLines.push(`Generalist - ${b.className} - ${b.buildName}${suffix}`);
@@ -225,13 +181,13 @@ function buildGroupFile() {
       ...classOrder.filter((c) => classes.includes(c)),
       ...classes.filter((c) => !classOrder.includes(c)),
     ];
-    const s12Map = s12[key] || {};
+    const prevMap = prev[key] || {};
     const sectionLines = [];
     for (const cls of ordered) {
       const classLines = [];
       for (const b of sortBuilds(section.classBuilds[cls] || [])) {
-        const s12Tier = lookup(s12Map[cls], b.buildName);
-        const row = makeRow(`${label} | ${cls}`, b.buildName, b.tier, s12Tier);
+        const prevTier = lookup(prevMap[cls], b.buildName);
+        const row = makeRow(`${label} | ${cls}`, b.buildName, b.tier, prevTier);
         if (row.kind === 'same' && !SHOW_ALL) continue;
         classLines.push(row.line);
       }

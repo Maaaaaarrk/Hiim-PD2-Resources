@@ -1,6 +1,6 @@
-{
-  "season": 14,
-  "updatedDate": "September 22nd 2026",
+window.soloData = {
+  "season": 13,
+  "updatedDate": "September 2nd 2026",
   "bannerText": "Updated",
   "starterBuilds": [
     {
