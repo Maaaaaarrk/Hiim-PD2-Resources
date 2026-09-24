@@ -1,4 +1,5 @@
 # Hiim-PD2-Resources
+> **Moved:** these tools now live at [https://hiimpd2.com](https://hiimpd2.com). The pages in this repo redirect to their hiimpd2.com equivalents.
 
 * [https://maaaaaarrk.github.io/Hiim-PD2-Resources/](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 
